@@ -49,6 +49,10 @@ namespace DSR_Gadget
             StableY = 0xB94,
             StableZ = 0xB98,
             StableAngle = 0xBA4,
+            InitialX = 0xA70,
+            InitialY = 0xA74,
+            InitialZ = 0xA78,
+            InitialAngle = 0x84,
         }
 
         public const string WorldChrBaseAOB = "48 8B 05 ? ? ? ? 48 8B 48 68 48 85 C9 0F 84 ? ? ? ? 48 39 5E 10 0F 84 ? ? ? ? 48";
@@ -178,7 +182,7 @@ namespace DSR_Gadget
         public enum GameDataMan
         {
             PlayerGameData = 0x10,
-            BloodstainPos = 0x40,
+            LastBloodstainPos = 0x40,
             PlayTime = 0xA4,
         }
 
@@ -258,11 +262,12 @@ namespace DSR_Gadget
             PraiseTheSun = 0x48,
         }
 
-        public enum BloodstainPos
+        public enum LastBloodstainPos
         {
-            PoxX = 0x0,
+            PosX = 0x0,
             PosY = 0x4,
             PosZ = 0x8,
+            PosAngle = 0x10,
         }
 
         public const string EventFlagsAOB = "48 8B 0D ? ? ? ? 99 33 C2 45 33 C0 2B C2 8D 50 F6";

@@ -42,6 +42,8 @@
             this.cbxDeathCam = new System.Windows.Forms.CheckBox();
             this.cbxGravity = new System.Windows.Forms.CheckBox();
             this.gbxPosition = new System.Windows.Forms.GroupBox();
+            this.btnTeleportInitialPosition = new System.Windows.Forms.Button();
+            this.btnTeleportBloodstain = new System.Windows.Forms.Button();
             this.cbxRestoreState = new System.Windows.Forms.CheckBox();
             this.lblPosAngle = new System.Windows.Forms.Label();
             this.nudPosZ = new System.Windows.Forms.NumericUpDown();
@@ -404,6 +406,8 @@
             // gbxPosition
             // 
             this.gbxPosition.AutoSize = true;
+            this.gbxPosition.Controls.Add(this.btnTeleportInitialPosition);
+            this.gbxPosition.Controls.Add(this.btnTeleportBloodstain);
             this.gbxPosition.Controls.Add(this.cbxRestoreState);
             this.gbxPosition.Controls.Add(this.lblPosAngle);
             this.gbxPosition.Controls.Add(this.nudPosZ);
@@ -433,12 +437,32 @@
             this.gbxPosition.TabStop = false;
             this.gbxPosition.Text = "Position";
             // 
+            // btnTeleportInitialPosition
+            // 
+            this.btnTeleportInitialPosition.Location = new System.Drawing.Point(290, 55);
+            this.btnTeleportInitialPosition.Name = "btnTeleportInitialPosition";
+            this.btnTeleportInitialPosition.Size = new System.Drawing.Size(88, 23);
+            this.btnTeleportInitialPosition.TabIndex = 43;
+            this.btnTeleportInitialPosition.Text = "Initial Pos.";
+            this.btnTeleportInitialPosition.UseVisualStyleBackColor = true;
+            this.btnTeleportInitialPosition.Click += new System.EventHandler(this.btnTeleportInitialPosition_Click);
+            // 
+            // btnTeleportBloodstain
+            // 
+            this.btnTeleportBloodstain.Location = new System.Drawing.Point(290, 29);
+            this.btnTeleportBloodstain.Name = "btnTeleportBloodstain";
+            this.btnTeleportBloodstain.Size = new System.Drawing.Size(88, 23);
+            this.btnTeleportBloodstain.TabIndex = 42;
+            this.btnTeleportBloodstain.Text = "Bloodstain";
+            this.btnTeleportBloodstain.UseVisualStyleBackColor = true;
+            this.btnTeleportBloodstain.Click += new System.EventHandler(this.btnTeleportBloodstain_Click);
+            // 
             // cbxRestoreState
             // 
             this.cbxRestoreState.AutoSize = true;
             this.cbxRestoreState.Checked = true;
             this.cbxRestoreState.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxRestoreState.Location = new System.Drawing.Point(219, 165);
+            this.cbxRestoreState.Location = new System.Drawing.Point(209, 165);
             this.cbxRestoreState.Name = "cbxRestoreState";
             this.cbxRestoreState.Size = new System.Drawing.Size(87, 17);
             this.cbxRestoreState.TabIndex = 41;
@@ -448,7 +472,7 @@
             // lblPosAngle
             // 
             this.lblPosAngle.AutoSize = true;
-            this.lblPosAngle.Location = new System.Drawing.Point(17, 112);
+            this.lblPosAngle.Location = new System.Drawing.Point(7, 112);
             this.lblPosAngle.Name = "lblPosAngle";
             this.lblPosAngle.Size = new System.Drawing.Size(34, 13);
             this.lblPosAngle.TabIndex = 37;
@@ -458,7 +482,7 @@
             // 
             this.nudPosZ.DecimalPlaces = 3;
             this.nudPosZ.Enabled = false;
-            this.nudPosZ.Location = new System.Drawing.Point(57, 84);
+            this.nudPosZ.Location = new System.Drawing.Point(47, 84);
             this.nudPosZ.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -477,7 +501,7 @@
             // lblPosStored
             // 
             this.lblPosStored.AutoSize = true;
-            this.lblPosStored.Location = new System.Drawing.Point(216, 16);
+            this.lblPosStored.Location = new System.Drawing.Point(206, 16);
             this.lblPosStored.Name = "lblPosStored";
             this.lblPosStored.Size = new System.Drawing.Size(38, 13);
             this.lblPosStored.TabIndex = 40;
@@ -485,7 +509,7 @@
             // 
             // btnPosStore
             // 
-            this.btnPosStore.Location = new System.Drawing.Point(57, 136);
+            this.btnPosStore.Location = new System.Drawing.Point(47, 136);
             this.btnPosStore.Name = "btnPosStore";
             this.btnPosStore.Size = new System.Drawing.Size(75, 23);
             this.btnPosStore.TabIndex = 23;
@@ -496,7 +520,7 @@
             // lblPosStable
             // 
             this.lblPosStable.AutoSize = true;
-            this.lblPosStable.Location = new System.Drawing.Point(135, 16);
+            this.lblPosStable.Location = new System.Drawing.Point(125, 16);
             this.lblPosStable.Name = "lblPosStable";
             this.lblPosStable.Size = new System.Drawing.Size(37, 13);
             this.lblPosStable.TabIndex = 39;
@@ -506,7 +530,7 @@
             // 
             this.nudPosY.DecimalPlaces = 3;
             this.nudPosY.Enabled = false;
-            this.nudPosY.Location = new System.Drawing.Point(57, 58);
+            this.nudPosY.Location = new System.Drawing.Point(47, 58);
             this.nudPosY.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -525,7 +549,7 @@
             // lblPosCurrent
             // 
             this.lblPosCurrent.AutoSize = true;
-            this.lblPosCurrent.Location = new System.Drawing.Point(54, 16);
+            this.lblPosCurrent.Location = new System.Drawing.Point(44, 16);
             this.lblPosCurrent.Name = "lblPosCurrent";
             this.lblPosCurrent.Size = new System.Drawing.Size(41, 13);
             this.lblPosCurrent.TabIndex = 38;
@@ -535,7 +559,7 @@
             // 
             this.nudStableZ.DecimalPlaces = 3;
             this.nudStableZ.Enabled = false;
-            this.nudStableZ.Location = new System.Drawing.Point(138, 84);
+            this.nudStableZ.Location = new System.Drawing.Point(128, 84);
             this.nudStableZ.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -555,7 +579,7 @@
             // 
             this.nudPosX.DecimalPlaces = 3;
             this.nudPosX.Enabled = false;
-            this.nudPosX.Location = new System.Drawing.Point(57, 32);
+            this.nudPosX.Location = new System.Drawing.Point(47, 32);
             this.nudPosX.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -573,7 +597,7 @@
             // 
             // nudStoredAngle
             // 
-            this.nudStoredAngle.Location = new System.Drawing.Point(219, 110);
+            this.nudStoredAngle.Location = new System.Drawing.Point(209, 110);
             this.nudStoredAngle.Maximum = new decimal(new int[] {
             365,
             0,
@@ -593,7 +617,7 @@
             // 
             this.nudStableY.DecimalPlaces = 3;
             this.nudStableY.Enabled = false;
-            this.nudStableY.Location = new System.Drawing.Point(138, 58);
+            this.nudStableY.Location = new System.Drawing.Point(128, 58);
             this.nudStableY.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -612,7 +636,7 @@
             // nudStableAngle
             // 
             this.nudStableAngle.Enabled = false;
-            this.nudStableAngle.Location = new System.Drawing.Point(138, 110);
+            this.nudStableAngle.Location = new System.Drawing.Point(128, 110);
             this.nudStableAngle.Maximum = new decimal(new int[] {
             365,
             0,
@@ -632,7 +656,7 @@
             // 
             this.nudStableX.DecimalPlaces = 3;
             this.nudStableX.Enabled = false;
-            this.nudStableX.Location = new System.Drawing.Point(138, 32);
+            this.nudStableX.Location = new System.Drawing.Point(128, 32);
             this.nudStableX.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -651,7 +675,7 @@
             // nudPosAngle
             // 
             this.nudPosAngle.Enabled = false;
-            this.nudPosAngle.Location = new System.Drawing.Point(57, 110);
+            this.nudPosAngle.Location = new System.Drawing.Point(47, 110);
             this.nudPosAngle.Maximum = new decimal(new int[] {
             365,
             0,
@@ -670,7 +694,7 @@
             // nudStoredX
             // 
             this.nudStoredX.DecimalPlaces = 3;
-            this.nudStoredX.Location = new System.Drawing.Point(219, 32);
+            this.nudStoredX.Location = new System.Drawing.Point(209, 32);
             this.nudStoredX.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -689,7 +713,7 @@
             // lblPosZ
             // 
             this.lblPosZ.AutoSize = true;
-            this.lblPosZ.Location = new System.Drawing.Point(37, 86);
+            this.lblPosZ.Location = new System.Drawing.Point(27, 86);
             this.lblPosZ.Name = "lblPosZ";
             this.lblPosZ.Size = new System.Drawing.Size(14, 13);
             this.lblPosZ.TabIndex = 34;
@@ -698,7 +722,7 @@
             // nudStoredY
             // 
             this.nudStoredY.DecimalPlaces = 3;
-            this.nudStoredY.Location = new System.Drawing.Point(219, 58);
+            this.nudStoredY.Location = new System.Drawing.Point(209, 58);
             this.nudStoredY.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -717,7 +741,7 @@
             // lblPosY
             // 
             this.lblPosY.AutoSize = true;
-            this.lblPosY.Location = new System.Drawing.Point(37, 60);
+            this.lblPosY.Location = new System.Drawing.Point(27, 60);
             this.lblPosY.Name = "lblPosY";
             this.lblPosY.Size = new System.Drawing.Size(14, 13);
             this.lblPosY.TabIndex = 33;
@@ -726,7 +750,7 @@
             // nudStoredZ
             // 
             this.nudStoredZ.DecimalPlaces = 3;
-            this.nudStoredZ.Location = new System.Drawing.Point(219, 84);
+            this.nudStoredZ.Location = new System.Drawing.Point(209, 84);
             this.nudStoredZ.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -745,7 +769,7 @@
             // lblPosX
             // 
             this.lblPosX.AutoSize = true;
-            this.lblPosX.Location = new System.Drawing.Point(37, 34);
+            this.lblPosX.Location = new System.Drawing.Point(27, 34);
             this.lblPosX.Name = "lblPosX";
             this.lblPosX.Size = new System.Drawing.Size(14, 13);
             this.lblPosX.TabIndex = 32;
@@ -753,7 +777,7 @@
             // 
             // btnPosRestore
             // 
-            this.btnPosRestore.Location = new System.Drawing.Point(219, 136);
+            this.btnPosRestore.Location = new System.Drawing.Point(209, 136);
             this.btnPosRestore.Name = "btnPosRestore";
             this.btnPosRestore.Size = new System.Drawing.Size(75, 23);
             this.btnPosRestore.TabIndex = 31;
@@ -2699,6 +2723,8 @@
         private System.Windows.Forms.ComboBox cmbAreaID;
         private System.Windows.Forms.ComboBox cmbMPAreaID;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnTeleportInitialPosition;
+        private System.Windows.Forms.Button btnTeleportBloodstain;
     }
 }
 

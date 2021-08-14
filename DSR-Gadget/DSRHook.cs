@@ -23,6 +23,7 @@ namespace DSR_Gadget
         private PHPointer ChrAnimData;
         private PHPointer ChrPosData;
         private PHPointer PlayerGameData;
+        private PHPointer LastBloodstainPos;
         private PHPointer GraphicsData;
         private PHPointer MenuMan;
         private PHPointer EventFlags;
@@ -49,6 +50,7 @@ namespace DSR_Gadget
             ChrAnimData = CreateBasePointer(IntPtr.Zero);
             ChrPosData = CreateBasePointer(IntPtr.Zero);
             PlayerGameData = CreateChildPointer(GameDataManBasePtr, DSROffsets.GameDataManOffset1, (int)DSROffsets.GameDataMan.PlayerGameData);
+            LastBloodstainPos = CreateChildPointer(GameDataManBasePtr, DSROffsets.GameDataManOffset1, (int)DSROffsets.GameDataMan.LastBloodstainPos);
 
             OnHooked += DSRHook_OnHooked;
         }
@@ -168,6 +170,22 @@ namespace DSR_Gadget
             ChrMapData.WriteSingle((int)DSROffsets.ChrMapData.WarpZ, z);
             ChrMapData.WriteSingle((int)DSROffsets.ChrMapData.WarpAngle, angle);
             ChrMapData.WriteBoolean((int)DSROffsets.ChrMapData.Warp, true);
+        }
+
+        public void GetInitialPosition(out float x, out float y, out float z, out float angle)
+        {
+            x = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.InitialX + Offsets.ChrClassWarpBoost);
+            y = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.InitialY + Offsets.ChrClassWarpBoost);
+            z = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.InitialZ + Offsets.ChrClassWarpBoost);
+            angle = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.InitialAngle + Offsets.ChrClassWarpBoost);
+        }
+
+        public void GetLastBloodstainPosition(out float x, out float y, out float z, out float angle)
+        {
+            x = LastBloodstainPos.ReadSingle((int)DSROffsets.LastBloodstainPos.PosX);
+            y = LastBloodstainPos.ReadSingle((int)DSROffsets.LastBloodstainPos.PosY);
+            z = LastBloodstainPos.ReadSingle((int)DSROffsets.LastBloodstainPos.PosZ);
+            angle = LastBloodstainPos.ReadSingle((int)DSROffsets.LastBloodstainPos.PosAngle);
         }
 
         public bool NoGravity

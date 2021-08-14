@@ -246,6 +246,18 @@ namespace DSR_Gadget
             }
         }
 
+        private void btnTeleportBloodstain_Click(object sender, EventArgs e)
+        {
+            Hook.GetLastBloodstainPosition(out float x, out float y, out float z, out float angle);
+            Hook.PosWarp(x, y, z, angle);
+        }
+
+        private void btnTeleportInitialPosition_Click(object sender, EventArgs e)
+        {
+            Hook.GetInitialPosition(out float x, out float y, out float z, out float angle);
+            Hook.PosWarp(x, y, z, angle);
+        }
+
         private void cbxGravity_CheckedChanged(object sender, EventArgs e)
         {
             if (loaded)
