@@ -1,0 +1,10 @@
+﻿0 1 Human
+8 4 Hollow
+1 2 White Phantom
+2 16 Red Phantom
+2 17 Blue Phantom
+2 18 Path of the Dragon
+13 16 Arena FFA
+13 17 Arena Team 1
+13 18 Arena Team 2
+2 3 Red Phantom (Team)

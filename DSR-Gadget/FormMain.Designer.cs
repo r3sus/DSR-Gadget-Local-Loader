@@ -65,6 +65,18 @@
             this.lblPosX = new System.Windows.Forms.Label();
             this.btnPosRestore = new System.Windows.Forms.Button();
             this.gbxStatus = new System.Windows.Forms.GroupBox();
+            this.lblChrSelect = new System.Windows.Forms.Label();
+            this.cmbChrSelect = new System.Windows.Forms.ComboBox();
+            this.cbxFreezeInvadeType = new System.Windows.Forms.CheckBox();
+            this.cbxFreezeTeamType = new System.Windows.Forms.CheckBox();
+            this.cbxFreezeChrType = new System.Windows.Forms.CheckBox();
+            this.lblFreezeChr = new System.Windows.Forms.Label();
+            this.lblInvadeType = new System.Windows.Forms.Label();
+            this.lblTeamType = new System.Windows.Forms.Label();
+            this.lblChrType = new System.Windows.Forms.Label();
+            this.nudChrType = new System.Windows.Forms.NumericUpDown();
+            this.nudTeamType = new System.Windows.Forms.NumericUpDown();
+            this.nudInvadeType = new System.Windows.Forms.NumericUpDown();
             this.lblStamina = new System.Windows.Forms.Label();
             this.lblHealth = new System.Windows.Forms.Label();
             this.lblStatusMax = new System.Windows.Forms.Label();
@@ -193,6 +205,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudStoredY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudStoredZ)).BeginInit();
             this.gbxStatus.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudChrType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTeamType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudInvadeType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudStaminaMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudStamina)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHealthMax)).BeginInit();
@@ -246,7 +261,7 @@
             this.tclMain.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.tclMain.Name = "tclMain";
             this.tclMain.SelectedIndex = 0;
-            this.tclMain.Size = new System.Drawing.Size(404, 513);
+            this.tclMain.Size = new System.Drawing.Size(404, 605);
             this.tclMain.TabIndex = 0;
             // 
             // tpgPlayer
@@ -257,7 +272,7 @@
             this.tpgPlayer.Location = new System.Drawing.Point(4, 22);
             this.tpgPlayer.Name = "tpgPlayer";
             this.tpgPlayer.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgPlayer.Size = new System.Drawing.Size(396, 487);
+            this.tpgPlayer.Size = new System.Drawing.Size(396, 579);
             this.tpgPlayer.TabIndex = 1;
             this.tpgPlayer.Text = "Player";
             this.tpgPlayer.UseVisualStyleBackColor = true;
@@ -273,7 +288,7 @@
             this.gbxOther.Controls.Add(this.cbxCollision);
             this.gbxOther.Controls.Add(this.cbxDeathCam);
             this.gbxOther.Controls.Add(this.cbxGravity);
-            this.gbxOther.Location = new System.Drawing.Point(6, 316);
+            this.gbxOther.Location = new System.Drawing.Point(6, 455);
             this.gbxOther.Name = "gbxOther";
             this.gbxOther.Size = new System.Drawing.Size(384, 121);
             this.gbxOther.TabIndex = 3;
@@ -402,7 +417,7 @@
             this.gbxPosition.Controls.Add(this.nudStoredZ);
             this.gbxPosition.Controls.Add(this.lblPosX);
             this.gbxPosition.Controls.Add(this.btnPosRestore);
-            this.gbxPosition.Location = new System.Drawing.Point(6, 109);
+            this.gbxPosition.Location = new System.Drawing.Point(6, 248);
             this.gbxPosition.Name = "gbxPosition";
             this.gbxPosition.Size = new System.Drawing.Size(384, 201);
             this.gbxPosition.TabIndex = 2;
@@ -740,6 +755,18 @@
             // gbxStatus
             // 
             this.gbxStatus.AutoSize = true;
+            this.gbxStatus.Controls.Add(this.lblChrSelect);
+            this.gbxStatus.Controls.Add(this.cmbChrSelect);
+            this.gbxStatus.Controls.Add(this.cbxFreezeInvadeType);
+            this.gbxStatus.Controls.Add(this.cbxFreezeTeamType);
+            this.gbxStatus.Controls.Add(this.cbxFreezeChrType);
+            this.gbxStatus.Controls.Add(this.lblFreezeChr);
+            this.gbxStatus.Controls.Add(this.lblInvadeType);
+            this.gbxStatus.Controls.Add(this.lblTeamType);
+            this.gbxStatus.Controls.Add(this.lblChrType);
+            this.gbxStatus.Controls.Add(this.nudChrType);
+            this.gbxStatus.Controls.Add(this.nudTeamType);
+            this.gbxStatus.Controls.Add(this.nudInvadeType);
             this.gbxStatus.Controls.Add(this.lblStamina);
             this.gbxStatus.Controls.Add(this.lblHealth);
             this.gbxStatus.Controls.Add(this.lblStatusMax);
@@ -750,10 +777,131 @@
             this.gbxStatus.Controls.Add(this.nudHealth);
             this.gbxStatus.Location = new System.Drawing.Point(6, 6);
             this.gbxStatus.Name = "gbxStatus";
-            this.gbxStatus.Size = new System.Drawing.Size(384, 97);
+            this.gbxStatus.Size = new System.Drawing.Size(384, 236);
             this.gbxStatus.TabIndex = 1;
             this.gbxStatus.TabStop = false;
             this.gbxStatus.Text = "Status";
+            // 
+            // lblChrSelect
+            // 
+            this.lblChrSelect.AutoSize = true;
+            this.lblChrSelect.Location = new System.Drawing.Point(36, 191);
+            this.lblChrSelect.Name = "lblChrSelect";
+            this.lblChrSelect.Size = new System.Drawing.Size(37, 13);
+            this.lblChrSelect.TabIndex = 32;
+            this.lblChrSelect.Text = "Preset";
+            // 
+            // cmbChrSelect
+            // 
+            this.cmbChrSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbChrSelect.FormattingEnabled = true;
+            this.cmbChrSelect.Location = new System.Drawing.Point(79, 188);
+            this.cmbChrSelect.Name = "cmbChrSelect";
+            this.cmbChrSelect.Size = new System.Drawing.Size(134, 21);
+            this.cmbChrSelect.TabIndex = 31;
+            this.cmbChrSelect.SelectedIndexChanged += new System.EventHandler(this.cmbChrSelect_SelectedIndexChanged);
+            // 
+            // cbxFreezeInvadeType
+            // 
+            this.cbxFreezeInvadeType.AutoSize = true;
+            this.cbxFreezeInvadeType.Location = new System.Drawing.Point(138, 164);
+            this.cbxFreezeInvadeType.Name = "cbxFreezeInvadeType";
+            this.cbxFreezeInvadeType.Size = new System.Drawing.Size(15, 14);
+            this.cbxFreezeInvadeType.TabIndex = 30;
+            this.cbxFreezeInvadeType.UseVisualStyleBackColor = true;
+            // 
+            // cbxFreezeTeamType
+            // 
+            this.cbxFreezeTeamType.AutoSize = true;
+            this.cbxFreezeTeamType.Location = new System.Drawing.Point(138, 138);
+            this.cbxFreezeTeamType.Name = "cbxFreezeTeamType";
+            this.cbxFreezeTeamType.Size = new System.Drawing.Size(15, 14);
+            this.cbxFreezeTeamType.TabIndex = 29;
+            this.cbxFreezeTeamType.UseVisualStyleBackColor = true;
+            // 
+            // cbxFreezeChrType
+            // 
+            this.cbxFreezeChrType.AutoSize = true;
+            this.cbxFreezeChrType.Location = new System.Drawing.Point(138, 112);
+            this.cbxFreezeChrType.Name = "cbxFreezeChrType";
+            this.cbxFreezeChrType.Size = new System.Drawing.Size(15, 14);
+            this.cbxFreezeChrType.TabIndex = 28;
+            this.cbxFreezeChrType.UseVisualStyleBackColor = true;
+            // 
+            // lblFreezeChr
+            // 
+            this.lblFreezeChr.AutoSize = true;
+            this.lblFreezeChr.Location = new System.Drawing.Point(135, 96);
+            this.lblFreezeChr.Name = "lblFreezeChr";
+            this.lblFreezeChr.Size = new System.Drawing.Size(39, 13);
+            this.lblFreezeChr.TabIndex = 27;
+            this.lblFreezeChr.Text = "Freeze";
+            // 
+            // lblInvadeType
+            // 
+            this.lblInvadeType.AutoSize = true;
+            this.lblInvadeType.Location = new System.Drawing.Point(6, 164);
+            this.lblInvadeType.Name = "lblInvadeType";
+            this.lblInvadeType.Size = new System.Drawing.Size(67, 13);
+            this.lblInvadeType.TabIndex = 26;
+            this.lblInvadeType.Text = "Invade Type";
+            // 
+            // lblTeamType
+            // 
+            this.lblTeamType.AutoSize = true;
+            this.lblTeamType.Location = new System.Drawing.Point(12, 138);
+            this.lblTeamType.Name = "lblTeamType";
+            this.lblTeamType.Size = new System.Drawing.Size(61, 13);
+            this.lblTeamType.TabIndex = 25;
+            this.lblTeamType.Text = "Team Type";
+            // 
+            // lblChrType
+            // 
+            this.lblChrType.AutoSize = true;
+            this.lblChrType.Location = new System.Drawing.Point(23, 112);
+            this.lblChrType.Name = "lblChrType";
+            this.lblChrType.Size = new System.Drawing.Size(50, 13);
+            this.lblChrType.TabIndex = 24;
+            this.lblChrType.Text = "Chr Type";
+            // 
+            // nudChrType
+            // 
+            this.nudChrType.Location = new System.Drawing.Point(79, 110);
+            this.nudChrType.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.nudChrType.Name = "nudChrType";
+            this.nudChrType.Size = new System.Drawing.Size(53, 20);
+            this.nudChrType.TabIndex = 23;
+            this.nudChrType.ValueChanged += new System.EventHandler(this.nudChrType_ValueChanged);
+            // 
+            // nudTeamType
+            // 
+            this.nudTeamType.Location = new System.Drawing.Point(79, 136);
+            this.nudTeamType.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.nudTeamType.Name = "nudTeamType";
+            this.nudTeamType.Size = new System.Drawing.Size(53, 20);
+            this.nudTeamType.TabIndex = 22;
+            this.nudTeamType.ValueChanged += new System.EventHandler(this.nudTeamType_ValueChanged);
+            // 
+            // nudInvadeType
+            // 
+            this.nudInvadeType.Location = new System.Drawing.Point(79, 162);
+            this.nudInvadeType.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.nudInvadeType.Name = "nudInvadeType";
+            this.nudInvadeType.Size = new System.Drawing.Size(53, 20);
+            this.nudInvadeType.TabIndex = 21;
+            this.nudInvadeType.ValueChanged += new System.EventHandler(this.nudInvadeType_ValueChanged);
             // 
             // lblStamina
             // 
@@ -879,7 +1027,7 @@
             this.tpgStats.Location = new System.Drawing.Point(4, 22);
             this.tpgStats.Name = "tpgStats";
             this.tpgStats.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgStats.Size = new System.Drawing.Size(396, 487);
+            this.tpgStats.Size = new System.Drawing.Size(396, 579);
             this.tpgStats.TabIndex = 6;
             this.tpgStats.Text = "Stats";
             this.tpgStats.UseVisualStyleBackColor = true;
@@ -1267,7 +1415,7 @@
             this.tpgItems.Location = new System.Drawing.Point(4, 22);
             this.tpgItems.Name = "tpgItems";
             this.tpgItems.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgItems.Size = new System.Drawing.Size(396, 487);
+            this.tpgItems.Size = new System.Drawing.Size(396, 579);
             this.tpgItems.TabIndex = 2;
             this.tpgItems.Text = "Items";
             this.tpgItems.UseVisualStyleBackColor = true;
@@ -1398,7 +1546,7 @@
             this.tpgCheats.Location = new System.Drawing.Point(4, 22);
             this.tpgCheats.Name = "tpgCheats";
             this.tpgCheats.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgCheats.Size = new System.Drawing.Size(396, 487);
+            this.tpgCheats.Size = new System.Drawing.Size(396, 579);
             this.tpgCheats.TabIndex = 4;
             this.tpgCheats.Text = "Cheats";
             this.tpgCheats.UseVisualStyleBackColor = true;
@@ -1672,7 +1820,7 @@
             this.tpgGraphics.Location = new System.Drawing.Point(4, 22);
             this.tpgGraphics.Name = "tpgGraphics";
             this.tpgGraphics.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgGraphics.Size = new System.Drawing.Size(396, 487);
+            this.tpgGraphics.Size = new System.Drawing.Size(396, 579);
             this.tpgGraphics.TabIndex = 5;
             this.tpgGraphics.Text = "Graphics";
             this.tpgGraphics.UseVisualStyleBackColor = true;
@@ -2008,7 +2156,7 @@
             this.tpgMisc.Location = new System.Drawing.Point(4, 22);
             this.tpgMisc.Name = "tpgMisc";
             this.tpgMisc.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgMisc.Size = new System.Drawing.Size(396, 487);
+            this.tpgMisc.Size = new System.Drawing.Size(396, 579);
             this.tpgMisc.TabIndex = 7;
             this.tpgMisc.Text = "Misc";
             this.tpgMisc.UseVisualStyleBackColor = true;
@@ -2087,7 +2235,7 @@
             this.tpgHotkeys.Location = new System.Drawing.Point(4, 22);
             this.tpgHotkeys.Name = "tpgHotkeys";
             this.tpgHotkeys.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgHotkeys.Size = new System.Drawing.Size(396, 487);
+            this.tpgHotkeys.Size = new System.Drawing.Size(396, 579);
             this.tpgHotkeys.TabIndex = 3;
             this.tpgHotkeys.Text = "Hotkeys";
             this.tpgHotkeys.UseVisualStyleBackColor = true;
@@ -2191,7 +2339,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(425, 569);
+            this.ClientSize = new System.Drawing.Size(425, 661);
             this.Controls.Add(this.llbUpdate);
             this.Controls.Add(this.lblUpdate);
             this.Controls.Add(this.lblLoadedValue);
@@ -2227,6 +2375,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudStoredZ)).EndInit();
             this.gbxStatus.ResumeLayout(false);
             this.gbxStatus.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudChrType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTeamType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudInvadeType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudStaminaMax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudStamina)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHealthMax)).EndInit();
@@ -2425,6 +2576,18 @@
         private System.Windows.Forms.TextBox txtEventFlag;
         private System.Windows.Forms.Label lblEventID;
 		private System.Windows.Forms.FlowLayoutPanel flpHotkeyControls;
-	}
+        private System.Windows.Forms.Label lblTeamType;
+        private System.Windows.Forms.Label lblChrType;
+        private System.Windows.Forms.NumericUpDown nudChrType;
+        private System.Windows.Forms.NumericUpDown nudTeamType;
+        private System.Windows.Forms.NumericUpDown nudInvadeType;
+        private System.Windows.Forms.Label lblInvadeType;
+        private System.Windows.Forms.CheckBox cbxFreezeInvadeType;
+        private System.Windows.Forms.CheckBox cbxFreezeTeamType;
+        private System.Windows.Forms.CheckBox cbxFreezeChrType;
+        private System.Windows.Forms.Label lblFreezeChr;
+        private System.Windows.Forms.Label lblChrSelect;
+        private System.Windows.Forms.ComboBox cmbChrSelect;
+    }
 }
 

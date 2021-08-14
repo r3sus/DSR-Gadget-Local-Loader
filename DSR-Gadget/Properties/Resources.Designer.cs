@@ -19,7 +19,7 @@ namespace DSR_Gadget.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -446,6 +446,27 @@ namespace DSR_Gadget.Properties {
         internal static string SpellTools {
             get {
                 return ResourceManager.GetString("SpellTools", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 0 1 Human
+        ///8 4 Hollow
+        ///2 16 Red Phantom
+        ///2 3 Red Phantom (Team)
+        ///1 2 White Phantom
+        ///2 17 Blue Phantom
+        ///2 18 Path of the Dragon
+        ///13 16 Arena FFA
+        ///13 17 Arena Team 1
+        ///13 18 Arena Team 2
+        ///
+        ///
+        ///.
+        /// </summary>
+        internal static string Teams {
+            get {
+                return ResourceManager.GetString("Teams", resourceCulture);
             }
         }
         

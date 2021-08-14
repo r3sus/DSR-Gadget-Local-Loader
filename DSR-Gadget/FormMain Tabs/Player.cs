@@ -23,6 +23,8 @@ namespace DSR_Gadget
             foreach (DSRBonfire bonfire in DSRBonfire.All)
                 cmbBonfire.Items.Add(bonfire);
             cmbBonfire.SelectedIndex = 0;
+            foreach (DSRTeam team in DSRTeam.All)
+                cmbChrSelect.Items.Add(team);
             nudSpeed.Value = settings.AnimSpeed;
         }
 
@@ -59,6 +61,21 @@ namespace DSR_Gadget
             nudHealthMax.Value = Hook.HealthMax;
             nudStamina.Value = Hook.Stamina;
             nudStaminaMax.Value = Hook.StaminaMax;
+
+            if (cbxFreezeChrType.Checked)
+                Hook.ChrType = (int)nudChrType.Value;
+            else
+                nudChrType.Value = Hook.ChrType;
+
+            if (cbxFreezeTeamType.Checked)
+                Hook.TeamType = (int)nudTeamType.Value;
+            else
+                nudTeamType.Value = Hook.TeamType;
+
+            if (cbxFreezeInvadeType.Checked)
+                Hook.InvadeType = (byte)nudInvadeType.Value;
+            else
+                nudInvadeType.Value = Hook.InvadeType;
 
             try
             {
@@ -114,6 +131,28 @@ namespace DSR_Gadget
                 else
                     cmbBonfire.SelectedItem = thisBonfire;
             }
+            
+            if (!cmbChrSelect.DroppedDown)
+            {
+                int ChrType = Hook.ChrType;
+                int TeamType = Hook.TeamType;
+                bool found = false;
+                foreach (DSRTeam item in cmbChrSelect.Items)
+                {
+                    if (item.ChrType == ChrType && item.TeamType == TeamType)
+                    {
+                        cmbChrSelect.SelectedItem = item;
+                        found = true;
+                    }
+                }
+                if (!found)
+                {
+                    DSRTeam item = new DSRTeam("Unknown", ChrType, TeamType);
+                    cmbChrSelect.Items.Add(item);
+                    cmbChrSelect.SelectedItem = item;
+                }
+            }
+
         }
 
         private void nudHealth_ValueChanged(object sender, EventArgs e)
@@ -126,6 +165,34 @@ namespace DSR_Gadget
         {
             if (loaded && !reading)
                 Hook.Stamina = (int)nudStamina.Value;
+        }
+
+        private void nudChrType_ValueChanged(object sender, EventArgs e)
+        {
+            if (loaded && !reading)
+                Hook.ChrType = (int)nudChrType.Value;
+        }
+
+        private void nudTeamType_ValueChanged(object sender, EventArgs e)
+        {
+            if (loaded && !reading)
+                Hook.TeamType = (int)nudTeamType.Value;
+        }
+
+        private void nudInvadeType_ValueChanged(object sender, EventArgs e)
+        {
+            if (loaded && !reading)
+                Hook.InvadeType = (byte)nudInvadeType.Value;
+        }
+
+        private void cmbChrSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (loaded && !reading)
+            {
+                DSRTeam item = cmbChrSelect.SelectedItem as DSRTeam;
+                Hook.ChrType = item.ChrType;
+                Hook.TeamType = item.TeamType;
+            }
         }
 
         private void btnPosStore_Click(object sender, EventArgs e)

@@ -96,6 +96,7 @@
     </Compile>
     <Compile Include="GadgetHotkey.cs" />
     <Compile Include="List Items\DSRBonfire.cs" />
+    <Compile Include="List Items\DSRTeam.cs" />
     <Compile Include="List Items\DSRClass.cs" />
     <Compile Include="List Items\DSRInfusion.cs" />
     <Compile Include="List Items\DSRItem.cs" />
@@ -136,6 +137,7 @@
     <Content Include="Resources\Assembly\BonfireWarp.txt" />
     <Content Include="Resources\Assembly\GetItem.txt" />
     <Content Include="Resources\Assembly\LevelUp.txt" />
+    <Content Include="Resources\Teams.txt" />
     <None Include="Resources\Bonfires.txt" />
     <None Include="Resources\Classes.txt" />
     <None Include="Resources\Items\UsableItems.txt" />

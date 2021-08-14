@@ -127,6 +127,12 @@ namespace DSR_Gadget
             set => ChrData1.WriteInt32((int)DSROffsets.ChrData1.TeamType + Offsets.ChrData1Boost2, value);
         }
 
+        public byte InvadeType
+        {
+            get => PlayerGameData.ReadByte((int)DSROffsets.PlayerGameData.InvadeType);
+            set => PlayerGameData.WriteByte((int)DSROffsets.PlayerGameData.InvadeType, value);
+        }
+
         public int MPAreaID
         {
             get => ChrData1.ReadInt32((int)DSROffsets.ChrData1.MPAreaID + Offsets.ChrData1Boost2);
