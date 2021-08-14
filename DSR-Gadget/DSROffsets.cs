@@ -64,7 +64,11 @@ namespace DSR_Gadget
         public enum ChrData1
         {
             ChrMapData = 0x48,
+            ChrType = 0xC4,
+            TeamType = 0xC8,
             ChrFlags1 = 0x284,
+            MPAreaID = 0x344,
+            AreaID = 0x348,
             Health = 0x3D8,
             MaxHealth = 0x3DC,
             Stamina = 0x3E8,
@@ -169,10 +173,16 @@ namespace DSR_Gadget
             MenuKick = 0x24C,
         }
 
-        public const string ChrClassBaseAOB = "48 8B 05 ? ? ? ? 48 85 C0 ? ? F3 0F 58 80 AC 00 00 00";
-        public const int ChrData2Offset1 = 0;
-        public const int ChrData2Offset2 = 0x10;
-        public enum ChrData2
+        public const string GameDataManAOB = "48 8B 05 ? ? ? ? 48 85 C0 ? ? F3 0F 58 80 AC 00 00 00";
+        public const int GameDataManOffset1 = 0;
+        public enum GameDataMan
+        {
+            PlayerGameData = 0x10,
+            BloodstainPos = 0x40,
+            PlayTime = 0xA4,
+        }
+
+        public enum PlayerGameData
         {
             Vitality = 0x40,
             Attunement = 0x48,
@@ -187,6 +197,72 @@ namespace DSR_Gadget
             Souls = 0x94,
             Gender = 0xCA,
             Class = 0xCE,
+
+            InvadeType = 0x118,
+            WeaponMemory = 0x119,
+            NameString1 = 0xA8,
+
+            WarriorOfSunlight = 0xED,
+            DarkWraith = 0xEE,
+            PathOfTheDragon = 0xEF,
+            GravelordServant = 0xF0,
+            ForestHunter = 0xF1,
+            DarkmoonBlade = 0xF2,
+            ChaosServant = 0xF3,
+            CurrentCovenant = 0x113,
+
+            NameString2 = 0x12C,
+
+            LeftWep1 = 0x324,
+            RightWep1 = 0x328,
+            LeftWep2 = 0x32C,
+            RightWep2 = 0x330,
+            Arrow1 = 0x334,
+            Bolt1 = 0x338,
+            Arrow2 = 0x33C,
+            Bolt2 = 0x340,
+            ArmorHead = 0x344,
+            ArmorChest = 0x348,
+            ArmorHands = 0x34C,
+            ArmorLegs = 0x350,
+            Hair = 0x354,
+            Ring1 = 0x358,
+            Ring2 = 0x35C,
+            QuickBar1 = 0x360,
+            QuickBar2 = 0x364,
+            QuickBar3 = 0x368,
+            QuickBar4 = 0x36C,
+            QuickBar5 = 0x370,
+
+            EquipMagicData = 0x418,
+            GestureEquipData = 0x450,
+            GestureGameData = 0x568,
+        }
+
+        public enum GestureGameData
+        {
+            PointForward = 0x10,
+            PointUp = 0x14,
+            PointDown = 0x18,
+            Beckon = 0x1C,
+            Wave = 0x20,
+            Bow = 0x24,
+            ProperBow = 0x28,
+            Hurrah = 0x2C,
+            Joy = 0x30,
+            Shrug = 0x34,
+            LookSkyward = 0x38,
+            WellWhatIsIt = 0x3C,
+            Prostration = 0x40,
+            Prayer = 0x44,
+            PraiseTheSun = 0x48,
+        }
+
+        public enum BloodstainPos
+        {
+            PoxX = 0x0,
+            PosY = 0x4,
+            PosZ = 0x8,
         }
 
         public const string EventFlagsAOB = "48 8B 0D ? ? ? ? 99 33 C2 45 33 C0 2B C2 8D 50 F6";
