@@ -28,6 +28,9 @@ namespace DSR_Gadget
         private PHPointer MenuMan;
         private PHPointer EventFlags;
 
+        private PHPointer DurabilityAddr;
+        private PHPointer DurabilitySpecialAddr;
+
         public DSRHook(int refreshInterval, int minLifetime) :
             base(refreshInterval, minLifetime, p => p.MainWindowTitle == "DARK SOULS™: REMASTERED")
         {
@@ -51,6 +54,9 @@ namespace DSR_Gadget
             ChrPosData = CreateBasePointer(IntPtr.Zero);
             PlayerGameData = CreateChildPointer(GameDataManBasePtr, DSROffsets.GameDataManOffset1, (int)DSROffsets.GameDataMan.PlayerGameData);
             LastBloodstainPos = CreateChildPointer(GameDataManBasePtr, DSROffsets.GameDataManOffset1, (int)DSROffsets.GameDataMan.LastBloodstainPos);
+
+            DurabilityAddr = RegisterAbsoluteAOB(DSROffsets.DurabilityAOB);
+            DurabilitySpecialAddr = RegisterAbsoluteAOB(DSROffsets.DurabilitySpecialAOB);
 
             OnHooked += DSRHook_OnHooked;
         }
@@ -417,6 +423,55 @@ namespace DSR_Gadget
         {
             set => ChrDbgAddr.WriteBoolean((int)DSROffsets.ChrDbg.AllNoUpdateAI, value);
         }
+
+        private byte[] DurabilityOnBytes = { 0x41, 0x8D, 0x01, 0x90, 0x90, 0x90, 0x90};
+        private byte[] DurabilityOffBytes = { 0x41, 0x8D, 0x41, 0xFF, 0x45, 0x8B, 0xC3 };
+
+        public bool Durability
+        {
+            set
+            {
+                if (value)
+                {
+                    DurabilityAddr.WriteBytes(0x0, DurabilityOnBytes);
+                }
+                else
+                {
+                    DurabilityAddr.WriteBytes(0x0, DurabilityOffBytes);
+                }
+
+            }
+
+            get
+            {
+                return DurabilityAddr.ReadBytes(0, 7).Equals(DurabilityOnBytes);
+            }
+        }
+
+        private byte[] DurabilitySpecialOnBytes = { 0x49, 0x03, 0x49, 0x38, 0x90, 0x90, 0x90, 0x90};
+        private byte[] DurabilitySpecialOffBytes = { 0x49, 0x03, 0x49, 0x38, 0x44, 0x89, 0x41, 0x14 };
+        public bool DurabilitySpecial
+        {
+            set
+            {
+                if (value)
+                {
+                    DurabilitySpecialAddr.WriteBytes(0x0, DurabilitySpecialOnBytes);
+                }
+                else
+                {
+                    DurabilitySpecialAddr.WriteBytes(0x0, DurabilitySpecialOffBytes);
+                }
+
+            }
+
+            get
+            {
+                return DurabilitySpecialAddr.ReadBytes(0, 8).Equals(DurabilitySpecialOnBytes);
+            }
+        }
+
+
         #endregion
 
         #region Graphics

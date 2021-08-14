@@ -37,6 +37,10 @@ namespace DSR_Gadget
                 Hook.AllNoMove = false;
             if (cbxAllNoUpdateAI.Checked)
                 Hook.AllNoUpdateAI = false;
+            if (cbxInfDurability.Checked)
+                Hook.Durability = false;
+            if (cbxInfDurabilitySpecial.Checked)
+                Hook.DurabilitySpecial = false;
 
             if (loaded)
             {
@@ -95,6 +99,10 @@ namespace DSR_Gadget
                 Hook.AllNoMove = true;
             if (cbxAllNoUpdateAI.Checked)
                 Hook.AllNoUpdateAI = true;
+            if (cbxInfDurability.Checked)
+                Hook.Durability = true;
+            if (cbxInfDurabilitySpecial.Checked)
+                Hook.DurabilitySpecial = true;
         }
 
         private void updateCheats()
@@ -201,6 +209,16 @@ namespace DSR_Gadget
         private void cbxAllNoUpdateAI_CheckedChanged(object sender, EventArgs e)
         {
             Hook.AllNoUpdateAI = cbxAllNoUpdateAI.Checked;
+        }
+
+        private void cbxInfDurability_CheckedChanged(object sender, EventArgs e)
+        {
+            Hook.Durability = cbxInfDurability.Checked;
+        }
+
+        private void cbxInfDurabilitySpecial_CheckedChanged(object sender, EventArgs e)
+        {
+            Hook.DurabilitySpecial = cbxInfDurabilitySpecial.Checked;
         }
     }
 }

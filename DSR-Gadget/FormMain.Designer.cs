@@ -136,6 +136,8 @@
             this.cmbCategory = new System.Windows.Forms.ComboBox();
             this.lblCategory = new System.Windows.Forms.Label();
             this.tpgCheats = new System.Windows.Forms.TabPage();
+            this.gbxCheatOther = new System.Windows.Forms.GroupBox();
+            this.cbxInfDurability = new System.Windows.Forms.CheckBox();
             this.gbxCheatEnemy = new System.Windows.Forms.GroupBox();
             this.cbxAllNoUpdateAI = new System.Windows.Forms.CheckBox();
             this.cbxAllNoMove = new System.Windows.Forms.CheckBox();
@@ -198,6 +200,7 @@
             this.tmrUpdate = new System.Windows.Forms.Timer(this.components);
             this.lblUpdate = new System.Windows.Forms.Label();
             this.llbUpdate = new System.Windows.Forms.LinkLabel();
+            this.cbxInfDurabilitySpecial = new System.Windows.Forms.CheckBox();
             this.tclMain.SuspendLayout();
             this.tpgPlayer.SuspendLayout();
             this.gbxOther.SuspendLayout();
@@ -238,6 +241,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudUpgrade)).BeginInit();
             this.tpgCheats.SuspendLayout();
+            this.gbxCheatOther.SuspendLayout();
             this.gbxCheatEnemy.SuspendLayout();
             this.cbxCheatAll.SuspendLayout();
             this.gbxCheatPlayer.SuspendLayout();
@@ -1666,6 +1670,7 @@
             // 
             // tpgCheats
             // 
+            this.tpgCheats.Controls.Add(this.gbxCheatOther);
             this.tpgCheats.Controls.Add(this.gbxCheatEnemy);
             this.tpgCheats.Controls.Add(this.cbxCheatAll);
             this.tpgCheats.Controls.Add(this.gbxCheatPlayer);
@@ -1676,6 +1681,28 @@
             this.tpgCheats.TabIndex = 4;
             this.tpgCheats.Text = "Cheats";
             this.tpgCheats.UseVisualStyleBackColor = true;
+            // 
+            // gbxCheatOther
+            // 
+            this.gbxCheatOther.Controls.Add(this.cbxInfDurabilitySpecial);
+            this.gbxCheatOther.Controls.Add(this.cbxInfDurability);
+            this.gbxCheatOther.Location = new System.Drawing.Point(6, 350);
+            this.gbxCheatOther.Name = "gbxCheatOther";
+            this.gbxCheatOther.Size = new System.Drawing.Size(384, 100);
+            this.gbxCheatOther.TabIndex = 3;
+            this.gbxCheatOther.TabStop = false;
+            this.gbxCheatOther.Text = "Other";
+            // 
+            // cbxInfDurability
+            // 
+            this.cbxInfDurability.AutoSize = true;
+            this.cbxInfDurability.Location = new System.Drawing.Point(6, 19);
+            this.cbxInfDurability.Name = "cbxInfDurability";
+            this.cbxInfDurability.Size = new System.Drawing.Size(103, 17);
+            this.cbxInfDurability.TabIndex = 0;
+            this.cbxInfDurability.Text = "Infinite Durability";
+            this.cbxInfDurability.UseVisualStyleBackColor = true;
+            this.cbxInfDurability.CheckedChanged += new System.EventHandler(this.cbxInfDurability_CheckedChanged);
             // 
             // gbxCheatEnemy
             // 
@@ -2461,6 +2488,17 @@
             this.llbUpdate.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.llbUpdate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbUpdate_LinkClicked);
             // 
+            // cbxInfDurabilitySpecial
+            // 
+            this.cbxInfDurabilitySpecial.AutoSize = true;
+            this.cbxInfDurabilitySpecial.Location = new System.Drawing.Point(6, 42);
+            this.cbxInfDurabilitySpecial.Name = "cbxInfDurabilitySpecial";
+            this.cbxInfDurabilitySpecial.Size = new System.Drawing.Size(122, 17);
+            this.cbxInfDurabilitySpecial.TabIndex = 1;
+            this.cbxInfDurabilitySpecial.Text = "Infinite Durability Sp.";
+            this.cbxInfDurabilitySpecial.UseVisualStyleBackColor = true;
+            this.cbxInfDurabilitySpecial.CheckedChanged += new System.EventHandler(this.cbxInfDurabilitySpecial_CheckedChanged);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2526,6 +2564,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudUpgrade)).EndInit();
             this.tpgCheats.ResumeLayout(false);
             this.tpgCheats.PerformLayout();
+            this.gbxCheatOther.ResumeLayout(false);
+            this.gbxCheatOther.PerformLayout();
             this.gbxCheatEnemy.ResumeLayout(false);
             this.gbxCheatEnemy.PerformLayout();
             this.cbxCheatAll.ResumeLayout(false);
@@ -2725,6 +2765,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnTeleportInitialPosition;
         private System.Windows.Forms.Button btnTeleportBloodstain;
+        private System.Windows.Forms.GroupBox gbxCheatOther;
+        private System.Windows.Forms.CheckBox cbxInfDurability;
+        private System.Windows.Forms.CheckBox cbxInfDurabilitySpecial;
     }
 }
 

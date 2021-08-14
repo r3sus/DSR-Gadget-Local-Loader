@@ -278,6 +278,9 @@ namespace DSR_Gadget
 
         public const string BonfireWarpAOB = "48 89 5C 24 08 57 48 83 EC 20 48 8B D9 8B FA 48 8B 49 08 48 85 C9 0F 84 ? ? ? ? E8 ? ? ? ? 48 8B 4B 08";
 
+        public const string DurabilityAOB = "41 8D 41 FF 45 8B C3 45 33 C9";
+        public const string DurabilitySpecialAOB = "49 03 49 38 44 89 41 14 C3 32 C0";
+
         public static DSROffsets GetOffsets(int moduleSize)
         {
             DSROffsets result = new DSROffsets();
