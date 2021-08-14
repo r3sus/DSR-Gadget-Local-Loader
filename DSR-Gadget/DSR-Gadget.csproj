@@ -96,6 +96,7 @@
     </Compile>
     <Compile Include="GadgetHotkey.cs" />
     <Compile Include="List Items\DSRBonfire.cs" />
+    <Compile Include="List Items\DSRArea.cs" />
     <Compile Include="List Items\DSRInvasion.cs" />
     <Compile Include="List Items\DSRTeam.cs" />
     <Compile Include="List Items\DSRClass.cs" />
@@ -140,6 +141,7 @@
     <Content Include="Resources\Assembly\LevelUp.txt" />
     <Content Include="Resources\Invasions.txt" />
     <Content Include="Resources\Teams.txt" />
+    <Content Include="Resources\Areas.txt" />
     <None Include="Resources\Bonfires.txt" />
     <None Include="Resources\Classes.txt" />
     <None Include="Resources\Items\UsableItems.txt" />

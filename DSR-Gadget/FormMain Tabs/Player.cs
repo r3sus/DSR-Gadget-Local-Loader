@@ -29,6 +29,13 @@ namespace DSR_Gadget
             foreach (DSRInvasion invasion in DSRInvasion.All)
                 cmbInvasionSelect.Items.Add(invasion);
             cmbInvasionSelect.SelectedIndex = 0;
+            foreach (DSRArea area in DSRArea.All)
+            {
+                cmbMPAreaID.Items.Add(area);
+                cmbAreaID.Items.Add(area);
+            }
+            cmbMPAreaID.SelectedIndex = 0;
+            cmbAreaID.SelectedIndex = 0;
             nudSpeed.Value = settings.AnimSpeed;
         }
 
@@ -112,74 +119,15 @@ namespace DSR_Gadget
             if (cbxSpeed.Checked)
                 Hook.AnimSpeed = (float)nudSpeed.Value;
 
-            int bonfireID = Hook.LastBonfire;
-            DSRBonfire lastBonfire = cmbBonfire.SelectedItem as DSRBonfire;
-            if (!cmbBonfire.DroppedDown && bonfireID != lastBonfire.ID && !unknownBonfires.Contains(bonfireID))
-            {
-                DSRBonfire thisBonfire = null;
-                foreach (object item in cmbBonfire.Items)
-                {
-                    DSRBonfire bonfire = item as DSRBonfire;
-                    if (bonfireID == bonfire.ID)
-                    {
-                        thisBonfire = bonfire;
-                        break;
-                    }
-                }
+            updateBonfire(cmbBonfire, Hook.LastBonfire);
 
-                if (thisBonfire == null)
-                {
-                    unknownBonfires.Add(bonfireID);
-                    MessageBox.Show("Unknown bonfire ID, please report me: " + bonfireID, "Unknown Bonfire");
-                }
-                else
-                    cmbBonfire.SelectedItem = thisBonfire;
-            }
+            updateTeam(cmbChrSelect, Hook.ChrType, Hook.TeamType);
 
-            int chrType = Hook.ChrType;
-            int teamType = Hook.TeamType;
-            DSRTeam lastTeam = cmbChrSelect.SelectedItem as DSRTeam;
-            if (!cmbChrSelect.DroppedDown && (lastTeam.ChrType != chrType || lastTeam.TeamType != teamType))
-            {
-                bool found = false;
-                foreach (DSRTeam item in cmbChrSelect.Items)
-                {
-                    if (item.ChrType == chrType && item.TeamType == teamType)
-                    {
-                        cmbChrSelect.SelectedItem = item;
-                        found = true;
-                        break;
-                    }
-                }
-                if (!found)
-                {
-                    DSRTeam item = new DSRTeam("Unknown", chrType, teamType);
-                    cmbChrSelect.Items.Add(item);
-                    cmbChrSelect.SelectedItem = item;
-                }
-            }
+            updateInvadeType(cmbInvasionSelect, Hook.InvadeType);
 
-            byte invadeType = Hook.InvadeType;
-            DSRInvasion lastInvasion = cmbInvasionSelect.SelectedItem as DSRInvasion;
-            if (!cmbInvasionSelect.DroppedDown && lastInvasion.InvadeType != invadeType)
-            {
-                bool found = false;
-                foreach (DSRInvasion item in cmbInvasionSelect.Items)
-                {
-                    if (item.InvadeType == invadeType)
-                    {
-                        cmbInvasionSelect.SelectedItem = item;
-                        found = true;
-                        break;
-                    }
-                }
-                if (!found)
-                {
-                    DSRInvasion item = new DSRInvasion("Unknown", invadeType);
-                    cmbInvasionSelect.Items.Add(item);
-                    cmbInvasionSelect.SelectedItem = item;
-                }
-            }
+            updateAreaID(cmbMPAreaID, Hook.MPAreaID);
+            updateAreaID(cmbAreaID, Hook.AreaID);
+
         }
 
         private void nudHealth_ValueChanged(object sender, EventArgs e)
@@ -228,6 +176,24 @@ namespace DSR_Gadget
             {
                 DSRInvasion item = cmbInvasionSelect.SelectedItem as DSRInvasion;
                 Hook.InvadeType = item.InvadeType;
+            }
+        }
+
+        private void cmbMPAreaID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (loaded && !reading)
+            {
+                DSRArea item = cmbMPAreaID.SelectedItem as DSRArea;
+                Hook.MPAreaID = item.AreaID;
+            }
+        }
+
+        private void cmbAreaID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (loaded && !reading)
+            {
+                DSRArea item = cmbAreaID.SelectedItem as DSRArea;
+                Hook.AreaID = item.AreaID;
             }
         }
 
@@ -327,6 +293,126 @@ namespace DSR_Gadget
         private float degreeToAngle(decimal degree)
         {
             return (float)((double)degree / 360 * (Math.PI * 2) - Math.PI);
+        }
+
+        private void updateBonfire(ComboBox cmbBonfire, int bonfireID)
+        {
+            DSRBonfire lastBonfire = cmbBonfire.SelectedItem as DSRBonfire;
+            if (!cmbBonfire.DroppedDown && bonfireID != lastBonfire.ID && !unknownBonfires.Contains(bonfireID))
+            {
+                DSRBonfire thisBonfire = null;
+                foreach (object item in cmbBonfire.Items)
+                {
+                    DSRBonfire bonfire = item as DSRBonfire;
+                    if (bonfireID == bonfire.ID)
+                    {
+                        thisBonfire = bonfire;
+                        break;
+                    }
+                }
+
+                if (thisBonfire == null)
+                {
+                    unknownBonfires.Add(bonfireID);
+                    MessageBox.Show("Unknown bonfire ID, please report me: " + bonfireID, "Unknown Bonfire");
+                }
+                else
+                    cmbBonfire.SelectedItem = thisBonfire;
+            }
+        }
+
+        private void updateTeam(ComboBox cmbChrSelect, int chrType, int teamType)
+        {
+            DSRTeam lastTeam = cmbChrSelect.SelectedItem as DSRTeam;
+            if (!cmbChrSelect.DroppedDown && (lastTeam.ChrType != chrType || lastTeam.TeamType != teamType))
+            {
+                bool found = false;
+                foreach (DSRTeam item in cmbChrSelect.Items)
+                {
+                    if (item.ChrType == chrType && item.TeamType == teamType)
+                    {
+                        cmbChrSelect.SelectedItem = item;
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found)
+                {
+                    DSRTeam item = new DSRTeam("Unknown", chrType, teamType);
+                    cmbChrSelect.Items.Add(item);
+                    cmbChrSelect.SelectedItem = item;
+                }
+            }
+        }
+
+        private void updateInvadeType(ComboBox cmbInvasionSelect, byte invadeType)
+        {
+            DSRInvasion lastInvasion = cmbInvasionSelect.SelectedItem as DSRInvasion;
+            if (!cmbInvasionSelect.DroppedDown && lastInvasion.InvadeType != invadeType)
+            {
+                bool found = false;
+                foreach (DSRInvasion item in cmbInvasionSelect.Items)
+                {
+                    if (item.InvadeType == invadeType)
+                    {
+                        cmbInvasionSelect.SelectedItem = item;
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found)
+                {
+                    DSRInvasion item = new DSRInvasion("Unknown", invadeType);
+                    cmbInvasionSelect.Items.Add(item);
+                    cmbInvasionSelect.SelectedItem = item;
+                }
+            }
+        }
+        private void updateAreaID(ComboBox cmbAreaID, int areaID)
+        {
+            DSRArea lastAreaID = cmbAreaID.SelectedItem as DSRArea;
+            if (cbxFreezeAreaID.Checked)
+            {
+                //cmbAreaID.DropDownStyle = ComboBoxStyle.DropDown;
+                if (lastAreaID != null)
+                    Hook.AreaID = lastAreaID.AreaID;
+                /*
+                else
+                {
+                    try
+                    {
+                        Hook.AreaID = Convert.ToInt32(lastAreaIDItem.ToString());
+                    }
+                    catch
+                    {
+                        cmbAreaID.SelectedItem = Hook.AreaID;
+                    }
+                }
+                */
+            }
+            else
+            {
+                //cmbAreaID.DropDownStyle = ComboBoxStyle.DropDownList;
+                if (!cmbAreaID.DroppedDown && lastAreaID.AreaID != areaID)
+                {
+                    bool found = false;
+                    foreach (DSRArea item in cmbAreaID.Items)
+                    {
+                        if (item.AreaID == areaID)
+                        {
+                            cmbAreaID.SelectedItem = item;
+                            found = true;
+                            break;
+                        }
+                    }
+                    if (!found)
+                    {
+                        DSRArea item = new DSRArea(areaID.ToString(), areaID);
+                        cmbAreaID.Items.Add(item);
+                        cmbAreaID.SelectedItem = item;
+                    }
+                }
+            }
         }
     }
 }

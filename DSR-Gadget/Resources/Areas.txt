@@ -1,0 +1,108 @@
+﻿100000 Depths #1 (beginning of level)
+100001 Depths #2 (near bonfire key)
+100010 Depths #3 (near channeler)
+100011 Depths #4 (blighttown door)
+101000 Undead Burg #1 (outside sewer)
+101010 Undead Burg #2 (outside bonfire)
+101011 Undead Burg #3 (taurus fog gate)
+101100 Lower Undead Burg #1 (near ladder entrance)
+101101 Lower Undead Burg #2 (capra fog gate)
+101200 Undead Parish #1 (dragon bridge)
+101210 Undead Parish #2 (gargoyle fog gate)
+102000 Firelink Shrine #1
+110000 Painted World of Ariamis #1 (bridge start of level)
+110010 Painted World of Ariamis #2
+110001 Painted World of Ariamis #3 (red sign soapstone)
+110011 Painted World of Ariamis #4
+120000 Darkroot Garden #1 (titanite demon room)
+120001 Darkroot Basin #1
+120010 Darkroot Garden #2 (butterfly tower)
+120011 Darkroot Garden #3 (path to wolf ring)
+120100 Darkroot Forest #1 (forest door)
+120101 Darkroot Forest #2 (bridge near sif)
+121000 Sanctuary Garden #1 (near bonfire)
+121100 Royal Wood #1 (bridge start of level)
+121101 Royal Wood #2 (artorias fog gate)
+121102 Royal Wood #3
+121200 Oolacile Township #1 (near bonfire)
+121201 Oolacile Township #2 (near chained prisoner)
+121210 Chasm of the Abyss #1 (top of bridge to manus)
+121340 Manus Boss Room (Area)
+121350 Sanctuary Guardian Boss Room (Wood)
+130000 The Catacombs #1
+130010 The Catacombs #2
+130011 The Catacombs #3
+131000 Tomb of the Giants #1
+131001 Tomb of the Giants #2
+131010 Tomb of the Giants #3
+131011 Tomb of the Giants #4
+131012 Tomb of the Giants #5
+131013 Tomb of the Giants #6
+132000 Ash Lake #1
+140000 Blighttown #1 (blighttown door)
+140001 Blighttown #2
+140002 Blighttown #3
+140010 Blighttown #4
+140012 Blighttown #5 (near great hollow)
+140011 Blighttown #6 (quelaag fog gate)
+140013 Blighttown #7 (valley of the drakes fog gate)
+141000 Demon Ruins #1
+141100 Demon Ruins #2
+141200 Demon Ruins #3
+141300 Lost Izalith #1 (above illusory wall bonfire)
+141301 Lost Izalith #2 (bed of chaos fog gate)
+150000 Sen's Fortress #1
+150011 Sen's Fortress #2
+150001 Sen's Fortress #3
+150010 Sen's Fortress #4
+150012 Sen's Fortress #5 (pendulum beam)
+150020 Sen's Fortress #6 (roof)
+150021 Sen's Fortress #7 (iron golem fog gate)
+151000 Anor Londo #1 (first gargoyle)
+151010 Anor Londo #2 (main entrance doors)
+151011 Anor Londo #3 (before silver knight archers)
+151020 Anor Londo #4 (Solaire bonfire)
+151021 Anor Londo #5 (roof)
+151022 Anor Londo #6 (O&S fog gate)
+160100 New Londo Ruins #1 (firelink elevator)
+160101 New Londo Ruins #2 (building 1 near banshee)
+160110 New Londo Ruins #3 (building 2 cursbite ring)
+160111 New Londo Ruins #4 (walkway to drain lever)
+160112 New Londo Ruins #5 (wooden room near drakes)
+160120 New Londo Ruins #6 (building with wooden rooms)
+160121 New Londo Ruins #7 (four kings fog gate)
+170000 The Duke's Archives #1
+170001 The Duke's Archives #2
+170010 The Duke's Archives #3
+170011 Crystal Cave #1
+180000 Kiln of the First Flame #1 (level entrance)
+180001 Kiln of the First Flame #2 (second black knight)
+180002 Kiln of the First Flame #3 (gwyn fog gate)
+181100 Undead Asylum #1
+-1 Gwyndolin Boss Room
+-2 Non Invadeable Area
+-12 Gaping Dragon Boss Room
+-13 Gargoyles Boss Room
+-14 Crossbreed Priscilla Boss Room
+-15 Sif Boss Room
+-16 Pinwheel Boss Room
+-17 Gravelord Nito Boss Room
+-19 Quelaag Boss Room
+-20 Bed of Chaos Boss Room
+-21 Iron Golem Boss Room
+-22 O&S Boss Room
+-23 Four Kings Boss Room
+-24 Seath Boss Room
+-25 Gwyn Boss Room
+-26 Asylum Demon Boss Room
+-11010911 Taurus Demon Boss Room
+-11010912 Capra Demon Boss Room
+-11200910 Moonlight Butterfly Boss Room
+-11210010 Sanctuary Guardian Boss Room
+-11210011 Artorias Boss Room
+-11210012 Manus Boss Room
+-11210014 Kalameet Boss Room
+-11410420 Demon Firesage Boss Room
+-11410910 Ceaseless Discharge Boss Room
+-11410911 Centipede Demon Boss Room
+-11810910 Stray Demon Boss Room

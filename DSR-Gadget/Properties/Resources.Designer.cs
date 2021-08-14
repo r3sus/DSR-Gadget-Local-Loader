@@ -61,6 +61,27 @@ namespace DSR_Gadget.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 100000 Depths #1 (beginning of level)
+        ///100001 Depths #2 (near bonfire key)
+        ///100010 Depths #3 (near channeler)
+        ///100011 Depths #4 (blighttown door)
+        ///101000 Undead Burg #1 (outside sewer)
+        ///101010 Undead Burg #2 (outside bonfire)
+        ///101011 Undead Burg #3 (taurus fog gate)
+        ///101100 Lower Undead Burg #1 (near ladder entrance)
+        ///101101 Lower Undead Burg #2 (capra fog gate)
+        ///101200 Undead Parish #1 (dragon bridge)
+        ///101210 Undead Parish #2 (gargoyle fog gate)
+        ///110000 Painted World of Ariamis #1 (bridge start of level)
+        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Areas {
+            get {
+                return ResourceManager.GetString("Areas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to   10000   1 1 Catarina Helm
         ///  11000   1 1 Catarina Armor
         ///  12000   1 1 Catarina Gauntlets

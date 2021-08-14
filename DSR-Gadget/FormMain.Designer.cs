@@ -65,6 +65,13 @@
             this.lblPosX = new System.Windows.Forms.Label();
             this.btnPosRestore = new System.Windows.Forms.Button();
             this.gbxStatus = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cbxFreezeAreaID = new System.Windows.Forms.CheckBox();
+            this.cbxFreezeMPAreaID = new System.Windows.Forms.CheckBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbAreaID = new System.Windows.Forms.ComboBox();
+            this.cmbMPAreaID = new System.Windows.Forms.ComboBox();
             this.lblInvasionSelect = new System.Windows.Forms.Label();
             this.cmbInvasionSelect = new System.Windows.Forms.ComboBox();
             this.lblChrSelect = new System.Windows.Forms.Label();
@@ -757,6 +764,13 @@
             // gbxStatus
             // 
             this.gbxStatus.AutoSize = true;
+            this.gbxStatus.Controls.Add(this.label3);
+            this.gbxStatus.Controls.Add(this.cbxFreezeAreaID);
+            this.gbxStatus.Controls.Add(this.cbxFreezeMPAreaID);
+            this.gbxStatus.Controls.Add(this.label2);
+            this.gbxStatus.Controls.Add(this.label1);
+            this.gbxStatus.Controls.Add(this.cmbAreaID);
+            this.gbxStatus.Controls.Add(this.cmbMPAreaID);
             this.gbxStatus.Controls.Add(this.lblInvasionSelect);
             this.gbxStatus.Controls.Add(this.cmbInvasionSelect);
             this.gbxStatus.Controls.Add(this.lblChrSelect);
@@ -781,15 +795,80 @@
             this.gbxStatus.Controls.Add(this.nudHealth);
             this.gbxStatus.Location = new System.Drawing.Point(6, 6);
             this.gbxStatus.Name = "gbxStatus";
-            this.gbxStatus.Size = new System.Drawing.Size(384, 240);
+            this.gbxStatus.Size = new System.Drawing.Size(386, 239);
             this.gbxStatus.TabIndex = 1;
             this.gbxStatus.TabStop = false;
             this.gbxStatus.Text = "Status";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(339, 154);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(39, 13);
+            this.label3.TabIndex = 41;
+            this.label3.Text = "Freeze";
+            // 
+            // cbxFreezeAreaID
+            // 
+            this.cbxFreezeAreaID.AutoSize = true;
+            this.cbxFreezeAreaID.Location = new System.Drawing.Point(342, 202);
+            this.cbxFreezeAreaID.Name = "cbxFreezeAreaID";
+            this.cbxFreezeAreaID.Size = new System.Drawing.Size(15, 14);
+            this.cbxFreezeAreaID.TabIndex = 40;
+            this.cbxFreezeAreaID.UseVisualStyleBackColor = true;
+            // 
+            // cbxFreezeMPAreaID
+            // 
+            this.cbxFreezeMPAreaID.AutoSize = true;
+            this.cbxFreezeMPAreaID.Location = new System.Drawing.Point(342, 176);
+            this.cbxFreezeMPAreaID.Name = "cbxFreezeMPAreaID";
+            this.cbxFreezeMPAreaID.Size = new System.Drawing.Size(15, 14);
+            this.cbxFreezeMPAreaID.TabIndex = 39;
+            this.cbxFreezeMPAreaID.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(44, 202);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 13);
+            this.label2.TabIndex = 38;
+            this.label2.Text = "Area";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(25, 176);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(48, 13);
+            this.label1.TabIndex = 37;
+            this.label1.Text = "MP Area";
+            // 
+            // cmbAreaID
+            // 
+            this.cmbAreaID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbAreaID.FormattingEnabled = true;
+            this.cmbAreaID.Location = new System.Drawing.Point(79, 199);
+            this.cmbAreaID.Name = "cmbAreaID";
+            this.cmbAreaID.Size = new System.Drawing.Size(257, 21);
+            this.cmbAreaID.TabIndex = 36;
+            this.cmbAreaID.SelectedIndexChanged += new System.EventHandler(this.cmbAreaID_SelectedIndexChanged);
+            // 
+            // cmbMPAreaID
+            // 
+            this.cmbMPAreaID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMPAreaID.FormattingEnabled = true;
+            this.cmbMPAreaID.Location = new System.Drawing.Point(79, 173);
+            this.cmbMPAreaID.Name = "cmbMPAreaID";
+            this.cmbMPAreaID.Size = new System.Drawing.Size(257, 21);
+            this.cmbMPAreaID.TabIndex = 35;
+            this.cmbMPAreaID.SelectedIndexChanged += new System.EventHandler(this.cmbMPAreaID_SelectedIndexChanged);
+            // 
             // lblInvasionSelect
             // 
             this.lblInvasionSelect.AutoSize = true;
-            this.lblInvasionSelect.Location = new System.Drawing.Point(0, 203);
+            this.lblInvasionSelect.Location = new System.Drawing.Point(167, 123);
             this.lblInvasionSelect.Name = "lblInvasionSelect";
             this.lblInvasionSelect.Size = new System.Drawing.Size(73, 13);
             this.lblInvasionSelect.TabIndex = 34;
@@ -799,7 +878,7 @@
             // 
             this.cmbInvasionSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbInvasionSelect.FormattingEnabled = true;
-            this.cmbInvasionSelect.Location = new System.Drawing.Point(79, 200);
+            this.cmbInvasionSelect.Location = new System.Drawing.Point(246, 120);
             this.cmbInvasionSelect.Name = "cmbInvasionSelect";
             this.cmbInvasionSelect.Size = new System.Drawing.Size(134, 21);
             this.cmbInvasionSelect.TabIndex = 33;
@@ -808,7 +887,7 @@
             // lblChrSelect
             // 
             this.lblChrSelect.AutoSize = true;
-            this.lblChrSelect.Location = new System.Drawing.Point(6, 176);
+            this.lblChrSelect.Location = new System.Drawing.Point(173, 97);
             this.lblChrSelect.Name = "lblChrSelect";
             this.lblChrSelect.Size = new System.Drawing.Size(67, 13);
             this.lblChrSelect.TabIndex = 32;
@@ -818,7 +897,7 @@
             // 
             this.cmbChrSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbChrSelect.FormattingEnabled = true;
-            this.cmbChrSelect.Location = new System.Drawing.Point(79, 173);
+            this.cmbChrSelect.Location = new System.Drawing.Point(246, 94);
             this.cmbChrSelect.Name = "cmbChrSelect";
             this.cmbChrSelect.Size = new System.Drawing.Size(134, 21);
             this.cmbChrSelect.TabIndex = 31;
@@ -2613,6 +2692,13 @@
         private System.Windows.Forms.ComboBox cmbChrSelect;
         private System.Windows.Forms.Label lblInvasionSelect;
         private System.Windows.Forms.ComboBox cmbInvasionSelect;
+        private System.Windows.Forms.CheckBox cbxFreezeAreaID;
+        private System.Windows.Forms.CheckBox cbxFreezeMPAreaID;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbAreaID;
+        private System.Windows.Forms.ComboBox cmbMPAreaID;
+        private System.Windows.Forms.Label label3;
     }
 }
 
