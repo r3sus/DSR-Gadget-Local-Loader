@@ -1,0 +1,21 @@
+﻿0 None
+1 White Summon
+2 Red Summon
+3 Red Invade
+7 Gravelord Invade
+10 Dragon Summon
+11 Darkmoon Invade
+12 Arena (1v1)
+13 Arena (1v1)
+14 Arena (Team)
+15 Arena (Team)
+16 Arena (Team)
+17 Arena (Team)
+18 Arena (Team)
+19 Arena (Team)
+20 Arena (FFA)
+21 Arena (FFA)
+22 Arena (FFA)
+23 Arena (FFA)
+24 Arena (FFA)
+25 Arena (FFA)

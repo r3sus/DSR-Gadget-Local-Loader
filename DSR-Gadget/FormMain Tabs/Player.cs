@@ -25,6 +25,10 @@ namespace DSR_Gadget
             cmbBonfire.SelectedIndex = 0;
             foreach (DSRTeam team in DSRTeam.All)
                 cmbChrSelect.Items.Add(team);
+            cmbChrSelect.SelectedIndex = 0;
+            foreach (DSRInvasion invasion in DSRInvasion.All)
+                cmbInvasionSelect.Items.Add(invasion);
+            cmbInvasionSelect.SelectedIndex = 0;
             nudSpeed.Value = settings.AnimSpeed;
         }
 
@@ -131,28 +135,51 @@ namespace DSR_Gadget
                 else
                     cmbBonfire.SelectedItem = thisBonfire;
             }
-            
-            if (!cmbChrSelect.DroppedDown)
+
+            int chrType = Hook.ChrType;
+            int teamType = Hook.TeamType;
+            DSRTeam lastTeam = cmbChrSelect.SelectedItem as DSRTeam;
+            if (!cmbChrSelect.DroppedDown && (lastTeam.ChrType != chrType || lastTeam.TeamType != teamType))
             {
-                int ChrType = Hook.ChrType;
-                int TeamType = Hook.TeamType;
                 bool found = false;
                 foreach (DSRTeam item in cmbChrSelect.Items)
                 {
-                    if (item.ChrType == ChrType && item.TeamType == TeamType)
+                    if (item.ChrType == chrType && item.TeamType == teamType)
                     {
                         cmbChrSelect.SelectedItem = item;
                         found = true;
+                        break;
                     }
                 }
                 if (!found)
                 {
-                    DSRTeam item = new DSRTeam("Unknown", ChrType, TeamType);
+                    DSRTeam item = new DSRTeam("Unknown", chrType, teamType);
                     cmbChrSelect.Items.Add(item);
                     cmbChrSelect.SelectedItem = item;
                 }
             }
 
+            byte invadeType = Hook.InvadeType;
+            DSRInvasion lastInvasion = cmbInvasionSelect.SelectedItem as DSRInvasion;
+            if (!cmbInvasionSelect.DroppedDown && lastInvasion.InvadeType != invadeType)
+            {
+                bool found = false;
+                foreach (DSRInvasion item in cmbInvasionSelect.Items)
+                {
+                    if (item.InvadeType == invadeType)
+                    {
+                        cmbInvasionSelect.SelectedItem = item;
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found)
+                {
+                    DSRInvasion item = new DSRInvasion("Unknown", invadeType);
+                    cmbInvasionSelect.Items.Add(item);
+                    cmbInvasionSelect.SelectedItem = item;
+                }
+            }
         }
 
         private void nudHealth_ValueChanged(object sender, EventArgs e)
@@ -192,6 +219,15 @@ namespace DSR_Gadget
                 DSRTeam item = cmbChrSelect.SelectedItem as DSRTeam;
                 Hook.ChrType = item.ChrType;
                 Hook.TeamType = item.TeamType;
+            }
+        }
+
+        private void cmbInvasionSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (loaded && !reading)
+            {
+                DSRInvasion item = cmbInvasionSelect.SelectedItem as DSRInvasion;
+                Hook.InvadeType = item.InvadeType;
             }
         }
 

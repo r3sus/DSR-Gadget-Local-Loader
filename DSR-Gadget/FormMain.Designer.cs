@@ -65,6 +65,8 @@
             this.lblPosX = new System.Windows.Forms.Label();
             this.btnPosRestore = new System.Windows.Forms.Button();
             this.gbxStatus = new System.Windows.Forms.GroupBox();
+            this.lblInvasionSelect = new System.Windows.Forms.Label();
+            this.cmbInvasionSelect = new System.Windows.Forms.ComboBox();
             this.lblChrSelect = new System.Windows.Forms.Label();
             this.cmbChrSelect = new System.Windows.Forms.ComboBox();
             this.cbxFreezeInvadeType = new System.Windows.Forms.CheckBox();
@@ -755,6 +757,8 @@
             // gbxStatus
             // 
             this.gbxStatus.AutoSize = true;
+            this.gbxStatus.Controls.Add(this.lblInvasionSelect);
+            this.gbxStatus.Controls.Add(this.cmbInvasionSelect);
             this.gbxStatus.Controls.Add(this.lblChrSelect);
             this.gbxStatus.Controls.Add(this.cmbChrSelect);
             this.gbxStatus.Controls.Add(this.cbxFreezeInvadeType);
@@ -777,25 +781,44 @@
             this.gbxStatus.Controls.Add(this.nudHealth);
             this.gbxStatus.Location = new System.Drawing.Point(6, 6);
             this.gbxStatus.Name = "gbxStatus";
-            this.gbxStatus.Size = new System.Drawing.Size(384, 236);
+            this.gbxStatus.Size = new System.Drawing.Size(384, 240);
             this.gbxStatus.TabIndex = 1;
             this.gbxStatus.TabStop = false;
             this.gbxStatus.Text = "Status";
             // 
+            // lblInvasionSelect
+            // 
+            this.lblInvasionSelect.AutoSize = true;
+            this.lblInvasionSelect.Location = new System.Drawing.Point(0, 203);
+            this.lblInvasionSelect.Name = "lblInvasionSelect";
+            this.lblInvasionSelect.Size = new System.Drawing.Size(73, 13);
+            this.lblInvasionSelect.TabIndex = 34;
+            this.lblInvasionSelect.Text = "Invade Preset";
+            // 
+            // cmbInvasionSelect
+            // 
+            this.cmbInvasionSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbInvasionSelect.FormattingEnabled = true;
+            this.cmbInvasionSelect.Location = new System.Drawing.Point(79, 200);
+            this.cmbInvasionSelect.Name = "cmbInvasionSelect";
+            this.cmbInvasionSelect.Size = new System.Drawing.Size(134, 21);
+            this.cmbInvasionSelect.TabIndex = 33;
+            this.cmbInvasionSelect.SelectedIndexChanged += new System.EventHandler(this.cmbInvasionSelect_SelectedIndexChanged);
+            // 
             // lblChrSelect
             // 
             this.lblChrSelect.AutoSize = true;
-            this.lblChrSelect.Location = new System.Drawing.Point(36, 191);
+            this.lblChrSelect.Location = new System.Drawing.Point(6, 176);
             this.lblChrSelect.Name = "lblChrSelect";
-            this.lblChrSelect.Size = new System.Drawing.Size(37, 13);
+            this.lblChrSelect.Size = new System.Drawing.Size(67, 13);
             this.lblChrSelect.TabIndex = 32;
-            this.lblChrSelect.Text = "Preset";
+            this.lblChrSelect.Text = "Team Preset";
             // 
             // cmbChrSelect
             // 
             this.cmbChrSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbChrSelect.FormattingEnabled = true;
-            this.cmbChrSelect.Location = new System.Drawing.Point(79, 188);
+            this.cmbChrSelect.Location = new System.Drawing.Point(79, 173);
             this.cmbChrSelect.Name = "cmbChrSelect";
             this.cmbChrSelect.Size = new System.Drawing.Size(134, 21);
             this.cmbChrSelect.TabIndex = 31;
@@ -804,7 +827,7 @@
             // cbxFreezeInvadeType
             // 
             this.cbxFreezeInvadeType.AutoSize = true;
-            this.cbxFreezeInvadeType.Location = new System.Drawing.Point(138, 164);
+            this.cbxFreezeInvadeType.Location = new System.Drawing.Point(138, 149);
             this.cbxFreezeInvadeType.Name = "cbxFreezeInvadeType";
             this.cbxFreezeInvadeType.Size = new System.Drawing.Size(15, 14);
             this.cbxFreezeInvadeType.TabIndex = 30;
@@ -813,7 +836,7 @@
             // cbxFreezeTeamType
             // 
             this.cbxFreezeTeamType.AutoSize = true;
-            this.cbxFreezeTeamType.Location = new System.Drawing.Point(138, 138);
+            this.cbxFreezeTeamType.Location = new System.Drawing.Point(138, 123);
             this.cbxFreezeTeamType.Name = "cbxFreezeTeamType";
             this.cbxFreezeTeamType.Size = new System.Drawing.Size(15, 14);
             this.cbxFreezeTeamType.TabIndex = 29;
@@ -822,7 +845,7 @@
             // cbxFreezeChrType
             // 
             this.cbxFreezeChrType.AutoSize = true;
-            this.cbxFreezeChrType.Location = new System.Drawing.Point(138, 112);
+            this.cbxFreezeChrType.Location = new System.Drawing.Point(138, 97);
             this.cbxFreezeChrType.Name = "cbxFreezeChrType";
             this.cbxFreezeChrType.Size = new System.Drawing.Size(15, 14);
             this.cbxFreezeChrType.TabIndex = 28;
@@ -831,7 +854,7 @@
             // lblFreezeChr
             // 
             this.lblFreezeChr.AutoSize = true;
-            this.lblFreezeChr.Location = new System.Drawing.Point(135, 96);
+            this.lblFreezeChr.Location = new System.Drawing.Point(135, 81);
             this.lblFreezeChr.Name = "lblFreezeChr";
             this.lblFreezeChr.Size = new System.Drawing.Size(39, 13);
             this.lblFreezeChr.TabIndex = 27;
@@ -840,7 +863,7 @@
             // lblInvadeType
             // 
             this.lblInvadeType.AutoSize = true;
-            this.lblInvadeType.Location = new System.Drawing.Point(6, 164);
+            this.lblInvadeType.Location = new System.Drawing.Point(6, 149);
             this.lblInvadeType.Name = "lblInvadeType";
             this.lblInvadeType.Size = new System.Drawing.Size(67, 13);
             this.lblInvadeType.TabIndex = 26;
@@ -849,7 +872,7 @@
             // lblTeamType
             // 
             this.lblTeamType.AutoSize = true;
-            this.lblTeamType.Location = new System.Drawing.Point(12, 138);
+            this.lblTeamType.Location = new System.Drawing.Point(12, 123);
             this.lblTeamType.Name = "lblTeamType";
             this.lblTeamType.Size = new System.Drawing.Size(61, 13);
             this.lblTeamType.TabIndex = 25;
@@ -858,7 +881,7 @@
             // lblChrType
             // 
             this.lblChrType.AutoSize = true;
-            this.lblChrType.Location = new System.Drawing.Point(23, 112);
+            this.lblChrType.Location = new System.Drawing.Point(23, 97);
             this.lblChrType.Name = "lblChrType";
             this.lblChrType.Size = new System.Drawing.Size(50, 13);
             this.lblChrType.TabIndex = 24;
@@ -866,7 +889,7 @@
             // 
             // nudChrType
             // 
-            this.nudChrType.Location = new System.Drawing.Point(79, 110);
+            this.nudChrType.Location = new System.Drawing.Point(79, 95);
             this.nudChrType.Maximum = new decimal(new int[] {
             255,
             0,
@@ -879,7 +902,7 @@
             // 
             // nudTeamType
             // 
-            this.nudTeamType.Location = new System.Drawing.Point(79, 136);
+            this.nudTeamType.Location = new System.Drawing.Point(79, 121);
             this.nudTeamType.Maximum = new decimal(new int[] {
             255,
             0,
@@ -892,7 +915,7 @@
             // 
             // nudInvadeType
             // 
-            this.nudInvadeType.Location = new System.Drawing.Point(79, 162);
+            this.nudInvadeType.Location = new System.Drawing.Point(79, 147);
             this.nudInvadeType.Maximum = new decimal(new int[] {
             255,
             0,
@@ -2588,6 +2611,8 @@
         private System.Windows.Forms.Label lblFreezeChr;
         private System.Windows.Forms.Label lblChrSelect;
         private System.Windows.Forms.ComboBox cmbChrSelect;
+        private System.Windows.Forms.Label lblInvasionSelect;
+        private System.Windows.Forms.ComboBox cmbInvasionSelect;
     }
 }
 

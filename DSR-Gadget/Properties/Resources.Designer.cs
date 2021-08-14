@@ -189,6 +189,35 @@ namespace DSR_Gadget.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 0 None
+        ///1 White Summon
+        ///2 Red Summon
+        ///3 Red Invade
+        ///7 Gravelord Invade
+        ///10 Dragon Summon
+        ///11 Darkmoon Invade
+        ///12 Arena (1v1)
+        ///13 Arena (1v1)
+        ///14 Arena (Team)
+        ///15 Arena (Team)
+        ///16 Arena (Team)
+        ///17 Arena (Team)
+        ///18 Arena (Team)
+        ///19 Arena (Team)
+        ///20 Arena (FFA)
+        ///21 Arena (FFA)
+        ///22 Arena (FFA)
+        ///23 Arena (FFA)
+        ///24 Arena (FFA)
+        ///25 Arena (FFA).
+        /// </summary>
+        internal static string Invasions {
+            get {
+                return ResourceManager.GetString("Invasions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to     384   1 0 Peculiar Doll
         ///   2001   1 0 Basement Key
         ///   2002   1 0 Crest of Artorias
@@ -452,17 +481,14 @@ namespace DSR_Gadget.Properties {
         /// <summary>
         ///   Looks up a localized string similar to 0 1 Human
         ///8 4 Hollow
-        ///2 16 Red Phantom
-        ///2 3 Red Phantom (Team)
         ///1 2 White Phantom
+        ///2 16 Red Phantom
         ///2 17 Blue Phantom
         ///2 18 Path of the Dragon
         ///13 16 Arena FFA
         ///13 17 Arena Team 1
         ///13 18 Arena Team 2
-        ///
-        ///
-        ///.
+        ///2 3 Red Phantom (Team).
         /// </summary>
         internal static string Teams {
             get {
