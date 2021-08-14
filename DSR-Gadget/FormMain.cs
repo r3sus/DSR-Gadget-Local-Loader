@@ -28,7 +28,9 @@ namespace DSR_Gadget
             criticalControls = new List<Control>
             {
                 nudHealth, nudStamina, btnPosStore, btnPosRestore, cbxDeathCam, btnWarp, cmbBonfire,
-                btnCreate, btnEventRead, btnEventWrite
+                btnCreate, btnEventRead, btnEventWrite, nudChrType, nudTeamType, nudInvadeType, cbxFreezeChrType,
+                cbxFreezeTeamType, cbxFreezeInvadeType, cmbChrSelect, cmbInvasionSelect, cmbAreaID, cmbMPAreaID,
+                cbxFreezeMPAreaID, cbxFreezeAreaID, btnTeleportBloodstain, btnTeleportInitialPosition
             };
         }
 
