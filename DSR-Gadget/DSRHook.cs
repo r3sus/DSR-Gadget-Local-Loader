@@ -746,6 +746,16 @@ namespace DSR_Gadget
             return player;
         }
 
+        public void LeaveSession()
+        {
+            byte[] asm = (byte[])DSRAssembly.LeaveSession.Clone();
+            //byte[] bytes = BitConverter.GetBytes(GameDataManBasePtr.Resolve().ToInt64());
+            //Array.Copy(bytes, 0, asm, 0x2, 8);
+            //byte[] bytes = BitConverter.GetBytes(0x140509440);
+            //Array.Copy(bytes, 0, asm, 0x10, 8);
+            Execute(asm);
+        }
+
 
         #endregion
     }

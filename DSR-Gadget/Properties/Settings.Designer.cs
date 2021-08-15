@@ -514,5 +514,17 @@ namespace DSR_Gadget.Properties {
                 this["HotkeyCancelAnimation"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("27")]
+        public int HotkeyLeaveSession {
+            get {
+                return ((int)(this["HotkeyLeaveSession"]));
+            }
+            set {
+                this["HotkeyLeaveSession"] = value;
+            }
+        }
     }
 }

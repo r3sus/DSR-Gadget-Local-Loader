@@ -142,6 +142,7 @@
   <ItemGroup>
     <Content Include="FodyWeavers.xml" />
     <Content Include="icon.ico" />
+    <Content Include="Resources\Assembly\LeaveSession.txt" />
     <Content Include="Resources\Assembly\BonfireWarp.txt" />
     <Content Include="Resources\Assembly\GetItem.txt" />
     <Content Include="Resources\Assembly\LevelUp.txt" />

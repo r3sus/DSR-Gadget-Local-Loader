@@ -144,6 +144,12 @@ namespace DSR_Gadget
                 }
             }));
 
+            hotkeys.Add(new GadgetHotkey("HotkeyLeaveSession", "Leave Session", flpHotkeyControls, () =>
+            {
+                if (loaded && !reading)
+                    Hook.LeaveSession();
+            }));
+
 #if DEBUG
 
             hotkeys.Add(new GadgetHotkey("HotkeyCancelAnimation", "Cancel Animation", flpHotkeyControls, () =>

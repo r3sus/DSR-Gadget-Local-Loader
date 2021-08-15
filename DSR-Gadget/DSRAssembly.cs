@@ -26,5 +26,6 @@ namespace DSR_Gadget
         public static byte[] BonfireWarp = loadDefuseOutput(Properties.Resources.BonfireWarp);
         public static byte[] GetItem = loadDefuseOutput(Properties.Resources.GetItem);
         public static byte[] LevelUp = loadDefuseOutput(Properties.Resources.LevelUp);
+        public static byte[] LeaveSession = loadDefuseOutput(Properties.Resources.LeaveSession);
     }
 }

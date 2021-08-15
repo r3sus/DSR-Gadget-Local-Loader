@@ -201,8 +201,7 @@ namespace DSR_Gadget.Properties {
         ///6 Gravelord Servant
         ///7 Forest Hunter
         ///8 Darkmoon Blade
-        ///9 Chaos Servant
-        ///.
+        ///9 Chaos Servant.
         /// </summary>
         internal static string Covenants {
             get {
@@ -278,6 +277,22 @@ namespace DSR_Gadget.Properties {
         internal static string KeyItems {
             get {
                 return ResourceManager.GetString("KeyItems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 0:  48 b9 70 a3 d1 41 01    movabs rcx,0x141d1a370
+        ///7:  00 00 00
+        ///a:  48 83 ec 38             sub    rsp,0x38
+        ///e:  49 be fe fe fe fe fe    movabs r14,0xfefefefefefefefe
+        ///15: fe fe fe
+        ///18: 41 ff d6                call   r14
+        ///1b: 48 83 c4 38             add    rsp,0x38
+        ///1f: c3                      ret .
+        /// </summary>
+        internal static string LeaveSession {
+            get {
+                return ResourceManager.GetString("LeaveSession", resourceCulture);
             }
         }
         
