@@ -72,8 +72,8 @@ namespace DSR_Gadget.Properties {
         ///101101 Lower Undead Burg #2 (capra fog gate)
         ///101200 Undead Parish #1 (dragon bridge)
         ///101210 Undead Parish #2 (gargoyle fog gate)
-        ///110000 Painted World of Ariamis #1 (bridge start of level)
-        /// [rest of string was truncated]&quot;;.
+        ///102000 Firelink Shrine #1
+        ///110000 Painted World of Ariamis # [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Areas {
             get {
@@ -277,6 +277,35 @@ namespace DSR_Gadget.Properties {
         internal static string LevelUp {
             get {
                 return ResourceManager.GetString("LevelUp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to -1   0   None
+        ///3000 90  Soul Arrow
+        ///3010 60  Great Souls Arrow
+        ///3020 36  Heavy Souls Arrow
+        ///3030 24  Great Heavy Souls Arrow
+        ///3040 30  Homing Soulsmass
+        ///3050 30  Homing Crystal Soulsmass
+        ///3060 12  Souls Spear
+        ///3070 12  Crystal Souls Spear
+        ///3100 15  Magic Weapon
+        ///3110 9   Great Magic Weapon
+        ///3120 9   Crystal Magic Weapon
+        ///3300 15  Magic Shield
+        ///3310 9   Strong Magic Shield
+        ///3400 9   Hidden Weapon
+        ///3410 9   Hidden Body
+        ///3500 9   Cast Light
+        ///3510 18  Hush
+        ///3520 60  Aural Decoy
+        ///3530 3   Repair
+        ///3540 30  Fall C [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Magic {
+            get {
+                return ResourceManager.GetString("Magic", resourceCulture);
             }
         }
         

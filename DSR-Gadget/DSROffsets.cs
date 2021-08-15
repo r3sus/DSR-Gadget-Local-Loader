@@ -243,6 +243,12 @@ namespace DSR_Gadget
             GestureGameData = 0x568,
         }
 
+        public enum EquipMagicData
+        {
+            AttunementSlot1 = 0x18,
+            Quantity1 = 0x1C,
+        }
+
         public enum GestureGameData
         {
             PointForward = 0x10,

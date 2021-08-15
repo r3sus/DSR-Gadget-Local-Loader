@@ -1,0 +1,74 @@
+﻿-1 0 None
+3000 90 Soul Arrow
+3010 60 Great Souls Arrow
+3020 36 Heavy Souls Arrow
+3030 24 Great Heavy Souls Arrow
+3040 30 Homing Soulsmass
+3050 30 Homing Crystal Soulsmass
+3060 12 Souls Spear
+3070 12 Crystal Souls Spear
+3100 15 Magic Weapon
+3110 9 Great Magic Weapon
+3120 9 Crystal Magic Weapon
+3300 15 Magic Shield
+3310 9 Strong Magic Shield
+3400 9 Hidden Weapon
+3410 9 Hidden Body
+3500 9 Cast Light
+3510 18 Hush
+3520 60 Aural Decoy
+3530 3 Repair
+3540 30 Fall Control
+3550 33 Chameleon
+3600 12 Resist Curse
+3610 12 Remedy
+3700 60 White Dragon Breath
+3710 36 Dark Orb
+3720 18 Dark Bead
+3730 6 Dark Fog
+3740 9 Pursuers
+4000 24 Fireball
+4010 18 Fire Orb
+4020 12 Great Fireball
+4030 60 Firestorm
+4040 60 Fire Tempest
+4050 240 Fire Surge
+4060 240 Fire Whip
+4100 48 Combustion
+4110 24 Great Combustion
+4200 9 Poison Mist
+4210 3 Toxic Mist
+4220 6 Acid Surge
+4300 9 Iron Flesh
+4310 9 Flash Sweat
+4360 21 Undead Rapport
+4400 3 Power Within
+4500 12 Great Chaos Fireball
+4510 60 Chaos Storm
+4520 240 Chaos Fire Whip
+4530 24 Black Flame
+5000 15 Heal
+5010 9 Great Heal
+5020 3 Great Heal Except
+5030 9 Soothing Sunlight
+5040 6 Repleshment
+5050 6 Bountiful Sunlight
+5100 120 Gravelord Sword Dance
+5110 120 Gravelord Greatsword Dance
+5200 3 Escape Death
+5210 3 Homeward
+5300 63 Force
+5310 9 Wrath of the Gods
+5320 18 Emit Force
+5400 15 Seek Guidance
+5500 30 Lightning Spear
+5510 30 Great Lightning Spear
+5520 15 Sunlight Spear
+5600 12 Magic Barrier
+5610 6 Great Magic Barrier
+5700 12 Karmic Justice
+5710 0 Karmic Justice Explosion
+5800 15 Tranquil Walk of Peace
+5810 6 Vow of Silence
+5900 3 Sunllight Blade
+5910 3 Darkmoon Blade

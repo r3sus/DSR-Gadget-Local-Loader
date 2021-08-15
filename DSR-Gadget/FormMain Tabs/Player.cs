@@ -12,6 +12,7 @@ namespace DSR_Gadget
             public decimal Health, Stamina;
             public bool DeathCam;
             public byte[] FollowCam;
+            public int[][] EquipMagicData;
         }
 
         private List<int> unknownBonfires = new List<int>();
@@ -142,6 +143,19 @@ namespace DSR_Gadget
                 Hook.Stamina = (int)nudStamina.Value;
         }
 
+        private void btnResetMagicQuantity_Click(object sender, EventArgs e)
+        {
+            resetMagicQuantity();
+        }
+
+        private void resetMagicQuantity()
+        {
+            if (loaded && !reading)
+            {
+                Hook.ResetMagicQuantity();
+            }
+        }
+
         private void nudChrType_ValueChanged(object sender, EventArgs e)
         {
             if (loaded && !reading)
@@ -214,6 +228,7 @@ namespace DSR_Gadget
             playerState.Stamina = nudStamina.Value;
             playerState.FollowCam = Hook.DumpFollowCam();
             playerState.DeathCam = cbxDeathCam.Checked;
+            playerState.EquipMagicData = Hook.EquipMagicData;
             playerState.Set = true;
         }
 
@@ -242,6 +257,7 @@ namespace DSR_Gadget
                     nudHealth.Value = playerState.Health;
                     nudStamina.Value = playerState.Stamina;
                     cbxDeathCam.Checked = playerState.DeathCam;
+                    Hook.EquipMagicData = playerState.EquipMagicData;
                 }
             }
         }

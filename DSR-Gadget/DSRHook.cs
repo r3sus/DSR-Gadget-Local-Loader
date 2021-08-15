@@ -22,7 +22,8 @@ namespace DSR_Gadget
         private PHPointer ChrMapData;
         private PHPointer ChrAnimData;
         private PHPointer ChrPosData;
-        private PHPointer PlayerGameData;
+        private PHPointer PlayerGameDataPtr;
+        private PHPointer EquipMagicDataPtr;
         private PHPointer LastBloodstainPos;
         private PHPointer GraphicsData;
         private PHPointer MenuMan;
@@ -52,7 +53,8 @@ namespace DSR_Gadget
             ChrMapData = CreateBasePointer(IntPtr.Zero);
             ChrAnimData = CreateBasePointer(IntPtr.Zero);
             ChrPosData = CreateBasePointer(IntPtr.Zero);
-            PlayerGameData = CreateChildPointer(GameDataManBasePtr, DSROffsets.GameDataManOffset1, (int)DSROffsets.GameDataMan.PlayerGameData);
+            PlayerGameDataPtr = CreateChildPointer(GameDataManBasePtr, DSROffsets.GameDataManOffset1, (int)DSROffsets.GameDataMan.PlayerGameData);
+            EquipMagicDataPtr = CreateChildPointer(GameDataManBasePtr, DSROffsets.GameDataManOffset1, (int)DSROffsets.GameDataMan.PlayerGameData, (int)DSROffsets.PlayerGameData.EquipMagicData);
             LastBloodstainPos = CreateChildPointer(GameDataManBasePtr, DSROffsets.GameDataManOffset1, (int)DSROffsets.GameDataMan.LastBloodstainPos);
 
             DurabilityAddr = RegisterAbsoluteAOB(DSROffsets.DurabilityAOB);
@@ -123,6 +125,49 @@ namespace DSR_Gadget
             get => ChrData1.ReadInt32((int)DSROffsets.ChrData1.MaxStamina + Offsets.ChrData1Boost2);
         }
 
+        public int[][] EquipMagicData
+        {
+            get
+            {
+                int[] magicData = new int[12];
+                int[] magicQuantity = new int[12];
+                for (int i = 0; i < 12; i++)
+                {
+                    magicData[i] = EquipMagicDataPtr.ReadInt32((int)DSROffsets.EquipMagicData.AttunementSlot1 + i * 8);
+                    magicQuantity[i] = EquipMagicDataPtr.ReadInt32((int)DSROffsets.EquipMagicData.Quantity1 + i * 8);
+                }
+
+                int[][] equipMagicData = new int[2][];
+                equipMagicData[0] = magicData;
+                equipMagicData[1] = magicQuantity;
+                return equipMagicData;
+            }
+
+            set
+            {
+                for (int i = 0; i < 12; i++)
+                {
+                    int id = EquipMagicDataPtr.ReadInt32((int)DSROffsets.EquipMagicData.AttunementSlot1 + i * 8);
+                    if (id == value[0][i])
+                    {
+                        EquipMagicDataPtr.WriteInt32((int)DSROffsets.EquipMagicData.Quantity1 + i * 8, value[1][i]);
+                    }
+                    /*
+                    EquipMagicDataPtr.WriteInt32((int)DSROffsets.EquipMagicData.AttunementSlot1 + i * 8, value[0][i]);
+                    */
+                }
+            }
+        }
+
+        public void ResetMagicQuantity()
+        {
+            for (int i = 0; i < 12; i++)
+            {
+                int id = EquipMagicDataPtr.ReadInt32((int)DSROffsets.EquipMagicData.AttunementSlot1 + i * 8);
+                EquipMagicDataPtr.WriteInt32((int)DSROffsets.EquipMagicData.Quantity1 + i * 8, DSRMagic.Dictionary[id]);
+            }
+        }
+
         public int ChrType
         {
             get => ChrData1.ReadInt32((int)DSROffsets.ChrData1.ChrType + Offsets.ChrData1Boost2);
@@ -137,8 +182,8 @@ namespace DSR_Gadget
 
         public byte InvadeType
         {
-            get => PlayerGameData.ReadByte((int)DSROffsets.PlayerGameData.InvadeType);
-            set => PlayerGameData.WriteByte((int)DSROffsets.PlayerGameData.InvadeType, value);
+            get => PlayerGameDataPtr.ReadByte((int)DSROffsets.PlayerGameData.InvadeType);
+            set => PlayerGameDataPtr.WriteByte((int)DSROffsets.PlayerGameData.InvadeType, value);
         }
 
         public int MPAreaID
@@ -245,65 +290,65 @@ namespace DSR_Gadget
         #region Stats
         public byte Class
         {
-            get => PlayerGameData.ReadByte((int)DSROffsets.PlayerGameData.Class);
-            set => PlayerGameData.WriteByte((int)DSROffsets.PlayerGameData.Class, value);
+            get => PlayerGameDataPtr.ReadByte((int)DSROffsets.PlayerGameData.Class);
+            set => PlayerGameDataPtr.WriteByte((int)DSROffsets.PlayerGameData.Class, value);
         }
 
         public int Humanity
         {
-            get => PlayerGameData.ReadInt32((int)DSROffsets.PlayerGameData.Humanity);
-            set => PlayerGameData.WriteInt32((int)DSROffsets.PlayerGameData.Humanity, value);
+            get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.Humanity);
+            set => PlayerGameDataPtr.WriteInt32((int)DSROffsets.PlayerGameData.Humanity, value);
         }
 
         public int Souls
         {
-            get => PlayerGameData.ReadInt32((int)DSROffsets.PlayerGameData.Souls);
-            set => PlayerGameData.WriteInt32((int)DSROffsets.PlayerGameData.Souls, value);
+            get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.Souls);
+            set => PlayerGameDataPtr.WriteInt32((int)DSROffsets.PlayerGameData.Souls, value);
         }
 
         public int SoulLevel
         {
-            get => PlayerGameData.ReadInt32((int)DSROffsets.PlayerGameData.SoulLevel);
+            get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.SoulLevel);
         }
 
         public int Vitality
         {
-            get => PlayerGameData.ReadInt32((int)DSROffsets.PlayerGameData.Vitality);
+            get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.Vitality);
         }
 
         public int Attunement
         {
-            get => PlayerGameData.ReadInt32((int)DSROffsets.PlayerGameData.Attunement);
+            get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.Attunement);
         }
 
         public int Endurance
         {
-            get => PlayerGameData.ReadInt32((int)DSROffsets.PlayerGameData.Endurance);
+            get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.Endurance);
         }
 
         public int Strength
         {
-            get => PlayerGameData.ReadInt32((int)DSROffsets.PlayerGameData.Strength);
+            get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.Strength);
         }
 
         public int Dexterity
         {
-            get => PlayerGameData.ReadInt32((int)DSROffsets.PlayerGameData.Dexterity);
+            get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.Dexterity);
         }
 
         public int Resistance
         {
-            get => PlayerGameData.ReadInt32((int)DSROffsets.PlayerGameData.Resistance);
+            get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.Resistance);
         }
 
         public int Intelligence
         {
-            get => PlayerGameData.ReadInt32((int)DSROffsets.PlayerGameData.Intelligence);
+            get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.Intelligence);
         }
 
         public int Faith
         {
-            get => PlayerGameData.ReadInt32((int)DSROffsets.PlayerGameData.Faith);
+            get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.Faith);
         }
         #endregion
 

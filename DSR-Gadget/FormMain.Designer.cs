@@ -201,6 +201,7 @@
             this.tmrUpdate = new System.Windows.Forms.Timer(this.components);
             this.lblUpdate = new System.Windows.Forms.Label();
             this.llbUpdate = new System.Windows.Forms.LinkLabel();
+            this.btnResetMagicQuantity = new System.Windows.Forms.Button();
             this.tclMain.SuspendLayout();
             this.tpgPlayer.SuspendLayout();
             this.gbxOther.SuspendLayout();
@@ -792,6 +793,7 @@
             // gbxStatus
             // 
             this.gbxStatus.AutoSize = true;
+            this.gbxStatus.Controls.Add(this.btnResetMagicQuantity);
             this.gbxStatus.Controls.Add(this.label3);
             this.gbxStatus.Controls.Add(this.cbxFreezeAreaID);
             this.gbxStatus.Controls.Add(this.cbxFreezeMPAreaID);
@@ -2501,6 +2503,16 @@
             this.llbUpdate.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.llbUpdate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbUpdate_LinkClicked);
             // 
+            // btnResetMagicQuantity
+            // 
+            this.btnResetMagicQuantity.Location = new System.Drawing.Point(246, 29);
+            this.btnResetMagicQuantity.Name = "btnResetMagicQuantity";
+            this.btnResetMagicQuantity.Size = new System.Drawing.Size(134, 23);
+            this.btnResetMagicQuantity.TabIndex = 42;
+            this.btnResetMagicQuantity.Text = "Reset Magic Quantity";
+            this.btnResetMagicQuantity.UseVisualStyleBackColor = true;
+            this.btnResetMagicQuantity.Click += new System.EventHandler(this.btnResetMagicQuantity_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2770,6 +2782,7 @@
         private System.Windows.Forms.GroupBox gbxCheatOther;
         private System.Windows.Forms.CheckBox cbxInfDurability;
         private System.Windows.Forms.CheckBox cbxInfDurabilitySpecial;
+        private System.Windows.Forms.Button btnResetMagicQuantity;
     }
 }
 
