@@ -83,7 +83,7 @@ namespace DSR_Gadget
                 else
                 {
                     if (recentPlayers[i] == null || recentPlayers[i].PlayerIndex != -1)
-                        recentPlayers[1] = new DSRPlayer(-1);
+                        recentPlayers[i] = new DSRPlayer(-1);
                 }
             }
 
