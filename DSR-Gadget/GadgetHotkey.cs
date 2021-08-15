@@ -18,7 +18,7 @@ namespace DSR_Gadget
             settingsName = setSettingsName;
             FlowLayoutPanel container = new FlowLayoutPanel() { AutoSize = true };
             hotkeyTextBox = new TextBox() { Width = 80, Margin = new Padding(0, 0, 20, 5) };
-            Label hotkeyLabel = new Label() { Text = labelText };
+            Label hotkeyLabel = new Label() { Width = 200, Text = labelText };
             hotkeyAction = setAction;
 
             Key = (VirtualKey)(int)Properties.Settings.Default[settingsName];

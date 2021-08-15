@@ -95,5 +95,29 @@
     <Setting Name="HotkeyCreateItem" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">27</Value>
     </Setting>
+    <Setting Name="HotkeyTeleportBloodstain" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">27</Value>
+    </Setting>
+    <Setting Name="HotkeyTeleportInitialPosition" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">27</Value>
+    </Setting>
+    <Setting Name="HotkeyTeamHuman" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">27</Value>
+    </Setting>
+    <Setting Name="HotkeyTeamHollow" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">27</Value>
+    </Setting>
+    <Setting Name="HotkeyTeamArena" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">27</Value>
+    </Setting>
+    <Setting Name="HotkeyTeamRedPhantom" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">27</Value>
+    </Setting>
+    <Setting Name="HotkeyTeamWhitePhantom" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">27</Value>
+    </Setting>
+    <Setting Name="HotkeyWarpToLastBonfire" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">27</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

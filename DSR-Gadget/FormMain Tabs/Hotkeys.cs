@@ -78,6 +78,71 @@ namespace DSR_Gadget
             }));
             */
 
+            hotkeys.Add(new GadgetHotkey("HotkeyWarpToLastBonfire", "Warp to last Bonfire", flpHotkeyControls, () =>
+            {
+                if (loaded)
+                    Hook.BonfireWarp();
+            }));
+
+            hotkeys.Add(new GadgetHotkey("HotkeyTeleportBloodstain", "Teleport to Bloodstain", flpHotkeyControls, () =>
+            {
+                if (loaded)
+                    teleportBloodstain();
+            }));
+
+            hotkeys.Add(new GadgetHotkey("HotkeyTeleportInitialPosition", "Teleport to Initial Pos.", flpHotkeyControls, () => 
+            {
+                if (loaded)
+                    teleportInitialPosition();
+            }));
+
+
+            hotkeys.Add(new GadgetHotkey("HotkeyTeamHuman", "Change Team to Human", flpHotkeyControls, () =>
+            {
+                if (loaded)
+                {
+                    Hook.ChrType = 0;
+                    Hook.TeamType = 1;
+                }
+            }));
+
+            hotkeys.Add(new GadgetHotkey("HotkeyTeamHollow", "Change Team to Hollow", flpHotkeyControls, () =>
+            {
+                if (loaded)
+                {
+                    Hook.ChrType = 8;
+                    Hook.TeamType = 4;
+                }
+            }));
+
+            hotkeys.Add(new GadgetHotkey("HotkeyTeamArena", "Change Team to Arena FFA", flpHotkeyControls, () =>
+            {
+                if (loaded)
+                {
+                    Hook.ChrType = 13;
+                    Hook.TeamType = 16;
+                }
+            }));
+
+            hotkeys.Add(new GadgetHotkey("HotkeyTeamRedPhantom", "Change Team to Red Phantom", flpHotkeyControls, () =>
+            {
+                if (loaded)
+                {
+                    Hook.ChrType = 2;
+                    Hook.TeamType = 16;
+                }
+            }));
+
+            hotkeys.Add(new GadgetHotkey("HotkeyTeamWhitePhantom", "Change Team to White Phantom", flpHotkeyControls, () =>
+            {
+                if (loaded)
+                {
+                    Hook.ChrType = 1;
+                    Hook.TeamType = 2;
+                }
+            }));
+
+
 #if DEBUG
             hotkeys.Add(new GadgetHotkey("HotkeyTest1", "Test 1", flpHotkeyControls, () =>
             {

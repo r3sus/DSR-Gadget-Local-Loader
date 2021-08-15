@@ -137,6 +137,7 @@
             this.lblCategory = new System.Windows.Forms.Label();
             this.tpgCheats = new System.Windows.Forms.TabPage();
             this.gbxCheatOther = new System.Windows.Forms.GroupBox();
+            this.cbxInfDurabilitySpecial = new System.Windows.Forms.CheckBox();
             this.cbxInfDurability = new System.Windows.Forms.CheckBox();
             this.gbxCheatEnemy = new System.Windows.Forms.GroupBox();
             this.cbxAllNoUpdateAI = new System.Windows.Forms.CheckBox();
@@ -200,7 +201,6 @@
             this.tmrUpdate = new System.Windows.Forms.Timer(this.components);
             this.lblUpdate = new System.Windows.Forms.Label();
             this.llbUpdate = new System.Windows.Forms.LinkLabel();
-            this.cbxInfDurabilitySpecial = new System.Windows.Forms.CheckBox();
             this.tclMain.SuspendLayout();
             this.tpgPlayer.SuspendLayout();
             this.gbxOther.SuspendLayout();
@@ -1693,6 +1693,17 @@
             this.gbxCheatOther.TabStop = false;
             this.gbxCheatOther.Text = "Other";
             // 
+            // cbxInfDurabilitySpecial
+            // 
+            this.cbxInfDurabilitySpecial.AutoSize = true;
+            this.cbxInfDurabilitySpecial.Location = new System.Drawing.Point(6, 42);
+            this.cbxInfDurabilitySpecial.Name = "cbxInfDurabilitySpecial";
+            this.cbxInfDurabilitySpecial.Size = new System.Drawing.Size(122, 17);
+            this.cbxInfDurabilitySpecial.TabIndex = 1;
+            this.cbxInfDurabilitySpecial.Text = "Infinite Durability Sp.";
+            this.cbxInfDurabilitySpecial.UseVisualStyleBackColor = true;
+            this.cbxInfDurabilitySpecial.CheckedChanged += new System.EventHandler(this.cbxInfDurabilitySpecial_CheckedChanged);
+            // 
             // cbxInfDurability
             // 
             this.cbxInfDurability.AutoSize = true;
@@ -2395,10 +2406,12 @@
             // 
             // flpHotkeyControls
             // 
+            this.flpHotkeyControls.AutoScroll = true;
+            this.flpHotkeyControls.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flpHotkeyControls.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flpHotkeyControls.Location = new System.Drawing.Point(6, 52);
             this.flpHotkeyControls.Name = "flpHotkeyControls";
-            this.flpHotkeyControls.Size = new System.Drawing.Size(384, 429);
+            this.flpHotkeyControls.Size = new System.Drawing.Size(384, 521);
             this.flpHotkeyControls.TabIndex = 2;
             this.flpHotkeyControls.WrapContents = false;
             // 
@@ -2487,17 +2500,6 @@
             this.llbUpdate.Text = "Click to download";
             this.llbUpdate.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.llbUpdate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbUpdate_LinkClicked);
-            // 
-            // cbxInfDurabilitySpecial
-            // 
-            this.cbxInfDurabilitySpecial.AutoSize = true;
-            this.cbxInfDurabilitySpecial.Location = new System.Drawing.Point(6, 42);
-            this.cbxInfDurabilitySpecial.Name = "cbxInfDurabilitySpecial";
-            this.cbxInfDurabilitySpecial.Size = new System.Drawing.Size(122, 17);
-            this.cbxInfDurabilitySpecial.TabIndex = 1;
-            this.cbxInfDurabilitySpecial.Text = "Infinite Durability Sp.";
-            this.cbxInfDurabilitySpecial.UseVisualStyleBackColor = true;
-            this.cbxInfDurabilitySpecial.CheckedChanged += new System.EventHandler(this.cbxInfDurabilitySpecial_CheckedChanged);
             // 
             // FormMain
             // 

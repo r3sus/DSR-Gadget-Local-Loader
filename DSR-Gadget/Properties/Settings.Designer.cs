@@ -12,7 +12,7 @@ namespace DSR_Gadget.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.7.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.10.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -392,6 +392,102 @@ namespace DSR_Gadget.Properties {
             }
             set {
                 this["HotkeyCreateItem"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("27")]
+        public int HotkeyTeleportBloodstain {
+            get {
+                return ((int)(this["HotkeyTeleportBloodstain"]));
+            }
+            set {
+                this["HotkeyTeleportBloodstain"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("27")]
+        public int HotkeyTeleportInitialPosition {
+            get {
+                return ((int)(this["HotkeyTeleportInitialPosition"]));
+            }
+            set {
+                this["HotkeyTeleportInitialPosition"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("27")]
+        public int HotkeyTeamHuman {
+            get {
+                return ((int)(this["HotkeyTeamHuman"]));
+            }
+            set {
+                this["HotkeyTeamHuman"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("27")]
+        public int HotkeyTeamHollow {
+            get {
+                return ((int)(this["HotkeyTeamHollow"]));
+            }
+            set {
+                this["HotkeyTeamHollow"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("27")]
+        public int HotkeyTeamArena {
+            get {
+                return ((int)(this["HotkeyTeamArena"]));
+            }
+            set {
+                this["HotkeyTeamArena"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("27")]
+        public int HotkeyTeamRedPhantom {
+            get {
+                return ((int)(this["HotkeyTeamRedPhantom"]));
+            }
+            set {
+                this["HotkeyTeamRedPhantom"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("27")]
+        public int HotkeyTeamWhitePhantom {
+            get {
+                return ((int)(this["HotkeyTeamWhitePhantom"]));
+            }
+            set {
+                this["HotkeyTeamWhitePhantom"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("27")]
+        public int HotkeyWarpToLastBonfire {
+            get {
+                return ((int)(this["HotkeyWarpToLastBonfire"]));
+            }
+            set {
+                this["HotkeyWarpToLastBonfire"] = value;
             }
         }
     }

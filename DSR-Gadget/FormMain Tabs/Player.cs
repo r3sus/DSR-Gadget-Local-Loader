@@ -248,11 +248,27 @@ namespace DSR_Gadget
 
         private void btnTeleportBloodstain_Click(object sender, EventArgs e)
         {
+            if (loaded)
+            {
+                teleportBloodstain();
+            }
+        }
+
+        private void teleportBloodstain()
+        {
             Hook.GetLastBloodstainPosition(out float x, out float y, out float z, out float angle);
             Hook.PosWarp(x, y, z, angle);
         }
 
         private void btnTeleportInitialPosition_Click(object sender, EventArgs e)
+        {
+            if (loaded)
+            {
+                teleportInitialPosition();
+            }
+        }
+
+        private void teleportInitialPosition()
         {
             Hook.GetInitialPosition(out float x, out float y, out float z, out float angle);
             Hook.PosWarp(x, y, z, angle);
