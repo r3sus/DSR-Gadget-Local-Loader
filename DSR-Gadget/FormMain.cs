@@ -51,7 +51,7 @@ namespace DSR_Gadget
             GitHubClient gitHubClient = new GitHubClient(new ProductHeaderValue("DSR-Gadget"));
             try
             {
-                Release release = await gitHubClient.Repository.Release.GetLatest("JKAnderson", "DSR-Gadget");
+                Release release = await gitHubClient.Repository.Release.GetLatest("Meikk99", "DSR-Gadget");
                 if (SemVersion.Parse(release.TagName) > System.Windows.Forms.Application.ProductVersion)
                 {
                     lblUpdate.Text = "New version available!";
