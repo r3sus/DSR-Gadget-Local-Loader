@@ -30,7 +30,7 @@ namespace DSR_Gadget
                 nudHealth, nudStamina, btnPosStore, btnPosRestore, cbxDeathCam, btnWarp, cmbBonfire,
                 btnCreate, btnEventRead, btnEventWrite, nudChrType, nudTeamType, nudInvadeType, cbxFreezeChrType,
                 cbxFreezeTeamType, cbxFreezeInvadeType, cmbChrSelect, cmbInvasionSelect, cmbAreaID, cmbMPAreaID,
-                cbxFreezeMPAreaID, cbxFreezeAreaID, btnTeleportBloodstain, btnTeleportInitialPosition
+                cbxFreezeMPAreaID, cbxFreezeAreaID, btnTeleportBloodstain, btnTeleportInitialPosition, btnResetMagicQuantity
             };
         }
 
