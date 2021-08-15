@@ -67,6 +67,7 @@
             this.lblPosX = new System.Windows.Forms.Label();
             this.btnPosRestore = new System.Windows.Forms.Button();
             this.gbxStatus = new System.Windows.Forms.GroupBox();
+            this.btnResetMagicQuantity = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.cbxFreezeAreaID = new System.Windows.Forms.CheckBox();
             this.cbxFreezeMPAreaID = new System.Windows.Forms.CheckBox();
@@ -201,7 +202,6 @@
             this.tmrUpdate = new System.Windows.Forms.Timer(this.components);
             this.lblUpdate = new System.Windows.Forms.Label();
             this.llbUpdate = new System.Windows.Forms.LinkLabel();
-            this.btnResetMagicQuantity = new System.Windows.Forms.Button();
             this.tclMain.SuspendLayout();
             this.tpgPlayer.SuspendLayout();
             this.gbxOther.SuspendLayout();
@@ -829,6 +829,16 @@
             this.gbxStatus.TabIndex = 1;
             this.gbxStatus.TabStop = false;
             this.gbxStatus.Text = "Status";
+            // 
+            // btnResetMagicQuantity
+            // 
+            this.btnResetMagicQuantity.Location = new System.Drawing.Point(246, 29);
+            this.btnResetMagicQuantity.Name = "btnResetMagicQuantity";
+            this.btnResetMagicQuantity.Size = new System.Drawing.Size(134, 23);
+            this.btnResetMagicQuantity.TabIndex = 42;
+            this.btnResetMagicQuantity.Text = "Reset Magic Quantity";
+            this.btnResetMagicQuantity.UseVisualStyleBackColor = true;
+            this.btnResetMagicQuantity.Click += new System.EventHandler(this.btnResetMagicQuantity_Click);
             // 
             // label3
             // 
@@ -1597,7 +1607,7 @@
             this.lbxItems.FormattingEnabled = true;
             this.lbxItems.Location = new System.Drawing.Point(6, 86);
             this.lbxItems.Name = "lbxItems";
-            this.lbxItems.Size = new System.Drawing.Size(384, 394);
+            this.lbxItems.Size = new System.Drawing.Size(384, 485);
             this.lbxItems.TabIndex = 9;
             this.lbxItems.SelectedIndexChanged += new System.EventHandler(this.lbxItems_SelectedIndexChanged);
             this.lbxItems.DoubleClick += new System.EventHandler(this.lbxItems_DoubleClick);
@@ -2011,7 +2021,7 @@
             this.gbxFilter.Controls.Add(this.nudBrightnessG);
             this.gbxFilter.Controls.Add(this.nudBrightnessR);
             this.gbxFilter.Controls.Add(this.cbxFilter);
-            this.gbxFilter.Location = new System.Drawing.Point(6, 279);
+            this.gbxFilter.Location = new System.Drawing.Point(6, 371);
             this.gbxFilter.Name = "gbxFilter";
             this.gbxFilter.Size = new System.Drawing.Size(384, 202);
             this.gbxFilter.TabIndex = 9;
@@ -2502,16 +2512,6 @@
             this.llbUpdate.Text = "Click to download";
             this.llbUpdate.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.llbUpdate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbUpdate_LinkClicked);
-            // 
-            // btnResetMagicQuantity
-            // 
-            this.btnResetMagicQuantity.Location = new System.Drawing.Point(246, 29);
-            this.btnResetMagicQuantity.Name = "btnResetMagicQuantity";
-            this.btnResetMagicQuantity.Size = new System.Drawing.Size(134, 23);
-            this.btnResetMagicQuantity.TabIndex = 42;
-            this.btnResetMagicQuantity.Text = "Reset Magic Quantity";
-            this.btnResetMagicQuantity.UseVisualStyleBackColor = true;
-            this.btnResetMagicQuantity.Click += new System.EventHandler(this.btnResetMagicQuantity_Click);
             // 
             // FormMain
             // 
