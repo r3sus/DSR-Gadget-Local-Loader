@@ -9,9 +9,14 @@ namespace DSR_Gadget
         private void initInfo()
         {
             for (int i = 0; i < 5; i++)
+            {
                 lbxInfoRecentPlayers.Items.Add("");
+                lbxInfoCurrentPlayers.Items.Add("");
+            }
+
 
             lbxInfoRecentPlayers.ValueMember = "PlayerIndex";
+            lbxInfoCurrentPlayers.ValueMember = "PlayerIndex";
 
             /*
             Dictionary<int, DSRItem> weapons = new Dictionary<int, DSRItem>();
@@ -68,9 +73,41 @@ namespace DSR_Gadget
 
         private void updateInfo()
         {
-            //lbxInfoPlayers.Items.Add();
+            /*
+            DSRPlayer[] currentPlayers = new DSRPlayer[5];
+            bool[] currentPlayerIndices = Hook.GetCurrentPlayers();
+
+
+            // TODO: duplicate code
+            
+            for (int i = 0; i < currentPlayerIndices.Length; i++)
+            {
+                if (currentPlayerIndices[i])
+                {
+                    if (currentPlayers[i] == null || currentPlayers[i].PlayerIndex != i)
+                        currentPlayers[i] = new DSRPlayer(i);
+
+                    currentPlayers[i] = Hook.UpdateRecentPlayer(currentPlayers[i]);
+                }
+                else
+                {
+                    if (currentPlayers[i] == null || currentPlayers[i].PlayerIndex != -1)
+                        currentPlayers[i] = new DSRPlayer(-1);
+                }
+
+                DSRPlayer item = lbxInfoCurrentPlayers.Items[i] as DSRPlayer;
+                if (item == null || !item.Name.Equals(currentPlayers[i].Name) || item.PlayerIndex != currentPlayers[i].PlayerIndex)
+                    lbxInfoCurrentPlayers.Items[i] = currentPlayers[i];
+            }
+
+            DSRPlayer selectedCurrentPlayer = lbxInfoCurrentPlayers.SelectedItem as DSRPlayer;
+            if (selectedCurrentPlayer != null)
+                updateCurrentPlayerUI(selectedCurrentPlayer);
+            */
+
             DSRPlayer[] recentPlayers = new DSRPlayer[5];
             bool[] recentPlayerIndices = Hook.GetRecentPlayers();
+
             for (int i = 0; i < recentPlayerIndices.Length; i++)
             {
                 if (recentPlayerIndices[i])
@@ -85,10 +122,7 @@ namespace DSR_Gadget
                     if (recentPlayers[i] == null || recentPlayers[i].PlayerIndex != -1)
                         recentPlayers[i] = new DSRPlayer(-1);
                 }
-            }
 
-            for (int i = 0; i< recentPlayerIndices.Length; i++)
-            {
                 DSRPlayer item = lbxInfoRecentPlayers.Items[i] as DSRPlayer;
                 if (item == null || !item.Name.Equals(recentPlayers[i].Name) || item.PlayerIndex != recentPlayers[i].PlayerIndex)
                     lbxInfoRecentPlayers.Items[i] = recentPlayers[i];
@@ -99,100 +133,7 @@ namespace DSR_Gadget
                 updateRecentPlayerUI(selectedRecentPlayer);
 
 
-            //updateRecentPlayerUI(lbxInfoRecentPlayers.SelectedItem as DSRPlayer);
-
-
-            /*
-            if (!lbxInfoRecentPlayers.Items[i].Equals(recentPlayerText))
-                lbxInfoRecentPlayers.Items[i] = recentPlayerText;
-            lbxInfoRecentPlayers.Items[i] = "";
-            */
-
-            /*
-            txtSoulLevel.Text = Hook.SoulLevel.ToString();
-            nudHumanity.Value = Hook.Humanity;
-            nudSouls.Value = Hook.Souls;
-
-            try
-            {
-                nudVitality.Value = Hook.Vitality;
-                nudAttunement.Value = Hook.Attunement;
-                nudEndurance.Value = Hook.Endurance;
-                nudStrength.Value = Hook.Strength;
-                nudDexterity.Value = Hook.Dexterity;
-                nudResistance.Value = Hook.Resistance;
-                nudIntelligence.Value = Hook.Intelligence;
-                nudFaith.Value = Hook.Faith;
-            }
-            catch (ArgumentOutOfRangeException) { }
-            */
         }
-
-
-        /*
-        private void cmbClass_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            DSRClass charClass = cmbClass.SelectedItem as DSRClass;
-            nudVitality.Minimum = charClass.Vitality;
-            nudAttunement.Minimum = charClass.Attunement;
-            nudEndurance.Minimum = charClass.Endurance;
-            nudStrength.Minimum = charClass.Strength;
-            nudDexterity.Minimum = charClass.Dexterity;
-            nudResistance.Minimum = charClass.Resistance;
-            nudIntelligence.Minimum = charClass.Intelligence;
-            nudFaith.Minimum = charClass.Faith;
-
-            if (!reading)
-            {
-                //dsrProcess.SetClass(charClass.ID);
-                //recalculateStats();
-            }
-        }
-
-        private void nudHumanity_ValueChanged(object sender, EventArgs e)
-        {
-            //if (!reading)
-            //dsrProcess?.SetHumanity((int)nudHumanity.Value);
-        }
-
-        private void nudSouls_ValueChanged(object sender, EventArgs e)
-        {
-            //if (!reading)
-            //dsrProcess?.SetSouls((int)nudSouls.Value);
-        }
-
-        private void nudStats_ValueChanged(object sender, EventArgs e)
-        {
-            //if (!reading)
-            //recalculateStats();
-        }
-
-        private void recalculateStats()
-        {
-            int vit = (int)nudVitality.Value;
-            int att = (int)nudAttunement.Value;
-            int end = (int)nudEndurance.Value;
-            int str = (int)nudStrength.Value;
-            int dex = (int)nudDexterity.Value;
-            int res = (int)nudResistance.Value;
-            int intel = (int)nudIntelligence.Value;
-            int fth = (int)nudFaith.Value;
-
-            DSRClass charClass = cmbClass.SelectedItem as DSRClass;
-            int sl = charClass.SoulLevel;
-            sl += vit - charClass.Vitality;
-            sl += att - charClass.Attunement;
-            sl += end - charClass.Endurance;
-            sl += str - charClass.Strength;
-            sl += dex - charClass.Dexterity;
-            sl += res - charClass.Resistance;
-            sl += intel - charClass.Intelligence;
-            sl += fth - charClass.Faith;
-
-            //dsrProcess.LevelUp(vit, att, end, str, dex, res, intel, fth, sl);
-        }
-
-        */
 
         private void updateRecentPlayerUI(DSRPlayer player)
         {
@@ -206,6 +147,19 @@ namespace DSR_Gadget
             nupRecentPlayerIntelligence.Value = player.Intelligence;
             nupRecentPlayerFaith.Value = player.Faith;
             nupRecentPlayerHumanity.Value = player.Humanity;
+        }
+        private void updateCurrentPlayerUI(DSRPlayer player)
+        {
+            nupCurrentPlayerSoulLevel.Value = player.SoulLevel;
+            nupCurrentPlayerVitality.Value = player.Vitality;
+            nupCurrentPlayerAttunement.Value = player.Attunement;
+            nupCurrentPlayerEndurance.Value = player.Endurance;
+            nupCurrentPlayerStrength.Value = player.Strength;
+            nupCurrentPlayerDexterity.Value = player.Dexterity;
+            nupCurrentPlayerResistance.Value = player.Resistance;
+            nupCurrentPlayerIntelligence.Value = player.Intelligence;
+            nupCurrentPlayerFaith.Value = player.Faith;
+            nupCurrentPlayerHumanity.Value = player.Humanity;
         }
     }
 }

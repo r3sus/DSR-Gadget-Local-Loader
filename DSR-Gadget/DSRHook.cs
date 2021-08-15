@@ -25,6 +25,8 @@ namespace DSR_Gadget
         private PHPointer PlayerGameDataPtr;
         private PHPointer PlayerGameDataRecentPtr;
         private PHPointer[] RecentPlayerPtrs;
+        private PHPointer PlayerGameDataCurrentPtr;
+        private PHPointer[] CurrentPlayerPtrs;
         private PHPointer EquipMagicDataPtr;
         private PHPointer LastBloodstainPos;
         private PHPointer GraphicsData;
@@ -56,14 +58,21 @@ namespace DSR_Gadget
             ChrAnimData = CreateBasePointer(IntPtr.Zero);
             ChrPosData = CreateBasePointer(IntPtr.Zero);
             PlayerGameDataPtr = CreateChildPointer(GameDataManBasePtr, DSROffsets.GameDataManOffset1, (int)DSROffsets.GameDataMan.PlayerGameData);
-            PlayerGameDataRecentPtr = CreateChildPointer(GameDataManBasePtr, DSROffsets.GameDataManOffset1, (int)DSROffsets.GameDataMan.PlayerGameDataRecent);
             EquipMagicDataPtr = CreateChildPointer(GameDataManBasePtr, DSROffsets.GameDataManOffset1, (int)DSROffsets.GameDataMan.PlayerGameData, (int)DSROffsets.PlayerGameData.EquipMagicData);
             LastBloodstainPos = CreateChildPointer(GameDataManBasePtr, DSROffsets.GameDataManOffset1, (int)DSROffsets.GameDataMan.LastBloodstainPos);
 
+            PlayerGameDataRecentPtr = CreateChildPointer(GameDataManBasePtr, DSROffsets.GameDataManOffset1, (int)DSROffsets.GameDataMan.PlayerGameDataRecent);
             RecentPlayerPtrs = new PHPointer[5];
             for (int i = 0; i < 5; i++)
             {
                 RecentPlayerPtrs[i] = CreateChildPointer(PlayerGameDataRecentPtr, (int)DSROffsets.PlayerGameDataRecent.RecentPlayer1 + i * (int)DSROffsets.RecentPlayerOffset);
+            }
+
+            PlayerGameDataCurrentPtr = CreateChildPointer(ChrData1, (int)DSROffsets.ChrData1.CurrentPlayers);
+            CurrentPlayerPtrs = new PHPointer[5];
+            for (int i = 0; i < 5; i++)
+            {
+                CurrentPlayerPtrs[i] = CreateChildPointer(PlayerGameDataCurrentPtr, (int)DSROffsets.CurrentPlayers.CurrentPlayer1 + i * (int)DSROffsets.CurrentPlayerOffset, (int)DSROffsets.CurrentPlayersOffset);
             }
 
             DurabilityAddr = RegisterAbsoluteAOB(DSROffsets.DurabilityAOB);
@@ -677,7 +686,32 @@ namespace DSR_Gadget
             return recentPlayers;
         }
 
+        public bool[] GetCurrentPlayers()
+        {
+            bool[] currentPlayers = new bool[5];
+            for (int i = 0; i < RecentPlayerPtrs.Length; i++)
+            {
+                //TODO: more robust check
+                if (CurrentPlayerPtrs[i].ReadInt32((int)DSROffsets.PlayerGameData.SoulLevel) != 0)
+                    currentPlayers[i] = true;
+                else
+                    currentPlayers[i] = false;
+            }
+
+            return currentPlayers;
+        }
+
+        public DSRPlayer UpdateCurrentPlayer(DSRPlayer player)
+        {
+            return UpdatePlayer(player, CurrentPlayerPtrs);
+        }
+
         public DSRPlayer UpdateRecentPlayer(DSRPlayer player)
+        {
+            return UpdatePlayer(player, RecentPlayerPtrs);
+        }
+
+        public DSRPlayer UpdatePlayer(DSRPlayer player, PHPointer[] playerPtr)
         {
             int index = player.PlayerIndex;
 

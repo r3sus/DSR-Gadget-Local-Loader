@@ -67,6 +67,7 @@ namespace DSR_Gadget
         public int ChrData1Boost2 = 0x0;
         public enum ChrData1
         {
+            CurrentPlayers = 0x8,
             ChrMapData = 0x48,
             ChrType = 0xC4,
             TeamType = 0xC8,
@@ -149,6 +150,17 @@ namespace DSR_Gadget
             PosY = 0x14,
             PosZ = 0x18,
         }
+
+        public const int CurrentPlayerOffset = 0x38;
+        public enum CurrentPlayers
+        {
+            CurrentPlayer1 = 0x38,
+            CurrentPlayer2 = 0x70,
+            CurrentPlayer3 = 0xA8,
+            CurrentPlayer4 = 0xE0,
+            CurrentPlayer5 = 0x118,
+        }
+        public const int CurrentPlayersOffset = 0x578;
 
         public const string ChrDbgAOB = "80 3D ? ? ? ? 00 48 8B 8F ? ? ? ? 0F B6 DB";
         public enum ChrDbg
