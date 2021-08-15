@@ -126,8 +126,8 @@ namespace DSR_Gadget
 
             updateInvadeType(cmbInvasionSelect, Hook.InvadeType);
 
-            updateAreaID(cmbMPAreaID, Hook.MPAreaID);
-            updateAreaID(cmbAreaID, Hook.AreaID);
+            updateAreaID(cmbMPAreaID, cbxFreezeMPAreaID, Hook.MPAreaID, value => Hook.MPAreaID = value);
+            updateAreaID(cmbAreaID, cbxFreezeAreaID, Hook.AreaID, value => Hook.AreaID = value);
 
         }
 
@@ -412,14 +412,15 @@ namespace DSR_Gadget
                 }
             }
         }
-        private void updateAreaID(ComboBox cmbAreaID, int areaID)
+        private void updateAreaID(ComboBox cmbAreaID, CheckBox cbxFreezeAreaID, int areaID, Action<int> setHook)
         {
             DSRArea lastAreaID = cmbAreaID.SelectedItem as DSRArea;
             if (cbxFreezeAreaID.Checked)
             {
                 //cmbAreaID.DropDownStyle = ComboBoxStyle.DropDown;
                 if (lastAreaID != null)
-                    Hook.AreaID = lastAreaID.AreaID;
+                    setHook(lastAreaID.AreaID);
+
                 /*
                 else
                 {
