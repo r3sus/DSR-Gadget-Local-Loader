@@ -192,6 +192,25 @@ namespace DSR_Gadget.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 0 None
+        ///1 Way of White
+        ///2 Princess&apos;s Guard
+        ///3 Warrior of Sunlight
+        ///4 Darkwraith
+        ///5 Path of the Dragon
+        ///6 Gravelord Servant
+        ///7 Forest Hunter
+        ///8 Darkmoon Blade
+        ///9 Chaos Servant
+        ///.
+        /// </summary>
+        internal static string Covenants {
+            get {
+                return ResourceManager.GetString("Covenants", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 0:  ba fe fe fe fe          mov    edx,0xfefefefe
         ///5:  41 b9 fe fe fe fe       mov    r9d,0xfefefefe
         ///b:  41 b8 fe fe fe fe       mov    r8d,0xfefefefe
@@ -281,27 +300,29 @@ namespace DSR_Gadget.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to -1   0   None
-        ///3000 90  Soul Arrow
-        ///3010 60  Great Souls Arrow
-        ///3020 36  Heavy Souls Arrow
-        ///3030 24  Great Heavy Souls Arrow
-        ///3040 30  Homing Soulsmass
-        ///3050 30  Homing Crystal Soulsmass
-        ///3060 12  Souls Spear
-        ///3070 12  Crystal Souls Spear
-        ///3100 15  Magic Weapon
-        ///3110 9   Great Magic Weapon
-        ///3120 9   Crystal Magic Weapon
-        ///3300 15  Magic Shield
-        ///3310 9   Strong Magic Shield
-        ///3400 9   Hidden Weapon
-        ///3410 9   Hidden Body
-        ///3500 9   Cast Light
-        ///3510 18  Hush
-        ///3520 60  Aural Decoy
-        ///3530 3   Repair
-        ///3540 30  Fall C [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to -1 0 None
+        ///3000 90 Soul Arrow
+        ///3010 60 Great Souls Arrow
+        ///3020 36 Heavy Souls Arrow
+        ///3030 24 Great Heavy Souls Arrow
+        ///3040 30 Homing Soulsmass
+        ///3050 30 Homing Crystal Soulsmass
+        ///3060 12 Souls Spear
+        ///3070 12 Crystal Souls Spear
+        ///3100 15 Magic Weapon
+        ///3110 9 Great Magic Weapon
+        ///3120 9 Crystal Magic Weapon
+        ///3300 15 Magic Shield
+        ///3310 9 Strong Magic Shield
+        ///3400 9 Hidden Weapon
+        ///3410 9 Hidden Body
+        ///3500 9 Cast Light
+        ///3510 18 Hush
+        ///3520 60 Aural Decoy
+        ///3530 3 Repair
+        ///3540 30 Fall Control
+        ///3550 33 Chameleon
+        ///3600 [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Magic {
             get {

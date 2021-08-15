@@ -98,6 +98,9 @@
             this.nudHealthMax = new System.Windows.Forms.NumericUpDown();
             this.nudHealth = new System.Windows.Forms.NumericUpDown();
             this.tpgStats = new System.Windows.Forms.TabPage();
+            this.gbxStatsMisc = new System.Windows.Forms.GroupBox();
+            this.lblCovenant = new System.Windows.Forms.Label();
+            this.cmbCovenant = new System.Windows.Forms.ComboBox();
             this.gbxStatsStats = new System.Windows.Forms.GroupBox();
             this.lblStatsOff2 = new System.Windows.Forms.Label();
             this.lblStatsOff1 = new System.Windows.Forms.Label();
@@ -271,16 +274,16 @@
             this.nupCurrentPlayerAttunement = new System.Windows.Forms.NumericUpDown();
             this.nupCurrentPlayerEndurance = new System.Windows.Forms.NumericUpDown();
             this.nupCurrentPlayerSoulLevel = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.lblCurrentPlayerHumanity = new System.Windows.Forms.Label();
+            this.lblCurrentPlayerFaith = new System.Windows.Forms.Label();
+            this.lblCurrentPlayerIntelligence = new System.Windows.Forms.Label();
+            this.lblCurrentPlayerResistance = new System.Windows.Forms.Label();
+            this.lblCurrentPlayerDexterity = new System.Windows.Forms.Label();
+            this.lblCurrentPlayerStrength = new System.Windows.Forms.Label();
+            this.lblCurrentPlayerEndurance = new System.Windows.Forms.Label();
+            this.lblCurrentPlayerAttunement = new System.Windows.Forms.Label();
+            this.lblCurrentPlayerVitality = new System.Windows.Forms.Label();
+            this.lblCurrentPlayerSoulLevel = new System.Windows.Forms.Label();
             this.lbxInfoCurrentPlayers = new System.Windows.Forms.ListBox();
             this.lblVersion = new System.Windows.Forms.Label();
             this.lblVersionValue = new System.Windows.Forms.Label();
@@ -289,7 +292,6 @@
             this.tmrUpdate = new System.Windows.Forms.Timer(this.components);
             this.lblUpdate = new System.Windows.Forms.Label();
             this.llbUpdate = new System.Windows.Forms.LinkLabel();
-            this.gbxStatsMisc = new System.Windows.Forms.GroupBox();
             this.tclMain.SuspendLayout();
             this.tpgPlayer.SuspendLayout();
             this.gbxOther.SuspendLayout();
@@ -316,6 +318,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudHealthMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHealth)).BeginInit();
             this.tpgStats.SuspendLayout();
+            this.gbxStatsMisc.SuspendLayout();
             this.gbxStatsStats.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudHumanity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSouls)).BeginInit();
@@ -1264,6 +1267,36 @@
             this.tpgStats.Text = "Stats";
             this.tpgStats.UseVisualStyleBackColor = true;
             // 
+            // gbxStatsMisc
+            // 
+            this.gbxStatsMisc.Controls.Add(this.lblCovenant);
+            this.gbxStatsMisc.Controls.Add(this.cmbCovenant);
+            this.gbxStatsMisc.Location = new System.Drawing.Point(6, 310);
+            this.gbxStatsMisc.Name = "gbxStatsMisc";
+            this.gbxStatsMisc.Size = new System.Drawing.Size(384, 263);
+            this.gbxStatsMisc.TabIndex = 80;
+            this.gbxStatsMisc.TabStop = false;
+            this.gbxStatsMisc.Text = "Misc";
+            // 
+            // lblCovenant
+            // 
+            this.lblCovenant.AutoSize = true;
+            this.lblCovenant.Location = new System.Drawing.Point(133, 22);
+            this.lblCovenant.Name = "lblCovenant";
+            this.lblCovenant.Size = new System.Drawing.Size(53, 13);
+            this.lblCovenant.TabIndex = 1;
+            this.lblCovenant.Text = "Covenant";
+            // 
+            // cmbCovenant
+            // 
+            this.cmbCovenant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCovenant.FormattingEnabled = true;
+            this.cmbCovenant.Location = new System.Drawing.Point(6, 19);
+            this.cmbCovenant.Name = "cmbCovenant";
+            this.cmbCovenant.Size = new System.Drawing.Size(121, 21);
+            this.cmbCovenant.TabIndex = 0;
+            this.cmbCovenant.SelectedIndexChanged += new System.EventHandler(this.cmbCovenant_SelectedIndexChanged);
+            // 
             // gbxStatsStats
             // 
             this.gbxStatsStats.Controls.Add(this.lblStatsOff2);
@@ -1354,7 +1387,7 @@
             // 
             this.lblSoulLevel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSoulLevel.AutoSize = true;
-            this.lblSoulLevel.Location = new System.Drawing.Point(60, 22);
+            this.lblSoulLevel.Location = new System.Drawing.Point(66, 22);
             this.lblSoulLevel.Name = "lblSoulLevel";
             this.lblSoulLevel.Size = new System.Drawing.Size(57, 13);
             this.lblSoulLevel.TabIndex = 74;
@@ -3377,16 +3410,16 @@
             this.tpgInfoCurrentPlayers.Controls.Add(this.nupCurrentPlayerAttunement);
             this.tpgInfoCurrentPlayers.Controls.Add(this.nupCurrentPlayerEndurance);
             this.tpgInfoCurrentPlayers.Controls.Add(this.nupCurrentPlayerSoulLevel);
-            this.tpgInfoCurrentPlayers.Controls.Add(this.label4);
-            this.tpgInfoCurrentPlayers.Controls.Add(this.label5);
-            this.tpgInfoCurrentPlayers.Controls.Add(this.label6);
-            this.tpgInfoCurrentPlayers.Controls.Add(this.label7);
-            this.tpgInfoCurrentPlayers.Controls.Add(this.label8);
-            this.tpgInfoCurrentPlayers.Controls.Add(this.label9);
-            this.tpgInfoCurrentPlayers.Controls.Add(this.label10);
-            this.tpgInfoCurrentPlayers.Controls.Add(this.label11);
-            this.tpgInfoCurrentPlayers.Controls.Add(this.label12);
-            this.tpgInfoCurrentPlayers.Controls.Add(this.label13);
+            this.tpgInfoCurrentPlayers.Controls.Add(this.lblCurrentPlayerHumanity);
+            this.tpgInfoCurrentPlayers.Controls.Add(this.lblCurrentPlayerFaith);
+            this.tpgInfoCurrentPlayers.Controls.Add(this.lblCurrentPlayerIntelligence);
+            this.tpgInfoCurrentPlayers.Controls.Add(this.lblCurrentPlayerResistance);
+            this.tpgInfoCurrentPlayers.Controls.Add(this.lblCurrentPlayerDexterity);
+            this.tpgInfoCurrentPlayers.Controls.Add(this.lblCurrentPlayerStrength);
+            this.tpgInfoCurrentPlayers.Controls.Add(this.lblCurrentPlayerEndurance);
+            this.tpgInfoCurrentPlayers.Controls.Add(this.lblCurrentPlayerAttunement);
+            this.tpgInfoCurrentPlayers.Controls.Add(this.lblCurrentPlayerVitality);
+            this.tpgInfoCurrentPlayers.Controls.Add(this.lblCurrentPlayerSoulLevel);
             this.tpgInfoCurrentPlayers.Controls.Add(this.lbxInfoCurrentPlayers);
             this.tpgInfoCurrentPlayers.Location = new System.Drawing.Point(4, 22);
             this.tpgInfoCurrentPlayers.Name = "tpgInfoCurrentPlayers";
@@ -3626,95 +3659,95 @@
             0,
             -2147483648});
             // 
-            // label4
+            // lblCurrentPlayerHumanity
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(94, 318);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 13);
-            this.label4.TabIndex = 41;
-            this.label4.Text = "Humanity";
+            this.lblCurrentPlayerHumanity.AutoSize = true;
+            this.lblCurrentPlayerHumanity.Location = new System.Drawing.Point(94, 318);
+            this.lblCurrentPlayerHumanity.Name = "lblCurrentPlayerHumanity";
+            this.lblCurrentPlayerHumanity.Size = new System.Drawing.Size(51, 13);
+            this.lblCurrentPlayerHumanity.TabIndex = 41;
+            this.lblCurrentPlayerHumanity.Text = "Humanity";
             // 
-            // label5
+            // lblCurrentPlayerFaith
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(94, 292);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(30, 13);
-            this.label5.TabIndex = 40;
-            this.label5.Text = "Faith";
+            this.lblCurrentPlayerFaith.AutoSize = true;
+            this.lblCurrentPlayerFaith.Location = new System.Drawing.Point(94, 292);
+            this.lblCurrentPlayerFaith.Name = "lblCurrentPlayerFaith";
+            this.lblCurrentPlayerFaith.Size = new System.Drawing.Size(30, 13);
+            this.lblCurrentPlayerFaith.TabIndex = 40;
+            this.lblCurrentPlayerFaith.Text = "Faith";
             // 
-            // label6
+            // lblCurrentPlayerIntelligence
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(94, 266);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(61, 13);
-            this.label6.TabIndex = 39;
-            this.label6.Text = "Intelligence";
+            this.lblCurrentPlayerIntelligence.AutoSize = true;
+            this.lblCurrentPlayerIntelligence.Location = new System.Drawing.Point(94, 266);
+            this.lblCurrentPlayerIntelligence.Name = "lblCurrentPlayerIntelligence";
+            this.lblCurrentPlayerIntelligence.Size = new System.Drawing.Size(61, 13);
+            this.lblCurrentPlayerIntelligence.TabIndex = 39;
+            this.lblCurrentPlayerIntelligence.Text = "Intelligence";
             // 
-            // label7
+            // lblCurrentPlayerResistance
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(94, 240);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 13);
-            this.label7.TabIndex = 38;
-            this.label7.Text = "Resistance";
+            this.lblCurrentPlayerResistance.AutoSize = true;
+            this.lblCurrentPlayerResistance.Location = new System.Drawing.Point(94, 240);
+            this.lblCurrentPlayerResistance.Name = "lblCurrentPlayerResistance";
+            this.lblCurrentPlayerResistance.Size = new System.Drawing.Size(60, 13);
+            this.lblCurrentPlayerResistance.TabIndex = 38;
+            this.lblCurrentPlayerResistance.Text = "Resistance";
             // 
-            // label8
+            // lblCurrentPlayerDexterity
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(94, 214);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(48, 13);
-            this.label8.TabIndex = 37;
-            this.label8.Text = "Dexterity";
+            this.lblCurrentPlayerDexterity.AutoSize = true;
+            this.lblCurrentPlayerDexterity.Location = new System.Drawing.Point(94, 214);
+            this.lblCurrentPlayerDexterity.Name = "lblCurrentPlayerDexterity";
+            this.lblCurrentPlayerDexterity.Size = new System.Drawing.Size(48, 13);
+            this.lblCurrentPlayerDexterity.TabIndex = 37;
+            this.lblCurrentPlayerDexterity.Text = "Dexterity";
             // 
-            // label9
+            // lblCurrentPlayerStrength
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(94, 188);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(47, 13);
-            this.label9.TabIndex = 36;
-            this.label9.Text = "Strength";
+            this.lblCurrentPlayerStrength.AutoSize = true;
+            this.lblCurrentPlayerStrength.Location = new System.Drawing.Point(94, 188);
+            this.lblCurrentPlayerStrength.Name = "lblCurrentPlayerStrength";
+            this.lblCurrentPlayerStrength.Size = new System.Drawing.Size(47, 13);
+            this.lblCurrentPlayerStrength.TabIndex = 36;
+            this.lblCurrentPlayerStrength.Text = "Strength";
             // 
-            // label10
+            // lblCurrentPlayerEndurance
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(94, 162);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(59, 13);
-            this.label10.TabIndex = 35;
-            this.label10.Text = "Endurance";
+            this.lblCurrentPlayerEndurance.AutoSize = true;
+            this.lblCurrentPlayerEndurance.Location = new System.Drawing.Point(94, 162);
+            this.lblCurrentPlayerEndurance.Name = "lblCurrentPlayerEndurance";
+            this.lblCurrentPlayerEndurance.Size = new System.Drawing.Size(59, 13);
+            this.lblCurrentPlayerEndurance.TabIndex = 35;
+            this.lblCurrentPlayerEndurance.Text = "Endurance";
             // 
-            // label11
+            // lblCurrentPlayerAttunement
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(94, 136);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(61, 13);
-            this.label11.TabIndex = 34;
-            this.label11.Text = "Attunement";
+            this.lblCurrentPlayerAttunement.AutoSize = true;
+            this.lblCurrentPlayerAttunement.Location = new System.Drawing.Point(94, 136);
+            this.lblCurrentPlayerAttunement.Name = "lblCurrentPlayerAttunement";
+            this.lblCurrentPlayerAttunement.Size = new System.Drawing.Size(61, 13);
+            this.lblCurrentPlayerAttunement.TabIndex = 34;
+            this.lblCurrentPlayerAttunement.Text = "Attunement";
             // 
-            // label12
+            // lblCurrentPlayerVitality
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(94, 110);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(37, 13);
-            this.label12.TabIndex = 33;
-            this.label12.Text = "Vitality";
+            this.lblCurrentPlayerVitality.AutoSize = true;
+            this.lblCurrentPlayerVitality.Location = new System.Drawing.Point(94, 110);
+            this.lblCurrentPlayerVitality.Name = "lblCurrentPlayerVitality";
+            this.lblCurrentPlayerVitality.Size = new System.Drawing.Size(37, 13);
+            this.lblCurrentPlayerVitality.TabIndex = 33;
+            this.lblCurrentPlayerVitality.Text = "Vitality";
             // 
-            // label13
+            // lblCurrentPlayerSoulLevel
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(94, 84);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(57, 13);
-            this.label13.TabIndex = 32;
-            this.label13.Text = "Soul Level";
+            this.lblCurrentPlayerSoulLevel.AutoSize = true;
+            this.lblCurrentPlayerSoulLevel.Location = new System.Drawing.Point(94, 84);
+            this.lblCurrentPlayerSoulLevel.Name = "lblCurrentPlayerSoulLevel";
+            this.lblCurrentPlayerSoulLevel.Size = new System.Drawing.Size(57, 13);
+            this.lblCurrentPlayerSoulLevel.TabIndex = 32;
+            this.lblCurrentPlayerSoulLevel.Text = "Soul Level";
             // 
             // lbxInfoCurrentPlayers
             // 
@@ -3786,15 +3819,6 @@
             this.llbUpdate.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.llbUpdate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbUpdate_LinkClicked);
             // 
-            // gbxStatsMisc
-            // 
-            this.gbxStatsMisc.Location = new System.Drawing.Point(6, 310);
-            this.gbxStatsMisc.Name = "gbxStatsMisc";
-            this.gbxStatsMisc.Size = new System.Drawing.Size(384, 263);
-            this.gbxStatsMisc.TabIndex = 80;
-            this.gbxStatsMisc.TabStop = false;
-            this.gbxStatsMisc.Text = "Misc";
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3843,6 +3867,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudHealthMax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHealth)).EndInit();
             this.tpgStats.ResumeLayout(false);
+            this.gbxStatsMisc.ResumeLayout(false);
+            this.gbxStatsMisc.PerformLayout();
             this.gbxStatsStats.ResumeLayout(false);
             this.gbxStatsStats.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudHumanity)).EndInit();
@@ -4101,16 +4127,16 @@
         private System.Windows.Forms.NumericUpDown nupCurrentPlayerAttunement;
         private System.Windows.Forms.NumericUpDown nupCurrentPlayerEndurance;
         private System.Windows.Forms.NumericUpDown nupCurrentPlayerSoulLevel;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblCurrentPlayerHumanity;
+        private System.Windows.Forms.Label lblCurrentPlayerFaith;
+        private System.Windows.Forms.Label lblCurrentPlayerIntelligence;
+        private System.Windows.Forms.Label lblCurrentPlayerResistance;
+        private System.Windows.Forms.Label lblCurrentPlayerDexterity;
+        private System.Windows.Forms.Label lblCurrentPlayerStrength;
+        private System.Windows.Forms.Label lblCurrentPlayerEndurance;
+        private System.Windows.Forms.Label lblCurrentPlayerAttunement;
+        private System.Windows.Forms.Label lblCurrentPlayerVitality;
+        private System.Windows.Forms.Label lblCurrentPlayerSoulLevel;
         private System.Windows.Forms.ListBox lbxInfoCurrentPlayers;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
@@ -4180,6 +4206,8 @@
         private System.Windows.Forms.Label lblVitality;
         private System.Windows.Forms.NumericUpDown nudVitality;
         private System.Windows.Forms.GroupBox gbxStatsMisc;
+        private System.Windows.Forms.Label lblCovenant;
+        private System.Windows.Forms.ComboBox cmbCovenant;
     }
 }
 

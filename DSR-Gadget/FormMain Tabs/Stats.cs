@@ -11,6 +11,9 @@ namespace DSR_Gadget
                 cmbClass.Items.Add(charClass);
             nudHumanity.Maximum = int.MaxValue;
             nudHumanity.Minimum = int.MinValue;
+
+            foreach (DSRCovenant covenant in DSRCovenant.All)
+                cmbCovenant.Items.Add(covenant);
         }
 
         private void saveStats() { }
@@ -20,6 +23,7 @@ namespace DSR_Gadget
         private void reloadStats()
         {
             cmbClass.SelectedIndex = Hook.Class;
+            cmbCovenant.SelectedIndex = Hook.Covenant;
         }
 
         private void updateStats()
@@ -40,6 +44,8 @@ namespace DSR_Gadget
                 nudFaith.Value = Hook.Faith;
             }
             catch (ArgumentOutOfRangeException) { }
+
+            updateCovenant(cmbCovenant, Hook.Covenant);
         }
 
         private void cmbClass_SelectedIndexChanged(object sender, EventArgs e)
@@ -79,6 +85,15 @@ namespace DSR_Gadget
             //recalculateStats();
         }
 
+        private void cmbCovenant_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (loaded && !reading)
+            {
+                DSRCovenant item = cmbCovenant.SelectedItem as DSRCovenant;
+                Hook.Covenant = item.ID;
+            }
+        }
+
         private void recalculateStats()
         {
             int vit = (int)nudVitality.Value;
@@ -102,6 +117,29 @@ namespace DSR_Gadget
             sl += fth - charClass.Faith;
 
             //dsrProcess.LevelUp(vit, att, end, str, dex, res, intel, fth, sl);
+        }
+        private void updateCovenant(ComboBox cmbCovenant, byte id)
+        {
+            DSRCovenant lastCovenant = cmbCovenant.SelectedItem as DSRCovenant;
+            if (!cmbCovenant.DroppedDown && lastCovenant.ID != id)
+            {
+                bool found = false;
+                foreach (DSRCovenant item in cmbCovenant.Items)
+                {
+                    if (item.ID == id)
+                    {
+                        cmbCovenant.SelectedItem = item;
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found)
+                {
+                    DSRCovenant item = new DSRCovenant("Unknown", id);
+                    cmbCovenant.Items.Add(item);
+                    cmbCovenant.SelectedItem = item;
+                }
+            }
         }
     }
 }

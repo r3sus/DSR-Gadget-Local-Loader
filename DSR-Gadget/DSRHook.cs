@@ -376,6 +376,13 @@ namespace DSR_Gadget
         {
             get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.Faith);
         }
+
+        public byte Covenant
+        {
+            get => PlayerGameDataPtr.ReadByte((int)DSROffsets.PlayerGameData.CurrentCovenant);
+            set => PlayerGameDataPtr.WriteByte((int)DSROffsets.PlayerGameData.CurrentCovenant, value);
+        }
+
         #endregion
 
         #region Items
