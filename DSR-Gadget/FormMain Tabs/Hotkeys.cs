@@ -86,20 +86,22 @@ namespace DSR_Gadget
 
             hotkeys.Add(new GadgetHotkey("HotkeyTeleportBloodstain", "Teleport to Bloodstain", flpHotkeyControls, () =>
             {
-                if (loaded)
-                    teleportBloodstain();
+                teleportBloodstain();
             }));
 
             hotkeys.Add(new GadgetHotkey("HotkeyTeleportInitialPosition", "Teleport to Initial Pos.", flpHotkeyControls, () => 
             {
-                if (loaded)
-                    teleportInitialPosition();
+                teleportInitialPosition();
             }));
 
+            hotkeys.Add(new GadgetHotkey("HotkeyResetMagicQuantity", "Reset Magic Quantity", flpHotkeyControls, () =>
+            {
+                resetMagicQuantity();
+            }));
 
             hotkeys.Add(new GadgetHotkey("HotkeyTeamHuman", "Change Team to Human", flpHotkeyControls, () =>
             {
-                if (loaded)
+                if (loaded && !reading)
                 {
                     Hook.ChrType = 0;
                     Hook.TeamType = 1;
@@ -108,25 +110,16 @@ namespace DSR_Gadget
 
             hotkeys.Add(new GadgetHotkey("HotkeyTeamHollow", "Change Team to Hollow", flpHotkeyControls, () =>
             {
-                if (loaded)
+                if (loaded && !reading)
                 {
                     Hook.ChrType = 8;
                     Hook.TeamType = 4;
                 }
             }));
 
-            hotkeys.Add(new GadgetHotkey("HotkeyTeamArena", "Change Team to Arena FFA", flpHotkeyControls, () =>
-            {
-                if (loaded)
-                {
-                    Hook.ChrType = 13;
-                    Hook.TeamType = 16;
-                }
-            }));
-
             hotkeys.Add(new GadgetHotkey("HotkeyTeamRedPhantom", "Change Team to Red Phantom", flpHotkeyControls, () =>
             {
-                if (loaded)
+                if (loaded && !reading)
                 {
                     Hook.ChrType = 2;
                     Hook.TeamType = 16;
@@ -135,10 +128,19 @@ namespace DSR_Gadget
 
             hotkeys.Add(new GadgetHotkey("HotkeyTeamWhitePhantom", "Change Team to White Phantom", flpHotkeyControls, () =>
             {
-                if (loaded)
+                if (loaded && !reading)
                 {
                     Hook.ChrType = 1;
                     Hook.TeamType = 2;
+                }
+            }));
+
+            hotkeys.Add(new GadgetHotkey("HotkeyTeamArena", "Change Team to Arena FFA", flpHotkeyControls, () =>
+            {
+                if (loaded && !reading)
+                {
+                    Hook.ChrType = 13;
+                    Hook.TeamType = 16;
                 }
             }));
 

@@ -490,5 +490,17 @@ namespace DSR_Gadget.Properties {
                 this["HotkeyWarpToLastBonfire"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("27")]
+        public int HotkeyResetMagicQuantity {
+            get {
+                return ((int)(this["HotkeyResetMagicQuantity"]));
+            }
+            set {
+                this["HotkeyResetMagicQuantity"] = value;
+            }
+        }
     }
 }
