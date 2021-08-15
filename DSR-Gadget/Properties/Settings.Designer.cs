@@ -502,5 +502,17 @@ namespace DSR_Gadget.Properties {
                 this["HotkeyResetMagicQuantity"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("27")]
+        public int HotkeyCancelAnimation {
+            get {
+                return ((int)(this["HotkeyCancelAnimation"]));
+            }
+            set {
+                this["HotkeyCancelAnimation"] = value;
+            }
+        }
     }
 }

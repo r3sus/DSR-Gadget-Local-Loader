@@ -67,8 +67,9 @@ namespace DSR_Gadget
         public int ChrData1Boost2 = 0x0;
         public enum ChrData1
         {
-            CurrentPlayers = 0x8,
+            CurrentPlayers = 0x18, //change and use Boost variables
             ChrMapData = 0x48,
+            PlayerCtrl = 0x68, //change and use Boost variables
             ChrType = 0xC4,
             TeamType = 0xC8,
             ChrFlags1 = 0x284,
@@ -149,6 +150,16 @@ namespace DSR_Gadget
             PosX = 0x10,
             PosY = 0x14,
             PosZ = 0x18,
+        }
+
+        public enum PlayerCtrl
+        {
+            ActionCtrl = 0x48,
+        }
+
+        public enum ActionCtrl
+        {
+            CurrentAnimation = 0x80,
         }
 
         public const int CurrentPlayerOffset = 0x38;

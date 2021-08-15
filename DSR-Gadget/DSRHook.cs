@@ -32,6 +32,7 @@ namespace DSR_Gadget
         private PHPointer GraphicsData;
         private PHPointer MenuMan;
         private PHPointer EventFlags;
+        private PHPointer ActionCtrlPtr;
 
         private PHPointer DurabilityAddr;
         private PHPointer DurabilitySpecialAddr;
@@ -60,6 +61,7 @@ namespace DSR_Gadget
             PlayerGameDataPtr = CreateChildPointer(GameDataManBasePtr, DSROffsets.GameDataManOffset1, (int)DSROffsets.GameDataMan.PlayerGameData);
             EquipMagicDataPtr = CreateChildPointer(GameDataManBasePtr, DSROffsets.GameDataManOffset1, (int)DSROffsets.GameDataMan.PlayerGameData, (int)DSROffsets.PlayerGameData.EquipMagicData);
             LastBloodstainPos = CreateChildPointer(GameDataManBasePtr, DSROffsets.GameDataManOffset1, (int)DSROffsets.GameDataMan.LastBloodstainPos);
+            ActionCtrlPtr = CreateChildPointer(ChrData1, (int)DSROffsets.ChrData1.PlayerCtrl, (int)DSROffsets.PlayerCtrl.ActionCtrl);
 
             PlayerGameDataRecentPtr = CreateChildPointer(GameDataManBasePtr, DSROffsets.GameDataManOffset1, (int)DSROffsets.GameDataMan.PlayerGameDataRecent);
             RecentPlayerPtrs = new PHPointer[5];
@@ -214,6 +216,12 @@ namespace DSR_Gadget
         {
             get => ChrData1.ReadInt32((int)DSROffsets.ChrData1.AreaID + Offsets.ChrData1Boost2);
             set => ChrData1.WriteInt32((int)DSROffsets.ChrData1.AreaID + Offsets.ChrData1Boost2, value);
+        }
+
+        public int CurrentAnimation
+        {
+            get => ActionCtrlPtr.ReadInt32((int)DSROffsets.ActionCtrl.CurrentAnimation);
+            set => ActionCtrlPtr.WriteInt32((int)DSROffsets.ActionCtrl.CurrentAnimation, value);
         }
 
         public void GetPosition(out float x, out float y, out float z, out float angle)

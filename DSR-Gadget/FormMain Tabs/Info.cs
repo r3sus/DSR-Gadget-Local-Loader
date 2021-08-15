@@ -73,7 +73,7 @@ namespace DSR_Gadget
 
         private void updateInfo()
         {
-            /*
+            
             DSRPlayer[] currentPlayers = new DSRPlayer[5];
             bool[] currentPlayerIndices = Hook.GetCurrentPlayers();
 
@@ -103,7 +103,7 @@ namespace DSR_Gadget
             DSRPlayer selectedCurrentPlayer = lbxInfoCurrentPlayers.SelectedItem as DSRPlayer;
             if (selectedCurrentPlayer != null)
                 updateCurrentPlayerUI(selectedCurrentPlayer);
-            */
+            
 
             DSRPlayer[] recentPlayers = new DSRPlayer[5];
             bool[] recentPlayerIndices = Hook.GetRecentPlayers();

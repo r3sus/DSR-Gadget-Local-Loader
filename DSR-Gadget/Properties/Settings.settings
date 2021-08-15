@@ -122,5 +122,8 @@
     <Setting Name="HotkeyResetMagicQuantity" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">27</Value>
     </Setting>
+    <Setting Name="HotkeyCancelAnimation" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">27</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
