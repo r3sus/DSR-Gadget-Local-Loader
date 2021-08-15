@@ -182,12 +182,21 @@ namespace DSR_Gadget
         public enum GameDataMan
         {
             PlayerGameData = 0x10,
+            PlayerGameDataRecent = 0x18,
             LastBloodstainPos = 0x40,
             PlayTime = 0xA4,
         }
 
         public enum PlayerGameData
         {
+            Hp = 0x14,
+            MaxHp = 0x18,
+            BaseMaxHp = 0x1C,
+
+            Stamina = 0x30,
+            MaxStamina = 0x34,
+            BaseMaxStamina = 0x38,
+
             Vitality = 0x40,
             Attunement = 0x48,
             Endurance = 0x50,
@@ -199,12 +208,16 @@ namespace DSR_Gadget
             Resistance = 0x88,
             SoulLevel = 0x90,
             Souls = 0x94,
+
+            NameString1 = 0xA8,
+
             Gender = 0xCA,
             Class = 0xCE,
+            Physique = 0xCF,
 
-            InvadeType = 0x118,
-            WeaponMemory = 0x119,
-            NameString1 = 0xA8,
+            MultiplayerCount = 0xD4,
+            CoopSuccessCount = 0xD8,
+
 
             WarriorOfSunlight = 0xED,
             DarkWraith = 0xEE,
@@ -213,9 +226,13 @@ namespace DSR_Gadget
             ForestHunter = 0xF1,
             DarkmoonBlade = 0xF2,
             ChaosServant = 0xF3,
-            CurrentCovenant = 0x113,
 
-            NameString2 = 0x12C,
+            CurrentCovenant = 0x113,
+            InvadeType = 0x118,
+            WeaponMemory = 0x119,
+            EstusLevel = 0x11A,
+
+            NameString2 = 0x12C, //(used to display name to other players)
 
             LeftWep1 = 0x324,
             RightWep1 = 0x328,
@@ -238,8 +255,27 @@ namespace DSR_Gadget
             QuickBar4 = 0x36C,
             QuickBar5 = 0x370,
 
+            HeadSize = 0x388,
+            ChestSize = 0x38C,
+            AbdomenSize = 0x390,
+            ArmSize = 0x394,
+            LegSize = 0x398,
+
             EquipMagicData = 0x418,
             GestureEquipData = 0x450,
+
+            HairRed = 0x4C0,
+            HairGreen = 0x4C4,
+            HairBlue = 0x4C8,
+            HairAlpha = 0x4CC,
+
+            EyeRed = 0x4C0,
+            EyeGreen = 0x4C4,
+            EyeBlue = 0x4C8,
+
+            FaceDataStart = 0x4E0,
+            SkinColorStart = 0x512,
+
             GestureGameData = 0x568,
         }
 
@@ -274,6 +310,18 @@ namespace DSR_Gadget
             PosY = 0x4,
             PosZ = 0x8,
             PosAngle = 0x10,
+        }
+
+        public const int RecentPlayerOffset = 0x660;
+        public enum PlayerGameDataRecent
+        {
+            // RecentPlayer is instance of PlayerGameData
+            RecentPlayer1 = 0x460,
+            RecentPlayer2 = 0x460 + RecentPlayerOffset,
+            RecentPlayer3 = 0x460 + RecentPlayerOffset * 2,
+            RecentPlayer4 = 0x460 + RecentPlayerOffset * 3,
+            RecentPlayer5 = 0x460 + RecentPlayerOffset * 4,
+
         }
 
         public const string EventFlagsAOB = "48 8B 0D ? ? ? ? 99 33 C2 45 33 C0 2B C2 8D 50 F6";

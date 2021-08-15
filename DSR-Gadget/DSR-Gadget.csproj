@@ -85,6 +85,9 @@
     <Compile Include="FormMain Tabs\Player.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormMain Tabs\Info.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormMain Tabs\Stats.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +102,7 @@
     <Compile Include="List Items\DSRArea.cs" />
     <Compile Include="List Items\DSRInvasion.cs" />
     <Compile Include="List Items\DSRMagic.cs" />
+    <Compile Include="List Items\DSRPlayer.cs" />
     <Compile Include="List Items\DSRTeam.cs" />
     <Compile Include="List Items\DSRClass.cs" />
     <Compile Include="List Items\DSRInfusion.cs" />

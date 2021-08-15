@@ -143,6 +143,7 @@ namespace DSR_Gadget
             initGraphics();
             initMisc();
             initHotkeys();
+            initInfo();
             reading = true;
         }
 
@@ -156,6 +157,7 @@ namespace DSR_Gadget
             reloadGraphics();
             reloadMisc();
             reloadHotkeys();
+            reloadInfo();
             reading = false;
         }
 
@@ -169,6 +171,7 @@ namespace DSR_Gadget
             updateGraphics();
             updateMisc();
             updateHotkeys();
+            updateInfo();
             reading = false;
         }
 
@@ -181,6 +184,7 @@ namespace DSR_Gadget
             saveGraphics();
             saveMisc();
             saveHotkeys();
+            saveInfo();
         }
 
         private void resetAll()
@@ -192,6 +196,7 @@ namespace DSR_Gadget
             resetGraphics();
             resetMisc();
             resetHotkeys();
+            resetInfo();
         }
     }
 }

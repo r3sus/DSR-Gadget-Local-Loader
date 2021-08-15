@@ -23,6 +23,8 @@ namespace DSR_Gadget
         private PHPointer ChrAnimData;
         private PHPointer ChrPosData;
         private PHPointer PlayerGameDataPtr;
+        private PHPointer PlayerGameDataRecentPtr;
+        private PHPointer[] RecentPlayerPtrs;
         private PHPointer EquipMagicDataPtr;
         private PHPointer LastBloodstainPos;
         private PHPointer GraphicsData;
@@ -54,8 +56,15 @@ namespace DSR_Gadget
             ChrAnimData = CreateBasePointer(IntPtr.Zero);
             ChrPosData = CreateBasePointer(IntPtr.Zero);
             PlayerGameDataPtr = CreateChildPointer(GameDataManBasePtr, DSROffsets.GameDataManOffset1, (int)DSROffsets.GameDataMan.PlayerGameData);
+            PlayerGameDataRecentPtr = CreateChildPointer(GameDataManBasePtr, DSROffsets.GameDataManOffset1, (int)DSROffsets.GameDataMan.PlayerGameDataRecent);
             EquipMagicDataPtr = CreateChildPointer(GameDataManBasePtr, DSROffsets.GameDataManOffset1, (int)DSROffsets.GameDataMan.PlayerGameData, (int)DSROffsets.PlayerGameData.EquipMagicData);
             LastBloodstainPos = CreateChildPointer(GameDataManBasePtr, DSROffsets.GameDataManOffset1, (int)DSROffsets.GameDataMan.LastBloodstainPos);
+
+            RecentPlayerPtrs = new PHPointer[5];
+            for (int i = 0; i < 5; i++)
+            {
+                RecentPlayerPtrs[i] = CreateChildPointer(PlayerGameDataRecentPtr, (int)DSROffsets.PlayerGameDataRecent.RecentPlayer1 + i * (int)DSROffsets.RecentPlayerOffset);
+            }
 
             DurabilityAddr = RegisterAbsoluteAOB(DSROffsets.DurabilityAOB);
             DurabilitySpecialAddr = RegisterAbsoluteAOB(DSROffsets.DurabilitySpecialAOB);
@@ -649,6 +658,46 @@ namespace DSR_Gadget
 
         }
 #endif
+        #endregion
+
+        #region info
+
+        public bool[] GetRecentPlayers()
+        {
+            bool[] recentPlayers = new bool[5];
+            for (int i = 0; i < RecentPlayerPtrs.Length; i++)
+            {
+                //TODO: more robust check
+                if (RecentPlayerPtrs[i].ReadInt32((int)DSROffsets.PlayerGameData.SoulLevel) != 0)
+                    recentPlayers[i] = true;
+                else
+                    recentPlayers[i] = false;
+            }
+
+            return recentPlayers;
+        }
+
+        public DSRPlayer UpdateRecentPlayer(DSRPlayer player)
+        {
+            int index = player.PlayerIndex;
+
+            player.Name = RecentPlayerPtrs[index].ReadString((int)DSROffsets.PlayerGameData.NameString1,
+                System.Text.Encoding.Unicode, 32, false);
+            player.SoulLevel = RecentPlayerPtrs[index].ReadInt32((int)DSROffsets.PlayerGameData.SoulLevel);
+            player.Vitality = RecentPlayerPtrs[index].ReadInt32((int)DSROffsets.PlayerGameData.Vitality);
+            player.Attunement = RecentPlayerPtrs[index].ReadInt32((int)DSROffsets.PlayerGameData.Attunement);
+            player.Endurance = RecentPlayerPtrs[index].ReadInt32((int)DSROffsets.PlayerGameData.Endurance);
+            player.Strength = RecentPlayerPtrs[index].ReadInt32((int)DSROffsets.PlayerGameData.Strength);
+            player.Dexterity = RecentPlayerPtrs[index].ReadInt32((int)DSROffsets.PlayerGameData.Dexterity);
+            player.Resistance = RecentPlayerPtrs[index].ReadInt32((int)DSROffsets.PlayerGameData.Resistance);
+            player.Intelligence = RecentPlayerPtrs[index].ReadInt32((int)DSROffsets.PlayerGameData.Intelligence);
+            player.Faith = RecentPlayerPtrs[index].ReadInt32((int)DSROffsets.PlayerGameData.Faith);
+            player.Humanity = RecentPlayerPtrs[index].ReadInt32((int)DSROffsets.PlayerGameData.Humanity);
+
+            return player;
+        }
+
+
         #endregion
     }
 }

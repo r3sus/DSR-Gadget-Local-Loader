@@ -195,6 +195,11 @@
             this.flpHotkeyControls = new System.Windows.Forms.FlowLayoutPanel();
             this.cbxHotkeysHandle = new System.Windows.Forms.CheckBox();
             this.cbxHotkeysEnable = new System.Windows.Forms.CheckBox();
+            this.tpgInfo = new System.Windows.Forms.TabPage();
+            this.tclInfo = new System.Windows.Forms.TabControl();
+            this.tpgInfoRecentPlayers = new System.Windows.Forms.TabPage();
+            this.lbxInfoRecentPlayers = new System.Windows.Forms.ListBox();
+            this.tpgInfoCurrentPlayers = new System.Windows.Forms.TabPage();
             this.lblVersion = new System.Windows.Forms.Label();
             this.lblVersionValue = new System.Windows.Forms.Label();
             this.lblLoaded = new System.Windows.Forms.Label();
@@ -202,6 +207,87 @@
             this.tmrUpdate = new System.Windows.Forms.Timer(this.components);
             this.lblUpdate = new System.Windows.Forms.Label();
             this.llbUpdate = new System.Windows.Forms.LinkLabel();
+            this.lblRecentPlayerSoulLevel = new System.Windows.Forms.Label();
+            this.lblRecentPlayerVitality = new System.Windows.Forms.Label();
+            this.lblRecentPlayerAttunement = new System.Windows.Forms.Label();
+            this.lblRecentPlayerEndurance = new System.Windows.Forms.Label();
+            this.lblRecentPlayerStrength = new System.Windows.Forms.Label();
+            this.lblRecentPlayerDexterity = new System.Windows.Forms.Label();
+            this.lblRecentPlayerResistance = new System.Windows.Forms.Label();
+            this.lblRecentPlayerIntelligence = new System.Windows.Forms.Label();
+            this.lblRecentPlayerFaith = new System.Windows.Forms.Label();
+            this.lblRecentPlayerHumanity = new System.Windows.Forms.Label();
+            this.nupRecentPlayerSoulLevel = new System.Windows.Forms.NumericUpDown();
+            this.nupRecentPlayerEndurance = new System.Windows.Forms.NumericUpDown();
+            this.nupRecentPlayerAttunement = new System.Windows.Forms.NumericUpDown();
+            this.nupRecentPlayerVitality = new System.Windows.Forms.NumericUpDown();
+            this.nupRecentPlayerDexterity = new System.Windows.Forms.NumericUpDown();
+            this.nupRecentPlayerStrength = new System.Windows.Forms.NumericUpDown();
+            this.nupRecentPlayerIntelligence = new System.Windows.Forms.NumericUpDown();
+            this.nupRecentPlayerResistance = new System.Windows.Forms.NumericUpDown();
+            this.nupRecentPlayerHumanity = new System.Windows.Forms.NumericUpDown();
+            this.nupRecentPlayerFaith = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown7 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown8 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown9 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown10 = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.cmbRecentPlayerRightHand1 = new System.Windows.Forms.ComboBox();
+            this.comboBox8 = new System.Windows.Forms.ComboBox();
+            this.comboBox9 = new System.Windows.Forms.ComboBox();
+            this.comboBox10 = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.lblRecentPlayerRightHand1 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.comboBox11 = new System.Windows.Forms.ComboBox();
+            this.comboBox12 = new System.Windows.Forms.ComboBox();
+            this.comboBox13 = new System.Windows.Forms.ComboBox();
+            this.comboBox14 = new System.Windows.Forms.ComboBox();
+            this.comboBox15 = new System.Windows.Forms.ComboBox();
+            this.comboBox16 = new System.Windows.Forms.ComboBox();
+            this.comboBox17 = new System.Windows.Forms.ComboBox();
+            this.comboBox18 = new System.Windows.Forms.ComboBox();
+            this.comboBox19 = new System.Windows.Forms.ComboBox();
+            this.comboBox20 = new System.Windows.Forms.ComboBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
             this.tclMain.SuspendLayout();
             this.tpgPlayer.SuspendLayout();
             this.gbxOther.SuspendLayout();
@@ -259,6 +345,30 @@
             this.tpgMisc.SuspendLayout();
             this.gbxEventFlags.SuspendLayout();
             this.tpgHotkeys.SuspendLayout();
+            this.tpgInfo.SuspendLayout();
+            this.tclInfo.SuspendLayout();
+            this.tpgInfoRecentPlayers.SuspendLayout();
+            this.tpgInfoCurrentPlayers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerSoulLevel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerEndurance)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerAttunement)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerVitality)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerDexterity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerStrength)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerIntelligence)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerResistance)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerHumanity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerFaith)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown10)).BeginInit();
             this.SuspendLayout();
             // 
             // tclMain
@@ -273,6 +383,7 @@
             this.tclMain.Controls.Add(this.tpgGraphics);
             this.tclMain.Controls.Add(this.tpgMisc);
             this.tclMain.Controls.Add(this.tpgHotkeys);
+            this.tclMain.Controls.Add(this.tpgInfo);
             this.tclMain.Location = new System.Drawing.Point(12, 44);
             this.tclMain.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.tclMain.Name = "tclMain";
@@ -2451,6 +2562,137 @@
             this.cbxHotkeysEnable.Text = "Enable hotkeys";
             this.cbxHotkeysEnable.UseVisualStyleBackColor = true;
             // 
+            // tpgInfo
+            // 
+            this.tpgInfo.Controls.Add(this.tclInfo);
+            this.tpgInfo.Location = new System.Drawing.Point(4, 22);
+            this.tpgInfo.Name = "tpgInfo";
+            this.tpgInfo.Padding = new System.Windows.Forms.Padding(3);
+            this.tpgInfo.Size = new System.Drawing.Size(396, 579);
+            this.tpgInfo.TabIndex = 8;
+            this.tpgInfo.Text = "Info";
+            this.tpgInfo.UseVisualStyleBackColor = true;
+            // 
+            // tclInfo
+            // 
+            this.tclInfo.Controls.Add(this.tpgInfoRecentPlayers);
+            this.tclInfo.Controls.Add(this.tpgInfoCurrentPlayers);
+            this.tclInfo.Location = new System.Drawing.Point(6, 6);
+            this.tclInfo.Name = "tclInfo";
+            this.tclInfo.SelectedIndex = 0;
+            this.tclInfo.Size = new System.Drawing.Size(384, 567);
+            this.tclInfo.TabIndex = 0;
+            // 
+            // tpgInfoRecentPlayers
+            // 
+            this.tpgInfoRecentPlayers.Controls.Add(this.label29);
+            this.tpgInfoRecentPlayers.Controls.Add(this.label30);
+            this.tpgInfoRecentPlayers.Controls.Add(this.label31);
+            this.tpgInfoRecentPlayers.Controls.Add(this.label32);
+            this.tpgInfoRecentPlayers.Controls.Add(this.label33);
+            this.tpgInfoRecentPlayers.Controls.Add(this.label27);
+            this.tpgInfoRecentPlayers.Controls.Add(this.label28);
+            this.tpgInfoRecentPlayers.Controls.Add(this.label23);
+            this.tpgInfoRecentPlayers.Controls.Add(this.label24);
+            this.tpgInfoRecentPlayers.Controls.Add(this.label25);
+            this.tpgInfoRecentPlayers.Controls.Add(this.label26);
+            this.tpgInfoRecentPlayers.Controls.Add(this.comboBox16);
+            this.tpgInfoRecentPlayers.Controls.Add(this.comboBox17);
+            this.tpgInfoRecentPlayers.Controls.Add(this.comboBox18);
+            this.tpgInfoRecentPlayers.Controls.Add(this.comboBox19);
+            this.tpgInfoRecentPlayers.Controls.Add(this.comboBox20);
+            this.tpgInfoRecentPlayers.Controls.Add(this.comboBox11);
+            this.tpgInfoRecentPlayers.Controls.Add(this.comboBox12);
+            this.tpgInfoRecentPlayers.Controls.Add(this.comboBox13);
+            this.tpgInfoRecentPlayers.Controls.Add(this.comboBox14);
+            this.tpgInfoRecentPlayers.Controls.Add(this.comboBox15);
+            this.tpgInfoRecentPlayers.Controls.Add(this.label22);
+            this.tpgInfoRecentPlayers.Controls.Add(this.label18);
+            this.tpgInfoRecentPlayers.Controls.Add(this.label19);
+            this.tpgInfoRecentPlayers.Controls.Add(this.label20);
+            this.tpgInfoRecentPlayers.Controls.Add(this.lblRecentPlayerRightHand1);
+            this.tpgInfoRecentPlayers.Controls.Add(this.comboBox6);
+            this.tpgInfoRecentPlayers.Controls.Add(this.cmbRecentPlayerRightHand1);
+            this.tpgInfoRecentPlayers.Controls.Add(this.comboBox8);
+            this.tpgInfoRecentPlayers.Controls.Add(this.comboBox9);
+            this.tpgInfoRecentPlayers.Controls.Add(this.comboBox10);
+            this.tpgInfoRecentPlayers.Controls.Add(this.label16);
+            this.tpgInfoRecentPlayers.Controls.Add(this.label17);
+            this.tpgInfoRecentPlayers.Controls.Add(this.label15);
+            this.tpgInfoRecentPlayers.Controls.Add(this.label14);
+            this.tpgInfoRecentPlayers.Controls.Add(this.comboBox5);
+            this.tpgInfoRecentPlayers.Controls.Add(this.comboBox4);
+            this.tpgInfoRecentPlayers.Controls.Add(this.comboBox3);
+            this.tpgInfoRecentPlayers.Controls.Add(this.comboBox2);
+            this.tpgInfoRecentPlayers.Controls.Add(this.comboBox1);
+            this.tpgInfoRecentPlayers.Controls.Add(this.nupRecentPlayerFaith);
+            this.tpgInfoRecentPlayers.Controls.Add(this.nupRecentPlayerHumanity);
+            this.tpgInfoRecentPlayers.Controls.Add(this.nupRecentPlayerResistance);
+            this.tpgInfoRecentPlayers.Controls.Add(this.nupRecentPlayerIntelligence);
+            this.tpgInfoRecentPlayers.Controls.Add(this.nupRecentPlayerStrength);
+            this.tpgInfoRecentPlayers.Controls.Add(this.nupRecentPlayerDexterity);
+            this.tpgInfoRecentPlayers.Controls.Add(this.nupRecentPlayerVitality);
+            this.tpgInfoRecentPlayers.Controls.Add(this.nupRecentPlayerAttunement);
+            this.tpgInfoRecentPlayers.Controls.Add(this.nupRecentPlayerEndurance);
+            this.tpgInfoRecentPlayers.Controls.Add(this.nupRecentPlayerSoulLevel);
+            this.tpgInfoRecentPlayers.Controls.Add(this.lblRecentPlayerHumanity);
+            this.tpgInfoRecentPlayers.Controls.Add(this.lblRecentPlayerFaith);
+            this.tpgInfoRecentPlayers.Controls.Add(this.lblRecentPlayerIntelligence);
+            this.tpgInfoRecentPlayers.Controls.Add(this.lblRecentPlayerResistance);
+            this.tpgInfoRecentPlayers.Controls.Add(this.lblRecentPlayerDexterity);
+            this.tpgInfoRecentPlayers.Controls.Add(this.lblRecentPlayerStrength);
+            this.tpgInfoRecentPlayers.Controls.Add(this.lblRecentPlayerEndurance);
+            this.tpgInfoRecentPlayers.Controls.Add(this.lblRecentPlayerAttunement);
+            this.tpgInfoRecentPlayers.Controls.Add(this.lblRecentPlayerVitality);
+            this.tpgInfoRecentPlayers.Controls.Add(this.lblRecentPlayerSoulLevel);
+            this.tpgInfoRecentPlayers.Controls.Add(this.lbxInfoRecentPlayers);
+            this.tpgInfoRecentPlayers.Location = new System.Drawing.Point(4, 22);
+            this.tpgInfoRecentPlayers.Name = "tpgInfoRecentPlayers";
+            this.tpgInfoRecentPlayers.Padding = new System.Windows.Forms.Padding(3);
+            this.tpgInfoRecentPlayers.Size = new System.Drawing.Size(376, 541);
+            this.tpgInfoRecentPlayers.TabIndex = 0;
+            this.tpgInfoRecentPlayers.Text = "Recent Players";
+            this.tpgInfoRecentPlayers.UseVisualStyleBackColor = true;
+            // 
+            // lbxInfoRecentPlayers
+            // 
+            this.lbxInfoRecentPlayers.FormattingEnabled = true;
+            this.lbxInfoRecentPlayers.Location = new System.Drawing.Point(6, 6);
+            this.lbxInfoRecentPlayers.Name = "lbxInfoRecentPlayers";
+            this.lbxInfoRecentPlayers.Size = new System.Drawing.Size(158, 69);
+            this.lbxInfoRecentPlayers.TabIndex = 0;
+            // 
+            // tpgInfoCurrentPlayers
+            // 
+            this.tpgInfoCurrentPlayers.Controls.Add(this.numericUpDown1);
+            this.tpgInfoCurrentPlayers.Controls.Add(this.numericUpDown2);
+            this.tpgInfoCurrentPlayers.Controls.Add(this.numericUpDown3);
+            this.tpgInfoCurrentPlayers.Controls.Add(this.numericUpDown4);
+            this.tpgInfoCurrentPlayers.Controls.Add(this.numericUpDown5);
+            this.tpgInfoCurrentPlayers.Controls.Add(this.numericUpDown6);
+            this.tpgInfoCurrentPlayers.Controls.Add(this.numericUpDown7);
+            this.tpgInfoCurrentPlayers.Controls.Add(this.numericUpDown8);
+            this.tpgInfoCurrentPlayers.Controls.Add(this.numericUpDown9);
+            this.tpgInfoCurrentPlayers.Controls.Add(this.numericUpDown10);
+            this.tpgInfoCurrentPlayers.Controls.Add(this.label4);
+            this.tpgInfoCurrentPlayers.Controls.Add(this.label5);
+            this.tpgInfoCurrentPlayers.Controls.Add(this.label6);
+            this.tpgInfoCurrentPlayers.Controls.Add(this.label7);
+            this.tpgInfoCurrentPlayers.Controls.Add(this.label8);
+            this.tpgInfoCurrentPlayers.Controls.Add(this.label9);
+            this.tpgInfoCurrentPlayers.Controls.Add(this.label10);
+            this.tpgInfoCurrentPlayers.Controls.Add(this.label11);
+            this.tpgInfoCurrentPlayers.Controls.Add(this.label12);
+            this.tpgInfoCurrentPlayers.Controls.Add(this.label13);
+            this.tpgInfoCurrentPlayers.Controls.Add(this.listBox1);
+            this.tpgInfoCurrentPlayers.Location = new System.Drawing.Point(4, 22);
+            this.tpgInfoCurrentPlayers.Name = "tpgInfoCurrentPlayers";
+            this.tpgInfoCurrentPlayers.Padding = new System.Windows.Forms.Padding(3);
+            this.tpgInfoCurrentPlayers.Size = new System.Drawing.Size(376, 541);
+            this.tpgInfoCurrentPlayers.TabIndex = 1;
+            this.tpgInfoCurrentPlayers.Text = "Current Players";
+            this.tpgInfoCurrentPlayers.UseVisualStyleBackColor = true;
+            // 
             // lblVersion
             // 
             this.lblVersion.AutoSize = true;
@@ -2512,6 +2754,1014 @@
             this.llbUpdate.Text = "Click to download";
             this.llbUpdate.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.llbUpdate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbUpdate_LinkClicked);
+            // 
+            // lblRecentPlayerSoulLevel
+            // 
+            this.lblRecentPlayerSoulLevel.AutoSize = true;
+            this.lblRecentPlayerSoulLevel.Location = new System.Drawing.Point(94, 84);
+            this.lblRecentPlayerSoulLevel.Name = "lblRecentPlayerSoulLevel";
+            this.lblRecentPlayerSoulLevel.Size = new System.Drawing.Size(57, 13);
+            this.lblRecentPlayerSoulLevel.TabIndex = 2;
+            this.lblRecentPlayerSoulLevel.Text = "Soul Level";
+            // 
+            // lblRecentPlayerVitality
+            // 
+            this.lblRecentPlayerVitality.AutoSize = true;
+            this.lblRecentPlayerVitality.Location = new System.Drawing.Point(94, 110);
+            this.lblRecentPlayerVitality.Name = "lblRecentPlayerVitality";
+            this.lblRecentPlayerVitality.Size = new System.Drawing.Size(37, 13);
+            this.lblRecentPlayerVitality.TabIndex = 4;
+            this.lblRecentPlayerVitality.Text = "Vitality";
+            // 
+            // lblRecentPlayerAttunement
+            // 
+            this.lblRecentPlayerAttunement.AutoSize = true;
+            this.lblRecentPlayerAttunement.Location = new System.Drawing.Point(94, 136);
+            this.lblRecentPlayerAttunement.Name = "lblRecentPlayerAttunement";
+            this.lblRecentPlayerAttunement.Size = new System.Drawing.Size(61, 13);
+            this.lblRecentPlayerAttunement.TabIndex = 6;
+            this.lblRecentPlayerAttunement.Text = "Attunement";
+            // 
+            // lblRecentPlayerEndurance
+            // 
+            this.lblRecentPlayerEndurance.AutoSize = true;
+            this.lblRecentPlayerEndurance.Location = new System.Drawing.Point(94, 162);
+            this.lblRecentPlayerEndurance.Name = "lblRecentPlayerEndurance";
+            this.lblRecentPlayerEndurance.Size = new System.Drawing.Size(59, 13);
+            this.lblRecentPlayerEndurance.TabIndex = 8;
+            this.lblRecentPlayerEndurance.Text = "Endurance";
+            // 
+            // lblRecentPlayerStrength
+            // 
+            this.lblRecentPlayerStrength.AutoSize = true;
+            this.lblRecentPlayerStrength.Location = new System.Drawing.Point(94, 188);
+            this.lblRecentPlayerStrength.Name = "lblRecentPlayerStrength";
+            this.lblRecentPlayerStrength.Size = new System.Drawing.Size(47, 13);
+            this.lblRecentPlayerStrength.TabIndex = 10;
+            this.lblRecentPlayerStrength.Text = "Strength";
+            // 
+            // lblRecentPlayerDexterity
+            // 
+            this.lblRecentPlayerDexterity.AutoSize = true;
+            this.lblRecentPlayerDexterity.Location = new System.Drawing.Point(94, 214);
+            this.lblRecentPlayerDexterity.Name = "lblRecentPlayerDexterity";
+            this.lblRecentPlayerDexterity.Size = new System.Drawing.Size(48, 13);
+            this.lblRecentPlayerDexterity.TabIndex = 12;
+            this.lblRecentPlayerDexterity.Text = "Dexterity";
+            // 
+            // lblRecentPlayerResistance
+            // 
+            this.lblRecentPlayerResistance.AutoSize = true;
+            this.lblRecentPlayerResistance.Location = new System.Drawing.Point(94, 240);
+            this.lblRecentPlayerResistance.Name = "lblRecentPlayerResistance";
+            this.lblRecentPlayerResistance.Size = new System.Drawing.Size(60, 13);
+            this.lblRecentPlayerResistance.TabIndex = 14;
+            this.lblRecentPlayerResistance.Text = "Resistance";
+            // 
+            // lblRecentPlayerIntelligence
+            // 
+            this.lblRecentPlayerIntelligence.AutoSize = true;
+            this.lblRecentPlayerIntelligence.Location = new System.Drawing.Point(94, 266);
+            this.lblRecentPlayerIntelligence.Name = "lblRecentPlayerIntelligence";
+            this.lblRecentPlayerIntelligence.Size = new System.Drawing.Size(61, 13);
+            this.lblRecentPlayerIntelligence.TabIndex = 16;
+            this.lblRecentPlayerIntelligence.Text = "Intelligence";
+            // 
+            // lblRecentPlayerFaith
+            // 
+            this.lblRecentPlayerFaith.AutoSize = true;
+            this.lblRecentPlayerFaith.Location = new System.Drawing.Point(94, 292);
+            this.lblRecentPlayerFaith.Name = "lblRecentPlayerFaith";
+            this.lblRecentPlayerFaith.Size = new System.Drawing.Size(30, 13);
+            this.lblRecentPlayerFaith.TabIndex = 18;
+            this.lblRecentPlayerFaith.Text = "Faith";
+            // 
+            // lblRecentPlayerHumanity
+            // 
+            this.lblRecentPlayerHumanity.AutoSize = true;
+            this.lblRecentPlayerHumanity.Location = new System.Drawing.Point(94, 318);
+            this.lblRecentPlayerHumanity.Name = "lblRecentPlayerHumanity";
+            this.lblRecentPlayerHumanity.Size = new System.Drawing.Size(51, 13);
+            this.lblRecentPlayerHumanity.TabIndex = 20;
+            this.lblRecentPlayerHumanity.Text = "Humanity";
+            // 
+            // nupRecentPlayerSoulLevel
+            // 
+            this.nupRecentPlayerSoulLevel.Location = new System.Drawing.Point(6, 82);
+            this.nupRecentPlayerSoulLevel.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.nupRecentPlayerSoulLevel.Minimum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            -2147483648});
+            this.nupRecentPlayerSoulLevel.Name = "nupRecentPlayerSoulLevel";
+            this.nupRecentPlayerSoulLevel.Size = new System.Drawing.Size(82, 20);
+            this.nupRecentPlayerSoulLevel.TabIndex = 21;
+            this.nupRecentPlayerSoulLevel.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            // 
+            // nupRecentPlayerEndurance
+            // 
+            this.nupRecentPlayerEndurance.Location = new System.Drawing.Point(6, 160);
+            this.nupRecentPlayerEndurance.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.nupRecentPlayerEndurance.Minimum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            -2147483648});
+            this.nupRecentPlayerEndurance.Name = "nupRecentPlayerEndurance";
+            this.nupRecentPlayerEndurance.Size = new System.Drawing.Size(82, 20);
+            this.nupRecentPlayerEndurance.TabIndex = 22;
+            this.nupRecentPlayerEndurance.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            // 
+            // nupRecentPlayerAttunement
+            // 
+            this.nupRecentPlayerAttunement.Location = new System.Drawing.Point(6, 134);
+            this.nupRecentPlayerAttunement.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.nupRecentPlayerAttunement.Minimum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            -2147483648});
+            this.nupRecentPlayerAttunement.Name = "nupRecentPlayerAttunement";
+            this.nupRecentPlayerAttunement.Size = new System.Drawing.Size(82, 20);
+            this.nupRecentPlayerAttunement.TabIndex = 23;
+            this.nupRecentPlayerAttunement.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            // 
+            // nupRecentPlayerVitality
+            // 
+            this.nupRecentPlayerVitality.Location = new System.Drawing.Point(6, 108);
+            this.nupRecentPlayerVitality.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.nupRecentPlayerVitality.Minimum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            -2147483648});
+            this.nupRecentPlayerVitality.Name = "nupRecentPlayerVitality";
+            this.nupRecentPlayerVitality.Size = new System.Drawing.Size(82, 20);
+            this.nupRecentPlayerVitality.TabIndex = 24;
+            this.nupRecentPlayerVitality.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            // 
+            // nupRecentPlayerDexterity
+            // 
+            this.nupRecentPlayerDexterity.Location = new System.Drawing.Point(6, 212);
+            this.nupRecentPlayerDexterity.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.nupRecentPlayerDexterity.Minimum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            -2147483648});
+            this.nupRecentPlayerDexterity.Name = "nupRecentPlayerDexterity";
+            this.nupRecentPlayerDexterity.Size = new System.Drawing.Size(82, 20);
+            this.nupRecentPlayerDexterity.TabIndex = 25;
+            this.nupRecentPlayerDexterity.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            // 
+            // nupRecentPlayerStrength
+            // 
+            this.nupRecentPlayerStrength.Location = new System.Drawing.Point(6, 186);
+            this.nupRecentPlayerStrength.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.nupRecentPlayerStrength.Minimum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            -2147483648});
+            this.nupRecentPlayerStrength.Name = "nupRecentPlayerStrength";
+            this.nupRecentPlayerStrength.Size = new System.Drawing.Size(82, 20);
+            this.nupRecentPlayerStrength.TabIndex = 26;
+            this.nupRecentPlayerStrength.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            // 
+            // nupRecentPlayerIntelligence
+            // 
+            this.nupRecentPlayerIntelligence.Location = new System.Drawing.Point(6, 264);
+            this.nupRecentPlayerIntelligence.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.nupRecentPlayerIntelligence.Minimum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            -2147483648});
+            this.nupRecentPlayerIntelligence.Name = "nupRecentPlayerIntelligence";
+            this.nupRecentPlayerIntelligence.Size = new System.Drawing.Size(82, 20);
+            this.nupRecentPlayerIntelligence.TabIndex = 27;
+            this.nupRecentPlayerIntelligence.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            // 
+            // nupRecentPlayerResistance
+            // 
+            this.nupRecentPlayerResistance.Location = new System.Drawing.Point(6, 238);
+            this.nupRecentPlayerResistance.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.nupRecentPlayerResistance.Minimum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            -2147483648});
+            this.nupRecentPlayerResistance.Name = "nupRecentPlayerResistance";
+            this.nupRecentPlayerResistance.Size = new System.Drawing.Size(82, 20);
+            this.nupRecentPlayerResistance.TabIndex = 28;
+            this.nupRecentPlayerResistance.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            // 
+            // nupRecentPlayerHumanity
+            // 
+            this.nupRecentPlayerHumanity.Location = new System.Drawing.Point(6, 316);
+            this.nupRecentPlayerHumanity.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.nupRecentPlayerHumanity.Minimum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            -2147483648});
+            this.nupRecentPlayerHumanity.Name = "nupRecentPlayerHumanity";
+            this.nupRecentPlayerHumanity.Size = new System.Drawing.Size(82, 20);
+            this.nupRecentPlayerHumanity.TabIndex = 29;
+            this.nupRecentPlayerHumanity.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            // 
+            // nupRecentPlayerFaith
+            // 
+            this.nupRecentPlayerFaith.Location = new System.Drawing.Point(6, 290);
+            this.nupRecentPlayerFaith.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.nupRecentPlayerFaith.Minimum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            -2147483648});
+            this.nupRecentPlayerFaith.Name = "nupRecentPlayerFaith";
+            this.nupRecentPlayerFaith.Size = new System.Drawing.Size(82, 20);
+            this.nupRecentPlayerFaith.TabIndex = 30;
+            this.nupRecentPlayerFaith.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(6, 290);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            -2147483648});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(82, 20);
+            this.numericUpDown1.TabIndex = 51;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(6, 316);
+            this.numericUpDown2.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.numericUpDown2.Minimum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            -2147483648});
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(82, 20);
+            this.numericUpDown2.TabIndex = 50;
+            this.numericUpDown2.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            // 
+            // numericUpDown3
+            // 
+            this.numericUpDown3.Location = new System.Drawing.Point(6, 238);
+            this.numericUpDown3.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.numericUpDown3.Minimum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            -2147483648});
+            this.numericUpDown3.Name = "numericUpDown3";
+            this.numericUpDown3.Size = new System.Drawing.Size(82, 20);
+            this.numericUpDown3.TabIndex = 49;
+            this.numericUpDown3.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            // 
+            // numericUpDown4
+            // 
+            this.numericUpDown4.Location = new System.Drawing.Point(6, 264);
+            this.numericUpDown4.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.numericUpDown4.Minimum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            -2147483648});
+            this.numericUpDown4.Name = "numericUpDown4";
+            this.numericUpDown4.Size = new System.Drawing.Size(82, 20);
+            this.numericUpDown4.TabIndex = 48;
+            this.numericUpDown4.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            // 
+            // numericUpDown5
+            // 
+            this.numericUpDown5.Location = new System.Drawing.Point(6, 186);
+            this.numericUpDown5.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.numericUpDown5.Minimum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            -2147483648});
+            this.numericUpDown5.Name = "numericUpDown5";
+            this.numericUpDown5.Size = new System.Drawing.Size(82, 20);
+            this.numericUpDown5.TabIndex = 47;
+            this.numericUpDown5.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            // 
+            // numericUpDown6
+            // 
+            this.numericUpDown6.Location = new System.Drawing.Point(6, 212);
+            this.numericUpDown6.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.numericUpDown6.Minimum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            -2147483648});
+            this.numericUpDown6.Name = "numericUpDown6";
+            this.numericUpDown6.Size = new System.Drawing.Size(82, 20);
+            this.numericUpDown6.TabIndex = 46;
+            this.numericUpDown6.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            // 
+            // numericUpDown7
+            // 
+            this.numericUpDown7.Location = new System.Drawing.Point(6, 108);
+            this.numericUpDown7.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.numericUpDown7.Minimum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            -2147483648});
+            this.numericUpDown7.Name = "numericUpDown7";
+            this.numericUpDown7.Size = new System.Drawing.Size(82, 20);
+            this.numericUpDown7.TabIndex = 45;
+            this.numericUpDown7.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            // 
+            // numericUpDown8
+            // 
+            this.numericUpDown8.Location = new System.Drawing.Point(6, 134);
+            this.numericUpDown8.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.numericUpDown8.Minimum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            -2147483648});
+            this.numericUpDown8.Name = "numericUpDown8";
+            this.numericUpDown8.Size = new System.Drawing.Size(82, 20);
+            this.numericUpDown8.TabIndex = 44;
+            this.numericUpDown8.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            // 
+            // numericUpDown9
+            // 
+            this.numericUpDown9.Location = new System.Drawing.Point(6, 160);
+            this.numericUpDown9.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.numericUpDown9.Minimum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            -2147483648});
+            this.numericUpDown9.Name = "numericUpDown9";
+            this.numericUpDown9.Size = new System.Drawing.Size(82, 20);
+            this.numericUpDown9.TabIndex = 43;
+            this.numericUpDown9.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            // 
+            // numericUpDown10
+            // 
+            this.numericUpDown10.Location = new System.Drawing.Point(6, 82);
+            this.numericUpDown10.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.numericUpDown10.Minimum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            -2147483648});
+            this.numericUpDown10.Name = "numericUpDown10";
+            this.numericUpDown10.Size = new System.Drawing.Size(82, 20);
+            this.numericUpDown10.TabIndex = 42;
+            this.numericUpDown10.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(94, 318);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(51, 13);
+            this.label4.TabIndex = 41;
+            this.label4.Text = "Humanity";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(94, 292);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(30, 13);
+            this.label5.TabIndex = 40;
+            this.label5.Text = "Faith";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(94, 266);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(61, 13);
+            this.label6.TabIndex = 39;
+            this.label6.Text = "Intelligence";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(94, 240);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(60, 13);
+            this.label7.TabIndex = 38;
+            this.label7.Text = "Resistance";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(94, 214);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(48, 13);
+            this.label8.TabIndex = 37;
+            this.label8.Text = "Dexterity";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(94, 188);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(47, 13);
+            this.label9.TabIndex = 36;
+            this.label9.Text = "Strength";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(94, 162);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(59, 13);
+            this.label10.TabIndex = 35;
+            this.label10.Text = "Endurance";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(94, 136);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(61, 13);
+            this.label11.TabIndex = 34;
+            this.label11.Text = "Attunement";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(94, 110);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(37, 13);
+            this.label12.TabIndex = 33;
+            this.label12.Text = "Vitality";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(94, 84);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(57, 13);
+            this.label13.TabIndex = 32;
+            this.label13.Text = "Soul Level";
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(6, 6);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(158, 69);
+            this.listBox1.TabIndex = 31;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.comboBox1.Enabled = false;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(170, 33);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(127, 21);
+            this.comboBox1.TabIndex = 31;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.comboBox2.Enabled = false;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(170, 60);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(127, 21);
+            this.comboBox2.TabIndex = 32;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.comboBox3.Enabled = false;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(170, 87);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(127, 21);
+            this.comboBox3.TabIndex = 33;
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.comboBox4.Enabled = false;
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(170, 114);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(127, 21);
+            this.comboBox4.TabIndex = 34;
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.comboBox5.Enabled = false;
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Location = new System.Drawing.Point(170, 6);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(127, 21);
+            this.comboBox5.TabIndex = 35;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(303, 9);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(26, 13);
+            this.label14.TabIndex = 36;
+            this.label14.Text = "Hair";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(303, 36);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(33, 13);
+            this.label15.TabIndex = 37;
+            this.label15.Text = "Head";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(303, 90);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(38, 13);
+            this.label16.TabIndex = 39;
+            this.label16.Text = "Hands";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(303, 63);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(34, 13);
+            this.label17.TabIndex = 38;
+            this.label17.Text = "Chest";
+            // 
+            // comboBox6
+            // 
+            this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.comboBox6.Enabled = false;
+            this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Location = new System.Drawing.Point(170, 141);
+            this.comboBox6.Name = "comboBox6";
+            this.comboBox6.Size = new System.Drawing.Size(127, 21);
+            this.comboBox6.TabIndex = 44;
+            // 
+            // cmbRecentPlayerRightHand1
+            // 
+            this.cmbRecentPlayerRightHand1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.cmbRecentPlayerRightHand1.Enabled = false;
+            this.cmbRecentPlayerRightHand1.FormattingEnabled = true;
+            this.cmbRecentPlayerRightHand1.Location = new System.Drawing.Point(170, 249);
+            this.cmbRecentPlayerRightHand1.Name = "cmbRecentPlayerRightHand1";
+            this.cmbRecentPlayerRightHand1.Size = new System.Drawing.Size(127, 21);
+            this.cmbRecentPlayerRightHand1.TabIndex = 43;
+            // 
+            // comboBox8
+            // 
+            this.comboBox8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.comboBox8.Enabled = false;
+            this.comboBox8.FormattingEnabled = true;
+            this.comboBox8.Location = new System.Drawing.Point(170, 222);
+            this.comboBox8.Name = "comboBox8";
+            this.comboBox8.Size = new System.Drawing.Size(127, 21);
+            this.comboBox8.TabIndex = 42;
+            // 
+            // comboBox9
+            // 
+            this.comboBox9.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.comboBox9.Enabled = false;
+            this.comboBox9.FormattingEnabled = true;
+            this.comboBox9.Location = new System.Drawing.Point(170, 195);
+            this.comboBox9.Name = "comboBox9";
+            this.comboBox9.Size = new System.Drawing.Size(127, 21);
+            this.comboBox9.TabIndex = 41;
+            // 
+            // comboBox10
+            // 
+            this.comboBox10.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.comboBox10.Enabled = false;
+            this.comboBox10.FormattingEnabled = true;
+            this.comboBox10.Location = new System.Drawing.Point(170, 168);
+            this.comboBox10.Name = "comboBox10";
+            this.comboBox10.Size = new System.Drawing.Size(127, 21);
+            this.comboBox10.TabIndex = 40;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(303, 333);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(63, 13);
+            this.label18.TabIndex = 48;
+            this.label18.Text = "Left Hand 2";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(303, 306);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(63, 13);
+            this.label19.TabIndex = 47;
+            this.label19.Text = "Left Hand 1";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(303, 279);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(70, 13);
+            this.label20.TabIndex = 46;
+            this.label20.Text = "Right Hand 2";
+            // 
+            // lblRecentPlayerRightHand1
+            // 
+            this.lblRecentPlayerRightHand1.AutoSize = true;
+            this.lblRecentPlayerRightHand1.Location = new System.Drawing.Point(303, 252);
+            this.lblRecentPlayerRightHand1.Name = "lblRecentPlayerRightHand1";
+            this.lblRecentPlayerRightHand1.Size = new System.Drawing.Size(70, 13);
+            this.lblRecentPlayerRightHand1.TabIndex = 45;
+            this.lblRecentPlayerRightHand1.Text = "Right Hand 1";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(303, 117);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(30, 13);
+            this.label22.TabIndex = 49;
+            this.label22.Text = "Legs";
+            // 
+            // comboBox11
+            // 
+            this.comboBox11.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.comboBox11.Enabled = false;
+            this.comboBox11.FormattingEnabled = true;
+            this.comboBox11.Location = new System.Drawing.Point(170, 276);
+            this.comboBox11.Name = "comboBox11";
+            this.comboBox11.Size = new System.Drawing.Size(127, 21);
+            this.comboBox11.TabIndex = 54;
+            // 
+            // comboBox12
+            // 
+            this.comboBox12.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.comboBox12.Enabled = false;
+            this.comboBox12.FormattingEnabled = true;
+            this.comboBox12.Location = new System.Drawing.Point(170, 384);
+            this.comboBox12.Name = "comboBox12";
+            this.comboBox12.Size = new System.Drawing.Size(127, 21);
+            this.comboBox12.TabIndex = 53;
+            // 
+            // comboBox13
+            // 
+            this.comboBox13.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.comboBox13.Enabled = false;
+            this.comboBox13.FormattingEnabled = true;
+            this.comboBox13.Location = new System.Drawing.Point(170, 357);
+            this.comboBox13.Name = "comboBox13";
+            this.comboBox13.Size = new System.Drawing.Size(127, 21);
+            this.comboBox13.TabIndex = 52;
+            // 
+            // comboBox14
+            // 
+            this.comboBox14.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.comboBox14.Enabled = false;
+            this.comboBox14.FormattingEnabled = true;
+            this.comboBox14.Location = new System.Drawing.Point(170, 330);
+            this.comboBox14.Name = "comboBox14";
+            this.comboBox14.Size = new System.Drawing.Size(127, 21);
+            this.comboBox14.TabIndex = 51;
+            // 
+            // comboBox15
+            // 
+            this.comboBox15.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.comboBox15.Enabled = false;
+            this.comboBox15.FormattingEnabled = true;
+            this.comboBox15.Location = new System.Drawing.Point(170, 303);
+            this.comboBox15.Name = "comboBox15";
+            this.comboBox15.Size = new System.Drawing.Size(127, 21);
+            this.comboBox15.TabIndex = 50;
+            // 
+            // comboBox16
+            // 
+            this.comboBox16.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.comboBox16.Enabled = false;
+            this.comboBox16.FormattingEnabled = true;
+            this.comboBox16.Location = new System.Drawing.Point(170, 411);
+            this.comboBox16.Name = "comboBox16";
+            this.comboBox16.Size = new System.Drawing.Size(127, 21);
+            this.comboBox16.TabIndex = 59;
+            // 
+            // comboBox17
+            // 
+            this.comboBox17.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.comboBox17.Enabled = false;
+            this.comboBox17.FormattingEnabled = true;
+            this.comboBox17.Location = new System.Drawing.Point(170, 519);
+            this.comboBox17.Name = "comboBox17";
+            this.comboBox17.Size = new System.Drawing.Size(127, 21);
+            this.comboBox17.TabIndex = 58;
+            // 
+            // comboBox18
+            // 
+            this.comboBox18.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.comboBox18.Enabled = false;
+            this.comboBox18.FormattingEnabled = true;
+            this.comboBox18.Location = new System.Drawing.Point(170, 492);
+            this.comboBox18.Name = "comboBox18";
+            this.comboBox18.Size = new System.Drawing.Size(127, 21);
+            this.comboBox18.TabIndex = 57;
+            // 
+            // comboBox19
+            // 
+            this.comboBox19.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.comboBox19.Enabled = false;
+            this.comboBox19.FormattingEnabled = true;
+            this.comboBox19.Location = new System.Drawing.Point(170, 465);
+            this.comboBox19.Name = "comboBox19";
+            this.comboBox19.Size = new System.Drawing.Size(127, 21);
+            this.comboBox19.TabIndex = 56;
+            // 
+            // comboBox20
+            // 
+            this.comboBox20.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.comboBox20.Enabled = false;
+            this.comboBox20.FormattingEnabled = true;
+            this.comboBox20.Location = new System.Drawing.Point(170, 438);
+            this.comboBox20.Name = "comboBox20";
+            this.comboBox20.Size = new System.Drawing.Size(127, 21);
+            this.comboBox20.TabIndex = 55;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(303, 225);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(34, 13);
+            this.label23.TabIndex = 63;
+            this.label23.Text = "Bolt 2";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(303, 198);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(34, 13);
+            this.label24.TabIndex = 62;
+            this.label24.Text = "Bolt 1";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(303, 171);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(43, 13);
+            this.label25.TabIndex = 61;
+            this.label25.Text = "Arrow 2";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(303, 144);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(43, 13);
+            this.label26.TabIndex = 60;
+            this.label26.Text = "Arrow 1";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(303, 387);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(38, 13);
+            this.label27.TabIndex = 65;
+            this.label27.Text = "Ring 2";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(303, 360);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(38, 13);
+            this.label28.TabIndex = 64;
+            this.label28.Text = "Ring 1";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(303, 522);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(59, 13);
+            this.label29.TabIndex = 70;
+            this.label29.Text = "Quickbar 5";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(303, 495);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(59, 13);
+            this.label30.TabIndex = 69;
+            this.label30.Text = "Quickbar 4";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(303, 468);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(59, 13);
+            this.label31.TabIndex = 68;
+            this.label31.Text = "Quickbar 3";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(303, 441);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(59, 13);
+            this.label32.TabIndex = 67;
+            this.label32.Text = "Quickbar 2";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(303, 414);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(59, 13);
+            this.label33.TabIndex = 66;
+            this.label33.Text = "Quickbar 1";
             // 
             // FormMain
             // 
@@ -2604,6 +3854,32 @@
             this.gbxEventFlags.PerformLayout();
             this.tpgHotkeys.ResumeLayout(false);
             this.tpgHotkeys.PerformLayout();
+            this.tpgInfo.ResumeLayout(false);
+            this.tclInfo.ResumeLayout(false);
+            this.tpgInfoRecentPlayers.ResumeLayout(false);
+            this.tpgInfoRecentPlayers.PerformLayout();
+            this.tpgInfoCurrentPlayers.ResumeLayout(false);
+            this.tpgInfoCurrentPlayers.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerSoulLevel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerEndurance)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerAttunement)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerVitality)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerDexterity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerStrength)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerIntelligence)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerResistance)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerHumanity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerFaith)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown10)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2783,6 +4059,92 @@
         private System.Windows.Forms.CheckBox cbxInfDurability;
         private System.Windows.Forms.CheckBox cbxInfDurabilitySpecial;
         private System.Windows.Forms.Button btnResetMagicQuantity;
+        private System.Windows.Forms.TabPage tpgInfo;
+        private System.Windows.Forms.TabControl tclInfo;
+        private System.Windows.Forms.TabPage tpgInfoRecentPlayers;
+        private System.Windows.Forms.TabPage tpgInfoCurrentPlayers;
+        private System.Windows.Forms.ListBox lbxInfoRecentPlayers;
+        private System.Windows.Forms.Label lblRecentPlayerSoulLevel;
+        private System.Windows.Forms.Label lblRecentPlayerHumanity;
+        private System.Windows.Forms.Label lblRecentPlayerFaith;
+        private System.Windows.Forms.Label lblRecentPlayerIntelligence;
+        private System.Windows.Forms.Label lblRecentPlayerResistance;
+        private System.Windows.Forms.Label lblRecentPlayerDexterity;
+        private System.Windows.Forms.Label lblRecentPlayerStrength;
+        private System.Windows.Forms.Label lblRecentPlayerEndurance;
+        private System.Windows.Forms.Label lblRecentPlayerAttunement;
+        private System.Windows.Forms.Label lblRecentPlayerVitality;
+        private System.Windows.Forms.NumericUpDown nupRecentPlayerFaith;
+        private System.Windows.Forms.NumericUpDown nupRecentPlayerHumanity;
+        private System.Windows.Forms.NumericUpDown nupRecentPlayerResistance;
+        private System.Windows.Forms.NumericUpDown nupRecentPlayerIntelligence;
+        private System.Windows.Forms.NumericUpDown nupRecentPlayerStrength;
+        private System.Windows.Forms.NumericUpDown nupRecentPlayerDexterity;
+        private System.Windows.Forms.NumericUpDown nupRecentPlayerVitality;
+        private System.Windows.Forms.NumericUpDown nupRecentPlayerAttunement;
+        private System.Windows.Forms.NumericUpDown nupRecentPlayerEndurance;
+        private System.Windows.Forms.NumericUpDown nupRecentPlayerSoulLevel;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.NumericUpDown numericUpDown4;
+        private System.Windows.Forms.NumericUpDown numericUpDown5;
+        private System.Windows.Forms.NumericUpDown numericUpDown6;
+        private System.Windows.Forms.NumericUpDown numericUpDown7;
+        private System.Windows.Forms.NumericUpDown numericUpDown8;
+        private System.Windows.Forms.NumericUpDown numericUpDown9;
+        private System.Windows.Forms.NumericUpDown numericUpDown10;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox11;
+        private System.Windows.Forms.ComboBox comboBox12;
+        private System.Windows.Forms.ComboBox comboBox13;
+        private System.Windows.Forms.ComboBox comboBox14;
+        private System.Windows.Forms.ComboBox comboBox15;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label lblRecentPlayerRightHand1;
+        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.ComboBox cmbRecentPlayerRightHand1;
+        private System.Windows.Forms.ComboBox comboBox8;
+        private System.Windows.Forms.ComboBox comboBox9;
+        private System.Windows.Forms.ComboBox comboBox10;
+        private System.Windows.Forms.ComboBox comboBox16;
+        private System.Windows.Forms.ComboBox comboBox17;
+        private System.Windows.Forms.ComboBox comboBox18;
+        private System.Windows.Forms.ComboBox comboBox19;
+        private System.Windows.Forms.ComboBox comboBox20;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label33;
     }
 }
 
