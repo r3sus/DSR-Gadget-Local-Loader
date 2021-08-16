@@ -148,6 +148,12 @@ namespace DSR_Gadget
             resetMagicQuantity();
         }
 
+        private void btnLeaveSession_Click(object sender, EventArgs e)
+        {
+            if (loaded && !reading)
+                Hook.LeaveSession();
+        }
+
         private void resetMagicQuantity()
         {
             if (loaded && !reading)
