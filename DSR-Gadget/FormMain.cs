@@ -33,7 +33,8 @@ namespace DSR_Gadget
                 cbxFreezeMPAreaID, cbxFreezeAreaID, btnTeleportBloodstain, btnTeleportInitialPosition,
                 btnResetMagicQuantity, btnLeaveSession, cmbCovenant, nudWarriorOfSunlight, nudDarkwraith,
                 nudPathOfTheDragon, nudGravelordServant, nudForestHunter, nudDarkmoonBlade, nudChaosServant,
-                btnCurrentPlayerKick, txtName, nudWeaponMemory, nudHair, //nudIndictments,
+                btnCurrentPlayerKick, txtName, nudWeaponMemory, nudHair, nudHairRed, nudHairGreen, nudHairBlue,
+                nudHairAlpha, nudEyeRed, nudEyeBlue, nudEyeGreen, //nudIndictments,
             };
         }
 
