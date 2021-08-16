@@ -67,6 +67,7 @@
             this.lblPosX = new System.Windows.Forms.Label();
             this.btnPosRestore = new System.Windows.Forms.Button();
             this.gbxStatus = new System.Windows.Forms.GroupBox();
+            this.btnLeaveSession = new System.Windows.Forms.Button();
             this.btnResetMagicQuantity = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.cbxFreezeAreaID = new System.Windows.Forms.CheckBox();
@@ -98,7 +99,31 @@
             this.nudHealthMax = new System.Windows.Forms.NumericUpDown();
             this.nudHealth = new System.Windows.Forms.NumericUpDown();
             this.tpgStats = new System.Windows.Forms.TabPage();
+            this.tclStats = new System.Windows.Forms.TabControl();
+            this.tpgStatsStats = new System.Windows.Forms.TabPage();
             this.gbxStatsMisc = new System.Windows.Forms.GroupBox();
+            this.nudIndictments = new System.Windows.Forms.NumericUpDown();
+            this.lblIndictments = new System.Windows.Forms.Label();
+            this.nudWeaponMemory = new System.Windows.Forms.NumericUpDown();
+            this.lblWeaponMemory = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblOnlineName = new System.Windows.Forms.Label();
+            this.txtOnlineName = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.lblChaosServant = new System.Windows.Forms.Label();
+            this.lblDarkmoonBlade = new System.Windows.Forms.Label();
+            this.lblForestHunter = new System.Windows.Forms.Label();
+            this.lblGravelordServant = new System.Windows.Forms.Label();
+            this.lblPathOfTheDragon = new System.Windows.Forms.Label();
+            this.lblDarkwraith = new System.Windows.Forms.Label();
+            this.lblWarriorOfSunlight = new System.Windows.Forms.Label();
+            this.nudChaosServant = new System.Windows.Forms.NumericUpDown();
+            this.nudDarkmoonBlade = new System.Windows.Forms.NumericUpDown();
+            this.nudForestHunter = new System.Windows.Forms.NumericUpDown();
+            this.nudGravelordServant = new System.Windows.Forms.NumericUpDown();
+            this.nudPathOfTheDragon = new System.Windows.Forms.NumericUpDown();
+            this.nudDarkwraith = new System.Windows.Forms.NumericUpDown();
+            this.nudWarriorOfSunlight = new System.Windows.Forms.NumericUpDown();
             this.lblCovenant = new System.Windows.Forms.Label();
             this.cmbCovenant = new System.Windows.Forms.ComboBox();
             this.gbxStatsStats = new System.Windows.Forms.GroupBox();
@@ -128,6 +153,24 @@
             this.nudAttunement = new System.Windows.Forms.NumericUpDown();
             this.lblVitality = new System.Windows.Forms.Label();
             this.nudVitality = new System.Windows.Forms.NumericUpDown();
+            this.tpgStatsFashion = new System.Windows.Forms.TabPage();
+            this.cbxFashionHex = new System.Windows.Forms.CheckBox();
+            this.lblEyeBlue = new System.Windows.Forms.Label();
+            this.nudEyeBlue = new System.Windows.Forms.NumericUpDown();
+            this.lblEyeGreen = new System.Windows.Forms.Label();
+            this.nudEyeGreen = new System.Windows.Forms.NumericUpDown();
+            this.lbEyeRed = new System.Windows.Forms.Label();
+            this.nudEyeRed = new System.Windows.Forms.NumericUpDown();
+            this.lblHairAlpha = new System.Windows.Forms.Label();
+            this.nudHairAlpha = new System.Windows.Forms.NumericUpDown();
+            this.lblHairBlue = new System.Windows.Forms.Label();
+            this.nudHairBlue = new System.Windows.Forms.NumericUpDown();
+            this.lblHairGreen = new System.Windows.Forms.Label();
+            this.nudHairGreen = new System.Windows.Forms.NumericUpDown();
+            this.lblHairRed = new System.Windows.Forms.Label();
+            this.nudHairRed = new System.Windows.Forms.NumericUpDown();
+            this.nudHair = new System.Windows.Forms.NumericUpDown();
+            this.lblHair = new System.Windows.Forms.Label();
             this.tpgItems = new System.Windows.Forms.TabPage();
             this.lblQuantity = new System.Windows.Forms.Label();
             this.nudQuantity = new System.Windows.Forms.NumericUpDown();
@@ -319,7 +362,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudHealthMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHealth)).BeginInit();
             this.tpgStats.SuspendLayout();
+            this.tclStats.SuspendLayout();
+            this.tpgStatsStats.SuspendLayout();
             this.gbxStatsMisc.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudIndictments)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudWeaponMemory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudChaosServant)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDarkmoonBlade)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudForestHunter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGravelordServant)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPathOfTheDragon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDarkwraith)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudWarriorOfSunlight)).BeginInit();
             this.gbxStatsStats.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudHumanity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSouls)).BeginInit();
@@ -331,6 +385,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudEndurance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAttunement)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudVitality)).BeginInit();
+            this.tpgStatsFashion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEyeBlue)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEyeGreen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEyeRed)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHairAlpha)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHairBlue)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHairGreen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHairRed)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHair)).BeginInit();
             this.tpgItems.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudUpgrade)).BeginInit();
@@ -911,6 +974,7 @@
             // gbxStatus
             // 
             this.gbxStatus.AutoSize = true;
+            this.gbxStatus.Controls.Add(this.btnLeaveSession);
             this.gbxStatus.Controls.Add(this.btnResetMagicQuantity);
             this.gbxStatus.Controls.Add(this.label3);
             this.gbxStatus.Controls.Add(this.cbxFreezeAreaID);
@@ -947,6 +1011,16 @@
             this.gbxStatus.TabIndex = 1;
             this.gbxStatus.TabStop = false;
             this.gbxStatus.Text = "Status";
+            // 
+            // btnLeaveSession
+            // 
+            this.btnLeaveSession.Location = new System.Drawing.Point(246, 55);
+            this.btnLeaveSession.Name = "btnLeaveSession";
+            this.btnLeaveSession.Size = new System.Drawing.Size(134, 23);
+            this.btnLeaveSession.TabIndex = 43;
+            this.btnLeaveSession.Text = "Leave Session";
+            this.btnLeaveSession.UseVisualStyleBackColor = true;
+            this.btnLeaveSession.Click += new System.EventHandler(this.btnLeaveSession_Click);
             // 
             // btnResetMagicQuantity
             // 
@@ -1258,8 +1332,7 @@
             // 
             // tpgStats
             // 
-            this.tpgStats.Controls.Add(this.gbxStatsMisc);
-            this.tpgStats.Controls.Add(this.gbxStatsStats);
+            this.tpgStats.Controls.Add(this.tclStats);
             this.tpgStats.Location = new System.Drawing.Point(4, 22);
             this.tpgStats.Name = "tpgStats";
             this.tpgStats.Padding = new System.Windows.Forms.Padding(3);
@@ -1268,16 +1341,260 @@
             this.tpgStats.Text = "Stats";
             this.tpgStats.UseVisualStyleBackColor = true;
             // 
+            // tclStats
+            // 
+            this.tclStats.Controls.Add(this.tpgStatsStats);
+            this.tclStats.Controls.Add(this.tpgStatsFashion);
+            this.tclStats.Location = new System.Drawing.Point(6, 6);
+            this.tclStats.Name = "tclStats";
+            this.tclStats.SelectedIndex = 0;
+            this.tclStats.Size = new System.Drawing.Size(384, 567);
+            this.tclStats.TabIndex = 0;
+            // 
+            // tpgStatsStats
+            // 
+            this.tpgStatsStats.Controls.Add(this.gbxStatsMisc);
+            this.tpgStatsStats.Controls.Add(this.gbxStatsStats);
+            this.tpgStatsStats.Location = new System.Drawing.Point(4, 22);
+            this.tpgStatsStats.Name = "tpgStatsStats";
+            this.tpgStatsStats.Padding = new System.Windows.Forms.Padding(3);
+            this.tpgStatsStats.Size = new System.Drawing.Size(376, 541);
+            this.tpgStatsStats.TabIndex = 0;
+            this.tpgStatsStats.Text = "Stats";
+            this.tpgStatsStats.UseVisualStyleBackColor = true;
+            // 
             // gbxStatsMisc
             // 
+            this.gbxStatsMisc.Controls.Add(this.nudIndictments);
+            this.gbxStatsMisc.Controls.Add(this.lblIndictments);
+            this.gbxStatsMisc.Controls.Add(this.nudWeaponMemory);
+            this.gbxStatsMisc.Controls.Add(this.lblWeaponMemory);
+            this.gbxStatsMisc.Controls.Add(this.lblName);
+            this.gbxStatsMisc.Controls.Add(this.lblOnlineName);
+            this.gbxStatsMisc.Controls.Add(this.txtOnlineName);
+            this.gbxStatsMisc.Controls.Add(this.txtName);
+            this.gbxStatsMisc.Controls.Add(this.lblChaosServant);
+            this.gbxStatsMisc.Controls.Add(this.lblDarkmoonBlade);
+            this.gbxStatsMisc.Controls.Add(this.lblForestHunter);
+            this.gbxStatsMisc.Controls.Add(this.lblGravelordServant);
+            this.gbxStatsMisc.Controls.Add(this.lblPathOfTheDragon);
+            this.gbxStatsMisc.Controls.Add(this.lblDarkwraith);
+            this.gbxStatsMisc.Controls.Add(this.lblWarriorOfSunlight);
+            this.gbxStatsMisc.Controls.Add(this.nudChaosServant);
+            this.gbxStatsMisc.Controls.Add(this.nudDarkmoonBlade);
+            this.gbxStatsMisc.Controls.Add(this.nudForestHunter);
+            this.gbxStatsMisc.Controls.Add(this.nudGravelordServant);
+            this.gbxStatsMisc.Controls.Add(this.nudPathOfTheDragon);
+            this.gbxStatsMisc.Controls.Add(this.nudDarkwraith);
+            this.gbxStatsMisc.Controls.Add(this.nudWarriorOfSunlight);
             this.gbxStatsMisc.Controls.Add(this.lblCovenant);
             this.gbxStatsMisc.Controls.Add(this.cmbCovenant);
-            this.gbxStatsMisc.Location = new System.Drawing.Point(6, 310);
+            this.gbxStatsMisc.Location = new System.Drawing.Point(6, 296);
             this.gbxStatsMisc.Name = "gbxStatsMisc";
-            this.gbxStatsMisc.Size = new System.Drawing.Size(384, 263);
-            this.gbxStatsMisc.TabIndex = 80;
+            this.gbxStatsMisc.Size = new System.Drawing.Size(364, 239);
+            this.gbxStatsMisc.TabIndex = 82;
             this.gbxStatsMisc.TabStop = false;
             this.gbxStatsMisc.Text = "Misc";
+            // 
+            // nudIndictments
+            // 
+            this.nudIndictments.Enabled = false;
+            this.nudIndictments.Location = new System.Drawing.Point(304, 150);
+            this.nudIndictments.Maximum = new decimal(new int[] {
+            60000,
+            0,
+            0,
+            0});
+            this.nudIndictments.Name = "nudIndictments";
+            this.nudIndictments.Size = new System.Drawing.Size(54, 20);
+            this.nudIndictments.TabIndex = 22;
+            this.nudIndictments.ValueChanged += new System.EventHandler(this.nudIndictments_ValueChanged);
+            // 
+            // lblIndictments
+            // 
+            this.lblIndictments.AutoSize = true;
+            this.lblIndictments.Location = new System.Drawing.Point(237, 152);
+            this.lblIndictments.Name = "lblIndictments";
+            this.lblIndictments.Size = new System.Drawing.Size(61, 13);
+            this.lblIndictments.TabIndex = 21;
+            this.lblIndictments.Text = "Indictments";
+            // 
+            // nudWeaponMemory
+            // 
+            this.nudWeaponMemory.Location = new System.Drawing.Point(304, 123);
+            this.nudWeaponMemory.Maximum = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            this.nudWeaponMemory.Name = "nudWeaponMemory";
+            this.nudWeaponMemory.Size = new System.Drawing.Size(54, 20);
+            this.nudWeaponMemory.TabIndex = 20;
+            this.nudWeaponMemory.ValueChanged += new System.EventHandler(this.nudWeaponMemory_ValueChanged);
+            // 
+            // lblWeaponMemory
+            // 
+            this.lblWeaponMemory.AutoSize = true;
+            this.lblWeaponMemory.Location = new System.Drawing.Point(210, 125);
+            this.lblWeaponMemory.Name = "lblWeaponMemory";
+            this.lblWeaponMemory.Size = new System.Drawing.Size(88, 13);
+            this.lblWeaponMemory.TabIndex = 19;
+            this.lblWeaponMemory.Text = "Weapon Memory";
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(209, 22);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(35, 13);
+            this.lblName.TabIndex = 18;
+            this.lblName.Text = "Name";
+            // 
+            // lblOnlineName
+            // 
+            this.lblOnlineName.AutoSize = true;
+            this.lblOnlineName.Location = new System.Drawing.Point(209, 74);
+            this.lblOnlineName.Name = "lblOnlineName";
+            this.lblOnlineName.Size = new System.Drawing.Size(74, 13);
+            this.lblOnlineName.TabIndex = 17;
+            this.lblOnlineName.Text = "Name (Online)";
+            // 
+            // txtOnlineName
+            // 
+            this.txtOnlineName.Enabled = false;
+            this.txtOnlineName.Location = new System.Drawing.Point(212, 97);
+            this.txtOnlineName.MaxLength = 15;
+            this.txtOnlineName.Name = "txtOnlineName";
+            this.txtOnlineName.Size = new System.Drawing.Size(146, 20);
+            this.txtOnlineName.TabIndex = 16;
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(212, 45);
+            this.txtName.MaxLength = 15;
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(146, 20);
+            this.txtName.TabIndex = 15;
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
+            // 
+            // lblChaosServant
+            // 
+            this.lblChaosServant.AutoSize = true;
+            this.lblChaosServant.Location = new System.Drawing.Point(66, 204);
+            this.lblChaosServant.Name = "lblChaosServant";
+            this.lblChaosServant.Size = new System.Drawing.Size(74, 13);
+            this.lblChaosServant.TabIndex = 14;
+            this.lblChaosServant.Text = "ChaosServant";
+            // 
+            // lblDarkmoonBlade
+            // 
+            this.lblDarkmoonBlade.AutoSize = true;
+            this.lblDarkmoonBlade.Location = new System.Drawing.Point(66, 178);
+            this.lblDarkmoonBlade.Name = "lblDarkmoonBlade";
+            this.lblDarkmoonBlade.Size = new System.Drawing.Size(86, 13);
+            this.lblDarkmoonBlade.TabIndex = 13;
+            this.lblDarkmoonBlade.Text = "Darkmoon Blade";
+            // 
+            // lblForestHunter
+            // 
+            this.lblForestHunter.AutoSize = true;
+            this.lblForestHunter.Location = new System.Drawing.Point(66, 152);
+            this.lblForestHunter.Name = "lblForestHunter";
+            this.lblForestHunter.Size = new System.Drawing.Size(71, 13);
+            this.lblForestHunter.TabIndex = 12;
+            this.lblForestHunter.Text = "Forest Hunter";
+            // 
+            // lblGravelordServant
+            // 
+            this.lblGravelordServant.AutoSize = true;
+            this.lblGravelordServant.Location = new System.Drawing.Point(66, 126);
+            this.lblGravelordServant.Name = "lblGravelordServant";
+            this.lblGravelordServant.Size = new System.Drawing.Size(93, 13);
+            this.lblGravelordServant.TabIndex = 11;
+            this.lblGravelordServant.Text = "Gravelord Servant";
+            // 
+            // lblPathOfTheDragon
+            // 
+            this.lblPathOfTheDragon.AutoSize = true;
+            this.lblPathOfTheDragon.Location = new System.Drawing.Point(66, 100);
+            this.lblPathOfTheDragon.Name = "lblPathOfTheDragon";
+            this.lblPathOfTheDragon.Size = new System.Drawing.Size(97, 13);
+            this.lblPathOfTheDragon.TabIndex = 10;
+            this.lblPathOfTheDragon.Text = "Path of the Dragon";
+            // 
+            // lblDarkwraith
+            // 
+            this.lblDarkwraith.AutoSize = true;
+            this.lblDarkwraith.Location = new System.Drawing.Point(66, 74);
+            this.lblDarkwraith.Name = "lblDarkwraith";
+            this.lblDarkwraith.Size = new System.Drawing.Size(58, 13);
+            this.lblDarkwraith.TabIndex = 9;
+            this.lblDarkwraith.Text = "Darkwraith";
+            // 
+            // lblWarriorOfSunlight
+            // 
+            this.lblWarriorOfSunlight.AutoSize = true;
+            this.lblWarriorOfSunlight.Location = new System.Drawing.Point(66, 48);
+            this.lblWarriorOfSunlight.Name = "lblWarriorOfSunlight";
+            this.lblWarriorOfSunlight.Size = new System.Drawing.Size(94, 13);
+            this.lblWarriorOfSunlight.TabIndex = 8;
+            this.lblWarriorOfSunlight.Text = "Warrior of Sunlight";
+            // 
+            // nudChaosServant
+            // 
+            this.nudChaosServant.Location = new System.Drawing.Point(6, 202);
+            this.nudChaosServant.Name = "nudChaosServant";
+            this.nudChaosServant.Size = new System.Drawing.Size(54, 20);
+            this.nudChaosServant.TabIndex = 7;
+            this.nudChaosServant.ValueChanged += new System.EventHandler(this.nudChaosServant_ValueChanged);
+            // 
+            // nudDarkmoonBlade
+            // 
+            this.nudDarkmoonBlade.Location = new System.Drawing.Point(6, 176);
+            this.nudDarkmoonBlade.Name = "nudDarkmoonBlade";
+            this.nudDarkmoonBlade.Size = new System.Drawing.Size(54, 20);
+            this.nudDarkmoonBlade.TabIndex = 6;
+            this.nudDarkmoonBlade.ValueChanged += new System.EventHandler(this.nudDarkmoonBlade_ValueChanged);
+            // 
+            // nudForestHunter
+            // 
+            this.nudForestHunter.Location = new System.Drawing.Point(6, 150);
+            this.nudForestHunter.Name = "nudForestHunter";
+            this.nudForestHunter.Size = new System.Drawing.Size(54, 20);
+            this.nudForestHunter.TabIndex = 5;
+            this.nudForestHunter.ValueChanged += new System.EventHandler(this.nudForestHunter_ValueChanged);
+            // 
+            // nudGravelordServant
+            // 
+            this.nudGravelordServant.Location = new System.Drawing.Point(6, 124);
+            this.nudGravelordServant.Name = "nudGravelordServant";
+            this.nudGravelordServant.Size = new System.Drawing.Size(54, 20);
+            this.nudGravelordServant.TabIndex = 4;
+            this.nudGravelordServant.ValueChanged += new System.EventHandler(this.nudGravelordServant_ValueChanged);
+            // 
+            // nudPathOfTheDragon
+            // 
+            this.nudPathOfTheDragon.Location = new System.Drawing.Point(6, 98);
+            this.nudPathOfTheDragon.Name = "nudPathOfTheDragon";
+            this.nudPathOfTheDragon.Size = new System.Drawing.Size(54, 20);
+            this.nudPathOfTheDragon.TabIndex = 3;
+            this.nudPathOfTheDragon.ValueChanged += new System.EventHandler(this.nudPathOfTheDragon_ValueChanged);
+            // 
+            // nudDarkwraith
+            // 
+            this.nudDarkwraith.Location = new System.Drawing.Point(6, 72);
+            this.nudDarkwraith.Name = "nudDarkwraith";
+            this.nudDarkwraith.Size = new System.Drawing.Size(54, 20);
+            this.nudDarkwraith.TabIndex = 2;
+            this.nudDarkwraith.ValueChanged += new System.EventHandler(this.nudDarkwraith_ValueChanged);
+            // 
+            // nudWarriorOfSunlight
+            // 
+            this.nudWarriorOfSunlight.Location = new System.Drawing.Point(6, 46);
+            this.nudWarriorOfSunlight.Name = "nudWarriorOfSunlight";
+            this.nudWarriorOfSunlight.Size = new System.Drawing.Size(54, 20);
+            this.nudWarriorOfSunlight.TabIndex = 1;
+            this.nudWarriorOfSunlight.ValueChanged += new System.EventHandler(this.nudWarriorOfSunlight_ValueChanged);
             // 
             // lblCovenant
             // 
@@ -1296,7 +1613,7 @@
             this.cmbCovenant.Name = "cmbCovenant";
             this.cmbCovenant.Size = new System.Drawing.Size(121, 21);
             this.cmbCovenant.TabIndex = 0;
-            this.cmbCovenant.SelectedIndexChanged += new System.EventHandler(this.cmbCovenant_SelectedIndexChanged);
+            this.cmbCovenant.Click += new System.EventHandler(this.cmbCovenant_SelectedIndexChanged);
             // 
             // gbxStatsStats
             // 
@@ -1328,15 +1645,15 @@
             this.gbxStatsStats.Controls.Add(this.nudVitality);
             this.gbxStatsStats.Location = new System.Drawing.Point(6, 6);
             this.gbxStatsStats.Name = "gbxStatsStats";
-            this.gbxStatsStats.Size = new System.Drawing.Size(384, 298);
-            this.gbxStatsStats.TabIndex = 54;
+            this.gbxStatsStats.Size = new System.Drawing.Size(364, 284);
+            this.gbxStatsStats.TabIndex = 81;
             this.gbxStatsStats.TabStop = false;
             this.gbxStatsStats.Text = "Stats";
             // 
             // lblStatsOff2
             // 
             this.lblStatsOff2.AutoSize = true;
-            this.lblStatsOff2.Location = new System.Drawing.Point(6, 276);
+            this.lblStatsOff2.Location = new System.Drawing.Point(6, 263);
             this.lblStatsOff2.Name = "lblStatsOff2";
             this.lblStatsOff2.Size = new System.Drawing.Size(228, 13);
             this.lblStatsOff2.TabIndex = 79;
@@ -1345,7 +1662,7 @@
             // lblStatsOff1
             // 
             this.lblStatsOff1.AutoSize = true;
-            this.lblStatsOff1.Location = new System.Drawing.Point(6, 263);
+            this.lblStatsOff1.Location = new System.Drawing.Point(6, 250);
             this.lblStatsOff1.Name = "lblStatsOff1";
             this.lblStatsOff1.Size = new System.Drawing.Size(299, 13);
             this.lblStatsOff1.TabIndex = 78;
@@ -1355,7 +1672,7 @@
             // 
             this.nudHumanity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudHumanity.Enabled = false;
-            this.nudHumanity.Location = new System.Drawing.Point(258, 45);
+            this.nudHumanity.Location = new System.Drawing.Point(238, 45);
             this.nudHumanity.Name = "nudHumanity";
             this.nudHumanity.Size = new System.Drawing.Size(120, 20);
             this.nudHumanity.TabIndex = 77;
@@ -1364,7 +1681,7 @@
             // 
             this.lblSouls.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSouls.AutoSize = true;
-            this.lblSouls.Location = new System.Drawing.Point(219, 73);
+            this.lblSouls.Location = new System.Drawing.Point(199, 73);
             this.lblSouls.Name = "lblSouls";
             this.lblSouls.Size = new System.Drawing.Size(33, 13);
             this.lblSouls.TabIndex = 76;
@@ -1374,7 +1691,7 @@
             // 
             this.nudSouls.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudSouls.Enabled = false;
-            this.nudSouls.Location = new System.Drawing.Point(258, 71);
+            this.nudSouls.Location = new System.Drawing.Point(238, 71);
             this.nudSouls.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -1398,7 +1715,7 @@
             // 
             this.lblHumanity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblHumanity.AutoSize = true;
-            this.lblHumanity.Location = new System.Drawing.Point(201, 47);
+            this.lblHumanity.Location = new System.Drawing.Point(181, 47);
             this.lblHumanity.Name = "lblHumanity";
             this.lblHumanity.Size = new System.Drawing.Size(51, 13);
             this.lblHumanity.TabIndex = 73;
@@ -1408,7 +1725,7 @@
             // 
             this.lblClass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblClass.AutoSize = true;
-            this.lblClass.Location = new System.Drawing.Point(220, 22);
+            this.lblClass.Location = new System.Drawing.Point(200, 22);
             this.lblClass.Name = "lblClass";
             this.lblClass.Size = new System.Drawing.Size(32, 13);
             this.lblClass.TabIndex = 72;
@@ -1420,7 +1737,7 @@
             this.cmbClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbClass.Enabled = false;
             this.cmbClass.FormattingEnabled = true;
-            this.cmbClass.Location = new System.Drawing.Point(258, 19);
+            this.cmbClass.Location = new System.Drawing.Point(238, 19);
             this.cmbClass.Name = "cmbClass";
             this.cmbClass.Size = new System.Drawing.Size(120, 21);
             this.cmbClass.TabIndex = 71;
@@ -1688,6 +2005,185 @@
             0,
             0,
             0});
+            // 
+            // tpgStatsFashion
+            // 
+            this.tpgStatsFashion.Controls.Add(this.cbxFashionHex);
+            this.tpgStatsFashion.Controls.Add(this.lblEyeBlue);
+            this.tpgStatsFashion.Controls.Add(this.nudEyeBlue);
+            this.tpgStatsFashion.Controls.Add(this.lblEyeGreen);
+            this.tpgStatsFashion.Controls.Add(this.nudEyeGreen);
+            this.tpgStatsFashion.Controls.Add(this.lbEyeRed);
+            this.tpgStatsFashion.Controls.Add(this.nudEyeRed);
+            this.tpgStatsFashion.Controls.Add(this.lblHairAlpha);
+            this.tpgStatsFashion.Controls.Add(this.nudHairAlpha);
+            this.tpgStatsFashion.Controls.Add(this.lblHairBlue);
+            this.tpgStatsFashion.Controls.Add(this.nudHairBlue);
+            this.tpgStatsFashion.Controls.Add(this.lblHairGreen);
+            this.tpgStatsFashion.Controls.Add(this.nudHairGreen);
+            this.tpgStatsFashion.Controls.Add(this.lblHairRed);
+            this.tpgStatsFashion.Controls.Add(this.nudHairRed);
+            this.tpgStatsFashion.Controls.Add(this.nudHair);
+            this.tpgStatsFashion.Controls.Add(this.lblHair);
+            this.tpgStatsFashion.Location = new System.Drawing.Point(4, 22);
+            this.tpgStatsFashion.Name = "tpgStatsFashion";
+            this.tpgStatsFashion.Padding = new System.Windows.Forms.Padding(3);
+            this.tpgStatsFashion.Size = new System.Drawing.Size(376, 541);
+            this.tpgStatsFashion.TabIndex = 1;
+            this.tpgStatsFashion.Text = "Fashion";
+            this.tpgStatsFashion.UseVisualStyleBackColor = true;
+            // 
+            // cbxFashionHex
+            // 
+            this.cbxFashionHex.AutoSize = true;
+            this.cbxFashionHex.Location = new System.Drawing.Point(325, 6);
+            this.cbxFashionHex.Name = "cbxFashionHex";
+            this.cbxFashionHex.Size = new System.Drawing.Size(45, 17);
+            this.cbxFashionHex.TabIndex = 16;
+            this.cbxFashionHex.Text = "Hex";
+            this.cbxFashionHex.UseVisualStyleBackColor = true;
+            this.cbxFashionHex.CheckedChanged += new System.EventHandler(this.cbxFashionHex_CheckedChanged);
+            // 
+            // lblEyeBlue
+            // 
+            this.lblEyeBlue.AutoSize = true;
+            this.lblEyeBlue.Location = new System.Drawing.Point(109, 216);
+            this.lblEyeBlue.Name = "lblEyeBlue";
+            this.lblEyeBlue.Size = new System.Drawing.Size(49, 13);
+            this.lblEyeBlue.TabIndex = 15;
+            this.lblEyeBlue.Text = "Eye Blue";
+            // 
+            // nudEyeBlue
+            // 
+            this.nudEyeBlue.Location = new System.Drawing.Point(6, 214);
+            this.nudEyeBlue.Name = "nudEyeBlue";
+            this.nudEyeBlue.Size = new System.Drawing.Size(94, 20);
+            this.nudEyeBlue.TabIndex = 14;
+            this.nudEyeBlue.ValueChanged += new System.EventHandler(this.nudEyeBlue_ValueChanged);
+            // 
+            // lblEyeGreen
+            // 
+            this.lblEyeGreen.AutoSize = true;
+            this.lblEyeGreen.Location = new System.Drawing.Point(109, 190);
+            this.lblEyeGreen.Name = "lblEyeGreen";
+            this.lblEyeGreen.Size = new System.Drawing.Size(57, 13);
+            this.lblEyeGreen.TabIndex = 13;
+            this.lblEyeGreen.Text = "Eye Green";
+            // 
+            // nudEyeGreen
+            // 
+            this.nudEyeGreen.Location = new System.Drawing.Point(6, 188);
+            this.nudEyeGreen.Name = "nudEyeGreen";
+            this.nudEyeGreen.Size = new System.Drawing.Size(94, 20);
+            this.nudEyeGreen.TabIndex = 12;
+            this.nudEyeGreen.ValueChanged += new System.EventHandler(this.nudEyeGreen_ValueChanged);
+            // 
+            // lbEyeRed
+            // 
+            this.lbEyeRed.AutoSize = true;
+            this.lbEyeRed.Location = new System.Drawing.Point(109, 164);
+            this.lbEyeRed.Name = "lbEyeRed";
+            this.lbEyeRed.Size = new System.Drawing.Size(48, 13);
+            this.lbEyeRed.TabIndex = 11;
+            this.lbEyeRed.Text = "Eye Red";
+            // 
+            // nudEyeRed
+            // 
+            this.nudEyeRed.Location = new System.Drawing.Point(6, 162);
+            this.nudEyeRed.Name = "nudEyeRed";
+            this.nudEyeRed.Size = new System.Drawing.Size(94, 20);
+            this.nudEyeRed.TabIndex = 10;
+            this.nudEyeRed.ValueChanged += new System.EventHandler(this.nudEyeRed_ValueChanged);
+            // 
+            // lblHairAlpha
+            // 
+            this.lblHairAlpha.AutoSize = true;
+            this.lblHairAlpha.Location = new System.Drawing.Point(109, 112);
+            this.lblHairAlpha.Name = "lblHairAlpha";
+            this.lblHairAlpha.Size = new System.Drawing.Size(56, 13);
+            this.lblHairAlpha.TabIndex = 9;
+            this.lblHairAlpha.Text = "Hair Alpha";
+            // 
+            // nudHairAlpha
+            // 
+            this.nudHairAlpha.Location = new System.Drawing.Point(6, 110);
+            this.nudHairAlpha.Name = "nudHairAlpha";
+            this.nudHairAlpha.Size = new System.Drawing.Size(94, 20);
+            this.nudHairAlpha.TabIndex = 8;
+            this.nudHairAlpha.ValueChanged += new System.EventHandler(this.nudHairAlpha_ValueChanged);
+            // 
+            // lblHairBlue
+            // 
+            this.lblHairBlue.AutoSize = true;
+            this.lblHairBlue.Location = new System.Drawing.Point(109, 86);
+            this.lblHairBlue.Name = "lblHairBlue";
+            this.lblHairBlue.Size = new System.Drawing.Size(50, 13);
+            this.lblHairBlue.TabIndex = 7;
+            this.lblHairBlue.Text = "Hair Blue";
+            // 
+            // nudHairBlue
+            // 
+            this.nudHairBlue.Location = new System.Drawing.Point(6, 84);
+            this.nudHairBlue.Name = "nudHairBlue";
+            this.nudHairBlue.Size = new System.Drawing.Size(94, 20);
+            this.nudHairBlue.TabIndex = 6;
+            this.nudHairBlue.ValueChanged += new System.EventHandler(this.nudHairBlue_ValueChanged);
+            // 
+            // lblHairGreen
+            // 
+            this.lblHairGreen.AutoSize = true;
+            this.lblHairGreen.Location = new System.Drawing.Point(109, 60);
+            this.lblHairGreen.Name = "lblHairGreen";
+            this.lblHairGreen.Size = new System.Drawing.Size(58, 13);
+            this.lblHairGreen.TabIndex = 5;
+            this.lblHairGreen.Text = "Hair Green";
+            // 
+            // nudHairGreen
+            // 
+            this.nudHairGreen.Location = new System.Drawing.Point(6, 58);
+            this.nudHairGreen.Name = "nudHairGreen";
+            this.nudHairGreen.Size = new System.Drawing.Size(94, 20);
+            this.nudHairGreen.TabIndex = 4;
+            this.nudHairGreen.ValueChanged += new System.EventHandler(this.nudHairGreen_ValueChanged);
+            // 
+            // lblHairRed
+            // 
+            this.lblHairRed.AutoSize = true;
+            this.lblHairRed.Location = new System.Drawing.Point(109, 34);
+            this.lblHairRed.Name = "lblHairRed";
+            this.lblHairRed.Size = new System.Drawing.Size(49, 13);
+            this.lblHairRed.TabIndex = 3;
+            this.lblHairRed.Text = "Hair Red";
+            // 
+            // nudHairRed
+            // 
+            this.nudHairRed.Location = new System.Drawing.Point(6, 32);
+            this.nudHairRed.Name = "nudHairRed";
+            this.nudHairRed.Size = new System.Drawing.Size(94, 20);
+            this.nudHairRed.TabIndex = 2;
+            this.nudHairRed.ValueChanged += new System.EventHandler(this.nudHairRed_ValueChanged);
+            // 
+            // nudHair
+            // 
+            this.nudHair.Location = new System.Drawing.Point(6, 6);
+            this.nudHair.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudHair.Name = "nudHair";
+            this.nudHair.Size = new System.Drawing.Size(94, 20);
+            this.nudHair.TabIndex = 1;
+            this.nudHair.ValueChanged += new System.EventHandler(this.nudHair_ValueChanged);
+            // 
+            // lblHair
+            // 
+            this.lblHair.AutoSize = true;
+            this.lblHair.Location = new System.Drawing.Point(109, 8);
+            this.lblHair.Name = "lblHair";
+            this.lblHair.Size = new System.Drawing.Size(26, 13);
+            this.lblHair.TabIndex = 0;
+            this.lblHair.Text = "Hair";
             // 
             // tpgItems
             // 
@@ -3879,8 +4375,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudHealthMax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHealth)).EndInit();
             this.tpgStats.ResumeLayout(false);
+            this.tclStats.ResumeLayout(false);
+            this.tpgStatsStats.ResumeLayout(false);
             this.gbxStatsMisc.ResumeLayout(false);
             this.gbxStatsMisc.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudIndictments)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudWeaponMemory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudChaosServant)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDarkmoonBlade)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudForestHunter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGravelordServant)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPathOfTheDragon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDarkwraith)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudWarriorOfSunlight)).EndInit();
             this.gbxStatsStats.ResumeLayout(false);
             this.gbxStatsStats.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudHumanity)).EndInit();
@@ -3893,6 +4400,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudEndurance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAttunement)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudVitality)).EndInit();
+            this.tpgStatsFashion.ResumeLayout(false);
+            this.tpgStatsFashion.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEyeBlue)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEyeGreen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEyeRed)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHairAlpha)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHairBlue)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHairGreen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHairRed)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHair)).EndInit();
             this.tpgItems.ResumeLayout(false);
             this.tpgItems.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).EndInit();
@@ -4190,6 +4707,12 @@
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Button btnCurrentPlayerKick;
+        private System.Windows.Forms.TabControl tclStats;
+        private System.Windows.Forms.TabPage tpgStatsStats;
+        private System.Windows.Forms.GroupBox gbxStatsMisc;
+        private System.Windows.Forms.Label lblCovenant;
+        private System.Windows.Forms.ComboBox cmbCovenant;
         private System.Windows.Forms.GroupBox gbxStatsStats;
         private System.Windows.Forms.Label lblStatsOff2;
         private System.Windows.Forms.Label lblStatsOff1;
@@ -4217,10 +4740,47 @@
         private System.Windows.Forms.NumericUpDown nudAttunement;
         private System.Windows.Forms.Label lblVitality;
         private System.Windows.Forms.NumericUpDown nudVitality;
-        private System.Windows.Forms.GroupBox gbxStatsMisc;
-        private System.Windows.Forms.Label lblCovenant;
-        private System.Windows.Forms.ComboBox cmbCovenant;
-        private System.Windows.Forms.Button btnCurrentPlayerKick;
+        private System.Windows.Forms.TabPage tpgStatsFashion;
+        private System.Windows.Forms.Button btnLeaveSession;
+        private System.Windows.Forms.NumericUpDown nudChaosServant;
+        private System.Windows.Forms.NumericUpDown nudDarkmoonBlade;
+        private System.Windows.Forms.NumericUpDown nudForestHunter;
+        private System.Windows.Forms.NumericUpDown nudGravelordServant;
+        private System.Windows.Forms.NumericUpDown nudPathOfTheDragon;
+        private System.Windows.Forms.NumericUpDown nudDarkwraith;
+        private System.Windows.Forms.NumericUpDown nudWarriorOfSunlight;
+        private System.Windows.Forms.Label lblWarriorOfSunlight;
+        private System.Windows.Forms.Label lblDarkmoonBlade;
+        private System.Windows.Forms.Label lblForestHunter;
+        private System.Windows.Forms.Label lblGravelordServant;
+        private System.Windows.Forms.Label lblPathOfTheDragon;
+        private System.Windows.Forms.Label lblDarkwraith;
+        private System.Windows.Forms.Label lblChaosServant;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblOnlineName;
+        private System.Windows.Forms.TextBox txtOnlineName;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.Label lblWeaponMemory;
+        private System.Windows.Forms.NumericUpDown nudIndictments;
+        private System.Windows.Forms.Label lblIndictments;
+        private System.Windows.Forms.NumericUpDown nudWeaponMemory;
+        private System.Windows.Forms.Label lblHair;
+        private System.Windows.Forms.Label lblHairBlue;
+        private System.Windows.Forms.NumericUpDown nudHairBlue;
+        private System.Windows.Forms.Label lblHairGreen;
+        private System.Windows.Forms.NumericUpDown nudHairGreen;
+        private System.Windows.Forms.Label lblHairRed;
+        private System.Windows.Forms.NumericUpDown nudHairRed;
+        private System.Windows.Forms.Label lblHairAlpha;
+        private System.Windows.Forms.NumericUpDown nudHairAlpha;
+        private System.Windows.Forms.Label lblEyeBlue;
+        private System.Windows.Forms.NumericUpDown nudEyeBlue;
+        private System.Windows.Forms.Label lblEyeGreen;
+        private System.Windows.Forms.NumericUpDown nudEyeGreen;
+        private System.Windows.Forms.Label lbEyeRed;
+        private System.Windows.Forms.NumericUpDown nudEyeRed;
+        private System.Windows.Forms.NumericUpDown nudHair;
+        private System.Windows.Forms.CheckBox cbxFashionHex;
     }
 }
 

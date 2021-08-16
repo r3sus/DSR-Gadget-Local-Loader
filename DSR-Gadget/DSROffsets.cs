@@ -243,12 +243,13 @@ namespace DSR_Gadget
 
 
             WarriorOfSunlight = 0xED,
-            DarkWraith = 0xEE,
+            Darkwraith = 0xEE,
             PathOfTheDragon = 0xEF,
             GravelordServant = 0xF0,
             ForestHunter = 0xF1,
             DarkmoonBlade = 0xF2,
             ChaosServant = 0xF3,
+            Indictments = 0xF4,
 
             CurrentCovenant = 0x113,
             InvadeType = 0x118,
@@ -292,9 +293,9 @@ namespace DSR_Gadget
             HairBlue = 0x4C8,
             HairAlpha = 0x4CC,
 
-            EyeRed = 0x4C0,
-            EyeGreen = 0x4C4,
-            EyeBlue = 0x4C8,
+            EyeRed = 0x4D0,
+            EyeGreen = 0x4D4,
+            EyeBlue = 0x4D8,
 
             FaceDataStart = 0x4E0,
             SkinColorStart = 0x512,

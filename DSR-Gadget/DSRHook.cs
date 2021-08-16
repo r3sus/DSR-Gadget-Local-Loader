@@ -383,6 +383,124 @@ namespace DSR_Gadget
             set => PlayerGameDataPtr.WriteByte((int)DSROffsets.PlayerGameData.CurrentCovenant, value);
         }
 
+        public byte WarriorOfSunlight
+        {
+            get => PlayerGameDataPtr.ReadByte((int)DSROffsets.PlayerGameData.WarriorOfSunlight);
+            set => PlayerGameDataPtr.WriteByte((int)DSROffsets.PlayerGameData.WarriorOfSunlight, value);
+        }
+
+        public byte Darkwraith
+        {
+            get => PlayerGameDataPtr.ReadByte((int)DSROffsets.PlayerGameData.Darkwraith);
+            set => PlayerGameDataPtr.WriteByte((int)DSROffsets.PlayerGameData.Darkwraith, value);
+        }
+
+        public byte PathOfTheDragon
+        {
+            get => PlayerGameDataPtr.ReadByte((int)DSROffsets.PlayerGameData.PathOfTheDragon);
+            set => PlayerGameDataPtr.WriteByte((int)DSROffsets.PlayerGameData.PathOfTheDragon, value);
+        }
+
+        public byte GravelordServant
+        {
+            get => PlayerGameDataPtr.ReadByte((int)DSROffsets.PlayerGameData.GravelordServant);
+            set => PlayerGameDataPtr.WriteByte((int)DSROffsets.PlayerGameData.GravelordServant, value);
+        }
+
+        public byte ForestHunter
+        {
+            get => PlayerGameDataPtr.ReadByte((int)DSROffsets.PlayerGameData.ForestHunter);
+            set => PlayerGameDataPtr.WriteByte((int)DSROffsets.PlayerGameData.ForestHunter, value);
+        }
+
+        public byte DarkmoonBlade
+        {
+            get => PlayerGameDataPtr.ReadByte((int)DSROffsets.PlayerGameData.DarkmoonBlade);
+            set => PlayerGameDataPtr.WriteByte((int)DSROffsets.PlayerGameData.DarkmoonBlade, value);
+        }
+
+        public byte ChaosServant
+        {
+            get => PlayerGameDataPtr.ReadByte((int)DSROffsets.PlayerGameData.ChaosServant);
+            set => PlayerGameDataPtr.WriteByte((int)DSROffsets.PlayerGameData.ChaosServant, value);
+        }
+
+        public string NameString1
+        {
+            get => PlayerGameDataPtr.ReadString((int)DSROffsets.PlayerGameData.NameString1,
+                System.Text.Encoding.Unicode, 32, true);
+            set => PlayerGameDataPtr.WriteString((int)DSROffsets.PlayerGameData.NameString1,
+                System.Text.Encoding.Unicode, 30, value);
+        }
+
+        public string NameString2
+        {
+            get => PlayerGameDataPtr.ReadString((int)DSROffsets.PlayerGameData.NameString2,
+                System.Text.Encoding.Unicode, 32, true);
+            set => PlayerGameDataPtr.WriteString((int)DSROffsets.PlayerGameData.NameString2,
+                System.Text.Encoding.Unicode, 30, value);
+        }
+
+        public byte WeaponMemory
+        {
+            get => PlayerGameDataPtr.ReadByte((int)DSROffsets.PlayerGameData.WeaponMemory);
+            set => PlayerGameDataPtr.WriteByte((int)DSROffsets.PlayerGameData.WeaponMemory, value);
+        }
+
+        public int Indictments
+        {
+            get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.Indictments);
+            set => PlayerGameDataPtr.WriteInt32((int)DSROffsets.PlayerGameData.Indictments, value);
+        }
+
+        public int Hair
+        {
+            get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.Hair);
+            set => PlayerGameDataPtr.WriteInt32((int)DSROffsets.PlayerGameData.Hair, value);
+        }
+
+        public float HairRed
+        {
+            get => PlayerGameDataPtr.ReadSingle((int)DSROffsets.PlayerGameData.HairRed);
+            set => PlayerGameDataPtr.WriteSingle((int)DSROffsets.PlayerGameData.HairRed, value);
+        }
+
+        public float HairGreen
+        {
+            get => PlayerGameDataPtr.ReadSingle((int)DSROffsets.PlayerGameData.HairGreen);
+            set => PlayerGameDataPtr.WriteSingle((int)DSROffsets.PlayerGameData.HairGreen, value);
+        }
+
+        public float HairBlue
+        {
+            get => PlayerGameDataPtr.ReadSingle((int)DSROffsets.PlayerGameData.HairBlue);
+            set => PlayerGameDataPtr.WriteSingle((int)DSROffsets.PlayerGameData.HairBlue, value);
+        }
+
+        public float HairAlpha
+        {
+            get => PlayerGameDataPtr.ReadSingle((int)DSROffsets.PlayerGameData.HairAlpha);
+            set => PlayerGameDataPtr.WriteSingle((int)DSROffsets.PlayerGameData.HairAlpha, value);
+        }
+
+        public float EyeRed
+        {
+            get => PlayerGameDataPtr.ReadSingle((int)DSROffsets.PlayerGameData.EyeRed);
+            set => PlayerGameDataPtr.WriteSingle((int)DSROffsets.PlayerGameData.EyeRed, value);
+        }
+
+        public float EyeGreen
+        {
+            get => PlayerGameDataPtr.ReadSingle((int)DSROffsets.PlayerGameData.EyeGreen);
+            set => PlayerGameDataPtr.WriteSingle((int)DSROffsets.PlayerGameData.EyeGreen, value);
+        }
+
+        public float EyeBlue
+        {
+            get => PlayerGameDataPtr.ReadSingle((int)DSROffsets.PlayerGameData.EyeBlue);
+            set => PlayerGameDataPtr.WriteSingle((int)DSROffsets.PlayerGameData.EyeBlue, value);
+        }
+
         #endregion
 
         #region Items

@@ -9,11 +9,35 @@ namespace DSR_Gadget
         {
             foreach (DSRClass charClass in DSRClass.All)
                 cmbClass.Items.Add(charClass);
+
             nudHumanity.Maximum = int.MaxValue;
             nudHumanity.Minimum = int.MinValue;
 
             foreach (DSRCovenant covenant in DSRCovenant.All)
                 cmbCovenant.Items.Add(covenant);
+
+            nudHairRed.Maximum = decimal.MaxValue;
+            nudHairGreen.Maximum = decimal.MaxValue;
+            nudHairBlue.Maximum = decimal.MaxValue;
+            nudHairAlpha.Maximum = decimal.MaxValue;
+
+            nudEyeRed.Maximum = decimal.MaxValue;
+            nudEyeGreen.Maximum = decimal.MaxValue;
+            nudEyeBlue.Maximum = decimal.MaxValue;
+
+            nudHairRed.Minimum = decimal.MinValue;
+            nudHairGreen.Minimum = decimal.MinValue;
+            nudHairBlue.Minimum = decimal.MinValue;
+            nudHairAlpha.Minimum = decimal.MinValue;
+
+            nudEyeRed.Minimum = decimal.MinValue;
+            nudEyeGreen.Minimum = decimal.MinValue;
+            nudEyeBlue.Minimum = decimal.MinValue;
+
+
+#if DEBUG
+            criticalControls.Add(nudIndictments);
+#endif
         }
 
         private void saveStats() { }
@@ -31,6 +55,45 @@ namespace DSR_Gadget
             txtSoulLevel.Text = Hook.SoulLevel.ToString();
             nudHumanity.Value = Hook.Humanity;
             nudSouls.Value = Hook.Souls;
+
+            nudWarriorOfSunlight.Value = Hook.WarriorOfSunlight;
+            nudDarkwraith.Value = Hook.Darkwraith;
+            nudPathOfTheDragon.Value = Hook.PathOfTheDragon;
+            nudGravelordServant.Value = Hook.GravelordServant;
+            nudForestHunter.Value = Hook.ForestHunter;
+            nudDarkmoonBlade.Value = Hook.DarkmoonBlade;
+            nudChaosServant.Value = Hook.ChaosServant;
+
+            txtName.Text = Hook.NameString1;
+            txtOnlineName.Text = Hook.NameString2;
+
+            nudWeaponMemory.Value = Hook.WeaponMemory;
+            nudIndictments.Value = Hook.Indictments;
+
+            nudHair.Value = Hook.Hair;
+            try
+            {
+                nudHairRed.Value = Convert.ToDecimal(Hook.HairRed);
+                nudHairGreen.Value = Convert.ToDecimal(Hook.HairGreen);
+                nudHairBlue.Value = Convert.ToDecimal(Hook.HairBlue);
+                nudHairAlpha.Value = Convert.ToDecimal(Hook.HairAlpha);
+
+                nudEyeRed.Value = Convert.ToDecimal(Hook.EyeRed);
+                nudEyeGreen.Value = Convert.ToDecimal(Hook.EyeGreen);
+                nudEyeBlue.Value = Convert.ToDecimal(Hook.EyeBlue);
+            } catch (OverflowException)
+            {
+                // TODO: handle this better
+                nudHairRed.Enabled = false;
+                nudHairGreen.Enabled = false;
+                nudHairBlue.Enabled = false;
+                nudHairAlpha.Enabled = false;
+
+                nudEyeRed.Enabled = false;
+                nudEyeGreen.Enabled = false;
+                nudEyeBlue.Enabled = false;
+            }
+
 
             try
             {
@@ -92,6 +155,81 @@ namespace DSR_Gadget
                 DSRCovenant item = cmbCovenant.SelectedItem as DSRCovenant;
                 Hook.Covenant = item.ID;
             }
+        }
+        private void nudWarriorOfSunlight_ValueChanged(object sender, EventArgs e)
+        {
+            if (loaded && !reading)
+                Hook.WarriorOfSunlight = (byte)nudWarriorOfSunlight.Value;
+        }
+
+        private void nudDarkwraith_ValueChanged(object sender, EventArgs e)
+        {
+            if (loaded && !reading)
+                Hook.Darkwraith = (byte)nudDarkwraith.Value;
+        }
+
+        private void nudPathOfTheDragon_ValueChanged(object sender, EventArgs e)
+        {
+            if (loaded && !reading)
+                Hook.PathOfTheDragon = (byte)nudPathOfTheDragon.Value;
+        }
+
+        private void nudGravelordServant_ValueChanged(object sender, EventArgs e)
+        {
+            if (loaded && !reading)
+                Hook.GravelordServant = (byte)nudGravelordServant.Value;
+        }
+
+        private void nudForestHunter_ValueChanged(object sender, EventArgs e)
+        {
+            if (loaded && !reading)
+                Hook.ForestHunter = (byte)nudForestHunter.Value;
+        }
+
+        private void nudDarkmoonBlade_ValueChanged(object sender, EventArgs e)
+        {
+            if (loaded && !reading)
+                Hook.DarkmoonBlade = (byte)nudDarkmoonBlade.Value;
+        }
+
+        private void nudChaosServant_ValueChanged(object sender, EventArgs e)
+        {
+            if (loaded && !reading)
+                Hook.ChaosServant = (byte)nudChaosServant.Value;
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+            if (loaded && !reading)
+            {
+                Hook.NameString1 = txtName.Text;
+                Hook.NameString2 = txtName.Text;
+            }
+        }
+
+        private void nudWeaponMemory_ValueChanged(object sender, EventArgs e)
+        {
+            if (loaded && !reading)
+                Hook.WeaponMemory = (byte)nudWeaponMemory.Value;
+        }
+
+        private void nudIndictments_ValueChanged(object sender, EventArgs e)
+        {
+            if (loaded && !reading)
+                Hook.Indictments = (int)nudIndictments.Value;
+        }
+
+        private void cbxFashionHex_CheckedChanged(object sender, EventArgs e)
+        {
+            nudHair.Hexadecimal = cbxFashionHex.Checked;
+            nudHairRed.Hexadecimal = cbxFashionHex.Checked;
+            nudHairGreen.Hexadecimal = cbxFashionHex.Checked;
+            nudHairBlue.Hexadecimal = cbxFashionHex.Checked;
+            nudHairAlpha.Hexadecimal = cbxFashionHex.Checked;
+
+            nudEyeRed.Hexadecimal = cbxFashionHex.Checked;
+            nudEyeGreen.Hexadecimal = cbxFashionHex.Checked;
+            nudEyeBlue.Hexadecimal = cbxFashionHex.Checked;
         }
 
         private void recalculateStats()

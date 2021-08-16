@@ -30,7 +30,10 @@ namespace DSR_Gadget
                 nudHealth, nudStamina, btnPosStore, btnPosRestore, cbxDeathCam, btnWarp, cmbBonfire,
                 btnCreate, btnEventRead, btnEventWrite, nudChrType, nudTeamType, nudInvadeType, cbxFreezeChrType,
                 cbxFreezeTeamType, cbxFreezeInvadeType, cmbChrSelect, cmbInvasionSelect, cmbAreaID, cmbMPAreaID,
-                cbxFreezeMPAreaID, cbxFreezeAreaID, btnTeleportBloodstain, btnTeleportInitialPosition, btnResetMagicQuantity
+                cbxFreezeMPAreaID, cbxFreezeAreaID, btnTeleportBloodstain, btnTeleportInitialPosition,
+                btnResetMagicQuantity, btnLeaveSession, cmbCovenant, nudWarriorOfSunlight, nudDarkwraith,
+                nudPathOfTheDragon, nudGravelordServant, nudForestHunter, nudDarkmoonBlade, nudChaosServant,
+                btnCurrentPlayerKick, txtName, nudWeaponMemory, nudHair, //nudIndictments,
             };
         }
 
@@ -197,6 +200,54 @@ namespace DSR_Gadget
             resetMisc();
             resetHotkeys();
             resetInfo();
+        }
+
+        private void nudHair_ValueChanged(object sender, EventArgs e)
+        {
+            if (loaded && !reading)
+                Hook.Hair = (int)nudHair.Value;
+        }
+
+        private void nudHairRed_ValueChanged(object sender, EventArgs e)
+        {
+            if (loaded && !reading)
+                Hook.HairRed = (float)nudHairRed.Value;
+        }
+
+        private void nudHairGreen_ValueChanged(object sender, EventArgs e)
+        {
+            if (loaded && !reading)
+                Hook.HairGreen = (float)nudHairGreen.Value;
+        }
+
+        private void nudHairBlue_ValueChanged(object sender, EventArgs e)
+        {
+            if (loaded && !reading)
+                Hook.HairBlue= (float)nudHairBlue.Value;
+        }
+
+        private void nudHairAlpha_ValueChanged(object sender, EventArgs e)
+        {
+            if (loaded && !reading)
+                Hook.HairAlpha = (float)nudHairAlpha.Value;
+        }
+
+        private void nudEyeRed_ValueChanged(object sender, EventArgs e)
+        {
+            if (loaded && !reading)
+                Hook.EyeRed = (float)nudEyeRed.Value;
+        }
+
+        private void nudEyeGreen_ValueChanged(object sender, EventArgs e)
+        {
+            if (loaded && !reading)
+                Hook.EyeGreen = (float)nudEyeGreen.Value;
+        }
+
+        private void nudEyeBlue_ValueChanged(object sender, EventArgs e)
+        {
+            if (loaded && !reading)
+                Hook.EyeBlue = (float)nudEyeBlue.Value;
         }
     }
 }
