@@ -1613,7 +1613,7 @@
             this.cmbCovenant.Name = "cmbCovenant";
             this.cmbCovenant.Size = new System.Drawing.Size(121, 21);
             this.cmbCovenant.TabIndex = 0;
-            this.cmbCovenant.Click += new System.EventHandler(this.cmbCovenant_SelectedIndexChanged);
+            this.cmbCovenant.SelectedIndexChanged += new System.EventHandler(this.cmbCovenant_SelectedIndexChanged);
             // 
             // gbxStatsStats
             // 
