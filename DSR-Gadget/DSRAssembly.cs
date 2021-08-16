@@ -27,5 +27,6 @@ namespace DSR_Gadget
         public static byte[] GetItem = loadDefuseOutput(Properties.Resources.GetItem);
         public static byte[] LevelUp = loadDefuseOutput(Properties.Resources.LevelUp);
         public static byte[] LeaveSession = loadDefuseOutput(Properties.Resources.LeaveSession);
+        public static byte[] KickPlayer = loadDefuseOutput(Properties.Resources.KickPlayer);
     }
 }

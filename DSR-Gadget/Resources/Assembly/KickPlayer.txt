@@ -1,0 +1,8 @@
+﻿0:  ba fe fe fe fe          mov    edx,0xfefefefe
+5:  41 b8 01 00 00 00       mov    r8d,0x1
+b:  48 83 ec 38             sub    rsp,0x38
+f:  49 be 70 db 6e 40 01    movabs r14,0x1406edb70
+16: 00 00 00
+19: 41 ff d6                call   r14
+1c: 48 83 c4 38             add    rsp,0x38
+20: c3                      ret 

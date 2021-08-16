@@ -199,9 +199,9 @@
             this.flpHotkeyControls = new System.Windows.Forms.FlowLayoutPanel();
             this.cbxHotkeysHandle = new System.Windows.Forms.CheckBox();
             this.cbxHotkeysEnable = new System.Windows.Forms.CheckBox();
-            this.tpgInfo = new System.Windows.Forms.TabPage();
-            this.tclInfo = new System.Windows.Forms.TabControl();
-            this.tpgInfoRecentPlayers = new System.Windows.Forms.TabPage();
+            this.tpgNet = new System.Windows.Forms.TabPage();
+            this.tclNet = new System.Windows.Forms.TabControl();
+            this.tpgNetRecentPlayers = new System.Windows.Forms.TabPage();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
@@ -262,8 +262,9 @@
             this.lblRecentPlayerAttunement = new System.Windows.Forms.Label();
             this.lblRecentPlayerVitality = new System.Windows.Forms.Label();
             this.lblRecentPlayerSoulLevel = new System.Windows.Forms.Label();
-            this.lbxInfoRecentPlayers = new System.Windows.Forms.ListBox();
-            this.tpgInfoCurrentPlayers = new System.Windows.Forms.TabPage();
+            this.lbxNetRecentPlayers = new System.Windows.Forms.ListBox();
+            this.tpgNetCurrentPlayers = new System.Windows.Forms.TabPage();
+            this.btnCurrentPlayerKick = new System.Windows.Forms.Button();
             this.nupCurrentPlayerFaith = new System.Windows.Forms.NumericUpDown();
             this.nupCurrentPlayerHumanity = new System.Windows.Forms.NumericUpDown();
             this.nupCurrentPlayerResistance = new System.Windows.Forms.NumericUpDown();
@@ -284,7 +285,7 @@
             this.lblCurrentPlayerAttunement = new System.Windows.Forms.Label();
             this.lblCurrentPlayerVitality = new System.Windows.Forms.Label();
             this.lblCurrentPlayerSoulLevel = new System.Windows.Forms.Label();
-            this.lbxInfoCurrentPlayers = new System.Windows.Forms.ListBox();
+            this.lbxNetCurrentPlayers = new System.Windows.Forms.ListBox();
             this.lblVersion = new System.Windows.Forms.Label();
             this.lblVersionValue = new System.Windows.Forms.Label();
             this.lblLoaded = new System.Windows.Forms.Label();
@@ -351,9 +352,9 @@
             this.tpgMisc.SuspendLayout();
             this.gbxEventFlags.SuspendLayout();
             this.tpgHotkeys.SuspendLayout();
-            this.tpgInfo.SuspendLayout();
-            this.tclInfo.SuspendLayout();
-            this.tpgInfoRecentPlayers.SuspendLayout();
+            this.tpgNet.SuspendLayout();
+            this.tclNet.SuspendLayout();
+            this.tpgNetRecentPlayers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerFaith)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerHumanity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerResistance)).BeginInit();
@@ -364,7 +365,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerAttunement)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerEndurance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerSoulLevel)).BeginInit();
-            this.tpgInfoCurrentPlayers.SuspendLayout();
+            this.tpgNetCurrentPlayers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupCurrentPlayerFaith)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupCurrentPlayerHumanity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupCurrentPlayerResistance)).BeginInit();
@@ -389,7 +390,7 @@
             this.tclMain.Controls.Add(this.tpgGraphics);
             this.tclMain.Controls.Add(this.tpgMisc);
             this.tclMain.Controls.Add(this.tpgHotkeys);
-            this.tclMain.Controls.Add(this.tpgInfo);
+            this.tclMain.Controls.Add(this.tpgNet);
             this.tclMain.Location = new System.Drawing.Point(12, 44);
             this.tclMain.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.tclMain.Name = "tclMain";
@@ -2598,97 +2599,97 @@
             this.cbxHotkeysEnable.Text = "Enable hotkeys";
             this.cbxHotkeysEnable.UseVisualStyleBackColor = true;
             // 
-            // tpgInfo
+            // tpgNet
             // 
-            this.tpgInfo.Controls.Add(this.tclInfo);
-            this.tpgInfo.Location = new System.Drawing.Point(4, 22);
-            this.tpgInfo.Name = "tpgInfo";
-            this.tpgInfo.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgInfo.Size = new System.Drawing.Size(396, 579);
-            this.tpgInfo.TabIndex = 8;
-            this.tpgInfo.Text = "Info";
-            this.tpgInfo.UseVisualStyleBackColor = true;
+            this.tpgNet.Controls.Add(this.tclNet);
+            this.tpgNet.Location = new System.Drawing.Point(4, 22);
+            this.tpgNet.Name = "tpgNet";
+            this.tpgNet.Padding = new System.Windows.Forms.Padding(3);
+            this.tpgNet.Size = new System.Drawing.Size(396, 579);
+            this.tpgNet.TabIndex = 8;
+            this.tpgNet.Text = "Net";
+            this.tpgNet.UseVisualStyleBackColor = true;
             // 
-            // tclInfo
+            // tclNet
             // 
-            this.tclInfo.Controls.Add(this.tpgInfoRecentPlayers);
-            this.tclInfo.Controls.Add(this.tpgInfoCurrentPlayers);
-            this.tclInfo.Location = new System.Drawing.Point(6, 6);
-            this.tclInfo.Name = "tclInfo";
-            this.tclInfo.SelectedIndex = 0;
-            this.tclInfo.Size = new System.Drawing.Size(384, 567);
-            this.tclInfo.TabIndex = 0;
+            this.tclNet.Controls.Add(this.tpgNetRecentPlayers);
+            this.tclNet.Controls.Add(this.tpgNetCurrentPlayers);
+            this.tclNet.Location = new System.Drawing.Point(6, 6);
+            this.tclNet.Name = "tclNet";
+            this.tclNet.SelectedIndex = 0;
+            this.tclNet.Size = new System.Drawing.Size(384, 567);
+            this.tclNet.TabIndex = 0;
             // 
-            // tpgInfoRecentPlayers
+            // tpgNetRecentPlayers
             // 
-            this.tpgInfoRecentPlayers.Controls.Add(this.label29);
-            this.tpgInfoRecentPlayers.Controls.Add(this.label30);
-            this.tpgInfoRecentPlayers.Controls.Add(this.label31);
-            this.tpgInfoRecentPlayers.Controls.Add(this.label32);
-            this.tpgInfoRecentPlayers.Controls.Add(this.label33);
-            this.tpgInfoRecentPlayers.Controls.Add(this.label27);
-            this.tpgInfoRecentPlayers.Controls.Add(this.label28);
-            this.tpgInfoRecentPlayers.Controls.Add(this.label23);
-            this.tpgInfoRecentPlayers.Controls.Add(this.label24);
-            this.tpgInfoRecentPlayers.Controls.Add(this.label25);
-            this.tpgInfoRecentPlayers.Controls.Add(this.label26);
-            this.tpgInfoRecentPlayers.Controls.Add(this.comboBox16);
-            this.tpgInfoRecentPlayers.Controls.Add(this.comboBox17);
-            this.tpgInfoRecentPlayers.Controls.Add(this.comboBox18);
-            this.tpgInfoRecentPlayers.Controls.Add(this.comboBox19);
-            this.tpgInfoRecentPlayers.Controls.Add(this.comboBox20);
-            this.tpgInfoRecentPlayers.Controls.Add(this.comboBox11);
-            this.tpgInfoRecentPlayers.Controls.Add(this.comboBox12);
-            this.tpgInfoRecentPlayers.Controls.Add(this.comboBox13);
-            this.tpgInfoRecentPlayers.Controls.Add(this.comboBox14);
-            this.tpgInfoRecentPlayers.Controls.Add(this.comboBox15);
-            this.tpgInfoRecentPlayers.Controls.Add(this.label22);
-            this.tpgInfoRecentPlayers.Controls.Add(this.label18);
-            this.tpgInfoRecentPlayers.Controls.Add(this.label19);
-            this.tpgInfoRecentPlayers.Controls.Add(this.label20);
-            this.tpgInfoRecentPlayers.Controls.Add(this.lblRecentPlayerRightHand1);
-            this.tpgInfoRecentPlayers.Controls.Add(this.comboBox6);
-            this.tpgInfoRecentPlayers.Controls.Add(this.cmbRecentPlayerRightHand1);
-            this.tpgInfoRecentPlayers.Controls.Add(this.comboBox8);
-            this.tpgInfoRecentPlayers.Controls.Add(this.comboBox9);
-            this.tpgInfoRecentPlayers.Controls.Add(this.comboBox10);
-            this.tpgInfoRecentPlayers.Controls.Add(this.label16);
-            this.tpgInfoRecentPlayers.Controls.Add(this.label17);
-            this.tpgInfoRecentPlayers.Controls.Add(this.label15);
-            this.tpgInfoRecentPlayers.Controls.Add(this.label14);
-            this.tpgInfoRecentPlayers.Controls.Add(this.comboBox5);
-            this.tpgInfoRecentPlayers.Controls.Add(this.comboBox4);
-            this.tpgInfoRecentPlayers.Controls.Add(this.comboBox3);
-            this.tpgInfoRecentPlayers.Controls.Add(this.comboBox2);
-            this.tpgInfoRecentPlayers.Controls.Add(this.comboBox1);
-            this.tpgInfoRecentPlayers.Controls.Add(this.nupRecentPlayerFaith);
-            this.tpgInfoRecentPlayers.Controls.Add(this.nupRecentPlayerHumanity);
-            this.tpgInfoRecentPlayers.Controls.Add(this.nupRecentPlayerResistance);
-            this.tpgInfoRecentPlayers.Controls.Add(this.nupRecentPlayerIntelligence);
-            this.tpgInfoRecentPlayers.Controls.Add(this.nupRecentPlayerStrength);
-            this.tpgInfoRecentPlayers.Controls.Add(this.nupRecentPlayerDexterity);
-            this.tpgInfoRecentPlayers.Controls.Add(this.nupRecentPlayerVitality);
-            this.tpgInfoRecentPlayers.Controls.Add(this.nupRecentPlayerAttunement);
-            this.tpgInfoRecentPlayers.Controls.Add(this.nupRecentPlayerEndurance);
-            this.tpgInfoRecentPlayers.Controls.Add(this.nupRecentPlayerSoulLevel);
-            this.tpgInfoRecentPlayers.Controls.Add(this.lblRecentPlayerHumanity);
-            this.tpgInfoRecentPlayers.Controls.Add(this.lblRecentPlayerFaith);
-            this.tpgInfoRecentPlayers.Controls.Add(this.lblRecentPlayerIntelligence);
-            this.tpgInfoRecentPlayers.Controls.Add(this.lblRecentPlayerResistance);
-            this.tpgInfoRecentPlayers.Controls.Add(this.lblRecentPlayerDexterity);
-            this.tpgInfoRecentPlayers.Controls.Add(this.lblRecentPlayerStrength);
-            this.tpgInfoRecentPlayers.Controls.Add(this.lblRecentPlayerEndurance);
-            this.tpgInfoRecentPlayers.Controls.Add(this.lblRecentPlayerAttunement);
-            this.tpgInfoRecentPlayers.Controls.Add(this.lblRecentPlayerVitality);
-            this.tpgInfoRecentPlayers.Controls.Add(this.lblRecentPlayerSoulLevel);
-            this.tpgInfoRecentPlayers.Controls.Add(this.lbxInfoRecentPlayers);
-            this.tpgInfoRecentPlayers.Location = new System.Drawing.Point(4, 22);
-            this.tpgInfoRecentPlayers.Name = "tpgInfoRecentPlayers";
-            this.tpgInfoRecentPlayers.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgInfoRecentPlayers.Size = new System.Drawing.Size(376, 541);
-            this.tpgInfoRecentPlayers.TabIndex = 0;
-            this.tpgInfoRecentPlayers.Text = "Recent Players";
-            this.tpgInfoRecentPlayers.UseVisualStyleBackColor = true;
+            this.tpgNetRecentPlayers.Controls.Add(this.label29);
+            this.tpgNetRecentPlayers.Controls.Add(this.label30);
+            this.tpgNetRecentPlayers.Controls.Add(this.label31);
+            this.tpgNetRecentPlayers.Controls.Add(this.label32);
+            this.tpgNetRecentPlayers.Controls.Add(this.label33);
+            this.tpgNetRecentPlayers.Controls.Add(this.label27);
+            this.tpgNetRecentPlayers.Controls.Add(this.label28);
+            this.tpgNetRecentPlayers.Controls.Add(this.label23);
+            this.tpgNetRecentPlayers.Controls.Add(this.label24);
+            this.tpgNetRecentPlayers.Controls.Add(this.label25);
+            this.tpgNetRecentPlayers.Controls.Add(this.label26);
+            this.tpgNetRecentPlayers.Controls.Add(this.comboBox16);
+            this.tpgNetRecentPlayers.Controls.Add(this.comboBox17);
+            this.tpgNetRecentPlayers.Controls.Add(this.comboBox18);
+            this.tpgNetRecentPlayers.Controls.Add(this.comboBox19);
+            this.tpgNetRecentPlayers.Controls.Add(this.comboBox20);
+            this.tpgNetRecentPlayers.Controls.Add(this.comboBox11);
+            this.tpgNetRecentPlayers.Controls.Add(this.comboBox12);
+            this.tpgNetRecentPlayers.Controls.Add(this.comboBox13);
+            this.tpgNetRecentPlayers.Controls.Add(this.comboBox14);
+            this.tpgNetRecentPlayers.Controls.Add(this.comboBox15);
+            this.tpgNetRecentPlayers.Controls.Add(this.label22);
+            this.tpgNetRecentPlayers.Controls.Add(this.label18);
+            this.tpgNetRecentPlayers.Controls.Add(this.label19);
+            this.tpgNetRecentPlayers.Controls.Add(this.label20);
+            this.tpgNetRecentPlayers.Controls.Add(this.lblRecentPlayerRightHand1);
+            this.tpgNetRecentPlayers.Controls.Add(this.comboBox6);
+            this.tpgNetRecentPlayers.Controls.Add(this.cmbRecentPlayerRightHand1);
+            this.tpgNetRecentPlayers.Controls.Add(this.comboBox8);
+            this.tpgNetRecentPlayers.Controls.Add(this.comboBox9);
+            this.tpgNetRecentPlayers.Controls.Add(this.comboBox10);
+            this.tpgNetRecentPlayers.Controls.Add(this.label16);
+            this.tpgNetRecentPlayers.Controls.Add(this.label17);
+            this.tpgNetRecentPlayers.Controls.Add(this.label15);
+            this.tpgNetRecentPlayers.Controls.Add(this.label14);
+            this.tpgNetRecentPlayers.Controls.Add(this.comboBox5);
+            this.tpgNetRecentPlayers.Controls.Add(this.comboBox4);
+            this.tpgNetRecentPlayers.Controls.Add(this.comboBox3);
+            this.tpgNetRecentPlayers.Controls.Add(this.comboBox2);
+            this.tpgNetRecentPlayers.Controls.Add(this.comboBox1);
+            this.tpgNetRecentPlayers.Controls.Add(this.nupRecentPlayerFaith);
+            this.tpgNetRecentPlayers.Controls.Add(this.nupRecentPlayerHumanity);
+            this.tpgNetRecentPlayers.Controls.Add(this.nupRecentPlayerResistance);
+            this.tpgNetRecentPlayers.Controls.Add(this.nupRecentPlayerIntelligence);
+            this.tpgNetRecentPlayers.Controls.Add(this.nupRecentPlayerStrength);
+            this.tpgNetRecentPlayers.Controls.Add(this.nupRecentPlayerDexterity);
+            this.tpgNetRecentPlayers.Controls.Add(this.nupRecentPlayerVitality);
+            this.tpgNetRecentPlayers.Controls.Add(this.nupRecentPlayerAttunement);
+            this.tpgNetRecentPlayers.Controls.Add(this.nupRecentPlayerEndurance);
+            this.tpgNetRecentPlayers.Controls.Add(this.nupRecentPlayerSoulLevel);
+            this.tpgNetRecentPlayers.Controls.Add(this.lblRecentPlayerHumanity);
+            this.tpgNetRecentPlayers.Controls.Add(this.lblRecentPlayerFaith);
+            this.tpgNetRecentPlayers.Controls.Add(this.lblRecentPlayerIntelligence);
+            this.tpgNetRecentPlayers.Controls.Add(this.lblRecentPlayerResistance);
+            this.tpgNetRecentPlayers.Controls.Add(this.lblRecentPlayerDexterity);
+            this.tpgNetRecentPlayers.Controls.Add(this.lblRecentPlayerStrength);
+            this.tpgNetRecentPlayers.Controls.Add(this.lblRecentPlayerEndurance);
+            this.tpgNetRecentPlayers.Controls.Add(this.lblRecentPlayerAttunement);
+            this.tpgNetRecentPlayers.Controls.Add(this.lblRecentPlayerVitality);
+            this.tpgNetRecentPlayers.Controls.Add(this.lblRecentPlayerSoulLevel);
+            this.tpgNetRecentPlayers.Controls.Add(this.lbxNetRecentPlayers);
+            this.tpgNetRecentPlayers.Location = new System.Drawing.Point(4, 22);
+            this.tpgNetRecentPlayers.Name = "tpgNetRecentPlayers";
+            this.tpgNetRecentPlayers.Padding = new System.Windows.Forms.Padding(3);
+            this.tpgNetRecentPlayers.Size = new System.Drawing.Size(376, 541);
+            this.tpgNetRecentPlayers.TabIndex = 0;
+            this.tpgNetRecentPlayers.Text = "Recent Players";
+            this.tpgNetRecentPlayers.UseVisualStyleBackColor = true;
             // 
             // label29
             // 
@@ -3390,44 +3391,55 @@
             this.lblRecentPlayerSoulLevel.TabIndex = 2;
             this.lblRecentPlayerSoulLevel.Text = "Soul Level";
             // 
-            // lbxInfoRecentPlayers
+            // lbxNetRecentPlayers
             // 
-            this.lbxInfoRecentPlayers.FormattingEnabled = true;
-            this.lbxInfoRecentPlayers.Location = new System.Drawing.Point(6, 6);
-            this.lbxInfoRecentPlayers.Name = "lbxInfoRecentPlayers";
-            this.lbxInfoRecentPlayers.Size = new System.Drawing.Size(158, 69);
-            this.lbxInfoRecentPlayers.TabIndex = 0;
+            this.lbxNetRecentPlayers.FormattingEnabled = true;
+            this.lbxNetRecentPlayers.Location = new System.Drawing.Point(6, 6);
+            this.lbxNetRecentPlayers.Name = "lbxNetRecentPlayers";
+            this.lbxNetRecentPlayers.Size = new System.Drawing.Size(158, 69);
+            this.lbxNetRecentPlayers.TabIndex = 0;
             // 
-            // tpgInfoCurrentPlayers
+            // tpgNetCurrentPlayers
             // 
-            this.tpgInfoCurrentPlayers.Controls.Add(this.nupCurrentPlayerFaith);
-            this.tpgInfoCurrentPlayers.Controls.Add(this.nupCurrentPlayerHumanity);
-            this.tpgInfoCurrentPlayers.Controls.Add(this.nupCurrentPlayerResistance);
-            this.tpgInfoCurrentPlayers.Controls.Add(this.nupCurrentPlayerIntelligence);
-            this.tpgInfoCurrentPlayers.Controls.Add(this.nupCurrentPlayerStrength);
-            this.tpgInfoCurrentPlayers.Controls.Add(this.nupCurrentPlayerDexterity);
-            this.tpgInfoCurrentPlayers.Controls.Add(this.nupCurrentPlayerVitality);
-            this.tpgInfoCurrentPlayers.Controls.Add(this.nupCurrentPlayerAttunement);
-            this.tpgInfoCurrentPlayers.Controls.Add(this.nupCurrentPlayerEndurance);
-            this.tpgInfoCurrentPlayers.Controls.Add(this.nupCurrentPlayerSoulLevel);
-            this.tpgInfoCurrentPlayers.Controls.Add(this.lblCurrentPlayerHumanity);
-            this.tpgInfoCurrentPlayers.Controls.Add(this.lblCurrentPlayerFaith);
-            this.tpgInfoCurrentPlayers.Controls.Add(this.lblCurrentPlayerIntelligence);
-            this.tpgInfoCurrentPlayers.Controls.Add(this.lblCurrentPlayerResistance);
-            this.tpgInfoCurrentPlayers.Controls.Add(this.lblCurrentPlayerDexterity);
-            this.tpgInfoCurrentPlayers.Controls.Add(this.lblCurrentPlayerStrength);
-            this.tpgInfoCurrentPlayers.Controls.Add(this.lblCurrentPlayerEndurance);
-            this.tpgInfoCurrentPlayers.Controls.Add(this.lblCurrentPlayerAttunement);
-            this.tpgInfoCurrentPlayers.Controls.Add(this.lblCurrentPlayerVitality);
-            this.tpgInfoCurrentPlayers.Controls.Add(this.lblCurrentPlayerSoulLevel);
-            this.tpgInfoCurrentPlayers.Controls.Add(this.lbxInfoCurrentPlayers);
-            this.tpgInfoCurrentPlayers.Location = new System.Drawing.Point(4, 22);
-            this.tpgInfoCurrentPlayers.Name = "tpgInfoCurrentPlayers";
-            this.tpgInfoCurrentPlayers.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgInfoCurrentPlayers.Size = new System.Drawing.Size(376, 541);
-            this.tpgInfoCurrentPlayers.TabIndex = 1;
-            this.tpgInfoCurrentPlayers.Text = "Current Players";
-            this.tpgInfoCurrentPlayers.UseVisualStyleBackColor = true;
+            this.tpgNetCurrentPlayers.Controls.Add(this.btnCurrentPlayerKick);
+            this.tpgNetCurrentPlayers.Controls.Add(this.nupCurrentPlayerFaith);
+            this.tpgNetCurrentPlayers.Controls.Add(this.nupCurrentPlayerHumanity);
+            this.tpgNetCurrentPlayers.Controls.Add(this.nupCurrentPlayerResistance);
+            this.tpgNetCurrentPlayers.Controls.Add(this.nupCurrentPlayerIntelligence);
+            this.tpgNetCurrentPlayers.Controls.Add(this.nupCurrentPlayerStrength);
+            this.tpgNetCurrentPlayers.Controls.Add(this.nupCurrentPlayerDexterity);
+            this.tpgNetCurrentPlayers.Controls.Add(this.nupCurrentPlayerVitality);
+            this.tpgNetCurrentPlayers.Controls.Add(this.nupCurrentPlayerAttunement);
+            this.tpgNetCurrentPlayers.Controls.Add(this.nupCurrentPlayerEndurance);
+            this.tpgNetCurrentPlayers.Controls.Add(this.nupCurrentPlayerSoulLevel);
+            this.tpgNetCurrentPlayers.Controls.Add(this.lblCurrentPlayerHumanity);
+            this.tpgNetCurrentPlayers.Controls.Add(this.lblCurrentPlayerFaith);
+            this.tpgNetCurrentPlayers.Controls.Add(this.lblCurrentPlayerIntelligence);
+            this.tpgNetCurrentPlayers.Controls.Add(this.lblCurrentPlayerResistance);
+            this.tpgNetCurrentPlayers.Controls.Add(this.lblCurrentPlayerDexterity);
+            this.tpgNetCurrentPlayers.Controls.Add(this.lblCurrentPlayerStrength);
+            this.tpgNetCurrentPlayers.Controls.Add(this.lblCurrentPlayerEndurance);
+            this.tpgNetCurrentPlayers.Controls.Add(this.lblCurrentPlayerAttunement);
+            this.tpgNetCurrentPlayers.Controls.Add(this.lblCurrentPlayerVitality);
+            this.tpgNetCurrentPlayers.Controls.Add(this.lblCurrentPlayerSoulLevel);
+            this.tpgNetCurrentPlayers.Controls.Add(this.lbxNetCurrentPlayers);
+            this.tpgNetCurrentPlayers.Location = new System.Drawing.Point(4, 22);
+            this.tpgNetCurrentPlayers.Name = "tpgNetCurrentPlayers";
+            this.tpgNetCurrentPlayers.Padding = new System.Windows.Forms.Padding(3);
+            this.tpgNetCurrentPlayers.Size = new System.Drawing.Size(376, 541);
+            this.tpgNetCurrentPlayers.TabIndex = 1;
+            this.tpgNetCurrentPlayers.Text = "Current Players";
+            this.tpgNetCurrentPlayers.UseVisualStyleBackColor = true;
+            // 
+            // btnCurrentPlayerKick
+            // 
+            this.btnCurrentPlayerKick.Location = new System.Drawing.Point(6, 342);
+            this.btnCurrentPlayerKick.Name = "btnCurrentPlayerKick";
+            this.btnCurrentPlayerKick.Size = new System.Drawing.Size(158, 23);
+            this.btnCurrentPlayerKick.TabIndex = 52;
+            this.btnCurrentPlayerKick.Text = "Kick Player";
+            this.btnCurrentPlayerKick.UseVisualStyleBackColor = true;
+            this.btnCurrentPlayerKick.Click += new System.EventHandler(this.btnCurrentPlayerKick_Click);
             // 
             // nupCurrentPlayerFaith
             // 
@@ -3749,13 +3761,13 @@
             this.lblCurrentPlayerSoulLevel.TabIndex = 32;
             this.lblCurrentPlayerSoulLevel.Text = "Soul Level";
             // 
-            // lbxInfoCurrentPlayers
+            // lbxNetCurrentPlayers
             // 
-            this.lbxInfoCurrentPlayers.FormattingEnabled = true;
-            this.lbxInfoCurrentPlayers.Location = new System.Drawing.Point(6, 6);
-            this.lbxInfoCurrentPlayers.Name = "lbxInfoCurrentPlayers";
-            this.lbxInfoCurrentPlayers.Size = new System.Drawing.Size(158, 69);
-            this.lbxInfoCurrentPlayers.TabIndex = 31;
+            this.lbxNetCurrentPlayers.FormattingEnabled = true;
+            this.lbxNetCurrentPlayers.Location = new System.Drawing.Point(6, 6);
+            this.lbxNetCurrentPlayers.Name = "lbxNetCurrentPlayers";
+            this.lbxNetCurrentPlayers.Size = new System.Drawing.Size(158, 69);
+            this.lbxNetCurrentPlayers.TabIndex = 31;
             // 
             // lblVersion
             // 
@@ -3913,10 +3925,10 @@
             this.gbxEventFlags.PerformLayout();
             this.tpgHotkeys.ResumeLayout(false);
             this.tpgHotkeys.PerformLayout();
-            this.tpgInfo.ResumeLayout(false);
-            this.tclInfo.ResumeLayout(false);
-            this.tpgInfoRecentPlayers.ResumeLayout(false);
-            this.tpgInfoRecentPlayers.PerformLayout();
+            this.tpgNet.ResumeLayout(false);
+            this.tclNet.ResumeLayout(false);
+            this.tpgNetRecentPlayers.ResumeLayout(false);
+            this.tpgNetRecentPlayers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerFaith)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerHumanity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerResistance)).EndInit();
@@ -3927,8 +3939,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerAttunement)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerEndurance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerSoulLevel)).EndInit();
-            this.tpgInfoCurrentPlayers.ResumeLayout(false);
-            this.tpgInfoCurrentPlayers.PerformLayout();
+            this.tpgNetCurrentPlayers.ResumeLayout(false);
+            this.tpgNetCurrentPlayers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupCurrentPlayerFaith)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupCurrentPlayerHumanity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupCurrentPlayerResistance)).EndInit();
@@ -4092,11 +4104,11 @@
         private System.Windows.Forms.CheckBox cbxInfDurability;
         private System.Windows.Forms.CheckBox cbxInfDurabilitySpecial;
         private System.Windows.Forms.Button btnResetMagicQuantity;
-        private System.Windows.Forms.TabPage tpgInfo;
-        private System.Windows.Forms.TabControl tclInfo;
-        private System.Windows.Forms.TabPage tpgInfoRecentPlayers;
-        private System.Windows.Forms.TabPage tpgInfoCurrentPlayers;
-        private System.Windows.Forms.ListBox lbxInfoRecentPlayers;
+        private System.Windows.Forms.TabPage tpgNet;
+        private System.Windows.Forms.TabControl tclNet;
+        private System.Windows.Forms.TabPage tpgNetRecentPlayers;
+        private System.Windows.Forms.TabPage tpgNetCurrentPlayers;
+        private System.Windows.Forms.ListBox lbxNetRecentPlayers;
         private System.Windows.Forms.Label lblRecentPlayerSoulLevel;
         private System.Windows.Forms.Label lblRecentPlayerHumanity;
         private System.Windows.Forms.Label lblRecentPlayerFaith;
@@ -4137,7 +4149,7 @@
         private System.Windows.Forms.Label lblCurrentPlayerAttunement;
         private System.Windows.Forms.Label lblCurrentPlayerVitality;
         private System.Windows.Forms.Label lblCurrentPlayerSoulLevel;
-        private System.Windows.Forms.ListBox lbxInfoCurrentPlayers;
+        private System.Windows.Forms.ListBox lbxNetCurrentPlayers;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label15;
@@ -4208,6 +4220,7 @@
         private System.Windows.Forms.GroupBox gbxStatsMisc;
         private System.Windows.Forms.Label lblCovenant;
         private System.Windows.Forms.ComboBox cmbCovenant;
+        private System.Windows.Forms.Button btnCurrentPlayerKick;
     }
 }
 

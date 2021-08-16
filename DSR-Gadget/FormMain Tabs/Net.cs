@@ -10,13 +10,13 @@ namespace DSR_Gadget
         {
             for (int i = 0; i < 5; i++)
             {
-                lbxInfoRecentPlayers.Items.Add("");
-                lbxInfoCurrentPlayers.Items.Add("");
+                lbxNetRecentPlayers.Items.Add("");
+                lbxNetCurrentPlayers.Items.Add("");
             }
 
 
-            lbxInfoRecentPlayers.ValueMember = "PlayerIndex";
-            lbxInfoCurrentPlayers.ValueMember = "PlayerIndex";
+            lbxNetRecentPlayers.ValueMember = "PlayerIndex";
+            lbxNetCurrentPlayers.ValueMember = "PlayerIndex";
 
             /*
             Dictionary<int, DSRItem> weapons = new Dictionary<int, DSRItem>();
@@ -95,12 +95,12 @@ namespace DSR_Gadget
                         currentPlayers[i] = new DSRPlayer(-1);
                 }
 
-                DSRPlayer item = lbxInfoCurrentPlayers.Items[i] as DSRPlayer;
+                DSRPlayer item = lbxNetCurrentPlayers.Items[i] as DSRPlayer;
                 if (item == null || !item.Name.Equals(currentPlayers[i].Name) || item.PlayerIndex != currentPlayers[i].PlayerIndex)
-                    lbxInfoCurrentPlayers.Items[i] = currentPlayers[i];
+                    lbxNetCurrentPlayers.Items[i] = currentPlayers[i];
             }
 
-            DSRPlayer selectedCurrentPlayer = lbxInfoCurrentPlayers.SelectedItem as DSRPlayer;
+            DSRPlayer selectedCurrentPlayer = lbxNetCurrentPlayers.SelectedItem as DSRPlayer;
             if (selectedCurrentPlayer != null)
                 updateCurrentPlayerUI(selectedCurrentPlayer);
             
@@ -123,12 +123,12 @@ namespace DSR_Gadget
                         recentPlayers[i] = new DSRPlayer(-1);
                 }
 
-                DSRPlayer item = lbxInfoRecentPlayers.Items[i] as DSRPlayer;
+                DSRPlayer item = lbxNetRecentPlayers.Items[i] as DSRPlayer;
                 if (item == null || !item.Name.Equals(recentPlayers[i].Name) || item.PlayerIndex != recentPlayers[i].PlayerIndex)
-                    lbxInfoRecentPlayers.Items[i] = recentPlayers[i];
+                    lbxNetRecentPlayers.Items[i] = recentPlayers[i];
             }
 
-            DSRPlayer selectedRecentPlayer = lbxInfoRecentPlayers.SelectedItem as DSRPlayer;
+            DSRPlayer selectedRecentPlayer = lbxNetRecentPlayers.SelectedItem as DSRPlayer;
             if (selectedRecentPlayer != null)
                 updateRecentPlayerUI(selectedRecentPlayer);
 
@@ -160,6 +160,13 @@ namespace DSR_Gadget
             nupCurrentPlayerIntelligence.Value = player.Intelligence;
             nupCurrentPlayerFaith.Value = player.Faith;
             nupCurrentPlayerHumanity.Value = player.Humanity;
+        }
+
+        private void btnCurrentPlayerKick_Click(object sender, EventArgs e)
+        {
+            DSRPlayer player = lbxNetCurrentPlayers.SelectedItem as DSRPlayer;
+            if (player != null && player.PlayerIndex != -1)
+                Hook.KickPlayer(player);
         }
     }
 }

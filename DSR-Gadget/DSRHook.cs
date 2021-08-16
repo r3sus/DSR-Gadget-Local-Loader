@@ -684,7 +684,7 @@ namespace DSR_Gadget
 #endif
         #endregion
 
-        #region info
+        #region Net
 
         public bool[] GetRecentPlayers()
         {
@@ -749,10 +749,15 @@ namespace DSR_Gadget
         public void LeaveSession()
         {
             byte[] asm = (byte[])DSRAssembly.LeaveSession.Clone();
-            //byte[] bytes = BitConverter.GetBytes(GameDataManBasePtr.Resolve().ToInt64());
-            //Array.Copy(bytes, 0, asm, 0x2, 8);
-            //byte[] bytes = BitConverter.GetBytes(0x140509440);
-            //Array.Copy(bytes, 0, asm, 0x10, 8);
+            Execute(asm);
+        }
+
+        public void KickPlayer(DSRPlayer player)
+        {
+            byte index = (byte)(player.PlayerIndex + 1);
+            byte[] asm = (byte[])DSRAssembly.KickPlayer.Clone();
+            byte[] bytes = BitConverter.GetBytes(0x10044000 + index);
+            Array.Copy(bytes, 0, asm, 0x1, 4);
             Execute(asm);
         }
 

@@ -85,7 +85,7 @@
     <Compile Include="FormMain Tabs\Player.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMain Tabs\Info.cs">
+    <Compile Include="FormMain Tabs\Net.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormMain Tabs\Stats.cs">
@@ -146,6 +146,7 @@
     <Content Include="Resources\Assembly\BonfireWarp.txt" />
     <Content Include="Resources\Assembly\GetItem.txt" />
     <Content Include="Resources\Assembly\LevelUp.txt" />
+    <Content Include="Resources\Assembly\KickPlayer.txt" />
     <Content Include="Resources\Covenants.txt" />
     <Content Include="Resources\Invasions.txt" />
     <Content Include="Resources\Magic.txt" />

@@ -281,14 +281,31 @@ namespace DSR_Gadget.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 0:  ba 01 40 04 10          mov    edx,0x10044001
+        ///5:  41 b8 01 00 00 00       mov    r8d,0x1
+        ///b:  48 83 ec 38             sub    rsp,0x38
+        ///f:  49 be 70 db 6e 40 01    movabs r14,0x1406edb70
+        ///16: 00 00 00
+        ///19: 41 ff d6                call   r14
+        ///1c: 48 83 c4 38             add    rsp,0x38
+        ///20: c3                      ret .
+        /// </summary>
+        internal static string KickPlayer {
+            get {
+                return ResourceManager.GetString("KickPlayer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 0:  48 b9 70 a3 d1 41 01    movabs rcx,0x141d1a370
         ///7:  00 00 00
-        ///a:  48 83 ec 38             sub    rsp,0x38
-        ///e:  49 be fe fe fe fe fe    movabs r14,0xfefefefefefefefe
-        ///15: fe fe fe
-        ///18: 41 ff d6                call   r14
-        ///1b: 48 83 c4 38             add    rsp,0x38
-        ///1f: c3                      ret .
+        ///a:  48 8b 09                mov    rcx,QWORD PTR [rcx]
+        ///d:  48 83 ec 38             sub    rsp,0x38
+        ///11: 49 be 40 94 50 40 01    movabs r14,0x140509440
+        ///18: 00 00 00
+        ///1b: 41 ff d6                call   r14
+        ///1e: 48 83 c4 38             add    rsp,0x38
+        ///22: c3                      ret .
         /// </summary>
         internal static string LeaveSession {
             get {
