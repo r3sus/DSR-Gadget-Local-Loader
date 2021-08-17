@@ -68,8 +68,7 @@ namespace DSR_Gadget
         public enum ChrData1
         {
             CurrentPlayers = 0x18, //change and use Boost variables
-            ChrMapData = 0x48,
-            PlayerCtrl = 0x68, //change and use Boost variables
+            PlayerCtrl = 0x48,
             ChrType = 0xC4,
             TeamType = 0xC8,
             ChrFlags1 = 0x284,
@@ -121,10 +120,11 @@ namespace DSR_Gadget
             NoGoodsConsume = 0x01000000,
         }
 
-        public enum ChrMapData
+        public enum PlayerCtrl
         {
             ChrAnimData = 0x18,
             ChrPosData = 0x28,
+            ActionCtrl = 0x48,
             ChrMapFlags = 0x104,
             Warp = 0x108,
             WarpX = 0x110,
@@ -152,11 +152,6 @@ namespace DSR_Gadget
             PosZ = 0x18,
         }
 
-        public enum PlayerCtrl
-        {
-            ActionCtrl = 0x48,
-        }
-
         public enum ActionCtrl
         {
             CurrentAnimation = 0x80,
@@ -171,7 +166,26 @@ namespace DSR_Gadget
             CurrentPlayer4 = 0xE0,
             CurrentPlayer5 = 0x118,
         }
-        public const int CurrentPlayersOffset = 0x578;
+
+        public enum CurrentPlayer
+        {
+            ChrRes = 0x30,
+            PlayerGameData = 0x578,
+            SteamPlayerData = 0x590,
+        }
+
+        public enum ChrRes
+        {
+            Timer = 0x20,
+        }
+
+        public enum SteamPlayerData
+        {
+            SteamOnlineIDData = 0x18,
+            Name = 0x58,
+        }
+
+
 
         public const string ChrDbgAOB = "80 3D ? ? ? ? 00 48 8B 8F ? ? ? ? 0F B6 DB";
         public enum ChrDbg
@@ -207,6 +221,7 @@ namespace DSR_Gadget
             PlayerGameData = 0x10,
             PlayerGameDataRecent = 0x18,
             LastBloodstainPos = 0x40,
+            Settings = 0x58,
             PlayTime = 0xA4,
         }
 
@@ -301,6 +316,37 @@ namespace DSR_Gadget
             SkinColorStart = 0x512,
 
             GestureGameData = 0x568,
+        }
+
+        public enum Settings
+        {
+            CameraSpeedx = 0x8,
+            Vibration = 0x9,
+            Brightness = 0xA,
+
+            Music = 0xC,
+            Sounds = 0xD,
+            Voice = 0xE,
+            ShowBlood = 0xF,
+            Subtitles = 0x10,
+            HUD = 0x11,
+            UIScale = 0x12,
+            XAxis = 0x13,
+            YAxis = 0x14,
+            AutoLockOn = 0x15,
+            AutoWallRecovery = 0x16,
+
+            RegionMatchmaking = 0x19,
+            MatchmakingPassword = 0x1A,
+
+            StartOnline1 = 0x3F,
+            StartOnline2 = 0x40,
+
+            RankingRegistration = 0x44,
+            CameraSpeedY = 0x48,
+
+            SummonSignVisibility = 0x50,
+
         }
 
         public enum EquipMagicData

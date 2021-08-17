@@ -19,7 +19,7 @@ namespace DSR_Gadget
         private PHPointer ChrFollowCam;
         private PHPointer WorldChrBase;
         private PHPointer ChrData1;
-        private PHPointer ChrMapData;
+        private PHPointer PlayerCtrl;
         private PHPointer ChrAnimData;
         private PHPointer ChrPosData;
         private PHPointer PlayerGameDataPtr;
@@ -55,13 +55,12 @@ namespace DSR_Gadget
             BonfireWarpAddr = RegisterAbsoluteAOB(DSROffsets.BonfireWarpAOB);
 
             ChrData1 = CreateChildPointer(WorldChrBase, (int)DSROffsets.WorldChrBase.ChrData1);
-            ChrMapData = CreateBasePointer(IntPtr.Zero);
+            PlayerCtrl = CreateBasePointer(IntPtr.Zero);
             ChrAnimData = CreateBasePointer(IntPtr.Zero);
             ChrPosData = CreateBasePointer(IntPtr.Zero);
             PlayerGameDataPtr = CreateChildPointer(GameDataManBasePtr, DSROffsets.GameDataManOffset1, (int)DSROffsets.GameDataMan.PlayerGameData);
             EquipMagicDataPtr = CreateChildPointer(GameDataManBasePtr, DSROffsets.GameDataManOffset1, (int)DSROffsets.GameDataMan.PlayerGameData, (int)DSROffsets.PlayerGameData.EquipMagicData);
             LastBloodstainPos = CreateChildPointer(GameDataManBasePtr, DSROffsets.GameDataManOffset1, (int)DSROffsets.GameDataMan.LastBloodstainPos);
-            ActionCtrlPtr = CreateChildPointer(ChrData1, (int)DSROffsets.ChrData1.PlayerCtrl, (int)DSROffsets.PlayerCtrl.ActionCtrl);
 
             PlayerGameDataRecentPtr = CreateChildPointer(GameDataManBasePtr, DSROffsets.GameDataManOffset1, (int)DSROffsets.GameDataMan.PlayerGameDataRecent);
             RecentPlayerPtrs = new PHPointer[5];
@@ -74,7 +73,7 @@ namespace DSR_Gadget
             CurrentPlayerPtrs = new PHPointer[5];
             for (int i = 0; i < 5; i++)
             {
-                CurrentPlayerPtrs[i] = CreateChildPointer(PlayerGameDataCurrentPtr, (int)DSROffsets.CurrentPlayers.CurrentPlayer1 + i * (int)DSROffsets.CurrentPlayerOffset, (int)DSROffsets.CurrentPlayersOffset);
+                CurrentPlayerPtrs[i] = CreateChildPointer(PlayerGameDataCurrentPtr, (int)DSROffsets.CurrentPlayers.CurrentPlayer1 + i * (int)DSROffsets.CurrentPlayerOffset, (int)DSROffsets.CurrentPlayer.PlayerGameData);
             }
 
             DurabilityAddr = RegisterAbsoluteAOB(DSROffsets.DurabilityAOB);
@@ -86,9 +85,11 @@ namespace DSR_Gadget
         private void DSRHook_OnHooked(object sender, PHEventArgs e)
         {
             Offsets = DSROffsets.GetOffsets(Process.MainModule.ModuleMemorySize);
-            ChrMapData = CreateChildPointer(ChrData1, (int)DSROffsets.ChrData1.ChrMapData + Offsets.ChrData1Boost1);
-            ChrAnimData = CreateChildPointer(ChrMapData, (int)DSROffsets.ChrMapData.ChrAnimData);
-            ChrPosData = CreateChildPointer(ChrMapData, (int)DSROffsets.ChrMapData.ChrPosData);
+            PlayerCtrl = CreateChildPointer(ChrData1, (int)DSROffsets.ChrData1.PlayerCtrl + Offsets.ChrData1Boost1);
+            ChrAnimData = CreateChildPointer(PlayerCtrl, (int)DSROffsets.PlayerCtrl.ChrAnimData);
+            ChrPosData = CreateChildPointer(PlayerCtrl, (int)DSROffsets.PlayerCtrl.ChrPosData);
+            ActionCtrlPtr = CreateChildPointer(PlayerCtrl, (int)DSROffsets.PlayerCtrl.ActionCtrl);
+
         }
 
         private static readonly Dictionary<int, string> VersionStrings = new Dictionary<int, string>
@@ -242,11 +243,11 @@ namespace DSR_Gadget
 
         public void PosWarp(float x, float y, float z, float angle)
         {
-            ChrMapData.WriteSingle((int)DSROffsets.ChrMapData.WarpX, x);
-            ChrMapData.WriteSingle((int)DSROffsets.ChrMapData.WarpY, y);
-            ChrMapData.WriteSingle((int)DSROffsets.ChrMapData.WarpZ, z);
-            ChrMapData.WriteSingle((int)DSROffsets.ChrMapData.WarpAngle, angle);
-            ChrMapData.WriteBoolean((int)DSROffsets.ChrMapData.Warp, true);
+            PlayerCtrl.WriteSingle((int)DSROffsets.PlayerCtrl.WarpX, x);
+            PlayerCtrl.WriteSingle((int)DSROffsets.PlayerCtrl.WarpY, y);
+            PlayerCtrl.WriteSingle((int)DSROffsets.PlayerCtrl.WarpZ, z);
+            PlayerCtrl.WriteSingle((int)DSROffsets.PlayerCtrl.WarpAngle, angle);
+            PlayerCtrl.WriteBoolean((int)DSROffsets.PlayerCtrl.Warp, true);
         }
 
         public void GetInitialPosition(out float x, out float y, out float z, out float angle)
@@ -272,7 +273,7 @@ namespace DSR_Gadget
 
         public bool NoCollision
         {
-            set => ChrMapData.WriteFlag32((int)DSROffsets.ChrMapData.ChrMapFlags, (uint)DSROffsets.ChrMapFlags.DisableMapHit, value);
+            set => PlayerCtrl.WriteFlag32((int)DSROffsets.PlayerCtrl.ChrMapFlags, (uint)DSROffsets.ChrMapFlags.DisableMapHit, value);
         }
 
         public bool DeathCam
