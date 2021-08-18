@@ -67,6 +67,7 @@
     <Compile Include="DSRAssembly.cs" />
     <Compile Include="DSRHook.cs" />
     <Compile Include="DSROffsets.cs" />
+    <None Include="DSROffsets.cs.bak" />
     <Compile Include="FormMain Tabs\Misc.cs">
       <SubType>Form</SubType>
     </Compile>

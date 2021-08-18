@@ -41,14 +41,16 @@ namespace DSR_Gadget
 
             hotkeys.Add(new GadgetHotkey("HotkeyUp", "Move Up", flpHotkeyControls, () =>
             {
-                Hook.GetPosition(out float x, out float y, out float z, out float angle);
-                Hook.PosWarp(x, y + 10, z, angle);
+                DSRPlayer.Position pos = Player.GetPosition();
+                pos.Y += 10;
+                Player.PosWarp(pos);
             }));
 
             hotkeys.Add(new GadgetHotkey("HotkeyDown", "Move Down", flpHotkeyControls, () =>
             {
-                Hook.GetPosition(out float x, out float y, out float z, out float angle);
-                Hook.PosWarp(x, y - 10, z, angle);
+                DSRPlayer.Position pos = Player.GetPosition();
+                pos.Y -= 10;
+                Player.PosWarp(pos);
             }));
 
             hotkeys.Add(new GadgetHotkey("HotkeyMenu", "Quit to Menu", flpHotkeyControls, () =>
@@ -103,8 +105,8 @@ namespace DSR_Gadget
             {
                 if (loaded && !reading)
                 {
-                    Hook.ChrType = 0;
-                    Hook.TeamType = 1;
+                    Player.ChrType = 0;
+                    Player.TeamType = 1;
                 }
             }));
 
@@ -112,8 +114,8 @@ namespace DSR_Gadget
             {
                 if (loaded && !reading)
                 {
-                    Hook.ChrType = 8;
-                    Hook.TeamType = 4;
+                    Player.ChrType = 8;
+                    Player.TeamType = 4;
                 }
             }));
 
@@ -121,8 +123,8 @@ namespace DSR_Gadget
             {
                 if (loaded && !reading)
                 {
-                    Hook.ChrType = 2;
-                    Hook.TeamType = 16;
+                    Player.ChrType = 2;
+                    Player.TeamType = 16;
                 }
             }));
 
@@ -130,8 +132,8 @@ namespace DSR_Gadget
             {
                 if (loaded && !reading)
                 {
-                    Hook.ChrType = 1;
-                    Hook.TeamType = 2;
+                    Player.ChrType = 1;
+                    Player.TeamType = 2;
                 }
             }));
 
@@ -139,8 +141,8 @@ namespace DSR_Gadget
             {
                 if (loaded && !reading)
                 {
-                    Hook.ChrType = 13;
-                    Hook.TeamType = 16;
+                    Player.ChrType = 13;
+                    Player.TeamType = 16;
                 }
             }));
 
@@ -156,7 +158,7 @@ namespace DSR_Gadget
             {
                 if (loaded && !reading)
                 {
-                    Hook.CurrentAnimation = -1;
+                    Player.CurrentAnimation = -1;
                 }
             }));
 

@@ -46,41 +46,41 @@ namespace DSR_Gadget
 
         private void reloadStats()
         {
-            cmbClass.SelectedIndex = Hook.Class;
-            cmbCovenant.SelectedIndex = Hook.Covenant;
+            cmbClass.SelectedIndex = Player.Class;
+            cmbCovenant.SelectedIndex = Player.Covenant;
         }
 
         private void updateStats()
         {
-            txtSoulLevel.Text = Hook.SoulLevel.ToString();
-            nudHumanity.Value = Hook.Humanity;
-            nudSouls.Value = Hook.Souls;
+            txtSoulLevel.Text = Player.SoulLevel.ToString();
+            nudHumanity.Value = Player.Humanity;
+            nudSouls.Value = Player.Souls;
 
-            nudWarriorOfSunlight.Value = Hook.WarriorOfSunlight;
-            nudDarkwraith.Value = Hook.Darkwraith;
-            nudPathOfTheDragon.Value = Hook.PathOfTheDragon;
-            nudGravelordServant.Value = Hook.GravelordServant;
-            nudForestHunter.Value = Hook.ForestHunter;
-            nudDarkmoonBlade.Value = Hook.DarkmoonBlade;
-            nudChaosServant.Value = Hook.ChaosServant;
+            nudWarriorOfSunlight.Value = Player.WarriorOfSunlight;
+            nudDarkwraith.Value = Player.Darkwraith;
+            nudPathOfTheDragon.Value = Player.PathOfTheDragon;
+            nudGravelordServant.Value = Player.GravelordServant;
+            nudForestHunter.Value = Player.ForestHunter;
+            nudDarkmoonBlade.Value = Player.DarkmoonBlade;
+            nudChaosServant.Value = Player.ChaosServant;
 
-            txtName.Text = Hook.NameString1;
-            txtOnlineName.Text = Hook.NameString2;
+            txtName.Text = Player.NameString1;
+            txtOnlineName.Text = Player.NameString2;
 
-            nudWeaponMemory.Value = Hook.WeaponMemory;
-            nudIndictments.Value = Hook.Indictments;
+            nudWeaponMemory.Value = Player.WeaponMemory;
+            nudIndictments.Value = Player.Indictments;
 
-            nudHair.Value = Hook.Hair;
+            nudHair.Value = Player.Hair;
             try
             {
-                nudHairRed.Value = Convert.ToDecimal(Hook.HairRed);
-                nudHairGreen.Value = Convert.ToDecimal(Hook.HairGreen);
-                nudHairBlue.Value = Convert.ToDecimal(Hook.HairBlue);
-                nudHairAlpha.Value = Convert.ToDecimal(Hook.HairAlpha);
+                nudHairRed.Value = Convert.ToDecimal(Player.HairRed);
+                nudHairGreen.Value = Convert.ToDecimal(Player.HairGreen);
+                nudHairBlue.Value = Convert.ToDecimal(Player.HairBlue);
+                nudHairAlpha.Value = Convert.ToDecimal(Player.HairAlpha);
 
-                nudEyeRed.Value = Convert.ToDecimal(Hook.EyeRed);
-                nudEyeGreen.Value = Convert.ToDecimal(Hook.EyeGreen);
-                nudEyeBlue.Value = Convert.ToDecimal(Hook.EyeBlue);
+                nudEyeRed.Value = Convert.ToDecimal(Player.EyeRed);
+                nudEyeGreen.Value = Convert.ToDecimal(Player.EyeGreen);
+                nudEyeBlue.Value = Convert.ToDecimal(Player.EyeBlue);
             } catch (OverflowException)
             {
                 // TODO: handle this better
@@ -97,18 +97,18 @@ namespace DSR_Gadget
 
             try
             {
-                nudVitality.Value = Hook.Vitality;
-                nudAttunement.Value = Hook.Attunement;
-                nudEndurance.Value = Hook.Endurance;
-                nudStrength.Value = Hook.Strength;
-                nudDexterity.Value = Hook.Dexterity;
-                nudResistance.Value = Hook.Resistance;
-                nudIntelligence.Value = Hook.Intelligence;
-                nudFaith.Value = Hook.Faith;
+                nudVitality.Value = Player.Vitality;
+                nudAttunement.Value = Player.Attunement;
+                nudEndurance.Value = Player.Endurance;
+                nudStrength.Value = Player.Strength;
+                nudDexterity.Value = Player.Dexterity;
+                nudResistance.Value = Player.Resistance;
+                nudIntelligence.Value = Player.Intelligence;
+                nudFaith.Value = Player.Faith;
             }
             catch (ArgumentOutOfRangeException) { }
 
-            updateCovenant(cmbCovenant, Hook.Covenant);
+            updateCovenant(cmbCovenant, Player.Covenant);
         }
 
         private void cmbClass_SelectedIndexChanged(object sender, EventArgs e)
@@ -153,70 +153,70 @@ namespace DSR_Gadget
             if (loaded && !reading)
             {
                 DSRCovenant item = cmbCovenant.SelectedItem as DSRCovenant;
-                Hook.Covenant = item.ID;
+                Player.Covenant = item.ID;
             }
         }
         private void nudWarriorOfSunlight_ValueChanged(object sender, EventArgs e)
         {
             if (loaded && !reading)
-                Hook.WarriorOfSunlight = (byte)nudWarriorOfSunlight.Value;
+                Player.WarriorOfSunlight = (byte)nudWarriorOfSunlight.Value;
         }
 
         private void nudDarkwraith_ValueChanged(object sender, EventArgs e)
         {
             if (loaded && !reading)
-                Hook.Darkwraith = (byte)nudDarkwraith.Value;
+                Player.Darkwraith = (byte)nudDarkwraith.Value;
         }
 
         private void nudPathOfTheDragon_ValueChanged(object sender, EventArgs e)
         {
             if (loaded && !reading)
-                Hook.PathOfTheDragon = (byte)nudPathOfTheDragon.Value;
+                Player.PathOfTheDragon = (byte)nudPathOfTheDragon.Value;
         }
 
         private void nudGravelordServant_ValueChanged(object sender, EventArgs e)
         {
             if (loaded && !reading)
-                Hook.GravelordServant = (byte)nudGravelordServant.Value;
+                Player.GravelordServant = (byte)nudGravelordServant.Value;
         }
 
         private void nudForestHunter_ValueChanged(object sender, EventArgs e)
         {
             if (loaded && !reading)
-                Hook.ForestHunter = (byte)nudForestHunter.Value;
+                Player.ForestHunter = (byte)nudForestHunter.Value;
         }
 
         private void nudDarkmoonBlade_ValueChanged(object sender, EventArgs e)
         {
             if (loaded && !reading)
-                Hook.DarkmoonBlade = (byte)nudDarkmoonBlade.Value;
+                Player.DarkmoonBlade = (byte)nudDarkmoonBlade.Value;
         }
 
         private void nudChaosServant_ValueChanged(object sender, EventArgs e)
         {
             if (loaded && !reading)
-                Hook.ChaosServant = (byte)nudChaosServant.Value;
+                Player.ChaosServant = (byte)nudChaosServant.Value;
         }
 
         private void txtName_TextChanged(object sender, EventArgs e)
         {
             if (loaded && !reading)
             {
-                Hook.NameString1 = txtName.Text;
-                Hook.NameString2 = txtName.Text;
+                Player.NameString1 = txtName.Text;
+                Player.NameString2 = txtName.Text;
             }
         }
 
         private void nudWeaponMemory_ValueChanged(object sender, EventArgs e)
         {
             if (loaded && !reading)
-                Hook.WeaponMemory = (byte)nudWeaponMemory.Value;
+                Player.WeaponMemory = (byte)nudWeaponMemory.Value;
         }
 
         private void nudIndictments_ValueChanged(object sender, EventArgs e)
         {
             if (loaded && !reading)
-                Hook.Indictments = (int)nudIndictments.Value;
+                Player.Indictments = (int)nudIndictments.Value;
         }
 
         private void cbxFashionHex_CheckedChanged(object sender, EventArgs e)
@@ -278,6 +278,54 @@ namespace DSR_Gadget
                     cmbCovenant.SelectedItem = item;
                 }
             }
+        }
+
+        private void nudHair_ValueChanged(object sender, EventArgs e)
+        {
+            if (loaded && !reading)
+                Player.Hair = (int)nudHair.Value;
+        }
+
+        private void nudHairRed_ValueChanged(object sender, EventArgs e)
+        {
+            if (loaded && !reading)
+                Player.HairRed = (float)nudHairRed.Value;
+        }
+
+        private void nudHairGreen_ValueChanged(object sender, EventArgs e)
+        {
+            if (loaded && !reading)
+                Player.HairGreen = (float)nudHairGreen.Value;
+        }
+
+        private void nudHairBlue_ValueChanged(object sender, EventArgs e)
+        {
+            if (loaded && !reading)
+                Player.HairBlue = (float)nudHairBlue.Value;
+        }
+
+        private void nudHairAlpha_ValueChanged(object sender, EventArgs e)
+        {
+            if (loaded && !reading)
+                Player.HairAlpha = (float)nudHairAlpha.Value;
+        }
+
+        private void nudEyeRed_ValueChanged(object sender, EventArgs e)
+        {
+            if (loaded && !reading)
+                Player.EyeRed = (float)nudEyeRed.Value;
+        }
+
+        private void nudEyeGreen_ValueChanged(object sender, EventArgs e)
+        {
+            if (loaded && !reading)
+                Player.EyeGreen = (float)nudEyeGreen.Value;
+        }
+
+        private void nudEyeBlue_ValueChanged(object sender, EventArgs e)
+        {
+            if (loaded && !reading)
+                Player.EyeBlue = (float)nudEyeBlue.Value;
         }
     }
 }

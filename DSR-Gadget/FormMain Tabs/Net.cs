@@ -6,6 +6,11 @@ namespace DSR_Gadget
 {
     public partial class FormMain : Form
     {
+
+        DSRPlayer[] CurrentPlayers = new DSRPlayer[5];
+        DSRPlayer[] RecentPlayers = new DSRPlayer[5];
+        DSRPlayer EmptyPlayer;
+
         private void initInfo()
         {
             for (int i = 0; i < 5; i++)
@@ -15,8 +20,9 @@ namespace DSR_Gadget
             }
 
 
-            lbxNetRecentPlayers.ValueMember = "PlayerIndex";
-            lbxNetCurrentPlayers.ValueMember = "PlayerIndex";
+            EmptyPlayer = Hook.GetEmptyPlayer();
+
+
 
             /*
             Dictionary<int, DSRItem> weapons = new Dictionary<int, DSRItem>();
@@ -74,65 +80,83 @@ namespace DSR_Gadget
         private void updateInfo()
         {
             
-            DSRPlayer[] currentPlayers = new DSRPlayer[5];
+            
             bool[] currentPlayerIndices = Hook.GetCurrentPlayers();
 
 
             // TODO: duplicate code
             
+            
             for (int i = 0; i < currentPlayerIndices.Length; i++)
             {
                 if (currentPlayerIndices[i])
                 {
-                    if (currentPlayers[i] == null || currentPlayers[i].PlayerIndex != i)
-                        currentPlayers[i] = new DSRPlayer(i);
+                    if (CurrentPlayers[i] == null)
+                    {
+                        DSRPlayer player = Hook.GetCurrentPlayer(i);
+                        if (player != null)
+                            CurrentPlayers[i] = player;
+                    }
 
-                    currentPlayers[i] = Hook.UpdateRecentPlayer(currentPlayers[i]);
                 }
                 else
                 {
-                    if (currentPlayers[i] == null || currentPlayers[i].PlayerIndex != -1)
-                        currentPlayers[i] = new DSRPlayer(-1);
+                    lbxNetCurrentPlayers.Items[i] = "";
                 }
 
                 DSRPlayer item = lbxNetCurrentPlayers.Items[i] as DSRPlayer;
-                if (item == null || !item.Name.Equals(currentPlayers[i].Name) || item.PlayerIndex != currentPlayers[i].PlayerIndex)
-                    lbxNetCurrentPlayers.Items[i] = currentPlayers[i];
+                if (CurrentPlayers[i] != null && item == null) //|| !item.ToString().Equals(CurrentPlayers[i].ToString())))
+                    lbxNetCurrentPlayers.Items[i] = CurrentPlayers[i];
             }
 
             DSRPlayer selectedCurrentPlayer = lbxNetCurrentPlayers.SelectedItem as DSRPlayer;
             if (selectedCurrentPlayer != null)
                 updateCurrentPlayerUI(selectedCurrentPlayer);
+            else
+                updateCurrentPlayerUI(EmptyPlayer);
+            
             
 
-            DSRPlayer[] recentPlayers = new DSRPlayer[5];
             bool[] recentPlayerIndices = Hook.GetRecentPlayers();
 
             for (int i = 0; i < recentPlayerIndices.Length; i++)
             {
                 if (recentPlayerIndices[i])
                 {
-                    if (recentPlayers[i] == null || recentPlayers[i].PlayerIndex != i)
-                        recentPlayers[i] = new DSRPlayer(i);
-
-                    recentPlayers[i] = Hook.UpdateRecentPlayer(recentPlayers[i]);
+                    if (RecentPlayers[i] == null)
+                    {
+                        DSRPlayer player = Hook.GetRecentPlayer(i);
+                        if (player != null)
+                            RecentPlayers[i] = player;
+                    }
                 }
                 else
                 {
-                    if (recentPlayers[i] == null || recentPlayers[i].PlayerIndex != -1)
-                        recentPlayers[i] = new DSRPlayer(-1);
+                    lbxNetRecentPlayers.Items[i] = "";
                 }
 
                 DSRPlayer item = lbxNetRecentPlayers.Items[i] as DSRPlayer;
-                if (item == null || !item.Name.Equals(recentPlayers[i].Name) || item.PlayerIndex != recentPlayers[i].PlayerIndex)
-                    lbxNetRecentPlayers.Items[i] = recentPlayers[i];
+                if (RecentPlayers[i] != null && item == null)// || !item.ToString().Equals(RecentPlayers[i].ToString())))
+                    lbxNetRecentPlayers.Items[i] = RecentPlayers[i];
+            }
+
+            // TODO handle this in a better way
+            for (int i = 0; i < lbxNetCurrentPlayers.Items.Count; i++)
+            {
+                lbxNetCurrentPlayers.Items[i] = lbxNetCurrentPlayers.Items[i];
+            }
+
+            for (int i = 0; i < lbxNetRecentPlayers.Items.Count; i++)
+            {
+                lbxNetRecentPlayers.Items[i] = lbxNetRecentPlayers.Items[i];
             }
 
             DSRPlayer selectedRecentPlayer = lbxNetRecentPlayers.SelectedItem as DSRPlayer;
             if (selectedRecentPlayer != null)
                 updateRecentPlayerUI(selectedRecentPlayer);
-
-
+            else
+                updateRecentPlayerUI(EmptyPlayer);
+            
         }
 
         private void updateRecentPlayerUI(DSRPlayer player)
@@ -165,8 +189,9 @@ namespace DSR_Gadget
         private void btnCurrentPlayerKick_Click(object sender, EventArgs e)
         {
             DSRPlayer player = lbxNetCurrentPlayers.SelectedItem as DSRPlayer;
-            if (player != null && player.PlayerIndex != -1)
-                Hook.KickPlayer(player);
+            byte index = (byte)lbxNetCurrentPlayers.SelectedIndex;
+            if (player != null && CurrentPlayers[index] != null)
+                Hook.KickPlayer(player, index);
         }
     }
 }

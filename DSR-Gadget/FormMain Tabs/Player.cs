@@ -17,6 +17,7 @@ namespace DSR_Gadget
 
         private List<int> unknownBonfires = new List<int>();
         private PlayerState playerState;
+        private DSRPlayer Player;
 
         private void initPlayer()
         {
@@ -35,6 +36,9 @@ namespace DSR_Gadget
                 cmbMPAreaID.Items.Add(area);
                 cmbAreaID.Items.Add(area);
             }
+
+            Player = Hook.GetPlayer();
+
             cmbMPAreaID.SelectedIndex = 0;
             cmbAreaID.SelectedIndex = 0;
             nudSpeed.Value = settings.AnimSpeed;
@@ -55,7 +59,7 @@ namespace DSR_Gadget
                 if (!cbxCollision.Checked)
                     Hook.NoCollision = false;
                 if (cbxSpeed.Checked)
-                    Hook.AnimSpeed = 1;
+                    Player.AnimSpeed = 1;
             }
         }
 
@@ -69,39 +73,39 @@ namespace DSR_Gadget
 
         private void updatePlayer()
         {
-            nudHealth.Value = Hook.Health;
-            nudHealthMax.Value = Hook.HealthMax;
-            nudStamina.Value = Hook.Stamina;
-            nudStaminaMax.Value = Hook.StaminaMax;
+            nudHealth.Value = Player.Hp;
+            nudHealthMax.Value = Player.MaxHp;
+            nudStamina.Value = Player.Stamina;
+            nudStaminaMax.Value = Player.MaxStamina;
 
             if (cbxFreezeChrType.Checked)
-                Hook.ChrType = (int)nudChrType.Value;
+                Player.ChrType = (int)nudChrType.Value;
             else
-                nudChrType.Value = Hook.ChrType;
+                nudChrType.Value = Player.ChrType;
 
             if (cbxFreezeTeamType.Checked)
-                Hook.TeamType = (int)nudTeamType.Value;
+                Player.TeamType = (int)nudTeamType.Value;
             else
-                nudTeamType.Value = Hook.TeamType;
+                nudTeamType.Value = Player.TeamType;
 
             if (cbxFreezeInvadeType.Checked)
-                Hook.InvadeType = (byte)nudInvadeType.Value;
+                Player.InvadeType = (byte)nudInvadeType.Value;
             else
-                nudInvadeType.Value = Hook.InvadeType;
+                nudInvadeType.Value = Player.InvadeType;
 
             try
             {
-                Hook.GetPosition(out float x, out float y, out float z, out float angle);
-                nudPosX.Value = (decimal)x;
-                nudPosY.Value = (decimal)y;
-                nudPosZ.Value = (decimal)z;
-                nudPosAngle.Value = angleToDegree(angle);
+                DSRPlayer.Position pos = Player.GetPosition();
+                nudPosX.Value = (decimal)pos.X;
+                nudPosY.Value = (decimal)pos.Y;
+                nudPosZ.Value = (decimal)pos.Z;
+                nudPosAngle.Value = angleToDegree(pos.Angle);
 
-                Hook.GetStablePosition(out x, out y, out z, out angle);
-                nudStableX.Value = (decimal)x;
-                nudStableY.Value = (decimal)y;
-                nudStableZ.Value = (decimal)z;
-                nudStableAngle.Value = angleToDegree(angle);
+                pos = Hook.GetStablePosition();
+                nudStableX.Value = (decimal)pos.X;
+                nudStableY.Value = (decimal)pos.Y;
+                nudStableZ.Value = (decimal)pos.Z;
+                nudStableAngle.Value = angleToDegree(pos.Angle);
             }
             catch (OverflowException)
             {
@@ -118,29 +122,29 @@ namespace DSR_Gadget
 
             cbxDeathCam.Checked = Hook.DeathCam;
             if (cbxSpeed.Checked)
-                Hook.AnimSpeed = (float)nudSpeed.Value;
+                Player.AnimSpeed = (float)nudSpeed.Value;
 
             updateBonfire(cmbBonfire, Hook.LastBonfire);
 
-            updateTeam(cmbChrSelect, Hook.ChrType, Hook.TeamType);
+            updateTeam(cmbChrSelect, Player.ChrType, Player.TeamType);
 
-            updateInvadeType(cmbInvasionSelect, Hook.InvadeType);
+            updateInvadeType(cmbInvasionSelect, Player.InvadeType);
 
-            updateAreaID(cmbMPAreaID, cbxFreezeMPAreaID, Hook.MPAreaID, value => Hook.MPAreaID = value);
-            updateAreaID(cmbAreaID, cbxFreezeAreaID, Hook.AreaID, value => Hook.AreaID = value);
+            updateAreaID(cmbMPAreaID, cbxFreezeMPAreaID, Player.MPAreaID, value => Player.MPAreaID = value);
+            updateAreaID(cmbAreaID, cbxFreezeAreaID, Player.AreaID, value => Player.AreaID = value);
 
         }
 
         private void nudHealth_ValueChanged(object sender, EventArgs e)
         {
             if (loaded && !reading)
-                Hook.Health = (int)nudHealth.Value;
+                Player.Hp = (int)nudHealth.Value;
         }
 
         private void nudStamina_ValueChanged(object sender, EventArgs e)
         {
             if (loaded && !reading)
-                Hook.Stamina = (int)nudStamina.Value;
+                Player.Stamina = (int)nudStamina.Value;
         }
 
         private void btnResetMagicQuantity_Click(object sender, EventArgs e)
@@ -165,19 +169,19 @@ namespace DSR_Gadget
         private void nudChrType_ValueChanged(object sender, EventArgs e)
         {
             if (loaded && !reading)
-                Hook.ChrType = (int)nudChrType.Value;
+                Player.ChrType = (int)nudChrType.Value;
         }
 
         private void nudTeamType_ValueChanged(object sender, EventArgs e)
         {
             if (loaded && !reading)
-                Hook.TeamType = (int)nudTeamType.Value;
+                Player.TeamType = (int)nudTeamType.Value;
         }
 
         private void nudInvadeType_ValueChanged(object sender, EventArgs e)
         {
             if (loaded && !reading)
-                Hook.InvadeType = (byte)nudInvadeType.Value;
+                Player.InvadeType = (byte)nudInvadeType.Value;
         }
 
         private void cmbChrSelect_SelectedIndexChanged(object sender, EventArgs e)
@@ -185,8 +189,8 @@ namespace DSR_Gadget
             if (loaded && !reading)
             {
                 DSRTeam item = cmbChrSelect.SelectedItem as DSRTeam;
-                Hook.ChrType = item.ChrType;
-                Hook.TeamType = item.TeamType;
+                Player.ChrType = item.ChrType;
+                Player.TeamType = item.TeamType;
             }
         }
 
@@ -195,7 +199,7 @@ namespace DSR_Gadget
             if (loaded && !reading)
             {
                 DSRInvasion item = cmbInvasionSelect.SelectedItem as DSRInvasion;
-                Hook.InvadeType = item.InvadeType;
+                Player.InvadeType = item.InvadeType;
             }
         }
 
@@ -204,7 +208,7 @@ namespace DSR_Gadget
             if (loaded && !reading)
             {
                 DSRArea item = cmbMPAreaID.SelectedItem as DSRArea;
-                Hook.MPAreaID = item.AreaID;
+                Player.MPAreaID = item.AreaID;
             }
         }
 
@@ -213,7 +217,7 @@ namespace DSR_Gadget
             if (loaded && !reading)
             {
                 DSRArea item = cmbAreaID.SelectedItem as DSRArea;
-                Hook.AreaID = item.AreaID;
+                Player.AreaID = item.AreaID;
             }
         }
 
@@ -246,11 +250,12 @@ namespace DSR_Gadget
 
         private void restorePosition()
         {
-            float x = (float)nudStoredX.Value;
-            float y = (float)nudStoredY.Value;
-            float z = (float)nudStoredZ.Value;
-            float angle = degreeToAngle(nudStoredAngle.Value);
-            Hook.PosWarp(x, y, z, angle);
+            DSRPlayer.Position pos;
+            pos.X = (float)nudStoredX.Value;
+            pos.Y = (float)nudStoredY.Value;
+            pos.Z = (float)nudStoredZ.Value;
+            pos.Angle = degreeToAngle(nudStoredAngle.Value);
+            Player.PosWarp(pos);
 
             if (playerState.Set)
             {
@@ -277,8 +282,7 @@ namespace DSR_Gadget
         {
             if (loaded && !reading)
             {
-                Hook.GetLastBloodstainPosition(out float x, out float y, out float z, out float angle);
-                Hook.PosWarp(x, y, z, angle);
+                Player.PosWarp(Hook.GetLastBloodstainPosition());
             }
         }
 
@@ -291,8 +295,7 @@ namespace DSR_Gadget
         {
             if (loaded && !reading)
             {
-                Hook.GetInitialPosition(out float x, out float y, out float z, out float angle);
-                Hook.PosWarp(x, y, z, angle);
+                Player.PosWarp(Hook.GetInitialPosition());
             }
         }
 
@@ -332,7 +335,7 @@ namespace DSR_Gadget
         private void cbxSpeed_CheckedChanged(object sender, EventArgs e)
         {
             if (loaded && !cbxSpeed.Checked)
-                Hook.AnimSpeed = 1;
+                Player.AnimSpeed = 1;
         }
 
         private decimal angleToDegree(float angle)

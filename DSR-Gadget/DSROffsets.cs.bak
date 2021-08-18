@@ -5,141 +5,6 @@ namespace DSR_Gadget
 {
     internal class DSROffsets
     {
-        // BaseX in public ce table
-        public const string WorldChrManImpBaseAOB = "48 8B 05 ? ? ? ? 48 8B 48 68 48 85 C9 0F 84 ? ? ? ? 48 39 5E 10 0F 84 ? ? ? ? 48";
-        public const int WorldChrManImpBaseOffset1 = 0;
-        public enum WorldChrManImp
-        {
-            PlayerIns = 0x68, // Main Player data
-            DeathCam = 0x70,
-        }
-
-        public int PlayerInsBoost1 = 0x0;
-        public int PlayerInsBoost2 = 0x0;
-        public enum PlayerIns
-        {
-            CurrentPlayers = 0x18, //change and use Boost variables // List of PlayerIns of current players
-            ChrRes = 0x10,
-            PlayerCtrl = 0x68,
-            ChrType = 0xD4,
-            TeamType = 0xD8,
-            ChrFlags1 = 0x284,
-            MPAreaID = 0x354,
-            AreaID = 0x358,
-            Health = 0x3E8,
-            MaxHealth = 0x3EC,
-            Stamina = 0x3F8,
-            MaxStamina = 0x3FC,
-            ChrFlags2 = 0x514,
-
-            PlayerGameData = 0x578, //change and use Boost variables
-            SteamPlayerData = 0x590, //change and use Boost variables
-        }
-
-        public enum ChrRes
-        {
-            Timer = 0x20,
-        }
-
-        public enum SteamPlayerData
-        {
-            SteamOnlineIDData = 0x18,
-            Name = 0x58,
-        }
-
-        public enum SteamOnlineIDData
-        {
-            SteamID64 = 0x50,
-        }
-
-        public enum PlayerCtrl
-        {
-            ChrAnimData = 0x18,
-            ChrPosData = 0x28,
-            ActionCtrl = 0x48,
-            ChrMapFlags = 0x104,
-            Warp = 0x108,
-            WarpX = 0x110,
-            WarpY = 0x114,
-            WarpZ = 0x118,
-            WarpAngle = 0x124,
-        }
-
-        public enum ActionCtrl
-        {
-            CurrentAnimation = 0x80,
-        }
-
-        public enum ChrAnimData
-        {
-            AnimSpeed = 0xA8,
-        }
-
-        public enum ChrPosData
-        {
-            PosAngle = 0x4,
-            PosX = 0x10,
-            PosY = 0x14,
-            PosZ = 0x18,
-        }
-
-        [Flags]
-        public enum ChrMapFlags : uint
-        {
-            DisableMapHit = 0x00000010,
-        }
-
-        [Flags]
-        public enum ChrFlags1
-        {
-            ForceSetOmission = 0x00000001,
-            DisableHPGauge = 0x00000008,
-            SetEventGenerate = 0x00000010,
-            ForcePlayAnimation = 0x00000100,
-            ForceUpdateNextFrame = 0x00000200,
-            NoGravity = 0x00004000,
-            SetSuperArmor = 0x00010000,
-            FirstPerson = 0x00100000,
-            ToggleDraw = 0x00800000,
-            // Can't die, but still take damage from killboxes and trigger deathcams
-            SetDeadMode = 0x02000000,
-            // Doesn't prevent healing
-            DisableDamage = 0x04000000,
-            // Super armor and disable damage, still die to killbox
-            EnableInvincible = 0x08000000,
-        }
-
-        [Flags]
-        public enum ChrFlags2
-        {
-            DrawHit = 0x00000004,
-            // Can't die, killboxes and death cams do nothing
-            NoDead = 0x00000020,
-            // Also prevents healing
-            NoDamage = 0x00000040,
-            NoHit = 0x00000080,
-            NoAttack = 0x00000100,
-            NoMove = 0x00000200,
-            NoStaminaConsumption = 0x00000400,
-            NoMpConsumption = 0x00000800,
-            DrawDirection = 0x00004000,
-            NoUpdate = 0x00008000,
-            DrawCounter = 0x00200000,
-            NoGoodsConsume = 0x01000000,
-        }
-
-        public const int CurrentPlayerOffset = 0x38;
-        public enum CurrentPlayers
-        {
-            CurrentPlayerIns1 = 0x38,
-            CurrentPlayerIns2 = 0x70,
-            CurrentPlayerIns3 = 0xA8,
-            CurrentPlayerIns4 = 0xE0,
-            CurrentPlayerIns5 = 0x118,
-        }
-
-
-
         public const string CamManBaseAOB = "48 8B 05 ? ? ? ? 48 63 D1 48 8B 44 D0 08 C3";
         public const int CamManOffset = 0x10;
 
@@ -190,6 +55,136 @@ namespace DSR_Gadget
             InitialAngle = 0x84,
         }
 
+        public const string WorldChrBaseAOB = "48 8B 05 ? ? ? ? 48 8B 48 68 48 85 C9 0F 84 ? ? ? ? 48 39 5E 10 0F 84 ? ? ? ? 48";
+        public const int WorldChrBaseOffset1 = 0;
+        public enum WorldChrBase
+        {
+            ChrData1 = 0x68,
+            DeathCam = 0x70,
+        }
+
+        public int ChrData1Boost1 = 0x0;
+        public int ChrData1Boost2 = 0x0;
+        public enum ChrData1
+        {
+            CurrentPlayers = 0x18, //change and use Boost variables
+            PlayerCtrl = 0x48,
+            ChrType = 0xC4,
+            TeamType = 0xC8,
+            ChrFlags1 = 0x284,
+            MPAreaID = 0x344,
+            AreaID = 0x348,
+            Health = 0x3D8,
+            MaxHealth = 0x3DC,
+            Stamina = 0x3E8,
+            MaxStamina = 0x3EC,
+            ChrFlags2 = 0x514,
+        }
+
+        [Flags]
+        public enum ChrFlags1
+        {
+            ForceSetOmission = 0x00000001,
+            DisableHPGauge = 0x00000008,
+            SetEventGenerate = 0x00000010,
+            ForcePlayAnimation = 0x00000100,
+            ForceUpdateNextFrame = 0x00000200,
+            NoGravity = 0x00004000,
+            SetSuperArmor = 0x00010000,
+            FirstPerson = 0x00100000,
+            ToggleDraw = 0x00800000,
+            // Can't die, but still take damage from killboxes and trigger deathcams
+            SetDeadMode = 0x02000000,
+            // Doesn't prevent healing
+            DisableDamage = 0x04000000,
+            // Super armor and disable damage, still die to killbox
+            EnableInvincible = 0x08000000,
+        }
+
+        [Flags]
+        public enum ChrFlags2
+        {
+            DrawHit = 0x00000004,
+            // Can't die, killboxes and death cams do nothing
+            NoDead = 0x00000020,
+            // Also prevents healing
+            NoDamage = 0x00000040,
+            NoHit = 0x00000080,
+            NoAttack = 0x00000100,
+            NoMove = 0x00000200,
+            NoStaminaConsumption = 0x00000400,
+            NoMpConsumption = 0x00000800,
+            DrawDirection = 0x00004000,
+            NoUpdate = 0x00008000,
+            DrawCounter = 0x00200000,
+            NoGoodsConsume = 0x01000000,
+        }
+
+        public enum PlayerCtrl
+        {
+            ChrAnimData = 0x18,
+            ChrPosData = 0x28,
+            ActionCtrl = 0x48,
+            ChrMapFlags = 0x104,
+            Warp = 0x108,
+            WarpX = 0x110,
+            WarpY = 0x114,
+            WarpZ = 0x118,
+            WarpAngle = 0x124,
+        }
+
+        [Flags]
+        public enum ChrMapFlags : uint
+        {
+            DisableMapHit = 0x00000010,
+        }
+
+        public enum ChrAnimData
+        {
+            AnimSpeed = 0xA8,
+        }
+
+        public enum ChrPosData
+        {
+            PosAngle = 0x4,
+            PosX = 0x10,
+            PosY = 0x14,
+            PosZ = 0x18,
+        }
+
+        public enum ActionCtrl
+        {
+            CurrentAnimation = 0x80,
+        }
+
+        public const int CurrentPlayerOffset = 0x38;
+        public enum CurrentPlayers
+        {
+            CurrentPlayer1 = 0x38,
+            CurrentPlayer2 = 0x70,
+            CurrentPlayer3 = 0xA8,
+            CurrentPlayer4 = 0xE0,
+            CurrentPlayer5 = 0x118,
+        }
+
+        public enum CurrentPlayer
+        {
+            ChrRes = 0x30,
+            PlayerGameData = 0x578,
+            SteamPlayerData = 0x590,
+        }
+
+        public enum ChrRes
+        {
+            Timer = 0x20,
+        }
+
+        public enum SteamPlayerData
+        {
+            SteamOnlineIDData = 0x18,
+            Name = 0x58,
+        }
+
 
 
         public const string ChrDbgAOB = "80 3D ? ? ? ? 00 48 8B 8F ? ? ? ? 0F B6 DB";
@@ -218,8 +213,7 @@ namespace DSR_Gadget
         {
             MenuKick = 0x24C,
         }
-        
-        // BaseB in public ce table
+
         public const string GameDataManAOB = "48 8B 05 ? ? ? ? 48 85 C0 ? ? F3 0F 58 80 AC 00 00 00";
         public const int GameDataManOffset1 = 0;
         public enum GameDataMan
@@ -388,15 +382,15 @@ namespace DSR_Gadget
             PosAngle = 0x10,
         }
 
-        public const int PlayerGameDataRecentOffset = 0x660;
+        public const int RecentPlayerOffset = 0x660;
         public enum PlayerGameDataRecent
         {
             // RecentPlayer is instance of PlayerGameData
             RecentPlayer1 = 0x460,
-            RecentPlayer2 = 0x460 + PlayerGameDataRecentOffset,
-            RecentPlayer3 = 0x460 + PlayerGameDataRecentOffset * 2,
-            RecentPlayer4 = 0x460 + PlayerGameDataRecentOffset * 3,
-            RecentPlayer5 = 0x460 + PlayerGameDataRecentOffset * 4,
+            RecentPlayer2 = 0x460 + RecentPlayerOffset,
+            RecentPlayer3 = 0x460 + RecentPlayerOffset * 2,
+            RecentPlayer4 = 0x460 + RecentPlayerOffset * 3,
+            RecentPlayer5 = 0x460 + RecentPlayerOffset * 4,
 
         }
 
@@ -423,8 +417,8 @@ namespace DSR_Gadget
 
             if (version > 2)
             {
-                result.PlayerInsBoost1 = 0x20;
-                result.PlayerInsBoost2 = 0x10;
+                result.ChrData1Boost1 = 0x20;
+                result.ChrData1Boost2 = 0x10;
             }
 
             return result;

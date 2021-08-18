@@ -202,53 +202,5 @@ namespace DSR_Gadget
             resetHotkeys();
             resetInfo();
         }
-
-        private void nudHair_ValueChanged(object sender, EventArgs e)
-        {
-            if (loaded && !reading)
-                Hook.Hair = (int)nudHair.Value;
-        }
-
-        private void nudHairRed_ValueChanged(object sender, EventArgs e)
-        {
-            if (loaded && !reading)
-                Hook.HairRed = (float)nudHairRed.Value;
-        }
-
-        private void nudHairGreen_ValueChanged(object sender, EventArgs e)
-        {
-            if (loaded && !reading)
-                Hook.HairGreen = (float)nudHairGreen.Value;
-        }
-
-        private void nudHairBlue_ValueChanged(object sender, EventArgs e)
-        {
-            if (loaded && !reading)
-                Hook.HairBlue= (float)nudHairBlue.Value;
-        }
-
-        private void nudHairAlpha_ValueChanged(object sender, EventArgs e)
-        {
-            if (loaded && !reading)
-                Hook.HairAlpha = (float)nudHairAlpha.Value;
-        }
-
-        private void nudEyeRed_ValueChanged(object sender, EventArgs e)
-        {
-            if (loaded && !reading)
-                Hook.EyeRed = (float)nudEyeRed.Value;
-        }
-
-        private void nudEyeGreen_ValueChanged(object sender, EventArgs e)
-        {
-            if (loaded && !reading)
-                Hook.EyeGreen = (float)nudEyeGreen.Value;
-        }
-
-        private void nudEyeBlue_ValueChanged(object sender, EventArgs e)
-        {
-            if (loaded && !reading)
-                Hook.EyeBlue = (float)nudEyeBlue.Value;
-        }
     }
 }

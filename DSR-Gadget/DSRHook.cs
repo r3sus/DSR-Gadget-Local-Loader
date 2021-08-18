@@ -23,9 +23,9 @@ namespace DSR_Gadget
         private PHPointer ChrAnimData;
         private PHPointer ChrPosData;
         private PHPointer PlayerGameDataPtr;
-        private PHPointer PlayerGameDataRecentPtr;
+        private PHPointer RecentPlayersPtr;
         private PHPointer[] RecentPlayerPtrs;
-        private PHPointer PlayerGameDataCurrentPtr;
+        private PHPointer CurrentPlayersPtr;
         private PHPointer[] CurrentPlayerPtrs;
         private PHPointer EquipMagicDataPtr;
         private PHPointer LastBloodstainPos;
@@ -46,7 +46,7 @@ namespace DSR_Gadget
             GroupMaskAddr = RegisterRelativeAOB(DSROffsets.GroupMaskAOB, 2, 7);
             GraphicsData = RegisterRelativeAOB(DSROffsets.GraphicsDataAOB, 3, 7, DSROffsets.GraphicsDataOffset1, DSROffsets.GraphicsDataOffset2);
             ChrClassWarp = RegisterRelativeAOB(DSROffsets.ChrClassWarpAOB, 3, 7, DSROffsets.ChrClassWarpOffset1);
-            WorldChrBase = RegisterRelativeAOB(DSROffsets.WorldChrBaseAOB, 3, 7, DSROffsets.WorldChrBaseOffset1);
+            WorldChrBase = RegisterRelativeAOB(DSROffsets.WorldChrManImpBaseAOB, 3, 7, DSROffsets.WorldChrManImpBaseOffset1);
             ChrDbgAddr = RegisterRelativeAOB(DSROffsets.ChrDbgAOB, 2, 7);
             MenuMan = RegisterRelativeAOB(DSROffsets.MenuManAOB, 3, 7, DSROffsets.MenuManOffset1);
             GameDataManBasePtr = RegisterRelativeAOB(DSROffsets.GameDataManAOB, 3, 7);
@@ -54,7 +54,7 @@ namespace DSR_Gadget
             ItemGetAddr = RegisterAbsoluteAOB(DSROffsets.ItemGetAOB);
             BonfireWarpAddr = RegisterAbsoluteAOB(DSROffsets.BonfireWarpAOB);
 
-            ChrData1 = CreateChildPointer(WorldChrBase, (int)DSROffsets.WorldChrBase.ChrData1);
+            ChrData1 = CreateChildPointer(WorldChrBase, (int)DSROffsets.WorldChrManImp.PlayerIns);
             PlayerCtrl = CreateBasePointer(IntPtr.Zero);
             ChrAnimData = CreateBasePointer(IntPtr.Zero);
             ChrPosData = CreateBasePointer(IntPtr.Zero);
@@ -62,18 +62,18 @@ namespace DSR_Gadget
             EquipMagicDataPtr = CreateChildPointer(GameDataManBasePtr, DSROffsets.GameDataManOffset1, (int)DSROffsets.GameDataMan.PlayerGameData, (int)DSROffsets.PlayerGameData.EquipMagicData);
             LastBloodstainPos = CreateChildPointer(GameDataManBasePtr, DSROffsets.GameDataManOffset1, (int)DSROffsets.GameDataMan.LastBloodstainPos);
 
-            PlayerGameDataRecentPtr = CreateChildPointer(GameDataManBasePtr, DSROffsets.GameDataManOffset1, (int)DSROffsets.GameDataMan.PlayerGameDataRecent);
+            RecentPlayersPtr = CreateChildPointer(GameDataManBasePtr, DSROffsets.GameDataManOffset1, (int)DSROffsets.GameDataMan.PlayerGameDataRecent);
             RecentPlayerPtrs = new PHPointer[5];
             for (int i = 0; i < 5; i++)
             {
-                RecentPlayerPtrs[i] = CreateChildPointer(PlayerGameDataRecentPtr, (int)DSROffsets.PlayerGameDataRecent.RecentPlayer1 + i * (int)DSROffsets.RecentPlayerOffset);
+                RecentPlayerPtrs[i] = CreateChildPointer(RecentPlayersPtr, (int)DSROffsets.PlayerGameDataRecent.RecentPlayer1 + i * (int)DSROffsets.PlayerGameDataRecentOffset);
             }
 
-            PlayerGameDataCurrentPtr = CreateChildPointer(ChrData1, (int)DSROffsets.ChrData1.CurrentPlayers);
+            CurrentPlayersPtr = CreateChildPointer(ChrData1, (int)DSROffsets.PlayerIns.CurrentPlayers);
             CurrentPlayerPtrs = new PHPointer[5];
             for (int i = 0; i < 5; i++)
             {
-                CurrentPlayerPtrs[i] = CreateChildPointer(PlayerGameDataCurrentPtr, (int)DSROffsets.CurrentPlayers.CurrentPlayer1 + i * (int)DSROffsets.CurrentPlayerOffset, (int)DSROffsets.CurrentPlayer.PlayerGameData);
+                CurrentPlayerPtrs[i] = CreateChildPointer(CurrentPlayersPtr, (int)DSROffsets.CurrentPlayers.CurrentPlayerIns1 + i * (int)DSROffsets.CurrentPlayerOffset);
             }
 
             DurabilityAddr = RegisterAbsoluteAOB(DSROffsets.DurabilityAOB);
@@ -85,7 +85,7 @@ namespace DSR_Gadget
         private void DSRHook_OnHooked(object sender, PHEventArgs e)
         {
             Offsets = DSROffsets.GetOffsets(Process.MainModule.ModuleMemorySize);
-            PlayerCtrl = CreateChildPointer(ChrData1, (int)DSROffsets.ChrData1.PlayerCtrl + Offsets.ChrData1Boost1);
+            PlayerCtrl = CreateChildPointer(ChrData1, (int)DSROffsets.PlayerIns.PlayerCtrl);
             ChrAnimData = CreateChildPointer(PlayerCtrl, (int)DSROffsets.PlayerCtrl.ChrAnimData);
             ChrPosData = CreateChildPointer(PlayerCtrl, (int)DSROffsets.PlayerCtrl.ChrPosData);
             ActionCtrlPtr = CreateChildPointer(PlayerCtrl, (int)DSROffsets.PlayerCtrl.ActionCtrl);
@@ -124,26 +124,15 @@ namespace DSR_Gadget
         public bool Focused => Hooked && User32.GetForegroundProcessID() == Process.Id;
 
         #region Player
-        public int Health
+
+        public DSRPlayer GetPlayer()
         {
-            get => ChrData1.ReadInt32((int)DSROffsets.ChrData1.Health + Offsets.ChrData1Boost2);
-            set => ChrData1.WriteInt32((int)DSROffsets.ChrData1.Health + Offsets.ChrData1Boost2, value);
+            return new DSRPlayer(ChrData1, DSRPlayer.PlayerDataType.PlayerIns, this);
         }
 
-        public int HealthMax
+        public DSRPlayer GetEmptyPlayer()
         {
-            get => ChrData1.ReadInt32((int)DSROffsets.ChrData1.MaxHealth + Offsets.ChrData1Boost2);
-        }
-
-        public int Stamina
-        {
-            get => ChrData1.ReadInt32((int)DSROffsets.ChrData1.Stamina + Offsets.ChrData1Boost2);
-            set => ChrData1.WriteInt32((int)DSROffsets.ChrData1.Stamina + Offsets.ChrData1Boost2, value);
-        }
-
-        public int StaminaMax
-        {
-            get => ChrData1.ReadInt32((int)DSROffsets.ChrData1.MaxStamina + Offsets.ChrData1Boost2);
+            return new DSRPlayer(CreateBasePointer(IntPtr.Zero), DSRPlayer.PlayerDataType.PlayerIns, this);
         }
 
         public int[][] EquipMagicData
@@ -189,86 +178,39 @@ namespace DSR_Gadget
             }
         }
 
-        public int ChrType
+        public DSRPlayer.Position GetStablePosition()
         {
-            get => ChrData1.ReadInt32((int)DSROffsets.ChrData1.ChrType + Offsets.ChrData1Boost2);
-            set => ChrData1.WriteInt32((int)DSROffsets.ChrData1.ChrType + Offsets.ChrData1Boost2, value);
+            DSRPlayer.Position pos;
+            pos.X = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.StableX + Offsets.ChrClassWarpBoost);
+            pos.Y = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.StableY + Offsets.ChrClassWarpBoost);
+            pos.Z = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.StableZ + Offsets.ChrClassWarpBoost);
+            pos.Angle = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.StableAngle + Offsets.ChrClassWarpBoost);
+            return pos;
         }
 
-        public int TeamType
+        public DSRPlayer.Position GetInitialPosition()
         {
-            get => ChrData1.ReadInt32((int)DSROffsets.ChrData1.TeamType + Offsets.ChrData1Boost2);
-            set => ChrData1.WriteInt32((int)DSROffsets.ChrData1.TeamType + Offsets.ChrData1Boost2, value);
+            DSRPlayer.Position pos;
+            pos.X = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.InitialX + Offsets.ChrClassWarpBoost);
+            pos.Y = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.InitialY + Offsets.ChrClassWarpBoost);
+            pos.Z = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.InitialZ + Offsets.ChrClassWarpBoost);
+            pos.Angle = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.InitialAngle + Offsets.ChrClassWarpBoost);
+            return pos;
         }
 
-        public byte InvadeType
+        public DSRPlayer.Position GetLastBloodstainPosition()
         {
-            get => PlayerGameDataPtr.ReadByte((int)DSROffsets.PlayerGameData.InvadeType);
-            set => PlayerGameDataPtr.WriteByte((int)DSROffsets.PlayerGameData.InvadeType, value);
-        }
-
-        public int MPAreaID
-        {
-            get => ChrData1.ReadInt32((int)DSROffsets.ChrData1.MPAreaID + Offsets.ChrData1Boost2);
-            set => ChrData1.WriteInt32((int)DSROffsets.ChrData1.MPAreaID + Offsets.ChrData1Boost2, value);
-        }
-
-        public int AreaID
-        {
-            get => ChrData1.ReadInt32((int)DSROffsets.ChrData1.AreaID + Offsets.ChrData1Boost2);
-            set => ChrData1.WriteInt32((int)DSROffsets.ChrData1.AreaID + Offsets.ChrData1Boost2, value);
-        }
-
-        public int CurrentAnimation
-        {
-            get => ActionCtrlPtr.ReadInt32((int)DSROffsets.ActionCtrl.CurrentAnimation);
-            set => ActionCtrlPtr.WriteInt32((int)DSROffsets.ActionCtrl.CurrentAnimation, value);
-        }
-
-        public void GetPosition(out float x, out float y, out float z, out float angle)
-        {
-            x = ChrPosData.ReadSingle((int)DSROffsets.ChrPosData.PosX);
-            y = ChrPosData.ReadSingle((int)DSROffsets.ChrPosData.PosY);
-            z = ChrPosData.ReadSingle((int)DSROffsets.ChrPosData.PosZ);
-            angle = ChrPosData.ReadSingle((int)DSROffsets.ChrPosData.PosAngle);
-        }
-
-        public void GetStablePosition(out float x, out float y, out float z, out float angle)
-        {
-            x = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.StableX + Offsets.ChrClassWarpBoost);
-            y = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.StableY + Offsets.ChrClassWarpBoost);
-            z = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.StableZ + Offsets.ChrClassWarpBoost);
-            angle = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.StableAngle + Offsets.ChrClassWarpBoost);
-        }
-
-        public void PosWarp(float x, float y, float z, float angle)
-        {
-            PlayerCtrl.WriteSingle((int)DSROffsets.PlayerCtrl.WarpX, x);
-            PlayerCtrl.WriteSingle((int)DSROffsets.PlayerCtrl.WarpY, y);
-            PlayerCtrl.WriteSingle((int)DSROffsets.PlayerCtrl.WarpZ, z);
-            PlayerCtrl.WriteSingle((int)DSROffsets.PlayerCtrl.WarpAngle, angle);
-            PlayerCtrl.WriteBoolean((int)DSROffsets.PlayerCtrl.Warp, true);
-        }
-
-        public void GetInitialPosition(out float x, out float y, out float z, out float angle)
-        {
-            x = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.InitialX + Offsets.ChrClassWarpBoost);
-            y = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.InitialY + Offsets.ChrClassWarpBoost);
-            z = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.InitialZ + Offsets.ChrClassWarpBoost);
-            angle = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.InitialAngle + Offsets.ChrClassWarpBoost);
-        }
-
-        public void GetLastBloodstainPosition(out float x, out float y, out float z, out float angle)
-        {
-            x = LastBloodstainPos.ReadSingle((int)DSROffsets.LastBloodstainPos.PosX);
-            y = LastBloodstainPos.ReadSingle((int)DSROffsets.LastBloodstainPos.PosY);
-            z = LastBloodstainPos.ReadSingle((int)DSROffsets.LastBloodstainPos.PosZ);
-            angle = LastBloodstainPos.ReadSingle((int)DSROffsets.LastBloodstainPos.PosAngle);
+            DSRPlayer.Position pos;
+            pos.X = LastBloodstainPos.ReadSingle((int)DSROffsets.LastBloodstainPos.PosX);
+            pos.Y = LastBloodstainPos.ReadSingle((int)DSROffsets.LastBloodstainPos.PosY);
+            pos.Z = LastBloodstainPos.ReadSingle((int)DSROffsets.LastBloodstainPos.PosZ);
+            pos.Angle = LastBloodstainPos.ReadSingle((int)DSROffsets.LastBloodstainPos.PosAngle);
+            return pos;
         }
 
         public bool NoGravity
         {
-            set => ChrData1.WriteFlag32((int)DSROffsets.ChrData1.ChrFlags1 + Offsets.ChrData1Boost1, (uint)DSROffsets.ChrFlags1.NoGravity, value);
+            set => ChrData1.WriteFlag32((int)DSROffsets.PlayerIns.ChrFlags1 + Offsets.PlayerInsBoost1, (uint)DSROffsets.ChrFlags1.NoGravity, value);
         }
 
         public bool NoCollision
@@ -278,8 +220,8 @@ namespace DSR_Gadget
 
         public bool DeathCam
         {
-            get => WorldChrBase.ReadBoolean((int)DSROffsets.WorldChrBase.DeathCam);
-            set => WorldChrBase.WriteBoolean((int)DSROffsets.WorldChrBase.DeathCam, value);
+            get => WorldChrBase.ReadBoolean((int)DSROffsets.WorldChrManImp.DeathCam);
+            set => WorldChrBase.WriteBoolean((int)DSROffsets.WorldChrManImp.DeathCam, value);
         }
 
         public int LastBonfire
@@ -298,11 +240,6 @@ namespace DSR_Gadget
             Execute(asm);
         }
 
-        public float AnimSpeed
-        {
-            set => ChrAnimData.WriteSingle((int)DSROffsets.ChrAnimData.AnimSpeed, value);
-        }
-
         public byte[] DumpFollowCam()
         {
             return ChrFollowCam.ReadBytes(0, 512);
@@ -315,192 +252,6 @@ namespace DSR_Gadget
         #endregion
 
         #region Stats
-        public byte Class
-        {
-            get => PlayerGameDataPtr.ReadByte((int)DSROffsets.PlayerGameData.Class);
-            set => PlayerGameDataPtr.WriteByte((int)DSROffsets.PlayerGameData.Class, value);
-        }
-
-        public int Humanity
-        {
-            get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.Humanity);
-            set => PlayerGameDataPtr.WriteInt32((int)DSROffsets.PlayerGameData.Humanity, value);
-        }
-
-        public int Souls
-        {
-            get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.Souls);
-            set => PlayerGameDataPtr.WriteInt32((int)DSROffsets.PlayerGameData.Souls, value);
-        }
-
-        public int SoulLevel
-        {
-            get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.SoulLevel);
-        }
-
-        public int Vitality
-        {
-            get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.Vitality);
-        }
-
-        public int Attunement
-        {
-            get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.Attunement);
-        }
-
-        public int Endurance
-        {
-            get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.Endurance);
-        }
-
-        public int Strength
-        {
-            get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.Strength);
-        }
-
-        public int Dexterity
-        {
-            get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.Dexterity);
-        }
-
-        public int Resistance
-        {
-            get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.Resistance);
-        }
-
-        public int Intelligence
-        {
-            get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.Intelligence);
-        }
-
-        public int Faith
-        {
-            get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.Faith);
-        }
-
-        public byte Covenant
-        {
-            get => PlayerGameDataPtr.ReadByte((int)DSROffsets.PlayerGameData.CurrentCovenant);
-            set => PlayerGameDataPtr.WriteByte((int)DSROffsets.PlayerGameData.CurrentCovenant, value);
-        }
-
-        public byte WarriorOfSunlight
-        {
-            get => PlayerGameDataPtr.ReadByte((int)DSROffsets.PlayerGameData.WarriorOfSunlight);
-            set => PlayerGameDataPtr.WriteByte((int)DSROffsets.PlayerGameData.WarriorOfSunlight, value);
-        }
-
-        public byte Darkwraith
-        {
-            get => PlayerGameDataPtr.ReadByte((int)DSROffsets.PlayerGameData.Darkwraith);
-            set => PlayerGameDataPtr.WriteByte((int)DSROffsets.PlayerGameData.Darkwraith, value);
-        }
-
-        public byte PathOfTheDragon
-        {
-            get => PlayerGameDataPtr.ReadByte((int)DSROffsets.PlayerGameData.PathOfTheDragon);
-            set => PlayerGameDataPtr.WriteByte((int)DSROffsets.PlayerGameData.PathOfTheDragon, value);
-        }
-
-        public byte GravelordServant
-        {
-            get => PlayerGameDataPtr.ReadByte((int)DSROffsets.PlayerGameData.GravelordServant);
-            set => PlayerGameDataPtr.WriteByte((int)DSROffsets.PlayerGameData.GravelordServant, value);
-        }
-
-        public byte ForestHunter
-        {
-            get => PlayerGameDataPtr.ReadByte((int)DSROffsets.PlayerGameData.ForestHunter);
-            set => PlayerGameDataPtr.WriteByte((int)DSROffsets.PlayerGameData.ForestHunter, value);
-        }
-
-        public byte DarkmoonBlade
-        {
-            get => PlayerGameDataPtr.ReadByte((int)DSROffsets.PlayerGameData.DarkmoonBlade);
-            set => PlayerGameDataPtr.WriteByte((int)DSROffsets.PlayerGameData.DarkmoonBlade, value);
-        }
-
-        public byte ChaosServant
-        {
-            get => PlayerGameDataPtr.ReadByte((int)DSROffsets.PlayerGameData.ChaosServant);
-            set => PlayerGameDataPtr.WriteByte((int)DSROffsets.PlayerGameData.ChaosServant, value);
-        }
-
-        public string NameString1
-        {
-            get => PlayerGameDataPtr.ReadString((int)DSROffsets.PlayerGameData.NameString1,
-                System.Text.Encoding.Unicode, 32, true);
-            set => PlayerGameDataPtr.WriteString((int)DSROffsets.PlayerGameData.NameString1,
-                System.Text.Encoding.Unicode, 30, value);
-        }
-
-        public string NameString2
-        {
-            get => PlayerGameDataPtr.ReadString((int)DSROffsets.PlayerGameData.NameString2,
-                System.Text.Encoding.Unicode, 32, true);
-            set => PlayerGameDataPtr.WriteString((int)DSROffsets.PlayerGameData.NameString2,
-                System.Text.Encoding.Unicode, 30, value);
-        }
-
-        public byte WeaponMemory
-        {
-            get => PlayerGameDataPtr.ReadByte((int)DSROffsets.PlayerGameData.WeaponMemory);
-            set => PlayerGameDataPtr.WriteByte((int)DSROffsets.PlayerGameData.WeaponMemory, value);
-        }
-
-        public int Indictments
-        {
-            get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.Indictments);
-            set => PlayerGameDataPtr.WriteInt32((int)DSROffsets.PlayerGameData.Indictments, value);
-        }
-
-        public int Hair
-        {
-            get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.Hair);
-            set => PlayerGameDataPtr.WriteInt32((int)DSROffsets.PlayerGameData.Hair, value);
-        }
-
-        public float HairRed
-        {
-            get => PlayerGameDataPtr.ReadSingle((int)DSROffsets.PlayerGameData.HairRed);
-            set => PlayerGameDataPtr.WriteSingle((int)DSROffsets.PlayerGameData.HairRed, value);
-        }
-
-        public float HairGreen
-        {
-            get => PlayerGameDataPtr.ReadSingle((int)DSROffsets.PlayerGameData.HairGreen);
-            set => PlayerGameDataPtr.WriteSingle((int)DSROffsets.PlayerGameData.HairGreen, value);
-        }
-
-        public float HairBlue
-        {
-            get => PlayerGameDataPtr.ReadSingle((int)DSROffsets.PlayerGameData.HairBlue);
-            set => PlayerGameDataPtr.WriteSingle((int)DSROffsets.PlayerGameData.HairBlue, value);
-        }
-
-        public float HairAlpha
-        {
-            get => PlayerGameDataPtr.ReadSingle((int)DSROffsets.PlayerGameData.HairAlpha);
-            set => PlayerGameDataPtr.WriteSingle((int)DSROffsets.PlayerGameData.HairAlpha, value);
-        }
-
-        public float EyeRed
-        {
-            get => PlayerGameDataPtr.ReadSingle((int)DSROffsets.PlayerGameData.EyeRed);
-            set => PlayerGameDataPtr.WriteSingle((int)DSROffsets.PlayerGameData.EyeRed, value);
-        }
-
-        public float EyeGreen
-        {
-            get => PlayerGameDataPtr.ReadSingle((int)DSROffsets.PlayerGameData.EyeGreen);
-            set => PlayerGameDataPtr.WriteSingle((int)DSROffsets.PlayerGameData.EyeGreen, value);
-        }
-
-        public float EyeBlue
-        {
-            get => PlayerGameDataPtr.ReadSingle((int)DSROffsets.PlayerGameData.EyeBlue);
-            set => PlayerGameDataPtr.WriteSingle((int)DSROffsets.PlayerGameData.EyeBlue, value);
-        }
 
         #endregion
 
@@ -527,8 +278,8 @@ namespace DSR_Gadget
         #region Cheats
         public bool PlayerDeadMode
         {
-            get => ChrData1.ReadFlag32((int)DSROffsets.ChrData1.ChrFlags1 + Offsets.ChrData1Boost1, (uint)DSROffsets.ChrFlags1.SetDeadMode);
-            set => ChrData1.WriteFlag32((int)DSROffsets.ChrData1.ChrFlags1 + Offsets.ChrData1Boost1, (uint)DSROffsets.ChrFlags1.SetDeadMode, value);
+            get => ChrData1.ReadFlag32((int)DSROffsets.PlayerIns.ChrFlags1 + Offsets.PlayerInsBoost1, (uint)DSROffsets.ChrFlags1.SetDeadMode);
+            set => ChrData1.WriteFlag32((int)DSROffsets.PlayerIns.ChrFlags1 + Offsets.PlayerInsBoost1, (uint)DSROffsets.ChrFlags1.SetDeadMode, value);
         }
 
         public bool PlayerNoDead
@@ -538,22 +289,22 @@ namespace DSR_Gadget
 
         public bool PlayerDisableDamage
         {
-            set => ChrData1.WriteFlag32((int)DSROffsets.ChrData1.ChrFlags1 + Offsets.ChrData1Boost1, (uint)DSROffsets.ChrFlags1.DisableDamage, value);
+            set => ChrData1.WriteFlag32((int)DSROffsets.PlayerIns.ChrFlags1 + Offsets.PlayerInsBoost1, (uint)DSROffsets.ChrFlags1.DisableDamage, value);
         }
 
         public bool PlayerNoHit
         {
-            set => ChrData1.WriteFlag32((int)DSROffsets.ChrData1.ChrFlags2 + Offsets.ChrData1Boost2, (uint)DSROffsets.ChrFlags2.NoHit, value);
+            set => ChrData1.WriteFlag32((int)DSROffsets.PlayerIns.ChrFlags2 + Offsets.PlayerInsBoost2, (uint)DSROffsets.ChrFlags2.NoHit, value);
         }
 
         public bool PlayerNoStamina
         {
-            set => ChrData1.WriteFlag32((int)DSROffsets.ChrData1.ChrFlags2 + Offsets.ChrData1Boost2, (uint)DSROffsets.ChrFlags2.NoStaminaConsumption, value);
+            set => ChrData1.WriteFlag32((int)DSROffsets.PlayerIns.ChrFlags2 + Offsets.PlayerInsBoost2, (uint)DSROffsets.ChrFlags2.NoStaminaConsumption, value);
         }
 
         public bool PlayerSuperArmor
         {
-            set => ChrData1.WriteFlag32((int)DSROffsets.ChrData1.ChrFlags1 + Offsets.ChrData1Boost1, (uint)DSROffsets.ChrFlags1.SetSuperArmor, value);
+            set => ChrData1.WriteFlag32((int)DSROffsets.PlayerIns.ChrFlags1 + Offsets.PlayerInsBoost1, (uint)DSROffsets.ChrFlags1.SetSuperArmor, value);
         }
 
         public bool PlayerHide
@@ -573,7 +324,7 @@ namespace DSR_Gadget
 
         public bool PlayerNoGoods
         {
-            set => ChrData1.WriteFlag32((int)DSROffsets.ChrData1.ChrFlags2 + Offsets.ChrData1Boost2, (uint)DSROffsets.ChrFlags2.NoGoodsConsume, value);
+            set => ChrData1.WriteFlag32((int)DSROffsets.PlayerIns.ChrFlags2 + Offsets.PlayerInsBoost2, (uint)DSROffsets.ChrFlags2.NoGoodsConsume, value);
         }
 
         public bool AllNoArrow
@@ -826,7 +577,7 @@ namespace DSR_Gadget
             for (int i = 0; i < RecentPlayerPtrs.Length; i++)
             {
                 //TODO: more robust check
-                if (CurrentPlayerPtrs[i].ReadInt32((int)DSROffsets.PlayerGameData.SoulLevel) != 0)
+                if (CurrentPlayerPtrs[i].Resolve() != IntPtr.Zero)
                     currentPlayers[i] = true;
                 else
                     currentPlayers[i] = false;
@@ -835,34 +586,14 @@ namespace DSR_Gadget
             return currentPlayers;
         }
 
-        public DSRPlayer UpdateCurrentPlayer(DSRPlayer player)
+        public DSRPlayer GetCurrentPlayer(int index)
         {
-            return UpdatePlayer(player, CurrentPlayerPtrs);
+            return new DSRPlayer(CurrentPlayerPtrs[index], DSRPlayer.PlayerDataType.PlayerIns, this);
         }
 
-        public DSRPlayer UpdateRecentPlayer(DSRPlayer player)
+        public DSRPlayer GetRecentPlayer(int index)
         {
-            return UpdatePlayer(player, RecentPlayerPtrs);
-        }
-
-        public DSRPlayer UpdatePlayer(DSRPlayer player, PHPointer[] playerPtr)
-        {
-            int index = player.PlayerIndex;
-
-            player.Name = RecentPlayerPtrs[index].ReadString((int)DSROffsets.PlayerGameData.NameString1,
-                System.Text.Encoding.Unicode, 32, false);
-            player.SoulLevel = RecentPlayerPtrs[index].ReadInt32((int)DSROffsets.PlayerGameData.SoulLevel);
-            player.Vitality = RecentPlayerPtrs[index].ReadInt32((int)DSROffsets.PlayerGameData.Vitality);
-            player.Attunement = RecentPlayerPtrs[index].ReadInt32((int)DSROffsets.PlayerGameData.Attunement);
-            player.Endurance = RecentPlayerPtrs[index].ReadInt32((int)DSROffsets.PlayerGameData.Endurance);
-            player.Strength = RecentPlayerPtrs[index].ReadInt32((int)DSROffsets.PlayerGameData.Strength);
-            player.Dexterity = RecentPlayerPtrs[index].ReadInt32((int)DSROffsets.PlayerGameData.Dexterity);
-            player.Resistance = RecentPlayerPtrs[index].ReadInt32((int)DSROffsets.PlayerGameData.Resistance);
-            player.Intelligence = RecentPlayerPtrs[index].ReadInt32((int)DSROffsets.PlayerGameData.Intelligence);
-            player.Faith = RecentPlayerPtrs[index].ReadInt32((int)DSROffsets.PlayerGameData.Faith);
-            player.Humanity = RecentPlayerPtrs[index].ReadInt32((int)DSROffsets.PlayerGameData.Humanity);
-
-            return player;
+            return new DSRPlayer(RecentPlayerPtrs[index], DSRPlayer.PlayerDataType.PlayerGameData, this);
         }
 
         public void LeaveSession()
@@ -870,10 +601,10 @@ namespace DSR_Gadget
             byte[] asm = (byte[])DSRAssembly.LeaveSession.Clone();
             Execute(asm);
         }
-
-        public void KickPlayer(DSRPlayer player)
+        
+        public void KickPlayer(DSRPlayer player, byte index)
         {
-            byte index = (byte)(player.PlayerIndex + 1);
+            index += 1;
             byte[] asm = (byte[])DSRAssembly.KickPlayer.Clone();
             byte[] bytes = BitConverter.GetBytes(0x10044000 + index);
             Array.Copy(bytes, 0, asm, 0x1, 4);
