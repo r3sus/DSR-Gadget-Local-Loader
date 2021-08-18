@@ -380,6 +380,18 @@ namespace DSR_Gadget
             PraiseTheSun = 0x48,
         }
 
+        public const int GestureEquipDataOffset = 0x4;
+        public enum GestureEquipData
+        {
+            Slot1 = 0x10,
+            Slot2 = 0x14,
+            Slot3 = 0x18,
+            Slot4 = 0x1C,
+            Slot5 = 0x20,
+            Slot6 = 0x24,
+            Slot7 = 0x28,
+        }
+
         public enum LastBloodstainPos
         {
             PosX = 0x0,

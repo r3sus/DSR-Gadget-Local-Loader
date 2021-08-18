@@ -154,6 +154,10 @@
             this.lblVitality = new System.Windows.Forms.Label();
             this.nudVitality = new System.Windows.Forms.NumericUpDown();
             this.tpgStatsFashion = new System.Windows.Forms.TabPage();
+            this.lblPhysique = new System.Windows.Forms.Label();
+            this.lblGender = new System.Windows.Forms.Label();
+            this.cmbPhysique = new System.Windows.Forms.ComboBox();
+            this.cmbGender = new System.Windows.Forms.ComboBox();
             this.cbxFashionHex = new System.Windows.Forms.CheckBox();
             this.lblEyeBlue = new System.Windows.Forms.Label();
             this.nudEyeBlue = new System.Windows.Forms.NumericUpDown();
@@ -171,6 +175,32 @@
             this.nudHairRed = new System.Windows.Forms.NumericUpDown();
             this.nudHair = new System.Windows.Forms.NumericUpDown();
             this.lblHair = new System.Windows.Forms.Label();
+            this.tpgStatsGestures = new System.Windows.Forms.TabPage();
+            this.gbxGesturesUnlocked = new System.Windows.Forms.GroupBox();
+            this.cbxGesturePraiseTheSun = new System.Windows.Forms.CheckBox();
+            this.cbxGesturePrayer = new System.Windows.Forms.CheckBox();
+            this.cbxGestureProstration = new System.Windows.Forms.CheckBox();
+            this.cbxGestureWellWhatIsIt = new System.Windows.Forms.CheckBox();
+            this.cbxGestureLookSkyward = new System.Windows.Forms.CheckBox();
+            this.cbxGestureShrug = new System.Windows.Forms.CheckBox();
+            this.cbxGestureJoy = new System.Windows.Forms.CheckBox();
+            this.cbxGestureHurrah = new System.Windows.Forms.CheckBox();
+            this.btnGesturesUnlockAll = new System.Windows.Forms.Button();
+            this.cbxGestureProperBow = new System.Windows.Forms.CheckBox();
+            this.cbxGestureBow = new System.Windows.Forms.CheckBox();
+            this.cbxGestureWave = new System.Windows.Forms.CheckBox();
+            this.cbxGestureBeckon = new System.Windows.Forms.CheckBox();
+            this.cbxGesturePointDown = new System.Windows.Forms.CheckBox();
+            this.cbxGesturePointUp = new System.Windows.Forms.CheckBox();
+            this.cbxGesturePointForward = new System.Windows.Forms.CheckBox();
+            this.gbxGesturesEquipped = new System.Windows.Forms.GroupBox();
+            this.cmbGestureSlot7 = new System.Windows.Forms.ComboBox();
+            this.cmbGestureSlot6 = new System.Windows.Forms.ComboBox();
+            this.cmbGestureSlot5 = new System.Windows.Forms.ComboBox();
+            this.cmbGestureSlot4 = new System.Windows.Forms.ComboBox();
+            this.cmbGestureSlot3 = new System.Windows.Forms.ComboBox();
+            this.cmbGestureSlot2 = new System.Windows.Forms.ComboBox();
+            this.cmbGestureSlot1 = new System.Windows.Forms.ComboBox();
             this.tpgItems = new System.Windows.Forms.TabPage();
             this.lblQuantity = new System.Windows.Forms.Label();
             this.nudQuantity = new System.Windows.Forms.NumericUpDown();
@@ -238,10 +268,6 @@
             this.btnEventWrite = new System.Windows.Forms.Button();
             this.txtEventFlag = new System.Windows.Forms.TextBox();
             this.lblEventID = new System.Windows.Forms.Label();
-            this.tpgHotkeys = new System.Windows.Forms.TabPage();
-            this.flpHotkeyControls = new System.Windows.Forms.FlowLayoutPanel();
-            this.cbxHotkeysHandle = new System.Windows.Forms.CheckBox();
-            this.cbxHotkeysEnable = new System.Windows.Forms.CheckBox();
             this.tpgNet = new System.Windows.Forms.TabPage();
             this.tclNet = new System.Windows.Forms.TabControl();
             this.tpgNetRecentPlayers = new System.Windows.Forms.TabPage();
@@ -329,6 +355,10 @@
             this.lblCurrentPlayerVitality = new System.Windows.Forms.Label();
             this.lblCurrentPlayerSoulLevel = new System.Windows.Forms.Label();
             this.lbxNetCurrentPlayers = new System.Windows.Forms.ListBox();
+            this.tpgHotkeys = new System.Windows.Forms.TabPage();
+            this.flpHotkeyControls = new System.Windows.Forms.FlowLayoutPanel();
+            this.cbxHotkeysHandle = new System.Windows.Forms.CheckBox();
+            this.cbxHotkeysEnable = new System.Windows.Forms.CheckBox();
             this.lblVersion = new System.Windows.Forms.Label();
             this.lblVersionValue = new System.Windows.Forms.Label();
             this.lblLoaded = new System.Windows.Forms.Label();
@@ -394,6 +424,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudHairGreen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHairRed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHair)).BeginInit();
+            this.tpgStatsGestures.SuspendLayout();
+            this.gbxGesturesUnlocked.SuspendLayout();
+            this.gbxGesturesEquipped.SuspendLayout();
             this.tpgItems.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudUpgrade)).BeginInit();
@@ -414,7 +447,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudBrightnessR)).BeginInit();
             this.tpgMisc.SuspendLayout();
             this.gbxEventFlags.SuspendLayout();
-            this.tpgHotkeys.SuspendLayout();
             this.tpgNet.SuspendLayout();
             this.tclNet.SuspendLayout();
             this.tpgNetRecentPlayers.SuspendLayout();
@@ -439,6 +471,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nupCurrentPlayerAttunement)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupCurrentPlayerEndurance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupCurrentPlayerSoulLevel)).BeginInit();
+            this.tpgHotkeys.SuspendLayout();
             this.SuspendLayout();
             // 
             // tclMain
@@ -452,8 +485,8 @@
             this.tclMain.Controls.Add(this.tpgCheats);
             this.tclMain.Controls.Add(this.tpgGraphics);
             this.tclMain.Controls.Add(this.tpgMisc);
-            this.tclMain.Controls.Add(this.tpgHotkeys);
             this.tclMain.Controls.Add(this.tpgNet);
+            this.tclMain.Controls.Add(this.tpgHotkeys);
             this.tclMain.Location = new System.Drawing.Point(12, 44);
             this.tclMain.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.tclMain.Name = "tclMain";
@@ -1345,6 +1378,7 @@
             // 
             this.tclStats.Controls.Add(this.tpgStatsStats);
             this.tclStats.Controls.Add(this.tpgStatsFashion);
+            this.tclStats.Controls.Add(this.tpgStatsGestures);
             this.tclStats.Location = new System.Drawing.Point(6, 6);
             this.tclStats.Name = "tclStats";
             this.tclStats.SelectedIndex = 0;
@@ -2008,6 +2042,10 @@
             // 
             // tpgStatsFashion
             // 
+            this.tpgStatsFashion.Controls.Add(this.lblPhysique);
+            this.tpgStatsFashion.Controls.Add(this.lblGender);
+            this.tpgStatsFashion.Controls.Add(this.cmbPhysique);
+            this.tpgStatsFashion.Controls.Add(this.cmbGender);
             this.tpgStatsFashion.Controls.Add(this.cbxFashionHex);
             this.tpgStatsFashion.Controls.Add(this.lblEyeBlue);
             this.tpgStatsFashion.Controls.Add(this.nudEyeBlue);
@@ -2033,6 +2071,40 @@
             this.tpgStatsFashion.Text = "Fashion";
             this.tpgStatsFashion.UseVisualStyleBackColor = true;
             // 
+            // lblPhysique
+            // 
+            this.lblPhysique.AutoSize = true;
+            this.lblPhysique.Location = new System.Drawing.Point(106, 270);
+            this.lblPhysique.Name = "lblPhysique";
+            this.lblPhysique.Size = new System.Drawing.Size(50, 13);
+            this.lblPhysique.TabIndex = 20;
+            this.lblPhysique.Text = "Physique";
+            // 
+            // lblGender
+            // 
+            this.lblGender.AutoSize = true;
+            this.lblGender.Location = new System.Drawing.Point(106, 243);
+            this.lblGender.Name = "lblGender";
+            this.lblGender.Size = new System.Drawing.Size(42, 13);
+            this.lblGender.TabIndex = 19;
+            this.lblGender.Text = "Gender";
+            // 
+            // cmbPhysique
+            // 
+            this.cmbPhysique.FormattingEnabled = true;
+            this.cmbPhysique.Location = new System.Drawing.Point(6, 267);
+            this.cmbPhysique.Name = "cmbPhysique";
+            this.cmbPhysique.Size = new System.Drawing.Size(94, 21);
+            this.cmbPhysique.TabIndex = 18;
+            // 
+            // cmbGender
+            // 
+            this.cmbGender.FormattingEnabled = true;
+            this.cmbGender.Location = new System.Drawing.Point(6, 240);
+            this.cmbGender.Name = "cmbGender";
+            this.cmbGender.Size = new System.Drawing.Size(94, 21);
+            this.cmbGender.TabIndex = 17;
+            // 
             // cbxFashionHex
             // 
             this.cbxFashionHex.AutoSize = true;
@@ -2047,7 +2119,7 @@
             // lblEyeBlue
             // 
             this.lblEyeBlue.AutoSize = true;
-            this.lblEyeBlue.Location = new System.Drawing.Point(109, 216);
+            this.lblEyeBlue.Location = new System.Drawing.Point(106, 216);
             this.lblEyeBlue.Name = "lblEyeBlue";
             this.lblEyeBlue.Size = new System.Drawing.Size(49, 13);
             this.lblEyeBlue.TabIndex = 15;
@@ -2064,7 +2136,7 @@
             // lblEyeGreen
             // 
             this.lblEyeGreen.AutoSize = true;
-            this.lblEyeGreen.Location = new System.Drawing.Point(109, 190);
+            this.lblEyeGreen.Location = new System.Drawing.Point(106, 190);
             this.lblEyeGreen.Name = "lblEyeGreen";
             this.lblEyeGreen.Size = new System.Drawing.Size(57, 13);
             this.lblEyeGreen.TabIndex = 13;
@@ -2081,7 +2153,7 @@
             // lbEyeRed
             // 
             this.lbEyeRed.AutoSize = true;
-            this.lbEyeRed.Location = new System.Drawing.Point(109, 164);
+            this.lbEyeRed.Location = new System.Drawing.Point(106, 164);
             this.lbEyeRed.Name = "lbEyeRed";
             this.lbEyeRed.Size = new System.Drawing.Size(48, 13);
             this.lbEyeRed.TabIndex = 11;
@@ -2098,7 +2170,7 @@
             // lblHairAlpha
             // 
             this.lblHairAlpha.AutoSize = true;
-            this.lblHairAlpha.Location = new System.Drawing.Point(109, 112);
+            this.lblHairAlpha.Location = new System.Drawing.Point(106, 112);
             this.lblHairAlpha.Name = "lblHairAlpha";
             this.lblHairAlpha.Size = new System.Drawing.Size(56, 13);
             this.lblHairAlpha.TabIndex = 9;
@@ -2115,7 +2187,7 @@
             // lblHairBlue
             // 
             this.lblHairBlue.AutoSize = true;
-            this.lblHairBlue.Location = new System.Drawing.Point(109, 86);
+            this.lblHairBlue.Location = new System.Drawing.Point(106, 86);
             this.lblHairBlue.Name = "lblHairBlue";
             this.lblHairBlue.Size = new System.Drawing.Size(50, 13);
             this.lblHairBlue.TabIndex = 7;
@@ -2132,7 +2204,7 @@
             // lblHairGreen
             // 
             this.lblHairGreen.AutoSize = true;
-            this.lblHairGreen.Location = new System.Drawing.Point(109, 60);
+            this.lblHairGreen.Location = new System.Drawing.Point(106, 60);
             this.lblHairGreen.Name = "lblHairGreen";
             this.lblHairGreen.Size = new System.Drawing.Size(58, 13);
             this.lblHairGreen.TabIndex = 5;
@@ -2149,7 +2221,7 @@
             // lblHairRed
             // 
             this.lblHairRed.AutoSize = true;
-            this.lblHairRed.Location = new System.Drawing.Point(109, 34);
+            this.lblHairRed.Location = new System.Drawing.Point(106, 34);
             this.lblHairRed.Name = "lblHairRed";
             this.lblHairRed.Size = new System.Drawing.Size(49, 13);
             this.lblHairRed.TabIndex = 3;
@@ -2179,11 +2251,309 @@
             // lblHair
             // 
             this.lblHair.AutoSize = true;
-            this.lblHair.Location = new System.Drawing.Point(109, 8);
+            this.lblHair.Location = new System.Drawing.Point(106, 8);
             this.lblHair.Name = "lblHair";
             this.lblHair.Size = new System.Drawing.Size(26, 13);
             this.lblHair.TabIndex = 0;
             this.lblHair.Text = "Hair";
+            // 
+            // tpgStatsGestures
+            // 
+            this.tpgStatsGestures.Controls.Add(this.gbxGesturesUnlocked);
+            this.tpgStatsGestures.Controls.Add(this.gbxGesturesEquipped);
+            this.tpgStatsGestures.Location = new System.Drawing.Point(4, 22);
+            this.tpgStatsGestures.Name = "tpgStatsGestures";
+            this.tpgStatsGestures.Padding = new System.Windows.Forms.Padding(3);
+            this.tpgStatsGestures.Size = new System.Drawing.Size(376, 541);
+            this.tpgStatsGestures.TabIndex = 2;
+            this.tpgStatsGestures.Text = "Gestures";
+            this.tpgStatsGestures.UseVisualStyleBackColor = true;
+            // 
+            // gbxGesturesUnlocked
+            // 
+            this.gbxGesturesUnlocked.Controls.Add(this.cbxGesturePraiseTheSun);
+            this.gbxGesturesUnlocked.Controls.Add(this.cbxGesturePrayer);
+            this.gbxGesturesUnlocked.Controls.Add(this.cbxGestureProstration);
+            this.gbxGesturesUnlocked.Controls.Add(this.cbxGestureWellWhatIsIt);
+            this.gbxGesturesUnlocked.Controls.Add(this.cbxGestureLookSkyward);
+            this.gbxGesturesUnlocked.Controls.Add(this.cbxGestureShrug);
+            this.gbxGesturesUnlocked.Controls.Add(this.cbxGestureJoy);
+            this.gbxGesturesUnlocked.Controls.Add(this.cbxGestureHurrah);
+            this.gbxGesturesUnlocked.Controls.Add(this.btnGesturesUnlockAll);
+            this.gbxGesturesUnlocked.Controls.Add(this.cbxGestureProperBow);
+            this.gbxGesturesUnlocked.Controls.Add(this.cbxGestureBow);
+            this.gbxGesturesUnlocked.Controls.Add(this.cbxGestureWave);
+            this.gbxGesturesUnlocked.Controls.Add(this.cbxGestureBeckon);
+            this.gbxGesturesUnlocked.Controls.Add(this.cbxGesturePointDown);
+            this.gbxGesturesUnlocked.Controls.Add(this.cbxGesturePointUp);
+            this.gbxGesturesUnlocked.Controls.Add(this.cbxGesturePointForward);
+            this.gbxGesturesUnlocked.Location = new System.Drawing.Point(6, 292);
+            this.gbxGesturesUnlocked.Name = "gbxGesturesUnlocked";
+            this.gbxGesturesUnlocked.Size = new System.Drawing.Size(364, 243);
+            this.gbxGesturesUnlocked.TabIndex = 1;
+            this.gbxGesturesUnlocked.TabStop = false;
+            this.gbxGesturesUnlocked.Text = "Unlocked";
+            // 
+            // cbxGesturePraiseTheSun
+            // 
+            this.cbxGesturePraiseTheSun.AutoSize = true;
+            this.cbxGesturePraiseTheSun.Location = new System.Drawing.Point(100, 157);
+            this.cbxGesturePraiseTheSun.Name = "cbxGesturePraiseTheSun";
+            this.cbxGesturePraiseTheSun.Size = new System.Drawing.Size(95, 17);
+            this.cbxGesturePraiseTheSun.TabIndex = 15;
+            this.cbxGesturePraiseTheSun.Text = "Praise the Sun";
+            this.cbxGesturePraiseTheSun.UseVisualStyleBackColor = true;
+            this.cbxGesturePraiseTheSun.CheckedChanged += new System.EventHandler(this.cbxGesturePraiseTheSun_CheckedChanged);
+            // 
+            // cbxGesturePrayer
+            // 
+            this.cbxGesturePrayer.AutoSize = true;
+            this.cbxGesturePrayer.Location = new System.Drawing.Point(100, 134);
+            this.cbxGesturePrayer.Name = "cbxGesturePrayer";
+            this.cbxGesturePrayer.Size = new System.Drawing.Size(56, 17);
+            this.cbxGesturePrayer.TabIndex = 14;
+            this.cbxGesturePrayer.Text = "Prayer";
+            this.cbxGesturePrayer.UseVisualStyleBackColor = true;
+            this.cbxGesturePrayer.CheckedChanged += new System.EventHandler(this.cbxGesturePrayer_CheckedChanged);
+            // 
+            // cbxGestureProstration
+            // 
+            this.cbxGestureProstration.AutoSize = true;
+            this.cbxGestureProstration.Location = new System.Drawing.Point(100, 111);
+            this.cbxGestureProstration.Name = "cbxGestureProstration";
+            this.cbxGestureProstration.Size = new System.Drawing.Size(76, 17);
+            this.cbxGestureProstration.TabIndex = 13;
+            this.cbxGestureProstration.Text = "Prostration";
+            this.cbxGestureProstration.UseVisualStyleBackColor = true;
+            this.cbxGestureProstration.CheckedChanged += new System.EventHandler(this.cbxGestureProstration_CheckedChanged);
+            // 
+            // cbxGestureWellWhatIsIt
+            // 
+            this.cbxGestureWellWhatIsIt.AutoSize = true;
+            this.cbxGestureWellWhatIsIt.Location = new System.Drawing.Point(100, 88);
+            this.cbxGestureWellWhatIsIt.Name = "cbxGestureWellWhatIsIt";
+            this.cbxGestureWellWhatIsIt.Size = new System.Drawing.Size(100, 17);
+            this.cbxGestureWellWhatIsIt.TabIndex = 12;
+            this.cbxGestureWellWhatIsIt.Text = "Well! What is it!";
+            this.cbxGestureWellWhatIsIt.UseVisualStyleBackColor = true;
+            this.cbxGestureWellWhatIsIt.CheckedChanged += new System.EventHandler(this.cbxGestureWellWhatIsIt_CheckedChanged);
+            // 
+            // cbxGestureLookSkyward
+            // 
+            this.cbxGestureLookSkyward.AutoSize = true;
+            this.cbxGestureLookSkyward.Location = new System.Drawing.Point(100, 65);
+            this.cbxGestureLookSkyward.Name = "cbxGestureLookSkyward";
+            this.cbxGestureLookSkyward.Size = new System.Drawing.Size(92, 17);
+            this.cbxGestureLookSkyward.TabIndex = 11;
+            this.cbxGestureLookSkyward.Text = "Look skyward";
+            this.cbxGestureLookSkyward.UseVisualStyleBackColor = true;
+            this.cbxGestureLookSkyward.CheckedChanged += new System.EventHandler(this.cbxGestureLookSkyward_CheckedChanged);
+            // 
+            // cbxGestureShrug
+            // 
+            this.cbxGestureShrug.AutoSize = true;
+            this.cbxGestureShrug.Location = new System.Drawing.Point(100, 42);
+            this.cbxGestureShrug.Name = "cbxGestureShrug";
+            this.cbxGestureShrug.Size = new System.Drawing.Size(54, 17);
+            this.cbxGestureShrug.TabIndex = 10;
+            this.cbxGestureShrug.Text = "Shrug";
+            this.cbxGestureShrug.UseVisualStyleBackColor = true;
+            this.cbxGestureShrug.CheckedChanged += new System.EventHandler(this.cbxGestureShrug_CheckedChanged);
+            // 
+            // cbxGestureJoy
+            // 
+            this.cbxGestureJoy.AutoSize = true;
+            this.cbxGestureJoy.Location = new System.Drawing.Point(100, 19);
+            this.cbxGestureJoy.Name = "cbxGestureJoy";
+            this.cbxGestureJoy.Size = new System.Drawing.Size(42, 17);
+            this.cbxGestureJoy.TabIndex = 9;
+            this.cbxGestureJoy.Text = "Joy";
+            this.cbxGestureJoy.UseVisualStyleBackColor = true;
+            this.cbxGestureJoy.CheckedChanged += new System.EventHandler(this.cbxGestureJoy_CheckedChanged);
+            // 
+            // cbxGestureHurrah
+            // 
+            this.cbxGestureHurrah.AutoSize = true;
+            this.cbxGestureHurrah.Location = new System.Drawing.Point(6, 180);
+            this.cbxGestureHurrah.Name = "cbxGestureHurrah";
+            this.cbxGestureHurrah.Size = new System.Drawing.Size(61, 17);
+            this.cbxGestureHurrah.TabIndex = 8;
+            this.cbxGestureHurrah.Text = "Hurrah!";
+            this.cbxGestureHurrah.UseVisualStyleBackColor = true;
+            this.cbxGestureHurrah.CheckedChanged += new System.EventHandler(this.cbxGestureHurrah_CheckedChanged);
+            // 
+            // btnGesturesUnlockAll
+            // 
+            this.btnGesturesUnlockAll.Location = new System.Drawing.Point(6, 214);
+            this.btnGesturesUnlockAll.Name = "btnGesturesUnlockAll";
+            this.btnGesturesUnlockAll.Size = new System.Drawing.Size(121, 23);
+            this.btnGesturesUnlockAll.TabIndex = 7;
+            this.btnGesturesUnlockAll.Text = "Unlock All";
+            this.btnGesturesUnlockAll.UseVisualStyleBackColor = true;
+            this.btnGesturesUnlockAll.Click += new System.EventHandler(this.btnGesturesUnlockAll_Click);
+            // 
+            // cbxGestureProperBow
+            // 
+            this.cbxGestureProperBow.AutoSize = true;
+            this.cbxGestureProperBow.Location = new System.Drawing.Point(6, 157);
+            this.cbxGestureProperBow.Name = "cbxGestureProperBow";
+            this.cbxGestureProperBow.Size = new System.Drawing.Size(80, 17);
+            this.cbxGestureProperBow.TabIndex = 6;
+            this.cbxGestureProperBow.Text = "Proper bow";
+            this.cbxGestureProperBow.UseVisualStyleBackColor = true;
+            this.cbxGestureProperBow.CheckedChanged += new System.EventHandler(this.cbxGestureProperBow_CheckedChanged);
+            // 
+            // cbxGestureBow
+            // 
+            this.cbxGestureBow.AutoSize = true;
+            this.cbxGestureBow.Location = new System.Drawing.Point(6, 134);
+            this.cbxGestureBow.Name = "cbxGestureBow";
+            this.cbxGestureBow.Size = new System.Drawing.Size(47, 17);
+            this.cbxGestureBow.TabIndex = 5;
+            this.cbxGestureBow.Text = "Bow";
+            this.cbxGestureBow.UseVisualStyleBackColor = true;
+            this.cbxGestureBow.CheckedChanged += new System.EventHandler(this.cbxGestureBow_CheckedChanged);
+            // 
+            // cbxGestureWave
+            // 
+            this.cbxGestureWave.AutoSize = true;
+            this.cbxGestureWave.Location = new System.Drawing.Point(6, 111);
+            this.cbxGestureWave.Name = "cbxGestureWave";
+            this.cbxGestureWave.Size = new System.Drawing.Size(55, 17);
+            this.cbxGestureWave.TabIndex = 4;
+            this.cbxGestureWave.Text = "Wave";
+            this.cbxGestureWave.UseVisualStyleBackColor = true;
+            this.cbxGestureWave.CheckedChanged += new System.EventHandler(this.cbxGestureWave_CheckedChanged);
+            // 
+            // cbxGestureBeckon
+            // 
+            this.cbxGestureBeckon.AutoSize = true;
+            this.cbxGestureBeckon.Location = new System.Drawing.Point(6, 88);
+            this.cbxGestureBeckon.Name = "cbxGestureBeckon";
+            this.cbxGestureBeckon.Size = new System.Drawing.Size(63, 17);
+            this.cbxGestureBeckon.TabIndex = 3;
+            this.cbxGestureBeckon.Text = "Beckon";
+            this.cbxGestureBeckon.UseVisualStyleBackColor = true;
+            this.cbxGestureBeckon.CheckedChanged += new System.EventHandler(this.cbxGestureBeckon_CheckedChanged);
+            // 
+            // cbxGesturePointDown
+            // 
+            this.cbxGesturePointDown.AutoSize = true;
+            this.cbxGesturePointDown.Location = new System.Drawing.Point(6, 65);
+            this.cbxGesturePointDown.Name = "cbxGesturePointDown";
+            this.cbxGesturePointDown.Size = new System.Drawing.Size(79, 17);
+            this.cbxGesturePointDown.TabIndex = 2;
+            this.cbxGesturePointDown.Text = "Point down";
+            this.cbxGesturePointDown.UseVisualStyleBackColor = true;
+            this.cbxGesturePointDown.CheckedChanged += new System.EventHandler(this.cbxGesturePointDown_CheckedChanged);
+            // 
+            // cbxGesturePointUp
+            // 
+            this.cbxGesturePointUp.AutoSize = true;
+            this.cbxGesturePointUp.Location = new System.Drawing.Point(6, 42);
+            this.cbxGesturePointUp.Name = "cbxGesturePointUp";
+            this.cbxGesturePointUp.Size = new System.Drawing.Size(65, 17);
+            this.cbxGesturePointUp.TabIndex = 1;
+            this.cbxGesturePointUp.Text = "Point up";
+            this.cbxGesturePointUp.UseVisualStyleBackColor = true;
+            this.cbxGesturePointUp.CheckedChanged += new System.EventHandler(this.cbxGesturePointUp_CheckedChanged);
+            // 
+            // cbxGesturePointForward
+            // 
+            this.cbxGesturePointForward.AutoSize = true;
+            this.cbxGesturePointForward.Location = new System.Drawing.Point(6, 19);
+            this.cbxGesturePointForward.Name = "cbxGesturePointForward";
+            this.cbxGesturePointForward.Size = new System.Drawing.Size(88, 17);
+            this.cbxGesturePointForward.TabIndex = 0;
+            this.cbxGesturePointForward.Text = "Point forward";
+            this.cbxGesturePointForward.UseVisualStyleBackColor = true;
+            this.cbxGesturePointForward.CheckedChanged += new System.EventHandler(this.cbxGesturePointForward_CheckedChanged);
+            // 
+            // gbxGesturesEquipped
+            // 
+            this.gbxGesturesEquipped.Controls.Add(this.cmbGestureSlot7);
+            this.gbxGesturesEquipped.Controls.Add(this.cmbGestureSlot6);
+            this.gbxGesturesEquipped.Controls.Add(this.cmbGestureSlot5);
+            this.gbxGesturesEquipped.Controls.Add(this.cmbGestureSlot4);
+            this.gbxGesturesEquipped.Controls.Add(this.cmbGestureSlot3);
+            this.gbxGesturesEquipped.Controls.Add(this.cmbGestureSlot2);
+            this.gbxGesturesEquipped.Controls.Add(this.cmbGestureSlot1);
+            this.gbxGesturesEquipped.Location = new System.Drawing.Point(6, 6);
+            this.gbxGesturesEquipped.Name = "gbxGesturesEquipped";
+            this.gbxGesturesEquipped.Size = new System.Drawing.Size(364, 280);
+            this.gbxGesturesEquipped.TabIndex = 0;
+            this.gbxGesturesEquipped.TabStop = false;
+            this.gbxGesturesEquipped.Text = "Equipped";
+            // 
+            // cmbGestureSlot7
+            // 
+            this.cmbGestureSlot7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbGestureSlot7.FormattingEnabled = true;
+            this.cmbGestureSlot7.Location = new System.Drawing.Point(6, 181);
+            this.cmbGestureSlot7.Name = "cmbGestureSlot7";
+            this.cmbGestureSlot7.Size = new System.Drawing.Size(121, 21);
+            this.cmbGestureSlot7.TabIndex = 6;
+            this.cmbGestureSlot7.SelectedIndexChanged += new System.EventHandler(this.cmbGestureSlot7_SelectedIndexChanged);
+            // 
+            // cmbGestureSlot6
+            // 
+            this.cmbGestureSlot6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbGestureSlot6.FormattingEnabled = true;
+            this.cmbGestureSlot6.Location = new System.Drawing.Point(6, 154);
+            this.cmbGestureSlot6.Name = "cmbGestureSlot6";
+            this.cmbGestureSlot6.Size = new System.Drawing.Size(121, 21);
+            this.cmbGestureSlot6.TabIndex = 5;
+            this.cmbGestureSlot6.SelectedIndexChanged += new System.EventHandler(this.cmbGestureSlot6_SelectedIndexChanged);
+            // 
+            // cmbGestureSlot5
+            // 
+            this.cmbGestureSlot5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbGestureSlot5.FormattingEnabled = true;
+            this.cmbGestureSlot5.Location = new System.Drawing.Point(6, 127);
+            this.cmbGestureSlot5.Name = "cmbGestureSlot5";
+            this.cmbGestureSlot5.Size = new System.Drawing.Size(121, 21);
+            this.cmbGestureSlot5.TabIndex = 4;
+            this.cmbGestureSlot5.SelectedIndexChanged += new System.EventHandler(this.cmbGestureSlot5_SelectedIndexChanged);
+            // 
+            // cmbGestureSlot4
+            // 
+            this.cmbGestureSlot4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbGestureSlot4.FormattingEnabled = true;
+            this.cmbGestureSlot4.Location = new System.Drawing.Point(6, 100);
+            this.cmbGestureSlot4.Name = "cmbGestureSlot4";
+            this.cmbGestureSlot4.Size = new System.Drawing.Size(121, 21);
+            this.cmbGestureSlot4.TabIndex = 3;
+            this.cmbGestureSlot4.SelectedIndexChanged += new System.EventHandler(this.cmbGestureSlot4_SelectedIndexChanged);
+            // 
+            // cmbGestureSlot3
+            // 
+            this.cmbGestureSlot3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbGestureSlot3.FormattingEnabled = true;
+            this.cmbGestureSlot3.Location = new System.Drawing.Point(6, 73);
+            this.cmbGestureSlot3.Name = "cmbGestureSlot3";
+            this.cmbGestureSlot3.Size = new System.Drawing.Size(121, 21);
+            this.cmbGestureSlot3.TabIndex = 2;
+            this.cmbGestureSlot3.SelectedIndexChanged += new System.EventHandler(this.cmbGestureSlot3_SelectedIndexChanged);
+            // 
+            // cmbGestureSlot2
+            // 
+            this.cmbGestureSlot2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbGestureSlot2.FormattingEnabled = true;
+            this.cmbGestureSlot2.Location = new System.Drawing.Point(6, 46);
+            this.cmbGestureSlot2.Name = "cmbGestureSlot2";
+            this.cmbGestureSlot2.Size = new System.Drawing.Size(121, 21);
+            this.cmbGestureSlot2.TabIndex = 1;
+            this.cmbGestureSlot2.SelectedIndexChanged += new System.EventHandler(this.cmbGestureSlot2_SelectedIndexChanged);
+            // 
+            // cmbGestureSlot1
+            // 
+            this.cmbGestureSlot1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbGestureSlot1.FormattingEnabled = true;
+            this.cmbGestureSlot1.Location = new System.Drawing.Point(6, 19);
+            this.cmbGestureSlot1.Name = "cmbGestureSlot1";
+            this.cmbGestureSlot1.Size = new System.Drawing.Size(121, 21);
+            this.cmbGestureSlot1.TabIndex = 0;
+            this.cmbGestureSlot1.SelectedIndexChanged += new System.EventHandler(this.cmbGestureSlot1_SelectedIndexChanged);
             // 
             // tpgItems
             // 
@@ -3046,54 +3416,6 @@
             this.lblEventID.Size = new System.Drawing.Size(18, 13);
             this.lblEventID.TabIndex = 0;
             this.lblEventID.Text = "ID";
-            // 
-            // tpgHotkeys
-            // 
-            this.tpgHotkeys.Controls.Add(this.flpHotkeyControls);
-            this.tpgHotkeys.Controls.Add(this.cbxHotkeysHandle);
-            this.tpgHotkeys.Controls.Add(this.cbxHotkeysEnable);
-            this.tpgHotkeys.Location = new System.Drawing.Point(4, 22);
-            this.tpgHotkeys.Name = "tpgHotkeys";
-            this.tpgHotkeys.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgHotkeys.Size = new System.Drawing.Size(396, 579);
-            this.tpgHotkeys.TabIndex = 3;
-            this.tpgHotkeys.Text = "Hotkeys";
-            this.tpgHotkeys.UseVisualStyleBackColor = true;
-            // 
-            // flpHotkeyControls
-            // 
-            this.flpHotkeyControls.AutoScroll = true;
-            this.flpHotkeyControls.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flpHotkeyControls.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flpHotkeyControls.Location = new System.Drawing.Point(6, 52);
-            this.flpHotkeyControls.Name = "flpHotkeyControls";
-            this.flpHotkeyControls.Size = new System.Drawing.Size(384, 521);
-            this.flpHotkeyControls.TabIndex = 2;
-            this.flpHotkeyControls.WrapContents = false;
-            // 
-            // cbxHotkeysHandle
-            // 
-            this.cbxHotkeysHandle.AutoSize = true;
-            this.cbxHotkeysHandle.Checked = true;
-            this.cbxHotkeysHandle.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxHotkeysHandle.Location = new System.Drawing.Point(6, 29);
-            this.cbxHotkeysHandle.Name = "cbxHotkeysHandle";
-            this.cbxHotkeysHandle.Size = new System.Drawing.Size(115, 17);
-            this.cbxHotkeysHandle.TabIndex = 1;
-            this.cbxHotkeysHandle.Text = "Consume keypress";
-            this.cbxHotkeysHandle.UseVisualStyleBackColor = true;
-            // 
-            // cbxHotkeysEnable
-            // 
-            this.cbxHotkeysEnable.AutoSize = true;
-            this.cbxHotkeysEnable.Checked = true;
-            this.cbxHotkeysEnable.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxHotkeysEnable.Location = new System.Drawing.Point(6, 6);
-            this.cbxHotkeysEnable.Name = "cbxHotkeysEnable";
-            this.cbxHotkeysEnable.Size = new System.Drawing.Size(99, 17);
-            this.cbxHotkeysEnable.TabIndex = 0;
-            this.cbxHotkeysEnable.Text = "Enable hotkeys";
-            this.cbxHotkeysEnable.UseVisualStyleBackColor = true;
             // 
             // tpgNet
             // 
@@ -4265,6 +4587,54 @@
             this.lbxNetCurrentPlayers.Size = new System.Drawing.Size(158, 69);
             this.lbxNetCurrentPlayers.TabIndex = 31;
             // 
+            // tpgHotkeys
+            // 
+            this.tpgHotkeys.Controls.Add(this.flpHotkeyControls);
+            this.tpgHotkeys.Controls.Add(this.cbxHotkeysHandle);
+            this.tpgHotkeys.Controls.Add(this.cbxHotkeysEnable);
+            this.tpgHotkeys.Location = new System.Drawing.Point(4, 22);
+            this.tpgHotkeys.Name = "tpgHotkeys";
+            this.tpgHotkeys.Padding = new System.Windows.Forms.Padding(3);
+            this.tpgHotkeys.Size = new System.Drawing.Size(396, 579);
+            this.tpgHotkeys.TabIndex = 3;
+            this.tpgHotkeys.Text = "Hotkeys";
+            this.tpgHotkeys.UseVisualStyleBackColor = true;
+            // 
+            // flpHotkeyControls
+            // 
+            this.flpHotkeyControls.AutoScroll = true;
+            this.flpHotkeyControls.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flpHotkeyControls.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flpHotkeyControls.Location = new System.Drawing.Point(6, 52);
+            this.flpHotkeyControls.Name = "flpHotkeyControls";
+            this.flpHotkeyControls.Size = new System.Drawing.Size(384, 521);
+            this.flpHotkeyControls.TabIndex = 2;
+            this.flpHotkeyControls.WrapContents = false;
+            // 
+            // cbxHotkeysHandle
+            // 
+            this.cbxHotkeysHandle.AutoSize = true;
+            this.cbxHotkeysHandle.Checked = true;
+            this.cbxHotkeysHandle.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbxHotkeysHandle.Location = new System.Drawing.Point(6, 29);
+            this.cbxHotkeysHandle.Name = "cbxHotkeysHandle";
+            this.cbxHotkeysHandle.Size = new System.Drawing.Size(115, 17);
+            this.cbxHotkeysHandle.TabIndex = 1;
+            this.cbxHotkeysHandle.Text = "Consume keypress";
+            this.cbxHotkeysHandle.UseVisualStyleBackColor = true;
+            // 
+            // cbxHotkeysEnable
+            // 
+            this.cbxHotkeysEnable.AutoSize = true;
+            this.cbxHotkeysEnable.Checked = true;
+            this.cbxHotkeysEnable.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbxHotkeysEnable.Location = new System.Drawing.Point(6, 6);
+            this.cbxHotkeysEnable.Name = "cbxHotkeysEnable";
+            this.cbxHotkeysEnable.Size = new System.Drawing.Size(99, 17);
+            this.cbxHotkeysEnable.TabIndex = 0;
+            this.cbxHotkeysEnable.Text = "Enable hotkeys";
+            this.cbxHotkeysEnable.UseVisualStyleBackColor = true;
+            // 
             // lblVersion
             // 
             this.lblVersion.AutoSize = true;
@@ -4410,6 +4780,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudHairGreen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHairRed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHair)).EndInit();
+            this.tpgStatsGestures.ResumeLayout(false);
+            this.gbxGesturesUnlocked.ResumeLayout(false);
+            this.gbxGesturesUnlocked.PerformLayout();
+            this.gbxGesturesEquipped.ResumeLayout(false);
             this.tpgItems.ResumeLayout(false);
             this.tpgItems.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).EndInit();
@@ -4440,8 +4814,6 @@
             this.tpgMisc.PerformLayout();
             this.gbxEventFlags.ResumeLayout(false);
             this.gbxEventFlags.PerformLayout();
-            this.tpgHotkeys.ResumeLayout(false);
-            this.tpgHotkeys.PerformLayout();
             this.tpgNet.ResumeLayout(false);
             this.tclNet.ResumeLayout(false);
             this.tpgNetRecentPlayers.ResumeLayout(false);
@@ -4468,6 +4840,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nupCurrentPlayerAttunement)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupCurrentPlayerEndurance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupCurrentPlayerSoulLevel)).EndInit();
+            this.tpgHotkeys.ResumeLayout(false);
+            this.tpgHotkeys.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4781,6 +5155,36 @@
         private System.Windows.Forms.NumericUpDown nudEyeRed;
         private System.Windows.Forms.NumericUpDown nudHair;
         private System.Windows.Forms.CheckBox cbxFashionHex;
+        private System.Windows.Forms.ComboBox cmbPhysique;
+        private System.Windows.Forms.ComboBox cmbGender;
+        private System.Windows.Forms.Label lblGender;
+        private System.Windows.Forms.Label lblPhysique;
+        private System.Windows.Forms.TabPage tpgStatsGestures;
+        private System.Windows.Forms.GroupBox gbxGesturesUnlocked;
+        private System.Windows.Forms.GroupBox gbxGesturesEquipped;
+        private System.Windows.Forms.Button btnGesturesUnlockAll;
+        private System.Windows.Forms.CheckBox cbxGestureProperBow;
+        private System.Windows.Forms.CheckBox cbxGestureBow;
+        private System.Windows.Forms.CheckBox cbxGestureWave;
+        private System.Windows.Forms.CheckBox cbxGestureBeckon;
+        private System.Windows.Forms.CheckBox cbxGesturePointDown;
+        private System.Windows.Forms.CheckBox cbxGesturePointUp;
+        private System.Windows.Forms.CheckBox cbxGesturePointForward;
+        private System.Windows.Forms.ComboBox cmbGestureSlot7;
+        private System.Windows.Forms.ComboBox cmbGestureSlot6;
+        private System.Windows.Forms.ComboBox cmbGestureSlot5;
+        private System.Windows.Forms.ComboBox cmbGestureSlot4;
+        private System.Windows.Forms.ComboBox cmbGestureSlot3;
+        private System.Windows.Forms.ComboBox cmbGestureSlot2;
+        private System.Windows.Forms.ComboBox cmbGestureSlot1;
+        private System.Windows.Forms.CheckBox cbxGesturePraiseTheSun;
+        private System.Windows.Forms.CheckBox cbxGesturePrayer;
+        private System.Windows.Forms.CheckBox cbxGestureProstration;
+        private System.Windows.Forms.CheckBox cbxGestureWellWhatIsIt;
+        private System.Windows.Forms.CheckBox cbxGestureLookSkyward;
+        private System.Windows.Forms.CheckBox cbxGestureShrug;
+        private System.Windows.Forms.CheckBox cbxGestureJoy;
+        private System.Windows.Forms.CheckBox cbxGestureHurrah;
     }
 }
 

@@ -473,6 +473,37 @@ namespace DSR_Gadget
             set => GestureGameDataPtr.WriteByte((int)DSROffsets.GestureGameData.PraiseTheSun, value ? (byte)31 : (byte)30);
         }
 
+        public void GestureUnlockAll()
+        {
+            bool value = true;
+            GesturePointForward = value;
+            GesturePointUp = value;
+            GesturePointDown = value;
+            GestureBeckon = value;
+            GestureWave = value;
+            GestureBow = value;
+            GestureProperBow = value;
+            GestureHurrah = value;
+            GestureJoy = value;
+            GestureShrug = value;
+            GestureLookSkyward = value;
+            GestureWellWhatIsIt = value;
+            GestureProstration = value;
+            GesturePrayer = value;
+            GesturePraiseTheSun = value;
+
+        }
+
+        public byte GetGestureSlot(int index)
+        {
+            return GestureEquipDataPtr.ReadByte((int)DSROffsets.GestureEquipData.Slot1 + index * DSROffsets.GestureEquipDataOffset);
+        }
+
+        public void SetGestureSlot(int index, byte value)
+        {
+            GestureEquipDataPtr.WriteByte((int)DSROffsets.GestureEquipData.Slot1 + index * DSROffsets.GestureEquipDataOffset, value);
+        }
+
         #endregion
 
 

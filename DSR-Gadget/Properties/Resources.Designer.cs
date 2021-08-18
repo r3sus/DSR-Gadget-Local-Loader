@@ -210,6 +210,29 @@ namespace DSR_Gadget.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 2 Point Forward
+        ///4 Point Up
+        ///6 Point Down
+        ///8 Beckon
+        ///10 Wave
+        ///12 Bow
+        ///14 Proper Bow
+        ///16 Hurrah!
+        ///18 Joy
+        ///20 Shrug
+        ///22 Look skyward
+        ///24 Well! What is it!
+        ///26 Prostration
+        ///28 Prayer
+        ///30 Praise The Sun.
+        /// </summary>
+        internal static string Gestures {
+            get {
+                return ResourceManager.GetString("Gestures", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 0:  ba fe fe fe fe          mov    edx,0xfefefefe
         ///5:  41 b9 fe fe fe fe       mov    r9d,0xfefefefe
         ///b:  41 b8 fe fe fe fe       mov    r8d,0xfefefefe
@@ -281,7 +304,7 @@ namespace DSR_Gadget.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 0:  ba 01 40 04 10          mov    edx,0x10044001
+        ///   Looks up a localized string similar to 0:  ba fe fe fe fe          mov    edx,0xfefefefe
         ///5:  41 b8 01 00 00 00       mov    r8d,0x1
         ///b:  48 83 ec 38             sub    rsp,0x38
         ///f:  49 be 70 db 6e 40 01    movabs r14,0x1406edb70

@@ -102,6 +102,7 @@
     <Compile Include="List Items\DSRBonfire.cs" />
     <Compile Include="List Items\DSRArea.cs" />
     <Compile Include="List Items\DSRCovenant.cs" />
+    <Compile Include="List Items\DSRGesture.cs" />
     <Compile Include="List Items\DSRInvasion.cs" />
     <Compile Include="List Items\DSRMagic.cs" />
     <Compile Include="List Items\DSRPlayer.cs" />
@@ -149,6 +150,7 @@
     <Content Include="Resources\Assembly\LevelUp.txt" />
     <Content Include="Resources\Assembly\KickPlayer.txt" />
     <Content Include="Resources\Covenants.txt" />
+    <Content Include="Resources\Gestures.txt" />
     <Content Include="Resources\Invasions.txt" />
     <Content Include="Resources\Magic.txt" />
     <Content Include="Resources\Teams.txt" />

@@ -5,6 +5,9 @@ namespace DSR_Gadget
 {
     public partial class FormMain : Form
     {
+
+        private ComboBox[] cmbGestures;
+
         private void initStats()
         {
             foreach (DSRClass charClass in DSRClass.All)
@@ -34,6 +37,15 @@ namespace DSR_Gadget
             nudEyeGreen.Minimum = decimal.MinValue;
             nudEyeBlue.Minimum = decimal.MinValue;
 
+            cmbGestures = new ComboBox[] { cmbGestureSlot1, cmbGestureSlot2, cmbGestureSlot3, cmbGestureSlot4,
+                cmbGestureSlot5, cmbGestureSlot6, cmbGestureSlot7 };
+
+            foreach (ComboBox item in cmbGestures)
+            {
+                foreach (DSRGesture gesture in DSRGesture.All)
+                    item.Items.Add(gesture);
+                item.SelectedIndex = 0;
+            }
 
 #if DEBUG
             criticalControls.Add(nudIndictments);
@@ -71,6 +83,7 @@ namespace DSR_Gadget
             nudIndictments.Value = Player.Indictments;
 
             nudHair.Value = Player.Hair;
+
             try
             {
                 nudHairRed.Value = Convert.ToDecimal(Player.HairRed);
@@ -94,6 +107,26 @@ namespace DSR_Gadget
                 nudEyeBlue.Enabled = false;
             }
 
+            cbxGesturePointForward.Checked = Player.GesturePointForward;
+            cbxGesturePointUp.Checked = Player.GesturePointUp;
+            cbxGesturePointDown.Checked = Player.GesturePointDown;
+            cbxGestureBeckon.Checked = Player.GestureBeckon;
+            cbxGestureWave.Checked = Player.GestureWave;
+            cbxGestureBow.Checked = Player.GestureBow;
+            cbxGestureProperBow.Checked = Player.GestureProperBow;
+            cbxGestureHurrah.Checked = Player.GestureHurrah;
+            cbxGestureJoy.Checked = Player.GestureJoy;
+            cbxGestureShrug.Checked = Player.GestureShrug;
+            cbxGestureLookSkyward.Checked = Player.GestureLookSkyward;
+            cbxGestureWellWhatIsIt.Checked = Player.GestureWellWhatIsIt;
+            cbxGestureProstration.Checked = Player.GestureProstration;
+            cbxGesturePrayer.Checked = Player.GesturePrayer;
+            cbxGesturePraiseTheSun.Checked = Player.GesturePraiseTheSun;
+
+            for (int i = 0; i < cmbGestures.Length; i++)
+            {
+                updateGesture(cmbGestures[i], Player.GetGestureSlot(i));
+            }
 
             try
             {
@@ -148,6 +181,8 @@ namespace DSR_Gadget
             //recalculateStats();
         }
 
+        #region Covenant
+
         private void cmbCovenant_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (loaded && !reading)
@@ -197,6 +232,8 @@ namespace DSR_Gadget
             if (loaded && !reading)
                 Player.ChaosServant = (byte)nudChaosServant.Value;
         }
+
+        #endregion
 
         private void txtName_TextChanged(object sender, EventArgs e)
         {
@@ -280,6 +317,32 @@ namespace DSR_Gadget
             }
         }
 
+        private void updateGesture(ComboBox cmbGesture, byte id)
+        {
+            DSRGesture lastGesture = cmbGesture.SelectedItem as DSRGesture;
+            if (!cmbGesture.DroppedDown && lastGesture.ID != id)
+            {
+                bool found = false;
+                foreach (DSRGesture gesture in cmbGesture.Items)
+                {
+                    if (gesture.ID == id)
+                    {
+                        cmbGesture.SelectedItem = gesture;
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found)
+                {
+                    DSRGesture gesture = new DSRGesture("Unknown", id);
+                    cmbGesture.Items.Add(gesture);
+                    cmbGesture.SelectedItem = gesture;
+                }
+            }
+        }
+
+        #region Fashion
+
         private void nudHair_ValueChanged(object sender, EventArgs e)
         {
             if (loaded && !reading)
@@ -327,5 +390,126 @@ namespace DSR_Gadget
             if (loaded && !reading)
                 Player.EyeBlue = (float)nudEyeBlue.Value;
         }
+
+        #endregion
+
+        #region Gestures
+
+        private void btnGesturesUnlockAll_Click(object sender, EventArgs e)
+        {
+            Player.GestureUnlockAll();
+        }
+
+        private void cbxGesturePraiseTheSun_CheckedChanged(object sender, EventArgs e)
+        {
+            Player.GesturePraiseTheSun = cbxGesturePraiseTheSun.Checked;
+        }
+
+        private void cbxGesturePrayer_CheckedChanged(object sender, EventArgs e)
+        {
+            Player.GesturePrayer = cbxGesturePrayer.Checked;
+        }
+
+        private void cbxGestureProstration_CheckedChanged(object sender, EventArgs e)
+        {
+            Player.GestureProstration = cbxGestureProstration.Checked;
+        }
+
+        private void cbxGestureWellWhatIsIt_CheckedChanged(object sender, EventArgs e)
+        {
+            Player.GestureWellWhatIsIt = cbxGestureWellWhatIsIt.Checked;
+        }
+
+        private void cbxGestureLookSkyward_CheckedChanged(object sender, EventArgs e)
+        {
+            Player.GestureLookSkyward = cbxGestureLookSkyward.Checked;
+        }
+
+        private void cbxGestureShrug_CheckedChanged(object sender, EventArgs e)
+        {
+            Player.GestureShrug = cbxGestureShrug.Checked;
+        }
+
+        private void cbxGestureJoy_CheckedChanged(object sender, EventArgs e)
+        {
+            Player.GestureJoy = cbxGestureJoy.Checked;
+        }
+
+        private void cbxGestureHurrah_CheckedChanged(object sender, EventArgs e)
+        {
+            Player.GestureHurrah = cbxGestureHurrah.Checked;
+        }
+
+        private void cbxGestureProperBow_CheckedChanged(object sender, EventArgs e)
+        {
+            Player.GestureProperBow = cbxGestureProperBow.Checked;
+        }
+
+        private void cbxGestureBow_CheckedChanged(object sender, EventArgs e)
+        {
+            Player.GestureBow = cbxGestureProperBow.Checked;
+        }
+
+        private void cbxGestureWave_CheckedChanged(object sender, EventArgs e)
+        {
+            Player.GestureWave = cbxGestureWave.Checked;
+        }
+
+        private void cbxGestureBeckon_CheckedChanged(object sender, EventArgs e)
+        {
+            Player.GestureBeckon = cbxGestureBeckon.Checked;
+        }
+
+        private void cbxGesturePointDown_CheckedChanged(object sender, EventArgs e)
+        {
+            Player.GesturePointDown = cbxGesturePointDown.Checked;
+        }
+
+        private void cbxGesturePointUp_CheckedChanged(object sender, EventArgs e)
+        {
+            Player.GesturePointUp = cbxGesturePointUp.Checked;
+        }
+
+        private void cbxGesturePointForward_CheckedChanged(object sender, EventArgs e)
+        {
+            Player.GesturePointForward = cbxGesturePointForward.Checked;
+        }
+
+        private void cmbGestureSlot1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Player.SetGestureSlot(0, (cmbGestureSlot1.SelectedItem as DSRGesture).ID);
+        }
+
+        private void cmbGestureSlot2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Player.SetGestureSlot(1, (cmbGestureSlot2.SelectedItem as DSRGesture).ID);
+        }
+
+        private void cmbGestureSlot3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Player.SetGestureSlot(2, (cmbGestureSlot3.SelectedItem as DSRGesture).ID);
+        }
+
+        private void cmbGestureSlot4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Player.SetGestureSlot(3, (cmbGestureSlot4.SelectedItem as DSRGesture).ID);
+        }
+
+        private void cmbGestureSlot5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Player.SetGestureSlot(4, (cmbGestureSlot5.SelectedItem as DSRGesture).ID);
+        }
+
+        private void cmbGestureSlot6_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Player.SetGestureSlot(5, (cmbGestureSlot6.SelectedItem as DSRGesture).ID);
+        }
+
+        private void cmbGestureSlot7_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Player.SetGestureSlot(6, (cmbGestureSlot7.SelectedItem as DSRGesture).ID);
+        }
+
+        #endregion
     }
 }

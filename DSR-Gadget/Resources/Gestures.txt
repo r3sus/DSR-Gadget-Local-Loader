@@ -1,0 +1,16 @@
+﻿0 None
+2 Point Forward
+4 Point Up
+6 Point Down
+8 Beckon
+10 Wave
+12 Bow
+14 Proper Bow
+16 Hurrah!
+18 Joy
+20 Shrug
+22 Look skyward
+24 Well! What is it!
+26 Prostration
+28 Prayer
+30 Praise The Sun
