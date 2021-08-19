@@ -102,6 +102,8 @@
     <Compile Include="List Items\DSRBonfire.cs" />
     <Compile Include="List Items\DSRArea.cs" />
     <Compile Include="List Items\DSRCovenant.cs" />
+    <Compile Include="List Items\DSRPhysique.cs" />
+    <Compile Include="List Items\DSRGender.cs" />
     <Compile Include="List Items\DSRGesture.cs" />
     <Compile Include="List Items\DSRInvasion.cs" />
     <Compile Include="List Items\DSRMagic.cs" />
@@ -111,6 +113,7 @@
     <Compile Include="List Items\DSRInfusion.cs" />
     <Compile Include="List Items\DSRItem.cs" />
     <Compile Include="List Items\DSRItemCategory.cs" />
+    <Compile Include="List Items\IDSRProperty.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User32.cs" />
@@ -150,6 +153,8 @@
     <Content Include="Resources\Assembly\LevelUp.txt" />
     <Content Include="Resources\Assembly\KickPlayer.txt" />
     <Content Include="Resources\Covenants.txt" />
+    <Content Include="Resources\Physiques.txt" />
+    <Content Include="Resources\Genders.txt" />
     <Content Include="Resources\Gestures.txt" />
     <Content Include="Resources\Invasions.txt" />
     <Content Include="Resources\Magic.txt" />

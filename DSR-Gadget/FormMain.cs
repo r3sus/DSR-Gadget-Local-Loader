@@ -34,8 +34,18 @@ namespace DSR_Gadget
                 btnResetMagicQuantity, btnLeaveSession, cmbCovenant, nudWarriorOfSunlight, nudDarkwraith,
                 nudPathOfTheDragon, nudGravelordServant, nudForestHunter, nudDarkmoonBlade, nudChaosServant,
                 btnCurrentPlayerKick, txtName, nudWeaponMemory, nudHair, nudHairRed, nudHairGreen, nudHairBlue,
-                nudHairAlpha, nudEyeRed, nudEyeBlue, nudEyeGreen, //nudIndictments,
+                nudHairAlpha, nudEyeRed, nudEyeBlue, nudEyeGreen, cmbGender, cmbPhysique, btnGesturesUnlockAll//nudIndictments,
             };
+
+            cmbGestures = new ComboBox[] { cmbGestureSlot1, cmbGestureSlot2, cmbGestureSlot3, cmbGestureSlot4,
+                cmbGestureSlot5, cmbGestureSlot6, cmbGestureSlot7 };
+            cbxGestures = new CheckBox[] { cbxGesturePointForward, cbxGesturePointUp, cbxGesturePointDown,
+                cbxGestureBeckon, cbxGestureWave, cbxGestureBow, cbxGestureProperBow, cbxGestureHurrah,
+                cbxGestureJoy, cbxGestureShrug, cbxGestureLookSkyward, cbxGestureWellWhatIsIt, cbxGestureProstration,
+                cbxGesturePrayer, cbxGesturePraiseTheSun};
+
+            criticalControls.AddRange(cmbGestures);
+            criticalControls.AddRange(cbxGestures);
         }
 
         private void enableCriticalControls(bool enable)
@@ -201,6 +211,32 @@ namespace DSR_Gadget
             resetMisc();
             resetHotkeys();
             resetInfo();
+        }
+
+        private void updateDropdown<TDSRProperty>(ComboBox cmb, int id) where TDSRProperty : IDSRProperty, new()
+        {
+            IDSRProperty lastID = cmb.SelectedItem as IDSRProperty;
+            if (!cmb.DroppedDown && lastID.ID != id)
+            {
+                bool found = false;
+                foreach (IDSRProperty property in cmb.Items)
+                {
+                    if (property.ID == id)
+                    {
+                        cmb.SelectedItem = property;
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found)
+                {
+                    TDSRProperty property = new TDSRProperty();
+                    property.Name = id + ": Unknown";
+                    property.ID = id;
+                    cmb.Items.Add(property);
+                    cmb.SelectedItem = property;
+                }
+            }
         }
     }
 }

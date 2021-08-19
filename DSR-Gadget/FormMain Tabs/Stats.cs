@@ -7,6 +7,7 @@ namespace DSR_Gadget
     {
 
         private ComboBox[] cmbGestures;
+        private CheckBox[] cbxGestures;
 
         private void initStats()
         {
@@ -15,9 +16,6 @@ namespace DSR_Gadget
 
             nudHumanity.Maximum = int.MaxValue;
             nudHumanity.Minimum = int.MinValue;
-
-            foreach (DSRCovenant covenant in DSRCovenant.All)
-                cmbCovenant.Items.Add(covenant);
 
             nudHairRed.Maximum = decimal.MaxValue;
             nudHairGreen.Maximum = decimal.MaxValue;
@@ -36,16 +34,35 @@ namespace DSR_Gadget
             nudEyeRed.Minimum = decimal.MinValue;
             nudEyeGreen.Minimum = decimal.MinValue;
             nudEyeBlue.Minimum = decimal.MinValue;
-
-            cmbGestures = new ComboBox[] { cmbGestureSlot1, cmbGestureSlot2, cmbGestureSlot3, cmbGestureSlot4,
-                cmbGestureSlot5, cmbGestureSlot6, cmbGestureSlot7 };
-
+            
             foreach (ComboBox item in cmbGestures)
             {
                 foreach (DSRGesture gesture in DSRGesture.All)
                     item.Items.Add(gesture);
                 item.SelectedIndex = 0;
             }
+            cmbGestureSlot1.SelectedIndexChanged += cmbGestureSlot1_SelectedIndexChanged;
+            cmbGestureSlot2.SelectedIndexChanged += cmbGestureSlot2_SelectedIndexChanged;
+            cmbGestureSlot3.SelectedIndexChanged += cmbGestureSlot3_SelectedIndexChanged;
+            cmbGestureSlot4.SelectedIndexChanged += cmbGestureSlot4_SelectedIndexChanged;
+            cmbGestureSlot5.SelectedIndexChanged += cmbGestureSlot5_SelectedIndexChanged;
+            cmbGestureSlot6.SelectedIndexChanged += cmbGestureSlot6_SelectedIndexChanged;
+            cmbGestureSlot7.SelectedIndexChanged += cmbGestureSlot7_SelectedIndexChanged;
+
+            foreach (DSRGender gender in DSRGender.All)
+                cmbGender.Items.Add(gender);
+            cmbGender.SelectedIndex = 0;
+            cmbGender.SelectedIndexChanged += cmbGender_SelectedIndexChanged;
+
+            foreach (DSRPhysique physique in DSRPhysique.All)
+                cmbPhysique.Items.Add(physique);
+            cmbPhysique.SelectedIndex = 0;
+            cmbPhysique.SelectedIndexChanged += cmbPhysique_SelectedIndexChanged;
+
+            foreach (DSRCovenant covenant in DSRCovenant.All)
+                cmbCovenant.Items.Add(covenant);
+            cmbCovenant.SelectedIndex = 0;
+            cmbCovenant.SelectedIndexChanged += cmbCovenant_SelectedIndexChanged;
 
 #if DEBUG
             criticalControls.Add(nudIndictments);
@@ -123,11 +140,6 @@ namespace DSR_Gadget
             cbxGesturePrayer.Checked = Player.GesturePrayer;
             cbxGesturePraiseTheSun.Checked = Player.GesturePraiseTheSun;
 
-            for (int i = 0; i < cmbGestures.Length; i++)
-            {
-                updateGesture(cmbGestures[i], Player.GetGestureSlot(i));
-            }
-
             try
             {
                 nudVitality.Value = Player.Vitality;
@@ -141,7 +153,15 @@ namespace DSR_Gadget
             }
             catch (ArgumentOutOfRangeException) { }
 
-            updateCovenant(cmbCovenant, Player.Covenant);
+            for (int i = 0; i < cmbGestures.Length; i++)
+            {
+                updateDropdown<DSRGesture>(cmbGestures[i], Player.GetGestureSlot(i));
+            }
+
+            updateDropdown<DSRGender>(cmbGender, Player.Gender);
+            updateDropdown<DSRPhysique>(cmbPhysique, Player.Physique);
+            updateDropdown<DSRCovenant>(cmbCovenant, Player.Covenant);
+
         }
 
         private void cmbClass_SelectedIndexChanged(object sender, EventArgs e)
@@ -188,7 +208,7 @@ namespace DSR_Gadget
             if (loaded && !reading)
             {
                 DSRCovenant item = cmbCovenant.SelectedItem as DSRCovenant;
-                Player.Covenant = item.ID;
+                Player.Covenant = (byte)item.ID;
             }
         }
         private void nudWarriorOfSunlight_ValueChanged(object sender, EventArgs e)
@@ -293,53 +313,6 @@ namespace DSR_Gadget
 
             //dsrProcess.LevelUp(vit, att, end, str, dex, res, intel, fth, sl);
         }
-        private void updateCovenant(ComboBox cmbCovenant, byte id)
-        {
-            DSRCovenant lastCovenant = cmbCovenant.SelectedItem as DSRCovenant;
-            if (!cmbCovenant.DroppedDown && lastCovenant.ID != id)
-            {
-                bool found = false;
-                foreach (DSRCovenant item in cmbCovenant.Items)
-                {
-                    if (item.ID == id)
-                    {
-                        cmbCovenant.SelectedItem = item;
-                        found = true;
-                        break;
-                    }
-                }
-                if (!found)
-                {
-                    DSRCovenant item = new DSRCovenant("Unknown", id);
-                    cmbCovenant.Items.Add(item);
-                    cmbCovenant.SelectedItem = item;
-                }
-            }
-        }
-
-        private void updateGesture(ComboBox cmbGesture, byte id)
-        {
-            DSRGesture lastGesture = cmbGesture.SelectedItem as DSRGesture;
-            if (!cmbGesture.DroppedDown && lastGesture.ID != id)
-            {
-                bool found = false;
-                foreach (DSRGesture gesture in cmbGesture.Items)
-                {
-                    if (gesture.ID == id)
-                    {
-                        cmbGesture.SelectedItem = gesture;
-                        found = true;
-                        break;
-                    }
-                }
-                if (!found)
-                {
-                    DSRGesture gesture = new DSRGesture("Unknown", id);
-                    cmbGesture.Items.Add(gesture);
-                    cmbGesture.SelectedItem = gesture;
-                }
-            }
-        }
 
         #region Fashion
 
@@ -389,6 +362,18 @@ namespace DSR_Gadget
         {
             if (loaded && !reading)
                 Player.EyeBlue = (float)nudEyeBlue.Value;
+        }
+
+        private void cmbPhysique_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (loaded && !reading)
+                Player.Physique = (byte)(cmbPhysique.SelectedItem as DSRPhysique).ID;
+        }
+
+        private void cmbGender_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (loaded && !reading)
+                Player.Gender = (byte)(cmbGender.SelectedItem as DSRGender).ID;
         }
 
         #endregion
@@ -477,37 +462,37 @@ namespace DSR_Gadget
 
         private void cmbGestureSlot1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Player.SetGestureSlot(0, (cmbGestureSlot1.SelectedItem as DSRGesture).ID);
+            Player.SetGestureSlot(0, (byte)(cmbGestureSlot1.SelectedItem as DSRGesture).ID);
         }
 
         private void cmbGestureSlot2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Player.SetGestureSlot(1, (cmbGestureSlot2.SelectedItem as DSRGesture).ID);
+            Player.SetGestureSlot(1, (byte)(cmbGestureSlot2.SelectedItem as DSRGesture).ID);
         }
 
         private void cmbGestureSlot3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Player.SetGestureSlot(2, (cmbGestureSlot3.SelectedItem as DSRGesture).ID);
+            Player.SetGestureSlot(2, (byte)(cmbGestureSlot3.SelectedItem as DSRGesture).ID);
         }
 
         private void cmbGestureSlot4_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Player.SetGestureSlot(3, (cmbGestureSlot4.SelectedItem as DSRGesture).ID);
+            Player.SetGestureSlot(3, (byte)(cmbGestureSlot4.SelectedItem as DSRGesture).ID);
         }
 
         private void cmbGestureSlot5_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Player.SetGestureSlot(4, (cmbGestureSlot5.SelectedItem as DSRGesture).ID);
+            Player.SetGestureSlot(4, (byte)(cmbGestureSlot5.SelectedItem as DSRGesture).ID);
         }
 
         private void cmbGestureSlot6_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Player.SetGestureSlot(5, (cmbGestureSlot6.SelectedItem as DSRGesture).ID);
+            Player.SetGestureSlot(5, (byte)(cmbGestureSlot6.SelectedItem as DSRGesture).ID);
         }
 
         private void cmbGestureSlot7_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Player.SetGestureSlot(6, (cmbGestureSlot7.SelectedItem as DSRGesture).ID);
+            Player.SetGestureSlot(6, (byte)(cmbGestureSlot7.SelectedItem as DSRGesture).ID);
         }
 
         #endregion

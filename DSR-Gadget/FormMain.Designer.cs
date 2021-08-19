@@ -574,7 +574,6 @@
             this.cmbBonfire.Name = "cmbBonfire";
             this.cmbBonfire.Size = new System.Drawing.Size(291, 21);
             this.cmbBonfire.TabIndex = 8;
-            this.cmbBonfire.SelectedIndexChanged += new System.EventHandler(this.cmbBonfire_SelectedIndexChanged);
             // 
             // lblBonfire
             // 
@@ -1118,7 +1117,6 @@
             this.cmbAreaID.Name = "cmbAreaID";
             this.cmbAreaID.Size = new System.Drawing.Size(257, 21);
             this.cmbAreaID.TabIndex = 36;
-            this.cmbAreaID.SelectedIndexChanged += new System.EventHandler(this.cmbAreaID_SelectedIndexChanged);
             // 
             // cmbMPAreaID
             // 
@@ -1128,7 +1126,6 @@
             this.cmbMPAreaID.Name = "cmbMPAreaID";
             this.cmbMPAreaID.Size = new System.Drawing.Size(257, 21);
             this.cmbMPAreaID.TabIndex = 35;
-            this.cmbMPAreaID.SelectedIndexChanged += new System.EventHandler(this.cmbMPAreaID_SelectedIndexChanged);
             // 
             // lblInvasionSelect
             // 
@@ -1147,7 +1144,6 @@
             this.cmbInvasionSelect.Name = "cmbInvasionSelect";
             this.cmbInvasionSelect.Size = new System.Drawing.Size(134, 21);
             this.cmbInvasionSelect.TabIndex = 33;
-            this.cmbInvasionSelect.SelectedIndexChanged += new System.EventHandler(this.cmbInvasionSelect_SelectedIndexChanged);
             // 
             // lblChrSelect
             // 
@@ -1166,7 +1162,6 @@
             this.cmbChrSelect.Name = "cmbChrSelect";
             this.cmbChrSelect.Size = new System.Drawing.Size(134, 21);
             this.cmbChrSelect.TabIndex = 31;
-            this.cmbChrSelect.SelectedIndexChanged += new System.EventHandler(this.cmbChrSelect_SelectedIndexChanged);
             // 
             // cbxFreezeInvadeType
             // 
@@ -1647,7 +1642,6 @@
             this.cmbCovenant.Name = "cmbCovenant";
             this.cmbCovenant.Size = new System.Drawing.Size(121, 21);
             this.cmbCovenant.TabIndex = 0;
-            this.cmbCovenant.SelectedIndexChanged += new System.EventHandler(this.cmbCovenant_SelectedIndexChanged);
             // 
             // gbxStatsStats
             // 
@@ -2076,9 +2070,9 @@
             this.lblPhysique.AutoSize = true;
             this.lblPhysique.Location = new System.Drawing.Point(106, 270);
             this.lblPhysique.Name = "lblPhysique";
-            this.lblPhysique.Size = new System.Drawing.Size(50, 13);
+            this.lblPhysique.Size = new System.Drawing.Size(193, 13);
             this.lblPhysique.TabIndex = 20;
-            this.lblPhysique.Text = "Physique";
+            this.lblPhysique.Text = "Physique (Quit and reload to see effect)";
             // 
             // lblGender
             // 
@@ -2091,6 +2085,7 @@
             // 
             // cmbPhysique
             // 
+            this.cmbPhysique.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPhysique.FormattingEnabled = true;
             this.cmbPhysique.Location = new System.Drawing.Point(6, 267);
             this.cmbPhysique.Name = "cmbPhysique";
@@ -2099,6 +2094,7 @@
             // 
             // cmbGender
             // 
+            this.cmbGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGender.FormattingEnabled = true;
             this.cmbGender.Location = new System.Drawing.Point(6, 240);
             this.cmbGender.Name = "cmbGender";
@@ -2493,7 +2489,6 @@
             this.cmbGestureSlot7.Name = "cmbGestureSlot7";
             this.cmbGestureSlot7.Size = new System.Drawing.Size(121, 21);
             this.cmbGestureSlot7.TabIndex = 6;
-            this.cmbGestureSlot7.SelectedIndexChanged += new System.EventHandler(this.cmbGestureSlot7_SelectedIndexChanged);
             // 
             // cmbGestureSlot6
             // 
@@ -2503,7 +2498,6 @@
             this.cmbGestureSlot6.Name = "cmbGestureSlot6";
             this.cmbGestureSlot6.Size = new System.Drawing.Size(121, 21);
             this.cmbGestureSlot6.TabIndex = 5;
-            this.cmbGestureSlot6.SelectedIndexChanged += new System.EventHandler(this.cmbGestureSlot6_SelectedIndexChanged);
             // 
             // cmbGestureSlot5
             // 
@@ -2513,7 +2507,6 @@
             this.cmbGestureSlot5.Name = "cmbGestureSlot5";
             this.cmbGestureSlot5.Size = new System.Drawing.Size(121, 21);
             this.cmbGestureSlot5.TabIndex = 4;
-            this.cmbGestureSlot5.SelectedIndexChanged += new System.EventHandler(this.cmbGestureSlot5_SelectedIndexChanged);
             // 
             // cmbGestureSlot4
             // 
@@ -2523,7 +2516,6 @@
             this.cmbGestureSlot4.Name = "cmbGestureSlot4";
             this.cmbGestureSlot4.Size = new System.Drawing.Size(121, 21);
             this.cmbGestureSlot4.TabIndex = 3;
-            this.cmbGestureSlot4.SelectedIndexChanged += new System.EventHandler(this.cmbGestureSlot4_SelectedIndexChanged);
             // 
             // cmbGestureSlot3
             // 
@@ -2533,7 +2525,6 @@
             this.cmbGestureSlot3.Name = "cmbGestureSlot3";
             this.cmbGestureSlot3.Size = new System.Drawing.Size(121, 21);
             this.cmbGestureSlot3.TabIndex = 2;
-            this.cmbGestureSlot3.SelectedIndexChanged += new System.EventHandler(this.cmbGestureSlot3_SelectedIndexChanged);
             // 
             // cmbGestureSlot2
             // 
@@ -2543,7 +2534,6 @@
             this.cmbGestureSlot2.Name = "cmbGestureSlot2";
             this.cmbGestureSlot2.Size = new System.Drawing.Size(121, 21);
             this.cmbGestureSlot2.TabIndex = 1;
-            this.cmbGestureSlot2.SelectedIndexChanged += new System.EventHandler(this.cmbGestureSlot2_SelectedIndexChanged);
             // 
             // cmbGestureSlot1
             // 
@@ -2553,7 +2543,6 @@
             this.cmbGestureSlot1.Name = "cmbGestureSlot1";
             this.cmbGestureSlot1.Size = new System.Drawing.Size(121, 21);
             this.cmbGestureSlot1.TabIndex = 0;
-            this.cmbGestureSlot1.SelectedIndexChanged += new System.EventHandler(this.cmbGestureSlot1_SelectedIndexChanged);
             // 
             // tpgItems
             // 

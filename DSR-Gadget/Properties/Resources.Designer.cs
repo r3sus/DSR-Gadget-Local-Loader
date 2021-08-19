@@ -210,7 +210,18 @@ namespace DSR_Gadget.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 2 Point Forward
+        ///   Looks up a localized string similar to 0 Female
+        ///1 Male.
+        /// </summary>
+        internal static string Genders {
+            get {
+                return ResourceManager.GetString("Genders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 0 None
+        ///2 Point Forward
         ///4 Point Up
         ///6 Point Down
         ///8 Beckon
@@ -483,6 +494,23 @@ namespace DSR_Gadget.Properties {
         internal static string MysteryWeapons {
             get {
                 return ResourceManager.GetString("MysteryWeapons", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 0 Average
+        ///1 Slim
+        ///2 Very Slim
+        ///3 Large
+        ///4 Very Large
+        ///5 Large Upper Body
+        ///6 Large Lower Body
+        ///7 Top-heavy
+        ///8 Tiny Head.
+        /// </summary>
+        internal static string Physiques {
+            get {
+                return ResourceManager.GetString("Physiques", resourceCulture);
             }
         }
         

@@ -4,12 +4,12 @@ using System.Text.RegularExpressions;
 
 namespace DSR_Gadget
 {
-    class DSRBonfire : IComparable<DSRBonfire>
+    class DSRBonfire : IDSRProperty
     {
         private static Regex bonfireEntryRx = new Regex(@"^(?<id>\S+) (?<name>.+)$");
 
-        public string Name;
-        public int ID;
+        public string Name { get; set; }
+        public int ID { get; set; }
 
         private DSRBonfire(string config)
         {
@@ -23,12 +23,18 @@ namespace DSR_Gadget
             return Name;
         }
 
-        public int CompareTo(DSRBonfire other)
+        public int CompareTo(IDSRProperty other)
         {
             return Name.CompareTo(other.Name);
         }
 
         public static List<DSRBonfire> All = new List<DSRBonfire>();
+
+        public DSRBonfire()
+        {
+            Name = "";
+            ID = -1;
+        }
 
         static DSRBonfire()
         {

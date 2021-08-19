@@ -199,4 +199,10 @@
   <data name="Gestures" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Gestures.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="Genders" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Genders.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Physiques" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Physiques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

@@ -4,18 +4,18 @@ using System.Text.RegularExpressions;
 
 namespace DSR_Gadget
 {
-    class DSRGesture
+    class DSRGesture : IDSRProperty
     {
         private static Regex gestureEntryRx = new Regex(@"^(?<ID>\S+) (?<Name>.+)$");
 
-        public string Name;
-        public byte ID;
+        public string Name { get; set; }
+        public int ID { get; set; }
 
         private DSRGesture(string config)
         {
             Match gestureEntry = gestureEntryRx.Match(config);
             Name = gestureEntry.Groups["Name"].Value;
-            ID = Convert.ToByte(gestureEntry.Groups["ID"].Value);
+            ID = Convert.ToInt32(gestureEntry.Groups["ID"].Value);
         }
 
         public override string ToString()
@@ -23,10 +23,21 @@ namespace DSR_Gadget
             return Name;
         }
 
-        public DSRGesture(string name, byte id)
+        public int CompareTo(IDSRProperty other)
+        {
+            return Name.CompareTo(other.Name);
+        }
+
+        public DSRGesture(string name, int id)
         {
             Name = name;
             ID = id;
+        }
+
+        public DSRGesture()
+        {
+            Name = "";
+            ID = -1;
         }
 
         public static List<DSRGesture> All = new List<DSRGesture>();

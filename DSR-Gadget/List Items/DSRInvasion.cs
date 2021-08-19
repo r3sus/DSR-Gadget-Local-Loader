@@ -4,18 +4,18 @@ using System.Text.RegularExpressions;
 
 namespace DSR_Gadget
 {
-    class DSRInvasion
+    class DSRInvasion : IDSRProperty
     {
-        private static Regex invasionEntryRx = new Regex(@"^(?<InvadeType>\S+) (?<Name>.+)$");
+        private static Regex invasionEntryRx = new Regex(@"^(?<ID>\S+) (?<Name>.+)$");
 
-        public string Name;
-        public byte InvadeType;
+        public string Name { get; set; }
+        public int ID { get; set; }
 
         private DSRInvasion(string config)
         {
             Match invasionEntry = invasionEntryRx.Match(config);
             Name = invasionEntry.Groups["Name"].Value;
-            InvadeType = Convert.ToByte(invasionEntry.Groups["InvadeType"].Value);
+            ID = Convert.ToInt32(invasionEntry.Groups["ID"].Value);
         }
 
         public override string ToString()
@@ -23,10 +23,21 @@ namespace DSR_Gadget
             return Name;
         }
 
-        public DSRInvasion(string name, byte invadeType)
+        public int CompareTo(IDSRProperty other)
+        {
+            return Name.CompareTo(other.Name);
+        }
+
+        public DSRInvasion(string name, int id)
         {
             Name = name;
-            InvadeType = invadeType;
+            ID = id;
+        }
+
+        public DSRInvasion()
+        {
+            Name = "";
+            ID = -1;
         }
 
         public static List<DSRInvasion> All = new List<DSRInvasion>();

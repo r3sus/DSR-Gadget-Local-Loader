@@ -4,18 +4,18 @@ using System.Text.RegularExpressions;
 
 namespace DSR_Gadget
 {
-    class DSRCovenant
+    class DSRCovenant : IDSRProperty
     {
         private static Regex covenantEntryRx = new Regex(@"^(?<ID>\S+) (?<Name>.+)$");
 
-        public string Name;
-        public byte ID;
+        public string Name { get; set; }
+        public int ID { get; set; }
 
         private DSRCovenant(string config)
         {
             Match covenantEntry = covenantEntryRx.Match(config);
             Name = covenantEntry.Groups["Name"].Value;
-            ID = Convert.ToByte(covenantEntry.Groups["ID"].Value);
+            ID = Convert.ToInt32(covenantEntry.Groups["ID"].Value);
         }
 
         public override string ToString()
@@ -23,10 +23,21 @@ namespace DSR_Gadget
             return Name;
         }
 
-        public DSRCovenant(string name, byte id)
+        public int CompareTo(IDSRProperty other)
+        {
+            return Name.CompareTo(other.Name);
+        }
+
+        public DSRCovenant(string name, int id)
         {
             Name = name;
             ID = id;
+        }
+
+        public DSRCovenant()
+        {
+            Name = "";
+            ID = -1;
         }
 
         public static List<DSRCovenant> All = new List<DSRCovenant>();

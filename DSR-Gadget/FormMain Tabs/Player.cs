@@ -22,25 +22,34 @@ namespace DSR_Gadget
         private void initPlayer()
         {
             cbxRestoreState.Checked = settings.RestoreState;
+
             foreach (DSRBonfire bonfire in DSRBonfire.All)
                 cmbBonfire.Items.Add(bonfire);
             cmbBonfire.SelectedIndex = 0;
+            cmbBonfire.SelectedIndexChanged += cmbBonfire_SelectedIndexChanged;
+
             foreach (DSRTeam team in DSRTeam.All)
                 cmbChrSelect.Items.Add(team);
             cmbChrSelect.SelectedIndex = 0;
+            cmbChrSelect.SelectedIndexChanged += cmbChrSelect_SelectedIndexChanged;
+
             foreach (DSRInvasion invasion in DSRInvasion.All)
                 cmbInvasionSelect.Items.Add(invasion);
             cmbInvasionSelect.SelectedIndex = 0;
+            cmbInvasionSelect.SelectedIndexChanged += cmbInvasionSelect_SelectedIndexChanged;
+
             foreach (DSRArea area in DSRArea.All)
             {
                 cmbMPAreaID.Items.Add(area);
                 cmbAreaID.Items.Add(area);
             }
+            cmbMPAreaID.SelectedIndex = 0;
+            cmbAreaID.SelectedIndex = 0;
+            cmbMPAreaID.SelectedIndexChanged += cmbMPAreaID_SelectedIndexChanged;
+            cmbAreaID.SelectedIndexChanged += cmbAreaID_SelectedIndexChanged;
 
             Player = Hook.GetPlayer();
 
-            cmbMPAreaID.SelectedIndex = 0;
-            cmbAreaID.SelectedIndex = 0;
             nudSpeed.Value = settings.AnimSpeed;
         }
 
@@ -123,12 +132,13 @@ namespace DSR_Gadget
             cbxDeathCam.Checked = Hook.DeathCam;
             if (cbxSpeed.Checked)
                 Player.AnimSpeed = (float)nudSpeed.Value;
-
-            updateBonfire(cmbBonfire, Hook.LastBonfire);
+   
+            updateDropdown<DSRBonfire>(cmbBonfire, Hook.LastBonfire);
+            updateDropdown<DSRInvasion>(cmbInvasionSelect, Player.InvadeType);
 
             updateTeam(cmbChrSelect, Player.ChrType, Player.TeamType);
 
-            updateInvadeType(cmbInvasionSelect, Player.InvadeType);
+ 
 
             updateAreaID(cmbMPAreaID, cbxFreezeMPAreaID, Player.MPAreaID, value => Player.MPAreaID = value);
             updateAreaID(cmbAreaID, cbxFreezeAreaID, Player.AreaID, value => Player.AreaID = value);
@@ -199,7 +209,7 @@ namespace DSR_Gadget
             if (loaded && !reading)
             {
                 DSRInvasion item = cmbInvasionSelect.SelectedItem as DSRInvasion;
-                Player.InvadeType = item.InvadeType;
+                Player.InvadeType = (byte)item.ID;
             }
         }
 
@@ -348,32 +358,6 @@ namespace DSR_Gadget
             return (float)((double)degree / 360 * (Math.PI * 2) - Math.PI);
         }
 
-        private void updateBonfire(ComboBox cmbBonfire, int bonfireID)
-        {
-            DSRBonfire lastBonfire = cmbBonfire.SelectedItem as DSRBonfire;
-            if (!cmbBonfire.DroppedDown && bonfireID != lastBonfire.ID && !unknownBonfires.Contains(bonfireID))
-            {
-                DSRBonfire thisBonfire = null;
-                foreach (object item in cmbBonfire.Items)
-                {
-                    DSRBonfire bonfire = item as DSRBonfire;
-                    if (bonfireID == bonfire.ID)
-                    {
-                        thisBonfire = bonfire;
-                        break;
-                    }
-                }
-
-                if (thisBonfire == null)
-                {
-                    unknownBonfires.Add(bonfireID);
-                    MessageBox.Show("Unknown bonfire ID, please report me: " + bonfireID, "Unknown Bonfire");
-                }
-                else
-                    cmbBonfire.SelectedItem = thisBonfire;
-            }
-        }
-
         private void updateTeam(ComboBox cmbChrSelect, int chrType, int teamType)
         {
             DSRTeam lastTeam = cmbChrSelect.SelectedItem as DSRTeam;
@@ -398,29 +382,6 @@ namespace DSR_Gadget
             }
         }
 
-        private void updateInvadeType(ComboBox cmbInvasionSelect, byte invadeType)
-        {
-            DSRInvasion lastInvasion = cmbInvasionSelect.SelectedItem as DSRInvasion;
-            if (!cmbInvasionSelect.DroppedDown && lastInvasion.InvadeType != invadeType)
-            {
-                bool found = false;
-                foreach (DSRInvasion item in cmbInvasionSelect.Items)
-                {
-                    if (item.InvadeType == invadeType)
-                    {
-                        cmbInvasionSelect.SelectedItem = item;
-                        found = true;
-                        break;
-                    }
-                }
-                if (!found)
-                {
-                    DSRInvasion item = new DSRInvasion("Unknown", invadeType);
-                    cmbInvasionSelect.Items.Add(item);
-                    cmbInvasionSelect.SelectedItem = item;
-                }
-            }
-        }
         private void updateAreaID(ComboBox cmbAreaID, CheckBox cbxFreezeAreaID, int areaID, Action<int> setHook)
         {
             DSRArea lastAreaID = cmbAreaID.SelectedItem as DSRArea;
