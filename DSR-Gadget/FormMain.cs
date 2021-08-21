@@ -3,7 +3,6 @@ using Semver;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Drawing;
 using System.Net.Http;
 using System.Windows.Forms;
 

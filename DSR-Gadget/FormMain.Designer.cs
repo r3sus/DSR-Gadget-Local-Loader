@@ -333,6 +333,12 @@
             this.lblRecentPlayerSoulLevel = new System.Windows.Forms.Label();
             this.lbxNetRecentPlayers = new System.Windows.Forms.ListBox();
             this.tpgNetCurrentPlayers = new System.Windows.Forms.TabPage();
+            this.btnCurrentPlayerFamilyShare = new System.Windows.Forms.Button();
+            this.btnCurrentPlayerMore = new System.Windows.Forms.Button();
+            this.txtCurrentPlayerSteamName = new System.Windows.Forms.TextBox();
+            this.txtCurrentPlayerName = new System.Windows.Forms.TextBox();
+            this.lblCurrentPlayerSteamName = new System.Windows.Forms.Label();
+            this.lblCurrentPlayerName = new System.Windows.Forms.Label();
             this.btnCurrentPlayerKick = new System.Windows.Forms.Button();
             this.nupCurrentPlayerFaith = new System.Windows.Forms.NumericUpDown();
             this.nupCurrentPlayerHumanity = new System.Windows.Forms.NumericUpDown();
@@ -356,6 +362,9 @@
             this.lblCurrentPlayerSoulLevel = new System.Windows.Forms.Label();
             this.lbxNetCurrentPlayers = new System.Windows.Forms.ListBox();
             this.tpgHotkeys = new System.Windows.Forms.TabPage();
+            this.tclSettings = new System.Windows.Forms.TabControl();
+            this.tpgSetingsSettings = new System.Windows.Forms.TabPage();
+            this.tpgSettingsHotkeys = new System.Windows.Forms.TabPage();
             this.flpHotkeyControls = new System.Windows.Forms.FlowLayoutPanel();
             this.cbxHotkeysHandle = new System.Windows.Forms.CheckBox();
             this.cbxHotkeysEnable = new System.Windows.Forms.CheckBox();
@@ -366,6 +375,9 @@
             this.tmrUpdate = new System.Windows.Forms.Timer(this.components);
             this.lblUpdate = new System.Windows.Forms.Label();
             this.llbUpdate = new System.Windows.Forms.LinkLabel();
+            this.tpgNetSummonSigns = new System.Windows.Forms.TabPage();
+            this.nudSosSoulLevel = new System.Windows.Forms.NumericUpDown();
+            this.lbxNetSosList = new System.Windows.Forms.ListBox();
             this.tclMain.SuspendLayout();
             this.tpgPlayer.SuspendLayout();
             this.gbxOther.SuspendLayout();
@@ -472,6 +484,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.nupCurrentPlayerEndurance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupCurrentPlayerSoulLevel)).BeginInit();
             this.tpgHotkeys.SuspendLayout();
+            this.tclSettings.SuspendLayout();
+            this.tpgSettingsHotkeys.SuspendLayout();
+            this.tpgNetSummonSigns.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSosSoulLevel)).BeginInit();
             this.SuspendLayout();
             // 
             // tclMain
@@ -2235,10 +2251,15 @@
             // 
             this.nudHair.Location = new System.Drawing.Point(6, 6);
             this.nudHair.Maximum = new decimal(new int[] {
-            99999999,
+            999999999,
             0,
             0,
             0});
+            this.nudHair.Minimum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            -2147483648});
             this.nudHair.Name = "nudHair";
             this.nudHair.Size = new System.Drawing.Size(94, 20);
             this.nudHair.TabIndex = 1;
@@ -3421,6 +3442,7 @@
             // 
             this.tclNet.Controls.Add(this.tpgNetRecentPlayers);
             this.tclNet.Controls.Add(this.tpgNetCurrentPlayers);
+            this.tclNet.Controls.Add(this.tpgNetSummonSigns);
             this.tclNet.Location = new System.Drawing.Point(6, 6);
             this.tclNet.Name = "tclNet";
             this.tclNet.SelectedIndex = 0;
@@ -4208,6 +4230,12 @@
             // 
             // tpgNetCurrentPlayers
             // 
+            this.tpgNetCurrentPlayers.Controls.Add(this.btnCurrentPlayerFamilyShare);
+            this.tpgNetCurrentPlayers.Controls.Add(this.btnCurrentPlayerMore);
+            this.tpgNetCurrentPlayers.Controls.Add(this.txtCurrentPlayerSteamName);
+            this.tpgNetCurrentPlayers.Controls.Add(this.txtCurrentPlayerName);
+            this.tpgNetCurrentPlayers.Controls.Add(this.lblCurrentPlayerSteamName);
+            this.tpgNetCurrentPlayers.Controls.Add(this.lblCurrentPlayerName);
             this.tpgNetCurrentPlayers.Controls.Add(this.btnCurrentPlayerKick);
             this.tpgNetCurrentPlayers.Controls.Add(this.nupCurrentPlayerFaith);
             this.tpgNetCurrentPlayers.Controls.Add(this.nupCurrentPlayerHumanity);
@@ -4238,9 +4266,62 @@
             this.tpgNetCurrentPlayers.Text = "Current Players";
             this.tpgNetCurrentPlayers.UseVisualStyleBackColor = true;
             // 
+            // btnCurrentPlayerFamilyShare
+            // 
+            this.btnCurrentPlayerFamilyShare.Enabled = false;
+            this.btnCurrentPlayerFamilyShare.Location = new System.Drawing.Point(6, 454);
+            this.btnCurrentPlayerFamilyShare.Name = "btnCurrentPlayerFamilyShare";
+            this.btnCurrentPlayerFamilyShare.Size = new System.Drawing.Size(158, 23);
+            this.btnCurrentPlayerFamilyShare.TabIndex = 58;
+            this.btnCurrentPlayerFamilyShare.Text = "Family Share Check";
+            this.btnCurrentPlayerFamilyShare.UseVisualStyleBackColor = true;
+            // 
+            // btnCurrentPlayerMore
+            // 
+            this.btnCurrentPlayerMore.Location = new System.Drawing.Point(6, 483);
+            this.btnCurrentPlayerMore.Name = "btnCurrentPlayerMore";
+            this.btnCurrentPlayerMore.Size = new System.Drawing.Size(158, 23);
+            this.btnCurrentPlayerMore.TabIndex = 57;
+            this.btnCurrentPlayerMore.Text = "More Info";
+            this.btnCurrentPlayerMore.UseVisualStyleBackColor = true;
+            // 
+            // txtCurrentPlayerSteamName
+            // 
+            this.txtCurrentPlayerSteamName.Enabled = false;
+            this.txtCurrentPlayerSteamName.Location = new System.Drawing.Point(6, 394);
+            this.txtCurrentPlayerSteamName.Name = "txtCurrentPlayerSteamName";
+            this.txtCurrentPlayerSteamName.Size = new System.Drawing.Size(135, 20);
+            this.txtCurrentPlayerSteamName.TabIndex = 56;
+            // 
+            // txtCurrentPlayerName
+            // 
+            this.txtCurrentPlayerName.Enabled = false;
+            this.txtCurrentPlayerName.Location = new System.Drawing.Point(6, 355);
+            this.txtCurrentPlayerName.Name = "txtCurrentPlayerName";
+            this.txtCurrentPlayerName.Size = new System.Drawing.Size(135, 20);
+            this.txtCurrentPlayerName.TabIndex = 55;
+            // 
+            // lblCurrentPlayerSteamName
+            // 
+            this.lblCurrentPlayerSteamName.AutoSize = true;
+            this.lblCurrentPlayerSteamName.Location = new System.Drawing.Point(6, 378);
+            this.lblCurrentPlayerSteamName.Name = "lblCurrentPlayerSteamName";
+            this.lblCurrentPlayerSteamName.Size = new System.Drawing.Size(68, 13);
+            this.lblCurrentPlayerSteamName.TabIndex = 54;
+            this.lblCurrentPlayerSteamName.Text = "Steam Name";
+            // 
+            // lblCurrentPlayerName
+            // 
+            this.lblCurrentPlayerName.AutoSize = true;
+            this.lblCurrentPlayerName.Location = new System.Drawing.Point(6, 339);
+            this.lblCurrentPlayerName.Name = "lblCurrentPlayerName";
+            this.lblCurrentPlayerName.Size = new System.Drawing.Size(35, 13);
+            this.lblCurrentPlayerName.TabIndex = 53;
+            this.lblCurrentPlayerName.Text = "Name";
+            // 
             // btnCurrentPlayerKick
             // 
-            this.btnCurrentPlayerKick.Location = new System.Drawing.Point(6, 342);
+            this.btnCurrentPlayerKick.Location = new System.Drawing.Point(6, 512);
             this.btnCurrentPlayerKick.Name = "btnCurrentPlayerKick";
             this.btnCurrentPlayerKick.Size = new System.Drawing.Size(158, 23);
             this.btnCurrentPlayerKick.TabIndex = 52;
@@ -4578,26 +4659,57 @@
             // 
             // tpgHotkeys
             // 
-            this.tpgHotkeys.Controls.Add(this.flpHotkeyControls);
-            this.tpgHotkeys.Controls.Add(this.cbxHotkeysHandle);
-            this.tpgHotkeys.Controls.Add(this.cbxHotkeysEnable);
+            this.tpgHotkeys.Controls.Add(this.tclSettings);
             this.tpgHotkeys.Location = new System.Drawing.Point(4, 22);
             this.tpgHotkeys.Name = "tpgHotkeys";
             this.tpgHotkeys.Padding = new System.Windows.Forms.Padding(3);
             this.tpgHotkeys.Size = new System.Drawing.Size(396, 579);
             this.tpgHotkeys.TabIndex = 3;
-            this.tpgHotkeys.Text = "Hotkeys";
+            this.tpgHotkeys.Text = "Settings";
             this.tpgHotkeys.UseVisualStyleBackColor = true;
+            // 
+            // tclSettings
+            // 
+            this.tclSettings.Controls.Add(this.tpgSetingsSettings);
+            this.tclSettings.Controls.Add(this.tpgSettingsHotkeys);
+            this.tclSettings.Location = new System.Drawing.Point(6, 6);
+            this.tclSettings.Name = "tclSettings";
+            this.tclSettings.SelectedIndex = 0;
+            this.tclSettings.Size = new System.Drawing.Size(384, 567);
+            this.tclSettings.TabIndex = 0;
+            // 
+            // tpgSetingsSettings
+            // 
+            this.tpgSetingsSettings.Location = new System.Drawing.Point(4, 22);
+            this.tpgSetingsSettings.Name = "tpgSetingsSettings";
+            this.tpgSetingsSettings.Padding = new System.Windows.Forms.Padding(3);
+            this.tpgSetingsSettings.Size = new System.Drawing.Size(376, 541);
+            this.tpgSetingsSettings.TabIndex = 1;
+            this.tpgSetingsSettings.Text = "Settings";
+            this.tpgSetingsSettings.UseVisualStyleBackColor = true;
+            // 
+            // tpgSettingsHotkeys
+            // 
+            this.tpgSettingsHotkeys.Controls.Add(this.flpHotkeyControls);
+            this.tpgSettingsHotkeys.Controls.Add(this.cbxHotkeysHandle);
+            this.tpgSettingsHotkeys.Controls.Add(this.cbxHotkeysEnable);
+            this.tpgSettingsHotkeys.Location = new System.Drawing.Point(4, 22);
+            this.tpgSettingsHotkeys.Name = "tpgSettingsHotkeys";
+            this.tpgSettingsHotkeys.Padding = new System.Windows.Forms.Padding(3);
+            this.tpgSettingsHotkeys.Size = new System.Drawing.Size(376, 541);
+            this.tpgSettingsHotkeys.TabIndex = 0;
+            this.tpgSettingsHotkeys.Text = "Hotkeys";
+            this.tpgSettingsHotkeys.UseVisualStyleBackColor = true;
             // 
             // flpHotkeyControls
             // 
             this.flpHotkeyControls.AutoScroll = true;
             this.flpHotkeyControls.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flpHotkeyControls.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flpHotkeyControls.Location = new System.Drawing.Point(6, 52);
+            this.flpHotkeyControls.Location = new System.Drawing.Point(6, 55);
             this.flpHotkeyControls.Name = "flpHotkeyControls";
-            this.flpHotkeyControls.Size = new System.Drawing.Size(384, 521);
-            this.flpHotkeyControls.TabIndex = 2;
+            this.flpHotkeyControls.Size = new System.Drawing.Size(364, 480);
+            this.flpHotkeyControls.TabIndex = 5;
             this.flpHotkeyControls.WrapContents = false;
             // 
             // cbxHotkeysHandle
@@ -4608,7 +4720,7 @@
             this.cbxHotkeysHandle.Location = new System.Drawing.Point(6, 29);
             this.cbxHotkeysHandle.Name = "cbxHotkeysHandle";
             this.cbxHotkeysHandle.Size = new System.Drawing.Size(115, 17);
-            this.cbxHotkeysHandle.TabIndex = 1;
+            this.cbxHotkeysHandle.TabIndex = 4;
             this.cbxHotkeysHandle.Text = "Consume keypress";
             this.cbxHotkeysHandle.UseVisualStyleBackColor = true;
             // 
@@ -4620,7 +4732,7 @@
             this.cbxHotkeysEnable.Location = new System.Drawing.Point(6, 6);
             this.cbxHotkeysEnable.Name = "cbxHotkeysEnable";
             this.cbxHotkeysEnable.Size = new System.Drawing.Size(99, 17);
-            this.cbxHotkeysEnable.TabIndex = 0;
+            this.cbxHotkeysEnable.TabIndex = 3;
             this.cbxHotkeysEnable.Text = "Enable hotkeys";
             this.cbxHotkeysEnable.UseVisualStyleBackColor = true;
             // 
@@ -4685,6 +4797,33 @@
             this.llbUpdate.Text = "Click to download";
             this.llbUpdate.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.llbUpdate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbUpdate_LinkClicked);
+            // 
+            // tpgNetSummonSigns
+            // 
+            this.tpgNetSummonSigns.Controls.Add(this.lbxNetSosList);
+            this.tpgNetSummonSigns.Controls.Add(this.nudSosSoulLevel);
+            this.tpgNetSummonSigns.Location = new System.Drawing.Point(4, 22);
+            this.tpgNetSummonSigns.Name = "tpgNetSummonSigns";
+            this.tpgNetSummonSigns.Padding = new System.Windows.Forms.Padding(3);
+            this.tpgNetSummonSigns.Size = new System.Drawing.Size(376, 541);
+            this.tpgNetSummonSigns.TabIndex = 2;
+            this.tpgNetSummonSigns.Text = "Summon SIgns";
+            this.tpgNetSummonSigns.UseVisualStyleBackColor = true;
+            // 
+            // nudSosSoulLevel
+            // 
+            this.nudSosSoulLevel.Location = new System.Drawing.Point(6, 515);
+            this.nudSosSoulLevel.Name = "nudSosSoulLevel";
+            this.nudSosSoulLevel.Size = new System.Drawing.Size(120, 20);
+            this.nudSosSoulLevel.TabIndex = 0;
+            // 
+            // lbxNetSosList
+            // 
+            this.lbxNetSosList.FormattingEnabled = true;
+            this.lbxNetSosList.Location = new System.Drawing.Point(6, 6);
+            this.lbxNetSosList.Name = "lbxNetSosList";
+            this.lbxNetSosList.Size = new System.Drawing.Size(158, 95);
+            this.lbxNetSosList.TabIndex = 1;
             // 
             // FormMain
             // 
@@ -4830,7 +4969,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.nupCurrentPlayerEndurance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupCurrentPlayerSoulLevel)).EndInit();
             this.tpgHotkeys.ResumeLayout(false);
-            this.tpgHotkeys.PerformLayout();
+            this.tclSettings.ResumeLayout(false);
+            this.tpgSettingsHotkeys.ResumeLayout(false);
+            this.tpgSettingsHotkeys.PerformLayout();
+            this.tpgNetSummonSigns.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nudSosSoulLevel)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4863,8 +5006,6 @@
         private System.Windows.Forms.TabPage tpgGraphics;
         private System.Windows.Forms.Label lblUpdate;
         private System.Windows.Forms.LinkLabel llbUpdate;
-        private System.Windows.Forms.CheckBox cbxHotkeysHandle;
-        private System.Windows.Forms.CheckBox cbxHotkeysEnable;
         private System.Windows.Forms.CheckBox cbxDrawCutscenes;
         private System.Windows.Forms.CheckBox cbxDrawSFX;
         private System.Windows.Forms.CheckBox cbxDrawCharacters;
@@ -4956,7 +5097,6 @@
         private System.Windows.Forms.Button btnEventWrite;
         private System.Windows.Forms.TextBox txtEventFlag;
         private System.Windows.Forms.Label lblEventID;
-		private System.Windows.Forms.FlowLayoutPanel flpHotkeyControls;
         private System.Windows.Forms.Label lblTeamType;
         private System.Windows.Forms.Label lblChrType;
         private System.Windows.Forms.NumericUpDown nudChrType;
@@ -5174,6 +5314,21 @@
         private System.Windows.Forms.CheckBox cbxGestureShrug;
         private System.Windows.Forms.CheckBox cbxGestureJoy;
         private System.Windows.Forms.CheckBox cbxGestureHurrah;
+        private System.Windows.Forms.TextBox txtCurrentPlayerSteamName;
+        private System.Windows.Forms.TextBox txtCurrentPlayerName;
+        private System.Windows.Forms.Label lblCurrentPlayerSteamName;
+        private System.Windows.Forms.Label lblCurrentPlayerName;
+        private System.Windows.Forms.Button btnCurrentPlayerFamilyShare;
+        private System.Windows.Forms.Button btnCurrentPlayerMore;
+        private System.Windows.Forms.TabControl tclSettings;
+        private System.Windows.Forms.TabPage tpgSettingsHotkeys;
+        private System.Windows.Forms.FlowLayoutPanel flpHotkeyControls;
+        private System.Windows.Forms.CheckBox cbxHotkeysHandle;
+        private System.Windows.Forms.CheckBox cbxHotkeysEnable;
+        private System.Windows.Forms.TabPage tpgSetingsSettings;
+        private System.Windows.Forms.TabPage tpgNetSummonSigns;
+        private System.Windows.Forms.NumericUpDown nudSosSoulLevel;
+        private System.Windows.Forms.ListBox lbxNetSosList;
     }
 }
 

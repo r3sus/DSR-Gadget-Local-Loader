@@ -1,15 +1,18 @@
 ﻿using System;
-using System.Windows.Forms;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace DSR_Gadget
 {
     public partial class FormMain : Form
     {
 
-        DSRPlayer[] CurrentPlayers = new DSRPlayer[5];
-        DSRPlayer[] RecentPlayers = new DSRPlayer[5];
-        DSRPlayer EmptyPlayer;
+        private DSRPlayer[] CurrentPlayers = new DSRPlayer[5];
+        private DSRPlayer[] RecentPlayers = new DSRPlayer[5];
+        private List<DSRSummonSign> SummonSignList;
+        private DSRPlayer EmptyPlayer;
+        private DSRSummonSign EmptySummonSign;
+        private string SteamFamilyShareApiURL = "http://api.steampowered.com/IPlayerService/IsPlayingSharedGame/v0001/";
 
         private void initInfo()
         {
@@ -21,6 +24,13 @@ namespace DSR_Gadget
 
 
             EmptyPlayer = Hook.GetEmptyPlayer();
+            EmptySummonSign = Hook.GetEmptySummonSign();
+            btnCurrentPlayerMore.Enabled = false;
+
+            nudSosSoulLevel.Maximum = int.MaxValue;
+            nudSosSoulLevel.Minimum = int.MinValue;
+
+            lbxNetSosList.DataSource = SummonSignList;
 
 
 
@@ -156,6 +166,25 @@ namespace DSR_Gadget
                 updateRecentPlayerUI(selectedRecentPlayer);
             else
                 updateRecentPlayerUI(EmptyPlayer);
+
+            
+            SummonSignList = Hook.GetSummonSigns();
+            if (lbxNetSosList.Items.Count > SummonSignList.Count)
+            {
+                for (int i = SummonSignList.Count > 0 ? SummonSignList.Count - 1 : 0; i < lbxNetSosList.Items.Count; i++)
+                    lbxNetSosList.Items.RemoveAt(i);
+            }
+            if (lbxNetSosList.Items.Count < SummonSignList.Count)
+            {
+                for (int i = lbxNetSosList.Items.Count > 0 ? lbxNetSosList.Items.Count - 1 : 0; i < SummonSignList.Count; i++)
+                    lbxNetSosList.Items.Add(SummonSignList[i]);
+            }
+
+            DSRSummonSign selectedSummonSign = lbxNetSosList.SelectedItem as DSRSummonSign;
+            if (selectedSummonSign != null)
+                updateSummonSignUI(selectedSummonSign);
+            else
+                updateSummonSignUI(EmptySummonSign);
             
         }
 
@@ -184,6 +213,13 @@ namespace DSR_Gadget
             nupCurrentPlayerIntelligence.Value = player.Intelligence;
             nupCurrentPlayerFaith.Value = player.Faith;
             nupCurrentPlayerHumanity.Value = player.Humanity;
+            txtCurrentPlayerName.Text = player.NameString1;
+            txtCurrentPlayerSteamName.Text = player.SteamName;
+        }
+
+        private void updateSummonSignUI (DSRSummonSign sign)
+        {
+            nudSosSoulLevel.Value = sign.SoulLevel;
         }
 
         private void btnCurrentPlayerKick_Click(object sender, EventArgs e)
@@ -193,5 +229,30 @@ namespace DSR_Gadget
             if (player != null && CurrentPlayers[index] != null)
                 Hook.KickPlayer(player, index);
         }
+
+        /*
+        private void btnCurrentPlayerFamilyShare_Click(object sender, EventArgs e)
+        {
+            HttpClient client = new HttpClient();
+            string key = "2970120F0D99D66350F8D6637DA2E08D";
+            string id = int.Parse((cmbAreaID.SelectedItem as DSRPlayer).SteamID64, System.Globalization.NumberStyles.HexNumber).ToString();
+            string appID = "570940";
+            string format = "json";
+            string urlParameters = 
+                "?key=" + key + 
+                "&steamid=" + id + 
+                "&appid_playing=" + appID + 
+                "&format=" + format;
+            client.BaseAddress = new Uri(SteamFamilyShareApiURL);
+
+            client.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/json"));
+            HttpResponseMessage response = client.GetAsync(urlParameters).Result;
+            if (response.IsSuccessStatusCode)
+            {
+                var dataObjects = response.Content.ReadAsStringAsync<>
+            }
+        }
+        */
     }
 }

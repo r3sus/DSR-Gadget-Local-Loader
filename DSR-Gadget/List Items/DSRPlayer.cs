@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Globalization;
 using PropertyHook;
 
 namespace DSR_Gadget
@@ -16,6 +16,7 @@ namespace DSR_Gadget
         private PHPointer GestureGameDataPtr;
         private PHPointer GestureEquipDataPtr;
         private PHPointer SteamPlayerDataPtr;
+        private PHPointer SteamOnlineIDDataPtr;
 
         private PlayerDataType DataType;
 
@@ -38,6 +39,21 @@ namespace DSR_Gadget
         public string SteamName
         {
             get => SteamPlayerDataPtr.ReadString((int)DSROffsets.SteamPlayerData.Name, System.Text.Encoding.Unicode, 32);
+        }
+
+        public string SteamID64Hex
+        {
+            get => SteamOnlineIDDataPtr.ReadString((int)DSROffsets.SteamOnlineIDData.SteamID64, System.Text.Encoding.Unicode, 32);
+        }
+
+        public long SteamID64
+        {
+            get
+            {
+                long steamID64;
+                long.TryParse(SteamID64Hex, NumberStyles.HexNumber, CultureInfo.InvariantCulture, out steamID64);
+                return steamID64;
+            }
         }
 
         #region Stats
@@ -535,6 +551,7 @@ namespace DSR_Gadget
                 ChrAnimDataPtr = dsrHook.CreateChildPointer(PlayerCtrlPtr, (int)DSROffsets.PlayerCtrl.ChrAnimData);
 
                 SteamPlayerDataPtr = dsrHook.CreateChildPointer(PlayerInsPtr, (int)DSROffsets.PlayerIns.SteamPlayerData);
+                SteamOnlineIDDataPtr = dsrHook.CreateChildPointer(SteamPlayerDataPtr, (int)DSROffsets.SteamPlayerData.SteamOnlineIDData);
 
                 GestureGameDataPtr = dsrHook.CreateChildPointer(PlayerGameDataPtr, (int)DSROffsets.PlayerGameData.GestureGameData);
                 GestureEquipDataPtr = dsrHook.CreateChildPointer(PlayerGameDataPtr, (int)DSROffsets.PlayerGameData.GestureEquipData);

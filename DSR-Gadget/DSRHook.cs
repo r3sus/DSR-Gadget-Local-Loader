@@ -20,9 +20,7 @@ namespace DSR_Gadget
         private PHPointer WorldChrBase;
         private PHPointer ChrData1;
         private PHPointer PlayerCtrl;
-        private PHPointer ChrAnimData;
-        private PHPointer ChrPosData;
-        private PHPointer PlayerGameDataPtr;
+
         private PHPointer RecentPlayersPtr;
         private PHPointer[] RecentPlayerPtrs;
         private PHPointer CurrentPlayersPtr;
@@ -32,10 +30,12 @@ namespace DSR_Gadget
         private PHPointer GraphicsData;
         private PHPointer MenuMan;
         private PHPointer EventFlags;
-        private PHPointer ActionCtrlPtr;
 
         private PHPointer DurabilityAddr;
         private PHPointer DurabilitySpecialAddr;
+
+        private PHPointer FrpgNetManImpBase;
+        private PHPointer SosDbListAddr;
 
         public DSRHook(int refreshInterval, int minLifetime) :
             base(refreshInterval, minLifetime, p => p.MainWindowTitle == "DARK SOULS™: REMASTERED")
@@ -55,10 +55,6 @@ namespace DSR_Gadget
             BonfireWarpAddr = RegisterAbsoluteAOB(DSROffsets.BonfireWarpAOB);
 
             ChrData1 = CreateChildPointer(WorldChrBase, (int)DSROffsets.WorldChrManImp.PlayerIns);
-            PlayerCtrl = CreateBasePointer(IntPtr.Zero);
-            ChrAnimData = CreateBasePointer(IntPtr.Zero);
-            ChrPosData = CreateBasePointer(IntPtr.Zero);
-            PlayerGameDataPtr = CreateChildPointer(GameDataManBasePtr, DSROffsets.GameDataManOffset1, (int)DSROffsets.GameDataMan.PlayerGameData);
             EquipMagicDataPtr = CreateChildPointer(GameDataManBasePtr, DSROffsets.GameDataManOffset1, (int)DSROffsets.GameDataMan.PlayerGameData, (int)DSROffsets.PlayerGameData.EquipMagicData);
             LastBloodstainPos = CreateChildPointer(GameDataManBasePtr, DSROffsets.GameDataManOffset1, (int)DSROffsets.GameDataMan.LastBloodstainPos);
 
@@ -79,6 +75,11 @@ namespace DSR_Gadget
             DurabilityAddr = RegisterAbsoluteAOB(DSROffsets.DurabilityAOB);
             DurabilitySpecialAddr = RegisterAbsoluteAOB(DSROffsets.DurabilitySpecialAOB);
 
+            FrpgNetManImpBase = RegisterRelativeAOB(DSROffsets.FrpgNetManImpAOB, 3, 7, DSROffsets.FrpgNetManImpOffset1);
+
+            SosDbListAddr = CreateChildPointer(FrpgNetManImpBase, (int)DSROffsets.FrpgNetManImp.FrpgNetSosDb, (int)DSROffsets.FrpgNetSosDb.SosDbList);
+
+
             OnHooked += DSRHook_OnHooked;
         }
 
@@ -86,9 +87,6 @@ namespace DSR_Gadget
         {
             Offsets = DSROffsets.GetOffsets(Process.MainModule.ModuleMemorySize);
             PlayerCtrl = CreateChildPointer(ChrData1, (int)DSROffsets.PlayerIns.PlayerCtrl);
-            ChrAnimData = CreateChildPointer(PlayerCtrl, (int)DSROffsets.PlayerCtrl.ChrAnimData);
-            ChrPosData = CreateChildPointer(PlayerCtrl, (int)DSROffsets.PlayerCtrl.ChrPosData);
-            ActionCtrlPtr = CreateChildPointer(PlayerCtrl, (int)DSROffsets.PlayerCtrl.ActionCtrl);
 
         }
 
@@ -586,6 +584,29 @@ namespace DSR_Gadget
             return currentPlayers;
         }
 
+        public List<DSRSummonSign> GetSummonSigns()
+        {
+            //List<DSRSummonSign> summonSignList = new List<DSRSummonSign>();
+            List<DSRSummonSign> summonSignList = new List<DSRSummonSign>();
+
+            PHPointer frpgSosDbListItem = CreateChildPointer(SosDbListAddr, (int)DSROffsets.SosDbList.SosDbListItem);
+
+            bool loop = true;
+            while (loop)
+            {
+                PHPointer frpgSosDbItem = CreateChildPointer(frpgSosDbListItem, (int)DSROffsets.SosDbListItem.FrpgNetSosDbItem);
+                if (frpgSosDbItem.Resolve() != IntPtr.Zero)
+                {
+                    summonSignList.Add(new DSRSummonSign(frpgSosDbItem, this));
+                    frpgSosDbListItem = CreateChildPointer(frpgSosDbListItem, (int)DSROffsets.SosDbListItem.SosDbItemNext);
+                }
+                else
+                    loop = false;
+            }
+            
+            return summonSignList;
+        }
+
         public DSRPlayer GetCurrentPlayer(int index)
         {
             return new DSRPlayer(CurrentPlayerPtrs[index], DSRPlayer.PlayerDataType.PlayerIns, this);
@@ -594,6 +615,11 @@ namespace DSR_Gadget
         public DSRPlayer GetRecentPlayer(int index)
         {
             return new DSRPlayer(RecentPlayerPtrs[index], DSRPlayer.PlayerDataType.PlayerGameData, this);
+        }
+
+        public DSRSummonSign GetEmptySummonSign()
+        {
+            return new DSRSummonSign(CreateBasePointer(IntPtr.Zero), this);
         }
 
         public void LeaveSession()

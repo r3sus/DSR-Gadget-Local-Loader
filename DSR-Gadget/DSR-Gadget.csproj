@@ -107,6 +107,7 @@
     <Compile Include="List Items\DSRGesture.cs" />
     <Compile Include="List Items\DSRInvasion.cs" />
     <Compile Include="List Items\DSRMagic.cs" />
+    <Compile Include="List Items\DSRSummonSign.cs" />
     <Compile Include="List Items\DSRPlayer.cs" />
     <Compile Include="List Items\DSRTeam.cs" />
     <Compile Include="List Items\DSRClass.cs" />

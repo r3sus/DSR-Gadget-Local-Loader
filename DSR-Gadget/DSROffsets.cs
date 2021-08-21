@@ -5,9 +5,73 @@ namespace DSR_Gadget
 {
     internal class DSROffsets
     {
+        // BaseE, network stuff
+        public const string FrpgNetManImpAOB = "48 8B 05 ? ? ? ? 48 8B 88 50 0B 00 00 0F B6 41 4A C3 48 C7 45 48 01 00 00 00";
+        public const int FrpgNetManImpOffset1 = 0x0;
+
+        public enum FrpgNetManImp
+        {
+            FrpgNetSosDb = 0xB48,
+        }
+        
+        public enum FrpgNetSosDb
+        {
+            SosDbList = 0x28,
+        }
+
+        public enum SosDbList
+        {
+            SosDbListItem = 0x0,
+        }
+
+        public enum SosDbListItem
+        {
+            SosDbItemNext = 0x0,
+            SosDbItemPrevious = 0x8,
+            FrpgNetSosDbItem = 0x10,
+        }
+
+        public enum FrpgNetSosDbItem
+        {
+            SummonType = 0x8,
+            SteamID = 0xC,
+            AreaID1 = 0x30,
+            PosX = 0x34,
+            PosY = 0x38,
+            PosZ = 0x3C,
+            PosAngle = 0x40,
+            AreaID2 = 0x44,
+            SoulLevel = 0x48,
+            Covenant = 0x4C,
+            MultiplayerCount = 0x50,
+
+            LeftWep1 = 0x54,
+            RightWep1 = 0x58,
+            LeftWep2 = 0x5C,
+            RightWep2 = 0x60,
+            Arrow1 = 0x64,
+            Bolt1 = 0x68,
+            Arrow2 = 0x6C,
+            Bolt2 = 0x70,
+            ArmorHead = 0x74,
+            ArmorChest = 0x78,
+            ArmorHands = 0x7C,
+            ArmorLegs = 0x80,
+            Hair = 0x84,
+
+            HairRed = 0x88,
+            HairGreen = 0x89,
+            HairBlue = 0x8A,
+            HairAlpha = 0x8B,
+
+            Name = 0x94,
+
+        }
+
+
         // BaseX in public ce table
         public const string WorldChrManImpBaseAOB = "48 8B 05 ? ? ? ? 48 8B 48 68 48 85 C9 0F 84 ? ? ? ? 48 39 5E 10 0F 84 ? ? ? ? 48";
-        public const int WorldChrManImpBaseOffset1 = 0;
+        public const int WorldChrManImpBaseOffset1 = 0x0;
         public enum WorldChrManImp
         {
             PlayerIns = 0x68, // Main Player data
