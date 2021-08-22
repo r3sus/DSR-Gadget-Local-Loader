@@ -33,6 +33,11 @@ namespace DSR_Gadget
 
             lbxNetSosList.DataSource = SummonSignList;
 
+            foreach (DSRSummon summon in DSRSummon.All)
+                cmbSosSummonType.Items.Add(summon);
+            cmbSosSummonType.SelectedIndex = 0;
+            cmbSosSummonType.SelectedIndexChanged += cmbSummonType_SelectedIndexChanged;
+
 
 
             /*
@@ -225,6 +230,14 @@ namespace DSR_Gadget
         private void updateSummonSignUI (DSRSummonSign sign)
         {
             nudSosSoulLevel.Value = sign.SoulLevel;
+            txtSosName.Text = sign.Name;
+
+            DSRPlayer.Position pos = sign.GetPosition();
+            nudSosPosX.Value = (decimal)pos.X;
+            nudSosPosY.Value = (decimal)pos.Y;
+            nudSosPosZ.Value = (decimal)pos.Z;
+            nudSosPosAngle.Value = (decimal)pos.Angle;
+            updateDropdown<DSRSummon>(cmbSosSummonType, sign.SummonType);
         }
 
         private void btnCurrentPlayerKick_Click(object sender, EventArgs e)
@@ -263,6 +276,54 @@ namespace DSR_Gadget
                 DSRPlayer.Position pos = player.GetPosition();
                 Player.PosWarp(pos);
             }
+        }
+
+        private void cmbSummonType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DSRSummonSign sign = lbxNetSosList.SelectedItem as DSRSummonSign;
+
+            if (loaded && !reading && sign != null)
+                sign.SummonType = (cmbSosSummonType.SelectedItem as DSRSummon).ID;
+        }
+
+        private void btnSosRestorePos_Click(object sender, EventArgs e)
+        {
+            DSRSummonSign sign = lbxNetSosList.SelectedItem as DSRSummonSign;
+            if (loaded && !reading && sign != null)
+            {
+                sign.PosX = (float)nudStoredX.Value;
+                sign.PosY = (float)nudStoredY.Value;
+                sign.PosZ = (float)nudStoredZ.Value;
+                sign.PosAngle = (float)nudStoredAngle.Value;
+            }
+        }
+
+        private void nudSosPosX_ValueChanged(object sender, EventArgs e)
+        {
+            DSRSummonSign sign = lbxNetSosList.SelectedItem as DSRSummonSign;
+            if (loaded && !reading && sign != null)
+                sign.PosX = (float)nudSosPosX.Value;
+        }
+
+        private void nudSosPosY_ValueChanged(object sender, EventArgs e)
+        {
+            DSRSummonSign sign = lbxNetSosList.SelectedItem as DSRSummonSign;
+            if (loaded && !reading && sign != null)
+                sign.PosY = (float)nudSosPosY.Value;
+        }
+
+        private void nudSosPosZ_ValueChanged(object sender, EventArgs e)
+        {
+            DSRSummonSign sign = lbxNetSosList.SelectedItem as DSRSummonSign;
+            if (loaded && !reading && sign != null)
+                sign.PosZ = (float)nudSosPosZ.Value;
+        }
+
+        private void nudSosPosAngle_ValueChanged(object sender, EventArgs e)
+        {
+            DSRSummonSign sign = lbxNetSosList.SelectedItem as DSRSummonSign;
+            if (loaded && !reading && sign != null)
+                sign.PosAngle = (float)nudSosPosAngle.Value;
         }
 
         /*

@@ -1,0 +1,32 @@
+﻿0 White Phantom
+1 Black Phantom (Invade)
+2 Black Phantom
+3 Dragon Spirit
+4 White Phantom
+5 Black Phantom (Team)
+6 Summon Gravelord phantom
+7 Never Connects
+8 Instant DC (InvadeType 8) (ttype 17, chrtype 2)
+8 Instant DC (InvadeType 9) (ttype 17, chrtype 2)
+10 Summon Dragon Spirit (Instant DC?)
+11 Invade Darkmoon (Instant DC?)
+12 Arena (FFA)
+13 Arena (FFA) (ttype 16, chrtype 13)
+14 Arena (Team 1)
+15 Arena (Team 1)
+16 Arena (Team 1)
+17 Arena (Team 2)
+18 Arena (Team 2)
+19 Arena (Team 2)
+20 Arena (FFA)
+21 Arena (FFA)
+22 Arena (FFA)
+23 Arena (FFA)
+24 Arena (FFA)
+25 Arena (FFA)
+26 Summon White Phantom (InvadeType 255) (ttype 2, chrtype 1)
+27 Summon White Phantom (InvadeType 0) (ttype 2, chrtype 1)
+28 Summon White Phantom (InvadeType 0) (ttype 2, chrtype 1)
+29 Summon Evil Spirit (InvadeType 255) (ttype 3, chrtype 2)
+30 Summon White Phantom (InvadeType 0) (ttype 2, chrtype 1)
+40 Summon Evil Spirit (InvadeType 25) (ttype 3, chrtype 2)

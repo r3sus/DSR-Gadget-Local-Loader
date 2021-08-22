@@ -335,6 +335,7 @@
             this.lblRecentPlayerSoulLevel = new System.Windows.Forms.Label();
             this.lbxNetRecentPlayers = new System.Windows.Forms.ListBox();
             this.tpgNetCurrentPlayers = new System.Windows.Forms.TabPage();
+            this.btnCurrentPlayerTeleport = new System.Windows.Forms.Button();
             this.cbxCurrentPlayerCamera = new System.Windows.Forms.CheckBox();
             this.btnCurrentPlayerFamilyShare = new System.Windows.Forms.Button();
             this.btnCurrentPlayerMore = new System.Windows.Forms.Button();
@@ -365,6 +366,19 @@
             this.lblCurrentPlayerSoulLevel = new System.Windows.Forms.Label();
             this.lbxNetCurrentPlayers = new System.Windows.Forms.ListBox();
             this.tpgNetSummonSigns = new System.Windows.Forms.TabPage();
+            this.lblSosPosAngle = new System.Windows.Forms.Label();
+            this.nudSosPosZ = new System.Windows.Forms.NumericUpDown();
+            this.btnSosRestorePos = new System.Windows.Forms.Button();
+            this.nudSosPosY = new System.Windows.Forms.NumericUpDown();
+            this.nudSosPosX = new System.Windows.Forms.NumericUpDown();
+            this.nudSosPosAngle = new System.Windows.Forms.NumericUpDown();
+            this.lblSosPosZ = new System.Windows.Forms.Label();
+            this.lblSosPosY = new System.Windows.Forms.Label();
+            this.lblSosPosX = new System.Windows.Forms.Label();
+            this.lblSosSummonType = new System.Windows.Forms.Label();
+            this.cmbSosSummonType = new System.Windows.Forms.ComboBox();
+            this.txtSosName = new System.Windows.Forms.TextBox();
+            this.lblSosName = new System.Windows.Forms.Label();
             this.nudSosSoulLevel = new System.Windows.Forms.NumericUpDown();
             this.lblSosSoulLevel = new System.Windows.Forms.Label();
             this.lbxNetSosList = new System.Windows.Forms.ListBox();
@@ -382,7 +396,7 @@
             this.tmrUpdate = new System.Windows.Forms.Timer(this.components);
             this.lblUpdate = new System.Windows.Forms.Label();
             this.llbUpdate = new System.Windows.Forms.LinkLabel();
-            this.btnCurrentPlayerTeleport = new System.Windows.Forms.Button();
+            this.lblSosSpawnPosition = new System.Windows.Forms.Label();
             this.tclMain.SuspendLayout();
             this.tpgPlayer.SuspendLayout();
             this.gbxOther.SuspendLayout();
@@ -489,6 +503,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.nupCurrentPlayerEndurance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupCurrentPlayerSoulLevel)).BeginInit();
             this.tpgNetSummonSigns.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSosPosZ)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSosPosY)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSosPosX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSosPosAngle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSosSoulLevel)).BeginInit();
             this.tpgHotkeys.SuspendLayout();
             this.tclSettings.SuspendLayout();
@@ -4292,6 +4310,16 @@
             this.tpgNetCurrentPlayers.Text = "Current Players";
             this.tpgNetCurrentPlayers.UseVisualStyleBackColor = true;
             // 
+            // btnCurrentPlayerTeleport
+            // 
+            this.btnCurrentPlayerTeleport.Location = new System.Drawing.Point(6, 454);
+            this.btnCurrentPlayerTeleport.Name = "btnCurrentPlayerTeleport";
+            this.btnCurrentPlayerTeleport.Size = new System.Drawing.Size(158, 23);
+            this.btnCurrentPlayerTeleport.TabIndex = 60;
+            this.btnCurrentPlayerTeleport.Text = "Teleport to Player";
+            this.btnCurrentPlayerTeleport.UseVisualStyleBackColor = true;
+            this.btnCurrentPlayerTeleport.Click += new System.EventHandler(this.btnCurrentPlayerTeleport_Click);
+            // 
             // cbxCurrentPlayerCamera
             // 
             this.cbxCurrentPlayerCamera.AutoSize = true;
@@ -4696,6 +4724,20 @@
             // 
             // tpgNetSummonSigns
             // 
+            this.tpgNetSummonSigns.Controls.Add(this.lblSosSpawnPosition);
+            this.tpgNetSummonSigns.Controls.Add(this.lblSosPosAngle);
+            this.tpgNetSummonSigns.Controls.Add(this.nudSosPosZ);
+            this.tpgNetSummonSigns.Controls.Add(this.btnSosRestorePos);
+            this.tpgNetSummonSigns.Controls.Add(this.nudSosPosY);
+            this.tpgNetSummonSigns.Controls.Add(this.nudSosPosX);
+            this.tpgNetSummonSigns.Controls.Add(this.nudSosPosAngle);
+            this.tpgNetSummonSigns.Controls.Add(this.lblSosPosZ);
+            this.tpgNetSummonSigns.Controls.Add(this.lblSosPosY);
+            this.tpgNetSummonSigns.Controls.Add(this.lblSosPosX);
+            this.tpgNetSummonSigns.Controls.Add(this.lblSosSummonType);
+            this.tpgNetSummonSigns.Controls.Add(this.cmbSosSummonType);
+            this.tpgNetSummonSigns.Controls.Add(this.txtSosName);
+            this.tpgNetSummonSigns.Controls.Add(this.lblSosName);
             this.tpgNetSummonSigns.Controls.Add(this.nudSosSoulLevel);
             this.tpgNetSummonSigns.Controls.Add(this.lblSosSoulLevel);
             this.tpgNetSummonSigns.Controls.Add(this.lbxNetSosList);
@@ -4706,6 +4748,166 @@
             this.tpgNetSummonSigns.TabIndex = 2;
             this.tpgNetSummonSigns.Text = "Summon SIgns";
             this.tpgNetSummonSigns.UseVisualStyleBackColor = true;
+            // 
+            // lblSosPosAngle
+            // 
+            this.lblSosPosAngle.AutoSize = true;
+            this.lblSosPosAngle.Location = new System.Drawing.Point(26, 305);
+            this.lblSosPosAngle.Name = "lblSosPosAngle";
+            this.lblSosPosAngle.Size = new System.Drawing.Size(34, 13);
+            this.lblSosPosAngle.TabIndex = 68;
+            this.lblSosPosAngle.Text = "Angle";
+            // 
+            // nudSosPosZ
+            // 
+            this.nudSosPosZ.DecimalPlaces = 3;
+            this.nudSosPosZ.Location = new System.Drawing.Point(66, 277);
+            this.nudSosPosZ.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nudSosPosZ.Minimum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            -2147483648});
+            this.nudSosPosZ.Name = "nudSosPosZ";
+            this.nudSosPosZ.Size = new System.Drawing.Size(75, 20);
+            this.nudSosPosZ.TabIndex = 62;
+            this.nudSosPosZ.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nudSosPosZ.ValueChanged += new System.EventHandler(this.nudSosPosZ_ValueChanged);
+            // 
+            // btnSosRestorePos
+            // 
+            this.btnSosRestorePos.Location = new System.Drawing.Point(6, 329);
+            this.btnSosRestorePos.Name = "btnSosRestorePos";
+            this.btnSosRestorePos.Size = new System.Drawing.Size(135, 23);
+            this.btnSosRestorePos.TabIndex = 63;
+            this.btnSosRestorePos.Text = "Use stored position";
+            this.btnSosRestorePos.UseVisualStyleBackColor = true;
+            this.btnSosRestorePos.Click += new System.EventHandler(this.btnSosRestorePos_Click);
+            // 
+            // nudSosPosY
+            // 
+            this.nudSosPosY.DecimalPlaces = 3;
+            this.nudSosPosY.Location = new System.Drawing.Point(66, 251);
+            this.nudSosPosY.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nudSosPosY.Minimum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            -2147483648});
+            this.nudSosPosY.Name = "nudSosPosY";
+            this.nudSosPosY.Size = new System.Drawing.Size(75, 20);
+            this.nudSosPosY.TabIndex = 61;
+            this.nudSosPosY.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nudSosPosY.ValueChanged += new System.EventHandler(this.nudSosPosY_ValueChanged);
+            // 
+            // nudSosPosX
+            // 
+            this.nudSosPosX.DecimalPlaces = 3;
+            this.nudSosPosX.Location = new System.Drawing.Point(66, 225);
+            this.nudSosPosX.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nudSosPosX.Minimum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            -2147483648});
+            this.nudSosPosX.Name = "nudSosPosX";
+            this.nudSosPosX.Size = new System.Drawing.Size(75, 20);
+            this.nudSosPosX.TabIndex = 60;
+            this.nudSosPosX.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nudSosPosX.ValueChanged += new System.EventHandler(this.nudSosPosX_ValueChanged);
+            // 
+            // nudSosPosAngle
+            // 
+            this.nudSosPosAngle.Location = new System.Drawing.Point(66, 303);
+            this.nudSosPosAngle.Maximum = new decimal(new int[] {
+            365,
+            0,
+            0,
+            0});
+            this.nudSosPosAngle.Minimum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            -2147483648});
+            this.nudSosPosAngle.Name = "nudSosPosAngle";
+            this.nudSosPosAngle.Size = new System.Drawing.Size(75, 20);
+            this.nudSosPosAngle.TabIndex = 67;
+            this.nudSosPosAngle.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nudSosPosAngle.ValueChanged += new System.EventHandler(this.nudSosPosAngle_ValueChanged);
+            // 
+            // lblSosPosZ
+            // 
+            this.lblSosPosZ.AutoSize = true;
+            this.lblSosPosZ.Location = new System.Drawing.Point(46, 279);
+            this.lblSosPosZ.Name = "lblSosPosZ";
+            this.lblSosPosZ.Size = new System.Drawing.Size(14, 13);
+            this.lblSosPosZ.TabIndex = 66;
+            this.lblSosPosZ.Text = "Z";
+            // 
+            // lblSosPosY
+            // 
+            this.lblSosPosY.AutoSize = true;
+            this.lblSosPosY.Location = new System.Drawing.Point(46, 253);
+            this.lblSosPosY.Name = "lblSosPosY";
+            this.lblSosPosY.Size = new System.Drawing.Size(14, 13);
+            this.lblSosPosY.TabIndex = 65;
+            this.lblSosPosY.Text = "Y";
+            // 
+            // lblSosPosX
+            // 
+            this.lblSosPosX.AutoSize = true;
+            this.lblSosPosX.Location = new System.Drawing.Point(46, 227);
+            this.lblSosPosX.Name = "lblSosPosX";
+            this.lblSosPosX.Size = new System.Drawing.Size(14, 13);
+            this.lblSosPosX.TabIndex = 64;
+            this.lblSosPosX.Text = "X";
+            // 
+            // lblSosSummonType
+            // 
+            this.lblSosSummonType.AutoSize = true;
+            this.lblSosSummonType.Location = new System.Drawing.Point(6, 169);
+            this.lblSosSummonType.Name = "lblSosSummonType";
+            this.lblSosSummonType.Size = new System.Drawing.Size(75, 13);
+            this.lblSosSummonType.TabIndex = 59;
+            this.lblSosSummonType.Text = "Summon Type";
+            // 
+            // cmbSosSummonType
+            // 
+            this.cmbSosSummonType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSosSummonType.FormattingEnabled = true;
+            this.cmbSosSummonType.Location = new System.Drawing.Point(6, 185);
+            this.cmbSosSummonType.Name = "cmbSosSummonType";
+            this.cmbSosSummonType.Size = new System.Drawing.Size(135, 21);
+            this.cmbSosSummonType.TabIndex = 58;
+            // 
+            // txtSosName
+            // 
+            this.txtSosName.Enabled = false;
+            this.txtSosName.Location = new System.Drawing.Point(6, 146);
+            this.txtSosName.Name = "txtSosName";
+            this.txtSosName.Size = new System.Drawing.Size(135, 20);
+            this.txtSosName.TabIndex = 57;
+            // 
+            // lblSosName
+            // 
+            this.lblSosName.AutoSize = true;
+            this.lblSosName.Location = new System.Drawing.Point(6, 130);
+            this.lblSosName.Name = "lblSosName";
+            this.lblSosName.Size = new System.Drawing.Size(35, 13);
+            this.lblSosName.TabIndex = 56;
+            this.lblSosName.Text = "Name";
             // 
             // nudSosSoulLevel
             // 
@@ -4888,15 +5090,14 @@
             this.llbUpdate.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.llbUpdate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbUpdate_LinkClicked);
             // 
-            // btnCurrentPlayerTeleport
+            // lblSosSpawnPosition
             // 
-            this.btnCurrentPlayerTeleport.Location = new System.Drawing.Point(6, 454);
-            this.btnCurrentPlayerTeleport.Name = "btnCurrentPlayerTeleport";
-            this.btnCurrentPlayerTeleport.Size = new System.Drawing.Size(158, 23);
-            this.btnCurrentPlayerTeleport.TabIndex = 60;
-            this.btnCurrentPlayerTeleport.Text = "Teleport to Player";
-            this.btnCurrentPlayerTeleport.UseVisualStyleBackColor = true;
-            this.btnCurrentPlayerTeleport.Click += new System.EventHandler(this.btnCurrentPlayerTeleport_Click);
+            this.lblSosSpawnPosition.AutoSize = true;
+            this.lblSosSpawnPosition.Location = new System.Drawing.Point(6, 209);
+            this.lblSosSpawnPosition.Name = "lblSosSpawnPosition";
+            this.lblSosSpawnPosition.Size = new System.Drawing.Size(79, 13);
+            this.lblSosSpawnPosition.TabIndex = 69;
+            this.lblSosSpawnPosition.Text = "Spawn position";
             // 
             // FormMain
             // 
@@ -5043,6 +5244,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.nupCurrentPlayerSoulLevel)).EndInit();
             this.tpgNetSummonSigns.ResumeLayout(false);
             this.tpgNetSummonSigns.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSosPosZ)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSosPosY)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSosPosX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSosPosAngle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSosSoulLevel)).EndInit();
             this.tpgHotkeys.ResumeLayout(false);
             this.tclSettings.ResumeLayout(false);
@@ -5408,6 +5613,20 @@
         private System.Windows.Forms.Label lblRecentPlayerName;
         private System.Windows.Forms.CheckBox cbxCurrentPlayerCamera;
         private System.Windows.Forms.Button btnCurrentPlayerTeleport;
+        private System.Windows.Forms.TextBox txtSosName;
+        private System.Windows.Forms.Label lblSosName;
+        private System.Windows.Forms.Label lblSosSummonType;
+        private System.Windows.Forms.ComboBox cmbSosSummonType;
+        private System.Windows.Forms.Label lblSosPosAngle;
+        private System.Windows.Forms.NumericUpDown nudSosPosZ;
+        private System.Windows.Forms.Button btnSosRestorePos;
+        private System.Windows.Forms.NumericUpDown nudSosPosY;
+        private System.Windows.Forms.NumericUpDown nudSosPosX;
+        private System.Windows.Forms.NumericUpDown nudSosPosAngle;
+        private System.Windows.Forms.Label lblSosPosZ;
+        private System.Windows.Forms.Label lblSosPosY;
+        private System.Windows.Forms.Label lblSosPosX;
+        private System.Windows.Forms.Label lblSosSpawnPosition;
     }
 }
 
