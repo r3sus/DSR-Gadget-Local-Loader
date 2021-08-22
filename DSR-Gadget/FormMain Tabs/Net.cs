@@ -23,6 +23,7 @@ namespace DSR_Gadget
             }
             lbxNetCurrentPlayers.SelectedIndex = 0;
             lbxNetRecentPlayers.SelectedIndex = 0;
+            lbxNetCurrentPlayers.SelectedIndexChanged += lbxNetCurrentPlayers_SelectedIndexChanged;
 
             EmptyPlayer = Hook.GetEmptyPlayer();
             EmptySummonSign = Hook.GetEmptySummonSign();
@@ -209,6 +210,7 @@ namespace DSR_Gadget
             nupRecentPlayerIntelligence.Value = player.Intelligence;
             nupRecentPlayerFaith.Value = player.Faith;
             nupRecentPlayerHumanity.Value = player.Humanity;
+            nupRecentPlayerWeaponMemory.Value = player.WeaponMemory;
             txtRecentPlayerName.Text = player.NameString1;
         }
         private void updateCurrentPlayerUI(DSRPlayer player)
@@ -223,8 +225,20 @@ namespace DSR_Gadget
             nupCurrentPlayerIntelligence.Value = player.Intelligence;
             nupCurrentPlayerFaith.Value = player.Faith;
             nupCurrentPlayerHumanity.Value = player.Humanity;
+            nupCurrentPlayerWeaponMemory.Value = player.WeaponMemory;
             txtCurrentPlayerName.Text = player.NameString1;
             txtCurrentPlayerSteamName.Text = player.SteamName;
+        }
+
+        private void lbxNetCurrentPlayers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbxCurrentPlayerCamera.Checked)
+            {
+                DSRPlayer player = lbxNetCurrentPlayers.SelectedItem as DSRPlayer;
+                IntPtr playerInsPtr = player.PlayerInsPtr.Resolve();
+                if (player != null && playerInsPtr!= IntPtr.Zero)
+                    Hook.SetCamera(playerInsPtr);
+            }
         }
 
         private void updateSummonSignUI (DSRSummonSign sign)
@@ -253,8 +267,9 @@ namespace DSR_Gadget
             if (cbxCurrentPlayerCamera.Checked)
             {
                 DSRPlayer player = lbxNetCurrentPlayers.SelectedItem as DSRPlayer;
-                if (player != null)
-                    Hook.SetCamera(player.PlayerInsPtr.Resolve());
+                IntPtr playerInsPtr = player.PlayerInsPtr.Resolve();
+                if (player != null && playerInsPtr != IntPtr.Zero)
+                    Hook.SetCamera(playerInsPtr);
                 else 
                     cbxCurrentPlayerCamera.Checked = false;
             }

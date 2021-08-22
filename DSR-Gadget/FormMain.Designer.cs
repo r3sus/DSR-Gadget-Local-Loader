@@ -366,6 +366,7 @@
             this.lblCurrentPlayerSoulLevel = new System.Windows.Forms.Label();
             this.lbxNetCurrentPlayers = new System.Windows.Forms.ListBox();
             this.tpgNetSummonSigns = new System.Windows.Forms.TabPage();
+            this.lblSosSpawnPosition = new System.Windows.Forms.Label();
             this.lblSosPosAngle = new System.Windows.Forms.Label();
             this.nudSosPosZ = new System.Windows.Forms.NumericUpDown();
             this.btnSosRestorePos = new System.Windows.Forms.Button();
@@ -396,7 +397,10 @@
             this.tmrUpdate = new System.Windows.Forms.Timer(this.components);
             this.lblUpdate = new System.Windows.Forms.Label();
             this.llbUpdate = new System.Windows.Forms.LinkLabel();
-            this.lblSosSpawnPosition = new System.Windows.Forms.Label();
+            this.nupCurrentPlayerWeaponMemory = new System.Windows.Forms.NumericUpDown();
+            this.lblCurrentPlayerWeaponMemory = new System.Windows.Forms.Label();
+            this.nupRecentPlayerWeaponMemory = new System.Windows.Forms.NumericUpDown();
+            this.lblRecentPlayerWeaponMemory = new System.Windows.Forms.Label();
             this.tclMain.SuspendLayout();
             this.tpgPlayer.SuspendLayout();
             this.gbxOther.SuspendLayout();
@@ -511,6 +515,8 @@
             this.tpgHotkeys.SuspendLayout();
             this.tclSettings.SuspendLayout();
             this.tpgSettingsHotkeys.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nupCurrentPlayerWeaponMemory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerWeaponMemory)).BeginInit();
             this.SuspendLayout();
             // 
             // tclMain
@@ -3474,6 +3480,8 @@
             // 
             // tpgNetRecentPlayers
             // 
+            this.tpgNetRecentPlayers.Controls.Add(this.nupRecentPlayerWeaponMemory);
+            this.tpgNetRecentPlayers.Controls.Add(this.lblRecentPlayerWeaponMemory);
             this.tpgNetRecentPlayers.Controls.Add(this.txtRecentPlayerName);
             this.tpgNetRecentPlayers.Controls.Add(this.lblRecentPlayerName);
             this.tpgNetRecentPlayers.Controls.Add(this.label29);
@@ -3548,7 +3556,7 @@
             // txtRecentPlayerName
             // 
             this.txtRecentPlayerName.Enabled = false;
-            this.txtRecentPlayerName.Location = new System.Drawing.Point(6, 355);
+            this.txtRecentPlayerName.Location = new System.Drawing.Point(6, 381);
             this.txtRecentPlayerName.Name = "txtRecentPlayerName";
             this.txtRecentPlayerName.Size = new System.Drawing.Size(135, 20);
             this.txtRecentPlayerName.TabIndex = 72;
@@ -3556,7 +3564,7 @@
             // lblRecentPlayerName
             // 
             this.lblRecentPlayerName.AutoSize = true;
-            this.lblRecentPlayerName.Location = new System.Drawing.Point(6, 339);
+            this.lblRecentPlayerName.Location = new System.Drawing.Point(6, 365);
             this.lblRecentPlayerName.Name = "lblRecentPlayerName";
             this.lblRecentPlayerName.Size = new System.Drawing.Size(35, 13);
             this.lblRecentPlayerName.TabIndex = 71;
@@ -4272,6 +4280,8 @@
             // 
             // tpgNetCurrentPlayers
             // 
+            this.tpgNetCurrentPlayers.Controls.Add(this.nupCurrentPlayerWeaponMemory);
+            this.tpgNetCurrentPlayers.Controls.Add(this.lblCurrentPlayerWeaponMemory);
             this.tpgNetCurrentPlayers.Controls.Add(this.btnCurrentPlayerTeleport);
             this.tpgNetCurrentPlayers.Controls.Add(this.cbxCurrentPlayerCamera);
             this.tpgNetCurrentPlayers.Controls.Add(this.btnCurrentPlayerFamilyShare);
@@ -4312,18 +4322,18 @@
             // 
             // btnCurrentPlayerTeleport
             // 
-            this.btnCurrentPlayerTeleport.Location = new System.Drawing.Point(6, 454);
+            this.btnCurrentPlayerTeleport.Location = new System.Drawing.Point(88, 512);
             this.btnCurrentPlayerTeleport.Name = "btnCurrentPlayerTeleport";
-            this.btnCurrentPlayerTeleport.Size = new System.Drawing.Size(158, 23);
+            this.btnCurrentPlayerTeleport.Size = new System.Drawing.Size(76, 23);
             this.btnCurrentPlayerTeleport.TabIndex = 60;
-            this.btnCurrentPlayerTeleport.Text = "Teleport to Player";
+            this.btnCurrentPlayerTeleport.Text = "Teleport to";
             this.btnCurrentPlayerTeleport.UseVisualStyleBackColor = true;
             this.btnCurrentPlayerTeleport.Click += new System.EventHandler(this.btnCurrentPlayerTeleport_Click);
             // 
             // cbxCurrentPlayerCamera
             // 
             this.cbxCurrentPlayerCamera.AutoSize = true;
-            this.cbxCurrentPlayerCamera.Location = new System.Drawing.Point(6, 420);
+            this.cbxCurrentPlayerCamera.Location = new System.Drawing.Point(6, 446);
             this.cbxCurrentPlayerCamera.Name = "cbxCurrentPlayerCamera";
             this.cbxCurrentPlayerCamera.Size = new System.Drawing.Size(106, 17);
             this.cbxCurrentPlayerCamera.TabIndex = 59;
@@ -4353,7 +4363,7 @@
             // txtCurrentPlayerSteamName
             // 
             this.txtCurrentPlayerSteamName.Enabled = false;
-            this.txtCurrentPlayerSteamName.Location = new System.Drawing.Point(6, 394);
+            this.txtCurrentPlayerSteamName.Location = new System.Drawing.Point(6, 420);
             this.txtCurrentPlayerSteamName.Name = "txtCurrentPlayerSteamName";
             this.txtCurrentPlayerSteamName.Size = new System.Drawing.Size(135, 20);
             this.txtCurrentPlayerSteamName.TabIndex = 56;
@@ -4361,7 +4371,7 @@
             // txtCurrentPlayerName
             // 
             this.txtCurrentPlayerName.Enabled = false;
-            this.txtCurrentPlayerName.Location = new System.Drawing.Point(6, 355);
+            this.txtCurrentPlayerName.Location = new System.Drawing.Point(6, 381);
             this.txtCurrentPlayerName.Name = "txtCurrentPlayerName";
             this.txtCurrentPlayerName.Size = new System.Drawing.Size(135, 20);
             this.txtCurrentPlayerName.TabIndex = 55;
@@ -4369,7 +4379,7 @@
             // lblCurrentPlayerSteamName
             // 
             this.lblCurrentPlayerSteamName.AutoSize = true;
-            this.lblCurrentPlayerSteamName.Location = new System.Drawing.Point(6, 378);
+            this.lblCurrentPlayerSteamName.Location = new System.Drawing.Point(6, 404);
             this.lblCurrentPlayerSteamName.Name = "lblCurrentPlayerSteamName";
             this.lblCurrentPlayerSteamName.Size = new System.Drawing.Size(68, 13);
             this.lblCurrentPlayerSteamName.TabIndex = 54;
@@ -4378,7 +4388,7 @@
             // lblCurrentPlayerName
             // 
             this.lblCurrentPlayerName.AutoSize = true;
-            this.lblCurrentPlayerName.Location = new System.Drawing.Point(6, 339);
+            this.lblCurrentPlayerName.Location = new System.Drawing.Point(6, 365);
             this.lblCurrentPlayerName.Name = "lblCurrentPlayerName";
             this.lblCurrentPlayerName.Size = new System.Drawing.Size(35, 13);
             this.lblCurrentPlayerName.TabIndex = 53;
@@ -4388,9 +4398,9 @@
             // 
             this.btnCurrentPlayerKick.Location = new System.Drawing.Point(6, 512);
             this.btnCurrentPlayerKick.Name = "btnCurrentPlayerKick";
-            this.btnCurrentPlayerKick.Size = new System.Drawing.Size(158, 23);
+            this.btnCurrentPlayerKick.Size = new System.Drawing.Size(76, 23);
             this.btnCurrentPlayerKick.TabIndex = 52;
-            this.btnCurrentPlayerKick.Text = "Kick Player";
+            this.btnCurrentPlayerKick.Text = "Kick";
             this.btnCurrentPlayerKick.UseVisualStyleBackColor = true;
             this.btnCurrentPlayerKick.Click += new System.EventHandler(this.btnCurrentPlayerKick_Click);
             // 
@@ -4749,6 +4759,15 @@
             this.tpgNetSummonSigns.Text = "Summon SIgns";
             this.tpgNetSummonSigns.UseVisualStyleBackColor = true;
             // 
+            // lblSosSpawnPosition
+            // 
+            this.lblSosSpawnPosition.AutoSize = true;
+            this.lblSosSpawnPosition.Location = new System.Drawing.Point(6, 209);
+            this.lblSosSpawnPosition.Name = "lblSosSpawnPosition";
+            this.lblSosSpawnPosition.Size = new System.Drawing.Size(79, 13);
+            this.lblSosSpawnPosition.TabIndex = 69;
+            this.lblSosSpawnPosition.Text = "Spawn position";
+            // 
             // lblSosPosAngle
             // 
             this.lblSosPosAngle.AutoSize = true;
@@ -5090,14 +5109,69 @@
             this.llbUpdate.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.llbUpdate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbUpdate_LinkClicked);
             // 
-            // lblSosSpawnPosition
+            // nupCurrentPlayerWeaponMemory
             // 
-            this.lblSosSpawnPosition.AutoSize = true;
-            this.lblSosSpawnPosition.Location = new System.Drawing.Point(6, 209);
-            this.lblSosSpawnPosition.Name = "lblSosSpawnPosition";
-            this.lblSosSpawnPosition.Size = new System.Drawing.Size(79, 13);
-            this.lblSosSpawnPosition.TabIndex = 69;
-            this.lblSosSpawnPosition.Text = "Spawn position";
+            this.nupCurrentPlayerWeaponMemory.Enabled = false;
+            this.nupCurrentPlayerWeaponMemory.Location = new System.Drawing.Point(6, 342);
+            this.nupCurrentPlayerWeaponMemory.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.nupCurrentPlayerWeaponMemory.Minimum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            -2147483648});
+            this.nupCurrentPlayerWeaponMemory.Name = "nupCurrentPlayerWeaponMemory";
+            this.nupCurrentPlayerWeaponMemory.Size = new System.Drawing.Size(82, 20);
+            this.nupCurrentPlayerWeaponMemory.TabIndex = 62;
+            this.nupCurrentPlayerWeaponMemory.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            // 
+            // lblCurrentPlayerWeaponMemory
+            // 
+            this.lblCurrentPlayerWeaponMemory.AutoSize = true;
+            this.lblCurrentPlayerWeaponMemory.Location = new System.Drawing.Point(94, 344);
+            this.lblCurrentPlayerWeaponMemory.Name = "lblCurrentPlayerWeaponMemory";
+            this.lblCurrentPlayerWeaponMemory.Size = new System.Drawing.Size(64, 13);
+            this.lblCurrentPlayerWeaponMemory.TabIndex = 61;
+            this.lblCurrentPlayerWeaponMemory.Text = "Weapon lvl.";
+            // 
+            // nupRecentPlayerWeaponMemory
+            // 
+            this.nupRecentPlayerWeaponMemory.Enabled = false;
+            this.nupRecentPlayerWeaponMemory.Location = new System.Drawing.Point(6, 342);
+            this.nupRecentPlayerWeaponMemory.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.nupRecentPlayerWeaponMemory.Minimum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            -2147483648});
+            this.nupRecentPlayerWeaponMemory.Name = "nupRecentPlayerWeaponMemory";
+            this.nupRecentPlayerWeaponMemory.Size = new System.Drawing.Size(82, 20);
+            this.nupRecentPlayerWeaponMemory.TabIndex = 74;
+            this.nupRecentPlayerWeaponMemory.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            // 
+            // lblRecentPlayerWeaponMemory
+            // 
+            this.lblRecentPlayerWeaponMemory.AutoSize = true;
+            this.lblRecentPlayerWeaponMemory.Location = new System.Drawing.Point(94, 344);
+            this.lblRecentPlayerWeaponMemory.Name = "lblRecentPlayerWeaponMemory";
+            this.lblRecentPlayerWeaponMemory.Size = new System.Drawing.Size(64, 13);
+            this.lblRecentPlayerWeaponMemory.TabIndex = 73;
+            this.lblRecentPlayerWeaponMemory.Text = "Weapon lvl.";
             // 
             // FormMain
             // 
@@ -5253,6 +5327,8 @@
             this.tclSettings.ResumeLayout(false);
             this.tpgSettingsHotkeys.ResumeLayout(false);
             this.tpgSettingsHotkeys.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nupCurrentPlayerWeaponMemory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerWeaponMemory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -5627,6 +5703,10 @@
         private System.Windows.Forms.Label lblSosPosY;
         private System.Windows.Forms.Label lblSosPosX;
         private System.Windows.Forms.Label lblSosSpawnPosition;
+        private System.Windows.Forms.NumericUpDown nupCurrentPlayerWeaponMemory;
+        private System.Windows.Forms.Label lblCurrentPlayerWeaponMemory;
+        private System.Windows.Forms.NumericUpDown nupRecentPlayerWeaponMemory;
+        private System.Windows.Forms.Label lblRecentPlayerWeaponMemory;
     }
 }
 
