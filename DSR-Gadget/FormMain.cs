@@ -34,7 +34,8 @@ namespace DSR_Gadget
                 nudPathOfTheDragon, nudGravelordServant, nudForestHunter, nudDarkmoonBlade, nudChaosServant,
                 btnCurrentPlayerKick, txtName, nudWeaponMemory, nudHair, nudHairRed, nudHairGreen, nudHairBlue,
                 nudHairAlpha, nudEyeRed, nudEyeBlue, nudEyeGreen, cmbGender, cmbPhysique, btnGesturesUnlockAll,
-                cmbSosSummonType, nudSosPosX, nudSosPosY, nudSosPosZ, nudSosPosAngle, btnSosRestorePos  //nudIndictments,
+                cmbSosSummonType, nudSosPosX, nudSosPosY, nudSosPosZ, nudSosPosAngle, btnSosRestorePos, cbxCurrentPlayerCamera,
+                btnCurrentPlayerTeleport//nudIndictments,
             };
 
             cmbGestures = new ComboBox[] { cmbGestureSlot1, cmbGestureSlot2, cmbGestureSlot3, cmbGestureSlot4,
