@@ -68,7 +68,6 @@ namespace DSR_Gadget
 
         }
 
-
         // BaseX in public ce table
         public const string WorldChrManImpBaseAOB = "48 8B 05 ? ? ? ? 48 8B 48 68 48 85 C9 0F 84 ? ? ? ? 48 39 5E 10 0F 84 ? ? ? ? 48";
         public const int WorldChrManImpBaseOffset1 = 0x0;
@@ -82,7 +81,7 @@ namespace DSR_Gadget
         public int PlayerInsBoost2 = 0x0;
         public enum PlayerIns
         {
-            CurrentPlayers = 0x18, //change and use Boost variables // List of PlayerIns of current players
+            CurrentPlayers = 0x18, // List of PlayerIns of current players
             ChrRes = 0x10,
             PlayerCtrl = 0x68,
             ChrType = 0xD4,
@@ -96,8 +95,8 @@ namespace DSR_Gadget
             MaxStamina = 0x3FC,
             ChrFlags2 = 0x514,
 
-            PlayerGameData = 0x578, //change and use Boost variables
-            SteamPlayerData = 0x590, //change and use Boost variables
+            PlayerGameData = 0x578,
+            SteamPlayerData = 0x590,
         }
 
         public enum ChrRes
@@ -280,9 +279,15 @@ namespace DSR_Gadget
         public const int MenuManOffset1 = 0;
         public enum MenuMan
         {
+            Repair = 0x60,
+            LevelUp = 0x8C,
+            AttuneMagic = 0x94,
+            BottomlessBox = 0x98,
+            Warp = 0xC0,
             MenuKick = 0x24C,
+            Covenants = 0x300,
         }
-        
+
         // BaseB in public ce table
         public const string GameDataManAOB = "48 8B 05 ? ? ? ? 48 85 C0 ? ? F3 0F 58 80 AC 00 00 00";
         public const int GameDataManOffset1 = 0;
@@ -292,6 +297,7 @@ namespace DSR_Gadget
             PlayerGameDataRecent = 0x18,
             LastBloodstainPos = 0x40,
             Settings = 0x58,
+            ClearCount = 0x78,
             PlayTime = 0xA4,
         }
 
@@ -323,6 +329,8 @@ namespace DSR_Gadget
             Class = 0xCE,
             Physique = 0xCF,
 
+            StartingGift = 0xD0,
+
             MultiplayerCount = 0xD4,
             CoopSuccessCount = 0xD8,
 
@@ -337,6 +345,9 @@ namespace DSR_Gadget
             Indictments = 0xF4,
 
             CurrentCovenant = 0x113,
+            FaceType = 0x114,
+            HairType = 0x115,
+            HairColor = 0x116,
             InvadeType = 0x118,
             WeaponMemory = 0x119,
             EstusLevel = 0x11A,
@@ -475,6 +486,18 @@ namespace DSR_Gadget
             RecentPlayer5 = 0x460 + PlayerGameDataRecentOffset * 4,
 
         }
+
+        public const string SoloParamManAOB = "4C 8B 05 ? ? ? ? 48 63 C9 48 8D 04 C9 41 3B 54 C0 10 7D ? 48 63 C2 48 8D 0C C9 48 03 C8 49 8B 44 C8 18";
+
+        //public const string WorldChrManDbgImpAOB = "48 8B 05 ? ? ? ? 44 38 78 19 55 48 BD ? ? ? ? ? ? ? ? 48 87 2C 24 53 50 48 8B 5C 24 10";
+        public const string WorldChrManDbgImpAOB = "48 8B 05 ? ? ? ? E9 ? ? ? ? 49 8B DC E9 ? ? ? ? 40 56 57 41 54 41 56 41 57 48 83 EC 30";
+        public const int WorldChrManDbgImpOffset1 = 0x0;
+
+        public enum WorldChrManDbgImp
+        {
+            Camera = 0xF0,
+        }
+
 
         public const string EventFlagsAOB = "48 8B 0D ? ? ? ? 99 33 C2 45 33 C0 2B C2 8D 50 F6";
         public const int EventFlagsOffset1 = 0;

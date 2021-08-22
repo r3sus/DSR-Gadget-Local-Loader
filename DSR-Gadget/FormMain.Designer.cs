@@ -271,6 +271,8 @@
             this.tpgNet = new System.Windows.Forms.TabPage();
             this.tclNet = new System.Windows.Forms.TabControl();
             this.tpgNetRecentPlayers = new System.Windows.Forms.TabPage();
+            this.txtRecentPlayerName = new System.Windows.Forms.TextBox();
+            this.lblRecentPlayerName = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
@@ -333,6 +335,7 @@
             this.lblRecentPlayerSoulLevel = new System.Windows.Forms.Label();
             this.lbxNetRecentPlayers = new System.Windows.Forms.ListBox();
             this.tpgNetCurrentPlayers = new System.Windows.Forms.TabPage();
+            this.cbxCurrentPlayerCamera = new System.Windows.Forms.CheckBox();
             this.btnCurrentPlayerFamilyShare = new System.Windows.Forms.Button();
             this.btnCurrentPlayerMore = new System.Windows.Forms.Button();
             this.txtCurrentPlayerSteamName = new System.Windows.Forms.TextBox();
@@ -361,6 +364,10 @@
             this.lblCurrentPlayerVitality = new System.Windows.Forms.Label();
             this.lblCurrentPlayerSoulLevel = new System.Windows.Forms.Label();
             this.lbxNetCurrentPlayers = new System.Windows.Forms.ListBox();
+            this.tpgNetSummonSigns = new System.Windows.Forms.TabPage();
+            this.nudSosSoulLevel = new System.Windows.Forms.NumericUpDown();
+            this.lblSosSoulLevel = new System.Windows.Forms.Label();
+            this.lbxNetSosList = new System.Windows.Forms.ListBox();
             this.tpgHotkeys = new System.Windows.Forms.TabPage();
             this.tclSettings = new System.Windows.Forms.TabControl();
             this.tpgSetingsSettings = new System.Windows.Forms.TabPage();
@@ -375,9 +382,7 @@
             this.tmrUpdate = new System.Windows.Forms.Timer(this.components);
             this.lblUpdate = new System.Windows.Forms.Label();
             this.llbUpdate = new System.Windows.Forms.LinkLabel();
-            this.tpgNetSummonSigns = new System.Windows.Forms.TabPage();
-            this.nudSosSoulLevel = new System.Windows.Forms.NumericUpDown();
-            this.lbxNetSosList = new System.Windows.Forms.ListBox();
+            this.btnCurrentPlayerTeleport = new System.Windows.Forms.Button();
             this.tclMain.SuspendLayout();
             this.tpgPlayer.SuspendLayout();
             this.gbxOther.SuspendLayout();
@@ -483,11 +488,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.nupCurrentPlayerAttunement)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupCurrentPlayerEndurance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupCurrentPlayerSoulLevel)).BeginInit();
+            this.tpgNetSummonSigns.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSosSoulLevel)).BeginInit();
             this.tpgHotkeys.SuspendLayout();
             this.tclSettings.SuspendLayout();
             this.tpgSettingsHotkeys.SuspendLayout();
-            this.tpgNetSummonSigns.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudSosSoulLevel)).BeginInit();
             this.SuspendLayout();
             // 
             // tclMain
@@ -3451,6 +3456,8 @@
             // 
             // tpgNetRecentPlayers
             // 
+            this.tpgNetRecentPlayers.Controls.Add(this.txtRecentPlayerName);
+            this.tpgNetRecentPlayers.Controls.Add(this.lblRecentPlayerName);
             this.tpgNetRecentPlayers.Controls.Add(this.label29);
             this.tpgNetRecentPlayers.Controls.Add(this.label30);
             this.tpgNetRecentPlayers.Controls.Add(this.label31);
@@ -3519,6 +3526,23 @@
             this.tpgNetRecentPlayers.TabIndex = 0;
             this.tpgNetRecentPlayers.Text = "Recent Players";
             this.tpgNetRecentPlayers.UseVisualStyleBackColor = true;
+            // 
+            // txtRecentPlayerName
+            // 
+            this.txtRecentPlayerName.Enabled = false;
+            this.txtRecentPlayerName.Location = new System.Drawing.Point(6, 355);
+            this.txtRecentPlayerName.Name = "txtRecentPlayerName";
+            this.txtRecentPlayerName.Size = new System.Drawing.Size(135, 20);
+            this.txtRecentPlayerName.TabIndex = 72;
+            // 
+            // lblRecentPlayerName
+            // 
+            this.lblRecentPlayerName.AutoSize = true;
+            this.lblRecentPlayerName.Location = new System.Drawing.Point(6, 339);
+            this.lblRecentPlayerName.Name = "lblRecentPlayerName";
+            this.lblRecentPlayerName.Size = new System.Drawing.Size(35, 13);
+            this.lblRecentPlayerName.TabIndex = 71;
+            this.lblRecentPlayerName.Text = "Name";
             // 
             // label29
             // 
@@ -4230,6 +4254,8 @@
             // 
             // tpgNetCurrentPlayers
             // 
+            this.tpgNetCurrentPlayers.Controls.Add(this.btnCurrentPlayerTeleport);
+            this.tpgNetCurrentPlayers.Controls.Add(this.cbxCurrentPlayerCamera);
             this.tpgNetCurrentPlayers.Controls.Add(this.btnCurrentPlayerFamilyShare);
             this.tpgNetCurrentPlayers.Controls.Add(this.btnCurrentPlayerMore);
             this.tpgNetCurrentPlayers.Controls.Add(this.txtCurrentPlayerSteamName);
@@ -4266,21 +4292,32 @@
             this.tpgNetCurrentPlayers.Text = "Current Players";
             this.tpgNetCurrentPlayers.UseVisualStyleBackColor = true;
             // 
+            // cbxCurrentPlayerCamera
+            // 
+            this.cbxCurrentPlayerCamera.AutoSize = true;
+            this.cbxCurrentPlayerCamera.Location = new System.Drawing.Point(6, 420);
+            this.cbxCurrentPlayerCamera.Name = "cbxCurrentPlayerCamera";
+            this.cbxCurrentPlayerCamera.Size = new System.Drawing.Size(106, 17);
+            this.cbxCurrentPlayerCamera.TabIndex = 59;
+            this.cbxCurrentPlayerCamera.Text = "Camera to Player";
+            this.cbxCurrentPlayerCamera.UseVisualStyleBackColor = true;
+            this.cbxCurrentPlayerCamera.CheckedChanged += new System.EventHandler(this.cbxCurrentPlayerCamera_CheckedChanged);
+            // 
             // btnCurrentPlayerFamilyShare
             // 
             this.btnCurrentPlayerFamilyShare.Enabled = false;
-            this.btnCurrentPlayerFamilyShare.Location = new System.Drawing.Point(6, 454);
+            this.btnCurrentPlayerFamilyShare.Location = new System.Drawing.Point(88, 483);
             this.btnCurrentPlayerFamilyShare.Name = "btnCurrentPlayerFamilyShare";
-            this.btnCurrentPlayerFamilyShare.Size = new System.Drawing.Size(158, 23);
+            this.btnCurrentPlayerFamilyShare.Size = new System.Drawing.Size(76, 23);
             this.btnCurrentPlayerFamilyShare.TabIndex = 58;
-            this.btnCurrentPlayerFamilyShare.Text = "Family Share Check";
+            this.btnCurrentPlayerFamilyShare.Text = "Family Share";
             this.btnCurrentPlayerFamilyShare.UseVisualStyleBackColor = true;
             // 
             // btnCurrentPlayerMore
             // 
             this.btnCurrentPlayerMore.Location = new System.Drawing.Point(6, 483);
             this.btnCurrentPlayerMore.Name = "btnCurrentPlayerMore";
-            this.btnCurrentPlayerMore.Size = new System.Drawing.Size(158, 23);
+            this.btnCurrentPlayerMore.Size = new System.Drawing.Size(76, 23);
             this.btnCurrentPlayerMore.TabIndex = 57;
             this.btnCurrentPlayerMore.Text = "More Info";
             this.btnCurrentPlayerMore.UseVisualStyleBackColor = true;
@@ -4657,6 +4694,59 @@
             this.lbxNetCurrentPlayers.Size = new System.Drawing.Size(158, 69);
             this.lbxNetCurrentPlayers.TabIndex = 31;
             // 
+            // tpgNetSummonSigns
+            // 
+            this.tpgNetSummonSigns.Controls.Add(this.nudSosSoulLevel);
+            this.tpgNetSummonSigns.Controls.Add(this.lblSosSoulLevel);
+            this.tpgNetSummonSigns.Controls.Add(this.lbxNetSosList);
+            this.tpgNetSummonSigns.Location = new System.Drawing.Point(4, 22);
+            this.tpgNetSummonSigns.Name = "tpgNetSummonSigns";
+            this.tpgNetSummonSigns.Padding = new System.Windows.Forms.Padding(3);
+            this.tpgNetSummonSigns.Size = new System.Drawing.Size(376, 541);
+            this.tpgNetSummonSigns.TabIndex = 2;
+            this.tpgNetSummonSigns.Text = "Summon SIgns";
+            this.tpgNetSummonSigns.UseVisualStyleBackColor = true;
+            // 
+            // nudSosSoulLevel
+            // 
+            this.nudSosSoulLevel.Enabled = false;
+            this.nudSosSoulLevel.Location = new System.Drawing.Point(7, 107);
+            this.nudSosSoulLevel.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.nudSosSoulLevel.Minimum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            -2147483648});
+            this.nudSosSoulLevel.Name = "nudSosSoulLevel";
+            this.nudSosSoulLevel.Size = new System.Drawing.Size(82, 20);
+            this.nudSosSoulLevel.TabIndex = 44;
+            this.nudSosSoulLevel.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            // 
+            // lblSosSoulLevel
+            // 
+            this.lblSosSoulLevel.AutoSize = true;
+            this.lblSosSoulLevel.Location = new System.Drawing.Point(94, 109);
+            this.lblSosSoulLevel.Name = "lblSosSoulLevel";
+            this.lblSosSoulLevel.Size = new System.Drawing.Size(57, 13);
+            this.lblSosSoulLevel.TabIndex = 43;
+            this.lblSosSoulLevel.Text = "Soul Level";
+            // 
+            // lbxNetSosList
+            // 
+            this.lbxNetSosList.FormattingEnabled = true;
+            this.lbxNetSosList.Location = new System.Drawing.Point(6, 6);
+            this.lbxNetSosList.Name = "lbxNetSosList";
+            this.lbxNetSosList.Size = new System.Drawing.Size(158, 95);
+            this.lbxNetSosList.TabIndex = 1;
+            // 
             // tpgHotkeys
             // 
             this.tpgHotkeys.Controls.Add(this.tclSettings);
@@ -4798,32 +4888,15 @@
             this.llbUpdate.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.llbUpdate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbUpdate_LinkClicked);
             // 
-            // tpgNetSummonSigns
+            // btnCurrentPlayerTeleport
             // 
-            this.tpgNetSummonSigns.Controls.Add(this.lbxNetSosList);
-            this.tpgNetSummonSigns.Controls.Add(this.nudSosSoulLevel);
-            this.tpgNetSummonSigns.Location = new System.Drawing.Point(4, 22);
-            this.tpgNetSummonSigns.Name = "tpgNetSummonSigns";
-            this.tpgNetSummonSigns.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgNetSummonSigns.Size = new System.Drawing.Size(376, 541);
-            this.tpgNetSummonSigns.TabIndex = 2;
-            this.tpgNetSummonSigns.Text = "Summon SIgns";
-            this.tpgNetSummonSigns.UseVisualStyleBackColor = true;
-            // 
-            // nudSosSoulLevel
-            // 
-            this.nudSosSoulLevel.Location = new System.Drawing.Point(6, 515);
-            this.nudSosSoulLevel.Name = "nudSosSoulLevel";
-            this.nudSosSoulLevel.Size = new System.Drawing.Size(120, 20);
-            this.nudSosSoulLevel.TabIndex = 0;
-            // 
-            // lbxNetSosList
-            // 
-            this.lbxNetSosList.FormattingEnabled = true;
-            this.lbxNetSosList.Location = new System.Drawing.Point(6, 6);
-            this.lbxNetSosList.Name = "lbxNetSosList";
-            this.lbxNetSosList.Size = new System.Drawing.Size(158, 95);
-            this.lbxNetSosList.TabIndex = 1;
+            this.btnCurrentPlayerTeleport.Location = new System.Drawing.Point(6, 454);
+            this.btnCurrentPlayerTeleport.Name = "btnCurrentPlayerTeleport";
+            this.btnCurrentPlayerTeleport.Size = new System.Drawing.Size(158, 23);
+            this.btnCurrentPlayerTeleport.TabIndex = 60;
+            this.btnCurrentPlayerTeleport.Text = "Teleport to Player";
+            this.btnCurrentPlayerTeleport.UseVisualStyleBackColor = true;
+            this.btnCurrentPlayerTeleport.Click += new System.EventHandler(this.btnCurrentPlayerTeleport_Click);
             // 
             // FormMain
             // 
@@ -4968,12 +5041,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.nupCurrentPlayerAttunement)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupCurrentPlayerEndurance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupCurrentPlayerSoulLevel)).EndInit();
+            this.tpgNetSummonSigns.ResumeLayout(false);
+            this.tpgNetSummonSigns.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSosSoulLevel)).EndInit();
             this.tpgHotkeys.ResumeLayout(false);
             this.tclSettings.ResumeLayout(false);
             this.tpgSettingsHotkeys.ResumeLayout(false);
             this.tpgSettingsHotkeys.PerformLayout();
-            this.tpgNetSummonSigns.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nudSosSoulLevel)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -5327,8 +5401,13 @@
         private System.Windows.Forms.CheckBox cbxHotkeysEnable;
         private System.Windows.Forms.TabPage tpgSetingsSettings;
         private System.Windows.Forms.TabPage tpgNetSummonSigns;
-        private System.Windows.Forms.NumericUpDown nudSosSoulLevel;
         private System.Windows.Forms.ListBox lbxNetSosList;
+        private System.Windows.Forms.NumericUpDown nudSosSoulLevel;
+        private System.Windows.Forms.Label lblSosSoulLevel;
+        private System.Windows.Forms.TextBox txtRecentPlayerName;
+        private System.Windows.Forms.Label lblRecentPlayerName;
+        private System.Windows.Forms.CheckBox cbxCurrentPlayerCamera;
+        private System.Windows.Forms.Button btnCurrentPlayerTeleport;
     }
 }
 

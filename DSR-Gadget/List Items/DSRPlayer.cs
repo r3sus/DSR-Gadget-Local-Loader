@@ -6,8 +6,8 @@ namespace DSR_Gadget
 {
     class DSRPlayer
     {
-        private PHPointer PlayerPtr;
-        private PHPointer PlayerInsPtr;
+        public PHPointer PlayerPtr { get; set; }
+        public PHPointer PlayerInsPtr { get; set; }
         private PHPointer PlayerCtrlPtr;
         private PHPointer ChrPosDataPtr;
         private PHPointer ActionCtrlPtr;

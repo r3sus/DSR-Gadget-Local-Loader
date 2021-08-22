@@ -37,6 +37,8 @@ namespace DSR_Gadget
         private PHPointer FrpgNetManImpBase;
         private PHPointer SosDbListAddr;
 
+        private PHPointer WorldChrManDbgImpAddr;
+
         public DSRHook(int refreshInterval, int minLifetime) :
             base(refreshInterval, minLifetime, p => p.MainWindowTitle == "DARK SOULS™: REMASTERED")
         {
@@ -79,6 +81,7 @@ namespace DSR_Gadget
 
             SosDbListAddr = CreateChildPointer(FrpgNetManImpBase, (int)DSROffsets.FrpgNetManImp.FrpgNetSosDb, (int)DSROffsets.FrpgNetSosDb.SosDbList);
 
+            WorldChrManDbgImpAddr = RegisterRelativeAOB(DSROffsets.WorldChrManDbgImpAOB, 3, 7, DSROffsets.WorldChrManDbgImpOffset1);
 
             OnHooked += DSRHook_OnHooked;
         }
@@ -635,6 +638,11 @@ namespace DSR_Gadget
             byte[] bytes = BitConverter.GetBytes(0x10044000 + index);
             Array.Copy(bytes, 0, asm, 0x1, 4);
             Execute(asm);
+        }
+
+        public void SetCamera(IntPtr ptr)
+        {
+            WorldChrManDbgImpAddr.WriteUInt32((int)DSROffsets.WorldChrManDbgImp.Camera, (uint)ptr);
         }
 
 

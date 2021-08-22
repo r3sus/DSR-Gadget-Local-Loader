@@ -21,7 +21,8 @@ namespace DSR_Gadget
                 lbxNetRecentPlayers.Items.Add("");
                 lbxNetCurrentPlayers.Items.Add("");
             }
-
+            lbxNetCurrentPlayers.SelectedIndex = 0;
+            lbxNetRecentPlayers.SelectedIndex = 0;
 
             EmptyPlayer = Hook.GetEmptyPlayer();
             EmptySummonSign = Hook.GetEmptySummonSign();
@@ -120,10 +121,13 @@ namespace DSR_Gadget
             }
 
             DSRPlayer selectedCurrentPlayer = lbxNetCurrentPlayers.SelectedItem as DSRPlayer;
-            if (selectedCurrentPlayer != null)
+            if (selectedCurrentPlayer != null && selectedCurrentPlayer.PlayerPtr.Resolve() != IntPtr.Zero)
                 updateCurrentPlayerUI(selectedCurrentPlayer);
             else
+            {
                 updateCurrentPlayerUI(EmptyPlayer);
+                resetCamera();
+            }
             
             
 
@@ -200,6 +204,7 @@ namespace DSR_Gadget
             nupRecentPlayerIntelligence.Value = player.Intelligence;
             nupRecentPlayerFaith.Value = player.Faith;
             nupRecentPlayerHumanity.Value = player.Humanity;
+            txtRecentPlayerName.Text = player.NameString1;
         }
         private void updateCurrentPlayerUI(DSRPlayer player)
         {
@@ -228,6 +233,36 @@ namespace DSR_Gadget
             byte index = (byte)lbxNetCurrentPlayers.SelectedIndex;
             if (player != null && CurrentPlayers[index] != null)
                 Hook.KickPlayer(player, index);
+        }
+
+        private void cbxCurrentPlayerCamera_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbxCurrentPlayerCamera.Checked)
+            {
+                DSRPlayer player = lbxNetCurrentPlayers.SelectedItem as DSRPlayer;
+                if (player != null)
+                    Hook.SetCamera(player.PlayerInsPtr.Resolve());
+                else 
+                    cbxCurrentPlayerCamera.Checked = false;
+            }
+            else
+                Hook.SetCamera(IntPtr.Zero);
+        }
+
+        private void resetCamera()
+        {
+            Hook.SetCamera(IntPtr.Zero);
+            cbxCurrentPlayerCamera.Checked = false;
+        }
+
+        private void btnCurrentPlayerTeleport_Click(object sender, EventArgs e)
+        {
+            DSRPlayer player = lbxNetCurrentPlayers.SelectedItem as DSRPlayer;
+            if (player != null && player.PlayerPtr.Resolve() != IntPtr.Zero)
+            {
+                DSRPlayer.Position pos = player.GetPosition();
+                Player.PosWarp(pos);
+            }
         }
 
         /*
