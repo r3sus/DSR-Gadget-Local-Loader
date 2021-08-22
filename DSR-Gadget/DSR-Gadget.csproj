@@ -77,7 +77,7 @@
     <Compile Include="FormMain Tabs\Graphics.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMain Tabs\Hotkeys.cs">
+    <Compile Include="FormMain Tabs\Settings.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormMain Tabs\Items.cs">
