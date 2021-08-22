@@ -27,6 +27,7 @@ namespace DSR_Gadget
         private PHPointer[] CurrentPlayerPtrs;
         private PHPointer EquipMagicDataPtr;
         private PHPointer LastBloodstainPos;
+        private PHPointer SettingsPtr;
         private PHPointer GraphicsData;
         private PHPointer MenuMan;
         private PHPointer EventFlags;
@@ -59,6 +60,7 @@ namespace DSR_Gadget
             ChrData1 = CreateChildPointer(WorldChrBase, (int)DSROffsets.WorldChrManImp.PlayerIns);
             EquipMagicDataPtr = CreateChildPointer(GameDataManBasePtr, DSROffsets.GameDataManOffset1, (int)DSROffsets.GameDataMan.PlayerGameData, (int)DSROffsets.PlayerGameData.EquipMagicData);
             LastBloodstainPos = CreateChildPointer(GameDataManBasePtr, DSROffsets.GameDataManOffset1, (int)DSROffsets.GameDataMan.LastBloodstainPos);
+            SettingsPtr = CreateChildPointer(GameDataManBasePtr, DSROffsets.GameDataManOffset1, (int)DSROffsets.GameDataMan.Settings);
 
             RecentPlayersPtr = CreateChildPointer(GameDataManBasePtr, DSROffsets.GameDataManOffset1, (int)DSROffsets.GameDataMan.PlayerGameDataRecent);
             RecentPlayerPtrs = new PHPointer[5];
@@ -540,6 +542,12 @@ namespace DSR_Gadget
         public void MenuKick()
         {
             MenuMan.WriteInt32((int)DSROffsets.MenuMan.MenuKick, 2);
+        }
+
+        public bool HUD
+        {
+            get => SettingsPtr.ReadBoolean((int)DSROffsets.Settings.HUD);
+            set => SettingsPtr.WriteBoolean((int)DSROffsets.Settings.HUD, value);
         }
 
 #if DEBUG

@@ -58,6 +58,11 @@ namespace DSR_Gadget
                 Hook.MenuKick();
             }));
 
+            hotkeys.Add(new GadgetHotkey("HotkeyHUD", "Toggle HUD", flpHotkeyControls, () =>
+            {
+                Hook.HUD = !Hook.HUD;
+            }));
+
             hotkeys.Add(new GadgetHotkey("HotkeyFilter", "Toggle Filter", flpHotkeyControls, () =>
             {
                 cbxFilter.Checked = !cbxFilter.Checked;

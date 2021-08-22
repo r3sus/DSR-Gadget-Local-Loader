@@ -526,5 +526,17 @@ namespace DSR_Gadget.Properties {
                 this["HotkeyLeaveSession"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("27")]
+        public int HotkeyHUD {
+            get {
+                return ((int)(this["HotkeyHUD"]));
+            }
+            set {
+                this["HotkeyHUD"] = value;
+            }
+        }
     }
 }
