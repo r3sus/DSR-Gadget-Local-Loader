@@ -232,13 +232,19 @@ namespace DSR_Gadget
 
         private void lbxNetCurrentPlayers_SelectedIndexChanged(object sender, EventArgs e)
         {
+            updateCamera();
+            /*
             if (cbxCurrentPlayerCamera.Checked)
             {
                 DSRPlayer player = lbxNetCurrentPlayers.SelectedItem as DSRPlayer;
-                IntPtr playerInsPtr = player.PlayerInsPtr.Resolve();
-                if (player != null && playerInsPtr!= IntPtr.Zero)
-                    Hook.SetCamera(playerInsPtr);
-            }
+                if (player != null)
+                {
+                    IntPtr playerInsPtr = player.PlayerInsPtr.Resolve();
+                    if (playerInsPtr != IntPtr.Zero)
+                        Hook.SetCamera(playerInsPtr);
+                }
+
+            }*/
         }
 
         private void updateSummonSignUI (DSRSummonSign sign)
@@ -264,13 +270,22 @@ namespace DSR_Gadget
 
         private void cbxCurrentPlayerCamera_CheckedChanged(object sender, EventArgs e)
         {
+            updateCamera();
+        }
+
+        private void updateCamera()
+        {
             if (cbxCurrentPlayerCamera.Checked)
             {
                 DSRPlayer player = lbxNetCurrentPlayers.SelectedItem as DSRPlayer;
-                IntPtr playerInsPtr = player.PlayerInsPtr.Resolve();
-                if (player != null && playerInsPtr != IntPtr.Zero)
-                    Hook.SetCamera(playerInsPtr);
-                else 
+
+                if (player != null)
+                {
+                    IntPtr playerInsPtr = player.PlayerInsPtr.Resolve();
+                    if (playerInsPtr != IntPtr.Zero)
+                        Hook.SetCamera(playerInsPtr);
+                }
+                else
                     cbxCurrentPlayerCamera.Checked = false;
             }
             else
