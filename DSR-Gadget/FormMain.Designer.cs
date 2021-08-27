@@ -271,6 +271,8 @@
             this.tpgNet = new System.Windows.Forms.TabPage();
             this.tclNet = new System.Windows.Forms.TabControl();
             this.tpgNetRecentPlayers = new System.Windows.Forms.TabPage();
+            this.nupRecentPlayerWeaponMemory = new System.Windows.Forms.NumericUpDown();
+            this.lblRecentPlayerWeaponMemory = new System.Windows.Forms.Label();
             this.txtRecentPlayerName = new System.Windows.Forms.TextBox();
             this.lblRecentPlayerName = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
@@ -335,6 +337,8 @@
             this.lblRecentPlayerSoulLevel = new System.Windows.Forms.Label();
             this.lbxNetRecentPlayers = new System.Windows.Forms.ListBox();
             this.tpgNetCurrentPlayers = new System.Windows.Forms.TabPage();
+            this.nupCurrentPlayerWeaponMemory = new System.Windows.Forms.NumericUpDown();
+            this.lblCurrentPlayerWeaponMemory = new System.Windows.Forms.Label();
             this.btnCurrentPlayerTeleport = new System.Windows.Forms.Button();
             this.cbxCurrentPlayerCamera = new System.Windows.Forms.CheckBox();
             this.btnCurrentPlayerFamilyShare = new System.Windows.Forms.Button();
@@ -397,10 +401,6 @@
             this.tmrUpdate = new System.Windows.Forms.Timer(this.components);
             this.lblUpdate = new System.Windows.Forms.Label();
             this.llbUpdate = new System.Windows.Forms.LinkLabel();
-            this.nupCurrentPlayerWeaponMemory = new System.Windows.Forms.NumericUpDown();
-            this.lblCurrentPlayerWeaponMemory = new System.Windows.Forms.Label();
-            this.nupRecentPlayerWeaponMemory = new System.Windows.Forms.NumericUpDown();
-            this.lblRecentPlayerWeaponMemory = new System.Windows.Forms.Label();
             this.tclMain.SuspendLayout();
             this.tpgPlayer.SuspendLayout();
             this.gbxOther.SuspendLayout();
@@ -485,6 +485,7 @@
             this.tpgNet.SuspendLayout();
             this.tclNet.SuspendLayout();
             this.tpgNetRecentPlayers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerWeaponMemory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerFaith)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerHumanity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerResistance)).BeginInit();
@@ -496,6 +497,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerEndurance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerSoulLevel)).BeginInit();
             this.tpgNetCurrentPlayers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nupCurrentPlayerWeaponMemory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupCurrentPlayerFaith)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupCurrentPlayerHumanity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupCurrentPlayerResistance)).BeginInit();
@@ -515,8 +517,6 @@
             this.tpgHotkeys.SuspendLayout();
             this.tclSettings.SuspendLayout();
             this.tpgSettingsHotkeys.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nupCurrentPlayerWeaponMemory)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerWeaponMemory)).BeginInit();
             this.SuspendLayout();
             // 
             // tclMain
@@ -1556,9 +1556,9 @@
             this.lblChaosServant.AutoSize = true;
             this.lblChaosServant.Location = new System.Drawing.Point(66, 204);
             this.lblChaosServant.Name = "lblChaosServant";
-            this.lblChaosServant.Size = new System.Drawing.Size(74, 13);
+            this.lblChaosServant.Size = new System.Drawing.Size(77, 13);
             this.lblChaosServant.TabIndex = 14;
-            this.lblChaosServant.Text = "ChaosServant";
+            this.lblChaosServant.Text = "Chaos Servant";
             // 
             // lblDarkmoonBlade
             // 
@@ -3553,6 +3553,38 @@
             this.tpgNetRecentPlayers.Text = "Recent Players";
             this.tpgNetRecentPlayers.UseVisualStyleBackColor = true;
             // 
+            // nupRecentPlayerWeaponMemory
+            // 
+            this.nupRecentPlayerWeaponMemory.Enabled = false;
+            this.nupRecentPlayerWeaponMemory.Location = new System.Drawing.Point(6, 342);
+            this.nupRecentPlayerWeaponMemory.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.nupRecentPlayerWeaponMemory.Minimum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            -2147483648});
+            this.nupRecentPlayerWeaponMemory.Name = "nupRecentPlayerWeaponMemory";
+            this.nupRecentPlayerWeaponMemory.Size = new System.Drawing.Size(82, 20);
+            this.nupRecentPlayerWeaponMemory.TabIndex = 74;
+            this.nupRecentPlayerWeaponMemory.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            // 
+            // lblRecentPlayerWeaponMemory
+            // 
+            this.lblRecentPlayerWeaponMemory.AutoSize = true;
+            this.lblRecentPlayerWeaponMemory.Location = new System.Drawing.Point(94, 344);
+            this.lblRecentPlayerWeaponMemory.Name = "lblRecentPlayerWeaponMemory";
+            this.lblRecentPlayerWeaponMemory.Size = new System.Drawing.Size(64, 13);
+            this.lblRecentPlayerWeaponMemory.TabIndex = 73;
+            this.lblRecentPlayerWeaponMemory.Text = "Weapon lvl.";
+            // 
             // txtRecentPlayerName
             // 
             this.txtRecentPlayerName.Enabled = false;
@@ -4319,6 +4351,38 @@
             this.tpgNetCurrentPlayers.TabIndex = 1;
             this.tpgNetCurrentPlayers.Text = "Current Players";
             this.tpgNetCurrentPlayers.UseVisualStyleBackColor = true;
+            // 
+            // nupCurrentPlayerWeaponMemory
+            // 
+            this.nupCurrentPlayerWeaponMemory.Enabled = false;
+            this.nupCurrentPlayerWeaponMemory.Location = new System.Drawing.Point(6, 342);
+            this.nupCurrentPlayerWeaponMemory.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.nupCurrentPlayerWeaponMemory.Minimum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            -2147483648});
+            this.nupCurrentPlayerWeaponMemory.Name = "nupCurrentPlayerWeaponMemory";
+            this.nupCurrentPlayerWeaponMemory.Size = new System.Drawing.Size(82, 20);
+            this.nupCurrentPlayerWeaponMemory.TabIndex = 62;
+            this.nupCurrentPlayerWeaponMemory.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            // 
+            // lblCurrentPlayerWeaponMemory
+            // 
+            this.lblCurrentPlayerWeaponMemory.AutoSize = true;
+            this.lblCurrentPlayerWeaponMemory.Location = new System.Drawing.Point(94, 344);
+            this.lblCurrentPlayerWeaponMemory.Name = "lblCurrentPlayerWeaponMemory";
+            this.lblCurrentPlayerWeaponMemory.Size = new System.Drawing.Size(64, 13);
+            this.lblCurrentPlayerWeaponMemory.TabIndex = 61;
+            this.lblCurrentPlayerWeaponMemory.Text = "Weapon lvl.";
             // 
             // btnCurrentPlayerTeleport
             // 
@@ -5109,70 +5173,6 @@
             this.llbUpdate.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.llbUpdate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbUpdate_LinkClicked);
             // 
-            // nupCurrentPlayerWeaponMemory
-            // 
-            this.nupCurrentPlayerWeaponMemory.Enabled = false;
-            this.nupCurrentPlayerWeaponMemory.Location = new System.Drawing.Point(6, 342);
-            this.nupCurrentPlayerWeaponMemory.Maximum = new decimal(new int[] {
-            999999999,
-            0,
-            0,
-            0});
-            this.nupCurrentPlayerWeaponMemory.Minimum = new decimal(new int[] {
-            999999999,
-            0,
-            0,
-            -2147483648});
-            this.nupCurrentPlayerWeaponMemory.Name = "nupCurrentPlayerWeaponMemory";
-            this.nupCurrentPlayerWeaponMemory.Size = new System.Drawing.Size(82, 20);
-            this.nupCurrentPlayerWeaponMemory.TabIndex = 62;
-            this.nupCurrentPlayerWeaponMemory.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            -2147483648});
-            // 
-            // lblCurrentPlayerWeaponMemory
-            // 
-            this.lblCurrentPlayerWeaponMemory.AutoSize = true;
-            this.lblCurrentPlayerWeaponMemory.Location = new System.Drawing.Point(94, 344);
-            this.lblCurrentPlayerWeaponMemory.Name = "lblCurrentPlayerWeaponMemory";
-            this.lblCurrentPlayerWeaponMemory.Size = new System.Drawing.Size(64, 13);
-            this.lblCurrentPlayerWeaponMemory.TabIndex = 61;
-            this.lblCurrentPlayerWeaponMemory.Text = "Weapon lvl.";
-            // 
-            // nupRecentPlayerWeaponMemory
-            // 
-            this.nupRecentPlayerWeaponMemory.Enabled = false;
-            this.nupRecentPlayerWeaponMemory.Location = new System.Drawing.Point(6, 342);
-            this.nupRecentPlayerWeaponMemory.Maximum = new decimal(new int[] {
-            999999999,
-            0,
-            0,
-            0});
-            this.nupRecentPlayerWeaponMemory.Minimum = new decimal(new int[] {
-            999999999,
-            0,
-            0,
-            -2147483648});
-            this.nupRecentPlayerWeaponMemory.Name = "nupRecentPlayerWeaponMemory";
-            this.nupRecentPlayerWeaponMemory.Size = new System.Drawing.Size(82, 20);
-            this.nupRecentPlayerWeaponMemory.TabIndex = 74;
-            this.nupRecentPlayerWeaponMemory.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            -2147483648});
-            // 
-            // lblRecentPlayerWeaponMemory
-            // 
-            this.lblRecentPlayerWeaponMemory.AutoSize = true;
-            this.lblRecentPlayerWeaponMemory.Location = new System.Drawing.Point(94, 344);
-            this.lblRecentPlayerWeaponMemory.Name = "lblRecentPlayerWeaponMemory";
-            this.lblRecentPlayerWeaponMemory.Size = new System.Drawing.Size(64, 13);
-            this.lblRecentPlayerWeaponMemory.TabIndex = 73;
-            this.lblRecentPlayerWeaponMemory.Text = "Weapon lvl.";
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -5294,6 +5294,7 @@
             this.tclNet.ResumeLayout(false);
             this.tpgNetRecentPlayers.ResumeLayout(false);
             this.tpgNetRecentPlayers.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerWeaponMemory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerFaith)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerHumanity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerResistance)).EndInit();
@@ -5306,6 +5307,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerSoulLevel)).EndInit();
             this.tpgNetCurrentPlayers.ResumeLayout(false);
             this.tpgNetCurrentPlayers.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nupCurrentPlayerWeaponMemory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupCurrentPlayerFaith)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupCurrentPlayerHumanity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupCurrentPlayerResistance)).EndInit();
@@ -5327,8 +5329,6 @@
             this.tclSettings.ResumeLayout(false);
             this.tpgSettingsHotkeys.ResumeLayout(false);
             this.tpgSettingsHotkeys.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nupCurrentPlayerWeaponMemory)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nupRecentPlayerWeaponMemory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

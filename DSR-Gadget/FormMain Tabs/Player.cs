@@ -360,6 +360,7 @@ namespace DSR_Gadget
 
         private void updateTeam(ComboBox cmbChrSelect, int chrType, int teamType)
         {
+            // TODO: fix changing team when nud is frozen
             DSRTeam lastTeam = cmbChrSelect.SelectedItem as DSRTeam;
             if (!cmbChrSelect.DroppedDown && (lastTeam.ChrType != chrType || lastTeam.TeamType != teamType))
             {
@@ -387,27 +388,11 @@ namespace DSR_Gadget
             DSRArea lastAreaID = cmbAreaID.SelectedItem as DSRArea;
             if (cbxFreezeAreaID.Checked)
             {
-                //cmbAreaID.DropDownStyle = ComboBoxStyle.DropDown;
                 if (lastAreaID != null)
                     setHook(lastAreaID.AreaID);
-
-                /*
-                else
-                {
-                    try
-                    {
-                        Hook.AreaID = Convert.ToInt32(lastAreaIDItem.ToString());
-                    }
-                    catch
-                    {
-                        cmbAreaID.SelectedItem = Hook.AreaID;
-                    }
-                }
-                */
             }
             else
             {
-                //cmbAreaID.DropDownStyle = ComboBoxStyle.DropDownList;
                 if (!cmbAreaID.DroppedDown && lastAreaID.AreaID != areaID)
                 {
                     bool found = false;

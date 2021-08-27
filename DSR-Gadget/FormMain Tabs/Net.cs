@@ -233,18 +233,6 @@ namespace DSR_Gadget
         private void lbxNetCurrentPlayers_SelectedIndexChanged(object sender, EventArgs e)
         {
             updateCamera();
-            /*
-            if (cbxCurrentPlayerCamera.Checked)
-            {
-                DSRPlayer player = lbxNetCurrentPlayers.SelectedItem as DSRPlayer;
-                if (player != null)
-                {
-                    IntPtr playerInsPtr = player.PlayerInsPtr.Resolve();
-                    if (playerInsPtr != IntPtr.Zero)
-                        Hook.SetCamera(playerInsPtr);
-                }
-
-            }*/
         }
 
         private void updateSummonSignUI (DSRSummonSign sign)
