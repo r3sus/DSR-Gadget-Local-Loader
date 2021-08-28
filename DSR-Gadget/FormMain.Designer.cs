@@ -1538,10 +1538,10 @@
             // 
             // txtOnlineName
             // 
-            this.txtOnlineName.Enabled = false;
             this.txtOnlineName.Location = new System.Drawing.Point(212, 97);
             this.txtOnlineName.MaxLength = 15;
             this.txtOnlineName.Name = "txtOnlineName";
+            this.txtOnlineName.ReadOnly = true;
             this.txtOnlineName.Size = new System.Drawing.Size(146, 20);
             this.txtOnlineName.TabIndex = 16;
             // 
@@ -3558,7 +3558,6 @@
             // 
             // nupRecentPlayerWeaponMemory
             // 
-            this.nupRecentPlayerWeaponMemory.Enabled = false;
             this.nupRecentPlayerWeaponMemory.Location = new System.Drawing.Point(6, 342);
             this.nupRecentPlayerWeaponMemory.Maximum = new decimal(new int[] {
             999999999,
@@ -3571,6 +3570,7 @@
             0,
             -2147483648});
             this.nupRecentPlayerWeaponMemory.Name = "nupRecentPlayerWeaponMemory";
+            this.nupRecentPlayerWeaponMemory.ReadOnly = true;
             this.nupRecentPlayerWeaponMemory.Size = new System.Drawing.Size(82, 20);
             this.nupRecentPlayerWeaponMemory.TabIndex = 74;
             this.nupRecentPlayerWeaponMemory.Value = new decimal(new int[] {
@@ -3590,9 +3590,9 @@
             // 
             // txtRecentPlayerName
             // 
-            this.txtRecentPlayerName.Enabled = false;
             this.txtRecentPlayerName.Location = new System.Drawing.Point(6, 381);
             this.txtRecentPlayerName.Name = "txtRecentPlayerName";
+            this.txtRecentPlayerName.ReadOnly = true;
             this.txtRecentPlayerName.Size = new System.Drawing.Size(135, 20);
             this.txtRecentPlayerName.TabIndex = 72;
             // 
@@ -3987,7 +3987,6 @@
             // 
             // nupRecentPlayerFaith
             // 
-            this.nupRecentPlayerFaith.Enabled = false;
             this.nupRecentPlayerFaith.Location = new System.Drawing.Point(6, 290);
             this.nupRecentPlayerFaith.Maximum = new decimal(new int[] {
             999999999,
@@ -4000,6 +3999,7 @@
             0,
             -2147483648});
             this.nupRecentPlayerFaith.Name = "nupRecentPlayerFaith";
+            this.nupRecentPlayerFaith.ReadOnly = true;
             this.nupRecentPlayerFaith.Size = new System.Drawing.Size(82, 20);
             this.nupRecentPlayerFaith.TabIndex = 30;
             this.nupRecentPlayerFaith.Value = new decimal(new int[] {
@@ -4010,7 +4010,6 @@
             // 
             // nupRecentPlayerHumanity
             // 
-            this.nupRecentPlayerHumanity.Enabled = false;
             this.nupRecentPlayerHumanity.Location = new System.Drawing.Point(6, 316);
             this.nupRecentPlayerHumanity.Maximum = new decimal(new int[] {
             999999999,
@@ -4023,6 +4022,7 @@
             0,
             -2147483648});
             this.nupRecentPlayerHumanity.Name = "nupRecentPlayerHumanity";
+            this.nupRecentPlayerHumanity.ReadOnly = true;
             this.nupRecentPlayerHumanity.Size = new System.Drawing.Size(82, 20);
             this.nupRecentPlayerHumanity.TabIndex = 29;
             this.nupRecentPlayerHumanity.Value = new decimal(new int[] {
@@ -4033,7 +4033,6 @@
             // 
             // nupRecentPlayerResistance
             // 
-            this.nupRecentPlayerResistance.Enabled = false;
             this.nupRecentPlayerResistance.Location = new System.Drawing.Point(6, 238);
             this.nupRecentPlayerResistance.Maximum = new decimal(new int[] {
             999999999,
@@ -4046,6 +4045,7 @@
             0,
             -2147483648});
             this.nupRecentPlayerResistance.Name = "nupRecentPlayerResistance";
+            this.nupRecentPlayerResistance.ReadOnly = true;
             this.nupRecentPlayerResistance.Size = new System.Drawing.Size(82, 20);
             this.nupRecentPlayerResistance.TabIndex = 28;
             this.nupRecentPlayerResistance.Value = new decimal(new int[] {
@@ -4056,7 +4056,6 @@
             // 
             // nupRecentPlayerIntelligence
             // 
-            this.nupRecentPlayerIntelligence.Enabled = false;
             this.nupRecentPlayerIntelligence.Location = new System.Drawing.Point(6, 264);
             this.nupRecentPlayerIntelligence.Maximum = new decimal(new int[] {
             999999999,
@@ -4069,6 +4068,7 @@
             0,
             -2147483648});
             this.nupRecentPlayerIntelligence.Name = "nupRecentPlayerIntelligence";
+            this.nupRecentPlayerIntelligence.ReadOnly = true;
             this.nupRecentPlayerIntelligence.Size = new System.Drawing.Size(82, 20);
             this.nupRecentPlayerIntelligence.TabIndex = 27;
             this.nupRecentPlayerIntelligence.Value = new decimal(new int[] {
@@ -4079,7 +4079,6 @@
             // 
             // nupRecentPlayerStrength
             // 
-            this.nupRecentPlayerStrength.Enabled = false;
             this.nupRecentPlayerStrength.Location = new System.Drawing.Point(6, 186);
             this.nupRecentPlayerStrength.Maximum = new decimal(new int[] {
             999999999,
@@ -4092,6 +4091,7 @@
             0,
             -2147483648});
             this.nupRecentPlayerStrength.Name = "nupRecentPlayerStrength";
+            this.nupRecentPlayerStrength.ReadOnly = true;
             this.nupRecentPlayerStrength.Size = new System.Drawing.Size(82, 20);
             this.nupRecentPlayerStrength.TabIndex = 26;
             this.nupRecentPlayerStrength.Value = new decimal(new int[] {
@@ -4102,7 +4102,6 @@
             // 
             // nupRecentPlayerDexterity
             // 
-            this.nupRecentPlayerDexterity.Enabled = false;
             this.nupRecentPlayerDexterity.Location = new System.Drawing.Point(6, 212);
             this.nupRecentPlayerDexterity.Maximum = new decimal(new int[] {
             999999999,
@@ -4115,6 +4114,7 @@
             0,
             -2147483648});
             this.nupRecentPlayerDexterity.Name = "nupRecentPlayerDexterity";
+            this.nupRecentPlayerDexterity.ReadOnly = true;
             this.nupRecentPlayerDexterity.Size = new System.Drawing.Size(82, 20);
             this.nupRecentPlayerDexterity.TabIndex = 25;
             this.nupRecentPlayerDexterity.Value = new decimal(new int[] {
@@ -4125,7 +4125,6 @@
             // 
             // nupRecentPlayerVitality
             // 
-            this.nupRecentPlayerVitality.Enabled = false;
             this.nupRecentPlayerVitality.Location = new System.Drawing.Point(6, 108);
             this.nupRecentPlayerVitality.Maximum = new decimal(new int[] {
             999999999,
@@ -4138,6 +4137,7 @@
             0,
             -2147483648});
             this.nupRecentPlayerVitality.Name = "nupRecentPlayerVitality";
+            this.nupRecentPlayerVitality.ReadOnly = true;
             this.nupRecentPlayerVitality.Size = new System.Drawing.Size(82, 20);
             this.nupRecentPlayerVitality.TabIndex = 24;
             this.nupRecentPlayerVitality.Value = new decimal(new int[] {
@@ -4148,7 +4148,6 @@
             // 
             // nupRecentPlayerAttunement
             // 
-            this.nupRecentPlayerAttunement.Enabled = false;
             this.nupRecentPlayerAttunement.Location = new System.Drawing.Point(6, 134);
             this.nupRecentPlayerAttunement.Maximum = new decimal(new int[] {
             999999999,
@@ -4161,6 +4160,7 @@
             0,
             -2147483648});
             this.nupRecentPlayerAttunement.Name = "nupRecentPlayerAttunement";
+            this.nupRecentPlayerAttunement.ReadOnly = true;
             this.nupRecentPlayerAttunement.Size = new System.Drawing.Size(82, 20);
             this.nupRecentPlayerAttunement.TabIndex = 23;
             this.nupRecentPlayerAttunement.Value = new decimal(new int[] {
@@ -4171,7 +4171,6 @@
             // 
             // nupRecentPlayerEndurance
             // 
-            this.nupRecentPlayerEndurance.Enabled = false;
             this.nupRecentPlayerEndurance.Location = new System.Drawing.Point(6, 160);
             this.nupRecentPlayerEndurance.Maximum = new decimal(new int[] {
             999999999,
@@ -4184,6 +4183,7 @@
             0,
             -2147483648});
             this.nupRecentPlayerEndurance.Name = "nupRecentPlayerEndurance";
+            this.nupRecentPlayerEndurance.ReadOnly = true;
             this.nupRecentPlayerEndurance.Size = new System.Drawing.Size(82, 20);
             this.nupRecentPlayerEndurance.TabIndex = 22;
             this.nupRecentPlayerEndurance.Value = new decimal(new int[] {
@@ -4194,7 +4194,6 @@
             // 
             // nupRecentPlayerSoulLevel
             // 
-            this.nupRecentPlayerSoulLevel.Enabled = false;
             this.nupRecentPlayerSoulLevel.Location = new System.Drawing.Point(6, 82);
             this.nupRecentPlayerSoulLevel.Maximum = new decimal(new int[] {
             999999999,
@@ -4207,6 +4206,7 @@
             0,
             -2147483648});
             this.nupRecentPlayerSoulLevel.Name = "nupRecentPlayerSoulLevel";
+            this.nupRecentPlayerSoulLevel.ReadOnly = true;
             this.nupRecentPlayerSoulLevel.Size = new System.Drawing.Size(82, 20);
             this.nupRecentPlayerSoulLevel.TabIndex = 21;
             this.nupRecentPlayerSoulLevel.Value = new decimal(new int[] {
@@ -4357,7 +4357,6 @@
             // 
             // nupCurrentPlayerWeaponMemory
             // 
-            this.nupCurrentPlayerWeaponMemory.Enabled = false;
             this.nupCurrentPlayerWeaponMemory.Location = new System.Drawing.Point(6, 342);
             this.nupCurrentPlayerWeaponMemory.Maximum = new decimal(new int[] {
             999999999,
@@ -4370,6 +4369,7 @@
             0,
             -2147483648});
             this.nupCurrentPlayerWeaponMemory.Name = "nupCurrentPlayerWeaponMemory";
+            this.nupCurrentPlayerWeaponMemory.ReadOnly = true;
             this.nupCurrentPlayerWeaponMemory.Size = new System.Drawing.Size(82, 20);
             this.nupCurrentPlayerWeaponMemory.TabIndex = 62;
             this.nupCurrentPlayerWeaponMemory.Value = new decimal(new int[] {
@@ -4430,17 +4430,17 @@
             // 
             // txtCurrentPlayerSteamName
             // 
-            this.txtCurrentPlayerSteamName.Enabled = false;
             this.txtCurrentPlayerSteamName.Location = new System.Drawing.Point(6, 420);
             this.txtCurrentPlayerSteamName.Name = "txtCurrentPlayerSteamName";
+            this.txtCurrentPlayerSteamName.ReadOnly = true;
             this.txtCurrentPlayerSteamName.Size = new System.Drawing.Size(135, 20);
             this.txtCurrentPlayerSteamName.TabIndex = 56;
             // 
             // txtCurrentPlayerName
             // 
-            this.txtCurrentPlayerName.Enabled = false;
             this.txtCurrentPlayerName.Location = new System.Drawing.Point(6, 381);
             this.txtCurrentPlayerName.Name = "txtCurrentPlayerName";
+            this.txtCurrentPlayerName.ReadOnly = true;
             this.txtCurrentPlayerName.Size = new System.Drawing.Size(135, 20);
             this.txtCurrentPlayerName.TabIndex = 55;
             // 
@@ -4474,7 +4474,6 @@
             // 
             // nupCurrentPlayerFaith
             // 
-            this.nupCurrentPlayerFaith.Enabled = false;
             this.nupCurrentPlayerFaith.Location = new System.Drawing.Point(6, 290);
             this.nupCurrentPlayerFaith.Maximum = new decimal(new int[] {
             999999999,
@@ -4487,6 +4486,7 @@
             0,
             -2147483648});
             this.nupCurrentPlayerFaith.Name = "nupCurrentPlayerFaith";
+            this.nupCurrentPlayerFaith.ReadOnly = true;
             this.nupCurrentPlayerFaith.Size = new System.Drawing.Size(82, 20);
             this.nupCurrentPlayerFaith.TabIndex = 51;
             this.nupCurrentPlayerFaith.Value = new decimal(new int[] {
@@ -4497,7 +4497,6 @@
             // 
             // nupCurrentPlayerHumanity
             // 
-            this.nupCurrentPlayerHumanity.Enabled = false;
             this.nupCurrentPlayerHumanity.Location = new System.Drawing.Point(6, 316);
             this.nupCurrentPlayerHumanity.Maximum = new decimal(new int[] {
             999999999,
@@ -4510,6 +4509,7 @@
             0,
             -2147483648});
             this.nupCurrentPlayerHumanity.Name = "nupCurrentPlayerHumanity";
+            this.nupCurrentPlayerHumanity.ReadOnly = true;
             this.nupCurrentPlayerHumanity.Size = new System.Drawing.Size(82, 20);
             this.nupCurrentPlayerHumanity.TabIndex = 50;
             this.nupCurrentPlayerHumanity.Value = new decimal(new int[] {
@@ -4520,7 +4520,6 @@
             // 
             // nupCurrentPlayerResistance
             // 
-            this.nupCurrentPlayerResistance.Enabled = false;
             this.nupCurrentPlayerResistance.Location = new System.Drawing.Point(6, 238);
             this.nupCurrentPlayerResistance.Maximum = new decimal(new int[] {
             999999999,
@@ -4533,6 +4532,7 @@
             0,
             -2147483648});
             this.nupCurrentPlayerResistance.Name = "nupCurrentPlayerResistance";
+            this.nupCurrentPlayerResistance.ReadOnly = true;
             this.nupCurrentPlayerResistance.Size = new System.Drawing.Size(82, 20);
             this.nupCurrentPlayerResistance.TabIndex = 49;
             this.nupCurrentPlayerResistance.Value = new decimal(new int[] {
@@ -4543,7 +4543,6 @@
             // 
             // nupCurrentPlayerIntelligence
             // 
-            this.nupCurrentPlayerIntelligence.Enabled = false;
             this.nupCurrentPlayerIntelligence.Location = new System.Drawing.Point(6, 264);
             this.nupCurrentPlayerIntelligence.Maximum = new decimal(new int[] {
             999999999,
@@ -4556,6 +4555,7 @@
             0,
             -2147483648});
             this.nupCurrentPlayerIntelligence.Name = "nupCurrentPlayerIntelligence";
+            this.nupCurrentPlayerIntelligence.ReadOnly = true;
             this.nupCurrentPlayerIntelligence.Size = new System.Drawing.Size(82, 20);
             this.nupCurrentPlayerIntelligence.TabIndex = 48;
             this.nupCurrentPlayerIntelligence.Value = new decimal(new int[] {
@@ -4566,7 +4566,6 @@
             // 
             // nupCurrentPlayerStrength
             // 
-            this.nupCurrentPlayerStrength.Enabled = false;
             this.nupCurrentPlayerStrength.Location = new System.Drawing.Point(6, 186);
             this.nupCurrentPlayerStrength.Maximum = new decimal(new int[] {
             999999999,
@@ -4579,6 +4578,7 @@
             0,
             -2147483648});
             this.nupCurrentPlayerStrength.Name = "nupCurrentPlayerStrength";
+            this.nupCurrentPlayerStrength.ReadOnly = true;
             this.nupCurrentPlayerStrength.Size = new System.Drawing.Size(82, 20);
             this.nupCurrentPlayerStrength.TabIndex = 47;
             this.nupCurrentPlayerStrength.Value = new decimal(new int[] {
@@ -4589,7 +4589,6 @@
             // 
             // nupCurrentPlayerDexterity
             // 
-            this.nupCurrentPlayerDexterity.Enabled = false;
             this.nupCurrentPlayerDexterity.Location = new System.Drawing.Point(6, 212);
             this.nupCurrentPlayerDexterity.Maximum = new decimal(new int[] {
             999999999,
@@ -4602,6 +4601,7 @@
             0,
             -2147483648});
             this.nupCurrentPlayerDexterity.Name = "nupCurrentPlayerDexterity";
+            this.nupCurrentPlayerDexterity.ReadOnly = true;
             this.nupCurrentPlayerDexterity.Size = new System.Drawing.Size(82, 20);
             this.nupCurrentPlayerDexterity.TabIndex = 46;
             this.nupCurrentPlayerDexterity.Value = new decimal(new int[] {
@@ -4612,7 +4612,6 @@
             // 
             // nupCurrentPlayerVitality
             // 
-            this.nupCurrentPlayerVitality.Enabled = false;
             this.nupCurrentPlayerVitality.Location = new System.Drawing.Point(6, 108);
             this.nupCurrentPlayerVitality.Maximum = new decimal(new int[] {
             999999999,
@@ -4625,6 +4624,7 @@
             0,
             -2147483648});
             this.nupCurrentPlayerVitality.Name = "nupCurrentPlayerVitality";
+            this.nupCurrentPlayerVitality.ReadOnly = true;
             this.nupCurrentPlayerVitality.Size = new System.Drawing.Size(82, 20);
             this.nupCurrentPlayerVitality.TabIndex = 45;
             this.nupCurrentPlayerVitality.Value = new decimal(new int[] {
@@ -4635,7 +4635,6 @@
             // 
             // nupCurrentPlayerAttunement
             // 
-            this.nupCurrentPlayerAttunement.Enabled = false;
             this.nupCurrentPlayerAttunement.Location = new System.Drawing.Point(6, 134);
             this.nupCurrentPlayerAttunement.Maximum = new decimal(new int[] {
             999999999,
@@ -4648,6 +4647,7 @@
             0,
             -2147483648});
             this.nupCurrentPlayerAttunement.Name = "nupCurrentPlayerAttunement";
+            this.nupCurrentPlayerAttunement.ReadOnly = true;
             this.nupCurrentPlayerAttunement.Size = new System.Drawing.Size(82, 20);
             this.nupCurrentPlayerAttunement.TabIndex = 44;
             this.nupCurrentPlayerAttunement.Value = new decimal(new int[] {
@@ -4658,7 +4658,6 @@
             // 
             // nupCurrentPlayerEndurance
             // 
-            this.nupCurrentPlayerEndurance.Enabled = false;
             this.nupCurrentPlayerEndurance.Location = new System.Drawing.Point(6, 160);
             this.nupCurrentPlayerEndurance.Maximum = new decimal(new int[] {
             999999999,
@@ -4671,6 +4670,7 @@
             0,
             -2147483648});
             this.nupCurrentPlayerEndurance.Name = "nupCurrentPlayerEndurance";
+            this.nupCurrentPlayerEndurance.ReadOnly = true;
             this.nupCurrentPlayerEndurance.Size = new System.Drawing.Size(82, 20);
             this.nupCurrentPlayerEndurance.TabIndex = 43;
             this.nupCurrentPlayerEndurance.Value = new decimal(new int[] {
@@ -4681,7 +4681,6 @@
             // 
             // nupCurrentPlayerSoulLevel
             // 
-            this.nupCurrentPlayerSoulLevel.Enabled = false;
             this.nupCurrentPlayerSoulLevel.Location = new System.Drawing.Point(6, 82);
             this.nupCurrentPlayerSoulLevel.Maximum = new decimal(new int[] {
             999999999,
@@ -4694,6 +4693,7 @@
             0,
             -2147483648});
             this.nupCurrentPlayerSoulLevel.Name = "nupCurrentPlayerSoulLevel";
+            this.nupCurrentPlayerSoulLevel.ReadOnly = true;
             this.nupCurrentPlayerSoulLevel.Size = new System.Drawing.Size(82, 20);
             this.nupCurrentPlayerSoulLevel.TabIndex = 42;
             this.nupCurrentPlayerSoulLevel.Value = new decimal(new int[] {
@@ -4824,7 +4824,7 @@
             this.tpgNetSummonSigns.Padding = new System.Windows.Forms.Padding(3);
             this.tpgNetSummonSigns.Size = new System.Drawing.Size(376, 541);
             this.tpgNetSummonSigns.TabIndex = 2;
-            this.tpgNetSummonSigns.Text = "Summon SIgns";
+            this.tpgNetSummonSigns.Text = "Summon Signs";
             this.tpgNetSummonSigns.UseVisualStyleBackColor = true;
             // 
             // lblSosSpawnPosition
