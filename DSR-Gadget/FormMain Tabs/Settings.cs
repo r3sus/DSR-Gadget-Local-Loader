@@ -1,4 +1,5 @@
 ﻿using LowLevelHooking;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -180,6 +181,8 @@ namespace DSR_Gadget
 #endif
 
             keyboardHook.KeyDownOrUp += GlobalKeyboardHook_KeyDownOrUp;
+
+            txtSettingsSteamAPIKey.Text = settings.SteamAPIKey;
         }
 
         private void saveHotkeys()
@@ -207,6 +210,11 @@ namespace DSR_Gadget
                         e.Handled = true;
                 }
             }
+        }
+
+        private void txtSettingsSteamAPIKey_TextChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.SteamAPIKey = txtSettingsSteamAPIKey.Text;
         }
     }
 }

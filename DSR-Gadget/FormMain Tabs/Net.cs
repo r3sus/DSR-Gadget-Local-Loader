@@ -1,5 +1,7 @@
-﻿using System;
+﻿using DSR_Gadget.SubForms;
+using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DSR_Gadget
@@ -12,7 +14,6 @@ namespace DSR_Gadget
         private List<DSRSummonSign> SummonSignList;
         private DSRPlayer EmptyPlayer;
         private DSRSummonSign EmptySummonSign;
-        private string SteamFamilyShareApiURL = "http://api.steampowered.com/IPlayerService/IsPlayingSharedGame/v0001/";
 
         private void initInfo()
         {
@@ -39,7 +40,7 @@ namespace DSR_Gadget
             cmbSosSummonType.SelectedIndex = 0;
             cmbSosSummonType.SelectedIndexChanged += cmbSummonType_SelectedIndexChanged;
 
-
+            btnCurrentPlayerFamilyShare.Enabled = true;
 
             /*
             Dictionary<int, DSRItem> weapons = new Dictionary<int, DSRItem>();
@@ -256,6 +257,20 @@ namespace DSR_Gadget
                 Hook.KickPlayer(player, index);
         }
 
+        private async void btnCurrentPlayerFamilyShare_Click(object sender, EventArgs e)
+        {
+            
+            DSRPlayer player = lbxNetCurrentPlayers.SelectedItem as DSRPlayer;
+            if (player != null && player.SteamID64 > 0)
+            {
+                FamilyShareForm familyShareForm = new FamilyShareForm();
+                familyShareForm.SteamID = player.SteamID64;
+                familyShareForm.StartPosition = FormStartPosition.CenterScreen;
+                familyShareForm.Show();
+                await familyShareForm.LoadFamilyShareInfo();
+            }
+        }
+
         private void cbxCurrentPlayerCamera_CheckedChanged(object sender, EventArgs e)
         {
             updateCamera();
@@ -343,30 +358,5 @@ namespace DSR_Gadget
             if (loaded && !reading && sign != null)
                 sign.PosAngle = (float)nudSosPosAngle.Value;
         }
-
-        /*
-        private void btnCurrentPlayerFamilyShare_Click(object sender, EventArgs e)
-        {
-            HttpClient client = new HttpClient();
-            string key = "2970120F0D99D66350F8D6637DA2E08D";
-            string id = int.Parse((cmbAreaID.SelectedItem as DSRPlayer).SteamID64, System.Globalization.NumberStyles.HexNumber).ToString();
-            string appID = "570940";
-            string format = "json";
-            string urlParameters = 
-                "?key=" + key + 
-                "&steamid=" + id + 
-                "&appid_playing=" + appID + 
-                "&format=" + format;
-            client.BaseAddress = new Uri(SteamFamilyShareApiURL);
-
-            client.DefaultRequestHeaders.Accept.Add(
-                new MediaTypeWithQualityHeaderValue("application/json"));
-            HttpResponseMessage response = client.GetAsync(urlParameters).Result;
-            if (response.IsSuccessStatusCode)
-            {
-                var dataObjects = response.Content.ReadAsStringAsync<>
-            }
-        }
-        */
     }
 }

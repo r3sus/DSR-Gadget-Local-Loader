@@ -401,6 +401,8 @@
             this.tmrUpdate = new System.Windows.Forms.Timer(this.components);
             this.lblUpdate = new System.Windows.Forms.Label();
             this.llbUpdate = new System.Windows.Forms.LinkLabel();
+            this.lblSettingsSteamAPIKey = new System.Windows.Forms.Label();
+            this.txtSettingsSteamAPIKey = new System.Windows.Forms.TextBox();
             this.tclMain.SuspendLayout();
             this.tpgPlayer.SuspendLayout();
             this.gbxOther.SuspendLayout();
@@ -516,6 +518,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudSosSoulLevel)).BeginInit();
             this.tpgHotkeys.SuspendLayout();
             this.tclSettings.SuspendLayout();
+            this.tpgSetingsSettings.SuspendLayout();
             this.tpgSettingsHotkeys.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -4414,6 +4417,7 @@
             this.btnCurrentPlayerFamilyShare.TabIndex = 58;
             this.btnCurrentPlayerFamilyShare.Text = "Family Share";
             this.btnCurrentPlayerFamilyShare.UseVisualStyleBackColor = true;
+            this.btnCurrentPlayerFamilyShare.Click += new System.EventHandler(this.btnCurrentPlayerFamilyShare_Click);
             // 
             // btnCurrentPlayerMore
             // 
@@ -5055,6 +5059,8 @@
             // 
             // tpgSetingsSettings
             // 
+            this.tpgSetingsSettings.Controls.Add(this.txtSettingsSteamAPIKey);
+            this.tpgSetingsSettings.Controls.Add(this.lblSettingsSteamAPIKey);
             this.tpgSetingsSettings.Location = new System.Drawing.Point(4, 22);
             this.tpgSetingsSettings.Name = "tpgSetingsSettings";
             this.tpgSetingsSettings.Padding = new System.Windows.Forms.Padding(3);
@@ -5172,6 +5178,23 @@
             this.llbUpdate.Text = "Click to download";
             this.llbUpdate.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.llbUpdate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbUpdate_LinkClicked);
+            // 
+            // lblSettingsSteamAPIKey
+            // 
+            this.lblSettingsSteamAPIKey.AutoSize = true;
+            this.lblSettingsSteamAPIKey.Location = new System.Drawing.Point(6, 3);
+            this.lblSettingsSteamAPIKey.Name = "lblSettingsSteamAPIKey";
+            this.lblSettingsSteamAPIKey.Size = new System.Drawing.Size(78, 13);
+            this.lblSettingsSteamAPIKey.TabIndex = 0;
+            this.lblSettingsSteamAPIKey.Text = "Steam API Key";
+            // 
+            // txtSettingsSteamAPIKey
+            // 
+            this.txtSettingsSteamAPIKey.Location = new System.Drawing.Point(6, 19);
+            this.txtSettingsSteamAPIKey.Name = "txtSettingsSteamAPIKey";
+            this.txtSettingsSteamAPIKey.Size = new System.Drawing.Size(364, 20);
+            this.txtSettingsSteamAPIKey.TabIndex = 1;
+            this.txtSettingsSteamAPIKey.TextChanged += new System.EventHandler(this.txtSettingsSteamAPIKey_TextChanged);
             // 
             // FormMain
             // 
@@ -5327,6 +5350,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudSosSoulLevel)).EndInit();
             this.tpgHotkeys.ResumeLayout(false);
             this.tclSettings.ResumeLayout(false);
+            this.tpgSetingsSettings.ResumeLayout(false);
+            this.tpgSetingsSettings.PerformLayout();
             this.tpgSettingsHotkeys.ResumeLayout(false);
             this.tpgSettingsHotkeys.PerformLayout();
             this.ResumeLayout(false);
@@ -5707,6 +5732,8 @@
         private System.Windows.Forms.Label lblCurrentPlayerWeaponMemory;
         private System.Windows.Forms.NumericUpDown nupRecentPlayerWeaponMemory;
         private System.Windows.Forms.Label lblRecentPlayerWeaponMemory;
+        private System.Windows.Forms.TextBox txtSettingsSteamAPIKey;
+        private System.Windows.Forms.Label lblSettingsSteamAPIKey;
     }
 }
 

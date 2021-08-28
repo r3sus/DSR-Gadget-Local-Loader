@@ -538,5 +538,17 @@ namespace DSR_Gadget.Properties {
                 this["HotkeyHUD"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SteamAPIKey {
+            get {
+                return ((string)(this["SteamAPIKey"]));
+            }
+            set {
+                this["SteamAPIKey"] = value;
+            }
+        }
     }
 }
