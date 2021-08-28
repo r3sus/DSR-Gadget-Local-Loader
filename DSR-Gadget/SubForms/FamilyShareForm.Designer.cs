@@ -254,6 +254,7 @@ namespace DSR_Gadget.SubForms
             this.Controls.Add(this.pbxSteamAvatar);
             this.Controls.Add(this.txtShareSteamID);
             this.Controls.Add(this.txtSteamID);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FamilyShareForm";
             this.Text = "Family share info";

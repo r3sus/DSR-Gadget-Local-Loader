@@ -390,6 +390,8 @@
             this.tpgHotkeys = new System.Windows.Forms.TabPage();
             this.tclSettings = new System.Windows.Forms.TabControl();
             this.tpgSetingsSettings = new System.Windows.Forms.TabPage();
+            this.txtSettingsSteamAPIKey = new System.Windows.Forms.TextBox();
+            this.lblSettingsSteamAPIKey = new System.Windows.Forms.Label();
             this.tpgSettingsHotkeys = new System.Windows.Forms.TabPage();
             this.flpHotkeyControls = new System.Windows.Forms.FlowLayoutPanel();
             this.cbxHotkeysHandle = new System.Windows.Forms.CheckBox();
@@ -401,8 +403,6 @@
             this.tmrUpdate = new System.Windows.Forms.Timer(this.components);
             this.lblUpdate = new System.Windows.Forms.Label();
             this.llbUpdate = new System.Windows.Forms.LinkLabel();
-            this.lblSettingsSteamAPIKey = new System.Windows.Forms.Label();
-            this.txtSettingsSteamAPIKey = new System.Windows.Forms.TextBox();
             this.tclMain.SuspendLayout();
             this.tpgPlayer.SuspendLayout();
             this.gbxOther.SuspendLayout();
@@ -5069,6 +5069,24 @@
             this.tpgSetingsSettings.Text = "Settings";
             this.tpgSetingsSettings.UseVisualStyleBackColor = true;
             // 
+            // txtSettingsSteamAPIKey
+            // 
+            this.txtSettingsSteamAPIKey.Location = new System.Drawing.Point(6, 19);
+            this.txtSettingsSteamAPIKey.Name = "txtSettingsSteamAPIKey";
+            this.txtSettingsSteamAPIKey.PasswordChar = '*';
+            this.txtSettingsSteamAPIKey.Size = new System.Drawing.Size(364, 20);
+            this.txtSettingsSteamAPIKey.TabIndex = 1;
+            this.txtSettingsSteamAPIKey.TextChanged += new System.EventHandler(this.txtSettingsSteamAPIKey_TextChanged);
+            // 
+            // lblSettingsSteamAPIKey
+            // 
+            this.lblSettingsSteamAPIKey.AutoSize = true;
+            this.lblSettingsSteamAPIKey.Location = new System.Drawing.Point(6, 3);
+            this.lblSettingsSteamAPIKey.Name = "lblSettingsSteamAPIKey";
+            this.lblSettingsSteamAPIKey.Size = new System.Drawing.Size(78, 13);
+            this.lblSettingsSteamAPIKey.TabIndex = 0;
+            this.lblSettingsSteamAPIKey.Text = "Steam API Key";
+            // 
             // tpgSettingsHotkeys
             // 
             this.tpgSettingsHotkeys.Controls.Add(this.flpHotkeyControls);
@@ -5178,23 +5196,6 @@
             this.llbUpdate.Text = "Click to download";
             this.llbUpdate.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.llbUpdate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbUpdate_LinkClicked);
-            // 
-            // lblSettingsSteamAPIKey
-            // 
-            this.lblSettingsSteamAPIKey.AutoSize = true;
-            this.lblSettingsSteamAPIKey.Location = new System.Drawing.Point(6, 3);
-            this.lblSettingsSteamAPIKey.Name = "lblSettingsSteamAPIKey";
-            this.lblSettingsSteamAPIKey.Size = new System.Drawing.Size(78, 13);
-            this.lblSettingsSteamAPIKey.TabIndex = 0;
-            this.lblSettingsSteamAPIKey.Text = "Steam API Key";
-            // 
-            // txtSettingsSteamAPIKey
-            // 
-            this.txtSettingsSteamAPIKey.Location = new System.Drawing.Point(6, 19);
-            this.txtSettingsSteamAPIKey.Name = "txtSettingsSteamAPIKey";
-            this.txtSettingsSteamAPIKey.Size = new System.Drawing.Size(364, 20);
-            this.txtSettingsSteamAPIKey.TabIndex = 1;
-            this.txtSettingsSteamAPIKey.TextChanged += new System.EventHandler(this.txtSettingsSteamAPIKey_TextChanged);
             // 
             // FormMain
             // 
