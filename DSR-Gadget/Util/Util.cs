@@ -39,5 +39,13 @@ namespace DSR_Gadget.Util
                 }
             }
         }
+
+        public static TValue DictGetOrDefault<TKey, TValue>(Dictionary<TKey, TValue> dict, TKey key, TValue defaultValue)
+        {
+            TValue value;
+            if (!dict.TryGetValue(key, out value))
+                value = defaultValue;
+            return value;
+        }
     }
 }

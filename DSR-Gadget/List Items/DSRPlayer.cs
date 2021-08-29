@@ -396,7 +396,125 @@ namespace DSR_Gadget
             set => PlayerGameDataPtr.WriteByte((int)DSROffsets.PlayerGameData.LegSize, value);
         }
 
-        #endregion fashion
+        #endregion
+
+        #region Equipment
+
+        public int ArmorHead
+        {
+            get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.ArmorHead);
+            set => PlayerGameDataPtr.WriteInt32((int)DSROffsets.PlayerGameData.ArmorHead, value);
+        }
+
+        public int ArmorChest
+        {
+            get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.ArmorChest);
+            set => PlayerGameDataPtr.WriteInt32((int)DSROffsets.PlayerGameData.ArmorChest, value);
+        }
+
+        public int ArmorHands
+        {
+            get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.ArmorHands);
+            set => PlayerGameDataPtr.WriteInt32((int)DSROffsets.PlayerGameData.ArmorHands, value);
+        }
+
+        public int ArmorLegs
+        {
+            get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.ArmorLegs);
+            set => PlayerGameDataPtr.WriteInt32((int)DSROffsets.PlayerGameData.ArmorLegs, value);
+        }
+
+        public int Arrow1
+        {
+            get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.Arrow1);
+            set => PlayerGameDataPtr.WriteInt32((int)DSROffsets.PlayerGameData.Arrow1, value);
+        }
+
+        public int Arrow2
+        {
+            get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.Arrow2);
+            set => PlayerGameDataPtr.WriteInt32((int)DSROffsets.PlayerGameData.Arrow2, value);
+        }
+
+        public int Bolt1
+        {
+            get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.Bolt1);
+            set => PlayerGameDataPtr.WriteInt32((int)DSROffsets.PlayerGameData.Bolt1, value);
+        }
+
+        public int Bolt2
+        {
+            get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.Bolt2);
+            set => PlayerGameDataPtr.WriteInt32((int)DSROffsets.PlayerGameData.Bolt2, value);
+        }
+
+        public int RightWep1
+        {
+            get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.RightWep1);
+            set => PlayerGameDataPtr.WriteInt32((int)DSROffsets.PlayerGameData.RightWep1, value);
+        }
+
+        public int RightWep2
+        {
+            get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.RightWep2);
+            set => PlayerGameDataPtr.WriteInt32((int)DSROffsets.PlayerGameData.RightWep2, value);
+        }
+
+        public int LeftWep1
+        {
+            get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.LeftWep1);
+            set => PlayerGameDataPtr.WriteInt32((int)DSROffsets.PlayerGameData.LeftWep1, value);
+        }
+
+        public int LeftWep2
+        {
+            get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.LeftWep2);
+            set => PlayerGameDataPtr.WriteInt32((int)DSROffsets.PlayerGameData.LeftWep2, value);
+        }
+
+        public int Ring1
+        {
+            get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.Ring1);
+            set => PlayerGameDataPtr.WriteInt32((int)DSROffsets.PlayerGameData.Ring1, value);
+        }
+
+        public int Ring2
+        {
+            get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.Ring2);
+            set => PlayerGameDataPtr.WriteInt32((int)DSROffsets.PlayerGameData.Ring2, value);
+        }
+
+        public int Quickbar1
+        {
+            get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.Quickbar1);
+            set => PlayerGameDataPtr.WriteInt32((int)DSROffsets.PlayerGameData.Quickbar1, value);
+        }
+
+        public int Quickbar2
+        {
+            get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.Quickbar2);
+            set => PlayerGameDataPtr.WriteInt32((int)DSROffsets.PlayerGameData.Quickbar2, value);
+        }
+
+        public int Quickbar3
+        {
+            get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.Quickbar3);
+            set => PlayerGameDataPtr.WriteInt32((int)DSROffsets.PlayerGameData.Quickbar3, value);
+        }
+
+        public int Quickbar4
+        {
+            get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.Quickbar4);
+            set => PlayerGameDataPtr.WriteInt32((int)DSROffsets.PlayerGameData.Quickbar4, value);
+        }
+
+        public int Quickbar5
+        {
+            get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.Quickbar5);
+            set => PlayerGameDataPtr.WriteInt32((int)DSROffsets.PlayerGameData.Quickbar5, value);
+        }
+
+        #endregion
 
         #region Gestures
         public bool GesturePointForward

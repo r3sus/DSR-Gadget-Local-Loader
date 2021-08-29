@@ -61,6 +61,84 @@ namespace DSR_Gadget.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 1000	Shaved
+        ///1100	Receding
+        ///1200	Short
+        ///1300	Swept Back
+        ///1400	Ponytail
+        ///1500	Wild
+        ///1600	Parted Center
+        ///1700	Semi-Long
+        ///1800	Curly
+        ///1900	Bobbed
+        ///2000	Male 11
+        ///2100	Male 12
+        ///2200	Male 13
+        ///2300	Male 14
+        ///2400	Male 15
+        ///2500	Male 16
+        ///2600	Male 17
+        ///2700	Male 18
+        ///2800	Male 19
+        ///2900	Male 20
+        ///3000	Shaved
+        ///3100	Very Short
+        ///3200	Wave
+        ///3300	Straight A
+        ///3400	Straight B
+        ///3500	Ponytail A
+        ///3600	Ponytail B
+        ///3700	Pigtails
+        ///3800	Bun
+        ///3900	Braided
+        ///4000	Female 11
+        ///4100	Female 12
+        ///4200	Female 13
+        ///4300	Female 14
+        ///4400	Female 15
+        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string AllProtectors {
+            get {
+                return ResourceManager.GetString("AllProtectors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 100000	Dagger
+        ///100001	Dagger+1
+        ///100002	Dagger+2
+        ///100003	Dagger+3
+        ///100004	Dagger+4
+        ///100005	Dagger+5
+        ///100006	Dagger+6
+        ///100007	Dagger+7
+        ///100008	Dagger+8
+        ///100009	Dagger+9
+        ///100010	Dagger+10
+        ///100011	Dagger+11
+        ///100012	Dagger+12
+        ///100013	Dagger+13
+        ///100014	Dagger+14
+        ///100015	Dagger+15
+        ///100100	Crystal Dagger
+        ///100101	Crystal Dagger+1
+        ///100102	Crystal Dagger+2
+        ///100103	Crystal Dagger+3
+        ///100104	Crystal Dagger+4
+        ///100105	Crystal Dagger+5
+        ///100200	Lightning Dagger
+        ///100201	Lightning Dagger+1
+        ///100202	Lightning Dagger+2
+        ///100203	Li [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string AllWeapons {
+            get {
+                return ResourceManager.GetString("AllWeapons", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 100000 Depths #1 (beginning of level)
         ///100001 Depths #2 (near bonfire key)
         ///100010 Depths #3 (near channeler)
@@ -633,27 +711,27 @@ namespace DSR_Gadget.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 0 None
-        ///1 White Summon
-        ///2 Red Summon
-        ///3 Red Invade
-        ///7 Gravelord Invade
-        ///10 Dragon Summon
-        ///11 Darkmoon Invade
-        ///12 Arena (1v1)
-        ///13 Arena (1v1)
-        ///14 Arena (Team)
-        ///15 Arena (Team)
-        ///16 Arena (Team)
-        ///17 Arena (Team)
-        ///18 Arena (Team)
-        ///19 Arena (Team)
-        ///20 Arena (FFA)
-        ///21 Arena (FFA)
-        ///22 Arena (FFA)
-        ///23 Arena (FFA)
-        ///24 Arena (FFA)
-        ///25 Arena (FFA).
+        ///   Looks up a localized string similar to 0 White Phantom
+        ///1 Black Phantom (Invade)
+        ///2 Black Phantom
+        ///3 Dragon Spirit
+        ///4 White Phantom
+        ///5 Black Phantom (Team)
+        ///6 Summon Gravelord phantom
+        ///7 Never Connects
+        ///8 Instant DC (InvadeType 8) (ttype 17, chrtype 2)
+        ///8 Instant DC (InvadeType 9) (ttype 17, chrtype 2)
+        ///10 Summon Dragon Spirit (Instant DC?)
+        ///11 Invade Darkmoon (Instant DC?)
+        ///12 Arena (FFA)
+        ///13 Arena (FFA) (ttype 16, chrtype 13)
+        ///14 Arena (Team 1)
+        ///15 Arena (Team 1)
+        ///16 Arena (Team 1)
+        ///17 Arena (Team 2)
+        ///18 Arena (Team 2)
+        ///19 Arena (Team 2)
+        ///20 A [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Summons {
             get {

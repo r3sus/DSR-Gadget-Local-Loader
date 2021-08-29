@@ -208,4 +208,10 @@
   <data name="Summons" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Summons.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="AllProtectors" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Items\FullLists\AllProtectors.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="AllWeapons" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Items\FullLists\AllWeapons.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

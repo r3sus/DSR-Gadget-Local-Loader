@@ -369,11 +369,11 @@ namespace DSR_Gadget
             Hair = 0x354,
             Ring1 = 0x358,
             Ring2 = 0x35C,
-            QuickBar1 = 0x360,
-            QuickBar2 = 0x364,
-            QuickBar3 = 0x368,
-            QuickBar4 = 0x36C,
-            QuickBar5 = 0x370,
+            Quickbar1 = 0x360,
+            Quickbar2 = 0x364,
+            Quickbar3 = 0x368,
+            Quickbar4 = 0x36C,
+            Quickbar5 = 0x370,
 
             HeadSize = 0x388,
             ChestSize = 0x38C,
@@ -488,6 +488,52 @@ namespace DSR_Gadget
         }
 
         public const string SoloParamManAOB = "4C 8B 05 ? ? ? ? 48 63 C9 48 8D 04 C9 41 3B 54 C0 10 7D ? 48 63 C2 48 8D 0C C9 48 03 C8 49 8B 44 C8 18";
+        public const int SoloParamManOffset1 = 0x0;
+
+        public enum SoloParamMan
+        {
+            EquipParamWeapon = 0x18,
+            EquipParamProtector = 0x60,
+            EquipParamAccessory = 0xA8,
+            EquipParamGoods = 0xF0,
+            ReinforceParamWeapon = 0x138,
+            ReinforceParamProtector = 0x180,
+            NpcParam = 0x1C8,
+            AtkParam = 0x210, // AtkParamNpc??
+            AtkParamPC = 0x258,
+            NpcThinkParam = 0x2A0,
+            ObjectParam = 0x2E8,
+            BulletParam = 0x330,
+            BehaviourParam = 0x378, // contains pointer to ParamResCap for ThrowInfoBank at 0x10
+            BehaviourParam2 = 0x3C0, // One of these is BehaviourParam, the other is BehaviourParam_Pc
+            MagicParam = 0x408,
+            SpEffectParam = 0x450,
+            SpEffectVfxParam = 0x498,
+            TalkParam = 0x4E0,
+            MenuParamColorTable = 0x528,
+            ItemLotParam = 0x570,
+            MoveParam = 0x5B8, // contains pointer to ParamResCap for ReinforceParamWeapon at 0x10
+            CharacterInitParam = 0x600,
+            EquipMtrlSetParam = 0x648,
+            FaceParam = 0x690,
+            RagdollParam = 0x6D8,
+            ShopLineupParam = 0x720, // contains pointer to ParamResCap for LightBank at 0x10
+            QwcChangeParam = 0x768,
+            QwcJudgeParam = 0x7B0, // contains pointer to ParamResCap for DofBank at 0x10
+            GameAreaParam = 0x7F8, // contains pointer to ParamResCap for TalkParam at 0x10
+            SkeletonParam = 0x840,
+            CalcCorrectGraph = 0x888,
+            LockCamParam = 0x8D0, // contains pointer to ParamResCap for BulletParam at 0x10
+            ObjActParam = 0x918,
+            HitMtrlParam = 0x960,
+            KnockBackParam = 0x9A8,
+            LevelSyncParam = 0x9F0, // contains pointer to ParamResCap for QwcChangeParam at 0x10
+            CoolTimeParam = 0xA38,
+            WhiteCoolTimeParam = 0xA80, // contains pointer to ParamResCap for LevelSyncParam at 0x10
+        }
+
+        public const int ParamOffset1 = 0x38;
+        public const int ParamOffset2 = 0x10;
 
         //public const string WorldChrManDbgImpAOB = "48 8B 05 ? ? ? ? 44 38 78 19 55 48 BD ? ? ? ? ? ? ? ? 48 87 2C 24 53 50 48 8B 5C 24 10";
         public const string WorldChrManDbgImpAOB = "48 8B 05 ? ? ? ? E9 ? ? ? ? 49 8B DC E9 ? ? ? ? 40 56 57 41 54 41 56 41 57 48 83 EC 30";

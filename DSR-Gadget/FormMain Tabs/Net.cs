@@ -213,7 +213,33 @@ namespace DSR_Gadget
             nupRecentPlayerHumanity.Value = player.Humanity;
             nupRecentPlayerWeaponMemory.Value = player.WeaponMemory;
             txtRecentPlayerName.Text = player.NameString1;
+
+            txtRecentPlayerHair.Text = Util.Util.DictGetOrDefault(DSRProtector.Dict, player.Hair, player.Hair.ToString());
+            txtRecentPlayerHead.Text = Util.Util.DictGetOrDefault(DSRProtector.Dict, player.ArmorHead, player.ArmorHead.ToString());
+            txtRecentPlayerChest.Text = Util.Util.DictGetOrDefault(DSRProtector.Dict, player.ArmorChest, player.ArmorChest.ToString());
+            txtRecentPlayerHands.Text = Util.Util.DictGetOrDefault(DSRProtector.Dict, player.ArmorHands, player.ArmorHands.ToString());
+            txtRecentPlayerLegs.Text = Util.Util.DictGetOrDefault(DSRProtector.Dict, player.ArmorLegs, player.ArmorLegs.ToString());
+
+            txtRecentPlayerArrow1.Text = Util.Util.DictGetOrDefault(DSRWeapon.Dict, player.Arrow1, player.Arrow1.ToString());
+            txtRecentPlayerArrow2.Text = Util.Util.DictGetOrDefault(DSRWeapon.Dict, player.Arrow2, player.Arrow2.ToString());
+            txtRecentPlayerBolt1.Text = Util.Util.DictGetOrDefault(DSRWeapon.Dict, player.Bolt1, player.Bolt1.ToString());
+            txtRecentPlayerBolt2.Text = Util.Util.DictGetOrDefault(DSRWeapon.Dict, player.Bolt2, player.Bolt2.ToString());
+
+            txtRecentPlayerRightWep1.Text = Util.Util.DictGetOrDefault(DSRWeapon.Dict, player.RightWep1, player.RightWep1.ToString());
+            txtRecentPlayerRightWep2.Text = Util.Util.DictGetOrDefault(DSRWeapon.Dict, player.RightWep2, player.RightWep2.ToString());
+            txtRecentPlayerLeftWep1.Text = Util.Util.DictGetOrDefault(DSRWeapon.Dict, player.LeftWep1, player.LeftWep1.ToString());
+            txtRecentPlayerLeftWep2.Text = Util.Util.DictGetOrDefault(DSRWeapon.Dict, player.LeftWep2, player.LeftWep2.ToString());
+
+            txtRecentPlayerRing1.Text = Util.Util.DictGetOrDefault(DSRAccessory.Dict, player.Ring1, player.Ring1.ToString());
+            txtRecentPlayerRing2.Text = Util.Util.DictGetOrDefault(DSRAccessory.Dict, player.Ring2, player.Ring2.ToString());
+
+            txtRecentPlayerQuickbar1.Text = Util.Util.DictGetOrDefault(DSRGood.Dict, player.Quickbar1, player.Quickbar1.ToString());
+            txtRecentPlayerQuickbar2.Text = Util.Util.DictGetOrDefault(DSRGood.Dict, player.Quickbar2, player.Quickbar2.ToString());
+            txtRecentPlayerQuickbar3.Text = Util.Util.DictGetOrDefault(DSRGood.Dict, player.Quickbar3, player.Quickbar3.ToString());
+            txtRecentPlayerQuickbar4.Text = Util.Util.DictGetOrDefault(DSRGood.Dict, player.Quickbar4, player.Quickbar4.ToString());
+            txtRecentPlayerQuickbar5.Text = Util.Util.DictGetOrDefault(DSRGood.Dict, player.Quickbar5, player.Quickbar5.ToString());
         }
+
         private void updateCurrentPlayerUI(DSRPlayer player)
         {
             nupCurrentPlayerSoulLevel.Value = player.SoulLevel;
@@ -229,6 +255,31 @@ namespace DSR_Gadget
             nupCurrentPlayerWeaponMemory.Value = player.WeaponMemory;
             txtCurrentPlayerName.Text = player.NameString1;
             txtCurrentPlayerSteamName.Text = player.SteamName;
+
+            txtCurrentPlayerHair.Text = Util.Util.DictGetOrDefault(DSRProtector.Dict, player.Hair, player.Hair.ToString());
+            txtCurrentPlayerHead.Text = Util.Util.DictGetOrDefault(DSRProtector.Dict, player.ArmorHead, player.ArmorHead.ToString());
+            txtCurrentPlayerChest.Text = Util.Util.DictGetOrDefault(DSRProtector.Dict, player.ArmorChest, player.ArmorChest.ToString());
+            txtCurrentPlayerHands.Text = Util.Util.DictGetOrDefault(DSRProtector.Dict, player.ArmorHands, player.ArmorHands.ToString());
+            txtCurrentPlayerLegs.Text = Util.Util.DictGetOrDefault(DSRProtector.Dict, player.ArmorLegs, player.ArmorLegs.ToString());
+            
+            txtCurrentPlayerArrow1.Text = Util.Util.DictGetOrDefault(DSRWeapon.Dict, player.Arrow1, player.Arrow1.ToString());
+            txtCurrentPlayerArrow2.Text = Util.Util.DictGetOrDefault(DSRWeapon.Dict, player.Arrow2, player.Arrow2.ToString());
+            txtCurrentPlayerBolt1.Text = Util.Util.DictGetOrDefault(DSRWeapon.Dict, player.Bolt1, player.Bolt1.ToString());
+            txtCurrentPlayerBolt2.Text = Util.Util.DictGetOrDefault(DSRWeapon.Dict, player.Bolt2, player.Bolt2.ToString());
+            
+            txtCurrentPlayerRightWep1.Text = Util.Util.DictGetOrDefault(DSRWeapon.Dict, player.RightWep1, player.RightWep1.ToString());
+            txtCurrentPlayerRightWep2.Text = Util.Util.DictGetOrDefault(DSRWeapon.Dict, player.RightWep2, player.RightWep2.ToString());
+            txtCurrentPlayerLeftWep1.Text = Util.Util.DictGetOrDefault(DSRWeapon.Dict, player.LeftWep1, player.LeftWep1.ToString());
+            txtCurrentPlayerLeftWep2.Text = Util.Util.DictGetOrDefault(DSRWeapon.Dict, player.LeftWep2, player.LeftWep2.ToString());
+            
+            txtCurrentPlayerRing1.Text = Util.Util.DictGetOrDefault(DSRAccessory.Dict, player.Ring1, player.Ring1.ToString());
+            txtCurrentPlayerRing2.Text = Util.Util.DictGetOrDefault(DSRAccessory.Dict, player.Ring2, player.Ring2.ToString());
+            
+            txtCurrentPlayerQuickbar1.Text = Util.Util.DictGetOrDefault(DSRGood.Dict, player.Quickbar1, player.Quickbar1.ToString());
+            txtCurrentPlayerQuickbar2.Text = Util.Util.DictGetOrDefault(DSRGood.Dict, player.Quickbar2, player.Quickbar2.ToString());
+            txtCurrentPlayerQuickbar3.Text = Util.Util.DictGetOrDefault(DSRGood.Dict, player.Quickbar3, player.Quickbar3.ToString());
+            txtCurrentPlayerQuickbar4.Text = Util.Util.DictGetOrDefault(DSRGood.Dict, player.Quickbar4, player.Quickbar4.ToString());
+            txtCurrentPlayerQuickbar5.Text = Util.Util.DictGetOrDefault(DSRGood.Dict, player.Quickbar5, player.Quickbar5.ToString());
         }
 
         private void lbxNetCurrentPlayers_SelectedIndexChanged(object sender, EventArgs e)

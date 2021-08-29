@@ -271,50 +271,50 @@
             this.tpgNet = new System.Windows.Forms.TabPage();
             this.tclNet = new System.Windows.Forms.TabControl();
             this.tpgNetRecentPlayers = new System.Windows.Forms.TabPage();
+            this.txtRecentPlayerQuickbar5 = new System.Windows.Forms.TextBox();
+            this.txtRecentPlayerQuickbar4 = new System.Windows.Forms.TextBox();
+            this.txtRecentPlayerQuickbar1 = new System.Windows.Forms.TextBox();
+            this.txtRecentPlayerQuickbar2 = new System.Windows.Forms.TextBox();
+            this.txtRecentPlayerQuickbar3 = new System.Windows.Forms.TextBox();
+            this.txtRecentPlayerRing2 = new System.Windows.Forms.TextBox();
+            this.txtRecentPlayerRing1 = new System.Windows.Forms.TextBox();
+            this.txtRecentPlayerRightWep2 = new System.Windows.Forms.TextBox();
+            this.txtRecentPlayerLeftWep1 = new System.Windows.Forms.TextBox();
+            this.txtRecentPlayerLeftWep2 = new System.Windows.Forms.TextBox();
+            this.txtRecentPlayerRightWep1 = new System.Windows.Forms.TextBox();
+            this.txtRecentPlayerBolt2 = new System.Windows.Forms.TextBox();
+            this.txtRecentPlayerArrow1 = new System.Windows.Forms.TextBox();
+            this.txtRecentPlayerArrow2 = new System.Windows.Forms.TextBox();
+            this.txtRecentPlayerBolt1 = new System.Windows.Forms.TextBox();
+            this.txtRecentPlayerLegs = new System.Windows.Forms.TextBox();
+            this.txtRecentPlayerHands = new System.Windows.Forms.TextBox();
+            this.txtRecentPlayerHair = new System.Windows.Forms.TextBox();
+            this.txtRecentPlayerHead = new System.Windows.Forms.TextBox();
+            this.txtRecentPlayerChest = new System.Windows.Forms.TextBox();
             this.nupRecentPlayerWeaponMemory = new System.Windows.Forms.NumericUpDown();
             this.lblRecentPlayerWeaponMemory = new System.Windows.Forms.Label();
             this.txtRecentPlayerName = new System.Windows.Forms.TextBox();
             this.lblRecentPlayerName = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.comboBox16 = new System.Windows.Forms.ComboBox();
-            this.comboBox17 = new System.Windows.Forms.ComboBox();
-            this.comboBox18 = new System.Windows.Forms.ComboBox();
-            this.comboBox19 = new System.Windows.Forms.ComboBox();
-            this.comboBox20 = new System.Windows.Forms.ComboBox();
-            this.comboBox11 = new System.Windows.Forms.ComboBox();
-            this.comboBox12 = new System.Windows.Forms.ComboBox();
-            this.comboBox13 = new System.Windows.Forms.ComboBox();
-            this.comboBox14 = new System.Windows.Forms.ComboBox();
-            this.comboBox15 = new System.Windows.Forms.ComboBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.lblRecentPlayerRightHand1 = new System.Windows.Forms.Label();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.cmbRecentPlayerRightHand1 = new System.Windows.Forms.ComboBox();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
-            this.comboBox9 = new System.Windows.Forms.ComboBox();
-            this.comboBox10 = new System.Windows.Forms.ComboBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lblRecentPlayerQuickbar5 = new System.Windows.Forms.Label();
+            this.lblRecentPlayerQuickbar4 = new System.Windows.Forms.Label();
+            this.lblRecentPlayerQuickbar3 = new System.Windows.Forms.Label();
+            this.lblRecentPlayerQuickbar2 = new System.Windows.Forms.Label();
+            this.lblRecentPlayerQuickbar1 = new System.Windows.Forms.Label();
+            this.lblRecentPlayerRing2 = new System.Windows.Forms.Label();
+            this.lblRecentPlayerRing1 = new System.Windows.Forms.Label();
+            this.lblRecentPlayerBolt2 = new System.Windows.Forms.Label();
+            this.lblRecentPlayerBolt1 = new System.Windows.Forms.Label();
+            this.lblRecentPlayerArrow2 = new System.Windows.Forms.Label();
+            this.lblRecentPlayerArrow1 = new System.Windows.Forms.Label();
+            this.lblRecentPlayerLegs = new System.Windows.Forms.Label();
+            this.lblRecentPlayerLeftWep2 = new System.Windows.Forms.Label();
+            this.lblRecentPlayerLeftWep1 = new System.Windows.Forms.Label();
+            this.lblRecentPlayerRightWep2 = new System.Windows.Forms.Label();
+            this.lblRecentPlayerRightWep1 = new System.Windows.Forms.Label();
+            this.lblRecentPlayerHands = new System.Windows.Forms.Label();
+            this.lblRecentPlayerChest = new System.Windows.Forms.Label();
+            this.lblRecentPlayerHead = new System.Windows.Forms.Label();
+            this.lblRecentPlayerHair = new System.Windows.Forms.Label();
             this.nupRecentPlayerFaith = new System.Windows.Forms.NumericUpDown();
             this.nupRecentPlayerHumanity = new System.Windows.Forms.NumericUpDown();
             this.nupRecentPlayerResistance = new System.Windows.Forms.NumericUpDown();
@@ -337,6 +337,46 @@
             this.lblRecentPlayerSoulLevel = new System.Windows.Forms.Label();
             this.lbxNetRecentPlayers = new System.Windows.Forms.ListBox();
             this.tpgNetCurrentPlayers = new System.Windows.Forms.TabPage();
+            this.txtCurrentPlayerQuickbar5 = new System.Windows.Forms.TextBox();
+            this.txtCurrentPlayerQuickbar4 = new System.Windows.Forms.TextBox();
+            this.txtCurrentPlayerQuickbar1 = new System.Windows.Forms.TextBox();
+            this.txtCurrentPlayerQuickbar2 = new System.Windows.Forms.TextBox();
+            this.txtCurrentPlayerQuickbar3 = new System.Windows.Forms.TextBox();
+            this.txtCurrentPlayerRing2 = new System.Windows.Forms.TextBox();
+            this.txtCurrentPlayerRing1 = new System.Windows.Forms.TextBox();
+            this.txtCurrentPlayerRightWep2 = new System.Windows.Forms.TextBox();
+            this.txtCurrentPlayerLeftWep1 = new System.Windows.Forms.TextBox();
+            this.txtCurrentPlayerLeftWep2 = new System.Windows.Forms.TextBox();
+            this.txtCurrentPlayerRightWep1 = new System.Windows.Forms.TextBox();
+            this.txtCurrentPlayerBolt2 = new System.Windows.Forms.TextBox();
+            this.txtCurrentPlayerArrow1 = new System.Windows.Forms.TextBox();
+            this.txtCurrentPlayerArrow2 = new System.Windows.Forms.TextBox();
+            this.txtCurrentPlayerBolt1 = new System.Windows.Forms.TextBox();
+            this.txtCurrentPlayerLegs = new System.Windows.Forms.TextBox();
+            this.txtCurrentPlayerHands = new System.Windows.Forms.TextBox();
+            this.txtCurrentPlayerHair = new System.Windows.Forms.TextBox();
+            this.txtCurrentPlayerHead = new System.Windows.Forms.TextBox();
+            this.txtCurrentPlayerChest = new System.Windows.Forms.TextBox();
+            this.lblCurrentPlayerQuickbar5 = new System.Windows.Forms.Label();
+            this.lblCurrentPlayerQuickbar4 = new System.Windows.Forms.Label();
+            this.lblCurrentPlayerQuickbar3 = new System.Windows.Forms.Label();
+            this.lblCurrentPlayerQuickbar2 = new System.Windows.Forms.Label();
+            this.lblCurrentPlayerQuickbar1 = new System.Windows.Forms.Label();
+            this.lblCurrentPlayer2 = new System.Windows.Forms.Label();
+            this.lblCurrentPlayerRing1 = new System.Windows.Forms.Label();
+            this.lblCurrentPlayerBolt2 = new System.Windows.Forms.Label();
+            this.lblCurrentPlayerBolt1 = new System.Windows.Forms.Label();
+            this.lblCurrentPlayerArrow2 = new System.Windows.Forms.Label();
+            this.lblCurrentPlayerArrow1 = new System.Windows.Forms.Label();
+            this.lblCurrentPlayerLegs = new System.Windows.Forms.Label();
+            this.lblCurrentPlayerLeftWep2 = new System.Windows.Forms.Label();
+            this.lblCurrentPlayerLeftWep1 = new System.Windows.Forms.Label();
+            this.lblCurrentPlayerRightWep2 = new System.Windows.Forms.Label();
+            this.lblCurrentPlayerRightWep1 = new System.Windows.Forms.Label();
+            this.lblCurrentPlayerHands = new System.Windows.Forms.Label();
+            this.lblCurrentPlayerChest = new System.Windows.Forms.Label();
+            this.lblCurrentPlayerHead = new System.Windows.Forms.Label();
+            this.lblCurrentPlayerHair = new System.Windows.Forms.Label();
             this.nupCurrentPlayerWeaponMemory = new System.Windows.Forms.NumericUpDown();
             this.lblCurrentPlayerWeaponMemory = new System.Windows.Forms.Label();
             this.btnCurrentPlayerTeleport = new System.Windows.Forms.Button();
@@ -3483,50 +3523,50 @@
             // 
             // tpgNetRecentPlayers
             // 
+            this.tpgNetRecentPlayers.Controls.Add(this.txtRecentPlayerQuickbar5);
+            this.tpgNetRecentPlayers.Controls.Add(this.txtRecentPlayerQuickbar4);
+            this.tpgNetRecentPlayers.Controls.Add(this.txtRecentPlayerQuickbar1);
+            this.tpgNetRecentPlayers.Controls.Add(this.txtRecentPlayerQuickbar2);
+            this.tpgNetRecentPlayers.Controls.Add(this.txtRecentPlayerQuickbar3);
+            this.tpgNetRecentPlayers.Controls.Add(this.txtRecentPlayerRing2);
+            this.tpgNetRecentPlayers.Controls.Add(this.txtRecentPlayerRing1);
+            this.tpgNetRecentPlayers.Controls.Add(this.txtRecentPlayerRightWep2);
+            this.tpgNetRecentPlayers.Controls.Add(this.txtRecentPlayerLeftWep1);
+            this.tpgNetRecentPlayers.Controls.Add(this.txtRecentPlayerLeftWep2);
+            this.tpgNetRecentPlayers.Controls.Add(this.txtRecentPlayerRightWep1);
+            this.tpgNetRecentPlayers.Controls.Add(this.txtRecentPlayerBolt2);
+            this.tpgNetRecentPlayers.Controls.Add(this.txtRecentPlayerArrow1);
+            this.tpgNetRecentPlayers.Controls.Add(this.txtRecentPlayerArrow2);
+            this.tpgNetRecentPlayers.Controls.Add(this.txtRecentPlayerBolt1);
+            this.tpgNetRecentPlayers.Controls.Add(this.txtRecentPlayerLegs);
+            this.tpgNetRecentPlayers.Controls.Add(this.txtRecentPlayerHands);
+            this.tpgNetRecentPlayers.Controls.Add(this.txtRecentPlayerHair);
+            this.tpgNetRecentPlayers.Controls.Add(this.txtRecentPlayerHead);
+            this.tpgNetRecentPlayers.Controls.Add(this.txtRecentPlayerChest);
             this.tpgNetRecentPlayers.Controls.Add(this.nupRecentPlayerWeaponMemory);
             this.tpgNetRecentPlayers.Controls.Add(this.lblRecentPlayerWeaponMemory);
             this.tpgNetRecentPlayers.Controls.Add(this.txtRecentPlayerName);
             this.tpgNetRecentPlayers.Controls.Add(this.lblRecentPlayerName);
-            this.tpgNetRecentPlayers.Controls.Add(this.label29);
-            this.tpgNetRecentPlayers.Controls.Add(this.label30);
-            this.tpgNetRecentPlayers.Controls.Add(this.label31);
-            this.tpgNetRecentPlayers.Controls.Add(this.label32);
-            this.tpgNetRecentPlayers.Controls.Add(this.label33);
-            this.tpgNetRecentPlayers.Controls.Add(this.label27);
-            this.tpgNetRecentPlayers.Controls.Add(this.label28);
-            this.tpgNetRecentPlayers.Controls.Add(this.label23);
-            this.tpgNetRecentPlayers.Controls.Add(this.label24);
-            this.tpgNetRecentPlayers.Controls.Add(this.label25);
-            this.tpgNetRecentPlayers.Controls.Add(this.label26);
-            this.tpgNetRecentPlayers.Controls.Add(this.comboBox16);
-            this.tpgNetRecentPlayers.Controls.Add(this.comboBox17);
-            this.tpgNetRecentPlayers.Controls.Add(this.comboBox18);
-            this.tpgNetRecentPlayers.Controls.Add(this.comboBox19);
-            this.tpgNetRecentPlayers.Controls.Add(this.comboBox20);
-            this.tpgNetRecentPlayers.Controls.Add(this.comboBox11);
-            this.tpgNetRecentPlayers.Controls.Add(this.comboBox12);
-            this.tpgNetRecentPlayers.Controls.Add(this.comboBox13);
-            this.tpgNetRecentPlayers.Controls.Add(this.comboBox14);
-            this.tpgNetRecentPlayers.Controls.Add(this.comboBox15);
-            this.tpgNetRecentPlayers.Controls.Add(this.label22);
-            this.tpgNetRecentPlayers.Controls.Add(this.label18);
-            this.tpgNetRecentPlayers.Controls.Add(this.label19);
-            this.tpgNetRecentPlayers.Controls.Add(this.label20);
-            this.tpgNetRecentPlayers.Controls.Add(this.lblRecentPlayerRightHand1);
-            this.tpgNetRecentPlayers.Controls.Add(this.comboBox6);
-            this.tpgNetRecentPlayers.Controls.Add(this.cmbRecentPlayerRightHand1);
-            this.tpgNetRecentPlayers.Controls.Add(this.comboBox8);
-            this.tpgNetRecentPlayers.Controls.Add(this.comboBox9);
-            this.tpgNetRecentPlayers.Controls.Add(this.comboBox10);
-            this.tpgNetRecentPlayers.Controls.Add(this.label16);
-            this.tpgNetRecentPlayers.Controls.Add(this.label17);
-            this.tpgNetRecentPlayers.Controls.Add(this.label15);
-            this.tpgNetRecentPlayers.Controls.Add(this.label14);
-            this.tpgNetRecentPlayers.Controls.Add(this.comboBox5);
-            this.tpgNetRecentPlayers.Controls.Add(this.comboBox4);
-            this.tpgNetRecentPlayers.Controls.Add(this.comboBox3);
-            this.tpgNetRecentPlayers.Controls.Add(this.comboBox2);
-            this.tpgNetRecentPlayers.Controls.Add(this.comboBox1);
+            this.tpgNetRecentPlayers.Controls.Add(this.lblRecentPlayerQuickbar5);
+            this.tpgNetRecentPlayers.Controls.Add(this.lblRecentPlayerQuickbar4);
+            this.tpgNetRecentPlayers.Controls.Add(this.lblRecentPlayerQuickbar3);
+            this.tpgNetRecentPlayers.Controls.Add(this.lblRecentPlayerQuickbar2);
+            this.tpgNetRecentPlayers.Controls.Add(this.lblRecentPlayerQuickbar1);
+            this.tpgNetRecentPlayers.Controls.Add(this.lblRecentPlayerRing2);
+            this.tpgNetRecentPlayers.Controls.Add(this.lblRecentPlayerRing1);
+            this.tpgNetRecentPlayers.Controls.Add(this.lblRecentPlayerBolt2);
+            this.tpgNetRecentPlayers.Controls.Add(this.lblRecentPlayerBolt1);
+            this.tpgNetRecentPlayers.Controls.Add(this.lblRecentPlayerArrow2);
+            this.tpgNetRecentPlayers.Controls.Add(this.lblRecentPlayerArrow1);
+            this.tpgNetRecentPlayers.Controls.Add(this.lblRecentPlayerLegs);
+            this.tpgNetRecentPlayers.Controls.Add(this.lblRecentPlayerLeftWep2);
+            this.tpgNetRecentPlayers.Controls.Add(this.lblRecentPlayerLeftWep1);
+            this.tpgNetRecentPlayers.Controls.Add(this.lblRecentPlayerRightWep2);
+            this.tpgNetRecentPlayers.Controls.Add(this.lblRecentPlayerRightWep1);
+            this.tpgNetRecentPlayers.Controls.Add(this.lblRecentPlayerHands);
+            this.tpgNetRecentPlayers.Controls.Add(this.lblRecentPlayerChest);
+            this.tpgNetRecentPlayers.Controls.Add(this.lblRecentPlayerHead);
+            this.tpgNetRecentPlayers.Controls.Add(this.lblRecentPlayerHair);
             this.tpgNetRecentPlayers.Controls.Add(this.nupRecentPlayerFaith);
             this.tpgNetRecentPlayers.Controls.Add(this.nupRecentPlayerHumanity);
             this.tpgNetRecentPlayers.Controls.Add(this.nupRecentPlayerResistance);
@@ -3555,6 +3595,166 @@
             this.tpgNetRecentPlayers.TabIndex = 0;
             this.tpgNetRecentPlayers.Text = "Recent Players";
             this.tpgNetRecentPlayers.UseVisualStyleBackColor = true;
+            // 
+            // txtRecentPlayerQuickbar5
+            // 
+            this.txtRecentPlayerQuickbar5.Location = new System.Drawing.Point(170, 500);
+            this.txtRecentPlayerQuickbar5.Name = "txtRecentPlayerQuickbar5";
+            this.txtRecentPlayerQuickbar5.ReadOnly = true;
+            this.txtRecentPlayerQuickbar5.Size = new System.Drawing.Size(135, 20);
+            this.txtRecentPlayerQuickbar5.TabIndex = 94;
+            // 
+            // txtRecentPlayerQuickbar4
+            // 
+            this.txtRecentPlayerQuickbar4.Location = new System.Drawing.Point(170, 474);
+            this.txtRecentPlayerQuickbar4.Name = "txtRecentPlayerQuickbar4";
+            this.txtRecentPlayerQuickbar4.ReadOnly = true;
+            this.txtRecentPlayerQuickbar4.Size = new System.Drawing.Size(135, 20);
+            this.txtRecentPlayerQuickbar4.TabIndex = 93;
+            // 
+            // txtRecentPlayerQuickbar1
+            // 
+            this.txtRecentPlayerQuickbar1.Location = new System.Drawing.Point(170, 396);
+            this.txtRecentPlayerQuickbar1.Name = "txtRecentPlayerQuickbar1";
+            this.txtRecentPlayerQuickbar1.ReadOnly = true;
+            this.txtRecentPlayerQuickbar1.Size = new System.Drawing.Size(135, 20);
+            this.txtRecentPlayerQuickbar1.TabIndex = 92;
+            // 
+            // txtRecentPlayerQuickbar2
+            // 
+            this.txtRecentPlayerQuickbar2.Location = new System.Drawing.Point(170, 422);
+            this.txtRecentPlayerQuickbar2.Name = "txtRecentPlayerQuickbar2";
+            this.txtRecentPlayerQuickbar2.ReadOnly = true;
+            this.txtRecentPlayerQuickbar2.Size = new System.Drawing.Size(135, 20);
+            this.txtRecentPlayerQuickbar2.TabIndex = 91;
+            // 
+            // txtRecentPlayerQuickbar3
+            // 
+            this.txtRecentPlayerQuickbar3.Location = new System.Drawing.Point(170, 448);
+            this.txtRecentPlayerQuickbar3.Name = "txtRecentPlayerQuickbar3";
+            this.txtRecentPlayerQuickbar3.ReadOnly = true;
+            this.txtRecentPlayerQuickbar3.Size = new System.Drawing.Size(135, 20);
+            this.txtRecentPlayerQuickbar3.TabIndex = 90;
+            // 
+            // txtRecentPlayerRing2
+            // 
+            this.txtRecentPlayerRing2.Location = new System.Drawing.Point(170, 370);
+            this.txtRecentPlayerRing2.Name = "txtRecentPlayerRing2";
+            this.txtRecentPlayerRing2.ReadOnly = true;
+            this.txtRecentPlayerRing2.Size = new System.Drawing.Size(135, 20);
+            this.txtRecentPlayerRing2.TabIndex = 89;
+            // 
+            // txtRecentPlayerRing1
+            // 
+            this.txtRecentPlayerRing1.Location = new System.Drawing.Point(170, 344);
+            this.txtRecentPlayerRing1.Name = "txtRecentPlayerRing1";
+            this.txtRecentPlayerRing1.ReadOnly = true;
+            this.txtRecentPlayerRing1.Size = new System.Drawing.Size(135, 20);
+            this.txtRecentPlayerRing1.TabIndex = 88;
+            // 
+            // txtRecentPlayerRightWep2
+            // 
+            this.txtRecentPlayerRightWep2.Location = new System.Drawing.Point(170, 266);
+            this.txtRecentPlayerRightWep2.Name = "txtRecentPlayerRightWep2";
+            this.txtRecentPlayerRightWep2.ReadOnly = true;
+            this.txtRecentPlayerRightWep2.Size = new System.Drawing.Size(135, 20);
+            this.txtRecentPlayerRightWep2.TabIndex = 87;
+            // 
+            // txtRecentPlayerLeftWep1
+            // 
+            this.txtRecentPlayerLeftWep1.Location = new System.Drawing.Point(170, 292);
+            this.txtRecentPlayerLeftWep1.Name = "txtRecentPlayerLeftWep1";
+            this.txtRecentPlayerLeftWep1.ReadOnly = true;
+            this.txtRecentPlayerLeftWep1.Size = new System.Drawing.Size(135, 20);
+            this.txtRecentPlayerLeftWep1.TabIndex = 86;
+            // 
+            // txtRecentPlayerLeftWep2
+            // 
+            this.txtRecentPlayerLeftWep2.Location = new System.Drawing.Point(170, 318);
+            this.txtRecentPlayerLeftWep2.Name = "txtRecentPlayerLeftWep2";
+            this.txtRecentPlayerLeftWep2.ReadOnly = true;
+            this.txtRecentPlayerLeftWep2.Size = new System.Drawing.Size(135, 20);
+            this.txtRecentPlayerLeftWep2.TabIndex = 85;
+            // 
+            // txtRecentPlayerRightWep1
+            // 
+            this.txtRecentPlayerRightWep1.Location = new System.Drawing.Point(170, 240);
+            this.txtRecentPlayerRightWep1.Name = "txtRecentPlayerRightWep1";
+            this.txtRecentPlayerRightWep1.ReadOnly = true;
+            this.txtRecentPlayerRightWep1.Size = new System.Drawing.Size(135, 20);
+            this.txtRecentPlayerRightWep1.TabIndex = 84;
+            // 
+            // txtRecentPlayerBolt2
+            // 
+            this.txtRecentPlayerBolt2.Location = new System.Drawing.Point(170, 214);
+            this.txtRecentPlayerBolt2.Name = "txtRecentPlayerBolt2";
+            this.txtRecentPlayerBolt2.ReadOnly = true;
+            this.txtRecentPlayerBolt2.Size = new System.Drawing.Size(135, 20);
+            this.txtRecentPlayerBolt2.TabIndex = 83;
+            // 
+            // txtRecentPlayerArrow1
+            // 
+            this.txtRecentPlayerArrow1.Location = new System.Drawing.Point(170, 136);
+            this.txtRecentPlayerArrow1.Name = "txtRecentPlayerArrow1";
+            this.txtRecentPlayerArrow1.ReadOnly = true;
+            this.txtRecentPlayerArrow1.Size = new System.Drawing.Size(135, 20);
+            this.txtRecentPlayerArrow1.TabIndex = 82;
+            // 
+            // txtRecentPlayerArrow2
+            // 
+            this.txtRecentPlayerArrow2.Location = new System.Drawing.Point(170, 162);
+            this.txtRecentPlayerArrow2.Name = "txtRecentPlayerArrow2";
+            this.txtRecentPlayerArrow2.ReadOnly = true;
+            this.txtRecentPlayerArrow2.Size = new System.Drawing.Size(135, 20);
+            this.txtRecentPlayerArrow2.TabIndex = 81;
+            // 
+            // txtRecentPlayerBolt1
+            // 
+            this.txtRecentPlayerBolt1.Location = new System.Drawing.Point(170, 188);
+            this.txtRecentPlayerBolt1.Name = "txtRecentPlayerBolt1";
+            this.txtRecentPlayerBolt1.ReadOnly = true;
+            this.txtRecentPlayerBolt1.Size = new System.Drawing.Size(135, 20);
+            this.txtRecentPlayerBolt1.TabIndex = 80;
+            // 
+            // txtRecentPlayerLegs
+            // 
+            this.txtRecentPlayerLegs.Location = new System.Drawing.Point(170, 110);
+            this.txtRecentPlayerLegs.Name = "txtRecentPlayerLegs";
+            this.txtRecentPlayerLegs.ReadOnly = true;
+            this.txtRecentPlayerLegs.Size = new System.Drawing.Size(135, 20);
+            this.txtRecentPlayerLegs.TabIndex = 79;
+            // 
+            // txtRecentPlayerHands
+            // 
+            this.txtRecentPlayerHands.Location = new System.Drawing.Point(170, 84);
+            this.txtRecentPlayerHands.Name = "txtRecentPlayerHands";
+            this.txtRecentPlayerHands.ReadOnly = true;
+            this.txtRecentPlayerHands.Size = new System.Drawing.Size(135, 20);
+            this.txtRecentPlayerHands.TabIndex = 78;
+            // 
+            // txtRecentPlayerHair
+            // 
+            this.txtRecentPlayerHair.Location = new System.Drawing.Point(170, 6);
+            this.txtRecentPlayerHair.Name = "txtRecentPlayerHair";
+            this.txtRecentPlayerHair.ReadOnly = true;
+            this.txtRecentPlayerHair.Size = new System.Drawing.Size(135, 20);
+            this.txtRecentPlayerHair.TabIndex = 77;
+            // 
+            // txtRecentPlayerHead
+            // 
+            this.txtRecentPlayerHead.Location = new System.Drawing.Point(170, 32);
+            this.txtRecentPlayerHead.Name = "txtRecentPlayerHead";
+            this.txtRecentPlayerHead.ReadOnly = true;
+            this.txtRecentPlayerHead.Size = new System.Drawing.Size(135, 20);
+            this.txtRecentPlayerHead.TabIndex = 76;
+            // 
+            // txtRecentPlayerChest
+            // 
+            this.txtRecentPlayerChest.Location = new System.Drawing.Point(170, 58);
+            this.txtRecentPlayerChest.Name = "txtRecentPlayerChest";
+            this.txtRecentPlayerChest.ReadOnly = true;
+            this.txtRecentPlayerChest.Size = new System.Drawing.Size(135, 20);
+            this.txtRecentPlayerChest.TabIndex = 75;
             // 
             // nupRecentPlayerWeaponMemory
             // 
@@ -3605,385 +3805,185 @@
             this.lblRecentPlayerName.TabIndex = 71;
             this.lblRecentPlayerName.Text = "Name";
             // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(303, 522);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(59, 13);
-            this.label29.TabIndex = 70;
-            this.label29.Text = "Quickbar 5";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(303, 495);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(59, 13);
-            this.label30.TabIndex = 69;
-            this.label30.Text = "Quickbar 4";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(303, 468);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(59, 13);
-            this.label31.TabIndex = 68;
-            this.label31.Text = "Quickbar 3";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(303, 441);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(59, 13);
-            this.label32.TabIndex = 67;
-            this.label32.Text = "Quickbar 2";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(303, 414);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(59, 13);
-            this.label33.TabIndex = 66;
-            this.label33.Text = "Quickbar 1";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(303, 387);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(38, 13);
-            this.label27.TabIndex = 65;
-            this.label27.Text = "Ring 2";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(303, 360);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(38, 13);
-            this.label28.TabIndex = 64;
-            this.label28.Text = "Ring 1";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(303, 225);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(34, 13);
-            this.label23.TabIndex = 63;
-            this.label23.Text = "Bolt 2";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(303, 198);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(34, 13);
-            this.label24.TabIndex = 62;
-            this.label24.Text = "Bolt 1";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(303, 171);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(43, 13);
-            this.label25.TabIndex = 61;
-            this.label25.Text = "Arrow 2";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(303, 144);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(43, 13);
-            this.label26.TabIndex = 60;
-            this.label26.Text = "Arrow 1";
-            // 
-            // comboBox16
-            // 
-            this.comboBox16.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.comboBox16.Enabled = false;
-            this.comboBox16.FormattingEnabled = true;
-            this.comboBox16.Location = new System.Drawing.Point(170, 411);
-            this.comboBox16.Name = "comboBox16";
-            this.comboBox16.Size = new System.Drawing.Size(127, 21);
-            this.comboBox16.TabIndex = 59;
-            // 
-            // comboBox17
-            // 
-            this.comboBox17.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.comboBox17.Enabled = false;
-            this.comboBox17.FormattingEnabled = true;
-            this.comboBox17.Location = new System.Drawing.Point(170, 519);
-            this.comboBox17.Name = "comboBox17";
-            this.comboBox17.Size = new System.Drawing.Size(127, 21);
-            this.comboBox17.TabIndex = 58;
-            // 
-            // comboBox18
-            // 
-            this.comboBox18.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.comboBox18.Enabled = false;
-            this.comboBox18.FormattingEnabled = true;
-            this.comboBox18.Location = new System.Drawing.Point(170, 492);
-            this.comboBox18.Name = "comboBox18";
-            this.comboBox18.Size = new System.Drawing.Size(127, 21);
-            this.comboBox18.TabIndex = 57;
-            // 
-            // comboBox19
-            // 
-            this.comboBox19.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.comboBox19.Enabled = false;
-            this.comboBox19.FormattingEnabled = true;
-            this.comboBox19.Location = new System.Drawing.Point(170, 465);
-            this.comboBox19.Name = "comboBox19";
-            this.comboBox19.Size = new System.Drawing.Size(127, 21);
-            this.comboBox19.TabIndex = 56;
-            // 
-            // comboBox20
-            // 
-            this.comboBox20.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.comboBox20.Enabled = false;
-            this.comboBox20.FormattingEnabled = true;
-            this.comboBox20.Location = new System.Drawing.Point(170, 438);
-            this.comboBox20.Name = "comboBox20";
-            this.comboBox20.Size = new System.Drawing.Size(127, 21);
-            this.comboBox20.TabIndex = 55;
-            // 
-            // comboBox11
-            // 
-            this.comboBox11.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.comboBox11.Enabled = false;
-            this.comboBox11.FormattingEnabled = true;
-            this.comboBox11.Location = new System.Drawing.Point(170, 276);
-            this.comboBox11.Name = "comboBox11";
-            this.comboBox11.Size = new System.Drawing.Size(127, 21);
-            this.comboBox11.TabIndex = 54;
-            // 
-            // comboBox12
-            // 
-            this.comboBox12.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.comboBox12.Enabled = false;
-            this.comboBox12.FormattingEnabled = true;
-            this.comboBox12.Location = new System.Drawing.Point(170, 384);
-            this.comboBox12.Name = "comboBox12";
-            this.comboBox12.Size = new System.Drawing.Size(127, 21);
-            this.comboBox12.TabIndex = 53;
-            // 
-            // comboBox13
-            // 
-            this.comboBox13.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.comboBox13.Enabled = false;
-            this.comboBox13.FormattingEnabled = true;
-            this.comboBox13.Location = new System.Drawing.Point(170, 357);
-            this.comboBox13.Name = "comboBox13";
-            this.comboBox13.Size = new System.Drawing.Size(127, 21);
-            this.comboBox13.TabIndex = 52;
-            // 
-            // comboBox14
-            // 
-            this.comboBox14.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.comboBox14.Enabled = false;
-            this.comboBox14.FormattingEnabled = true;
-            this.comboBox14.Location = new System.Drawing.Point(170, 330);
-            this.comboBox14.Name = "comboBox14";
-            this.comboBox14.Size = new System.Drawing.Size(127, 21);
-            this.comboBox14.TabIndex = 51;
-            // 
-            // comboBox15
-            // 
-            this.comboBox15.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.comboBox15.Enabled = false;
-            this.comboBox15.FormattingEnabled = true;
-            this.comboBox15.Location = new System.Drawing.Point(170, 303);
-            this.comboBox15.Name = "comboBox15";
-            this.comboBox15.Size = new System.Drawing.Size(127, 21);
-            this.comboBox15.TabIndex = 50;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(303, 117);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(30, 13);
-            this.label22.TabIndex = 49;
-            this.label22.Text = "Legs";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(303, 333);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(63, 13);
-            this.label18.TabIndex = 48;
-            this.label18.Text = "Left Hand 2";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(303, 306);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(63, 13);
-            this.label19.TabIndex = 47;
-            this.label19.Text = "Left Hand 1";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(303, 279);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(70, 13);
-            this.label20.TabIndex = 46;
-            this.label20.Text = "Right Hand 2";
-            // 
-            // lblRecentPlayerRightHand1
-            // 
-            this.lblRecentPlayerRightHand1.AutoSize = true;
-            this.lblRecentPlayerRightHand1.Location = new System.Drawing.Point(303, 252);
-            this.lblRecentPlayerRightHand1.Name = "lblRecentPlayerRightHand1";
-            this.lblRecentPlayerRightHand1.Size = new System.Drawing.Size(70, 13);
-            this.lblRecentPlayerRightHand1.TabIndex = 45;
-            this.lblRecentPlayerRightHand1.Text = "Right Hand 1";
-            // 
-            // comboBox6
-            // 
-            this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.comboBox6.Enabled = false;
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(170, 141);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(127, 21);
-            this.comboBox6.TabIndex = 44;
-            // 
-            // cmbRecentPlayerRightHand1
-            // 
-            this.cmbRecentPlayerRightHand1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.cmbRecentPlayerRightHand1.Enabled = false;
-            this.cmbRecentPlayerRightHand1.FormattingEnabled = true;
-            this.cmbRecentPlayerRightHand1.Location = new System.Drawing.Point(170, 249);
-            this.cmbRecentPlayerRightHand1.Name = "cmbRecentPlayerRightHand1";
-            this.cmbRecentPlayerRightHand1.Size = new System.Drawing.Size(127, 21);
-            this.cmbRecentPlayerRightHand1.TabIndex = 43;
-            // 
-            // comboBox8
-            // 
-            this.comboBox8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.comboBox8.Enabled = false;
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(170, 222);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(127, 21);
-            this.comboBox8.TabIndex = 42;
-            // 
-            // comboBox9
-            // 
-            this.comboBox9.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.comboBox9.Enabled = false;
-            this.comboBox9.FormattingEnabled = true;
-            this.comboBox9.Location = new System.Drawing.Point(170, 195);
-            this.comboBox9.Name = "comboBox9";
-            this.comboBox9.Size = new System.Drawing.Size(127, 21);
-            this.comboBox9.TabIndex = 41;
-            // 
-            // comboBox10
-            // 
-            this.comboBox10.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.comboBox10.Enabled = false;
-            this.comboBox10.FormattingEnabled = true;
-            this.comboBox10.Location = new System.Drawing.Point(170, 168);
-            this.comboBox10.Name = "comboBox10";
-            this.comboBox10.Size = new System.Drawing.Size(127, 21);
-            this.comboBox10.TabIndex = 40;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(303, 90);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(38, 13);
-            this.label16.TabIndex = 39;
-            this.label16.Text = "Hands";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(303, 63);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(34, 13);
-            this.label17.TabIndex = 38;
-            this.label17.Text = "Chest";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(303, 36);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(33, 13);
-            this.label15.TabIndex = 37;
-            this.label15.Text = "Head";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(303, 9);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(26, 13);
-            this.label14.TabIndex = 36;
-            this.label14.Text = "Hair";
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.comboBox5.Enabled = false;
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(170, 6);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(127, 21);
-            this.comboBox5.TabIndex = 35;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.comboBox4.Enabled = false;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(170, 114);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(127, 21);
-            this.comboBox4.TabIndex = 34;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.comboBox3.Enabled = false;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(170, 87);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(127, 21);
-            this.comboBox3.TabIndex = 33;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.comboBox2.Enabled = false;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(170, 60);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(127, 21);
-            this.comboBox2.TabIndex = 32;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.comboBox1.Enabled = false;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(170, 33);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(127, 21);
-            this.comboBox1.TabIndex = 31;
+            // lblRecentPlayerQuickbar5
+            // 
+            this.lblRecentPlayerQuickbar5.AutoSize = true;
+            this.lblRecentPlayerQuickbar5.Location = new System.Drawing.Point(311, 503);
+            this.lblRecentPlayerQuickbar5.Name = "lblRecentPlayerQuickbar5";
+            this.lblRecentPlayerQuickbar5.Size = new System.Drawing.Size(59, 13);
+            this.lblRecentPlayerQuickbar5.TabIndex = 70;
+            this.lblRecentPlayerQuickbar5.Text = "Quickbar 5";
+            // 
+            // lblRecentPlayerQuickbar4
+            // 
+            this.lblRecentPlayerQuickbar4.AutoSize = true;
+            this.lblRecentPlayerQuickbar4.Location = new System.Drawing.Point(311, 477);
+            this.lblRecentPlayerQuickbar4.Name = "lblRecentPlayerQuickbar4";
+            this.lblRecentPlayerQuickbar4.Size = new System.Drawing.Size(59, 13);
+            this.lblRecentPlayerQuickbar4.TabIndex = 69;
+            this.lblRecentPlayerQuickbar4.Text = "Quickbar 4";
+            // 
+            // lblRecentPlayerQuickbar3
+            // 
+            this.lblRecentPlayerQuickbar3.AutoSize = true;
+            this.lblRecentPlayerQuickbar3.Location = new System.Drawing.Point(311, 451);
+            this.lblRecentPlayerQuickbar3.Name = "lblRecentPlayerQuickbar3";
+            this.lblRecentPlayerQuickbar3.Size = new System.Drawing.Size(59, 13);
+            this.lblRecentPlayerQuickbar3.TabIndex = 68;
+            this.lblRecentPlayerQuickbar3.Text = "Quickbar 3";
+            // 
+            // lblRecentPlayerQuickbar2
+            // 
+            this.lblRecentPlayerQuickbar2.AutoSize = true;
+            this.lblRecentPlayerQuickbar2.Location = new System.Drawing.Point(311, 425);
+            this.lblRecentPlayerQuickbar2.Name = "lblRecentPlayerQuickbar2";
+            this.lblRecentPlayerQuickbar2.Size = new System.Drawing.Size(59, 13);
+            this.lblRecentPlayerQuickbar2.TabIndex = 67;
+            this.lblRecentPlayerQuickbar2.Text = "Quickbar 2";
+            // 
+            // lblRecentPlayerQuickbar1
+            // 
+            this.lblRecentPlayerQuickbar1.AutoSize = true;
+            this.lblRecentPlayerQuickbar1.Location = new System.Drawing.Point(311, 399);
+            this.lblRecentPlayerQuickbar1.Name = "lblRecentPlayerQuickbar1";
+            this.lblRecentPlayerQuickbar1.Size = new System.Drawing.Size(59, 13);
+            this.lblRecentPlayerQuickbar1.TabIndex = 66;
+            this.lblRecentPlayerQuickbar1.Text = "Quickbar 1";
+            // 
+            // lblRecentPlayerRing2
+            // 
+            this.lblRecentPlayerRing2.AutoSize = true;
+            this.lblRecentPlayerRing2.Location = new System.Drawing.Point(311, 373);
+            this.lblRecentPlayerRing2.Name = "lblRecentPlayerRing2";
+            this.lblRecentPlayerRing2.Size = new System.Drawing.Size(38, 13);
+            this.lblRecentPlayerRing2.TabIndex = 65;
+            this.lblRecentPlayerRing2.Text = "Ring 2";
+            // 
+            // lblRecentPlayerRing1
+            // 
+            this.lblRecentPlayerRing1.AutoSize = true;
+            this.lblRecentPlayerRing1.Location = new System.Drawing.Point(311, 347);
+            this.lblRecentPlayerRing1.Name = "lblRecentPlayerRing1";
+            this.lblRecentPlayerRing1.Size = new System.Drawing.Size(38, 13);
+            this.lblRecentPlayerRing1.TabIndex = 64;
+            this.lblRecentPlayerRing1.Text = "Ring 1";
+            // 
+            // lblRecentPlayerBolt2
+            // 
+            this.lblRecentPlayerBolt2.AutoSize = true;
+            this.lblRecentPlayerBolt2.Location = new System.Drawing.Point(311, 217);
+            this.lblRecentPlayerBolt2.Name = "lblRecentPlayerBolt2";
+            this.lblRecentPlayerBolt2.Size = new System.Drawing.Size(34, 13);
+            this.lblRecentPlayerBolt2.TabIndex = 63;
+            this.lblRecentPlayerBolt2.Text = "Bolt 2";
+            // 
+            // lblRecentPlayerBolt1
+            // 
+            this.lblRecentPlayerBolt1.AutoSize = true;
+            this.lblRecentPlayerBolt1.Location = new System.Drawing.Point(311, 191);
+            this.lblRecentPlayerBolt1.Name = "lblRecentPlayerBolt1";
+            this.lblRecentPlayerBolt1.Size = new System.Drawing.Size(34, 13);
+            this.lblRecentPlayerBolt1.TabIndex = 62;
+            this.lblRecentPlayerBolt1.Text = "Bolt 1";
+            // 
+            // lblRecentPlayerArrow2
+            // 
+            this.lblRecentPlayerArrow2.AutoSize = true;
+            this.lblRecentPlayerArrow2.Location = new System.Drawing.Point(311, 165);
+            this.lblRecentPlayerArrow2.Name = "lblRecentPlayerArrow2";
+            this.lblRecentPlayerArrow2.Size = new System.Drawing.Size(43, 13);
+            this.lblRecentPlayerArrow2.TabIndex = 61;
+            this.lblRecentPlayerArrow2.Text = "Arrow 2";
+            // 
+            // lblRecentPlayerArrow1
+            // 
+            this.lblRecentPlayerArrow1.AutoSize = true;
+            this.lblRecentPlayerArrow1.Location = new System.Drawing.Point(311, 139);
+            this.lblRecentPlayerArrow1.Name = "lblRecentPlayerArrow1";
+            this.lblRecentPlayerArrow1.Size = new System.Drawing.Size(43, 13);
+            this.lblRecentPlayerArrow1.TabIndex = 60;
+            this.lblRecentPlayerArrow1.Text = "Arrow 1";
+            // 
+            // lblRecentPlayerLegs
+            // 
+            this.lblRecentPlayerLegs.AutoSize = true;
+            this.lblRecentPlayerLegs.Location = new System.Drawing.Point(311, 113);
+            this.lblRecentPlayerLegs.Name = "lblRecentPlayerLegs";
+            this.lblRecentPlayerLegs.Size = new System.Drawing.Size(30, 13);
+            this.lblRecentPlayerLegs.TabIndex = 49;
+            this.lblRecentPlayerLegs.Text = "Legs";
+            // 
+            // lblRecentPlayerLeftWep2
+            // 
+            this.lblRecentPlayerLeftWep2.AutoSize = true;
+            this.lblRecentPlayerLeftWep2.Location = new System.Drawing.Point(311, 321);
+            this.lblRecentPlayerLeftWep2.Name = "lblRecentPlayerLeftWep2";
+            this.lblRecentPlayerLeftWep2.Size = new System.Drawing.Size(54, 13);
+            this.lblRecentPlayerLeftWep2.TabIndex = 48;
+            this.lblRecentPlayerLeftWep2.Text = "L. Hand 2";
+            // 
+            // lblRecentPlayerLeftWep1
+            // 
+            this.lblRecentPlayerLeftWep1.AutoSize = true;
+            this.lblRecentPlayerLeftWep1.Location = new System.Drawing.Point(311, 295);
+            this.lblRecentPlayerLeftWep1.Name = "lblRecentPlayerLeftWep1";
+            this.lblRecentPlayerLeftWep1.Size = new System.Drawing.Size(54, 13);
+            this.lblRecentPlayerLeftWep1.TabIndex = 47;
+            this.lblRecentPlayerLeftWep1.Text = "L. Hand 1";
+            // 
+            // lblRecentPlayerRightWep2
+            // 
+            this.lblRecentPlayerRightWep2.AutoSize = true;
+            this.lblRecentPlayerRightWep2.Location = new System.Drawing.Point(311, 269);
+            this.lblRecentPlayerRightWep2.Name = "lblRecentPlayerRightWep2";
+            this.lblRecentPlayerRightWep2.Size = new System.Drawing.Size(56, 13);
+            this.lblRecentPlayerRightWep2.TabIndex = 46;
+            this.lblRecentPlayerRightWep2.Text = "R. Hand 2";
+            // 
+            // lblRecentPlayerRightWep1
+            // 
+            this.lblRecentPlayerRightWep1.AutoSize = true;
+            this.lblRecentPlayerRightWep1.Location = new System.Drawing.Point(311, 243);
+            this.lblRecentPlayerRightWep1.Name = "lblRecentPlayerRightWep1";
+            this.lblRecentPlayerRightWep1.Size = new System.Drawing.Size(56, 13);
+            this.lblRecentPlayerRightWep1.TabIndex = 45;
+            this.lblRecentPlayerRightWep1.Text = "R. Hand 1";
+            // 
+            // lblRecentPlayerHands
+            // 
+            this.lblRecentPlayerHands.AutoSize = true;
+            this.lblRecentPlayerHands.Location = new System.Drawing.Point(311, 87);
+            this.lblRecentPlayerHands.Name = "lblRecentPlayerHands";
+            this.lblRecentPlayerHands.Size = new System.Drawing.Size(38, 13);
+            this.lblRecentPlayerHands.TabIndex = 39;
+            this.lblRecentPlayerHands.Text = "Hands";
+            // 
+            // lblRecentPlayerChest
+            // 
+            this.lblRecentPlayerChest.AutoSize = true;
+            this.lblRecentPlayerChest.Location = new System.Drawing.Point(311, 61);
+            this.lblRecentPlayerChest.Name = "lblRecentPlayerChest";
+            this.lblRecentPlayerChest.Size = new System.Drawing.Size(34, 13);
+            this.lblRecentPlayerChest.TabIndex = 38;
+            this.lblRecentPlayerChest.Text = "Chest";
+            // 
+            // lblRecentPlayerHead
+            // 
+            this.lblRecentPlayerHead.AutoSize = true;
+            this.lblRecentPlayerHead.Location = new System.Drawing.Point(311, 35);
+            this.lblRecentPlayerHead.Name = "lblRecentPlayerHead";
+            this.lblRecentPlayerHead.Size = new System.Drawing.Size(33, 13);
+            this.lblRecentPlayerHead.TabIndex = 37;
+            this.lblRecentPlayerHead.Text = "Head";
+            // 
+            // lblRecentPlayerHair
+            // 
+            this.lblRecentPlayerHair.AutoSize = true;
+            this.lblRecentPlayerHair.Location = new System.Drawing.Point(311, 9);
+            this.lblRecentPlayerHair.Name = "lblRecentPlayerHair";
+            this.lblRecentPlayerHair.Size = new System.Drawing.Size(26, 13);
+            this.lblRecentPlayerHair.TabIndex = 36;
+            this.lblRecentPlayerHair.Text = "Hair";
             // 
             // nupRecentPlayerFaith
             // 
@@ -4315,6 +4315,46 @@
             // 
             // tpgNetCurrentPlayers
             // 
+            this.tpgNetCurrentPlayers.Controls.Add(this.txtCurrentPlayerQuickbar5);
+            this.tpgNetCurrentPlayers.Controls.Add(this.txtCurrentPlayerQuickbar4);
+            this.tpgNetCurrentPlayers.Controls.Add(this.txtCurrentPlayerQuickbar1);
+            this.tpgNetCurrentPlayers.Controls.Add(this.txtCurrentPlayerQuickbar2);
+            this.tpgNetCurrentPlayers.Controls.Add(this.txtCurrentPlayerQuickbar3);
+            this.tpgNetCurrentPlayers.Controls.Add(this.txtCurrentPlayerRing2);
+            this.tpgNetCurrentPlayers.Controls.Add(this.txtCurrentPlayerRing1);
+            this.tpgNetCurrentPlayers.Controls.Add(this.txtCurrentPlayerRightWep2);
+            this.tpgNetCurrentPlayers.Controls.Add(this.txtCurrentPlayerLeftWep1);
+            this.tpgNetCurrentPlayers.Controls.Add(this.txtCurrentPlayerLeftWep2);
+            this.tpgNetCurrentPlayers.Controls.Add(this.txtCurrentPlayerRightWep1);
+            this.tpgNetCurrentPlayers.Controls.Add(this.txtCurrentPlayerBolt2);
+            this.tpgNetCurrentPlayers.Controls.Add(this.txtCurrentPlayerArrow1);
+            this.tpgNetCurrentPlayers.Controls.Add(this.txtCurrentPlayerArrow2);
+            this.tpgNetCurrentPlayers.Controls.Add(this.txtCurrentPlayerBolt1);
+            this.tpgNetCurrentPlayers.Controls.Add(this.txtCurrentPlayerLegs);
+            this.tpgNetCurrentPlayers.Controls.Add(this.txtCurrentPlayerHands);
+            this.tpgNetCurrentPlayers.Controls.Add(this.txtCurrentPlayerHair);
+            this.tpgNetCurrentPlayers.Controls.Add(this.txtCurrentPlayerHead);
+            this.tpgNetCurrentPlayers.Controls.Add(this.txtCurrentPlayerChest);
+            this.tpgNetCurrentPlayers.Controls.Add(this.lblCurrentPlayerQuickbar5);
+            this.tpgNetCurrentPlayers.Controls.Add(this.lblCurrentPlayerQuickbar4);
+            this.tpgNetCurrentPlayers.Controls.Add(this.lblCurrentPlayerQuickbar3);
+            this.tpgNetCurrentPlayers.Controls.Add(this.lblCurrentPlayerQuickbar2);
+            this.tpgNetCurrentPlayers.Controls.Add(this.lblCurrentPlayerQuickbar1);
+            this.tpgNetCurrentPlayers.Controls.Add(this.lblCurrentPlayer2);
+            this.tpgNetCurrentPlayers.Controls.Add(this.lblCurrentPlayerRing1);
+            this.tpgNetCurrentPlayers.Controls.Add(this.lblCurrentPlayerBolt2);
+            this.tpgNetCurrentPlayers.Controls.Add(this.lblCurrentPlayerBolt1);
+            this.tpgNetCurrentPlayers.Controls.Add(this.lblCurrentPlayerArrow2);
+            this.tpgNetCurrentPlayers.Controls.Add(this.lblCurrentPlayerArrow1);
+            this.tpgNetCurrentPlayers.Controls.Add(this.lblCurrentPlayerLegs);
+            this.tpgNetCurrentPlayers.Controls.Add(this.lblCurrentPlayerLeftWep2);
+            this.tpgNetCurrentPlayers.Controls.Add(this.lblCurrentPlayerLeftWep1);
+            this.tpgNetCurrentPlayers.Controls.Add(this.lblCurrentPlayerRightWep2);
+            this.tpgNetCurrentPlayers.Controls.Add(this.lblCurrentPlayerRightWep1);
+            this.tpgNetCurrentPlayers.Controls.Add(this.lblCurrentPlayerHands);
+            this.tpgNetCurrentPlayers.Controls.Add(this.lblCurrentPlayerChest);
+            this.tpgNetCurrentPlayers.Controls.Add(this.lblCurrentPlayerHead);
+            this.tpgNetCurrentPlayers.Controls.Add(this.lblCurrentPlayerHair);
             this.tpgNetCurrentPlayers.Controls.Add(this.nupCurrentPlayerWeaponMemory);
             this.tpgNetCurrentPlayers.Controls.Add(this.lblCurrentPlayerWeaponMemory);
             this.tpgNetCurrentPlayers.Controls.Add(this.btnCurrentPlayerTeleport);
@@ -4354,6 +4394,346 @@
             this.tpgNetCurrentPlayers.TabIndex = 1;
             this.tpgNetCurrentPlayers.Text = "Current Players";
             this.tpgNetCurrentPlayers.UseVisualStyleBackColor = true;
+            // 
+            // txtCurrentPlayerQuickbar5
+            // 
+            this.txtCurrentPlayerQuickbar5.Location = new System.Drawing.Point(170, 500);
+            this.txtCurrentPlayerQuickbar5.Name = "txtCurrentPlayerQuickbar5";
+            this.txtCurrentPlayerQuickbar5.ReadOnly = true;
+            this.txtCurrentPlayerQuickbar5.Size = new System.Drawing.Size(135, 20);
+            this.txtCurrentPlayerQuickbar5.TabIndex = 134;
+            // 
+            // txtCurrentPlayerQuickbar4
+            // 
+            this.txtCurrentPlayerQuickbar4.Location = new System.Drawing.Point(170, 474);
+            this.txtCurrentPlayerQuickbar4.Name = "txtCurrentPlayerQuickbar4";
+            this.txtCurrentPlayerQuickbar4.ReadOnly = true;
+            this.txtCurrentPlayerQuickbar4.Size = new System.Drawing.Size(135, 20);
+            this.txtCurrentPlayerQuickbar4.TabIndex = 133;
+            // 
+            // txtCurrentPlayerQuickbar1
+            // 
+            this.txtCurrentPlayerQuickbar1.Location = new System.Drawing.Point(170, 396);
+            this.txtCurrentPlayerQuickbar1.Name = "txtCurrentPlayerQuickbar1";
+            this.txtCurrentPlayerQuickbar1.ReadOnly = true;
+            this.txtCurrentPlayerQuickbar1.Size = new System.Drawing.Size(135, 20);
+            this.txtCurrentPlayerQuickbar1.TabIndex = 132;
+            // 
+            // txtCurrentPlayerQuickbar2
+            // 
+            this.txtCurrentPlayerQuickbar2.Location = new System.Drawing.Point(170, 422);
+            this.txtCurrentPlayerQuickbar2.Name = "txtCurrentPlayerQuickbar2";
+            this.txtCurrentPlayerQuickbar2.ReadOnly = true;
+            this.txtCurrentPlayerQuickbar2.Size = new System.Drawing.Size(135, 20);
+            this.txtCurrentPlayerQuickbar2.TabIndex = 131;
+            // 
+            // txtCurrentPlayerQuickbar3
+            // 
+            this.txtCurrentPlayerQuickbar3.Location = new System.Drawing.Point(170, 448);
+            this.txtCurrentPlayerQuickbar3.Name = "txtCurrentPlayerQuickbar3";
+            this.txtCurrentPlayerQuickbar3.ReadOnly = true;
+            this.txtCurrentPlayerQuickbar3.Size = new System.Drawing.Size(135, 20);
+            this.txtCurrentPlayerQuickbar3.TabIndex = 130;
+            // 
+            // txtCurrentPlayerRing2
+            // 
+            this.txtCurrentPlayerRing2.Location = new System.Drawing.Point(170, 370);
+            this.txtCurrentPlayerRing2.Name = "txtCurrentPlayerRing2";
+            this.txtCurrentPlayerRing2.ReadOnly = true;
+            this.txtCurrentPlayerRing2.Size = new System.Drawing.Size(135, 20);
+            this.txtCurrentPlayerRing2.TabIndex = 129;
+            // 
+            // txtCurrentPlayerRing1
+            // 
+            this.txtCurrentPlayerRing1.Location = new System.Drawing.Point(170, 344);
+            this.txtCurrentPlayerRing1.Name = "txtCurrentPlayerRing1";
+            this.txtCurrentPlayerRing1.ReadOnly = true;
+            this.txtCurrentPlayerRing1.Size = new System.Drawing.Size(135, 20);
+            this.txtCurrentPlayerRing1.TabIndex = 128;
+            // 
+            // txtCurrentPlayerRightWep2
+            // 
+            this.txtCurrentPlayerRightWep2.Location = new System.Drawing.Point(170, 266);
+            this.txtCurrentPlayerRightWep2.Name = "txtCurrentPlayerRightWep2";
+            this.txtCurrentPlayerRightWep2.ReadOnly = true;
+            this.txtCurrentPlayerRightWep2.Size = new System.Drawing.Size(135, 20);
+            this.txtCurrentPlayerRightWep2.TabIndex = 127;
+            // 
+            // txtCurrentPlayerLeftWep1
+            // 
+            this.txtCurrentPlayerLeftWep1.Location = new System.Drawing.Point(170, 292);
+            this.txtCurrentPlayerLeftWep1.Name = "txtCurrentPlayerLeftWep1";
+            this.txtCurrentPlayerLeftWep1.ReadOnly = true;
+            this.txtCurrentPlayerLeftWep1.Size = new System.Drawing.Size(135, 20);
+            this.txtCurrentPlayerLeftWep1.TabIndex = 126;
+            // 
+            // txtCurrentPlayerLeftWep2
+            // 
+            this.txtCurrentPlayerLeftWep2.Location = new System.Drawing.Point(170, 318);
+            this.txtCurrentPlayerLeftWep2.Name = "txtCurrentPlayerLeftWep2";
+            this.txtCurrentPlayerLeftWep2.ReadOnly = true;
+            this.txtCurrentPlayerLeftWep2.Size = new System.Drawing.Size(135, 20);
+            this.txtCurrentPlayerLeftWep2.TabIndex = 125;
+            // 
+            // txtCurrentPlayerRightWep1
+            // 
+            this.txtCurrentPlayerRightWep1.Location = new System.Drawing.Point(170, 240);
+            this.txtCurrentPlayerRightWep1.Name = "txtCurrentPlayerRightWep1";
+            this.txtCurrentPlayerRightWep1.ReadOnly = true;
+            this.txtCurrentPlayerRightWep1.Size = new System.Drawing.Size(135, 20);
+            this.txtCurrentPlayerRightWep1.TabIndex = 124;
+            // 
+            // txtCurrentPlayerBolt2
+            // 
+            this.txtCurrentPlayerBolt2.Location = new System.Drawing.Point(170, 214);
+            this.txtCurrentPlayerBolt2.Name = "txtCurrentPlayerBolt2";
+            this.txtCurrentPlayerBolt2.ReadOnly = true;
+            this.txtCurrentPlayerBolt2.Size = new System.Drawing.Size(135, 20);
+            this.txtCurrentPlayerBolt2.TabIndex = 123;
+            // 
+            // txtCurrentPlayerArrow1
+            // 
+            this.txtCurrentPlayerArrow1.Location = new System.Drawing.Point(170, 136);
+            this.txtCurrentPlayerArrow1.Name = "txtCurrentPlayerArrow1";
+            this.txtCurrentPlayerArrow1.ReadOnly = true;
+            this.txtCurrentPlayerArrow1.Size = new System.Drawing.Size(135, 20);
+            this.txtCurrentPlayerArrow1.TabIndex = 122;
+            // 
+            // txtCurrentPlayerArrow2
+            // 
+            this.txtCurrentPlayerArrow2.Location = new System.Drawing.Point(170, 162);
+            this.txtCurrentPlayerArrow2.Name = "txtCurrentPlayerArrow2";
+            this.txtCurrentPlayerArrow2.ReadOnly = true;
+            this.txtCurrentPlayerArrow2.Size = new System.Drawing.Size(135, 20);
+            this.txtCurrentPlayerArrow2.TabIndex = 121;
+            // 
+            // txtCurrentPlayerBolt1
+            // 
+            this.txtCurrentPlayerBolt1.Location = new System.Drawing.Point(170, 188);
+            this.txtCurrentPlayerBolt1.Name = "txtCurrentPlayerBolt1";
+            this.txtCurrentPlayerBolt1.ReadOnly = true;
+            this.txtCurrentPlayerBolt1.Size = new System.Drawing.Size(135, 20);
+            this.txtCurrentPlayerBolt1.TabIndex = 120;
+            // 
+            // txtCurrentPlayerLegs
+            // 
+            this.txtCurrentPlayerLegs.Location = new System.Drawing.Point(170, 110);
+            this.txtCurrentPlayerLegs.Name = "txtCurrentPlayerLegs";
+            this.txtCurrentPlayerLegs.ReadOnly = true;
+            this.txtCurrentPlayerLegs.Size = new System.Drawing.Size(135, 20);
+            this.txtCurrentPlayerLegs.TabIndex = 119;
+            // 
+            // txtCurrentPlayerHands
+            // 
+            this.txtCurrentPlayerHands.Location = new System.Drawing.Point(170, 84);
+            this.txtCurrentPlayerHands.Name = "txtCurrentPlayerHands";
+            this.txtCurrentPlayerHands.ReadOnly = true;
+            this.txtCurrentPlayerHands.Size = new System.Drawing.Size(135, 20);
+            this.txtCurrentPlayerHands.TabIndex = 118;
+            // 
+            // txtCurrentPlayerHair
+            // 
+            this.txtCurrentPlayerHair.Location = new System.Drawing.Point(170, 6);
+            this.txtCurrentPlayerHair.Name = "txtCurrentPlayerHair";
+            this.txtCurrentPlayerHair.ReadOnly = true;
+            this.txtCurrentPlayerHair.Size = new System.Drawing.Size(135, 20);
+            this.txtCurrentPlayerHair.TabIndex = 117;
+            // 
+            // txtCurrentPlayerHead
+            // 
+            this.txtCurrentPlayerHead.Location = new System.Drawing.Point(170, 32);
+            this.txtCurrentPlayerHead.Name = "txtCurrentPlayerHead";
+            this.txtCurrentPlayerHead.ReadOnly = true;
+            this.txtCurrentPlayerHead.Size = new System.Drawing.Size(135, 20);
+            this.txtCurrentPlayerHead.TabIndex = 116;
+            // 
+            // txtCurrentPlayerChest
+            // 
+            this.txtCurrentPlayerChest.Location = new System.Drawing.Point(170, 58);
+            this.txtCurrentPlayerChest.Name = "txtCurrentPlayerChest";
+            this.txtCurrentPlayerChest.ReadOnly = true;
+            this.txtCurrentPlayerChest.Size = new System.Drawing.Size(135, 20);
+            this.txtCurrentPlayerChest.TabIndex = 115;
+            // 
+            // lblCurrentPlayerQuickbar5
+            // 
+            this.lblCurrentPlayerQuickbar5.AutoSize = true;
+            this.lblCurrentPlayerQuickbar5.Location = new System.Drawing.Point(311, 503);
+            this.lblCurrentPlayerQuickbar5.Name = "lblCurrentPlayerQuickbar5";
+            this.lblCurrentPlayerQuickbar5.Size = new System.Drawing.Size(59, 13);
+            this.lblCurrentPlayerQuickbar5.TabIndex = 114;
+            this.lblCurrentPlayerQuickbar5.Text = "Quickbar 5";
+            // 
+            // lblCurrentPlayerQuickbar4
+            // 
+            this.lblCurrentPlayerQuickbar4.AutoSize = true;
+            this.lblCurrentPlayerQuickbar4.Location = new System.Drawing.Point(311, 477);
+            this.lblCurrentPlayerQuickbar4.Name = "lblCurrentPlayerQuickbar4";
+            this.lblCurrentPlayerQuickbar4.Size = new System.Drawing.Size(59, 13);
+            this.lblCurrentPlayerQuickbar4.TabIndex = 113;
+            this.lblCurrentPlayerQuickbar4.Text = "Quickbar 4";
+            // 
+            // lblCurrentPlayerQuickbar3
+            // 
+            this.lblCurrentPlayerQuickbar3.AutoSize = true;
+            this.lblCurrentPlayerQuickbar3.Location = new System.Drawing.Point(311, 451);
+            this.lblCurrentPlayerQuickbar3.Name = "lblCurrentPlayerQuickbar3";
+            this.lblCurrentPlayerQuickbar3.Size = new System.Drawing.Size(59, 13);
+            this.lblCurrentPlayerQuickbar3.TabIndex = 112;
+            this.lblCurrentPlayerQuickbar3.Text = "Quickbar 3";
+            // 
+            // lblCurrentPlayerQuickbar2
+            // 
+            this.lblCurrentPlayerQuickbar2.AutoSize = true;
+            this.lblCurrentPlayerQuickbar2.Location = new System.Drawing.Point(311, 425);
+            this.lblCurrentPlayerQuickbar2.Name = "lblCurrentPlayerQuickbar2";
+            this.lblCurrentPlayerQuickbar2.Size = new System.Drawing.Size(59, 13);
+            this.lblCurrentPlayerQuickbar2.TabIndex = 111;
+            this.lblCurrentPlayerQuickbar2.Text = "Quickbar 2";
+            // 
+            // lblCurrentPlayerQuickbar1
+            // 
+            this.lblCurrentPlayerQuickbar1.AutoSize = true;
+            this.lblCurrentPlayerQuickbar1.Location = new System.Drawing.Point(311, 399);
+            this.lblCurrentPlayerQuickbar1.Name = "lblCurrentPlayerQuickbar1";
+            this.lblCurrentPlayerQuickbar1.Size = new System.Drawing.Size(59, 13);
+            this.lblCurrentPlayerQuickbar1.TabIndex = 110;
+            this.lblCurrentPlayerQuickbar1.Text = "Quickbar 1";
+            // 
+            // lblCurrentPlayer2
+            // 
+            this.lblCurrentPlayer2.AutoSize = true;
+            this.lblCurrentPlayer2.Location = new System.Drawing.Point(311, 373);
+            this.lblCurrentPlayer2.Name = "lblCurrentPlayer2";
+            this.lblCurrentPlayer2.Size = new System.Drawing.Size(38, 13);
+            this.lblCurrentPlayer2.TabIndex = 109;
+            this.lblCurrentPlayer2.Text = "Ring 2";
+            // 
+            // lblCurrentPlayerRing1
+            // 
+            this.lblCurrentPlayerRing1.AutoSize = true;
+            this.lblCurrentPlayerRing1.Location = new System.Drawing.Point(311, 347);
+            this.lblCurrentPlayerRing1.Name = "lblCurrentPlayerRing1";
+            this.lblCurrentPlayerRing1.Size = new System.Drawing.Size(38, 13);
+            this.lblCurrentPlayerRing1.TabIndex = 108;
+            this.lblCurrentPlayerRing1.Text = "Ring 1";
+            // 
+            // lblCurrentPlayerBolt2
+            // 
+            this.lblCurrentPlayerBolt2.AutoSize = true;
+            this.lblCurrentPlayerBolt2.Location = new System.Drawing.Point(311, 217);
+            this.lblCurrentPlayerBolt2.Name = "lblCurrentPlayerBolt2";
+            this.lblCurrentPlayerBolt2.Size = new System.Drawing.Size(34, 13);
+            this.lblCurrentPlayerBolt2.TabIndex = 107;
+            this.lblCurrentPlayerBolt2.Text = "Bolt 2";
+            // 
+            // lblCurrentPlayerBolt1
+            // 
+            this.lblCurrentPlayerBolt1.AutoSize = true;
+            this.lblCurrentPlayerBolt1.Location = new System.Drawing.Point(311, 191);
+            this.lblCurrentPlayerBolt1.Name = "lblCurrentPlayerBolt1";
+            this.lblCurrentPlayerBolt1.Size = new System.Drawing.Size(34, 13);
+            this.lblCurrentPlayerBolt1.TabIndex = 106;
+            this.lblCurrentPlayerBolt1.Text = "Bolt 1";
+            // 
+            // lblCurrentPlayerArrow2
+            // 
+            this.lblCurrentPlayerArrow2.AutoSize = true;
+            this.lblCurrentPlayerArrow2.Location = new System.Drawing.Point(311, 165);
+            this.lblCurrentPlayerArrow2.Name = "lblCurrentPlayerArrow2";
+            this.lblCurrentPlayerArrow2.Size = new System.Drawing.Size(43, 13);
+            this.lblCurrentPlayerArrow2.TabIndex = 105;
+            this.lblCurrentPlayerArrow2.Text = "Arrow 2";
+            // 
+            // lblCurrentPlayerArrow1
+            // 
+            this.lblCurrentPlayerArrow1.AutoSize = true;
+            this.lblCurrentPlayerArrow1.Location = new System.Drawing.Point(311, 139);
+            this.lblCurrentPlayerArrow1.Name = "lblCurrentPlayerArrow1";
+            this.lblCurrentPlayerArrow1.Size = new System.Drawing.Size(43, 13);
+            this.lblCurrentPlayerArrow1.TabIndex = 104;
+            this.lblCurrentPlayerArrow1.Text = "Arrow 1";
+            // 
+            // lblCurrentPlayerLegs
+            // 
+            this.lblCurrentPlayerLegs.AutoSize = true;
+            this.lblCurrentPlayerLegs.Location = new System.Drawing.Point(311, 113);
+            this.lblCurrentPlayerLegs.Name = "lblCurrentPlayerLegs";
+            this.lblCurrentPlayerLegs.Size = new System.Drawing.Size(30, 13);
+            this.lblCurrentPlayerLegs.TabIndex = 103;
+            this.lblCurrentPlayerLegs.Text = "Legs";
+            // 
+            // lblCurrentPlayerLeftWep2
+            // 
+            this.lblCurrentPlayerLeftWep2.AutoSize = true;
+            this.lblCurrentPlayerLeftWep2.Location = new System.Drawing.Point(311, 321);
+            this.lblCurrentPlayerLeftWep2.Name = "lblCurrentPlayerLeftWep2";
+            this.lblCurrentPlayerLeftWep2.Size = new System.Drawing.Size(54, 13);
+            this.lblCurrentPlayerLeftWep2.TabIndex = 102;
+            this.lblCurrentPlayerLeftWep2.Text = "L. Hand 2";
+            // 
+            // lblCurrentPlayerLeftWep1
+            // 
+            this.lblCurrentPlayerLeftWep1.AutoSize = true;
+            this.lblCurrentPlayerLeftWep1.Location = new System.Drawing.Point(311, 295);
+            this.lblCurrentPlayerLeftWep1.Name = "lblCurrentPlayerLeftWep1";
+            this.lblCurrentPlayerLeftWep1.Size = new System.Drawing.Size(54, 13);
+            this.lblCurrentPlayerLeftWep1.TabIndex = 101;
+            this.lblCurrentPlayerLeftWep1.Text = "L. Hand 1";
+            // 
+            // lblCurrentPlayerRightWep2
+            // 
+            this.lblCurrentPlayerRightWep2.AutoSize = true;
+            this.lblCurrentPlayerRightWep2.Location = new System.Drawing.Point(311, 269);
+            this.lblCurrentPlayerRightWep2.Name = "lblCurrentPlayerRightWep2";
+            this.lblCurrentPlayerRightWep2.Size = new System.Drawing.Size(56, 13);
+            this.lblCurrentPlayerRightWep2.TabIndex = 100;
+            this.lblCurrentPlayerRightWep2.Text = "R. Hand 2";
+            // 
+            // lblCurrentPlayerRightWep1
+            // 
+            this.lblCurrentPlayerRightWep1.AutoSize = true;
+            this.lblCurrentPlayerRightWep1.Location = new System.Drawing.Point(311, 243);
+            this.lblCurrentPlayerRightWep1.Name = "lblCurrentPlayerRightWep1";
+            this.lblCurrentPlayerRightWep1.Size = new System.Drawing.Size(56, 13);
+            this.lblCurrentPlayerRightWep1.TabIndex = 99;
+            this.lblCurrentPlayerRightWep1.Text = "R. Hand 1";
+            // 
+            // lblCurrentPlayerHands
+            // 
+            this.lblCurrentPlayerHands.AutoSize = true;
+            this.lblCurrentPlayerHands.Location = new System.Drawing.Point(311, 87);
+            this.lblCurrentPlayerHands.Name = "lblCurrentPlayerHands";
+            this.lblCurrentPlayerHands.Size = new System.Drawing.Size(38, 13);
+            this.lblCurrentPlayerHands.TabIndex = 98;
+            this.lblCurrentPlayerHands.Text = "Hands";
+            // 
+            // lblCurrentPlayerChest
+            // 
+            this.lblCurrentPlayerChest.AutoSize = true;
+            this.lblCurrentPlayerChest.Location = new System.Drawing.Point(311, 61);
+            this.lblCurrentPlayerChest.Name = "lblCurrentPlayerChest";
+            this.lblCurrentPlayerChest.Size = new System.Drawing.Size(34, 13);
+            this.lblCurrentPlayerChest.TabIndex = 97;
+            this.lblCurrentPlayerChest.Text = "Chest";
+            // 
+            // lblCurrentPlayerHead
+            // 
+            this.lblCurrentPlayerHead.AutoSize = true;
+            this.lblCurrentPlayerHead.Location = new System.Drawing.Point(311, 35);
+            this.lblCurrentPlayerHead.Name = "lblCurrentPlayerHead";
+            this.lblCurrentPlayerHead.Size = new System.Drawing.Size(33, 13);
+            this.lblCurrentPlayerHead.TabIndex = 96;
+            this.lblCurrentPlayerHead.Text = "Head";
+            // 
+            // lblCurrentPlayerHair
+            // 
+            this.lblCurrentPlayerHair.AutoSize = true;
+            this.lblCurrentPlayerHair.Location = new System.Drawing.Point(311, 9);
+            this.lblCurrentPlayerHair.Name = "lblCurrentPlayerHair";
+            this.lblCurrentPlayerHair.Size = new System.Drawing.Size(26, 13);
+            this.lblCurrentPlayerHair.TabIndex = 95;
+            this.lblCurrentPlayerHair.Text = "Hair";
             // 
             // nupCurrentPlayerWeaponMemory
             // 
@@ -5551,46 +5931,26 @@
         private System.Windows.Forms.Label lblCurrentPlayerVitality;
         private System.Windows.Forms.Label lblCurrentPlayerSoulLevel;
         private System.Windows.Forms.ListBox lbxNetCurrentPlayers;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox11;
-        private System.Windows.Forms.ComboBox comboBox12;
-        private System.Windows.Forms.ComboBox comboBox13;
-        private System.Windows.Forms.ComboBox comboBox14;
-        private System.Windows.Forms.ComboBox comboBox15;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label lblRecentPlayerRightHand1;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.ComboBox cmbRecentPlayerRightHand1;
-        private System.Windows.Forms.ComboBox comboBox8;
-        private System.Windows.Forms.ComboBox comboBox9;
-        private System.Windows.Forms.ComboBox comboBox10;
-        private System.Windows.Forms.ComboBox comboBox16;
-        private System.Windows.Forms.ComboBox comboBox17;
-        private System.Windows.Forms.ComboBox comboBox18;
-        private System.Windows.Forms.ComboBox comboBox19;
-        private System.Windows.Forms.ComboBox comboBox20;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label lblRecentPlayerHands;
+        private System.Windows.Forms.Label lblRecentPlayerChest;
+        private System.Windows.Forms.Label lblRecentPlayerHead;
+        private System.Windows.Forms.Label lblRecentPlayerHair;
+        private System.Windows.Forms.Label lblRecentPlayerLegs;
+        private System.Windows.Forms.Label lblRecentPlayerLeftWep2;
+        private System.Windows.Forms.Label lblRecentPlayerLeftWep1;
+        private System.Windows.Forms.Label lblRecentPlayerRightWep2;
+        private System.Windows.Forms.Label lblRecentPlayerRightWep1;
+        private System.Windows.Forms.Label lblRecentPlayerRing2;
+        private System.Windows.Forms.Label lblRecentPlayerRing1;
+        private System.Windows.Forms.Label lblRecentPlayerBolt2;
+        private System.Windows.Forms.Label lblRecentPlayerBolt1;
+        private System.Windows.Forms.Label lblRecentPlayerArrow2;
+        private System.Windows.Forms.Label lblRecentPlayerArrow1;
+        private System.Windows.Forms.Label lblRecentPlayerQuickbar5;
+        private System.Windows.Forms.Label lblRecentPlayerQuickbar4;
+        private System.Windows.Forms.Label lblRecentPlayerQuickbar3;
+        private System.Windows.Forms.Label lblRecentPlayerQuickbar2;
+        private System.Windows.Forms.Label lblRecentPlayerQuickbar1;
         private System.Windows.Forms.Button btnCurrentPlayerKick;
         private System.Windows.Forms.TabControl tclStats;
         private System.Windows.Forms.TabPage tpgStatsStats;
@@ -5735,6 +6095,66 @@
         private System.Windows.Forms.Label lblRecentPlayerWeaponMemory;
         private System.Windows.Forms.TextBox txtSettingsSteamAPIKey;
         private System.Windows.Forms.Label lblSettingsSteamAPIKey;
+        private System.Windows.Forms.TextBox txtRecentPlayerQuickbar5;
+        private System.Windows.Forms.TextBox txtRecentPlayerQuickbar4;
+        private System.Windows.Forms.TextBox txtRecentPlayerQuickbar1;
+        private System.Windows.Forms.TextBox txtRecentPlayerQuickbar2;
+        private System.Windows.Forms.TextBox txtRecentPlayerQuickbar3;
+        private System.Windows.Forms.TextBox txtRecentPlayerRing2;
+        private System.Windows.Forms.TextBox txtRecentPlayerRing1;
+        private System.Windows.Forms.TextBox txtRecentPlayerRightWep2;
+        private System.Windows.Forms.TextBox txtRecentPlayerLeftWep1;
+        private System.Windows.Forms.TextBox txtRecentPlayerLeftWep2;
+        private System.Windows.Forms.TextBox txtRecentPlayerRightWep1;
+        private System.Windows.Forms.TextBox txtRecentPlayerBolt2;
+        private System.Windows.Forms.TextBox txtRecentPlayerArrow1;
+        private System.Windows.Forms.TextBox txtRecentPlayerArrow2;
+        private System.Windows.Forms.TextBox txtRecentPlayerBolt1;
+        private System.Windows.Forms.TextBox txtRecentPlayerLegs;
+        private System.Windows.Forms.TextBox txtRecentPlayerHands;
+        private System.Windows.Forms.TextBox txtRecentPlayerHair;
+        private System.Windows.Forms.TextBox txtRecentPlayerHead;
+        private System.Windows.Forms.TextBox txtRecentPlayerChest;
+        private System.Windows.Forms.TextBox txtCurrentPlayerQuickbar5;
+        private System.Windows.Forms.TextBox txtCurrentPlayerQuickbar4;
+        private System.Windows.Forms.TextBox txtCurrentPlayerQuickbar1;
+        private System.Windows.Forms.TextBox txtCurrentPlayerQuickbar2;
+        private System.Windows.Forms.TextBox txtCurrentPlayerQuickbar3;
+        private System.Windows.Forms.TextBox txtCurrentPlayerRing2;
+        private System.Windows.Forms.TextBox txtCurrentPlayerRing1;
+        private System.Windows.Forms.TextBox txtCurrentPlayerRightWep2;
+        private System.Windows.Forms.TextBox txtCurrentPlayerLeftWep1;
+        private System.Windows.Forms.TextBox txtCurrentPlayerLeftWep2;
+        private System.Windows.Forms.TextBox txtCurrentPlayerRightWep1;
+        private System.Windows.Forms.TextBox txtCurrentPlayerBolt2;
+        private System.Windows.Forms.TextBox txtCurrentPlayerArrow1;
+        private System.Windows.Forms.TextBox txtCurrentPlayerArrow2;
+        private System.Windows.Forms.TextBox txtCurrentPlayerBolt1;
+        private System.Windows.Forms.TextBox txtCurrentPlayerLegs;
+        private System.Windows.Forms.TextBox txtCurrentPlayerHands;
+        private System.Windows.Forms.TextBox txtCurrentPlayerHair;
+        private System.Windows.Forms.TextBox txtCurrentPlayerHead;
+        private System.Windows.Forms.TextBox txtCurrentPlayerChest;
+        private System.Windows.Forms.Label lblCurrentPlayerQuickbar5;
+        private System.Windows.Forms.Label lblCurrentPlayerQuickbar4;
+        private System.Windows.Forms.Label lblCurrentPlayerQuickbar3;
+        private System.Windows.Forms.Label lblCurrentPlayerQuickbar2;
+        private System.Windows.Forms.Label lblCurrentPlayerQuickbar1;
+        private System.Windows.Forms.Label lblCurrentPlayer2;
+        private System.Windows.Forms.Label lblCurrentPlayerRing1;
+        private System.Windows.Forms.Label lblCurrentPlayerBolt2;
+        private System.Windows.Forms.Label lblCurrentPlayerBolt1;
+        private System.Windows.Forms.Label lblCurrentPlayerArrow2;
+        private System.Windows.Forms.Label lblCurrentPlayerArrow1;
+        private System.Windows.Forms.Label lblCurrentPlayerLegs;
+        private System.Windows.Forms.Label lblCurrentPlayerLeftWep2;
+        private System.Windows.Forms.Label lblCurrentPlayerLeftWep1;
+        private System.Windows.Forms.Label lblCurrentPlayerRightWep2;
+        private System.Windows.Forms.Label lblCurrentPlayerRightWep1;
+        private System.Windows.Forms.Label lblCurrentPlayerHands;
+        private System.Windows.Forms.Label lblCurrentPlayerChest;
+        private System.Windows.Forms.Label lblCurrentPlayerHead;
+        private System.Windows.Forms.Label lblCurrentPlayerHair;
     }
 }
 
