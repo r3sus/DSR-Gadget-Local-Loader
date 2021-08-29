@@ -44,6 +44,7 @@ namespace DSR_Gadget
                 cbxGestureBeckon, cbxGestureWave, cbxGestureBow, cbxGestureProperBow, cbxGestureHurrah,
                 cbxGestureJoy, cbxGestureShrug, cbxGestureLookSkyward, cbxGestureWellWhatIsIt, cbxGestureProstration,
                 cbxGesturePrayer, cbxGesturePraiseTheSun};
+            criticalControls.AddRange(cmbGestures);
         }
 
         private void enableCriticalControls(bool enable)

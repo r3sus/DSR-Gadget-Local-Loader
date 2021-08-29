@@ -66,7 +66,6 @@ namespace DSR_Gadget
 
 #if DEBUG
             criticalControls.Add(nudIndictments);
-            criticalControls.AddRange(cmbGestures);
             criticalControls.AddRange(cbxGestures);
 #endif
         }
