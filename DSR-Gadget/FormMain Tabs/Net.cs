@@ -298,6 +298,22 @@ namespace DSR_Gadget
             nudSosPosZ.Value = (decimal)pos.Z;
             nudSosPosAngle.Value = (decimal)pos.Angle;
             updateDropdown<DSRSummon>(cmbSosSummonType, sign.SummonType);
+
+            txtSosHair.Text = Util.Util.DictGetOrDefault(DSRProtector.Dict, sign.Hair, sign.Hair.ToString());
+            txtSosHead.Text = Util.Util.DictGetOrDefault(DSRProtector.Dict, sign.ArmorHead, sign.ArmorHead.ToString());
+            txtSosChest.Text = Util.Util.DictGetOrDefault(DSRProtector.Dict, sign.ArmorChest, sign.ArmorChest.ToString());
+            txtSosHands.Text = Util.Util.DictGetOrDefault(DSRProtector.Dict, sign.ArmorHands, sign.ArmorHands.ToString());
+            txtSosLegs.Text = Util.Util.DictGetOrDefault(DSRProtector.Dict, sign.ArmorLegs, sign.ArmorLegs.ToString());
+            
+            txtSosArrow1.Text = Util.Util.DictGetOrDefault(DSRWeapon.Dict, sign.Arrow1, sign.Arrow1.ToString());
+            txtSosArrow2.Text = Util.Util.DictGetOrDefault(DSRWeapon.Dict, sign.Arrow2, sign.Arrow2.ToString());
+            txtSosBolt1.Text = Util.Util.DictGetOrDefault(DSRWeapon.Dict, sign.Bolt1, sign.Bolt1.ToString());
+            txtSosBolt2.Text = Util.Util.DictGetOrDefault(DSRWeapon.Dict, sign.Bolt2, sign.Bolt2.ToString());
+            
+            txtSosRightWep1.Text = Util.Util.DictGetOrDefault(DSRWeapon.Dict, sign.RightWep1, sign.RightWep1.ToString());
+            txtSosRightWep2.Text = Util.Util.DictGetOrDefault(DSRWeapon.Dict, sign.RightWep2, sign.RightWep2.ToString());
+            txtSosLeftWep1.Text = Util.Util.DictGetOrDefault(DSRWeapon.Dict, sign.LeftWep1, sign.LeftWep1.ToString());
+            txtSosLeftWep2.Text = Util.Util.DictGetOrDefault(DSRWeapon.Dict, sign.LeftWep2, sign.LeftWep2.ToString());
         }
 
         private void btnCurrentPlayerKick_Click(object sender, EventArgs e)
