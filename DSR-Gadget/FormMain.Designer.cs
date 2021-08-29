@@ -410,6 +410,32 @@
             this.lblCurrentPlayerSoulLevel = new System.Windows.Forms.Label();
             this.lbxNetCurrentPlayers = new System.Windows.Forms.ListBox();
             this.tpgNetSummonSigns = new System.Windows.Forms.TabPage();
+            this.txtSosRightWep2 = new System.Windows.Forms.TextBox();
+            this.txtSosLeftWep1 = new System.Windows.Forms.TextBox();
+            this.txtSosLeftWep2 = new System.Windows.Forms.TextBox();
+            this.txtSosRightWep1 = new System.Windows.Forms.TextBox();
+            this.txtSosBolt2 = new System.Windows.Forms.TextBox();
+            this.txtSosArrow1 = new System.Windows.Forms.TextBox();
+            this.txtSosArrow2 = new System.Windows.Forms.TextBox();
+            this.txtSosBolt1 = new System.Windows.Forms.TextBox();
+            this.txtSosLegs = new System.Windows.Forms.TextBox();
+            this.txtSosHands = new System.Windows.Forms.TextBox();
+            this.txtSosHair = new System.Windows.Forms.TextBox();
+            this.txtSosHead = new System.Windows.Forms.TextBox();
+            this.txtSosChest = new System.Windows.Forms.TextBox();
+            this.lblSosBolt2 = new System.Windows.Forms.Label();
+            this.lblSosBolt1 = new System.Windows.Forms.Label();
+            this.lblSosArrow2 = new System.Windows.Forms.Label();
+            this.lblSosArrow1 = new System.Windows.Forms.Label();
+            this.lblSosLegs = new System.Windows.Forms.Label();
+            this.lblSosLeftWep2 = new System.Windows.Forms.Label();
+            this.lblSosLeftWep1 = new System.Windows.Forms.Label();
+            this.lblSosRightWep2 = new System.Windows.Forms.Label();
+            this.lblSosRightWep1 = new System.Windows.Forms.Label();
+            this.lblSosHands = new System.Windows.Forms.Label();
+            this.lblSosChest = new System.Windows.Forms.Label();
+            this.lblSosHead = new System.Windows.Forms.Label();
+            this.lblSosHair = new System.Windows.Forms.Label();
             this.lblSosSpawnPosition = new System.Windows.Forms.Label();
             this.lblSosPosAngle = new System.Windows.Forms.Label();
             this.nudSosPosZ = new System.Windows.Forms.NumericUpDown();
@@ -443,32 +469,6 @@
             this.tmrUpdate = new System.Windows.Forms.Timer(this.components);
             this.lblUpdate = new System.Windows.Forms.Label();
             this.llbUpdate = new System.Windows.Forms.LinkLabel();
-            this.txtSosRightWep2 = new System.Windows.Forms.TextBox();
-            this.txtSosLeftWep1 = new System.Windows.Forms.TextBox();
-            this.txtSosLeftWep2 = new System.Windows.Forms.TextBox();
-            this.txtSosRightWep1 = new System.Windows.Forms.TextBox();
-            this.txtSosBolt2 = new System.Windows.Forms.TextBox();
-            this.txtSosArrow1 = new System.Windows.Forms.TextBox();
-            this.txtSosArrow2 = new System.Windows.Forms.TextBox();
-            this.txtSosBolt1 = new System.Windows.Forms.TextBox();
-            this.txtSosLegs = new System.Windows.Forms.TextBox();
-            this.txtSosHands = new System.Windows.Forms.TextBox();
-            this.txtSosHair = new System.Windows.Forms.TextBox();
-            this.txtSosHead = new System.Windows.Forms.TextBox();
-            this.txtSosChest = new System.Windows.Forms.TextBox();
-            this.lblSosBolt2 = new System.Windows.Forms.Label();
-            this.lblSosBolt1 = new System.Windows.Forms.Label();
-            this.lblSosArrow2 = new System.Windows.Forms.Label();
-            this.lblSosArrow1 = new System.Windows.Forms.Label();
-            this.lblSosLegs = new System.Windows.Forms.Label();
-            this.lblSosLeftWep2 = new System.Windows.Forms.Label();
-            this.lblSosLeftWep1 = new System.Windows.Forms.Label();
-            this.lblSosRightWep2 = new System.Windows.Forms.Label();
-            this.lblSosRightWep1 = new System.Windows.Forms.Label();
-            this.lblSosHands = new System.Windows.Forms.Label();
-            this.lblSosChest = new System.Windows.Forms.Label();
-            this.lblSosHead = new System.Windows.Forms.Label();
-            this.lblSosHair = new System.Windows.Forms.Label();
             this.tclMain.SuspendLayout();
             this.tpgPlayer.SuspendLayout();
             this.gbxOther.SuspendLayout();
@@ -2412,6 +2412,7 @@
             // cbxGesturePraiseTheSun
             // 
             this.cbxGesturePraiseTheSun.AutoSize = true;
+            this.cbxGesturePraiseTheSun.Enabled = false;
             this.cbxGesturePraiseTheSun.Location = new System.Drawing.Point(100, 157);
             this.cbxGesturePraiseTheSun.Name = "cbxGesturePraiseTheSun";
             this.cbxGesturePraiseTheSun.Size = new System.Drawing.Size(95, 17);
@@ -2423,6 +2424,7 @@
             // cbxGesturePrayer
             // 
             this.cbxGesturePrayer.AutoSize = true;
+            this.cbxGesturePrayer.Enabled = false;
             this.cbxGesturePrayer.Location = new System.Drawing.Point(100, 134);
             this.cbxGesturePrayer.Name = "cbxGesturePrayer";
             this.cbxGesturePrayer.Size = new System.Drawing.Size(56, 17);
@@ -2434,6 +2436,7 @@
             // cbxGestureProstration
             // 
             this.cbxGestureProstration.AutoSize = true;
+            this.cbxGestureProstration.Enabled = false;
             this.cbxGestureProstration.Location = new System.Drawing.Point(100, 111);
             this.cbxGestureProstration.Name = "cbxGestureProstration";
             this.cbxGestureProstration.Size = new System.Drawing.Size(76, 17);
@@ -2445,6 +2448,7 @@
             // cbxGestureWellWhatIsIt
             // 
             this.cbxGestureWellWhatIsIt.AutoSize = true;
+            this.cbxGestureWellWhatIsIt.Enabled = false;
             this.cbxGestureWellWhatIsIt.Location = new System.Drawing.Point(100, 88);
             this.cbxGestureWellWhatIsIt.Name = "cbxGestureWellWhatIsIt";
             this.cbxGestureWellWhatIsIt.Size = new System.Drawing.Size(100, 17);
@@ -2456,6 +2460,7 @@
             // cbxGestureLookSkyward
             // 
             this.cbxGestureLookSkyward.AutoSize = true;
+            this.cbxGestureLookSkyward.Enabled = false;
             this.cbxGestureLookSkyward.Location = new System.Drawing.Point(100, 65);
             this.cbxGestureLookSkyward.Name = "cbxGestureLookSkyward";
             this.cbxGestureLookSkyward.Size = new System.Drawing.Size(92, 17);
@@ -2467,6 +2472,7 @@
             // cbxGestureShrug
             // 
             this.cbxGestureShrug.AutoSize = true;
+            this.cbxGestureShrug.Enabled = false;
             this.cbxGestureShrug.Location = new System.Drawing.Point(100, 42);
             this.cbxGestureShrug.Name = "cbxGestureShrug";
             this.cbxGestureShrug.Size = new System.Drawing.Size(54, 17);
@@ -2478,6 +2484,7 @@
             // cbxGestureJoy
             // 
             this.cbxGestureJoy.AutoSize = true;
+            this.cbxGestureJoy.Enabled = false;
             this.cbxGestureJoy.Location = new System.Drawing.Point(100, 19);
             this.cbxGestureJoy.Name = "cbxGestureJoy";
             this.cbxGestureJoy.Size = new System.Drawing.Size(42, 17);
@@ -2489,6 +2496,7 @@
             // cbxGestureHurrah
             // 
             this.cbxGestureHurrah.AutoSize = true;
+            this.cbxGestureHurrah.Enabled = false;
             this.cbxGestureHurrah.Location = new System.Drawing.Point(6, 180);
             this.cbxGestureHurrah.Name = "cbxGestureHurrah";
             this.cbxGestureHurrah.Size = new System.Drawing.Size(61, 17);
@@ -2510,6 +2518,7 @@
             // cbxGestureProperBow
             // 
             this.cbxGestureProperBow.AutoSize = true;
+            this.cbxGestureProperBow.Enabled = false;
             this.cbxGestureProperBow.Location = new System.Drawing.Point(6, 157);
             this.cbxGestureProperBow.Name = "cbxGestureProperBow";
             this.cbxGestureProperBow.Size = new System.Drawing.Size(80, 17);
@@ -2521,6 +2530,7 @@
             // cbxGestureBow
             // 
             this.cbxGestureBow.AutoSize = true;
+            this.cbxGestureBow.Enabled = false;
             this.cbxGestureBow.Location = new System.Drawing.Point(6, 134);
             this.cbxGestureBow.Name = "cbxGestureBow";
             this.cbxGestureBow.Size = new System.Drawing.Size(47, 17);
@@ -2532,6 +2542,7 @@
             // cbxGestureWave
             // 
             this.cbxGestureWave.AutoSize = true;
+            this.cbxGestureWave.Enabled = false;
             this.cbxGestureWave.Location = new System.Drawing.Point(6, 111);
             this.cbxGestureWave.Name = "cbxGestureWave";
             this.cbxGestureWave.Size = new System.Drawing.Size(55, 17);
@@ -2543,6 +2554,7 @@
             // cbxGestureBeckon
             // 
             this.cbxGestureBeckon.AutoSize = true;
+            this.cbxGestureBeckon.Enabled = false;
             this.cbxGestureBeckon.Location = new System.Drawing.Point(6, 88);
             this.cbxGestureBeckon.Name = "cbxGestureBeckon";
             this.cbxGestureBeckon.Size = new System.Drawing.Size(63, 17);
@@ -2554,6 +2566,7 @@
             // cbxGesturePointDown
             // 
             this.cbxGesturePointDown.AutoSize = true;
+            this.cbxGesturePointDown.Enabled = false;
             this.cbxGesturePointDown.Location = new System.Drawing.Point(6, 65);
             this.cbxGesturePointDown.Name = "cbxGesturePointDown";
             this.cbxGesturePointDown.Size = new System.Drawing.Size(79, 17);
@@ -2565,6 +2578,7 @@
             // cbxGesturePointUp
             // 
             this.cbxGesturePointUp.AutoSize = true;
+            this.cbxGesturePointUp.Enabled = false;
             this.cbxGesturePointUp.Location = new System.Drawing.Point(6, 42);
             this.cbxGesturePointUp.Name = "cbxGesturePointUp";
             this.cbxGesturePointUp.Size = new System.Drawing.Size(65, 17);
@@ -2576,6 +2590,7 @@
             // cbxGesturePointForward
             // 
             this.cbxGesturePointForward.AutoSize = true;
+            this.cbxGesturePointForward.Enabled = false;
             this.cbxGesturePointForward.Location = new System.Drawing.Point(6, 19);
             this.cbxGesturePointForward.Name = "cbxGesturePointForward";
             this.cbxGesturePointForward.Size = new System.Drawing.Size(88, 17);
@@ -2603,6 +2618,7 @@
             // cmbGestureSlot7
             // 
             this.cmbGestureSlot7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbGestureSlot7.Enabled = false;
             this.cmbGestureSlot7.FormattingEnabled = true;
             this.cmbGestureSlot7.Location = new System.Drawing.Point(6, 181);
             this.cmbGestureSlot7.Name = "cmbGestureSlot7";
@@ -2612,6 +2628,7 @@
             // cmbGestureSlot6
             // 
             this.cmbGestureSlot6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbGestureSlot6.Enabled = false;
             this.cmbGestureSlot6.FormattingEnabled = true;
             this.cmbGestureSlot6.Location = new System.Drawing.Point(6, 154);
             this.cmbGestureSlot6.Name = "cmbGestureSlot6";
@@ -2621,6 +2638,7 @@
             // cmbGestureSlot5
             // 
             this.cmbGestureSlot5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbGestureSlot5.Enabled = false;
             this.cmbGestureSlot5.FormattingEnabled = true;
             this.cmbGestureSlot5.Location = new System.Drawing.Point(6, 127);
             this.cmbGestureSlot5.Name = "cmbGestureSlot5";
@@ -2630,6 +2648,7 @@
             // cmbGestureSlot4
             // 
             this.cmbGestureSlot4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbGestureSlot4.Enabled = false;
             this.cmbGestureSlot4.FormattingEnabled = true;
             this.cmbGestureSlot4.Location = new System.Drawing.Point(6, 100);
             this.cmbGestureSlot4.Name = "cmbGestureSlot4";
@@ -2639,6 +2658,7 @@
             // cmbGestureSlot3
             // 
             this.cmbGestureSlot3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbGestureSlot3.Enabled = false;
             this.cmbGestureSlot3.FormattingEnabled = true;
             this.cmbGestureSlot3.Location = new System.Drawing.Point(6, 73);
             this.cmbGestureSlot3.Name = "cmbGestureSlot3";
@@ -2648,6 +2668,7 @@
             // cmbGestureSlot2
             // 
             this.cmbGestureSlot2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbGestureSlot2.Enabled = false;
             this.cmbGestureSlot2.FormattingEnabled = true;
             this.cmbGestureSlot2.Location = new System.Drawing.Point(6, 46);
             this.cmbGestureSlot2.Name = "cmbGestureSlot2";
@@ -2657,6 +2678,7 @@
             // cmbGestureSlot1
             // 
             this.cmbGestureSlot1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbGestureSlot1.Enabled = false;
             this.cmbGestureSlot1.FormattingEnabled = true;
             this.cmbGestureSlot1.Location = new System.Drawing.Point(6, 19);
             this.cmbGestureSlot1.Name = "cmbGestureSlot1";
@@ -5259,6 +5281,227 @@
             this.tpgNetSummonSigns.Text = "Summon Signs";
             this.tpgNetSummonSigns.UseVisualStyleBackColor = true;
             // 
+            // txtSosRightWep2
+            // 
+            this.txtSosRightWep2.Location = new System.Drawing.Point(170, 266);
+            this.txtSosRightWep2.Name = "txtSosRightWep2";
+            this.txtSosRightWep2.ReadOnly = true;
+            this.txtSosRightWep2.Size = new System.Drawing.Size(135, 20);
+            this.txtSosRightWep2.TabIndex = 113;
+            // 
+            // txtSosLeftWep1
+            // 
+            this.txtSosLeftWep1.Location = new System.Drawing.Point(170, 292);
+            this.txtSosLeftWep1.Name = "txtSosLeftWep1";
+            this.txtSosLeftWep1.ReadOnly = true;
+            this.txtSosLeftWep1.Size = new System.Drawing.Size(135, 20);
+            this.txtSosLeftWep1.TabIndex = 112;
+            // 
+            // txtSosLeftWep2
+            // 
+            this.txtSosLeftWep2.Location = new System.Drawing.Point(170, 318);
+            this.txtSosLeftWep2.Name = "txtSosLeftWep2";
+            this.txtSosLeftWep2.ReadOnly = true;
+            this.txtSosLeftWep2.Size = new System.Drawing.Size(135, 20);
+            this.txtSosLeftWep2.TabIndex = 111;
+            // 
+            // txtSosRightWep1
+            // 
+            this.txtSosRightWep1.Location = new System.Drawing.Point(170, 240);
+            this.txtSosRightWep1.Name = "txtSosRightWep1";
+            this.txtSosRightWep1.ReadOnly = true;
+            this.txtSosRightWep1.Size = new System.Drawing.Size(135, 20);
+            this.txtSosRightWep1.TabIndex = 110;
+            // 
+            // txtSosBolt2
+            // 
+            this.txtSosBolt2.Location = new System.Drawing.Point(170, 214);
+            this.txtSosBolt2.Name = "txtSosBolt2";
+            this.txtSosBolt2.ReadOnly = true;
+            this.txtSosBolt2.Size = new System.Drawing.Size(135, 20);
+            this.txtSosBolt2.TabIndex = 109;
+            // 
+            // txtSosArrow1
+            // 
+            this.txtSosArrow1.Location = new System.Drawing.Point(170, 136);
+            this.txtSosArrow1.Name = "txtSosArrow1";
+            this.txtSosArrow1.ReadOnly = true;
+            this.txtSosArrow1.Size = new System.Drawing.Size(135, 20);
+            this.txtSosArrow1.TabIndex = 108;
+            // 
+            // txtSosArrow2
+            // 
+            this.txtSosArrow2.Location = new System.Drawing.Point(170, 162);
+            this.txtSosArrow2.Name = "txtSosArrow2";
+            this.txtSosArrow2.ReadOnly = true;
+            this.txtSosArrow2.Size = new System.Drawing.Size(135, 20);
+            this.txtSosArrow2.TabIndex = 107;
+            // 
+            // txtSosBolt1
+            // 
+            this.txtSosBolt1.Location = new System.Drawing.Point(170, 188);
+            this.txtSosBolt1.Name = "txtSosBolt1";
+            this.txtSosBolt1.ReadOnly = true;
+            this.txtSosBolt1.Size = new System.Drawing.Size(135, 20);
+            this.txtSosBolt1.TabIndex = 106;
+            // 
+            // txtSosLegs
+            // 
+            this.txtSosLegs.Location = new System.Drawing.Point(170, 110);
+            this.txtSosLegs.Name = "txtSosLegs";
+            this.txtSosLegs.ReadOnly = true;
+            this.txtSosLegs.Size = new System.Drawing.Size(135, 20);
+            this.txtSosLegs.TabIndex = 105;
+            // 
+            // txtSosHands
+            // 
+            this.txtSosHands.Location = new System.Drawing.Point(170, 84);
+            this.txtSosHands.Name = "txtSosHands";
+            this.txtSosHands.ReadOnly = true;
+            this.txtSosHands.Size = new System.Drawing.Size(135, 20);
+            this.txtSosHands.TabIndex = 104;
+            // 
+            // txtSosHair
+            // 
+            this.txtSosHair.Location = new System.Drawing.Point(170, 6);
+            this.txtSosHair.Name = "txtSosHair";
+            this.txtSosHair.ReadOnly = true;
+            this.txtSosHair.Size = new System.Drawing.Size(135, 20);
+            this.txtSosHair.TabIndex = 103;
+            // 
+            // txtSosHead
+            // 
+            this.txtSosHead.Location = new System.Drawing.Point(170, 32);
+            this.txtSosHead.Name = "txtSosHead";
+            this.txtSosHead.ReadOnly = true;
+            this.txtSosHead.Size = new System.Drawing.Size(135, 20);
+            this.txtSosHead.TabIndex = 102;
+            // 
+            // txtSosChest
+            // 
+            this.txtSosChest.Location = new System.Drawing.Point(170, 58);
+            this.txtSosChest.Name = "txtSosChest";
+            this.txtSosChest.ReadOnly = true;
+            this.txtSosChest.Size = new System.Drawing.Size(135, 20);
+            this.txtSosChest.TabIndex = 101;
+            // 
+            // lblSosBolt2
+            // 
+            this.lblSosBolt2.AutoSize = true;
+            this.lblSosBolt2.Location = new System.Drawing.Point(311, 217);
+            this.lblSosBolt2.Name = "lblSosBolt2";
+            this.lblSosBolt2.Size = new System.Drawing.Size(34, 13);
+            this.lblSosBolt2.TabIndex = 100;
+            this.lblSosBolt2.Text = "Bolt 2";
+            // 
+            // lblSosBolt1
+            // 
+            this.lblSosBolt1.AutoSize = true;
+            this.lblSosBolt1.Location = new System.Drawing.Point(311, 191);
+            this.lblSosBolt1.Name = "lblSosBolt1";
+            this.lblSosBolt1.Size = new System.Drawing.Size(34, 13);
+            this.lblSosBolt1.TabIndex = 99;
+            this.lblSosBolt1.Text = "Bolt 1";
+            // 
+            // lblSosArrow2
+            // 
+            this.lblSosArrow2.AutoSize = true;
+            this.lblSosArrow2.Location = new System.Drawing.Point(311, 165);
+            this.lblSosArrow2.Name = "lblSosArrow2";
+            this.lblSosArrow2.Size = new System.Drawing.Size(43, 13);
+            this.lblSosArrow2.TabIndex = 98;
+            this.lblSosArrow2.Text = "Arrow 2";
+            // 
+            // lblSosArrow1
+            // 
+            this.lblSosArrow1.AutoSize = true;
+            this.lblSosArrow1.Location = new System.Drawing.Point(311, 139);
+            this.lblSosArrow1.Name = "lblSosArrow1";
+            this.lblSosArrow1.Size = new System.Drawing.Size(43, 13);
+            this.lblSosArrow1.TabIndex = 97;
+            this.lblSosArrow1.Text = "Arrow 1";
+            // 
+            // lblSosLegs
+            // 
+            this.lblSosLegs.AutoSize = true;
+            this.lblSosLegs.Location = new System.Drawing.Point(311, 113);
+            this.lblSosLegs.Name = "lblSosLegs";
+            this.lblSosLegs.Size = new System.Drawing.Size(30, 13);
+            this.lblSosLegs.TabIndex = 96;
+            this.lblSosLegs.Text = "Legs";
+            // 
+            // lblSosLeftWep2
+            // 
+            this.lblSosLeftWep2.AutoSize = true;
+            this.lblSosLeftWep2.Location = new System.Drawing.Point(311, 321);
+            this.lblSosLeftWep2.Name = "lblSosLeftWep2";
+            this.lblSosLeftWep2.Size = new System.Drawing.Size(54, 13);
+            this.lblSosLeftWep2.TabIndex = 95;
+            this.lblSosLeftWep2.Text = "L. Hand 2";
+            // 
+            // lblSosLeftWep1
+            // 
+            this.lblSosLeftWep1.AutoSize = true;
+            this.lblSosLeftWep1.Location = new System.Drawing.Point(311, 295);
+            this.lblSosLeftWep1.Name = "lblSosLeftWep1";
+            this.lblSosLeftWep1.Size = new System.Drawing.Size(54, 13);
+            this.lblSosLeftWep1.TabIndex = 94;
+            this.lblSosLeftWep1.Text = "L. Hand 1";
+            // 
+            // lblSosRightWep2
+            // 
+            this.lblSosRightWep2.AutoSize = true;
+            this.lblSosRightWep2.Location = new System.Drawing.Point(311, 269);
+            this.lblSosRightWep2.Name = "lblSosRightWep2";
+            this.lblSosRightWep2.Size = new System.Drawing.Size(56, 13);
+            this.lblSosRightWep2.TabIndex = 93;
+            this.lblSosRightWep2.Text = "R. Hand 2";
+            // 
+            // lblSosRightWep1
+            // 
+            this.lblSosRightWep1.AutoSize = true;
+            this.lblSosRightWep1.Location = new System.Drawing.Point(311, 243);
+            this.lblSosRightWep1.Name = "lblSosRightWep1";
+            this.lblSosRightWep1.Size = new System.Drawing.Size(56, 13);
+            this.lblSosRightWep1.TabIndex = 92;
+            this.lblSosRightWep1.Text = "R. Hand 1";
+            // 
+            // lblSosHands
+            // 
+            this.lblSosHands.AutoSize = true;
+            this.lblSosHands.Location = new System.Drawing.Point(311, 87);
+            this.lblSosHands.Name = "lblSosHands";
+            this.lblSosHands.Size = new System.Drawing.Size(38, 13);
+            this.lblSosHands.TabIndex = 91;
+            this.lblSosHands.Text = "Hands";
+            // 
+            // lblSosChest
+            // 
+            this.lblSosChest.AutoSize = true;
+            this.lblSosChest.Location = new System.Drawing.Point(311, 61);
+            this.lblSosChest.Name = "lblSosChest";
+            this.lblSosChest.Size = new System.Drawing.Size(34, 13);
+            this.lblSosChest.TabIndex = 90;
+            this.lblSosChest.Text = "Chest";
+            // 
+            // lblSosHead
+            // 
+            this.lblSosHead.AutoSize = true;
+            this.lblSosHead.Location = new System.Drawing.Point(311, 35);
+            this.lblSosHead.Name = "lblSosHead";
+            this.lblSosHead.Size = new System.Drawing.Size(33, 13);
+            this.lblSosHead.TabIndex = 89;
+            this.lblSosHead.Text = "Head";
+            // 
+            // lblSosHair
+            // 
+            this.lblSosHair.AutoSize = true;
+            this.lblSosHair.Location = new System.Drawing.Point(311, 9);
+            this.lblSosHair.Name = "lblSosHair";
+            this.lblSosHair.Size = new System.Drawing.Size(26, 13);
+            this.lblSosHair.TabIndex = 88;
+            this.lblSosHair.Text = "Hair";
+            // 
             // lblSosSpawnPosition
             // 
             this.lblSosSpawnPosition.AutoSize = true;
@@ -5628,227 +5871,6 @@
             this.llbUpdate.Text = "Click to download";
             this.llbUpdate.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.llbUpdate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbUpdate_LinkClicked);
-            // 
-            // txtSosRightWep2
-            // 
-            this.txtSosRightWep2.Location = new System.Drawing.Point(170, 266);
-            this.txtSosRightWep2.Name = "txtSosRightWep2";
-            this.txtSosRightWep2.ReadOnly = true;
-            this.txtSosRightWep2.Size = new System.Drawing.Size(135, 20);
-            this.txtSosRightWep2.TabIndex = 113;
-            // 
-            // txtSosLeftWep1
-            // 
-            this.txtSosLeftWep1.Location = new System.Drawing.Point(170, 292);
-            this.txtSosLeftWep1.Name = "txtSosLeftWep1";
-            this.txtSosLeftWep1.ReadOnly = true;
-            this.txtSosLeftWep1.Size = new System.Drawing.Size(135, 20);
-            this.txtSosLeftWep1.TabIndex = 112;
-            // 
-            // txtSosLeftWep2
-            // 
-            this.txtSosLeftWep2.Location = new System.Drawing.Point(170, 318);
-            this.txtSosLeftWep2.Name = "txtSosLeftWep2";
-            this.txtSosLeftWep2.ReadOnly = true;
-            this.txtSosLeftWep2.Size = new System.Drawing.Size(135, 20);
-            this.txtSosLeftWep2.TabIndex = 111;
-            // 
-            // txtSosRightWep1
-            // 
-            this.txtSosRightWep1.Location = new System.Drawing.Point(170, 240);
-            this.txtSosRightWep1.Name = "txtSosRightWep1";
-            this.txtSosRightWep1.ReadOnly = true;
-            this.txtSosRightWep1.Size = new System.Drawing.Size(135, 20);
-            this.txtSosRightWep1.TabIndex = 110;
-            // 
-            // txtSosBolt2
-            // 
-            this.txtSosBolt2.Location = new System.Drawing.Point(170, 214);
-            this.txtSosBolt2.Name = "txtSosBolt2";
-            this.txtSosBolt2.ReadOnly = true;
-            this.txtSosBolt2.Size = new System.Drawing.Size(135, 20);
-            this.txtSosBolt2.TabIndex = 109;
-            // 
-            // txtSosArrow1
-            // 
-            this.txtSosArrow1.Location = new System.Drawing.Point(170, 136);
-            this.txtSosArrow1.Name = "txtSosArrow1";
-            this.txtSosArrow1.ReadOnly = true;
-            this.txtSosArrow1.Size = new System.Drawing.Size(135, 20);
-            this.txtSosArrow1.TabIndex = 108;
-            // 
-            // txtSosArrow2
-            // 
-            this.txtSosArrow2.Location = new System.Drawing.Point(170, 162);
-            this.txtSosArrow2.Name = "txtSosArrow2";
-            this.txtSosArrow2.ReadOnly = true;
-            this.txtSosArrow2.Size = new System.Drawing.Size(135, 20);
-            this.txtSosArrow2.TabIndex = 107;
-            // 
-            // txtSosBolt1
-            // 
-            this.txtSosBolt1.Location = new System.Drawing.Point(170, 188);
-            this.txtSosBolt1.Name = "txtSosBolt1";
-            this.txtSosBolt1.ReadOnly = true;
-            this.txtSosBolt1.Size = new System.Drawing.Size(135, 20);
-            this.txtSosBolt1.TabIndex = 106;
-            // 
-            // txtSosLegs
-            // 
-            this.txtSosLegs.Location = new System.Drawing.Point(170, 110);
-            this.txtSosLegs.Name = "txtSosLegs";
-            this.txtSosLegs.ReadOnly = true;
-            this.txtSosLegs.Size = new System.Drawing.Size(135, 20);
-            this.txtSosLegs.TabIndex = 105;
-            // 
-            // txtSosHands
-            // 
-            this.txtSosHands.Location = new System.Drawing.Point(170, 84);
-            this.txtSosHands.Name = "txtSosHands";
-            this.txtSosHands.ReadOnly = true;
-            this.txtSosHands.Size = new System.Drawing.Size(135, 20);
-            this.txtSosHands.TabIndex = 104;
-            // 
-            // txtSosHair
-            // 
-            this.txtSosHair.Location = new System.Drawing.Point(170, 6);
-            this.txtSosHair.Name = "txtSosHair";
-            this.txtSosHair.ReadOnly = true;
-            this.txtSosHair.Size = new System.Drawing.Size(135, 20);
-            this.txtSosHair.TabIndex = 103;
-            // 
-            // txtSosHead
-            // 
-            this.txtSosHead.Location = new System.Drawing.Point(170, 32);
-            this.txtSosHead.Name = "txtSosHead";
-            this.txtSosHead.ReadOnly = true;
-            this.txtSosHead.Size = new System.Drawing.Size(135, 20);
-            this.txtSosHead.TabIndex = 102;
-            // 
-            // txtSosChest
-            // 
-            this.txtSosChest.Location = new System.Drawing.Point(170, 58);
-            this.txtSosChest.Name = "txtSosChest";
-            this.txtSosChest.ReadOnly = true;
-            this.txtSosChest.Size = new System.Drawing.Size(135, 20);
-            this.txtSosChest.TabIndex = 101;
-            // 
-            // lblSosBolt2
-            // 
-            this.lblSosBolt2.AutoSize = true;
-            this.lblSosBolt2.Location = new System.Drawing.Point(311, 217);
-            this.lblSosBolt2.Name = "lblSosBolt2";
-            this.lblSosBolt2.Size = new System.Drawing.Size(34, 13);
-            this.lblSosBolt2.TabIndex = 100;
-            this.lblSosBolt2.Text = "Bolt 2";
-            // 
-            // lblSosBolt1
-            // 
-            this.lblSosBolt1.AutoSize = true;
-            this.lblSosBolt1.Location = new System.Drawing.Point(311, 191);
-            this.lblSosBolt1.Name = "lblSosBolt1";
-            this.lblSosBolt1.Size = new System.Drawing.Size(34, 13);
-            this.lblSosBolt1.TabIndex = 99;
-            this.lblSosBolt1.Text = "Bolt 1";
-            // 
-            // lblSosArrow2
-            // 
-            this.lblSosArrow2.AutoSize = true;
-            this.lblSosArrow2.Location = new System.Drawing.Point(311, 165);
-            this.lblSosArrow2.Name = "lblSosArrow2";
-            this.lblSosArrow2.Size = new System.Drawing.Size(43, 13);
-            this.lblSosArrow2.TabIndex = 98;
-            this.lblSosArrow2.Text = "Arrow 2";
-            // 
-            // lblSosArrow1
-            // 
-            this.lblSosArrow1.AutoSize = true;
-            this.lblSosArrow1.Location = new System.Drawing.Point(311, 139);
-            this.lblSosArrow1.Name = "lblSosArrow1";
-            this.lblSosArrow1.Size = new System.Drawing.Size(43, 13);
-            this.lblSosArrow1.TabIndex = 97;
-            this.lblSosArrow1.Text = "Arrow 1";
-            // 
-            // lblSosLegs
-            // 
-            this.lblSosLegs.AutoSize = true;
-            this.lblSosLegs.Location = new System.Drawing.Point(311, 113);
-            this.lblSosLegs.Name = "lblSosLegs";
-            this.lblSosLegs.Size = new System.Drawing.Size(30, 13);
-            this.lblSosLegs.TabIndex = 96;
-            this.lblSosLegs.Text = "Legs";
-            // 
-            // lblSosLeftWep2
-            // 
-            this.lblSosLeftWep2.AutoSize = true;
-            this.lblSosLeftWep2.Location = new System.Drawing.Point(311, 321);
-            this.lblSosLeftWep2.Name = "lblSosLeftWep2";
-            this.lblSosLeftWep2.Size = new System.Drawing.Size(54, 13);
-            this.lblSosLeftWep2.TabIndex = 95;
-            this.lblSosLeftWep2.Text = "L. Hand 2";
-            // 
-            // lblSosLeftWep1
-            // 
-            this.lblSosLeftWep1.AutoSize = true;
-            this.lblSosLeftWep1.Location = new System.Drawing.Point(311, 295);
-            this.lblSosLeftWep1.Name = "lblSosLeftWep1";
-            this.lblSosLeftWep1.Size = new System.Drawing.Size(54, 13);
-            this.lblSosLeftWep1.TabIndex = 94;
-            this.lblSosLeftWep1.Text = "L. Hand 1";
-            // 
-            // lblSosRightWep2
-            // 
-            this.lblSosRightWep2.AutoSize = true;
-            this.lblSosRightWep2.Location = new System.Drawing.Point(311, 269);
-            this.lblSosRightWep2.Name = "lblSosRightWep2";
-            this.lblSosRightWep2.Size = new System.Drawing.Size(56, 13);
-            this.lblSosRightWep2.TabIndex = 93;
-            this.lblSosRightWep2.Text = "R. Hand 2";
-            // 
-            // lblSosRightWep1
-            // 
-            this.lblSosRightWep1.AutoSize = true;
-            this.lblSosRightWep1.Location = new System.Drawing.Point(311, 243);
-            this.lblSosRightWep1.Name = "lblSosRightWep1";
-            this.lblSosRightWep1.Size = new System.Drawing.Size(56, 13);
-            this.lblSosRightWep1.TabIndex = 92;
-            this.lblSosRightWep1.Text = "R. Hand 1";
-            // 
-            // lblSosHands
-            // 
-            this.lblSosHands.AutoSize = true;
-            this.lblSosHands.Location = new System.Drawing.Point(311, 87);
-            this.lblSosHands.Name = "lblSosHands";
-            this.lblSosHands.Size = new System.Drawing.Size(38, 13);
-            this.lblSosHands.TabIndex = 91;
-            this.lblSosHands.Text = "Hands";
-            // 
-            // lblSosChest
-            // 
-            this.lblSosChest.AutoSize = true;
-            this.lblSosChest.Location = new System.Drawing.Point(311, 61);
-            this.lblSosChest.Name = "lblSosChest";
-            this.lblSosChest.Size = new System.Drawing.Size(34, 13);
-            this.lblSosChest.TabIndex = 90;
-            this.lblSosChest.Text = "Chest";
-            // 
-            // lblSosHead
-            // 
-            this.lblSosHead.AutoSize = true;
-            this.lblSosHead.Location = new System.Drawing.Point(311, 35);
-            this.lblSosHead.Name = "lblSosHead";
-            this.lblSosHead.Size = new System.Drawing.Size(33, 13);
-            this.lblSosHead.TabIndex = 89;
-            this.lblSosHead.Text = "Head";
-            // 
-            // lblSosHair
-            // 
-            this.lblSosHair.AutoSize = true;
-            this.lblSosHair.Location = new System.Drawing.Point(311, 9);
-            this.lblSosHair.Name = "lblSosHair";
-            this.lblSosHair.Size = new System.Drawing.Size(26, 13);
-            this.lblSosHair.TabIndex = 88;
-            this.lblSosHair.Text = "Hair";
             // 
             // FormMain
             // 
