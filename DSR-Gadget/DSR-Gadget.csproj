@@ -131,6 +131,8 @@
     <Compile Include="List Items\DSRArea.cs" />
     <Compile Include="List Items\DSRCovenant.cs" />
     <Compile Include="List Items\DSRGood.cs" />
+    <Compile Include="List Items\DSRParam\DSREquipParamWeapon.cs" />
+    <Compile Include="List Items\DSRParam\DSRParam.cs" />
     <Compile Include="List Items\DSRWeapon.cs" />
     <Compile Include="List Items\DSRProtector.cs" />
     <Compile Include="List Items\DSRSummon.cs" />
@@ -146,6 +148,7 @@
     <Compile Include="List Items\DSRInfusion.cs" />
     <Compile Include="List Items\DSRItem.cs" />
     <Compile Include="List Items\DSRItemCategory.cs" />
+    <Compile Include="List Items\IDSRParam.cs" />
     <Compile Include="List Items\IDSRProperty.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -155,6 +158,12 @@
     </Compile>
     <Compile Include="SubForms\FamilyShareForm.Designer.cs">
       <DependentUpon>FamilyShareForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForms\ParamEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\ParamEditForm.Designer.cs">
+      <DependentUpon>ParamEditForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SubForms\PlayerInfoForm.cs">
       <SubType>Form</SubType>
@@ -179,6 +188,9 @@
     </Compile>
     <EmbeddedResource Include="SubForms\FamilyShareForm.resx">
       <DependentUpon>FamilyShareForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForms\ParamEditForm.resx">
+      <DependentUpon>ParamEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

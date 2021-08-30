@@ -1,10 +1,11 @@
-﻿using System;
+﻿using DSR_Gadget.List_Items;
+using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace DSR_Gadget
 {
-    class DSRProtector : IDSRProperty
+    public class DSRProtector : IDSRProperty
     {
         private static Regex protectorEntryRx = new Regex(@"^(?<ID>\S+) (?<Name>.+)$");
 

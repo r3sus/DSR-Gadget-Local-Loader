@@ -1,15 +1,17 @@
-﻿using System;
+﻿using DSR_Gadget.List_Items;
+using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace DSR_Gadget
 {
-    class DSRWeapon : IDSRProperty
+    public class DSRWeapon : IDSRProperty, IDSRParam
     {
         private static Regex weaponEntryRx = new Regex(@"^(?<ID>\S+) (?<Name>.+)$");
 
         public string Name { get; set; }
-        public int ID { get; set;  } 
+        public int ID { get; set;  }
+        public int Offset { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         private DSRWeapon(string config)
         {

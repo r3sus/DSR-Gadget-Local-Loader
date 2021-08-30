@@ -191,6 +191,11 @@ namespace DSR_Gadget
                     lbxNetSosList.Items.Add(SummonSignList[i]);
             }
 
+            for (int i = 0; i < lbxNetSosList.Items.Count; i++)
+            {
+                lbxNetSosList.Items[i] = lbxNetSosList.Items[i];
+            }
+
             DSRSummonSign selectedSummonSign = lbxNetSosList.SelectedItem as DSRSummonSign;
             if (selectedSummonSign != null)
                 updateSummonSignUI(selectedSummonSign);

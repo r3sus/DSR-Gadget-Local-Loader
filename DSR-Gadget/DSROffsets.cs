@@ -535,6 +535,32 @@ namespace DSR_Gadget
         public const int ParamOffset1 = 0x38;
         public const int ParamOffset2 = 0x10;
 
+        public enum EquipParamWeapon
+        {
+            BehaviourVariationID = 0x0,
+            SortID = 0x4,
+            WanderingEquipmentID = 0x8,
+            Weight = 0xC,
+            WeaponWeightRate = 0x10,
+            FixPrice = 0x14,
+            BasicPrice = 0x18,
+            SellValue = 0x1C,
+            CorrectStrength = 0x20,
+            CorrectAgility = 0x24,
+            CorrectMagic = 0x28,
+            CorrectFaith = 0x2C,
+            PhysGuardCutRate = 0x30,
+            MagGuardCutRate = 0x34,
+            FireGuardCutRate = 0x38,
+            ThunGuardCutRate = 0x3C,
+            SpEffectBehaviourID0 = 0x40,
+            SpEffectBehaviourID1 = 0x44,
+            SpEffectBehaviourID2 = 0x48,
+            ResidentSpEffectID0 = 0x4C,
+            ResidentSpEffectID1 = 0x50,
+            ResidentSpEffectID2 = 0x54,
+        }
+
         //public const string WorldChrManDbgImpAOB = "48 8B 05 ? ? ? ? 44 38 78 19 55 48 BD ? ? ? ? ? ? ? ? 48 87 2C 24 53 50 48 8B 5C 24 10";
         public const string WorldChrManDbgImpAOB = "48 8B 05 ? ? ? ? E9 ? ? ? ? 49 8B DC E9 ? ? ? ? 40 56 57 41 54 41 56 41 57 48 83 EC 30";
         public const int WorldChrManDbgImpOffset1 = 0x0;

@@ -1,10 +1,11 @@
-﻿using System;
+﻿using DSR_Gadget.List_Items;
+using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace DSR_Gadget
 {
-    class DSRAccessory : IDSRProperty
+    public class DSRAccessory : IDSRProperty
     {
         private static Regex accessoryEntryRx = new Regex(@"^\s*(?<ID>\S+)\s+(?<limit>\S+)\s+(?<upgrade>\S+)\s+(?<Name>.+)$");
 
