@@ -13,6 +13,7 @@ namespace DSR_Gadget
         private static string steamAPI = "http://api.steampowered.com/";
         private static string steamFamilyShareApiURL = steamAPI + "IPlayerService/IsPlayingSharedGame/v1/";
         private static string steamUserInfoApiURL = steamAPI + "ISteamUser/GetPlayerSummaries/v2/";
+        private static string steamResolveVanityUrlApi = steamAPI + "ISteamUser/ResolveVanityURL/v1/";
         private static string apiKey => Properties.Settings.Default.SteamAPIKey;
         private static string appID = "570940";
         private static string format = "json";
@@ -87,6 +88,39 @@ namespace DSR_Gadget
                 return null;
         }
 
+        public static async Task<long> ResolveVanityUrl(string vanityUrl, string urlType)
+        {
+            string urlParameters =
+                "?key=" + apiKey +
+                "&vanityurl=" + vanityUrl +
+                "&url_type=" + urlType +
+                "&format=" + format;
+
+            SteamResponseRoot response = await SteamAPIRequest(steamResolveVanityUrlApi + urlParameters);
+
+            if (response.Success && response.response.success == 1)
+            {
+                long longResult = -1;
+                bool success = false;
+                try
+                {
+                    success = long.TryParse(response.response.steamid, out longResult);
+                }
+                catch (NullReferenceException)
+                {
+                    success = false;
+                }
+                finally
+                {
+                    if (!success)
+                        longResult = -1;
+                }
+                return longResult;
+            }
+            else
+                return -1;
+        }
+
         private static async Task<SteamResponseRoot> SteamAPIRequest(string URI)
         {
             var request = new HttpRequestMessage(HttpMethod.Get, URI);
@@ -131,10 +165,8 @@ namespace DSR_Gadget
         {
             public string lender_steamid { get; set; }
             public List<SteamResponsePlayer> players { get; set; }
-            public SteamResponseResponse(string lender_steamid)
-            {
-                this.lender_steamid = lender_steamid;
-            }
+            public string steamid { get; set; }
+            public int success { get; set; }
         }
 
         private class SteamResponsePlayer

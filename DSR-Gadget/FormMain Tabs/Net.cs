@@ -343,6 +343,13 @@ namespace DSR_Gadget
             }
         }
 
+        private void btnRecentPlayerFamilyShare_Click(object sender, EventArgs e)
+        {
+            FamilyShareInputForm familyShareInputForm = new FamilyShareInputForm();
+            familyShareInputForm.StartPosition = FormStartPosition.CenterScreen;
+            familyShareInputForm.Show();
+        }
+
         private void cbxCurrentPlayerCamera_CheckedChanged(object sender, EventArgs e)
         {
             updateCamera();

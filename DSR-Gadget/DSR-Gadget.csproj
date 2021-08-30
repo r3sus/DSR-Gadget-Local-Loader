@@ -159,6 +159,12 @@
     <Compile Include="SubForms\FamilyShareForm.Designer.cs">
       <DependentUpon>FamilyShareForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SubForms\FamilyShareInputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\FamilyShareInputForm.Designer.cs">
+      <DependentUpon>FamilyShareInputForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SubForms\ParamEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +194,9 @@
     </Compile>
     <EmbeddedResource Include="SubForms\FamilyShareForm.resx">
       <DependentUpon>FamilyShareForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForms\FamilyShareInputForm.resx">
+      <DependentUpon>FamilyShareInputForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SubForms\ParamEditForm.resx">
       <DependentUpon>ParamEditForm.cs</DependentUpon>

@@ -45,34 +45,37 @@ namespace DSR_Gadget.SubForms
                     lblShared.Text = "Not Shared or Not In-Game";
                 }
 
-                SteamAPI.SteamUserInfo steamUser;
-                if (userInfo.TryGetValue(SteamID, out steamUser))
+                if (userInfo != null)
                 {
-                    txtSteamName.Text = steamUser.SteamName;
-                    txtSteamProfileURL.Text = steamUser.ProfileURL;
-                    pbxSteamAvatar.LoadAsync(steamUser.AvatarURL);
-                }
-                if (userInfo.TryGetValue(ShareSteamID, out steamUser))
-                {
-                    txtShareSteamName.Text = steamUser.SteamName;
-                    txtShareSteamProfileURL.Text = steamUser.ProfileURL;
-                    pbxShareSteamAvatar.LoadAsync(steamUser.AvatarURL);
-                }
+                    SteamAPI.SteamUserInfo steamUser;
+                    if (userInfo.TryGetValue(SteamID, out steamUser))
+                    {
+                        txtSteamName.Text = steamUser.SteamName;
+                        txtSteamProfileURL.Text = steamUser.ProfileURL;
+                        pbxSteamAvatar.LoadAsync(steamUser.AvatarURL);
+                    }
+                    if (userInfo.TryGetValue(ShareSteamID, out steamUser))
+                    {
+                        txtShareSteamName.Text = steamUser.SteamName;
+                        txtShareSteamProfileURL.Text = steamUser.ProfileURL;
+                        pbxShareSteamAvatar.LoadAsync(steamUser.AvatarURL);
+                    }
 
-                foreach (Control control in SharedFromComponents)
-                {
-                    control.Visible = visible;
-                }
+                    foreach (Control control in SharedFromComponents)
+                    {
+                        control.Visible = visible;
+                    }
 
-                foreach (Control control in SharedComponents)
-                {
-                    control.Visible = true;
+                    foreach (Control control in SharedComponents)
+                    {
+                        control.Visible = true;
+                    }
                 }
+                else
+                    lblFailed.Visible = true;
             }
             else
-            {
                 lblFailed.Visible = true;
-            }
 
         }
 

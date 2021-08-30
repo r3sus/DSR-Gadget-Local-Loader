@@ -271,6 +271,7 @@
             this.tpgNet = new System.Windows.Forms.TabPage();
             this.tclNet = new System.Windows.Forms.TabControl();
             this.tpgNetRecentPlayers = new System.Windows.Forms.TabPage();
+            this.btnRecentPlayerFamilyShare = new System.Windows.Forms.Button();
             this.txtRecentPlayerQuickbar5 = new System.Windows.Forms.TextBox();
             this.txtRecentPlayerQuickbar4 = new System.Windows.Forms.TextBox();
             this.txtRecentPlayerQuickbar1 = new System.Windows.Forms.TextBox();
@@ -3571,6 +3572,7 @@
             // 
             // tpgNetRecentPlayers
             // 
+            this.tpgNetRecentPlayers.Controls.Add(this.btnRecentPlayerFamilyShare);
             this.tpgNetRecentPlayers.Controls.Add(this.txtRecentPlayerQuickbar5);
             this.tpgNetRecentPlayers.Controls.Add(this.txtRecentPlayerQuickbar4);
             this.tpgNetRecentPlayers.Controls.Add(this.txtRecentPlayerQuickbar1);
@@ -3643,6 +3645,16 @@
             this.tpgNetRecentPlayers.TabIndex = 0;
             this.tpgNetRecentPlayers.Text = "Recent Players";
             this.tpgNetRecentPlayers.UseVisualStyleBackColor = true;
+            // 
+            // btnRecentPlayerFamilyShare
+            // 
+            this.btnRecentPlayerFamilyShare.Location = new System.Drawing.Point(6, 407);
+            this.btnRecentPlayerFamilyShare.Name = "btnRecentPlayerFamilyShare";
+            this.btnRecentPlayerFamilyShare.Size = new System.Drawing.Size(76, 23);
+            this.btnRecentPlayerFamilyShare.TabIndex = 95;
+            this.btnRecentPlayerFamilyShare.Text = "Family Share";
+            this.btnRecentPlayerFamilyShare.UseVisualStyleBackColor = true;
+            this.btnRecentPlayerFamilyShare.Click += new System.EventHandler(this.btnRecentPlayerFamilyShare_Click);
             // 
             // txtRecentPlayerQuickbar5
             // 
@@ -6476,6 +6488,7 @@
         private System.Windows.Forms.Label lblSosChest;
         private System.Windows.Forms.Label lblSosHead;
         private System.Windows.Forms.Label lblSosHair;
+        private System.Windows.Forms.Button btnRecentPlayerFamilyShare;
     }
 }
 
