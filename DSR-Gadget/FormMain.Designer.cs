@@ -102,6 +102,8 @@
             this.tclStats = new System.Windows.Forms.TabControl();
             this.tpgStatsStats = new System.Windows.Forms.TabPage();
             this.gbxStatsMisc = new System.Windows.Forms.GroupBox();
+            this.nudClearCount = new System.Windows.Forms.NumericUpDown();
+            this.lblClearCount = new System.Windows.Forms.Label();
             this.nudIndictments = new System.Windows.Forms.NumericUpDown();
             this.lblIndictments = new System.Windows.Forms.Label();
             this.nudWeaponMemory = new System.Windows.Forms.NumericUpDown();
@@ -499,6 +501,7 @@
             this.tclStats.SuspendLayout();
             this.tpgStatsStats.SuspendLayout();
             this.gbxStatsMisc.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudClearCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudIndictments)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudWeaponMemory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudChaosServant)).BeginInit();
@@ -1509,6 +1512,8 @@
             // 
             // gbxStatsMisc
             // 
+            this.gbxStatsMisc.Controls.Add(this.nudClearCount);
+            this.gbxStatsMisc.Controls.Add(this.lblClearCount);
             this.gbxStatsMisc.Controls.Add(this.nudIndictments);
             this.gbxStatsMisc.Controls.Add(this.lblIndictments);
             this.gbxStatsMisc.Controls.Add(this.nudWeaponMemory);
@@ -1539,6 +1544,29 @@
             this.gbxStatsMisc.TabIndex = 82;
             this.gbxStatsMisc.TabStop = false;
             this.gbxStatsMisc.Text = "Misc";
+            // 
+            // nudClearCount
+            // 
+            this.nudClearCount.Enabled = false;
+            this.nudClearCount.Location = new System.Drawing.Point(304, 176);
+            this.nudClearCount.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.nudClearCount.Name = "nudClearCount";
+            this.nudClearCount.Size = new System.Drawing.Size(54, 20);
+            this.nudClearCount.TabIndex = 23;
+            this.nudClearCount.ValueChanged += new System.EventHandler(this.nudClearCount_ValueChanged);
+            // 
+            // lblClearCount
+            // 
+            this.lblClearCount.AutoSize = true;
+            this.lblClearCount.Location = new System.Drawing.Point(234, 178);
+            this.lblClearCount.Name = "lblClearCount";
+            this.lblClearCount.Size = new System.Drawing.Size(64, 13);
+            this.lblClearCount.TabIndex = 1;
+            this.lblClearCount.Text = "Game Cycle";
             // 
             // nudIndictments
             // 
@@ -5936,6 +5964,7 @@
             this.tpgStatsStats.ResumeLayout(false);
             this.gbxStatsMisc.ResumeLayout(false);
             this.gbxStatsMisc.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudClearCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudIndictments)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudWeaponMemory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudChaosServant)).EndInit();
@@ -6489,6 +6518,8 @@
         private System.Windows.Forms.Label lblSosHead;
         private System.Windows.Forms.Label lblSosHair;
         private System.Windows.Forms.Button btnRecentPlayerFamilyShare;
+        private System.Windows.Forms.NumericUpDown nudClearCount;
+        private System.Windows.Forms.Label lblClearCount;
     }
 }
 

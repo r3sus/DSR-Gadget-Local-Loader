@@ -36,7 +36,7 @@ namespace DSR_Gadget
                 btnCurrentPlayerKick, txtName, nudWeaponMemory, nudHair, nudHairRed, nudHairGreen, nudHairBlue,
                 nudHairAlpha, nudEyeRed, nudEyeBlue, nudEyeGreen, cmbGender, cmbPhysique, btnGesturesUnlockAll,
                 cmbSosSummonType, nudSosPosX, nudSosPosY, nudSosPosZ, nudSosPosAngle, btnSosRestorePos, cbxCurrentPlayerCamera,
-                btnCurrentPlayerTeleport, btnCurrentPlayerFamilyShare, //nudIndictments,
+                btnCurrentPlayerTeleport, btnCurrentPlayerFamilyShare, nudClearCount, //nudIndictments,
             };
 
             cmbGestures = new ComboBox[] { cmbGestureSlot1, cmbGestureSlot2, cmbGestureSlot3, cmbGestureSlot4,

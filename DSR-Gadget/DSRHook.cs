@@ -31,6 +31,7 @@ namespace DSR_Gadget
         private PHPointer GraphicsData;
         private PHPointer MenuMan;
         private PHPointer EventFlags;
+        private PHPointer GameDataManPtr;
 
         private PHPointer DurabilityAddr;
         private PHPointer DurabilitySpecialAddr;
@@ -58,6 +59,7 @@ namespace DSR_Gadget
             BonfireWarpAddr = RegisterAbsoluteAOB(DSROffsets.BonfireWarpAOB);
 
             ChrData1 = CreateChildPointer(WorldChrBase, (int)DSROffsets.WorldChrManImp.PlayerIns);
+            GameDataManPtr = CreateChildPointer(GameDataManBasePtr, DSROffsets.GameDataManOffset1);
             EquipMagicDataPtr = CreateChildPointer(GameDataManBasePtr, DSROffsets.GameDataManOffset1, (int)DSROffsets.GameDataMan.PlayerGameData, (int)DSROffsets.PlayerGameData.EquipMagicData);
             LastBloodstainPos = CreateChildPointer(GameDataManBasePtr, DSROffsets.GameDataManOffset1, (int)DSROffsets.GameDataMan.LastBloodstainPos);
             SettingsPtr = CreateChildPointer(GameDataManBasePtr, DSROffsets.GameDataManOffset1, (int)DSROffsets.GameDataMan.Settings);
@@ -255,6 +257,12 @@ namespace DSR_Gadget
         #endregion
 
         #region Stats
+
+        public byte ClearCount
+        {
+            get => GameDataManPtr.ReadByte((int)DSROffsets.GameDataMan.ClearCount);
+            set => GameDataManPtr.WriteByte((int)DSROffsets.GameDataMan.ClearCount, value);
+        }
 
         #endregion
 

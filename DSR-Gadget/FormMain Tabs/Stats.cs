@@ -99,6 +99,7 @@ namespace DSR_Gadget
 
             nudWeaponMemory.Value = Player.WeaponMemory;
             nudIndictments.Value = Player.Indictments;
+            nudClearCount.Value = Hook.ClearCount;
 
             nudHair.Value = Player.Hair;
 
@@ -275,6 +276,12 @@ namespace DSR_Gadget
         {
             if (loaded && !reading)
                 Player.Indictments = (int)nudIndictments.Value;
+        }
+
+        private void nudClearCount_ValueChanged(object sender, EventArgs e)
+        {
+            if (loaded && !reading)
+                Hook.ClearCount = (byte)nudClearCount.Value;
         }
 
         private void cbxFashionHex_CheckedChanged(object sender, EventArgs e)
