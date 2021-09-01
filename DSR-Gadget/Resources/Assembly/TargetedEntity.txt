@@ -1,0 +1,4 @@
+﻿0:  48 89 1d 0b 00 00 00    mov    QWORD PTR [rip+0xb],rbx
+7:  48 8b 03                mov    rax,QWORD PTR [rbx]
+a:  48 89 d9                mov    rcx,rbx
+d:  e9 00 00 00 00          jmp    12 <_main+0x12> 

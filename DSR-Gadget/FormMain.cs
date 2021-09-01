@@ -134,6 +134,7 @@ namespace DSR_Gadget
             {
                 lblVersionValue.Text = Hook.Version;
             }));
+            onHookedMisc();
         }
 
         private void DsrProcess_OnUnhooked(object sender, PropertyHook.PHEventArgs e)

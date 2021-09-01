@@ -582,6 +582,36 @@ namespace DSR_Gadget
         public const string DurabilityAOB = "41 8D 41 FF 45 8B C3 45 33 C9";
         public const string DurabilitySpecialAOB = "49 03 49 38 44 89 41 14 C3 32 C0";
 
+        public const string LastTargetEntityAOB = "48 8B 03 48 8B CB E9 ? ? ? ? 48 8D 64 24 08 48 8D 64 24 08";
+        public static readonly byte[] LastTargetEntityAOBBytes = { 0x48, 0x8B, 0x03, 0x48, 0x8B, 0xCB };
+        public const int LastTargetEntityAsmOffset = 0x12;
+
+        public const string LastHitEntityAOB = "48 8B 03 48 8B CB E9 ? ? ? ? B0 01 C3";
+        public static readonly byte[] LastHitEntityAOBBytes = { 0x48, 0x8B, 0x03, 0x48, 0x8B, 0xCB};
+        public const int LastHitEntityAsmOffset = 0x12;
+
+
+        public const int EnemyInsOffset1 = 0x0;
+        public enum EnemyIns
+        {
+            Handle = 0x8,
+
+            ChrRes = 0x30,
+            ChrModel = 0x60,
+            EnemyCtrl = 0x68,
+            ComManipulator = 0x70,
+            ChrId = 0x88,
+            ChrType = 0xD4,
+            TeamType = 0xD8,
+            MsbResCap = 0xB0,
+            ChrTaeAnimEven = 0xC0,
+            Health = 0x3E8,
+            MaxHealth = 0x3EC,
+            Stamina = 0x3F8,
+            MaxStamina = 0x3FC,
+
+        }
+
         public static DSROffsets GetOffsets(int moduleSize)
         {
             DSROffsets result = new DSROffsets();

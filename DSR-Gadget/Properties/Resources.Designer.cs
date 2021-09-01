@@ -61,41 +61,41 @@ namespace DSR_Gadget.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 1000	Shaved
-        ///1100	Receding
-        ///1200	Short
-        ///1300	Swept Back
-        ///1400	Ponytail
-        ///1500	Wild
-        ///1600	Parted Center
-        ///1700	Semi-Long
-        ///1800	Curly
-        ///1900	Bobbed
-        ///2000	Male 11
-        ///2100	Male 12
-        ///2200	Male 13
-        ///2300	Male 14
-        ///2400	Male 15
-        ///2500	Male 16
-        ///2600	Male 17
-        ///2700	Male 18
-        ///2800	Male 19
-        ///2900	Male 20
-        ///3000	Shaved
-        ///3100	Very Short
-        ///3200	Wave
-        ///3300	Straight A
-        ///3400	Straight B
-        ///3500	Ponytail A
-        ///3600	Ponytail B
-        ///3700	Pigtails
-        ///3800	Bun
-        ///3900	Braided
-        ///4000	Female 11
-        ///4100	Female 12
-        ///4200	Female 13
-        ///4300	Female 14
-        ///4400	Female 15
+        ///   Looks up a localized string similar to 1000 Shaved
+        ///1100 Receding
+        ///1200 Short
+        ///1300 Swept Back
+        ///1400 Ponytail
+        ///1500 Wild
+        ///1600 Parted Center
+        ///1700 Semi-Long
+        ///1800 Curly
+        ///1900 Bobbed
+        ///2000 Male 11
+        ///2100 Male 12
+        ///2200 Male 13
+        ///2300 Male 14
+        ///2400 Male 15
+        ///2500 Male 16
+        ///2600 Male 17
+        ///2700 Male 18
+        ///2800 Male 19
+        ///2900 Male 20
+        ///3000 Shaved
+        ///3100 Very Short
+        ///3200 Wave
+        ///3300 Straight A
+        ///3400 Straight B
+        ///3500 Ponytail A
+        ///3600 Ponytail B
+        ///3700 Pigtails
+        ///3800 Bun
+        ///3900 Braided
+        ///4000 Female 11
+        ///4100 Female 12
+        ///4200 Female 13
+        ///4300 Female 14
+        ///4400 Female 15
         /// [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string AllProtectors {
@@ -105,32 +105,33 @@ namespace DSR_Gadget.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 100000	Dagger
-        ///100001	Dagger+1
-        ///100002	Dagger+2
-        ///100003	Dagger+3
-        ///100004	Dagger+4
-        ///100005	Dagger+5
-        ///100006	Dagger+6
-        ///100007	Dagger+7
-        ///100008	Dagger+8
-        ///100009	Dagger+9
-        ///100010	Dagger+10
-        ///100011	Dagger+11
-        ///100012	Dagger+12
-        ///100013	Dagger+13
-        ///100014	Dagger+14
-        ///100015	Dagger+15
-        ///100100	Crystal Dagger
-        ///100101	Crystal Dagger+1
-        ///100102	Crystal Dagger+2
-        ///100103	Crystal Dagger+3
-        ///100104	Crystal Dagger+4
-        ///100105	Crystal Dagger+5
-        ///100200	Lightning Dagger
-        ///100201	Lightning Dagger+1
-        ///100202	Lightning Dagger+2
-        ///100203	Li [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to -1 None
+        ///100000 Dagger
+        ///100001 Dagger+1
+        ///100002 Dagger+2
+        ///100003 Dagger+3
+        ///100004 Dagger+4
+        ///100005 Dagger+5
+        ///100006 Dagger+6
+        ///100007 Dagger+7
+        ///100008 Dagger+8
+        ///100009 Dagger+9
+        ///100010 Dagger+10
+        ///100011 Dagger+11
+        ///100012 Dagger+12
+        ///100013 Dagger+13
+        ///100014 Dagger+14
+        ///100015 Dagger+15
+        ///100100 Crystal Dagger
+        ///100101 Crystal Dagger+1
+        ///100102 Crystal Dagger+2
+        ///100103 Crystal Dagger+3
+        ///100104 Crystal Dagger+4
+        ///100105 Crystal Dagger+5
+        ///100200 Lightning Dagger
+        ///100201 Lightning Dagger+1
+        ///100202 Lightning Dagger+2
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string AllWeapons {
             get {
@@ -736,6 +737,18 @@ namespace DSR_Gadget.Properties {
         internal static string Summons {
             get {
                 return ResourceManager.GetString("Summons", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 0:  48 89 1d 0b 00 00 00    mov    QWORD PTR [rip+0xb],rbx
+        ///7:  48 8b 03                mov    rax,QWORD PTR [rbx]
+        ///a:  48 89 d9                mov    rcx,rbx
+        ///d:  e9 00 00 00 00          jmp    12 &lt;_main+0x12&gt; .
+        /// </summary>
+        internal static string TargetedEntity {
+            get {
+                return ResourceManager.GetString("TargetedEntity", resourceCulture);
             }
         }
         

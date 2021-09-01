@@ -264,6 +264,11 @@
             this.cbxDrawObjects = new System.Windows.Forms.CheckBox();
             this.cbxDrawMap = new System.Windows.Forms.CheckBox();
             this.tpgMisc = new System.Windows.Forms.TabPage();
+            this.gbxEntity = new System.Windows.Forms.GroupBox();
+            this.cbxLastHitEntity = new System.Windows.Forms.CheckBox();
+            this.btnLastHitEntity = new System.Windows.Forms.Button();
+            this.cbxLastTargetEntity = new System.Windows.Forms.CheckBox();
+            this.btnLastTargetEntity = new System.Windows.Forms.Button();
             this.gbxEventFlags = new System.Windows.Forms.GroupBox();
             this.btnEventRead = new System.Windows.Forms.Button();
             this.cbxEventFlag = new System.Windows.Forms.CheckBox();
@@ -553,6 +558,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudBrightnessG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBrightnessR)).BeginInit();
             this.tpgMisc.SuspendLayout();
+            this.gbxEntity.SuspendLayout();
             this.gbxEventFlags.SuspendLayout();
             this.tpgNet.SuspendLayout();
             this.tclNet.SuspendLayout();
@@ -3501,6 +3507,7 @@
             // 
             // tpgMisc
             // 
+            this.tpgMisc.Controls.Add(this.gbxEntity);
             this.tpgMisc.Controls.Add(this.gbxEventFlags);
             this.tpgMisc.Location = new System.Drawing.Point(4, 22);
             this.tpgMisc.Name = "tpgMisc";
@@ -3509,6 +3516,63 @@
             this.tpgMisc.TabIndex = 7;
             this.tpgMisc.Text = "Misc";
             this.tpgMisc.UseVisualStyleBackColor = true;
+            // 
+            // gbxEntity
+            // 
+            this.gbxEntity.Controls.Add(this.cbxLastHitEntity);
+            this.gbxEntity.Controls.Add(this.btnLastHitEntity);
+            this.gbxEntity.Controls.Add(this.cbxLastTargetEntity);
+            this.gbxEntity.Controls.Add(this.btnLastTargetEntity);
+            this.gbxEntity.Location = new System.Drawing.Point(6, 112);
+            this.gbxEntity.Name = "gbxEntity";
+            this.gbxEntity.Size = new System.Drawing.Size(384, 140);
+            this.gbxEntity.TabIndex = 1;
+            this.gbxEntity.TabStop = false;
+            this.gbxEntity.Text = "Entity";
+            // 
+            // cbxLastHitEntity
+            // 
+            this.cbxLastHitEntity.AutoSize = true;
+            this.cbxLastHitEntity.Location = new System.Drawing.Point(87, 52);
+            this.cbxLastHitEntity.Name = "cbxLastHitEntity";
+            this.cbxLastHitEntity.Size = new System.Drawing.Size(91, 17);
+            this.cbxLastHitEntity.TabIndex = 3;
+            this.cbxLastHitEntity.Text = "Last Hit Entity";
+            this.cbxLastHitEntity.UseVisualStyleBackColor = true;
+            this.cbxLastHitEntity.CheckedChanged += new System.EventHandler(this.cbxLastHitEntity_CheckedChanged);
+            // 
+            // btnLastHitEntity
+            // 
+            this.btnLastHitEntity.Enabled = false;
+            this.btnLastHitEntity.Location = new System.Drawing.Point(6, 48);
+            this.btnLastHitEntity.Name = "btnLastHitEntity";
+            this.btnLastHitEntity.Size = new System.Drawing.Size(75, 23);
+            this.btnLastHitEntity.TabIndex = 2;
+            this.btnLastHitEntity.Text = "Details";
+            this.btnLastHitEntity.UseVisualStyleBackColor = true;
+            this.btnLastHitEntity.Click += new System.EventHandler(this.btnLastHitEntity_Click);
+            // 
+            // cbxLastTargetEntity
+            // 
+            this.cbxLastTargetEntity.AutoSize = true;
+            this.cbxLastTargetEntity.Location = new System.Drawing.Point(87, 23);
+            this.cbxLastTargetEntity.Name = "cbxLastTargetEntity";
+            this.cbxLastTargetEntity.Size = new System.Drawing.Size(121, 17);
+            this.cbxLastTargetEntity.TabIndex = 1;
+            this.cbxLastTargetEntity.Text = "Last Targeted Entity";
+            this.cbxLastTargetEntity.UseVisualStyleBackColor = true;
+            this.cbxLastTargetEntity.CheckedChanged += new System.EventHandler(this.cbxLastTargetEntity_CheckedChanged);
+            // 
+            // btnLastTargetEntity
+            // 
+            this.btnLastTargetEntity.Enabled = false;
+            this.btnLastTargetEntity.Location = new System.Drawing.Point(6, 19);
+            this.btnLastTargetEntity.Name = "btnLastTargetEntity";
+            this.btnLastTargetEntity.Size = new System.Drawing.Size(75, 23);
+            this.btnLastTargetEntity.TabIndex = 0;
+            this.btnLastTargetEntity.Text = "Details";
+            this.btnLastTargetEntity.UseVisualStyleBackColor = true;
+            this.btnLastTargetEntity.Click += new System.EventHandler(this.btnLastTargetEntity_Click);
             // 
             // gbxEventFlags
             // 
@@ -6028,6 +6092,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudBrightnessR)).EndInit();
             this.tpgMisc.ResumeLayout(false);
             this.tpgMisc.PerformLayout();
+            this.gbxEntity.ResumeLayout(false);
+            this.gbxEntity.PerformLayout();
             this.gbxEventFlags.ResumeLayout(false);
             this.gbxEventFlags.PerformLayout();
             this.tpgNet.ResumeLayout(false);
@@ -6520,6 +6586,11 @@
         private System.Windows.Forms.Button btnRecentPlayerFamilyShare;
         private System.Windows.Forms.NumericUpDown nudClearCount;
         private System.Windows.Forms.Label lblClearCount;
+        private System.Windows.Forms.GroupBox gbxEntity;
+        private System.Windows.Forms.CheckBox cbxLastTargetEntity;
+        private System.Windows.Forms.Button btnLastTargetEntity;
+        private System.Windows.Forms.CheckBox cbxLastHitEntity;
+        private System.Windows.Forms.Button btnLastHitEntity;
     }
 }
 

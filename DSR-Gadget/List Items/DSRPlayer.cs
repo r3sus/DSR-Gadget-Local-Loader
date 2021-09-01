@@ -143,6 +143,7 @@ namespace DSR_Gadget
             get => PlayerInsPtr.ReadInt32((int)DSROffsets.PlayerIns.TeamType);
             set => PlayerInsPtr.WriteInt32((int)DSROffsets.PlayerIns.TeamType, value);
         }
+
         public byte InvadeType
         {
             get => PlayerGameDataPtr.ReadByte((int)DSROffsets.PlayerGameData.InvadeType);

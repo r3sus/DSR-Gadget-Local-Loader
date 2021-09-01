@@ -1,6 +1,7 @@
 ﻿using PropertyHook;
 using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 
 namespace DSR_Gadget
 {
@@ -40,6 +41,12 @@ namespace DSR_Gadget
         private PHPointer SosDbListAddr;
 
         private PHPointer WorldChrManDbgImpAddr;
+
+        private PHPointer LastTargetEntityAOB;
+        private PHPointer LastTargetEntityPtr;
+
+        private PHPointer LastHitEntityAOB;
+        private PHPointer LastHitEntityPtr;
 
         public DSRHook(int refreshInterval, int minLifetime) :
             base(refreshInterval, minLifetime, p => p.MainWindowTitle == "DARK SOULS™: REMASTERED")
@@ -86,6 +93,12 @@ namespace DSR_Gadget
             SosDbListAddr = CreateChildPointer(FrpgNetManImpBase, (int)DSROffsets.FrpgNetManImp.FrpgNetSosDb, (int)DSROffsets.FrpgNetSosDb.SosDbList);
 
             WorldChrManDbgImpAddr = RegisterRelativeAOB(DSROffsets.WorldChrManDbgImpAOB, 3, 7, DSROffsets.WorldChrManDbgImpOffset1);
+
+            LastTargetEntityAOB = RegisterAbsoluteAOB(DSROffsets.LastTargetEntityAOB);
+            LastTargetEntityPtr = CreateBasePointer(IntPtr.Zero);
+
+            LastHitEntityAOB = RegisterAbsoluteAOB(DSROffsets.LastHitEntityAOB);
+            LastHitEntityPtr = CreateBasePointer(IntPtr.Zero);
 
             OnHooked += DSRHook_OnHooked;
         }
@@ -544,6 +557,93 @@ namespace DSR_Gadget
             int offset = getEventFlagOffset(ID, out uint mask);
             EventFlags.WriteFlag32(offset, mask, state);
         }
+
+        public bool LastTargetEntity
+        {
+            set
+            {
+                if (value)
+                    EnableTargetEntity();
+                else
+                    DisableTargetEntity();
+            }
+            get
+            {
+                return LastTargetEntityPtr.Resolve() != IntPtr.Zero;
+            }
+        }     
+        
+        public bool LastHitEntity
+        {
+            set
+            {
+                if (value)
+                    EnableHitEntity();
+                else
+                    DisableHitEntity();
+            }
+            get
+            {
+                return LastHitEntityPtr.Resolve() != IntPtr.Zero;
+            }
+        }
+
+        public PHPointer GetLastTargetEntity()
+        {
+            return CreateBasePointer(LastTargetEntityPtr.Resolve() + DSROffsets.LastTargetEntityAsmOffset, DSROffsets.EnemyInsOffset1);
+        }
+
+        private void DisableTargetEntity()
+        {
+            if (LastTargetEntityAOB.Resolve() != IntPtr.Zero && LastTargetEntityPtr.Resolve() != IntPtr.Zero)
+            {
+                RemoveHook(DSROffsets.LastTargetEntityAOBBytes, LastTargetEntityAOB.Resolve(), LastTargetEntityPtr.Resolve());
+                LastTargetEntityPtr = CreateBasePointer(IntPtr.Zero);
+            }
+        }
+
+        private void EnableTargetEntity()
+        {
+            if (LastTargetEntityAOB.Resolve() != IntPtr.Zero)
+            {
+                byte[] asm = (byte[])DSRAssembly.TargetedEntity.Clone();
+                IntPtr asmAddr = InjectHook(asm, LastTargetEntityAOB.Resolve(), 0xD, (IntPtr)asm.Length + 16);
+                if (asmAddr != IntPtr.Zero)
+                {
+                    LastTargetEntityAOB.WriteByte(5, 0x90);
+                    LastTargetEntityPtr = CreateBasePointer(asmAddr);
+                }
+            }
+        }
+
+        public PHPointer GetLastHitEntity()
+        {
+            return CreateBasePointer(LastHitEntityPtr.Resolve() + DSROffsets.LastHitEntityAsmOffset, DSROffsets.EnemyInsOffset1);
+        }
+
+        private void DisableHitEntity()
+        {
+            if (LastHitEntityAOB.Resolve() != IntPtr.Zero && LastHitEntityPtr.Resolve() != IntPtr.Zero)
+            {
+                RemoveHook(DSROffsets.LastHitEntityAOBBytes, LastHitEntityAOB.Resolve(), LastHitEntityPtr.Resolve());
+                LastTargetEntityPtr = CreateBasePointer(IntPtr.Zero);
+            }
+        }
+
+        private void EnableHitEntity()
+        {
+            if (LastHitEntityAOB.Resolve() != IntPtr.Zero)
+            {
+                byte[] asm = (byte[])DSRAssembly.TargetedEntity.Clone();
+                IntPtr asmAddr = InjectHook(asm, LastHitEntityAOB.Resolve(), 0xD, (IntPtr)asm.Length + 16);
+                if (asmAddr != IntPtr.Zero)
+                {
+                    LastHitEntityAOB.WriteByte(5, 0x90);
+                    LastHitEntityPtr = CreateBasePointer(asmAddr);
+                }
+            }
+        }
+
         #endregion
 
         #region Hotkeys
@@ -660,7 +760,6 @@ namespace DSR_Gadget
         {
             WorldChrManDbgImpAddr.WriteUInt32((int)DSROffsets.WorldChrManDbgImp.Camera, (uint)ptr);
         }
-
 
         #endregion
     }
