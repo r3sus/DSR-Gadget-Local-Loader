@@ -77,8 +77,6 @@ namespace DSR_Gadget
             DeathCam = 0x70,
         }
 
-        public int PlayerInsBoost1 = 0x0;
-        public int PlayerInsBoost2 = 0x0;
         public enum PlayerIns
         {
             CurrentPlayers = 0x18, // List of PlayerIns of current players
@@ -86,14 +84,14 @@ namespace DSR_Gadget
             PlayerCtrl = 0x68,
             ChrType = 0xD4,
             TeamType = 0xD8,
-            ChrFlags1 = 0x284,
+            ChrFlags1 = 0x2A4,
             MPAreaID = 0x354,
             AreaID = 0x358,
             Health = 0x3E8,
             MaxHealth = 0x3EC,
             Stamina = 0x3F8,
             MaxStamina = 0x3FC,
-            ChrFlags2 = 0x514,
+            ChrFlags2 = 0x524,
 
             PlayerGameData = 0x578,
             SteamPlayerData = 0x590,
@@ -237,20 +235,20 @@ namespace DSR_Gadget
             FilterHue = 0x36C,
         }
 
+        // NS_FRPG::GameMan
         public const string ChrClassWarpAOB = "48 8B 05 ? ? ? ? 66 0F 7F 80 ? ? ? ? 0F 28 02 66 0F 7F 80 ? ? ? ? C6 80";
         public const int ChrClassWarpOffset1 = 0;
-        public int ChrClassWarpBoost = 0x0;
         public enum ChrClassWarp
         {
-            LastBonfire = 0xB24,
-            StableX = 0xB90,
-            StableY = 0xB94,
-            StableZ = 0xB98,
-            StableAngle = 0xBA4,
-            InitialX = 0xA70,
-            InitialY = 0xA74,
-            InitialZ = 0xA78,
-            InitialAngle = 0x84,
+            LastBonfire = 0xB34,
+            StableX = 0xBA0,
+            StableY = 0xBA4,
+            StableZ = 0xBA8,
+            StableAngle = 0xBB4,
+            InitialX = 0xA80,
+            InitialY = 0xA84,
+            InitialZ = 0xA88,
+            InitialAngle = 0x94,
         }
 
 
@@ -619,13 +617,10 @@ namespace DSR_Gadget
 
             if (version > 1)
             {
-                result.ChrClassWarpBoost = 0x10;
             }
 
             if (version > 2)
             {
-                result.PlayerInsBoost1 = 0x20;
-                result.PlayerInsBoost2 = 0x10;
             }
 
             return result;

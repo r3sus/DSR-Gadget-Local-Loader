@@ -199,20 +199,20 @@ namespace DSR_Gadget
         public DSRPlayer.Position GetStablePosition()
         {
             DSRPlayer.Position pos;
-            pos.X = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.StableX + Offsets.ChrClassWarpBoost);
-            pos.Y = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.StableY + Offsets.ChrClassWarpBoost);
-            pos.Z = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.StableZ + Offsets.ChrClassWarpBoost);
-            pos.Angle = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.StableAngle + Offsets.ChrClassWarpBoost);
+            pos.X = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.StableX);
+            pos.Y = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.StableY);
+            pos.Z = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.StableZ);
+            pos.Angle = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.StableAngle);
             return pos;
         }
 
         public DSRPlayer.Position GetInitialPosition()
         {
             DSRPlayer.Position pos;
-            pos.X = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.InitialX + Offsets.ChrClassWarpBoost);
-            pos.Y = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.InitialY + Offsets.ChrClassWarpBoost);
-            pos.Z = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.InitialZ + Offsets.ChrClassWarpBoost);
-            pos.Angle = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.InitialAngle + Offsets.ChrClassWarpBoost);
+            pos.X = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.InitialX);
+            pos.Y = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.InitialY);
+            pos.Z = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.InitialZ);
+            pos.Angle = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.InitialAngle);
             return pos;
         }
 
@@ -228,7 +228,7 @@ namespace DSR_Gadget
 
         public bool NoGravity
         {
-            set => ChrData1.WriteFlag32((int)DSROffsets.PlayerIns.ChrFlags1 + Offsets.PlayerInsBoost1, (uint)DSROffsets.ChrFlags1.NoGravity, value);
+            set => ChrData1.WriteFlag32((int)DSROffsets.PlayerIns.ChrFlags1, (uint)DSROffsets.ChrFlags1.NoGravity, value);
         }
 
         public bool NoCollision
@@ -244,8 +244,8 @@ namespace DSR_Gadget
 
         public int LastBonfire
         {
-            get => ChrClassWarp.ReadInt32((int)DSROffsets.ChrClassWarp.LastBonfire + Offsets.ChrClassWarpBoost);
-            set => ChrClassWarp.WriteInt32((int)DSROffsets.ChrClassWarp.LastBonfire + Offsets.ChrClassWarpBoost, value);
+            get => ChrClassWarp.ReadInt32((int)DSROffsets.ChrClassWarp.LastBonfire);
+            set => ChrClassWarp.WriteInt32((int)DSROffsets.ChrClassWarp.LastBonfire, value);
         }
 
         public void BonfireWarp()
@@ -302,8 +302,8 @@ namespace DSR_Gadget
         #region Cheats
         public bool PlayerDeadMode
         {
-            get => ChrData1.ReadFlag32((int)DSROffsets.PlayerIns.ChrFlags1 + Offsets.PlayerInsBoost1, (uint)DSROffsets.ChrFlags1.SetDeadMode);
-            set => ChrData1.WriteFlag32((int)DSROffsets.PlayerIns.ChrFlags1 + Offsets.PlayerInsBoost1, (uint)DSROffsets.ChrFlags1.SetDeadMode, value);
+            get => ChrData1.ReadFlag32((int)DSROffsets.PlayerIns.ChrFlags1, (uint)DSROffsets.ChrFlags1.SetDeadMode);
+            set => ChrData1.WriteFlag32((int)DSROffsets.PlayerIns.ChrFlags1, (uint)DSROffsets.ChrFlags1.SetDeadMode, value);
         }
 
         public bool PlayerNoDead
@@ -313,22 +313,22 @@ namespace DSR_Gadget
 
         public bool PlayerDisableDamage
         {
-            set => ChrData1.WriteFlag32((int)DSROffsets.PlayerIns.ChrFlags1 + Offsets.PlayerInsBoost1, (uint)DSROffsets.ChrFlags1.DisableDamage, value);
+            set => ChrData1.WriteFlag32((int)DSROffsets.PlayerIns.ChrFlags1, (uint)DSROffsets.ChrFlags1.DisableDamage, value);
         }
 
         public bool PlayerNoHit
         {
-            set => ChrData1.WriteFlag32((int)DSROffsets.PlayerIns.ChrFlags2 + Offsets.PlayerInsBoost2, (uint)DSROffsets.ChrFlags2.NoHit, value);
+            set => ChrData1.WriteFlag32((int)DSROffsets.PlayerIns.ChrFlags2, (uint)DSROffsets.ChrFlags2.NoHit, value);
         }
 
         public bool PlayerNoStamina
         {
-            set => ChrData1.WriteFlag32((int)DSROffsets.PlayerIns.ChrFlags2 + Offsets.PlayerInsBoost2, (uint)DSROffsets.ChrFlags2.NoStaminaConsumption, value);
+            set => ChrData1.WriteFlag32((int)DSROffsets.PlayerIns.ChrFlags2, (uint)DSROffsets.ChrFlags2.NoStaminaConsumption, value);
         }
 
         public bool PlayerSuperArmor
         {
-            set => ChrData1.WriteFlag32((int)DSROffsets.PlayerIns.ChrFlags1 + Offsets.PlayerInsBoost1, (uint)DSROffsets.ChrFlags1.SetSuperArmor, value);
+            set => ChrData1.WriteFlag32((int)DSROffsets.PlayerIns.ChrFlags1, (uint)DSROffsets.ChrFlags1.SetSuperArmor, value);
         }
 
         public bool PlayerHide
@@ -348,7 +348,7 @@ namespace DSR_Gadget
 
         public bool PlayerNoGoods
         {
-            set => ChrData1.WriteFlag32((int)DSROffsets.PlayerIns.ChrFlags2 + Offsets.PlayerInsBoost2, (uint)DSROffsets.ChrFlags2.NoGoodsConsume, value);
+            set => ChrData1.WriteFlag32((int)DSROffsets.PlayerIns.ChrFlags2, (uint)DSROffsets.ChrFlags2.NoGoodsConsume, value);
         }
 
         public bool AllNoArrow
