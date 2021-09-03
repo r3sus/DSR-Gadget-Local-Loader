@@ -1721,6 +1721,11 @@
             // nudChaosServant
             // 
             this.nudChaosServant.Location = new System.Drawing.Point(6, 202);
+            this.nudChaosServant.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
             this.nudChaosServant.Name = "nudChaosServant";
             this.nudChaosServant.Size = new System.Drawing.Size(54, 20);
             this.nudChaosServant.TabIndex = 7;
@@ -1729,6 +1734,11 @@
             // nudDarkmoonBlade
             // 
             this.nudDarkmoonBlade.Location = new System.Drawing.Point(6, 176);
+            this.nudDarkmoonBlade.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
             this.nudDarkmoonBlade.Name = "nudDarkmoonBlade";
             this.nudDarkmoonBlade.Size = new System.Drawing.Size(54, 20);
             this.nudDarkmoonBlade.TabIndex = 6;
@@ -1737,6 +1747,11 @@
             // nudForestHunter
             // 
             this.nudForestHunter.Location = new System.Drawing.Point(6, 150);
+            this.nudForestHunter.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
             this.nudForestHunter.Name = "nudForestHunter";
             this.nudForestHunter.Size = new System.Drawing.Size(54, 20);
             this.nudForestHunter.TabIndex = 5;
@@ -1745,6 +1760,11 @@
             // nudGravelordServant
             // 
             this.nudGravelordServant.Location = new System.Drawing.Point(6, 124);
+            this.nudGravelordServant.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
             this.nudGravelordServant.Name = "nudGravelordServant";
             this.nudGravelordServant.Size = new System.Drawing.Size(54, 20);
             this.nudGravelordServant.TabIndex = 4;
@@ -1753,6 +1773,11 @@
             // nudPathOfTheDragon
             // 
             this.nudPathOfTheDragon.Location = new System.Drawing.Point(6, 98);
+            this.nudPathOfTheDragon.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
             this.nudPathOfTheDragon.Name = "nudPathOfTheDragon";
             this.nudPathOfTheDragon.Size = new System.Drawing.Size(54, 20);
             this.nudPathOfTheDragon.TabIndex = 3;
@@ -1761,6 +1786,11 @@
             // nudDarkwraith
             // 
             this.nudDarkwraith.Location = new System.Drawing.Point(6, 72);
+            this.nudDarkwraith.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
             this.nudDarkwraith.Name = "nudDarkwraith";
             this.nudDarkwraith.Size = new System.Drawing.Size(54, 20);
             this.nudDarkwraith.TabIndex = 2;
@@ -1769,6 +1799,11 @@
             // nudWarriorOfSunlight
             // 
             this.nudWarriorOfSunlight.Location = new System.Drawing.Point(6, 46);
+            this.nudWarriorOfSunlight.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
             this.nudWarriorOfSunlight.Name = "nudWarriorOfSunlight";
             this.nudWarriorOfSunlight.Size = new System.Drawing.Size(54, 20);
             this.nudWarriorOfSunlight.TabIndex = 1;

@@ -318,6 +318,7 @@ namespace DSR_Gadget
             Dexterity = 0x60,
             Intelligence = 0x68,
             Faith = 0x70,
+            HumanityLvlMenu = 0x80,
             Humanity = 0x84,
             Resistance = 0x88,
             SoulLevel = 0x90,
@@ -334,7 +335,7 @@ namespace DSR_Gadget
             MultiplayerCount = 0xD4,
             CoopSuccessCount = 0xD8,
 
-
+            ChaosServantContribution = 0xE8,
             WarriorOfSunlight = 0xED,
             Darkwraith = 0xEE,
             PathOfTheDragon = 0xEF,
