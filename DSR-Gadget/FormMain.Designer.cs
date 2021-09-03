@@ -1958,6 +1958,7 @@
             0,
             0,
             0});
+            this.nudFaith.ValueChanged += new System.EventHandler(this.nudStats_ValueChanged);
             // 
             // lblIntelligence
             // 
@@ -1990,6 +1991,7 @@
             0,
             0,
             0});
+            this.nudIntelligence.ValueChanged += new System.EventHandler(this.nudStats_ValueChanged);
             // 
             // lblResistance
             // 
@@ -2022,6 +2024,7 @@
             0,
             0,
             0});
+            this.nudResistance.ValueChanged += new System.EventHandler(this.nudStats_ValueChanged);
             // 
             // lblDexterity
             // 
@@ -2054,6 +2057,7 @@
             0,
             0,
             0});
+            this.nudDexterity.ValueChanged += new System.EventHandler(this.nudStats_ValueChanged);
             // 
             // lblStrength
             // 
@@ -2086,6 +2090,7 @@
             0,
             0,
             0});
+            this.nudStrength.ValueChanged += new System.EventHandler(this.nudStats_ValueChanged);
             // 
             // lblEndurance
             // 
@@ -2118,6 +2123,7 @@
             0,
             0,
             0});
+            this.nudEndurance.ValueChanged += new System.EventHandler(this.nudStats_ValueChanged);
             // 
             // lblAttunement
             // 
@@ -2150,6 +2156,7 @@
             0,
             0,
             0});
+            this.nudAttunement.ValueChanged += new System.EventHandler(this.nudStats_ValueChanged);
             // 
             // lblVitality
             // 
@@ -2182,6 +2189,7 @@
             0,
             0,
             0});
+            this.nudVitality.ValueChanged += new System.EventHandler(this.nudStats_ValueChanged);
             // 
             // tpgStatsFashion
             // 

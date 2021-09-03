@@ -85,12 +85,14 @@ namespace DSR_Gadget
             ChrType = 0xD4,
             TeamType = 0xD8,
             ChrFlags1 = 0x2A4,
+            Opactiy = 0x328,
             MPAreaID = 0x354,
             AreaID = 0x358,
             Health = 0x3E8,
             MaxHealth = 0x3EC,
             Stamina = 0x3F8,
             MaxStamina = 0x3FC,
+            ThrowData = 0x448,
             ChrFlags2 = 0x524,
 
             PlayerGameData = 0x578,
@@ -603,10 +605,13 @@ namespace DSR_Gadget
             TeamType = 0xD8,
             MsbResCap = 0xB0,
             ChrTaeAnimEven = 0xC0,
+            ChrFlags1 = 0x2A4,
+            Opactiy = 0x328,
             Health = 0x3E8,
             MaxHealth = 0x3EC,
             Stamina = 0x3F8,
             MaxStamina = 0x3FC,
+            ChrFlags2 = 0x524,
 
         }
 

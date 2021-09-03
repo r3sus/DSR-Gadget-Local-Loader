@@ -277,6 +277,34 @@ namespace DSR_Gadget
             set => GameDataManPtr.WriteByte((int)DSROffsets.GameDataMan.ClearCount, value);
         }
 
+        public void LevelUp(int level, int vit, int att, int end, int str, int dex, int res, int intel, int fth, int humanity, int souls)
+        {
+            IntPtr stats = Allocate(0x300);
+
+            Kernel32.WriteBytes(Handle, stats + 0x270 + 0x0, BitConverter.GetBytes(vit));
+            Kernel32.WriteBytes(Handle, stats + 0x270 + 0x4, BitConverter.GetBytes(att));
+            Kernel32.WriteBytes(Handle, stats + 0x270 + 0x8, BitConverter.GetBytes(end));
+            Kernel32.WriteBytes(Handle, stats + 0x270 + 0xC, BitConverter.GetBytes(str));
+            Kernel32.WriteBytes(Handle, stats + 0x270 + 0x10, BitConverter.GetBytes(dex));
+            Kernel32.WriteBytes(Handle, stats + 0x270 + 0x14, BitConverter.GetBytes(res));
+            Kernel32.WriteBytes(Handle, stats + 0x270 + 0x18, BitConverter.GetBytes(intel));
+            Kernel32.WriteBytes(Handle, stats + 0x270 + 0x1C, BitConverter.GetBytes(fth));
+            Kernel32.WriteBytes(Handle, stats + 0x270 + 0x20, BitConverter.GetBytes(humanity));
+            Kernel32.WriteBytes(Handle, stats + 0x270 + 0x24, BitConverter.GetBytes(level));
+            Kernel32.WriteBytes(Handle, stats + 0x270 + 0x28, BitConverter.GetBytes(level)); // should be level as well?
+            Kernel32.WriteBytes(Handle, stats + 0x270 + 0x2C, BitConverter.GetBytes(0));
+            Kernel32.WriteBytes(Handle, stats + 0x270 + 0x30, BitConverter.GetBytes(souls));
+
+            byte[] asm = (byte[])DSRAssembly.LevelUp.Clone();
+            byte[] bytes = BitConverter.GetBytes(stats.ToInt64() + 0x270);
+            Array.Copy(bytes, 0, asm, 0x2, 8);
+            bytes = BitConverter.GetBytes(stats.ToInt64());
+            Array.Copy(bytes, 0, asm, 0xC, 8);
+
+            Execute(asm);
+            Free(stats);
+        }
+
         #endregion
 
         #region Items
@@ -398,7 +426,6 @@ namespace DSR_Gadget
 
         private byte[] DurabilityOnBytes = { 0x41, 0x8D, 0x01, 0x90, 0x90, 0x90, 0x90};
         private byte[] DurabilityOffBytes = { 0x41, 0x8D, 0x41, 0xFF, 0x45, 0x8B, 0xC3 };
-
         public bool Durability
         {
             set
