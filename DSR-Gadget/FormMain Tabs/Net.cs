@@ -326,6 +326,9 @@ namespace DSR_Gadget
             nudSosAllPosAngle.Value = angleToDegree(pos.Angle);
             updateDropdown<DSRSummon>(cmbSosAllSummonType, sign.SummonType);
 
+            if (sign.SummonType == 7)
+                sign = EmptySummonSignSfx;
+
             txtSosAllHair.Text = Util.Util.DictGetOrDefault(DSRProtector.Dict, sign.Hair, sign.Hair.ToString());
             txtSosAllHead.Text = Util.Util.DictGetOrDefault(DSRProtector.Dict, sign.ArmorHead, sign.ArmorHead.ToString());
             txtSosAllChest.Text = Util.Util.DictGetOrDefault(DSRProtector.Dict, sign.ArmorChest, sign.ArmorChest.ToString());
