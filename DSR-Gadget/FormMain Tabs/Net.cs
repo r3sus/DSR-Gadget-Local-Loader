@@ -293,7 +293,7 @@ namespace DSR_Gadget
             nudSosPosX.Value = (decimal)pos.X;
             nudSosPosY.Value = (decimal)pos.Y;
             nudSosPosZ.Value = (decimal)pos.Z;
-            nudSosPosAngle.Value = (decimal)pos.Angle;
+            nudSosPosAngle.Value = angleToDegree(pos.Angle);
             updateDropdown<DSRSummon>(cmbSosSummonType, sign.SummonType);
 
             txtSosHair.Text = Util.Util.DictGetOrDefault(DSRProtector.Dict, sign.Hair, sign.Hair.ToString());
@@ -321,7 +321,7 @@ namespace DSR_Gadget
             nudSosAllPosX.Value = (decimal)pos.X;
             nudSosAllPosY.Value = (decimal)pos.Y;
             nudSosAllPosZ.Value = (decimal)pos.Z;
-            nudSosAllPosAngle.Value = (decimal)pos.Angle;
+            nudSosAllPosAngle.Value = angleToDegree(pos.Angle);
             updateDropdown<DSRSummon>(cmbSosAllSummonType, sign.SummonType);
 
             /*
@@ -428,7 +428,7 @@ namespace DSR_Gadget
                 sign.PosX = (float)nudStoredX.Value;
                 sign.PosY = (float)nudStoredY.Value;
                 sign.PosZ = (float)nudStoredZ.Value;
-                sign.PosAngle = (float)nudStoredAngle.Value;
+                sign.PosAngle = degreeToAngle(nudStoredAngle.Value);
             }
         }
 
@@ -447,7 +447,7 @@ namespace DSR_Gadget
                 sign.PosX = (float)nudStoredX.Value;
                 sign.PosY = (float)nudStoredY.Value;
                 sign.PosZ = (float)nudStoredZ.Value;
-                sign.PosAngle = (float)nudStoredAngle.Value;
+                sign.PosAngle = degreeToAngle(nudStoredAngle.Value);
             }
         }
 
