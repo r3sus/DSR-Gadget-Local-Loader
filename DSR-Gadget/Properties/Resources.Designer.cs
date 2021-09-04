@@ -432,7 +432,7 @@ namespace DSR_Gadget.Properties {
         ///a:  48 b9 00 00 00 00 ff    movabs rcx,0xffffffff00000000
         ///11: ff ff ff
         ///14: 48 83 ec 38             sub    rsp,0x38
-        ///18: 49 be 20 99 68 40 01    movabs r14,0x140689920
+        ///18: 49 be 90 58 69 40 01    movabs r14,0x140695890
         ///1f: 00 00 00
         ///22: 41 ff d6                call   r14
         ///25: 48 83 c4 38             add    rsp,0x38
@@ -719,7 +719,7 @@ namespace DSR_Gadget.Properties {
         ///4 White Phantom
         ///5 Black Phantom (Team)
         ///6 Summon Gravelord phantom
-        ///7 Never Connects
+        ///7 Gravelord Sign
         ///8 Instant DC (InvadeType 8) (ttype 17, chrtype 2)
         ///8 Instant DC (InvadeType 9) (ttype 17, chrtype 2)
         ///10 Summon Dragon Spirit (Instant DC?)
@@ -767,6 +767,24 @@ namespace DSR_Gadget.Properties {
         internal static string Teams {
             get {
                 return ResourceManager.GetString("Teams", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 0:  48 be fe fe fe fe fe    movabs rsi,0xfefefefefefefefe
+        ///7:  fe fe fe
+        ///a:  48 bf fe fe fe fe fe    movabs rdi,0xfefefefefefefefe
+        ///11: fe fe fe
+        ///14: 48 89 f2                mov    rdx,rsi
+        ///17: 48 89 f9                mov    rcx,rdi
+        ///1a: 48 83 ec 38             sub    rsp,0x38
+        ///1e: e8 00 00 00 00          call   23 &lt;_main+0x23&gt;
+        ///23: 48 83 c4 38             add    rsp,0x38
+        ///27: c3                      ret .
+        /// </summary>
+        internal static string TriggerSign {
+            get {
+                return ResourceManager.GetString("TriggerSign", resourceCulture);
             }
         }
         

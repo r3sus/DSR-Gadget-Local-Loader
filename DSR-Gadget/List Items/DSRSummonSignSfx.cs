@@ -4,42 +4,23 @@ using PropertyHook;
 
 namespace DSR_Gadget
 {
-    class DSRSummonSign
+    class DSRSummonSignSfx
     {
         public PHPointer SummonSignPtr { get; }
 
 
-        public int SummonType
+        public byte SummonType
         {
-            get => SummonSignPtr.ReadInt32((int)DSROffsets.FrpgNetSosDbItem.SummonType);
-            set => SummonSignPtr.WriteInt32((int)DSROffsets.FrpgNetSosDbItem.SummonType, value);
-        }
-
-        public int SoulLevel
-        {
-            get => SummonSignPtr.ReadInt32((int)DSROffsets.FrpgNetSosDbItem.SoulLevel);
+            get => SummonSignPtr.ReadByte((int)DSROffsets.SosSignManSign.SummonType);
+            set => SummonSignPtr.WriteByte((int)DSROffsets.SosSignManSign.SummonType, value);
         }
 
         public string Name
         {
-            get => SummonSignPtr.ReadString((int)DSROffsets.FrpgNetSosDbItem.Name, System.Text.Encoding.Unicode, 32);
+            get => SummonSignPtr.ReadString((int)DSROffsets.SosSignManSign.Name, System.Text.Encoding.Unicode, 32);
         }
 
-        public string SteamID64Hex
-        {
-            get => SummonSignPtr.ReadString((int)DSROffsets.FrpgNetSosDbItem.SteamID, System.Text.Encoding.ASCII, 16);
-        }
-
-        public long SteamID64
-        {
-            get
-            {
-                long steamID64;
-                long.TryParse(SteamID64Hex, NumberStyles.HexNumber, CultureInfo.InvariantCulture, out steamID64);
-                return steamID64;
-            }
-        }
-
+        /*
         public int Hair
         {
             get => SummonSignPtr.ReadInt32((int)DSROffsets.FrpgNetSosDbItem.Hair);
@@ -103,30 +84,30 @@ namespace DSR_Gadget
         public int Bolt2
         {
             get => SummonSignPtr.ReadInt32((int)DSROffsets.FrpgNetSosDbItem.Bolt2);
-        }
+        }*/
 
         public float PosX
         {
-            get => SummonSignPtr.ReadSingle((int)DSROffsets.FrpgNetSosDbItem.PosX);
-            set => SummonSignPtr.WriteSingle((int)DSROffsets.FrpgNetSosDbItem.PosX, value);
+            get => SummonSignPtr.ReadSingle((int)DSROffsets.SosSignManSign.PosX);
+            set => SummonSignPtr.WriteSingle((int)DSROffsets.SosSignManSign.PosX, value);
         }
 
         public float PosY
         {
-            get => SummonSignPtr.ReadSingle((int)DSROffsets.FrpgNetSosDbItem.PosY);
-            set => SummonSignPtr.WriteSingle((int)DSROffsets.FrpgNetSosDbItem.PosY, value);
+            get => SummonSignPtr.ReadSingle((int)DSROffsets.SosSignManSign.PosY);
+            set => SummonSignPtr.WriteSingle((int)DSROffsets.SosSignManSign.PosY, value);
         }
 
         public float PosZ
         {
-            get => SummonSignPtr.ReadSingle((int)DSROffsets.FrpgNetSosDbItem.PosZ);
-            set => SummonSignPtr.WriteSingle((int)DSROffsets.FrpgNetSosDbItem.PosZ, value);
+            get => SummonSignPtr.ReadSingle((int)DSROffsets.SosSignManSign.PosZ);
+            set => SummonSignPtr.WriteSingle((int)DSROffsets.SosSignManSign.PosZ, value);
         }
 
         public float PosAngle
         {
-            get => SummonSignPtr.ReadSingle((int)DSROffsets.FrpgNetSosDbItem.PosAngle);
-            set => SummonSignPtr.WriteSingle((int)DSROffsets.FrpgNetSosDbItem.PosAngle, value);
+            get => SummonSignPtr.ReadSingle((int)DSROffsets.SosSignManSign.PosAngle);
+            set => SummonSignPtr.WriteSingle((int)DSROffsets.SosSignManSign.PosAngle, value);
         }
 
         public DSRPlayer.Position GetPosition()
@@ -138,10 +119,11 @@ namespace DSR_Gadget
 
         public override string ToString()
         {
-            return Name + " (" + SteamID64.ToString() + ")";
+            DSRSummon summonType = DSRSummon.All.Find(p => p.ID == SummonType);
+            return Name + " (" + summonType.Name + ")";
         }
 
-        public DSRSummonSign(PHPointer summonSignPtr, DSRHook dsrHook)
+        public DSRSummonSignSfx(PHPointer summonSignPtr, DSRHook dsrHook)
         {
             SummonSignPtr = summonSignPtr;
         }

@@ -616,6 +616,37 @@ namespace DSR_Gadget
 
         }
 
+        public const string BaseCARAOB = "48 8B 0D ? ? ? ? E8 ? ? ? ? 48 8B 4E 68 48 8B 05 ? ? ? ? 48 89 48 60 E8";
+        public const int SosSignManOffset0 = 0xD48;
+        public const int SosSignManOffset1 = 0x20;
+
+        public enum SosSignMan
+        {
+            SosListEntry = 0x18,
+        }
+
+        public enum SosListEntry
+        {
+            Item1 = 0x0,
+            Item2 = 0x8,
+            Item3 = 0x10,
+            SosSignManSign = 0x28,
+        }
+
+        public enum SosSignManSign
+        {
+            PosX = 0x8,
+            PosY = 0xC,
+            PosZ = 0x10,
+            PosAngle = 0x14,
+            AreaID = 0x18,
+            Name = 0x24,
+            SummonType = 0x22,
+        }
+
+
+
+
         public static DSROffsets GetOffsets(int moduleSize)
         {
             DSROffsets result = new DSROffsets();

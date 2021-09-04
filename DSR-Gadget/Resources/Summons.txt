@@ -5,7 +5,7 @@
 4 White Phantom
 5 Black Phantom (Team)
 6 Summon Gravelord phantom
-7 Never Connects
+7 Gravelord Sign
 8 Instant DC (InvadeType 8) (ttype 17, chrtype 2)
 8 Instant DC (InvadeType 9) (ttype 17, chrtype 2)
 10 Summon Dragon Spirit (Instant DC?)

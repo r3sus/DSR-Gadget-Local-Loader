@@ -134,6 +134,7 @@
     <Compile Include="List Items\DSRGood.cs" />
     <Compile Include="List Items\DSRParam\DSREquipParamWeapon.cs" />
     <Compile Include="List Items\DSRParam\DSRParam.cs" />
+    <Compile Include="List Items\DSRSummonSignSfx.cs" />
     <Compile Include="List Items\DSRWeapon.cs" />
     <Compile Include="List Items\DSRProtector.cs" />
     <Compile Include="List Items\DSRSummon.cs" />
@@ -233,6 +234,7 @@
     <Content Include="Resources\Assembly\GetItem.txt" />
     <Content Include="Resources\Assembly\LevelUp.txt" />
     <Content Include="Resources\Assembly\KickPlayer.txt" />
+    <Content Include="Resources\Assembly\TriggerSign.txt" />
     <Content Include="Resources\Assembly\TargetedEntity.txt" />
     <Content Include="Resources\Covenants.txt" />
     <Content Include="Resources\Items\FullLists\AllProtectors.txt" />

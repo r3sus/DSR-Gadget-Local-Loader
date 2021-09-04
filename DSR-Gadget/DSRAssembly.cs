@@ -29,5 +29,6 @@ namespace DSR_Gadget
         public static byte[] LeaveSession = loadDefuseOutput(Properties.Resources.LeaveSession);
         public static byte[] KickPlayer = loadDefuseOutput(Properties.Resources.KickPlayer);
         public static byte[] TargetedEntity = loadDefuseOutput(Properties.Resources.TargetedEntity);
+        public static byte[] TriggerSign = loadDefuseOutput(Properties.Resources.TriggerSign);
     }
 }

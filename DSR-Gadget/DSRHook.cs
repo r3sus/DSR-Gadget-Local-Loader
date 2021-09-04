@@ -48,6 +48,9 @@ namespace DSR_Gadget
         private PHPointer LastHitEntityAOB;
         private PHPointer LastHitEntityPtr;
 
+        private PHPointer BaseCARAOB;
+        private PHPointer SosSignMan;
+
         public DSRHook(int refreshInterval, int minLifetime) :
             base(refreshInterval, minLifetime, p => p.MainWindowTitle == "DARK SOULS™: REMASTERED")
         {
@@ -100,6 +103,10 @@ namespace DSR_Gadget
             LastHitEntityAOB = RegisterAbsoluteAOB(DSROffsets.LastHitEntityAOB);
             LastHitEntityPtr = CreateBasePointer(IntPtr.Zero);
 
+            BaseCARAOB = RegisterRelativeAOB(DSROffsets.BaseCARAOB, 3, 7, DSROffsets.SosSignManOffset0);
+
+            SosSignMan = CreateChildPointer(BaseCARAOB, DSROffsets.SosSignManOffset1);
+                
             OnHooked += DSRHook_OnHooked;
         }
 
@@ -732,7 +739,6 @@ namespace DSR_Gadget
 
         public List<DSRSummonSign> GetSummonSigns()
         {
-            //List<DSRSummonSign> summonSignList = new List<DSRSummonSign>();
             List<DSRSummonSign> summonSignList = new List<DSRSummonSign>();
 
             PHPointer frpgSosDbListItem = CreateChildPointer(SosDbListAddr, (int)DSROffsets.SosDbList.SosDbListItem);
@@ -741,7 +747,8 @@ namespace DSR_Gadget
             while (loop)
             {
                 PHPointer frpgSosDbItem = CreateChildPointer(frpgSosDbListItem, (int)DSROffsets.SosDbListItem.FrpgNetSosDbItem);
-                if (frpgSosDbItem.Resolve() != IntPtr.Zero)
+
+                if (frpgSosDbListItem.Resolve() != SosDbListAddr.Resolve())
                 {
                     summonSignList.Add(new DSRSummonSign(frpgSosDbItem, this));
                     frpgSosDbListItem = CreateChildPointer(frpgSosDbListItem, (int)DSROffsets.SosDbListItem.SosDbItemNext);
@@ -749,8 +756,54 @@ namespace DSR_Gadget
                 else
                     loop = false;
             }
-            
+
             return summonSignList;
+        }
+
+        // seems to be stored in some kind of strange tree or graph structure
+        public List<DSRSummonSignSfx> GetSummonSignsSfx()
+        {
+            List<DSRSummonSignSfx> summonSignList = new List<DSRSummonSignSfx>();
+
+            PHPointer SosSignManList = CreateChildPointer(SosSignMan, (int)DSROffsets.SosSignMan.SosListEntry);
+            Dictionary<IntPtr, PHPointer> sosPtrs = new Dictionary<IntPtr, PHPointer>();
+
+            System.Diagnostics.Debug.WriteLine(SosSignManList.Resolve().ToString("X"));
+
+            sosPtrs = GetSignSfx(SosSignManList, SosSignManList, sosPtrs);
+
+            foreach (KeyValuePair<IntPtr, PHPointer> keyValuePair in sosPtrs)
+                summonSignList.Add(new DSRSummonSignSfx(keyValuePair.Value, this));
+
+            return summonSignList;
+        }
+
+        private Dictionary<IntPtr, PHPointer> GetSignSfx(PHPointer sosListStartEntry, PHPointer sosListEntry, Dictionary<IntPtr, PHPointer> dict)
+        {
+
+
+            PHPointer sos = CreateChildPointer(sosListEntry, (int)DSROffsets.SosListEntry.SosSignManSign);
+            IntPtr sosPtr = sos.Resolve();
+
+            if (dict.ContainsKey(sosPtr))
+                return dict;
+            else if (sosPtr != IntPtr.Zero)
+                dict.Add(sosPtr, sos);
+
+            PHPointer item1 = CreateChildPointer(sosListEntry, (int)DSROffsets.SosListEntry.Item1);
+            PHPointer item2 = CreateChildPointer(sosListEntry, (int)DSROffsets.SosListEntry.Item2);
+            PHPointer item3 = CreateChildPointer(sosListEntry, (int)DSROffsets.SosListEntry.Item3);
+
+            if (item1.Resolve() != sosListStartEntry.Resolve())
+                dict = GetSignSfx(sosListStartEntry, item1, dict);
+            if (item2.Resolve() != sosListStartEntry.Resolve())
+                dict = GetSignSfx(sosListStartEntry, item2, dict);
+            if (item3.Resolve() != sosListStartEntry.Resolve())
+                dict = GetSignSfx(sosListStartEntry, item3, dict);
+
+
+
+            return dict;
         }
 
         public DSRPlayer GetCurrentPlayer(int index)
@@ -768,6 +821,11 @@ namespace DSR_Gadget
             return new DSRSummonSign(CreateBasePointer(IntPtr.Zero), this);
         }
 
+        public DSRSummonSignSfx GetEmptySummonSignSfx()
+        {
+            return new DSRSummonSignSfx(CreateBasePointer(IntPtr.Zero), this);
+        }
+
         public void LeaveSession()
         {
             byte[] asm = (byte[])DSRAssembly.LeaveSession.Clone();
@@ -780,6 +838,16 @@ namespace DSR_Gadget
             byte[] asm = (byte[])DSRAssembly.KickPlayer.Clone();
             byte[] bytes = BitConverter.GetBytes(0x10044000 + index);
             Array.Copy(bytes, 0, asm, 0x1, 4);
+            Execute(asm);
+        }
+
+        public void TriggerSign(DSRSummonSignSfx sign)
+        {
+            byte[] asm = (byte[])DSRAssembly.TriggerSign.Clone();
+            byte[] sosSignManAddr = BitConverter.GetBytes(SosSignMan.Resolve().ToInt64());
+            byte[] signAddr = BitConverter.GetBytes(sign.SummonSignPtr.Resolve().ToInt64());
+            Array.Copy(signAddr, 0, asm, 0x2, 8);
+            Array.Copy(sosSignManAddr, 0, asm, 0xC, 8);
             Execute(asm);
         }
 
