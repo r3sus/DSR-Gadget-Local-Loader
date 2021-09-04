@@ -250,7 +250,9 @@ namespace DSR_Gadget
             InitialX = 0xA80,
             InitialY = 0xA84,
             InitialZ = 0xA88,
-            InitialAngle = 0x94,
+            InitialAngle = 0xA94,
+            SaveSlot = 0xAA0,
+            AutoSave = 0xB70,
         }
 
 
