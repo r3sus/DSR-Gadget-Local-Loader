@@ -463,32 +463,32 @@
             this.lbxNetSosList = new System.Windows.Forms.ListBox();
             this.tpgNetSosAll = new System.Windows.Forms.TabPage();
             this.btnSosAllTrigger = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
+            this.txtSosAllRightWep2 = new System.Windows.Forms.TextBox();
+            this.txtSosAllLeftWep1 = new System.Windows.Forms.TextBox();
+            this.txtSosAllLeftWep2 = new System.Windows.Forms.TextBox();
+            this.txtSosAllRightWep1 = new System.Windows.Forms.TextBox();
+            this.txtSosAllBolt2 = new System.Windows.Forms.TextBox();
+            this.txtSosAllArrow1 = new System.Windows.Forms.TextBox();
+            this.txtSosAllArrow2 = new System.Windows.Forms.TextBox();
+            this.txtSosAllBolt1 = new System.Windows.Forms.TextBox();
+            this.txtSosAllLegs = new System.Windows.Forms.TextBox();
+            this.txtSosAllHands = new System.Windows.Forms.TextBox();
+            this.txtSosAllHair = new System.Windows.Forms.TextBox();
+            this.txtSosAllHead = new System.Windows.Forms.TextBox();
+            this.txtSosAllChest = new System.Windows.Forms.TextBox();
+            this.lblSosAllBolt2 = new System.Windows.Forms.Label();
+            this.lblSosAllBolt1 = new System.Windows.Forms.Label();
+            this.lblSosAllArrow2 = new System.Windows.Forms.Label();
+            this.lblSosAllArrow1 = new System.Windows.Forms.Label();
+            this.lblSosAllLegs = new System.Windows.Forms.Label();
+            this.lblSosAllLeftWep2 = new System.Windows.Forms.Label();
+            this.lblSosAllLeftWep1 = new System.Windows.Forms.Label();
+            this.lblSosAllRightWep2 = new System.Windows.Forms.Label();
+            this.lblSosAllRightWep1 = new System.Windows.Forms.Label();
+            this.lblSosAllHands = new System.Windows.Forms.Label();
+            this.lblSosAllChest = new System.Windows.Forms.Label();
+            this.lblSosAllHead = new System.Windows.Forms.Label();
+            this.lblSosAllHair = new System.Windows.Forms.Label();
             this.lblSosAllPos = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.nudSosAllPosZ = new System.Windows.Forms.NumericUpDown();
@@ -5910,32 +5910,32 @@
             // tpgNetSosAll
             // 
             this.tpgNetSosAll.Controls.Add(this.btnSosAllTrigger);
-            this.tpgNetSosAll.Controls.Add(this.textBox1);
-            this.tpgNetSosAll.Controls.Add(this.textBox2);
-            this.tpgNetSosAll.Controls.Add(this.textBox3);
-            this.tpgNetSosAll.Controls.Add(this.textBox4);
-            this.tpgNetSosAll.Controls.Add(this.textBox5);
-            this.tpgNetSosAll.Controls.Add(this.textBox6);
-            this.tpgNetSosAll.Controls.Add(this.textBox7);
-            this.tpgNetSosAll.Controls.Add(this.textBox8);
-            this.tpgNetSosAll.Controls.Add(this.textBox9);
-            this.tpgNetSosAll.Controls.Add(this.textBox10);
-            this.tpgNetSosAll.Controls.Add(this.textBox11);
-            this.tpgNetSosAll.Controls.Add(this.textBox12);
-            this.tpgNetSosAll.Controls.Add(this.textBox13);
-            this.tpgNetSosAll.Controls.Add(this.label4);
-            this.tpgNetSosAll.Controls.Add(this.label5);
-            this.tpgNetSosAll.Controls.Add(this.label6);
-            this.tpgNetSosAll.Controls.Add(this.label7);
-            this.tpgNetSosAll.Controls.Add(this.label8);
-            this.tpgNetSosAll.Controls.Add(this.label9);
-            this.tpgNetSosAll.Controls.Add(this.label10);
-            this.tpgNetSosAll.Controls.Add(this.label11);
-            this.tpgNetSosAll.Controls.Add(this.label12);
-            this.tpgNetSosAll.Controls.Add(this.label13);
-            this.tpgNetSosAll.Controls.Add(this.label14);
-            this.tpgNetSosAll.Controls.Add(this.label15);
-            this.tpgNetSosAll.Controls.Add(this.label16);
+            this.tpgNetSosAll.Controls.Add(this.txtSosAllRightWep2);
+            this.tpgNetSosAll.Controls.Add(this.txtSosAllLeftWep1);
+            this.tpgNetSosAll.Controls.Add(this.txtSosAllLeftWep2);
+            this.tpgNetSosAll.Controls.Add(this.txtSosAllRightWep1);
+            this.tpgNetSosAll.Controls.Add(this.txtSosAllBolt2);
+            this.tpgNetSosAll.Controls.Add(this.txtSosAllArrow1);
+            this.tpgNetSosAll.Controls.Add(this.txtSosAllArrow2);
+            this.tpgNetSosAll.Controls.Add(this.txtSosAllBolt1);
+            this.tpgNetSosAll.Controls.Add(this.txtSosAllLegs);
+            this.tpgNetSosAll.Controls.Add(this.txtSosAllHands);
+            this.tpgNetSosAll.Controls.Add(this.txtSosAllHair);
+            this.tpgNetSosAll.Controls.Add(this.txtSosAllHead);
+            this.tpgNetSosAll.Controls.Add(this.txtSosAllChest);
+            this.tpgNetSosAll.Controls.Add(this.lblSosAllBolt2);
+            this.tpgNetSosAll.Controls.Add(this.lblSosAllBolt1);
+            this.tpgNetSosAll.Controls.Add(this.lblSosAllArrow2);
+            this.tpgNetSosAll.Controls.Add(this.lblSosAllArrow1);
+            this.tpgNetSosAll.Controls.Add(this.lblSosAllLegs);
+            this.tpgNetSosAll.Controls.Add(this.lblSosAllLeftWep2);
+            this.tpgNetSosAll.Controls.Add(this.lblSosAllLeftWep1);
+            this.tpgNetSosAll.Controls.Add(this.lblSosAllRightWep2);
+            this.tpgNetSosAll.Controls.Add(this.lblSosAllRightWep1);
+            this.tpgNetSosAll.Controls.Add(this.lblSosAllHands);
+            this.tpgNetSosAll.Controls.Add(this.lblSosAllChest);
+            this.tpgNetSosAll.Controls.Add(this.lblSosAllHead);
+            this.tpgNetSosAll.Controls.Add(this.lblSosAllHair);
             this.tpgNetSosAll.Controls.Add(this.lblSosAllPos);
             this.tpgNetSosAll.Controls.Add(this.label18);
             this.tpgNetSosAll.Controls.Add(this.nudSosAllPosZ);
@@ -5969,252 +5969,226 @@
             this.btnSosAllTrigger.UseVisualStyleBackColor = true;
             this.btnSosAllTrigger.Click += new System.EventHandler(this.btnSosAllTrigger_Click);
             // 
-            // textBox1
+            // txtSosAllRightWep2
             // 
-            this.textBox1.Location = new System.Drawing.Point(170, 266);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(135, 20);
-            this.textBox1.TabIndex = 156;
-            this.textBox1.Visible = false;
+            this.txtSosAllRightWep2.Location = new System.Drawing.Point(170, 266);
+            this.txtSosAllRightWep2.Name = "txtSosAllRightWep2";
+            this.txtSosAllRightWep2.ReadOnly = true;
+            this.txtSosAllRightWep2.Size = new System.Drawing.Size(135, 20);
+            this.txtSosAllRightWep2.TabIndex = 156;
             // 
-            // textBox2
+            // txtSosAllLeftWep1
             // 
-            this.textBox2.Location = new System.Drawing.Point(170, 292);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(135, 20);
-            this.textBox2.TabIndex = 155;
-            this.textBox2.Visible = false;
+            this.txtSosAllLeftWep1.Location = new System.Drawing.Point(170, 292);
+            this.txtSosAllLeftWep1.Name = "txtSosAllLeftWep1";
+            this.txtSosAllLeftWep1.ReadOnly = true;
+            this.txtSosAllLeftWep1.Size = new System.Drawing.Size(135, 20);
+            this.txtSosAllLeftWep1.TabIndex = 155;
             // 
-            // textBox3
+            // txtSosAllLeftWep2
             // 
-            this.textBox3.Location = new System.Drawing.Point(170, 318);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(135, 20);
-            this.textBox3.TabIndex = 154;
-            this.textBox3.Visible = false;
+            this.txtSosAllLeftWep2.Location = new System.Drawing.Point(170, 318);
+            this.txtSosAllLeftWep2.Name = "txtSosAllLeftWep2";
+            this.txtSosAllLeftWep2.ReadOnly = true;
+            this.txtSosAllLeftWep2.Size = new System.Drawing.Size(135, 20);
+            this.txtSosAllLeftWep2.TabIndex = 154;
             // 
-            // textBox4
+            // txtSosAllRightWep1
             // 
-            this.textBox4.Location = new System.Drawing.Point(170, 240);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(135, 20);
-            this.textBox4.TabIndex = 153;
-            this.textBox4.Visible = false;
+            this.txtSosAllRightWep1.Location = new System.Drawing.Point(170, 240);
+            this.txtSosAllRightWep1.Name = "txtSosAllRightWep1";
+            this.txtSosAllRightWep1.ReadOnly = true;
+            this.txtSosAllRightWep1.Size = new System.Drawing.Size(135, 20);
+            this.txtSosAllRightWep1.TabIndex = 153;
             // 
-            // textBox5
+            // txtSosAllBolt2
             // 
-            this.textBox5.Location = new System.Drawing.Point(170, 214);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(135, 20);
-            this.textBox5.TabIndex = 152;
-            this.textBox5.Visible = false;
+            this.txtSosAllBolt2.Location = new System.Drawing.Point(170, 214);
+            this.txtSosAllBolt2.Name = "txtSosAllBolt2";
+            this.txtSosAllBolt2.ReadOnly = true;
+            this.txtSosAllBolt2.Size = new System.Drawing.Size(135, 20);
+            this.txtSosAllBolt2.TabIndex = 152;
             // 
-            // textBox6
+            // txtSosAllArrow1
             // 
-            this.textBox6.Location = new System.Drawing.Point(170, 136);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(135, 20);
-            this.textBox6.TabIndex = 151;
-            this.textBox6.Visible = false;
+            this.txtSosAllArrow1.Location = new System.Drawing.Point(170, 136);
+            this.txtSosAllArrow1.Name = "txtSosAllArrow1";
+            this.txtSosAllArrow1.ReadOnly = true;
+            this.txtSosAllArrow1.Size = new System.Drawing.Size(135, 20);
+            this.txtSosAllArrow1.TabIndex = 151;
             // 
-            // textBox7
+            // txtSosAllArrow2
             // 
-            this.textBox7.Location = new System.Drawing.Point(170, 162);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(135, 20);
-            this.textBox7.TabIndex = 150;
-            this.textBox7.Visible = false;
+            this.txtSosAllArrow2.Location = new System.Drawing.Point(170, 162);
+            this.txtSosAllArrow2.Name = "txtSosAllArrow2";
+            this.txtSosAllArrow2.ReadOnly = true;
+            this.txtSosAllArrow2.Size = new System.Drawing.Size(135, 20);
+            this.txtSosAllArrow2.TabIndex = 150;
             // 
-            // textBox8
+            // txtSosAllBolt1
             // 
-            this.textBox8.Location = new System.Drawing.Point(170, 188);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(135, 20);
-            this.textBox8.TabIndex = 149;
-            this.textBox8.Visible = false;
+            this.txtSosAllBolt1.Location = new System.Drawing.Point(170, 188);
+            this.txtSosAllBolt1.Name = "txtSosAllBolt1";
+            this.txtSosAllBolt1.ReadOnly = true;
+            this.txtSosAllBolt1.Size = new System.Drawing.Size(135, 20);
+            this.txtSosAllBolt1.TabIndex = 149;
             // 
-            // textBox9
+            // txtSosAllLegs
             // 
-            this.textBox9.Location = new System.Drawing.Point(170, 110);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(135, 20);
-            this.textBox9.TabIndex = 148;
-            this.textBox9.Visible = false;
+            this.txtSosAllLegs.Location = new System.Drawing.Point(170, 110);
+            this.txtSosAllLegs.Name = "txtSosAllLegs";
+            this.txtSosAllLegs.ReadOnly = true;
+            this.txtSosAllLegs.Size = new System.Drawing.Size(135, 20);
+            this.txtSosAllLegs.TabIndex = 148;
             // 
-            // textBox10
+            // txtSosAllHands
             // 
-            this.textBox10.Location = new System.Drawing.Point(170, 84);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.ReadOnly = true;
-            this.textBox10.Size = new System.Drawing.Size(135, 20);
-            this.textBox10.TabIndex = 147;
-            this.textBox10.Visible = false;
+            this.txtSosAllHands.Location = new System.Drawing.Point(170, 84);
+            this.txtSosAllHands.Name = "txtSosAllHands";
+            this.txtSosAllHands.ReadOnly = true;
+            this.txtSosAllHands.Size = new System.Drawing.Size(135, 20);
+            this.txtSosAllHands.TabIndex = 147;
             // 
-            // textBox11
+            // txtSosAllHair
             // 
-            this.textBox11.Location = new System.Drawing.Point(170, 6);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.ReadOnly = true;
-            this.textBox11.Size = new System.Drawing.Size(135, 20);
-            this.textBox11.TabIndex = 146;
-            this.textBox11.Visible = false;
+            this.txtSosAllHair.Location = new System.Drawing.Point(170, 6);
+            this.txtSosAllHair.Name = "txtSosAllHair";
+            this.txtSosAllHair.ReadOnly = true;
+            this.txtSosAllHair.Size = new System.Drawing.Size(135, 20);
+            this.txtSosAllHair.TabIndex = 146;
             // 
-            // textBox12
+            // txtSosAllHead
             // 
-            this.textBox12.Location = new System.Drawing.Point(170, 32);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.ReadOnly = true;
-            this.textBox12.Size = new System.Drawing.Size(135, 20);
-            this.textBox12.TabIndex = 145;
-            this.textBox12.Visible = false;
+            this.txtSosAllHead.Location = new System.Drawing.Point(170, 32);
+            this.txtSosAllHead.Name = "txtSosAllHead";
+            this.txtSosAllHead.ReadOnly = true;
+            this.txtSosAllHead.Size = new System.Drawing.Size(135, 20);
+            this.txtSosAllHead.TabIndex = 145;
             // 
-            // textBox13
+            // txtSosAllChest
             // 
-            this.textBox13.Location = new System.Drawing.Point(170, 58);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.ReadOnly = true;
-            this.textBox13.Size = new System.Drawing.Size(135, 20);
-            this.textBox13.TabIndex = 144;
-            this.textBox13.Visible = false;
+            this.txtSosAllChest.Location = new System.Drawing.Point(170, 58);
+            this.txtSosAllChest.Name = "txtSosAllChest";
+            this.txtSosAllChest.ReadOnly = true;
+            this.txtSosAllChest.Size = new System.Drawing.Size(135, 20);
+            this.txtSosAllChest.TabIndex = 144;
             // 
-            // label4
+            // lblSosAllBolt2
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(311, 217);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(34, 13);
-            this.label4.TabIndex = 143;
-            this.label4.Text = "Bolt 2";
-            this.label4.Visible = false;
+            this.lblSosAllBolt2.AutoSize = true;
+            this.lblSosAllBolt2.Location = new System.Drawing.Point(311, 217);
+            this.lblSosAllBolt2.Name = "lblSosAllBolt2";
+            this.lblSosAllBolt2.Size = new System.Drawing.Size(34, 13);
+            this.lblSosAllBolt2.TabIndex = 143;
+            this.lblSosAllBolt2.Text = "Bolt 2";
             // 
-            // label5
+            // lblSosAllBolt1
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(311, 191);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(34, 13);
-            this.label5.TabIndex = 142;
-            this.label5.Text = "Bolt 1";
-            this.label5.Visible = false;
+            this.lblSosAllBolt1.AutoSize = true;
+            this.lblSosAllBolt1.Location = new System.Drawing.Point(311, 191);
+            this.lblSosAllBolt1.Name = "lblSosAllBolt1";
+            this.lblSosAllBolt1.Size = new System.Drawing.Size(34, 13);
+            this.lblSosAllBolt1.TabIndex = 142;
+            this.lblSosAllBolt1.Text = "Bolt 1";
             // 
-            // label6
+            // lblSosAllArrow2
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(311, 165);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(43, 13);
-            this.label6.TabIndex = 141;
-            this.label6.Text = "Arrow 2";
-            this.label6.Visible = false;
+            this.lblSosAllArrow2.AutoSize = true;
+            this.lblSosAllArrow2.Location = new System.Drawing.Point(311, 165);
+            this.lblSosAllArrow2.Name = "lblSosAllArrow2";
+            this.lblSosAllArrow2.Size = new System.Drawing.Size(43, 13);
+            this.lblSosAllArrow2.TabIndex = 141;
+            this.lblSosAllArrow2.Text = "Arrow 2";
             // 
-            // label7
+            // lblSosAllArrow1
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(311, 139);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(43, 13);
-            this.label7.TabIndex = 140;
-            this.label7.Text = "Arrow 1";
-            this.label7.Visible = false;
+            this.lblSosAllArrow1.AutoSize = true;
+            this.lblSosAllArrow1.Location = new System.Drawing.Point(311, 139);
+            this.lblSosAllArrow1.Name = "lblSosAllArrow1";
+            this.lblSosAllArrow1.Size = new System.Drawing.Size(43, 13);
+            this.lblSosAllArrow1.TabIndex = 140;
+            this.lblSosAllArrow1.Text = "Arrow 1";
             // 
-            // label8
+            // lblSosAllLegs
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(311, 113);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(30, 13);
-            this.label8.TabIndex = 139;
-            this.label8.Text = "Legs";
-            this.label8.Visible = false;
+            this.lblSosAllLegs.AutoSize = true;
+            this.lblSosAllLegs.Location = new System.Drawing.Point(311, 113);
+            this.lblSosAllLegs.Name = "lblSosAllLegs";
+            this.lblSosAllLegs.Size = new System.Drawing.Size(30, 13);
+            this.lblSosAllLegs.TabIndex = 139;
+            this.lblSosAllLegs.Text = "Legs";
             // 
-            // label9
+            // lblSosAllLeftWep2
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(311, 321);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(54, 13);
-            this.label9.TabIndex = 138;
-            this.label9.Text = "L. Hand 2";
-            this.label9.Visible = false;
+            this.lblSosAllLeftWep2.AutoSize = true;
+            this.lblSosAllLeftWep2.Location = new System.Drawing.Point(311, 321);
+            this.lblSosAllLeftWep2.Name = "lblSosAllLeftWep2";
+            this.lblSosAllLeftWep2.Size = new System.Drawing.Size(54, 13);
+            this.lblSosAllLeftWep2.TabIndex = 138;
+            this.lblSosAllLeftWep2.Text = "L. Hand 2";
             // 
-            // label10
+            // lblSosAllLeftWep1
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(311, 295);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(54, 13);
-            this.label10.TabIndex = 137;
-            this.label10.Text = "L. Hand 1";
-            this.label10.Visible = false;
+            this.lblSosAllLeftWep1.AutoSize = true;
+            this.lblSosAllLeftWep1.Location = new System.Drawing.Point(311, 295);
+            this.lblSosAllLeftWep1.Name = "lblSosAllLeftWep1";
+            this.lblSosAllLeftWep1.Size = new System.Drawing.Size(54, 13);
+            this.lblSosAllLeftWep1.TabIndex = 137;
+            this.lblSosAllLeftWep1.Text = "L. Hand 1";
             // 
-            // label11
+            // lblSosAllRightWep2
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(311, 269);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(56, 13);
-            this.label11.TabIndex = 136;
-            this.label11.Text = "R. Hand 2";
-            this.label11.Visible = false;
+            this.lblSosAllRightWep2.AutoSize = true;
+            this.lblSosAllRightWep2.Location = new System.Drawing.Point(311, 269);
+            this.lblSosAllRightWep2.Name = "lblSosAllRightWep2";
+            this.lblSosAllRightWep2.Size = new System.Drawing.Size(56, 13);
+            this.lblSosAllRightWep2.TabIndex = 136;
+            this.lblSosAllRightWep2.Text = "R. Hand 2";
             // 
-            // label12
+            // lblSosAllRightWep1
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(311, 243);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(56, 13);
-            this.label12.TabIndex = 135;
-            this.label12.Text = "R. Hand 1";
-            this.label12.Visible = false;
+            this.lblSosAllRightWep1.AutoSize = true;
+            this.lblSosAllRightWep1.Location = new System.Drawing.Point(311, 243);
+            this.lblSosAllRightWep1.Name = "lblSosAllRightWep1";
+            this.lblSosAllRightWep1.Size = new System.Drawing.Size(56, 13);
+            this.lblSosAllRightWep1.TabIndex = 135;
+            this.lblSosAllRightWep1.Text = "R. Hand 1";
             // 
-            // label13
+            // lblSosAllHands
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(311, 87);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(38, 13);
-            this.label13.TabIndex = 134;
-            this.label13.Text = "Hands";
-            this.label13.Visible = false;
+            this.lblSosAllHands.AutoSize = true;
+            this.lblSosAllHands.Location = new System.Drawing.Point(311, 87);
+            this.lblSosAllHands.Name = "lblSosAllHands";
+            this.lblSosAllHands.Size = new System.Drawing.Size(38, 13);
+            this.lblSosAllHands.TabIndex = 134;
+            this.lblSosAllHands.Text = "Hands";
             // 
-            // label14
+            // lblSosAllChest
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(311, 61);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(34, 13);
-            this.label14.TabIndex = 133;
-            this.label14.Text = "Chest";
-            this.label14.Visible = false;
+            this.lblSosAllChest.AutoSize = true;
+            this.lblSosAllChest.Location = new System.Drawing.Point(311, 61);
+            this.lblSosAllChest.Name = "lblSosAllChest";
+            this.lblSosAllChest.Size = new System.Drawing.Size(34, 13);
+            this.lblSosAllChest.TabIndex = 133;
+            this.lblSosAllChest.Text = "Chest";
             // 
-            // label15
+            // lblSosAllHead
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(311, 35);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(33, 13);
-            this.label15.TabIndex = 132;
-            this.label15.Text = "Head";
-            this.label15.Visible = false;
+            this.lblSosAllHead.AutoSize = true;
+            this.lblSosAllHead.Location = new System.Drawing.Point(311, 35);
+            this.lblSosAllHead.Name = "lblSosAllHead";
+            this.lblSosAllHead.Size = new System.Drawing.Size(33, 13);
+            this.lblSosAllHead.TabIndex = 132;
+            this.lblSosAllHead.Text = "Head";
             // 
-            // label16
+            // lblSosAllHair
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(311, 9);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(26, 13);
-            this.label16.TabIndex = 131;
-            this.label16.Text = "Hair";
-            this.label16.Visible = false;
+            this.lblSosAllHair.AutoSize = true;
+            this.lblSosAllHair.Location = new System.Drawing.Point(311, 9);
+            this.lblSosAllHair.Name = "lblSosAllHair";
+            this.lblSosAllHair.Size = new System.Drawing.Size(26, 13);
+            this.lblSosAllHair.TabIndex = 131;
+            this.lblSosAllHair.Text = "Hair";
             // 
             // lblSosAllPos
             // 
@@ -7177,32 +7151,32 @@
         private System.Windows.Forms.CheckBox cbxLastHitEntity;
         private System.Windows.Forms.Button btnLastHitEntity;
         private System.Windows.Forms.TabPage tpgNetSosAll;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox txtSosAllRightWep2;
+        private System.Windows.Forms.TextBox txtSosAllLeftWep1;
+        private System.Windows.Forms.TextBox txtSosAllLeftWep2;
+        private System.Windows.Forms.TextBox txtSosAllRightWep1;
+        private System.Windows.Forms.TextBox txtSosAllBolt2;
+        private System.Windows.Forms.TextBox txtSosAllArrow1;
+        private System.Windows.Forms.TextBox txtSosAllArrow2;
+        private System.Windows.Forms.TextBox txtSosAllBolt1;
+        private System.Windows.Forms.TextBox txtSosAllLegs;
+        private System.Windows.Forms.TextBox txtSosAllHands;
+        private System.Windows.Forms.TextBox txtSosAllHair;
+        private System.Windows.Forms.TextBox txtSosAllHead;
+        private System.Windows.Forms.TextBox txtSosAllChest;
+        private System.Windows.Forms.Label lblSosAllBolt2;
+        private System.Windows.Forms.Label lblSosAllBolt1;
+        private System.Windows.Forms.Label lblSosAllArrow2;
+        private System.Windows.Forms.Label lblSosAllArrow1;
+        private System.Windows.Forms.Label lblSosAllLegs;
+        private System.Windows.Forms.Label lblSosAllLeftWep2;
+        private System.Windows.Forms.Label lblSosAllLeftWep1;
+        private System.Windows.Forms.Label lblSosAllRightWep2;
+        private System.Windows.Forms.Label lblSosAllRightWep1;
+        private System.Windows.Forms.Label lblSosAllHands;
+        private System.Windows.Forms.Label lblSosAllChest;
+        private System.Windows.Forms.Label lblSosAllHead;
+        private System.Windows.Forms.Label lblSosAllHair;
         private System.Windows.Forms.Label lblSosAllPos;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.NumericUpDown nudSosAllPosZ;

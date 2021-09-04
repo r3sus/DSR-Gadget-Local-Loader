@@ -642,8 +642,41 @@ namespace DSR_Gadget
             PosZ = 0x10,
             PosAngle = 0x14,
             AreaID = 0x18,
-            Name = 0x24,
             SummonType = 0x22,
+            Name = 0x24,
+
+            LeftWep1 = 0x68,
+            RightWep1 = 0x6C,
+            LeftWep2 = 0x70,
+            RightWep2 = 0x74,
+            Arrow1 = 0x78,
+            Bolt1 = 0x7C,
+            Arrow2 = 0x80,
+            Bolt2 = 0x84,
+            ArmorHead = 0x88,
+            ArmorChest = 0x8C,
+            ArmorHands = 0x90,
+            ArmorLegs = 0x94,
+            Hair = 0x98,
+
+            HairRed = 0x9C,
+            HairGreen = 0x9D,
+            HairBlue = 0x9E,
+            HairAlpha = 0x9F,
+
+            /*
+            SummonType = 0x8,
+            SteamID = 0xC,
+            AreaID1 = 0x30,
+            PosX = 0x34,
+            PosY = 0x38,
+            PosZ = 0x3C,
+            PosAngle = 0x40,
+            AreaID2 = 0x44,
+            SoulLevel = 0x48,
+            Covenant = 0x4C,
+            MultiplayerCount = 0x50,
+            */
         }
 
 
