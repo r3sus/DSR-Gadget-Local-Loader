@@ -768,8 +768,6 @@ namespace DSR_Gadget
             PHPointer SosSignManList = CreateChildPointer(SosSignMan, (int)DSROffsets.SosSignMan.SosListEntry);
             Dictionary<IntPtr, PHPointer> sosPtrs = new Dictionary<IntPtr, PHPointer>();
 
-            System.Diagnostics.Debug.WriteLine(SosSignManList.Resolve().ToString("X"));
-
             sosPtrs = GetSignSfx(SosSignManList, SosSignManList, sosPtrs);
 
             foreach (KeyValuePair<IntPtr, PHPointer> keyValuePair in sosPtrs)
@@ -787,7 +785,7 @@ namespace DSR_Gadget
 
             if (dict.ContainsKey(sosPtr))
                 return dict;
-            else if (sosPtr != IntPtr.Zero)
+            else if (sosPtr != IntPtr.Zero && sosListStartEntry.Resolve() != sosListEntry.Resolve())
                 dict.Add(sosPtr, sos);
 
             PHPointer item1 = CreateChildPointer(sosListEntry, (int)DSROffsets.SosListEntry.Item1);
