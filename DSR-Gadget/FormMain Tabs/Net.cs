@@ -1,6 +1,7 @@
 ﻿using DSR_Gadget.SubForms;
 using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -290,6 +291,7 @@ namespace DSR_Gadget
         {
             nudSosSoulLevel.Value = sign.SoulLevel;
             txtSosName.Text = sign.Name;
+            txtSosSteamID.Text = sign.SteamID64.ToString();
 
             DSRPlayer.Position pos = sign.GetPosition();
             nudSosPosX.Value = (decimal)pos.X;
@@ -421,6 +423,14 @@ namespace DSR_Gadget
 
             if (loaded && !reading && sign != null)
                 sign.SummonType = (cmbSosSummonType.SelectedItem as DSRSummon).ID;
+        }
+
+        private void btnSosSteamProfile_Click(object sender, EventArgs e)
+        {
+            Regex regex = new Regex(@"^.*(?<ID>[0-9]{17}).*$");
+            string steamID = txtSosSteamID.Text;
+            if (regex.IsMatch(steamID))
+                Util.Util.OpenUrl("https://www.steamcommunity.com/profiles/" + steamID);
         }
 
         private void btnSosRestorePos_Click(object sender, EventArgs e)

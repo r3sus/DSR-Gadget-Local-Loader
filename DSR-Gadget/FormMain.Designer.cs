@@ -418,6 +418,9 @@
             this.lblCurrentPlayerSoulLevel = new System.Windows.Forms.Label();
             this.lbxNetCurrentPlayers = new System.Windows.Forms.ListBox();
             this.tpgNetSummonSigns = new System.Windows.Forms.TabPage();
+            this.btnSosSteamProfile = new System.Windows.Forms.Button();
+            this.txtSosSteamID = new System.Windows.Forms.TextBox();
+            this.lblSosSteamID = new System.Windows.Forms.Label();
             this.txtSosRightWep2 = new System.Windows.Forms.TextBox();
             this.txtSosLeftWep1 = new System.Windows.Forms.TextBox();
             this.txtSosLeftWep2 = new System.Windows.Forms.TextBox();
@@ -5426,6 +5429,9 @@
             // 
             // tpgNetSummonSigns
             // 
+            this.tpgNetSummonSigns.Controls.Add(this.btnSosSteamProfile);
+            this.tpgNetSummonSigns.Controls.Add(this.txtSosSteamID);
+            this.tpgNetSummonSigns.Controls.Add(this.lblSosSteamID);
             this.tpgNetSummonSigns.Controls.Add(this.txtSosRightWep2);
             this.tpgNetSummonSigns.Controls.Add(this.txtSosLeftWep1);
             this.tpgNetSummonSigns.Controls.Add(this.txtSosLeftWep2);
@@ -5476,6 +5482,33 @@
             this.tpgNetSummonSigns.TabIndex = 2;
             this.tpgNetSummonSigns.Text = "Summon Signs";
             this.tpgNetSummonSigns.UseVisualStyleBackColor = true;
+            // 
+            // btnSosSteamProfile
+            // 
+            this.btnSosSteamProfile.Location = new System.Drawing.Point(6, 211);
+            this.btnSosSteamProfile.Name = "btnSosSteamProfile";
+            this.btnSosSteamProfile.Size = new System.Drawing.Size(135, 23);
+            this.btnSosSteamProfile.TabIndex = 116;
+            this.btnSosSteamProfile.Text = "Visit profile";
+            this.btnSosSteamProfile.UseVisualStyleBackColor = true;
+            this.btnSosSteamProfile.Click += new System.EventHandler(this.btnSosSteamProfile_Click);
+            // 
+            // txtSosSteamID
+            // 
+            this.txtSosSteamID.Location = new System.Drawing.Point(6, 185);
+            this.txtSosSteamID.Name = "txtSosSteamID";
+            this.txtSosSteamID.ReadOnly = true;
+            this.txtSosSteamID.Size = new System.Drawing.Size(135, 20);
+            this.txtSosSteamID.TabIndex = 115;
+            // 
+            // lblSosSteamID
+            // 
+            this.lblSosSteamID.AutoSize = true;
+            this.lblSosSteamID.Location = new System.Drawing.Point(6, 169);
+            this.lblSosSteamID.Name = "lblSosSteamID";
+            this.lblSosSteamID.Size = new System.Drawing.Size(51, 13);
+            this.lblSosSteamID.TabIndex = 114;
+            this.lblSosSteamID.Text = "Steam ID";
             // 
             // txtSosRightWep2
             // 
@@ -5701,7 +5734,7 @@
             // lblSosSpawnPosition
             // 
             this.lblSosSpawnPosition.AutoSize = true;
-            this.lblSosSpawnPosition.Location = new System.Drawing.Point(6, 209);
+            this.lblSosSpawnPosition.Location = new System.Drawing.Point(6, 277);
             this.lblSosSpawnPosition.Name = "lblSosSpawnPosition";
             this.lblSosSpawnPosition.Size = new System.Drawing.Size(79, 13);
             this.lblSosSpawnPosition.TabIndex = 69;
@@ -5710,7 +5743,7 @@
             // lblSosPosAngle
             // 
             this.lblSosPosAngle.AutoSize = true;
-            this.lblSosPosAngle.Location = new System.Drawing.Point(26, 305);
+            this.lblSosPosAngle.Location = new System.Drawing.Point(26, 373);
             this.lblSosPosAngle.Name = "lblSosPosAngle";
             this.lblSosPosAngle.Size = new System.Drawing.Size(34, 13);
             this.lblSosPosAngle.TabIndex = 68;
@@ -5719,7 +5752,7 @@
             // nudSosPosZ
             // 
             this.nudSosPosZ.DecimalPlaces = 3;
-            this.nudSosPosZ.Location = new System.Drawing.Point(66, 277);
+            this.nudSosPosZ.Location = new System.Drawing.Point(66, 345);
             this.nudSosPosZ.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -5738,7 +5771,7 @@
             // 
             // btnSosRestorePos
             // 
-            this.btnSosRestorePos.Location = new System.Drawing.Point(6, 329);
+            this.btnSosRestorePos.Location = new System.Drawing.Point(6, 397);
             this.btnSosRestorePos.Name = "btnSosRestorePos";
             this.btnSosRestorePos.Size = new System.Drawing.Size(135, 23);
             this.btnSosRestorePos.TabIndex = 63;
@@ -5749,7 +5782,7 @@
             // nudSosPosY
             // 
             this.nudSosPosY.DecimalPlaces = 3;
-            this.nudSosPosY.Location = new System.Drawing.Point(66, 251);
+            this.nudSosPosY.Location = new System.Drawing.Point(66, 319);
             this.nudSosPosY.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -5769,7 +5802,7 @@
             // nudSosPosX
             // 
             this.nudSosPosX.DecimalPlaces = 3;
-            this.nudSosPosX.Location = new System.Drawing.Point(66, 225);
+            this.nudSosPosX.Location = new System.Drawing.Point(66, 293);
             this.nudSosPosX.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -5788,7 +5821,7 @@
             // 
             // nudSosPosAngle
             // 
-            this.nudSosPosAngle.Location = new System.Drawing.Point(66, 303);
+            this.nudSosPosAngle.Location = new System.Drawing.Point(66, 371);
             this.nudSosPosAngle.Maximum = new decimal(new int[] {
             365,
             0,
@@ -5808,7 +5841,7 @@
             // lblSosPosZ
             // 
             this.lblSosPosZ.AutoSize = true;
-            this.lblSosPosZ.Location = new System.Drawing.Point(46, 279);
+            this.lblSosPosZ.Location = new System.Drawing.Point(46, 347);
             this.lblSosPosZ.Name = "lblSosPosZ";
             this.lblSosPosZ.Size = new System.Drawing.Size(14, 13);
             this.lblSosPosZ.TabIndex = 66;
@@ -5817,7 +5850,7 @@
             // lblSosPosY
             // 
             this.lblSosPosY.AutoSize = true;
-            this.lblSosPosY.Location = new System.Drawing.Point(46, 253);
+            this.lblSosPosY.Location = new System.Drawing.Point(46, 321);
             this.lblSosPosY.Name = "lblSosPosY";
             this.lblSosPosY.Size = new System.Drawing.Size(14, 13);
             this.lblSosPosY.TabIndex = 65;
@@ -5826,7 +5859,7 @@
             // lblSosPosX
             // 
             this.lblSosPosX.AutoSize = true;
-            this.lblSosPosX.Location = new System.Drawing.Point(46, 227);
+            this.lblSosPosX.Location = new System.Drawing.Point(46, 295);
             this.lblSosPosX.Name = "lblSosPosX";
             this.lblSosPosX.Size = new System.Drawing.Size(14, 13);
             this.lblSosPosX.TabIndex = 64;
@@ -5835,7 +5868,7 @@
             // lblSosSummonType
             // 
             this.lblSosSummonType.AutoSize = true;
-            this.lblSosSummonType.Location = new System.Drawing.Point(6, 169);
+            this.lblSosSummonType.Location = new System.Drawing.Point(6, 237);
             this.lblSosSummonType.Name = "lblSosSummonType";
             this.lblSosSummonType.Size = new System.Drawing.Size(75, 13);
             this.lblSosSummonType.TabIndex = 59;
@@ -5845,7 +5878,7 @@
             // 
             this.cmbSosSummonType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSosSummonType.FormattingEnabled = true;
-            this.cmbSosSummonType.Location = new System.Drawing.Point(6, 185);
+            this.cmbSosSummonType.Location = new System.Drawing.Point(6, 253);
             this.cmbSosSummonType.Name = "cmbSosSummonType";
             this.cmbSosSummonType.Size = new System.Drawing.Size(135, 21);
             this.cmbSosSummonType.TabIndex = 58;
@@ -7193,6 +7226,9 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.ListBox lbxNetSosAll;
         private System.Windows.Forms.Button btnSosAllTrigger;
+        private System.Windows.Forms.TextBox txtSosSteamID;
+        private System.Windows.Forms.Label lblSosSteamID;
+        private System.Windows.Forms.Button btnSosSteamProfile;
     }
 }
 
