@@ -678,6 +678,11 @@ namespace DSR_Gadget
             }
         }
 
+        public void PerformGesture(int gesture)
+        {
+            MenuMan.WriteInt32((int)DSROffsets.MenuMan.PerformGesture, gesture);
+        }
+
         #endregion
 
         #region Hotkeys

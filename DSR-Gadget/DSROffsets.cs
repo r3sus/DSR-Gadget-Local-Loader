@@ -287,7 +287,27 @@ namespace DSR_Gadget
             BottomlessBox = 0x98,
             Warp = 0xC0,
             MenuKick = 0x24C,
+            PerformGesture = 0x2B8,
             Covenants = 0x300,
+        }
+
+        public enum Gesture
+        {
+            PointForward = 1,
+            PointUp = 2,
+            PointDown = 3,
+            Beckon = 4,
+            Wave = 5,
+            Bow = 6,
+            ProperBow = 7,
+            Hurrah = 8,
+            Joy = 9,
+            Shrug = 10,
+            LookSkyward = 11,
+            WellWhatIsIt = 12,
+            Prostration = 13,
+            Prayer = 14,
+            PraiseTheSun = 15,
         }
 
         // BaseB in public ce table
