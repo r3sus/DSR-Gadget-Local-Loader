@@ -1,4 +1,5 @@
-﻿using PropertyHook;
+﻿using DSR_Gadget.List_Items;
+using PropertyHook;
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
@@ -39,6 +40,7 @@ namespace DSR_Gadget
 
         private PHPointer FrpgNetManImpBase;
         private PHPointer SosDbListAddr;
+        private PHPointer NitoDbListAddr;
 
         private PHPointer WorldChrManDbgImpAddr;
 
@@ -93,7 +95,8 @@ namespace DSR_Gadget
 
             FrpgNetManImpBase = RegisterRelativeAOB(DSROffsets.FrpgNetManImpAOB, 3, 7, DSROffsets.FrpgNetManImpOffset1);
 
-            SosDbListAddr = CreateChildPointer(FrpgNetManImpBase, (int)DSROffsets.FrpgNetManImp.FrpgNetSosDb, (int)DSROffsets.FrpgNetSosDb.SosDbList);
+            SosDbListAddr = CreateChildPointer(FrpgNetManImpBase, (int)DSROffsets.FrpgNetManImp.FrpgNetSosDb, (int)DSROffsets.FrpgNetDb.NetDbList);
+            NitoDbListAddr = CreateChildPointer(FrpgNetManImpBase, (int)DSROffsets.FrpgNetManImp.FrpgNetNitoInvitationDb, (int)DSROffsets.FrpgNetDb.NetDbList);
 
             WorldChrManDbgImpAddr = RegisterRelativeAOB(DSROffsets.WorldChrManDbgImpAOB, 3, 7, DSROffsets.WorldChrManDbgImpOffset1);
 
@@ -742,21 +745,110 @@ namespace DSR_Gadget
             return currentPlayers;
         }
 
-        public List<DSRSummonSign> GetSummonSigns()
+        public Dictionary<int, DSRSign> GetSigns()
         {
-            List<DSRSummonSign> summonSignList = new List<DSRSummonSign>();
+            Dictionary<int, DSRSign> signs = new Dictionary<int, DSRSign>();
 
-            PHPointer frpgSosDbListItem = CreateChildPointer(SosDbListAddr, (int)DSROffsets.SosDbList.SosDbListItem);
+            foreach (IDSRSosSignManItem item in GetSosSignManItems())
+            {
+                signs.Add(item.ID, new DSRSign() { DSRSosSignManItem = item });
+            }
+
+            DSRSign sign;
+            foreach (IDSRNetDbItem item in GetDSRNetDbItems())
+            {
+                if (signs.TryGetValue(item.ID, out sign))
+                    sign.DSRNetDbItem = item;
+            }
+
+            return signs;
+        }
+
+        public List<IDSRSosSignManItem> GetSosSignManItems()
+        {
+            List<IDSRSosSignManItem> dsrSosSignManItems = new List<IDSRSosSignManItem>();
+
+            PHPointer SosSignManList = CreateChildPointer(SosSignMan, (int)DSROffsets.SosSignMan.SosListEntry);
+            Dictionary<IntPtr, PHPointer> sosPtrs = new Dictionary<IntPtr, PHPointer>();
+
+            sosPtrs = GetSignSfx(SosSignManList, SosSignManList, sosPtrs);
+
+            foreach (KeyValuePair<IntPtr, PHPointer> keyValuePair in sosPtrs)
+                dsrSosSignManItems.Add(new DSRSosSignManItem(keyValuePair.Value, this));
+
+            return dsrSosSignManItems;
+        }
+
+        public List<IDSRNetDbItem> GetDSRNetDbItems()
+        {
+            List<IDSRNetDbItem> items = new List<IDSRNetDbItem>();
+            items.AddRange(GetDSRSosDbItems());
+            items.AddRange(GetDSRNitoDbItems());
+
+            return items;
+        }
+
+        public List<DSRSosDbItem> GetDSRSosDbItems()
+        {
+            List<DSRSosDbItem> dsrSosDbItems = new List<DSRSosDbItem>();
+
+            PHPointer frpgSosDbListItem = CreateChildPointer(SosDbListAddr, (int)DSROffsets.NetDbList.NetDbListItem);
 
             bool loop = true;
             while (loop)
             {
-                PHPointer frpgSosDbItem = CreateChildPointer(frpgSosDbListItem, (int)DSROffsets.SosDbListItem.FrpgNetSosDbItem);
+                PHPointer frpgSosDbItem = CreateChildPointer(frpgSosDbListItem, (int)DSROffsets.NetDbListItem.FrpgNetDbItem);
+
+                if (frpgSosDbListItem.Resolve() != SosDbListAddr.Resolve())
+                {
+                    dsrSosDbItems.Add(new DSRSosDbItem(frpgSosDbItem, this));
+                    frpgSosDbListItem = CreateChildPointer(frpgSosDbListItem, (int)DSROffsets.NetDbListItem.NetDbListItemNext);
+                }
+                else
+                    loop = false;
+            }
+
+            return dsrSosDbItems;
+        }
+
+        public List<DSRNitoDbItem> GetDSRNitoDbItems()
+        {
+            List<DSRNitoDbItem> dsrNitoDbItems = new List<DSRNitoDbItem>();
+
+            PHPointer frpgNitoDbListItem = CreateChildPointer(NitoDbListAddr, (int)DSROffsets.NetDbList.NetDbListItem);
+
+            bool loop = true;
+            while (loop)
+            {
+                PHPointer frpgNitoDbItem = CreateChildPointer(frpgNitoDbListItem, (int)DSROffsets.NetDbListItem.FrpgNetDbItem);
+
+                if (frpgNitoDbListItem.Resolve() != SosDbListAddr.Resolve())
+                {
+                    dsrNitoDbItems.Add(new DSRNitoDbItem(frpgNitoDbItem, this));
+                    frpgNitoDbListItem = CreateChildPointer(frpgNitoDbListItem, (int)DSROffsets.NetDbListItem.NetDbListItemNext);
+                }
+                else
+                    loop = false;
+            }
+
+            return dsrNitoDbItems;
+        }
+
+        public List<DSRSummonSign> GetSummonSigns()
+        {
+            List<DSRSummonSign> summonSignList = new List<DSRSummonSign>();
+
+            PHPointer frpgSosDbListItem = CreateChildPointer(SosDbListAddr, (int)DSROffsets.NetDbList.NetDbListItem);
+
+            bool loop = true;
+            while (loop)
+            {
+                PHPointer frpgSosDbItem = CreateChildPointer(frpgSosDbListItem, (int)DSROffsets.NetDbListItem.FrpgNetDbItem);
 
                 if (frpgSosDbListItem.Resolve() != SosDbListAddr.Resolve())
                 {
                     summonSignList.Add(new DSRSummonSign(frpgSosDbItem, this));
-                    frpgSosDbListItem = CreateChildPointer(frpgSosDbListItem, (int)DSROffsets.SosDbListItem.SosDbItemNext);
+                    frpgSosDbListItem = CreateChildPointer(frpgSosDbListItem, (int)DSROffsets.NetDbListItem.NetDbListItemNext);
                 }
                 else
                     loop = false;
@@ -859,7 +951,7 @@ namespace DSR_Gadget
 
         public void SetCamera(IntPtr ptr)
         {
-            WorldChrManDbgImpAddr.WriteUInt32((int)DSROffsets.WorldChrManDbgImp.Camera, (uint)ptr);
+            WorldChrManDbgImpAddr.WriteUInt64((int)DSROffsets.WorldChrManDbgImp.Camera, (ulong)ptr);
         }
 
         #endregion

@@ -12,23 +12,24 @@ namespace DSR_Gadget
         public enum FrpgNetManImp
         {
             FrpgNetSosDb = 0xB48,
+            FrpgNetNitoInvitationDb = 0xB98,
         }
         
-        public enum FrpgNetSosDb
+        public enum FrpgNetDb
         {
-            SosDbList = 0x28,
+            NetDbList = 0x28,
         }
 
-        public enum SosDbList
+        public enum NetDbList
         {
-            SosDbListItem = 0x0,
+            NetDbListItem = 0x0,
         }
 
-        public enum SosDbListItem
+        public enum NetDbListItem
         {
-            SosDbItemNext = 0x0,
-            SosDbItemPrevious = 0x8,
-            FrpgNetSosDbItem = 0x10,
+            NetDbListItemNext = 0x0,
+            NetDbListItemPrevious = 0x8,
+            FrpgNetDbItem = 0x10,
         }
 
         public enum FrpgNetSosDbItem
