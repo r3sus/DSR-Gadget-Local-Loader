@@ -846,6 +846,9 @@ namespace DSR_Gadget
 
         public void TriggerSign(DSRSummonSignSfx sign)
         {
+            if (SosSignMan.Resolve() == IntPtr.Zero || sign.SummonSignPtr.Resolve() == IntPtr.Zero)
+                return;
+
             byte[] asm = (byte[])DSRAssembly.TriggerSign.Clone();
             byte[] sosSignManAddr = BitConverter.GetBytes(SosSignMan.Resolve().ToInt64());
             byte[] signAddr = BitConverter.GetBytes(sign.SummonSignPtr.Resolve().ToInt64());

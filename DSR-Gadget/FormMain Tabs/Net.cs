@@ -448,7 +448,7 @@ namespace DSR_Gadget
         private void btnSosAllTrigger_Click(object sender, EventArgs e)
         {
             DSRSummonSignSfx sign = lbxNetSosAll.SelectedItem as DSRSummonSignSfx;
-            if (sign != null && sign.SummonSignPtr.Resolve() != IntPtr.Zero)
+            if (sign != null)
                 Hook.TriggerSign(sign);
         }
 
