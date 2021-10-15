@@ -118,8 +118,15 @@ namespace DSR_Gadget
 
         public override string ToString()
         {
+            string name = Name;
+            if (name is null)
+                name = "";
+
             DSRSummon summonType = DSRSummon.All.Find(p => p.ID == SummonType);
-            return Name + " (" + summonType.Name + ")";
+            if (summonType != null && summonType.Name != null)
+                return name + " (" + summonType.Name + ")";
+            else
+                return name + "(" + SummonType + ")";
         }
 
         public DSRSummonSignSfx(PHPointer summonSignPtr, DSRHook dsrHook)

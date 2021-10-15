@@ -745,6 +745,7 @@ namespace DSR_Gadget
             return currentPlayers;
         }
 
+/*
         public Dictionary<int, DSRSign> GetSigns()
         {
             Dictionary<int, DSRSign> signs = new Dictionary<int, DSRSign>();
@@ -832,7 +833,7 @@ namespace DSR_Gadget
             }
 
             return dsrNitoDbItems;
-        }
+        }*/
 
         public List<DSRSummonSign> GetSummonSigns()
         {
