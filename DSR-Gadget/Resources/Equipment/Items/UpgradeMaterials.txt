@@ -1,3 +1,4 @@
+//Format: Item ID; Stack Limit; Reinforce Type; Name [arbitrary]
     800   1 0 Large Ember
     801   1 0 Very Large Ember
     802   1 0 Crystal Ember

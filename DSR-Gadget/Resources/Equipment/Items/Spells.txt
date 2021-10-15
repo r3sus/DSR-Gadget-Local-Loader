@@ -1,3 +1,4 @@
+//Format: Item ID; Stack Limit; Reinforce Type; Name [arbitrary]
    3000  99 0 Sorcery: Soul Arrow
    3010  99 0 Sorcery: Great Soul Arrow
    3020  99 0 Sorcery: Heavy Soul Arrow

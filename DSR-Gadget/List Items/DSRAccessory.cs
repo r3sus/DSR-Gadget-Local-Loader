@@ -46,12 +46,15 @@ namespace DSR_Gadget
 
         static DSRAccessory()
         {
-            foreach (string line in Regex.Split(Properties.Resources.Rings, "[\r\n]+"))
+            foreach (var category in DSRItemCategory.All)
             {
-                DSRAccessory weapon = new DSRAccessory(line);
-                Dict.Add(weapon.ID, weapon.Name);
-                //All.Add(new DSRAccessory(line));
+                if (category.Name.Replace(" ", "").Contains("Rings"))
+                {
+                    foreach (var item in category.Items)
+                        Dict.Add(item.ID, item.Name);
+                }
             }
+            
             Dict.Add(-1, "None");
         }
     }

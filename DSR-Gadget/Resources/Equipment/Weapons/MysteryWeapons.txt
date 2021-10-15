@@ -1,3 +1,4 @@
+//Format: Item ID; Stack Limit; Reinforce Type; Name [arbitrary]
  199000   1 0 Phantom Dagger
  299000   1 0 Phantom Straight Sword
  398000   1 0 Phantom Greatsword

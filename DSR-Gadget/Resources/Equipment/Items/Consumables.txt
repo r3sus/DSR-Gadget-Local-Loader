@@ -1,3 +1,4 @@
+//Format: Item ID; Stack Limit; Reinforce Type; Name [arbitrary]
     109  99 0 Eye of Death
     111  99 0 Cracked Red Eye Orb
     230  99 0 Elizabeth's Mushroom

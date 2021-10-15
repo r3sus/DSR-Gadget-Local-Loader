@@ -1,3 +1,4 @@
+//Format: Item ID; Stack Limit; Reinforce Type; Name [arbitrary]
     116   1 0 Black Eye Orb (Shiva)
     130   1 0 Covenant: None
     131   1 0 Covenant: Way of White

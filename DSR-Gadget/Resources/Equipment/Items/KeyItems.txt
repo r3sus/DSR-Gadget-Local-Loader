@@ -1,3 +1,4 @@
+//Format: Item ID; Stack Limit; Reinforce Type; Name [arbitrary]
     384   1 0 Peculiar Doll
    2001   1 0 Basement Key
    2002   1 0 Crest of Artorias

@@ -1,3 +1,4 @@
+//Format: Item ID; Stack Limit; Reinforce Type; Name [arbitrary]
   10000   1 1 Catarina Helm
   11000   1 1 Catarina Armor
   12000   1 1 Catarina Gauntlets

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DSR_Gadget
@@ -7,6 +9,7 @@ namespace DSR_Gadget
     {
         private void initItems()
         {
+            DSRItemCategory.GetItemCategories();
             foreach (DSRItemCategory category in DSRItemCategory.All)
                 cmbCategory.Items.Add(category);
             cmbCategory.SelectedIndex = 0;
@@ -142,5 +145,193 @@ namespace DSR_Gadget
                     nudQuantity.Enabled = false;
             }
         }
+
+        private void searchBox_TextChanged(object sender, EventArgs e)
+        {
+            FilterItems();
+        }
+
+        //Clear items and add the ones that match text in search box
+        private void FilterItems()
+        {
+
+            lbxItems.Items.Clear();
+
+            if (SearchAllCheckbox.Checked && searchBox.Text != "")
+            {
+                //search every item category
+                foreach (DSRItemCategory category in cmbCategory.Items)
+                {
+                    foreach (DSRItem item in category.Items)
+                    {
+                        if (item.ToString().ToLower().Contains(searchBox.Text.ToLower()))
+                            lbxItems.Items.Add(item);
+                    }
+                }
+            }
+            else
+            {
+                //only search selected item category
+                DSRItemCategory category = cmbCategory.SelectedItem as DSRItemCategory;
+                foreach (DSRItem item in category.Items)
+                {
+                    if (item.ToString().ToLower().Contains(searchBox.Text.ToLower()))
+                        lbxItems.Items.Add(item);
+                }
+            }
+
+            if (lbxItems.Items.Count > 0)
+                lbxItems.SelectedIndex = 0;
+
+            HandleSearchLabel();
+        }
+
+        private void HandleSearchLabel()
+        {
+            if (searchBox.Text == "")
+                lblSearch.Visible = true;
+            else
+                lblSearch.Visible = false;
+        }
+
+        private void KeyPressed(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                searchBox.Clear();
+                return;
+            }
+
+            //Create selected index as item
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true; //Do not pass keypress along
+                CreateItem();
+                return;
+            }
+
+            //Return if sender is cmbInfusion so that arrow keys are handled correctly
+            if (sender == cmbInfusion)
+                return;
+            //Prevents up and down keys from moving the cursor left and right when nothing in item box
+            if (lbxItems.Items.Count == 0)
+            {
+                if (e.KeyCode == Keys.Up)
+                    e.Handled = true; //Do not pass keypress along
+                if (e.KeyCode == Keys.Down)
+                    e.Handled = true; //Do not pass keypress along
+                return;
+            }
+
+            ScrollListbox(e);
+        }
+
+        //Create Item to currently loaded character
+        public void CreateItem()
+        {
+            //Check if the button is enabled and the selected item isn't null
+            if (btnCreate.Enabled && lbxItems.SelectedItem != null)
+            {
+                _ = ChangeColor(Color.DarkGray);
+                DSRItem item = lbxItems.SelectedItem as DSRItem;
+                int id = item.ID;
+                if (item.UpgradeType == DSRItem.Upgrade.PyroFlame || item.UpgradeType == DSRItem.Upgrade.PyroFlameAscended)
+                    id += (int)nudUpgrade.Value * 100;
+                else
+                    id += (int)nudUpgrade.Value;
+                if (item.UpgradeType == DSRItem.Upgrade.Infusable || item.UpgradeType == DSRItem.Upgrade.InfusableRestricted)
+                {
+                    DSRInfusion infusion = cmbInfusion.SelectedItem as DSRInfusion;
+                    id += infusion.Value;
+                }
+                Hook.GetItem(item.CategoryID, id, (int)nudQuantity.Value);
+            }
+        }
+
+        //Changes the color of the Apply button
+        private async Task ChangeColor(Color new_color)
+        {
+            btnCreate.BackColor = new_color;
+
+            await Task.Delay(TimeSpan.FromSeconds(.25));
+
+            btnCreate.BackColor = default(Color);
+        }
+
+        //handles up and down scrolling
+        private void ScrollListbox(KeyEventArgs e)
+        {
+            //Scroll down through Items listbox and go back to bottom at end
+            if (e.KeyCode == Keys.Up)
+            {
+                e.Handled = true;//Do not pass keypress along
+                //Check is there's still items to go through
+                if (lbxItems.SelectedIndex > 0)
+                {
+                    lbxItems.SelectedIndex -= 1;
+                    return;
+                }
+
+                //Check if last item or "over" for safety
+                if (lbxItems.SelectedIndex <= 0)
+                {
+                    lbxItems.SelectedIndex = lbxItems.Items.Count - 1; //-1 because Selected Index is 0 based and Count isn't
+                    return;
+                }
+
+                //One liner meme that does the exact same thing as the code above
+                //lbxItems.SelectedIndex = ((lbxItems.SelectedIndex - 1) + lbxItems.Items.Count) % lbxItems.Items.Count;
+                //return;
+            }
+
+            //Scroll down through Items listbox and go back to top at end
+            if (e.KeyCode == Keys.Down)
+            {
+                e.Handled = true;//Do not pass keypress along
+                //Check is there's still items to go through
+                if (lbxItems.SelectedIndex < lbxItems.Items.Count - 1) //-1 because Selected Index is 0 based and Count isn't
+                {
+                    lbxItems.SelectedIndex += 1;
+                    return;
+                }
+
+                //Check if last item or "over" for safety
+                if (lbxItems.SelectedIndex >= lbxItems.Items.Count - 1) //-1 because Selected Index is 0 based and Count isn't
+                {
+                    lbxItems.SelectedIndex = 0;
+                    return;
+                }
+
+                //One liner meme that does the exact same thing as the code above
+                //lbxItems.SelectedIndex = (lbxItems.SelectedIndex + 1) % lbxItems.Items.Count;
+                //return;
+
+            }
+
+
+        }
+
+        private void maxUpgrade_CheckedChanged(object sender, EventArgs e)
+        {
+            //HandleMaxItemCheckbox()
+            if (maxUpgrade.Checked)
+            {
+                nudUpgrade.Value = nudUpgrade.Maximum;
+                nudQuantity.Value = nudQuantity.Maximum;
+            }
+            else
+            {
+                nudUpgrade.Value = nudUpgrade.Minimum;
+                nudQuantity.Value = nudQuantity.Minimum;
+            }
+        }
+
+        //Give focus and select all
+        private void searchBox_Click(object sender, EventArgs e)
+        {
+            searchBox.SelectAll();
+            searchBox.Focus();
+        }
+
     }
 }

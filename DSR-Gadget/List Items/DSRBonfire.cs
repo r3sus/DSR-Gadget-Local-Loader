@@ -39,8 +39,11 @@ namespace DSR_Gadget
 
         static DSRBonfire()
         {
-            foreach (string line in Regex.Split(Properties.Resources.Bonfires, "[\r\n]+"))
-                All.Add(new DSRBonfire(line));
+            foreach (string line in Regex.Split(GetTxtResourceClass.GetTxtResource("Resources/Systems/Bonfires.txt"), "[\r\n]+"))
+            {
+                if (GetTxtResourceClass.IsValidTxtResource(line)) //determine if line is a valid resource or not
+                    All.Add(new DSRBonfire(line));
+            };
             All.Sort();
         }
     }

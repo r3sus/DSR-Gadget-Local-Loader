@@ -126,6 +126,12 @@
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
     <Compile Include="GadgetHotkey.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Util\GetTxtResourceClass.cs" />
     <Compile Include="List Items\DSRAccessory.cs" />
     <Compile Include="List Items\DSRBonfire.cs" />
     <Compile Include="List Items\DSRArea.cs" />
@@ -191,14 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="SubForms\EnemyInsForm.resx">
       <DependentUpon>EnemyInsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -235,6 +236,12 @@
     <Content Include="Resources\Assembly\KickPlayer.txt" />
     <Content Include="Resources\Assembly\TargetedEntity.txt" />
     <Content Include="Resources\Covenants.txt" />
+    <Content Include="Resources\Equipment\DSRItemCategories.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Equipment\Weapons\Ammo.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Items\FullLists\AllProtectors.txt" />
     <Content Include="Resources\Items\FullLists\AllWeapons.txt" />
     <Content Include="Resources\Summons.txt" />
@@ -245,22 +252,52 @@
     <Content Include="Resources\Magic.txt" />
     <Content Include="Resources\Teams.txt" />
     <Content Include="Resources\Areas.txt" />
-    <None Include="Resources\Bonfires.txt" />
+    <None Include="Resources\Systems\Bonfires.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Resources\Classes.txt" />
-    <None Include="Resources\Items\UsableItems.txt" />
-    <None Include="Resources\Items\UpgradeMaterials.txt" />
-    <None Include="Resources\Items\SpellTools.txt" />
-    <None Include="Resources\Items\Spells.txt" />
-    <None Include="Resources\Items\Shields.txt" />
-    <None Include="Resources\Items\Rings.txt" />
-    <None Include="Resources\Items\RangedWeapons.txt" />
-    <None Include="Resources\Items\MysteryWeapons.txt" />
-    <None Include="Resources\Items\MysteryGoods.txt" />
-    <None Include="Resources\Items\MysteryArmor.txt" />
-    <None Include="Resources\Items\MeleeWeapons.txt" />
-    <None Include="Resources\Items\KeyItems.txt" />
-    <None Include="Resources\Items\Consumables.txt" />
-    <None Include="Resources\Items\Armor.txt" />
+    <None Include="Resources\Equipment\Items\UsableItems.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Equipment\Items\UpgradeMaterials.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Equipment\Weapons\SpellTools.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Equipment\Items\Spells.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Equipment\Weapons\Shields.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Equipment\Rings\Rings.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Equipment\Weapons\RangedWeapons.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Equipment\Weapons\MysteryWeapons.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Equipment\Items\MysteryGoods.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Equipment\Armor\MysteryArmor.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Equipment\Weapons\MeleeWeapons.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Equipment\Items\KeyItems.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Equipment\Items\Consumables.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Equipment\Armor\Armor.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\Params\" />

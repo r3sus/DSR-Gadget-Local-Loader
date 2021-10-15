@@ -46,24 +46,26 @@ namespace DSR_Gadget
 
         static DSRGood()
         {
-            foreach (string line in Regex.Split(Properties.Resources.Consumables, "[\r\n]+"))
+            foreach (var category in DSRItemCategory.All)
             {
-                DSRGood weapon = new DSRGood(line);
-                Dict.Add(weapon.ID, weapon.Name);
-                //All.Add(new DSRGood(line));
+                if (category.Name.Replace(" ", "").Contains("UsableItems"))
+                {
+                    foreach (var item in category.Items)
+                        Dict.Add(item.ID, item.Name);
+                }
+                else if (category.Name.Replace(" ", "").Contains("MysteryGoods"))
+                {
+                    foreach (var item in category.Items)
+                        Dict.Add(item.ID, item.Name);
+                }
+                else if (category.Name.Replace(" ", "").Contains("Consumables"))
+                {
+                    foreach (var item in category.Items)
+                        Dict.Add(item.ID, item.Name);
+                }
+
             }
-            foreach (string line in Regex.Split(Properties.Resources.MysteryGoods, "[\r\n]+"))
-            {
-                DSRGood weapon = new DSRGood(line);
-                Dict.Add(weapon.ID, weapon.Name);
-                //All.Add(new DSRGood(line));
-            }
-            foreach (string line in Regex.Split(Properties.Resources.UsableItems, "[\r\n]+"))
-            {
-                DSRGood weapon = new DSRGood(line);
-                Dict.Add(weapon.ID, weapon.Name);
-                //All.Add(new DSRGood(line));
-            }
+            
             Dict.Add(-1, "None");
         }
     }

@@ -204,6 +204,10 @@
             this.cmbGestureSlot2 = new System.Windows.Forms.ComboBox();
             this.cmbGestureSlot1 = new System.Windows.Forms.ComboBox();
             this.tpgItems = new System.Windows.Forms.TabPage();
+            this.maxUpgrade = new System.Windows.Forms.CheckBox();
+            this.SearchAllCheckbox = new System.Windows.Forms.CheckBox();
+            this.lblSearch = new System.Windows.Forms.Label();
+            this.searchBox = new System.Windows.Forms.TextBox();
             this.lblQuantity = new System.Windows.Forms.Label();
             this.nudQuantity = new System.Windows.Forms.NumericUpDown();
             this.lblUpgrade = new System.Windows.Forms.Label();
@@ -611,11 +615,11 @@
             this.tclMain.Controls.Add(this.tpgMisc);
             this.tclMain.Controls.Add(this.tpgNet);
             this.tclMain.Controls.Add(this.tpgHotkeys);
-            this.tclMain.Location = new System.Drawing.Point(12, 44);
-            this.tclMain.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
+            this.tclMain.Location = new System.Drawing.Point(18, 68);
+            this.tclMain.Margin = new System.Windows.Forms.Padding(4, 5, 0, 5);
             this.tclMain.Name = "tclMain";
             this.tclMain.SelectedIndex = 0;
-            this.tclMain.Size = new System.Drawing.Size(404, 605);
+            this.tclMain.Size = new System.Drawing.Size(606, 931);
             this.tclMain.TabIndex = 0;
             // 
             // tpgPlayer
@@ -623,10 +627,11 @@
             this.tpgPlayer.Controls.Add(this.gbxOther);
             this.tpgPlayer.Controls.Add(this.gbxPosition);
             this.tpgPlayer.Controls.Add(this.gbxStatus);
-            this.tpgPlayer.Location = new System.Drawing.Point(4, 22);
+            this.tpgPlayer.Location = new System.Drawing.Point(4, 29);
+            this.tpgPlayer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tpgPlayer.Name = "tpgPlayer";
-            this.tpgPlayer.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgPlayer.Size = new System.Drawing.Size(396, 579);
+            this.tpgPlayer.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tpgPlayer.Size = new System.Drawing.Size(598, 898);
             this.tpgPlayer.TabIndex = 1;
             this.tpgPlayer.Text = "Player";
             this.tpgPlayer.UseVisualStyleBackColor = true;
@@ -642,18 +647,21 @@
             this.gbxOther.Controls.Add(this.cbxCollision);
             this.gbxOther.Controls.Add(this.cbxDeathCam);
             this.gbxOther.Controls.Add(this.cbxGravity);
-            this.gbxOther.Location = new System.Drawing.Point(6, 455);
+            this.gbxOther.Location = new System.Drawing.Point(9, 700);
+            this.gbxOther.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbxOther.Name = "gbxOther";
-            this.gbxOther.Size = new System.Drawing.Size(384, 121);
+            this.gbxOther.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gbxOther.Size = new System.Drawing.Size(576, 205);
             this.gbxOther.TabIndex = 3;
             this.gbxOther.TabStop = false;
             this.gbxOther.Text = "Other";
             // 
             // btnWarp
             // 
-            this.btnWarp.Location = new System.Drawing.Point(303, 53);
+            this.btnWarp.Location = new System.Drawing.Point(454, 82);
+            this.btnWarp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnWarp.Name = "btnWarp";
-            this.btnWarp.Size = new System.Drawing.Size(75, 23);
+            this.btnWarp.Size = new System.Drawing.Size(112, 35);
             this.btnWarp.TabIndex = 11;
             this.btnWarp.Text = "Warp";
             this.btnWarp.UseVisualStyleBackColor = true;
@@ -662,9 +670,10 @@
             // cbxSpeed
             // 
             this.cbxSpeed.AutoSize = true;
-            this.cbxSpeed.Location = new System.Drawing.Point(6, 83);
+            this.cbxSpeed.Location = new System.Drawing.Point(9, 128);
+            this.cbxSpeed.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxSpeed.Name = "cbxSpeed";
-            this.cbxSpeed.Size = new System.Drawing.Size(91, 17);
+            this.cbxSpeed.Size = new System.Drawing.Size(132, 24);
             this.cbxSpeed.TabIndex = 9;
             this.cbxSpeed.Text = "Modify Speed";
             this.cbxSpeed.UseVisualStyleBackColor = true;
@@ -678,9 +687,10 @@
             0,
             0,
             131072});
-            this.nudSpeed.Location = new System.Drawing.Point(103, 82);
+            this.nudSpeed.Location = new System.Drawing.Point(154, 126);
+            this.nudSpeed.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudSpeed.Name = "nudSpeed";
-            this.nudSpeed.Size = new System.Drawing.Size(91, 20);
+            this.nudSpeed.Size = new System.Drawing.Size(136, 26);
             this.nudSpeed.TabIndex = 10;
             this.nudSpeed.Value = new decimal(new int[] {
             1,
@@ -694,17 +704,19 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbBonfire.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBonfire.FormattingEnabled = true;
-            this.cmbBonfire.Location = new System.Drawing.Point(6, 55);
+            this.cmbBonfire.Location = new System.Drawing.Point(9, 85);
+            this.cmbBonfire.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbBonfire.Name = "cmbBonfire";
-            this.cmbBonfire.Size = new System.Drawing.Size(291, 21);
+            this.cmbBonfire.Size = new System.Drawing.Size(434, 28);
             this.cmbBonfire.TabIndex = 8;
             // 
             // lblBonfire
             // 
             this.lblBonfire.AutoSize = true;
-            this.lblBonfire.Location = new System.Drawing.Point(6, 39);
+            this.lblBonfire.Location = new System.Drawing.Point(9, 60);
+            this.lblBonfire.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBonfire.Name = "lblBonfire";
-            this.lblBonfire.Size = new System.Drawing.Size(40, 13);
+            this.lblBonfire.Size = new System.Drawing.Size(60, 20);
             this.lblBonfire.TabIndex = 7;
             this.lblBonfire.Text = "Bonfire";
             // 
@@ -713,9 +725,10 @@
             this.cbxCollision.AutoSize = true;
             this.cbxCollision.Checked = true;
             this.cbxCollision.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxCollision.Location = new System.Drawing.Point(71, 19);
+            this.cbxCollision.Location = new System.Drawing.Point(106, 29);
+            this.cbxCollision.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxCollision.Name = "cbxCollision";
-            this.cbxCollision.Size = new System.Drawing.Size(64, 17);
+            this.cbxCollision.Size = new System.Drawing.Size(93, 24);
             this.cbxCollision.TabIndex = 2;
             this.cbxCollision.Text = "Collision";
             this.cbxCollision.UseVisualStyleBackColor = true;
@@ -724,9 +737,10 @@
             // cbxDeathCam
             // 
             this.cbxDeathCam.AutoSize = true;
-            this.cbxDeathCam.Location = new System.Drawing.Point(141, 19);
+            this.cbxDeathCam.Location = new System.Drawing.Point(212, 29);
+            this.cbxDeathCam.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxDeathCam.Name = "cbxDeathCam";
-            this.cbxDeathCam.Size = new System.Drawing.Size(79, 17);
+            this.cbxDeathCam.Size = new System.Drawing.Size(116, 24);
             this.cbxDeathCam.TabIndex = 1;
             this.cbxDeathCam.Text = "Death Cam";
             this.cbxDeathCam.UseVisualStyleBackColor = true;
@@ -737,9 +751,10 @@
             this.cbxGravity.AutoSize = true;
             this.cbxGravity.Checked = true;
             this.cbxGravity.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxGravity.Location = new System.Drawing.Point(6, 19);
+            this.cbxGravity.Location = new System.Drawing.Point(9, 29);
+            this.cbxGravity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxGravity.Name = "cbxGravity";
-            this.cbxGravity.Size = new System.Drawing.Size(59, 17);
+            this.cbxGravity.Size = new System.Drawing.Size(84, 24);
             this.cbxGravity.TabIndex = 0;
             this.cbxGravity.Text = "Gravity";
             this.cbxGravity.UseVisualStyleBackColor = true;
@@ -772,18 +787,21 @@
             this.gbxPosition.Controls.Add(this.nudStoredZ);
             this.gbxPosition.Controls.Add(this.lblPosX);
             this.gbxPosition.Controls.Add(this.btnPosRestore);
-            this.gbxPosition.Location = new System.Drawing.Point(6, 248);
+            this.gbxPosition.Location = new System.Drawing.Point(9, 382);
+            this.gbxPosition.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbxPosition.Name = "gbxPosition";
-            this.gbxPosition.Size = new System.Drawing.Size(384, 201);
+            this.gbxPosition.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gbxPosition.Size = new System.Drawing.Size(576, 329);
             this.gbxPosition.TabIndex = 2;
             this.gbxPosition.TabStop = false;
             this.gbxPosition.Text = "Position";
             // 
             // btnTeleportInitialPosition
             // 
-            this.btnTeleportInitialPosition.Location = new System.Drawing.Point(290, 55);
+            this.btnTeleportInitialPosition.Location = new System.Drawing.Point(435, 85);
+            this.btnTeleportInitialPosition.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnTeleportInitialPosition.Name = "btnTeleportInitialPosition";
-            this.btnTeleportInitialPosition.Size = new System.Drawing.Size(88, 23);
+            this.btnTeleportInitialPosition.Size = new System.Drawing.Size(132, 35);
             this.btnTeleportInitialPosition.TabIndex = 43;
             this.btnTeleportInitialPosition.Text = "Initial Pos.";
             this.btnTeleportInitialPosition.UseVisualStyleBackColor = true;
@@ -791,9 +809,10 @@
             // 
             // btnTeleportBloodstain
             // 
-            this.btnTeleportBloodstain.Location = new System.Drawing.Point(290, 29);
+            this.btnTeleportBloodstain.Location = new System.Drawing.Point(435, 45);
+            this.btnTeleportBloodstain.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnTeleportBloodstain.Name = "btnTeleportBloodstain";
-            this.btnTeleportBloodstain.Size = new System.Drawing.Size(88, 23);
+            this.btnTeleportBloodstain.Size = new System.Drawing.Size(132, 35);
             this.btnTeleportBloodstain.TabIndex = 42;
             this.btnTeleportBloodstain.Text = "Bloodstain";
             this.btnTeleportBloodstain.UseVisualStyleBackColor = true;
@@ -804,9 +823,10 @@
             this.cbxRestoreState.AutoSize = true;
             this.cbxRestoreState.Checked = true;
             this.cbxRestoreState.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxRestoreState.Location = new System.Drawing.Point(209, 165);
+            this.cbxRestoreState.Location = new System.Drawing.Point(314, 254);
+            this.cbxRestoreState.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxRestoreState.Name = "cbxRestoreState";
-            this.cbxRestoreState.Size = new System.Drawing.Size(87, 17);
+            this.cbxRestoreState.Size = new System.Drawing.Size(127, 24);
             this.cbxRestoreState.TabIndex = 41;
             this.cbxRestoreState.Text = "Include state";
             this.cbxRestoreState.UseVisualStyleBackColor = true;
@@ -814,9 +834,10 @@
             // lblPosAngle
             // 
             this.lblPosAngle.AutoSize = true;
-            this.lblPosAngle.Location = new System.Drawing.Point(7, 112);
+            this.lblPosAngle.Location = new System.Drawing.Point(10, 172);
+            this.lblPosAngle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPosAngle.Name = "lblPosAngle";
-            this.lblPosAngle.Size = new System.Drawing.Size(34, 13);
+            this.lblPosAngle.Size = new System.Drawing.Size(50, 20);
             this.lblPosAngle.TabIndex = 37;
             this.lblPosAngle.Text = "Angle";
             // 
@@ -824,7 +845,8 @@
             // 
             this.nudPosZ.DecimalPlaces = 3;
             this.nudPosZ.Enabled = false;
-            this.nudPosZ.Location = new System.Drawing.Point(47, 84);
+            this.nudPosZ.Location = new System.Drawing.Point(70, 129);
+            this.nudPosZ.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudPosZ.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -836,24 +858,26 @@
             0,
             -2147483648});
             this.nudPosZ.Name = "nudPosZ";
-            this.nudPosZ.Size = new System.Drawing.Size(75, 20);
+            this.nudPosZ.Size = new System.Drawing.Size(112, 26);
             this.nudPosZ.TabIndex = 22;
             this.nudPosZ.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lblPosStored
             // 
             this.lblPosStored.AutoSize = true;
-            this.lblPosStored.Location = new System.Drawing.Point(206, 16);
+            this.lblPosStored.Location = new System.Drawing.Point(309, 25);
+            this.lblPosStored.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPosStored.Name = "lblPosStored";
-            this.lblPosStored.Size = new System.Drawing.Size(38, 13);
+            this.lblPosStored.Size = new System.Drawing.Size(57, 20);
             this.lblPosStored.TabIndex = 40;
             this.lblPosStored.Text = "Stored";
             // 
             // btnPosStore
             // 
-            this.btnPosStore.Location = new System.Drawing.Point(47, 136);
+            this.btnPosStore.Location = new System.Drawing.Point(70, 209);
+            this.btnPosStore.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnPosStore.Name = "btnPosStore";
-            this.btnPosStore.Size = new System.Drawing.Size(75, 23);
+            this.btnPosStore.Size = new System.Drawing.Size(112, 35);
             this.btnPosStore.TabIndex = 23;
             this.btnPosStore.Text = "Store";
             this.btnPosStore.UseVisualStyleBackColor = true;
@@ -862,9 +886,10 @@
             // lblPosStable
             // 
             this.lblPosStable.AutoSize = true;
-            this.lblPosStable.Location = new System.Drawing.Point(125, 16);
+            this.lblPosStable.Location = new System.Drawing.Point(188, 25);
+            this.lblPosStable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPosStable.Name = "lblPosStable";
-            this.lblPosStable.Size = new System.Drawing.Size(37, 13);
+            this.lblPosStable.Size = new System.Drawing.Size(55, 20);
             this.lblPosStable.TabIndex = 39;
             this.lblPosStable.Text = "Stable";
             // 
@@ -872,7 +897,8 @@
             // 
             this.nudPosY.DecimalPlaces = 3;
             this.nudPosY.Enabled = false;
-            this.nudPosY.Location = new System.Drawing.Point(47, 58);
+            this.nudPosY.Location = new System.Drawing.Point(70, 89);
+            this.nudPosY.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudPosY.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -884,16 +910,17 @@
             0,
             -2147483648});
             this.nudPosY.Name = "nudPosY";
-            this.nudPosY.Size = new System.Drawing.Size(75, 20);
+            this.nudPosY.Size = new System.Drawing.Size(112, 26);
             this.nudPosY.TabIndex = 21;
             this.nudPosY.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lblPosCurrent
             // 
             this.lblPosCurrent.AutoSize = true;
-            this.lblPosCurrent.Location = new System.Drawing.Point(44, 16);
+            this.lblPosCurrent.Location = new System.Drawing.Point(66, 25);
+            this.lblPosCurrent.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPosCurrent.Name = "lblPosCurrent";
-            this.lblPosCurrent.Size = new System.Drawing.Size(41, 13);
+            this.lblPosCurrent.Size = new System.Drawing.Size(62, 20);
             this.lblPosCurrent.TabIndex = 38;
             this.lblPosCurrent.Text = "Current";
             // 
@@ -901,7 +928,8 @@
             // 
             this.nudStableZ.DecimalPlaces = 3;
             this.nudStableZ.Enabled = false;
-            this.nudStableZ.Location = new System.Drawing.Point(128, 84);
+            this.nudStableZ.Location = new System.Drawing.Point(192, 129);
+            this.nudStableZ.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudStableZ.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -913,7 +941,7 @@
             0,
             -2147483648});
             this.nudStableZ.Name = "nudStableZ";
-            this.nudStableZ.Size = new System.Drawing.Size(75, 20);
+            this.nudStableZ.Size = new System.Drawing.Size(112, 26);
             this.nudStableZ.TabIndex = 25;
             this.nudStableZ.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -921,7 +949,8 @@
             // 
             this.nudPosX.DecimalPlaces = 3;
             this.nudPosX.Enabled = false;
-            this.nudPosX.Location = new System.Drawing.Point(47, 32);
+            this.nudPosX.Location = new System.Drawing.Point(70, 49);
+            this.nudPosX.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudPosX.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -933,13 +962,14 @@
             0,
             -2147483648});
             this.nudPosX.Name = "nudPosX";
-            this.nudPosX.Size = new System.Drawing.Size(75, 20);
+            this.nudPosX.Size = new System.Drawing.Size(112, 26);
             this.nudPosX.TabIndex = 20;
             this.nudPosX.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // nudStoredAngle
             // 
-            this.nudStoredAngle.Location = new System.Drawing.Point(209, 110);
+            this.nudStoredAngle.Location = new System.Drawing.Point(314, 169);
+            this.nudStoredAngle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudStoredAngle.Maximum = new decimal(new int[] {
             365,
             0,
@@ -951,7 +981,7 @@
             0,
             -2147483648});
             this.nudStoredAngle.Name = "nudStoredAngle";
-            this.nudStoredAngle.Size = new System.Drawing.Size(75, 20);
+            this.nudStoredAngle.Size = new System.Drawing.Size(112, 26);
             this.nudStoredAngle.TabIndex = 29;
             this.nudStoredAngle.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -959,7 +989,8 @@
             // 
             this.nudStableY.DecimalPlaces = 3;
             this.nudStableY.Enabled = false;
-            this.nudStableY.Location = new System.Drawing.Point(128, 58);
+            this.nudStableY.Location = new System.Drawing.Point(192, 89);
+            this.nudStableY.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudStableY.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -971,14 +1002,15 @@
             0,
             -2147483648});
             this.nudStableY.Name = "nudStableY";
-            this.nudStableY.Size = new System.Drawing.Size(75, 20);
+            this.nudStableY.Size = new System.Drawing.Size(112, 26);
             this.nudStableY.TabIndex = 27;
             this.nudStableY.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // nudStableAngle
             // 
             this.nudStableAngle.Enabled = false;
-            this.nudStableAngle.Location = new System.Drawing.Point(128, 110);
+            this.nudStableAngle.Location = new System.Drawing.Point(192, 169);
+            this.nudStableAngle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudStableAngle.Maximum = new decimal(new int[] {
             365,
             0,
@@ -990,7 +1022,7 @@
             0,
             -2147483648});
             this.nudStableAngle.Name = "nudStableAngle";
-            this.nudStableAngle.Size = new System.Drawing.Size(75, 20);
+            this.nudStableAngle.Size = new System.Drawing.Size(112, 26);
             this.nudStableAngle.TabIndex = 36;
             this.nudStableAngle.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -998,7 +1030,8 @@
             // 
             this.nudStableX.DecimalPlaces = 3;
             this.nudStableX.Enabled = false;
-            this.nudStableX.Location = new System.Drawing.Point(128, 32);
+            this.nudStableX.Location = new System.Drawing.Point(192, 49);
+            this.nudStableX.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudStableX.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -1010,14 +1043,15 @@
             0,
             -2147483648});
             this.nudStableX.Name = "nudStableX";
-            this.nudStableX.Size = new System.Drawing.Size(75, 20);
+            this.nudStableX.Size = new System.Drawing.Size(112, 26);
             this.nudStableX.TabIndex = 30;
             this.nudStableX.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // nudPosAngle
             // 
             this.nudPosAngle.Enabled = false;
-            this.nudPosAngle.Location = new System.Drawing.Point(47, 110);
+            this.nudPosAngle.Location = new System.Drawing.Point(70, 169);
+            this.nudPosAngle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudPosAngle.Maximum = new decimal(new int[] {
             365,
             0,
@@ -1029,14 +1063,15 @@
             0,
             -2147483648});
             this.nudPosAngle.Name = "nudPosAngle";
-            this.nudPosAngle.Size = new System.Drawing.Size(75, 20);
+            this.nudPosAngle.Size = new System.Drawing.Size(112, 26);
             this.nudPosAngle.TabIndex = 35;
             this.nudPosAngle.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // nudStoredX
             // 
             this.nudStoredX.DecimalPlaces = 3;
-            this.nudStoredX.Location = new System.Drawing.Point(209, 32);
+            this.nudStoredX.Location = new System.Drawing.Point(314, 49);
+            this.nudStoredX.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudStoredX.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -1048,23 +1083,25 @@
             0,
             -2147483648});
             this.nudStoredX.Name = "nudStoredX";
-            this.nudStoredX.Size = new System.Drawing.Size(75, 20);
+            this.nudStoredX.Size = new System.Drawing.Size(112, 26);
             this.nudStoredX.TabIndex = 24;
             this.nudStoredX.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lblPosZ
             // 
             this.lblPosZ.AutoSize = true;
-            this.lblPosZ.Location = new System.Drawing.Point(27, 86);
+            this.lblPosZ.Location = new System.Drawing.Point(40, 132);
+            this.lblPosZ.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPosZ.Name = "lblPosZ";
-            this.lblPosZ.Size = new System.Drawing.Size(14, 13);
+            this.lblPosZ.Size = new System.Drawing.Size(19, 20);
             this.lblPosZ.TabIndex = 34;
             this.lblPosZ.Text = "Z";
             // 
             // nudStoredY
             // 
             this.nudStoredY.DecimalPlaces = 3;
-            this.nudStoredY.Location = new System.Drawing.Point(209, 58);
+            this.nudStoredY.Location = new System.Drawing.Point(314, 89);
+            this.nudStoredY.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudStoredY.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -1076,23 +1113,25 @@
             0,
             -2147483648});
             this.nudStoredY.Name = "nudStoredY";
-            this.nudStoredY.Size = new System.Drawing.Size(75, 20);
+            this.nudStoredY.Size = new System.Drawing.Size(112, 26);
             this.nudStoredY.TabIndex = 26;
             this.nudStoredY.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lblPosY
             // 
             this.lblPosY.AutoSize = true;
-            this.lblPosY.Location = new System.Drawing.Point(27, 60);
+            this.lblPosY.Location = new System.Drawing.Point(40, 92);
+            this.lblPosY.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPosY.Name = "lblPosY";
-            this.lblPosY.Size = new System.Drawing.Size(14, 13);
+            this.lblPosY.Size = new System.Drawing.Size(20, 20);
             this.lblPosY.TabIndex = 33;
             this.lblPosY.Text = "Y";
             // 
             // nudStoredZ
             // 
             this.nudStoredZ.DecimalPlaces = 3;
-            this.nudStoredZ.Location = new System.Drawing.Point(209, 84);
+            this.nudStoredZ.Location = new System.Drawing.Point(314, 129);
+            this.nudStoredZ.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudStoredZ.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -1104,24 +1143,26 @@
             0,
             -2147483648});
             this.nudStoredZ.Name = "nudStoredZ";
-            this.nudStoredZ.Size = new System.Drawing.Size(75, 20);
+            this.nudStoredZ.Size = new System.Drawing.Size(112, 26);
             this.nudStoredZ.TabIndex = 28;
             this.nudStoredZ.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lblPosX
             // 
             this.lblPosX.AutoSize = true;
-            this.lblPosX.Location = new System.Drawing.Point(27, 34);
+            this.lblPosX.Location = new System.Drawing.Point(40, 52);
+            this.lblPosX.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPosX.Name = "lblPosX";
-            this.lblPosX.Size = new System.Drawing.Size(14, 13);
+            this.lblPosX.Size = new System.Drawing.Size(20, 20);
             this.lblPosX.TabIndex = 32;
             this.lblPosX.Text = "X";
             // 
             // btnPosRestore
             // 
-            this.btnPosRestore.Location = new System.Drawing.Point(209, 136);
+            this.btnPosRestore.Location = new System.Drawing.Point(314, 209);
+            this.btnPosRestore.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnPosRestore.Name = "btnPosRestore";
-            this.btnPosRestore.Size = new System.Drawing.Size(75, 23);
+            this.btnPosRestore.Size = new System.Drawing.Size(112, 35);
             this.btnPosRestore.TabIndex = 31;
             this.btnPosRestore.Text = "Restore";
             this.btnPosRestore.UseVisualStyleBackColor = true;
@@ -1161,18 +1202,21 @@
             this.gbxStatus.Controls.Add(this.nudStamina);
             this.gbxStatus.Controls.Add(this.nudHealthMax);
             this.gbxStatus.Controls.Add(this.nudHealth);
-            this.gbxStatus.Location = new System.Drawing.Point(6, 6);
+            this.gbxStatus.Location = new System.Drawing.Point(9, 9);
+            this.gbxStatus.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbxStatus.Name = "gbxStatus";
-            this.gbxStatus.Size = new System.Drawing.Size(386, 239);
+            this.gbxStatus.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gbxStatus.Size = new System.Drawing.Size(606, 388);
             this.gbxStatus.TabIndex = 1;
             this.gbxStatus.TabStop = false;
             this.gbxStatus.Text = "Status";
             // 
             // btnLeaveSession
             // 
-            this.btnLeaveSession.Location = new System.Drawing.Point(246, 55);
+            this.btnLeaveSession.Location = new System.Drawing.Point(369, 85);
+            this.btnLeaveSession.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLeaveSession.Name = "btnLeaveSession";
-            this.btnLeaveSession.Size = new System.Drawing.Size(134, 23);
+            this.btnLeaveSession.Size = new System.Drawing.Size(201, 35);
             this.btnLeaveSession.TabIndex = 43;
             this.btnLeaveSession.Text = "Leave Session";
             this.btnLeaveSession.UseVisualStyleBackColor = true;
@@ -1180,9 +1224,10 @@
             // 
             // btnResetMagicQuantity
             // 
-            this.btnResetMagicQuantity.Location = new System.Drawing.Point(246, 29);
+            this.btnResetMagicQuantity.Location = new System.Drawing.Point(369, 45);
+            this.btnResetMagicQuantity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnResetMagicQuantity.Name = "btnResetMagicQuantity";
-            this.btnResetMagicQuantity.Size = new System.Drawing.Size(134, 23);
+            this.btnResetMagicQuantity.Size = new System.Drawing.Size(201, 35);
             this.btnResetMagicQuantity.TabIndex = 42;
             this.btnResetMagicQuantity.Text = "Reset Magic Quantity";
             this.btnResetMagicQuantity.UseVisualStyleBackColor = true;
@@ -1191,45 +1236,50 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(339, 154);
+            this.label3.Location = new System.Drawing.Point(508, 237);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 13);
+            this.label3.Size = new System.Drawing.Size(59, 20);
             this.label3.TabIndex = 41;
             this.label3.Text = "Freeze";
             // 
             // cbxFreezeAreaID
             // 
             this.cbxFreezeAreaID.AutoSize = true;
-            this.cbxFreezeAreaID.Location = new System.Drawing.Point(342, 202);
+            this.cbxFreezeAreaID.Location = new System.Drawing.Point(513, 311);
+            this.cbxFreezeAreaID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxFreezeAreaID.Name = "cbxFreezeAreaID";
-            this.cbxFreezeAreaID.Size = new System.Drawing.Size(15, 14);
+            this.cbxFreezeAreaID.Size = new System.Drawing.Size(22, 21);
             this.cbxFreezeAreaID.TabIndex = 40;
             this.cbxFreezeAreaID.UseVisualStyleBackColor = true;
             // 
             // cbxFreezeMPAreaID
             // 
             this.cbxFreezeMPAreaID.AutoSize = true;
-            this.cbxFreezeMPAreaID.Location = new System.Drawing.Point(342, 176);
+            this.cbxFreezeMPAreaID.Location = new System.Drawing.Point(513, 271);
+            this.cbxFreezeMPAreaID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxFreezeMPAreaID.Name = "cbxFreezeMPAreaID";
-            this.cbxFreezeMPAreaID.Size = new System.Drawing.Size(15, 14);
+            this.cbxFreezeMPAreaID.Size = new System.Drawing.Size(22, 21);
             this.cbxFreezeMPAreaID.TabIndex = 39;
             this.cbxFreezeMPAreaID.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(44, 202);
+            this.label2.Location = new System.Drawing.Point(66, 311);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 13);
+            this.label2.Size = new System.Drawing.Size(43, 20);
             this.label2.TabIndex = 38;
             this.label2.Text = "Area";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 176);
+            this.label1.Location = new System.Drawing.Point(38, 271);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 13);
+            this.label1.Size = new System.Drawing.Size(70, 20);
             this.label1.TabIndex = 37;
             this.label1.Text = "MP Area";
             // 
@@ -1237,26 +1287,29 @@
             // 
             this.cmbAreaID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAreaID.FormattingEnabled = true;
-            this.cmbAreaID.Location = new System.Drawing.Point(79, 199);
+            this.cmbAreaID.Location = new System.Drawing.Point(118, 306);
+            this.cmbAreaID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbAreaID.Name = "cmbAreaID";
-            this.cmbAreaID.Size = new System.Drawing.Size(257, 21);
+            this.cmbAreaID.Size = new System.Drawing.Size(384, 28);
             this.cmbAreaID.TabIndex = 36;
             // 
             // cmbMPAreaID
             // 
             this.cmbMPAreaID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMPAreaID.FormattingEnabled = true;
-            this.cmbMPAreaID.Location = new System.Drawing.Point(79, 173);
+            this.cmbMPAreaID.Location = new System.Drawing.Point(118, 266);
+            this.cmbMPAreaID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbMPAreaID.Name = "cmbMPAreaID";
-            this.cmbMPAreaID.Size = new System.Drawing.Size(257, 21);
+            this.cmbMPAreaID.Size = new System.Drawing.Size(384, 28);
             this.cmbMPAreaID.TabIndex = 35;
             // 
             // lblInvasionSelect
             // 
             this.lblInvasionSelect.AutoSize = true;
-            this.lblInvasionSelect.Location = new System.Drawing.Point(167, 123);
+            this.lblInvasionSelect.Location = new System.Drawing.Point(250, 189);
+            this.lblInvasionSelect.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblInvasionSelect.Name = "lblInvasionSelect";
-            this.lblInvasionSelect.Size = new System.Drawing.Size(73, 13);
+            this.lblInvasionSelect.Size = new System.Drawing.Size(107, 20);
             this.lblInvasionSelect.TabIndex = 34;
             this.lblInvasionSelect.Text = "Invade Preset";
             // 
@@ -1264,17 +1317,19 @@
             // 
             this.cmbInvasionSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbInvasionSelect.FormattingEnabled = true;
-            this.cmbInvasionSelect.Location = new System.Drawing.Point(246, 120);
+            this.cmbInvasionSelect.Location = new System.Drawing.Point(369, 185);
+            this.cmbInvasionSelect.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbInvasionSelect.Name = "cmbInvasionSelect";
-            this.cmbInvasionSelect.Size = new System.Drawing.Size(134, 21);
+            this.cmbInvasionSelect.Size = new System.Drawing.Size(199, 28);
             this.cmbInvasionSelect.TabIndex = 33;
             // 
             // lblChrSelect
             // 
             this.lblChrSelect.AutoSize = true;
-            this.lblChrSelect.Location = new System.Drawing.Point(173, 97);
+            this.lblChrSelect.Location = new System.Drawing.Point(260, 149);
+            this.lblChrSelect.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblChrSelect.Name = "lblChrSelect";
-            this.lblChrSelect.Size = new System.Drawing.Size(67, 13);
+            this.lblChrSelect.Size = new System.Drawing.Size(99, 20);
             this.lblChrSelect.TabIndex = 32;
             this.lblChrSelect.Text = "Team Preset";
             // 
@@ -1282,165 +1337,182 @@
             // 
             this.cmbChrSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbChrSelect.FormattingEnabled = true;
-            this.cmbChrSelect.Location = new System.Drawing.Point(246, 94);
+            this.cmbChrSelect.Location = new System.Drawing.Point(369, 145);
+            this.cmbChrSelect.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbChrSelect.Name = "cmbChrSelect";
-            this.cmbChrSelect.Size = new System.Drawing.Size(134, 21);
+            this.cmbChrSelect.Size = new System.Drawing.Size(199, 28);
             this.cmbChrSelect.TabIndex = 31;
             // 
             // cbxFreezeInvadeType
             // 
             this.cbxFreezeInvadeType.AutoSize = true;
-            this.cbxFreezeInvadeType.Location = new System.Drawing.Point(138, 149);
+            this.cbxFreezeInvadeType.Location = new System.Drawing.Point(207, 229);
+            this.cbxFreezeInvadeType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxFreezeInvadeType.Name = "cbxFreezeInvadeType";
-            this.cbxFreezeInvadeType.Size = new System.Drawing.Size(15, 14);
+            this.cbxFreezeInvadeType.Size = new System.Drawing.Size(22, 21);
             this.cbxFreezeInvadeType.TabIndex = 30;
             this.cbxFreezeInvadeType.UseVisualStyleBackColor = true;
             // 
             // cbxFreezeTeamType
             // 
             this.cbxFreezeTeamType.AutoSize = true;
-            this.cbxFreezeTeamType.Location = new System.Drawing.Point(138, 123);
+            this.cbxFreezeTeamType.Location = new System.Drawing.Point(207, 189);
+            this.cbxFreezeTeamType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxFreezeTeamType.Name = "cbxFreezeTeamType";
-            this.cbxFreezeTeamType.Size = new System.Drawing.Size(15, 14);
+            this.cbxFreezeTeamType.Size = new System.Drawing.Size(22, 21);
             this.cbxFreezeTeamType.TabIndex = 29;
             this.cbxFreezeTeamType.UseVisualStyleBackColor = true;
             // 
             // cbxFreezeChrType
             // 
             this.cbxFreezeChrType.AutoSize = true;
-            this.cbxFreezeChrType.Location = new System.Drawing.Point(138, 97);
+            this.cbxFreezeChrType.Location = new System.Drawing.Point(207, 149);
+            this.cbxFreezeChrType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxFreezeChrType.Name = "cbxFreezeChrType";
-            this.cbxFreezeChrType.Size = new System.Drawing.Size(15, 14);
+            this.cbxFreezeChrType.Size = new System.Drawing.Size(22, 21);
             this.cbxFreezeChrType.TabIndex = 28;
             this.cbxFreezeChrType.UseVisualStyleBackColor = true;
             // 
             // lblFreezeChr
             // 
             this.lblFreezeChr.AutoSize = true;
-            this.lblFreezeChr.Location = new System.Drawing.Point(135, 81);
+            this.lblFreezeChr.Location = new System.Drawing.Point(202, 125);
+            this.lblFreezeChr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFreezeChr.Name = "lblFreezeChr";
-            this.lblFreezeChr.Size = new System.Drawing.Size(39, 13);
+            this.lblFreezeChr.Size = new System.Drawing.Size(59, 20);
             this.lblFreezeChr.TabIndex = 27;
             this.lblFreezeChr.Text = "Freeze";
             // 
             // lblInvadeType
             // 
             this.lblInvadeType.AutoSize = true;
-            this.lblInvadeType.Location = new System.Drawing.Point(6, 149);
+            this.lblInvadeType.Location = new System.Drawing.Point(9, 229);
+            this.lblInvadeType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblInvadeType.Name = "lblInvadeType";
-            this.lblInvadeType.Size = new System.Drawing.Size(67, 13);
+            this.lblInvadeType.Size = new System.Drawing.Size(95, 20);
             this.lblInvadeType.TabIndex = 26;
             this.lblInvadeType.Text = "Invade Type";
             // 
             // lblTeamType
             // 
             this.lblTeamType.AutoSize = true;
-            this.lblTeamType.Location = new System.Drawing.Point(12, 123);
+            this.lblTeamType.Location = new System.Drawing.Point(18, 189);
+            this.lblTeamType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTeamType.Name = "lblTeamType";
-            this.lblTeamType.Size = new System.Drawing.Size(61, 13);
+            this.lblTeamType.Size = new System.Drawing.Size(87, 20);
             this.lblTeamType.TabIndex = 25;
             this.lblTeamType.Text = "Team Type";
             // 
             // lblChrType
             // 
             this.lblChrType.AutoSize = true;
-            this.lblChrType.Location = new System.Drawing.Point(23, 97);
+            this.lblChrType.Location = new System.Drawing.Point(34, 149);
+            this.lblChrType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblChrType.Name = "lblChrType";
-            this.lblChrType.Size = new System.Drawing.Size(50, 13);
+            this.lblChrType.Size = new System.Drawing.Size(72, 20);
             this.lblChrType.TabIndex = 24;
             this.lblChrType.Text = "Chr Type";
             // 
             // nudChrType
             // 
-            this.nudChrType.Location = new System.Drawing.Point(79, 95);
+            this.nudChrType.Location = new System.Drawing.Point(118, 146);
+            this.nudChrType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudChrType.Maximum = new decimal(new int[] {
             255,
             0,
             0,
             0});
             this.nudChrType.Name = "nudChrType";
-            this.nudChrType.Size = new System.Drawing.Size(53, 20);
+            this.nudChrType.Size = new System.Drawing.Size(80, 26);
             this.nudChrType.TabIndex = 23;
             this.nudChrType.ValueChanged += new System.EventHandler(this.nudChrType_ValueChanged);
             // 
             // nudTeamType
             // 
-            this.nudTeamType.Location = new System.Drawing.Point(79, 121);
+            this.nudTeamType.Location = new System.Drawing.Point(118, 186);
+            this.nudTeamType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudTeamType.Maximum = new decimal(new int[] {
             255,
             0,
             0,
             0});
             this.nudTeamType.Name = "nudTeamType";
-            this.nudTeamType.Size = new System.Drawing.Size(53, 20);
+            this.nudTeamType.Size = new System.Drawing.Size(80, 26);
             this.nudTeamType.TabIndex = 22;
             this.nudTeamType.ValueChanged += new System.EventHandler(this.nudTeamType_ValueChanged);
             // 
             // nudInvadeType
             // 
-            this.nudInvadeType.Location = new System.Drawing.Point(79, 147);
+            this.nudInvadeType.Location = new System.Drawing.Point(118, 226);
+            this.nudInvadeType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudInvadeType.Maximum = new decimal(new int[] {
             255,
             0,
             0,
             0});
             this.nudInvadeType.Name = "nudInvadeType";
-            this.nudInvadeType.Size = new System.Drawing.Size(53, 20);
+            this.nudInvadeType.Size = new System.Drawing.Size(80, 26);
             this.nudInvadeType.TabIndex = 21;
             this.nudInvadeType.ValueChanged += new System.EventHandler(this.nudInvadeType_ValueChanged);
             // 
             // lblStamina
             // 
             this.lblStamina.AutoSize = true;
-            this.lblStamina.Location = new System.Drawing.Point(6, 60);
+            this.lblStamina.Location = new System.Drawing.Point(9, 92);
+            this.lblStamina.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStamina.Name = "lblStamina";
-            this.lblStamina.Size = new System.Drawing.Size(45, 13);
+            this.lblStamina.Size = new System.Drawing.Size(68, 20);
             this.lblStamina.TabIndex = 20;
             this.lblStamina.Text = "Stamina";
             // 
             // lblHealth
             // 
             this.lblHealth.AutoSize = true;
-            this.lblHealth.Location = new System.Drawing.Point(13, 34);
+            this.lblHealth.Location = new System.Drawing.Point(20, 52);
+            this.lblHealth.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHealth.Name = "lblHealth";
-            this.lblHealth.Size = new System.Drawing.Size(38, 13);
+            this.lblHealth.Size = new System.Drawing.Size(56, 20);
             this.lblHealth.TabIndex = 19;
             this.lblHealth.Text = "Health";
             // 
             // lblStatusMax
             // 
             this.lblStatusMax.AutoSize = true;
-            this.lblStatusMax.Location = new System.Drawing.Point(135, 16);
+            this.lblStatusMax.Location = new System.Drawing.Point(202, 25);
+            this.lblStatusMax.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStatusMax.Name = "lblStatusMax";
-            this.lblStatusMax.Size = new System.Drawing.Size(27, 13);
+            this.lblStatusMax.Size = new System.Drawing.Size(38, 20);
             this.lblStatusMax.TabIndex = 16;
             this.lblStatusMax.Text = "Max";
             // 
             // lblStatusCurrent
             // 
             this.lblStatusCurrent.AutoSize = true;
-            this.lblStatusCurrent.Location = new System.Drawing.Point(54, 16);
+            this.lblStatusCurrent.Location = new System.Drawing.Point(81, 25);
+            this.lblStatusCurrent.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStatusCurrent.Name = "lblStatusCurrent";
-            this.lblStatusCurrent.Size = new System.Drawing.Size(41, 13);
+            this.lblStatusCurrent.Size = new System.Drawing.Size(62, 20);
             this.lblStatusCurrent.TabIndex = 15;
             this.lblStatusCurrent.Text = "Current";
             // 
             // nudStaminaMax
             // 
             this.nudStaminaMax.Enabled = false;
-            this.nudStaminaMax.Location = new System.Drawing.Point(138, 58);
+            this.nudStaminaMax.Location = new System.Drawing.Point(207, 89);
+            this.nudStaminaMax.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudStaminaMax.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
             this.nudStaminaMax.Name = "nudStaminaMax";
-            this.nudStaminaMax.Size = new System.Drawing.Size(75, 20);
+            this.nudStaminaMax.Size = new System.Drawing.Size(112, 26);
             this.nudStaminaMax.TabIndex = 14;
             // 
             // nudStamina
             // 
-            this.nudStamina.Location = new System.Drawing.Point(57, 58);
+            this.nudStamina.Location = new System.Drawing.Point(86, 89);
+            this.nudStamina.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudStamina.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -1452,43 +1524,46 @@
             0,
             -2147483648});
             this.nudStamina.Name = "nudStamina";
-            this.nudStamina.Size = new System.Drawing.Size(75, 20);
+            this.nudStamina.Size = new System.Drawing.Size(112, 26);
             this.nudStamina.TabIndex = 13;
             this.nudStamina.ValueChanged += new System.EventHandler(this.nudStamina_ValueChanged);
             // 
             // nudHealthMax
             // 
             this.nudHealthMax.Enabled = false;
-            this.nudHealthMax.Location = new System.Drawing.Point(138, 32);
+            this.nudHealthMax.Location = new System.Drawing.Point(207, 49);
+            this.nudHealthMax.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudHealthMax.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
             this.nudHealthMax.Name = "nudHealthMax";
-            this.nudHealthMax.Size = new System.Drawing.Size(75, 20);
+            this.nudHealthMax.Size = new System.Drawing.Size(112, 26);
             this.nudHealthMax.TabIndex = 17;
             // 
             // nudHealth
             // 
-            this.nudHealth.Location = new System.Drawing.Point(57, 32);
+            this.nudHealth.Location = new System.Drawing.Point(86, 49);
+            this.nudHealth.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudHealth.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
             this.nudHealth.Name = "nudHealth";
-            this.nudHealth.Size = new System.Drawing.Size(75, 20);
+            this.nudHealth.Size = new System.Drawing.Size(112, 26);
             this.nudHealth.TabIndex = 18;
             this.nudHealth.ValueChanged += new System.EventHandler(this.nudHealth_ValueChanged);
             // 
             // tpgStats
             // 
             this.tpgStats.Controls.Add(this.tclStats);
-            this.tpgStats.Location = new System.Drawing.Point(4, 22);
+            this.tpgStats.Location = new System.Drawing.Point(4, 29);
+            this.tpgStats.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tpgStats.Name = "tpgStats";
-            this.tpgStats.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgStats.Size = new System.Drawing.Size(396, 579);
+            this.tpgStats.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tpgStats.Size = new System.Drawing.Size(598, 898);
             this.tpgStats.TabIndex = 6;
             this.tpgStats.Text = "Stats";
             this.tpgStats.UseVisualStyleBackColor = true;
@@ -1498,20 +1573,22 @@
             this.tclStats.Controls.Add(this.tpgStatsStats);
             this.tclStats.Controls.Add(this.tpgStatsFashion);
             this.tclStats.Controls.Add(this.tpgStatsGestures);
-            this.tclStats.Location = new System.Drawing.Point(6, 6);
+            this.tclStats.Location = new System.Drawing.Point(9, 9);
+            this.tclStats.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tclStats.Name = "tclStats";
             this.tclStats.SelectedIndex = 0;
-            this.tclStats.Size = new System.Drawing.Size(384, 567);
+            this.tclStats.Size = new System.Drawing.Size(576, 872);
             this.tclStats.TabIndex = 0;
             // 
             // tpgStatsStats
             // 
             this.tpgStatsStats.Controls.Add(this.gbxStatsMisc);
             this.tpgStatsStats.Controls.Add(this.gbxStatsStats);
-            this.tpgStatsStats.Location = new System.Drawing.Point(4, 22);
+            this.tpgStatsStats.Location = new System.Drawing.Point(4, 29);
+            this.tpgStatsStats.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tpgStatsStats.Name = "tpgStatsStats";
-            this.tpgStatsStats.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgStatsStats.Size = new System.Drawing.Size(376, 541);
+            this.tpgStatsStats.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tpgStatsStats.Size = new System.Drawing.Size(568, 839);
             this.tpgStatsStats.TabIndex = 0;
             this.tpgStatsStats.Text = "Stats";
             this.tpgStatsStats.UseVisualStyleBackColor = true;
@@ -1544,9 +1621,11 @@
             this.gbxStatsMisc.Controls.Add(this.nudWarriorOfSunlight);
             this.gbxStatsMisc.Controls.Add(this.lblCovenant);
             this.gbxStatsMisc.Controls.Add(this.cmbCovenant);
-            this.gbxStatsMisc.Location = new System.Drawing.Point(6, 296);
+            this.gbxStatsMisc.Location = new System.Drawing.Point(9, 455);
+            this.gbxStatsMisc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbxStatsMisc.Name = "gbxStatsMisc";
-            this.gbxStatsMisc.Size = new System.Drawing.Size(364, 239);
+            this.gbxStatsMisc.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gbxStatsMisc.Size = new System.Drawing.Size(546, 368);
             this.gbxStatsMisc.TabIndex = 82;
             this.gbxStatsMisc.TabStop = false;
             this.gbxStatsMisc.Text = "Misc";
@@ -1554,232 +1633,257 @@
             // nudClearCount
             // 
             this.nudClearCount.Enabled = false;
-            this.nudClearCount.Location = new System.Drawing.Point(304, 176);
+            this.nudClearCount.Location = new System.Drawing.Point(456, 271);
+            this.nudClearCount.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudClearCount.Maximum = new decimal(new int[] {
             255,
             0,
             0,
             0});
             this.nudClearCount.Name = "nudClearCount";
-            this.nudClearCount.Size = new System.Drawing.Size(54, 20);
+            this.nudClearCount.Size = new System.Drawing.Size(81, 26);
             this.nudClearCount.TabIndex = 23;
             this.nudClearCount.ValueChanged += new System.EventHandler(this.nudClearCount_ValueChanged);
             // 
             // lblClearCount
             // 
             this.lblClearCount.AutoSize = true;
-            this.lblClearCount.Location = new System.Drawing.Point(234, 178);
+            this.lblClearCount.Location = new System.Drawing.Point(351, 274);
+            this.lblClearCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblClearCount.Name = "lblClearCount";
-            this.lblClearCount.Size = new System.Drawing.Size(64, 13);
+            this.lblClearCount.Size = new System.Drawing.Size(95, 20);
             this.lblClearCount.TabIndex = 1;
             this.lblClearCount.Text = "Game Cycle";
             // 
             // nudIndictments
             // 
             this.nudIndictments.Enabled = false;
-            this.nudIndictments.Location = new System.Drawing.Point(304, 150);
+            this.nudIndictments.Location = new System.Drawing.Point(456, 231);
+            this.nudIndictments.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudIndictments.Maximum = new decimal(new int[] {
             60000,
             0,
             0,
             0});
             this.nudIndictments.Name = "nudIndictments";
-            this.nudIndictments.Size = new System.Drawing.Size(54, 20);
+            this.nudIndictments.Size = new System.Drawing.Size(81, 26);
             this.nudIndictments.TabIndex = 22;
             this.nudIndictments.ValueChanged += new System.EventHandler(this.nudIndictments_ValueChanged);
             // 
             // lblIndictments
             // 
             this.lblIndictments.AutoSize = true;
-            this.lblIndictments.Location = new System.Drawing.Point(237, 152);
+            this.lblIndictments.Location = new System.Drawing.Point(356, 234);
+            this.lblIndictments.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIndictments.Name = "lblIndictments";
-            this.lblIndictments.Size = new System.Drawing.Size(61, 13);
+            this.lblIndictments.Size = new System.Drawing.Size(92, 20);
             this.lblIndictments.TabIndex = 21;
             this.lblIndictments.Text = "Indictments";
             // 
             // nudWeaponMemory
             // 
-            this.nudWeaponMemory.Location = new System.Drawing.Point(304, 123);
+            this.nudWeaponMemory.Location = new System.Drawing.Point(456, 189);
+            this.nudWeaponMemory.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudWeaponMemory.Maximum = new decimal(new int[] {
             15,
             0,
             0,
             0});
             this.nudWeaponMemory.Name = "nudWeaponMemory";
-            this.nudWeaponMemory.Size = new System.Drawing.Size(54, 20);
+            this.nudWeaponMemory.Size = new System.Drawing.Size(81, 26);
             this.nudWeaponMemory.TabIndex = 20;
             this.nudWeaponMemory.ValueChanged += new System.EventHandler(this.nudWeaponMemory_ValueChanged);
             // 
             // lblWeaponMemory
             // 
             this.lblWeaponMemory.AutoSize = true;
-            this.lblWeaponMemory.Location = new System.Drawing.Point(210, 125);
+            this.lblWeaponMemory.Location = new System.Drawing.Point(315, 192);
+            this.lblWeaponMemory.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblWeaponMemory.Name = "lblWeaponMemory";
-            this.lblWeaponMemory.Size = new System.Drawing.Size(88, 13);
+            this.lblWeaponMemory.Size = new System.Drawing.Size(129, 20);
             this.lblWeaponMemory.TabIndex = 19;
             this.lblWeaponMemory.Text = "Weapon Memory";
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(209, 22);
+            this.lblName.Location = new System.Drawing.Point(314, 34);
+            this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(35, 13);
+            this.lblName.Size = new System.Drawing.Size(51, 20);
             this.lblName.TabIndex = 18;
             this.lblName.Text = "Name";
             // 
             // lblOnlineName
             // 
             this.lblOnlineName.AutoSize = true;
-            this.lblOnlineName.Location = new System.Drawing.Point(209, 74);
+            this.lblOnlineName.Location = new System.Drawing.Point(314, 114);
+            this.lblOnlineName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblOnlineName.Name = "lblOnlineName";
-            this.lblOnlineName.Size = new System.Drawing.Size(74, 13);
+            this.lblOnlineName.Size = new System.Drawing.Size(110, 20);
             this.lblOnlineName.TabIndex = 17;
             this.lblOnlineName.Text = "Name (Online)";
             // 
             // txtOnlineName
             // 
-            this.txtOnlineName.Location = new System.Drawing.Point(212, 97);
+            this.txtOnlineName.Location = new System.Drawing.Point(318, 149);
+            this.txtOnlineName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtOnlineName.MaxLength = 15;
             this.txtOnlineName.Name = "txtOnlineName";
             this.txtOnlineName.ReadOnly = true;
-            this.txtOnlineName.Size = new System.Drawing.Size(146, 20);
+            this.txtOnlineName.Size = new System.Drawing.Size(217, 26);
             this.txtOnlineName.TabIndex = 16;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(212, 45);
+            this.txtName.Location = new System.Drawing.Point(318, 69);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtName.MaxLength = 15;
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(146, 20);
+            this.txtName.Size = new System.Drawing.Size(217, 26);
             this.txtName.TabIndex = 15;
             this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // lblChaosServant
             // 
             this.lblChaosServant.AutoSize = true;
-            this.lblChaosServant.Location = new System.Drawing.Point(66, 204);
+            this.lblChaosServant.Location = new System.Drawing.Point(99, 314);
+            this.lblChaosServant.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblChaosServant.Name = "lblChaosServant";
-            this.lblChaosServant.Size = new System.Drawing.Size(77, 13);
+            this.lblChaosServant.Size = new System.Drawing.Size(114, 20);
             this.lblChaosServant.TabIndex = 14;
             this.lblChaosServant.Text = "Chaos Servant";
             // 
             // lblDarkmoonBlade
             // 
             this.lblDarkmoonBlade.AutoSize = true;
-            this.lblDarkmoonBlade.Location = new System.Drawing.Point(66, 178);
+            this.lblDarkmoonBlade.Location = new System.Drawing.Point(99, 274);
+            this.lblDarkmoonBlade.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDarkmoonBlade.Name = "lblDarkmoonBlade";
-            this.lblDarkmoonBlade.Size = new System.Drawing.Size(86, 13);
+            this.lblDarkmoonBlade.Size = new System.Drawing.Size(128, 20);
             this.lblDarkmoonBlade.TabIndex = 13;
             this.lblDarkmoonBlade.Text = "Darkmoon Blade";
             // 
             // lblForestHunter
             // 
             this.lblForestHunter.AutoSize = true;
-            this.lblForestHunter.Location = new System.Drawing.Point(66, 152);
+            this.lblForestHunter.Location = new System.Drawing.Point(99, 234);
+            this.lblForestHunter.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblForestHunter.Name = "lblForestHunter";
-            this.lblForestHunter.Size = new System.Drawing.Size(71, 13);
+            this.lblForestHunter.Size = new System.Drawing.Size(108, 20);
             this.lblForestHunter.TabIndex = 12;
             this.lblForestHunter.Text = "Forest Hunter";
             // 
             // lblGravelordServant
             // 
             this.lblGravelordServant.AutoSize = true;
-            this.lblGravelordServant.Location = new System.Drawing.Point(66, 126);
+            this.lblGravelordServant.Location = new System.Drawing.Point(99, 194);
+            this.lblGravelordServant.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGravelordServant.Name = "lblGravelordServant";
-            this.lblGravelordServant.Size = new System.Drawing.Size(93, 13);
+            this.lblGravelordServant.Size = new System.Drawing.Size(137, 20);
             this.lblGravelordServant.TabIndex = 11;
             this.lblGravelordServant.Text = "Gravelord Servant";
             // 
             // lblPathOfTheDragon
             // 
             this.lblPathOfTheDragon.AutoSize = true;
-            this.lblPathOfTheDragon.Location = new System.Drawing.Point(66, 100);
+            this.lblPathOfTheDragon.Location = new System.Drawing.Point(99, 154);
+            this.lblPathOfTheDragon.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPathOfTheDragon.Name = "lblPathOfTheDragon";
-            this.lblPathOfTheDragon.Size = new System.Drawing.Size(97, 13);
+            this.lblPathOfTheDragon.Size = new System.Drawing.Size(144, 20);
             this.lblPathOfTheDragon.TabIndex = 10;
             this.lblPathOfTheDragon.Text = "Path of the Dragon";
             // 
             // lblDarkwraith
             // 
             this.lblDarkwraith.AutoSize = true;
-            this.lblDarkwraith.Location = new System.Drawing.Point(66, 74);
+            this.lblDarkwraith.Location = new System.Drawing.Point(99, 114);
+            this.lblDarkwraith.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDarkwraith.Name = "lblDarkwraith";
-            this.lblDarkwraith.Size = new System.Drawing.Size(58, 13);
+            this.lblDarkwraith.Size = new System.Drawing.Size(85, 20);
             this.lblDarkwraith.TabIndex = 9;
             this.lblDarkwraith.Text = "Darkwraith";
             // 
             // lblWarriorOfSunlight
             // 
             this.lblWarriorOfSunlight.AutoSize = true;
-            this.lblWarriorOfSunlight.Location = new System.Drawing.Point(66, 48);
+            this.lblWarriorOfSunlight.Location = new System.Drawing.Point(99, 74);
+            this.lblWarriorOfSunlight.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblWarriorOfSunlight.Name = "lblWarriorOfSunlight";
-            this.lblWarriorOfSunlight.Size = new System.Drawing.Size(94, 13);
+            this.lblWarriorOfSunlight.Size = new System.Drawing.Size(140, 20);
             this.lblWarriorOfSunlight.TabIndex = 8;
             this.lblWarriorOfSunlight.Text = "Warrior of Sunlight";
             // 
             // nudChaosServant
             // 
-            this.nudChaosServant.Location = new System.Drawing.Point(6, 202);
+            this.nudChaosServant.Location = new System.Drawing.Point(9, 311);
+            this.nudChaosServant.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudChaosServant.Name = "nudChaosServant";
-            this.nudChaosServant.Size = new System.Drawing.Size(54, 20);
+            this.nudChaosServant.Size = new System.Drawing.Size(81, 26);
             this.nudChaosServant.TabIndex = 7;
             this.nudChaosServant.ValueChanged += new System.EventHandler(this.nudChaosServant_ValueChanged);
             // 
             // nudDarkmoonBlade
             // 
-            this.nudDarkmoonBlade.Location = new System.Drawing.Point(6, 176);
+            this.nudDarkmoonBlade.Location = new System.Drawing.Point(9, 271);
+            this.nudDarkmoonBlade.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudDarkmoonBlade.Name = "nudDarkmoonBlade";
-            this.nudDarkmoonBlade.Size = new System.Drawing.Size(54, 20);
+            this.nudDarkmoonBlade.Size = new System.Drawing.Size(81, 26);
             this.nudDarkmoonBlade.TabIndex = 6;
             this.nudDarkmoonBlade.ValueChanged += new System.EventHandler(this.nudDarkmoonBlade_ValueChanged);
             // 
             // nudForestHunter
             // 
-            this.nudForestHunter.Location = new System.Drawing.Point(6, 150);
+            this.nudForestHunter.Location = new System.Drawing.Point(9, 231);
+            this.nudForestHunter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudForestHunter.Name = "nudForestHunter";
-            this.nudForestHunter.Size = new System.Drawing.Size(54, 20);
+            this.nudForestHunter.Size = new System.Drawing.Size(81, 26);
             this.nudForestHunter.TabIndex = 5;
             this.nudForestHunter.ValueChanged += new System.EventHandler(this.nudForestHunter_ValueChanged);
             // 
             // nudGravelordServant
             // 
-            this.nudGravelordServant.Location = new System.Drawing.Point(6, 124);
+            this.nudGravelordServant.Location = new System.Drawing.Point(9, 191);
+            this.nudGravelordServant.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudGravelordServant.Name = "nudGravelordServant";
-            this.nudGravelordServant.Size = new System.Drawing.Size(54, 20);
+            this.nudGravelordServant.Size = new System.Drawing.Size(81, 26);
             this.nudGravelordServant.TabIndex = 4;
             this.nudGravelordServant.ValueChanged += new System.EventHandler(this.nudGravelordServant_ValueChanged);
             // 
             // nudPathOfTheDragon
             // 
-            this.nudPathOfTheDragon.Location = new System.Drawing.Point(6, 98);
+            this.nudPathOfTheDragon.Location = new System.Drawing.Point(9, 151);
+            this.nudPathOfTheDragon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudPathOfTheDragon.Name = "nudPathOfTheDragon";
-            this.nudPathOfTheDragon.Size = new System.Drawing.Size(54, 20);
+            this.nudPathOfTheDragon.Size = new System.Drawing.Size(81, 26);
             this.nudPathOfTheDragon.TabIndex = 3;
             this.nudPathOfTheDragon.ValueChanged += new System.EventHandler(this.nudPathOfTheDragon_ValueChanged);
             // 
             // nudDarkwraith
             // 
-            this.nudDarkwraith.Location = new System.Drawing.Point(6, 72);
+            this.nudDarkwraith.Location = new System.Drawing.Point(9, 111);
+            this.nudDarkwraith.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudDarkwraith.Name = "nudDarkwraith";
-            this.nudDarkwraith.Size = new System.Drawing.Size(54, 20);
+            this.nudDarkwraith.Size = new System.Drawing.Size(81, 26);
             this.nudDarkwraith.TabIndex = 2;
             this.nudDarkwraith.ValueChanged += new System.EventHandler(this.nudDarkwraith_ValueChanged);
             // 
             // nudWarriorOfSunlight
             // 
-            this.nudWarriorOfSunlight.Location = new System.Drawing.Point(6, 46);
+            this.nudWarriorOfSunlight.Location = new System.Drawing.Point(9, 71);
+            this.nudWarriorOfSunlight.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudWarriorOfSunlight.Name = "nudWarriorOfSunlight";
-            this.nudWarriorOfSunlight.Size = new System.Drawing.Size(54, 20);
+            this.nudWarriorOfSunlight.Size = new System.Drawing.Size(81, 26);
             this.nudWarriorOfSunlight.TabIndex = 1;
             this.nudWarriorOfSunlight.ValueChanged += new System.EventHandler(this.nudWarriorOfSunlight_ValueChanged);
             // 
             // lblCovenant
             // 
             this.lblCovenant.AutoSize = true;
-            this.lblCovenant.Location = new System.Drawing.Point(133, 22);
+            this.lblCovenant.Location = new System.Drawing.Point(200, 34);
+            this.lblCovenant.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCovenant.Name = "lblCovenant";
-            this.lblCovenant.Size = new System.Drawing.Size(53, 13);
+            this.lblCovenant.Size = new System.Drawing.Size(77, 20);
             this.lblCovenant.TabIndex = 1;
             this.lblCovenant.Text = "Covenant";
             // 
@@ -1787,9 +1891,10 @@
             // 
             this.cmbCovenant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCovenant.FormattingEnabled = true;
-            this.cmbCovenant.Location = new System.Drawing.Point(6, 19);
+            this.cmbCovenant.Location = new System.Drawing.Point(9, 29);
+            this.cmbCovenant.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbCovenant.Name = "cmbCovenant";
-            this.cmbCovenant.Size = new System.Drawing.Size(121, 21);
+            this.cmbCovenant.Size = new System.Drawing.Size(180, 28);
             this.cmbCovenant.TabIndex = 0;
             // 
             // gbxStatsStats
@@ -1820,9 +1925,11 @@
             this.gbxStatsStats.Controls.Add(this.nudAttunement);
             this.gbxStatsStats.Controls.Add(this.lblVitality);
             this.gbxStatsStats.Controls.Add(this.nudVitality);
-            this.gbxStatsStats.Location = new System.Drawing.Point(6, 6);
+            this.gbxStatsStats.Location = new System.Drawing.Point(9, 9);
+            this.gbxStatsStats.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbxStatsStats.Name = "gbxStatsStats";
-            this.gbxStatsStats.Size = new System.Drawing.Size(364, 284);
+            this.gbxStatsStats.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gbxStatsStats.Size = new System.Drawing.Size(546, 437);
             this.gbxStatsStats.TabIndex = 81;
             this.gbxStatsStats.TabStop = false;
             this.gbxStatsStats.Text = "Stats";
@@ -1830,18 +1937,20 @@
             // lblStatsOff2
             // 
             this.lblStatsOff2.AutoSize = true;
-            this.lblStatsOff2.Location = new System.Drawing.Point(6, 263);
+            this.lblStatsOff2.Location = new System.Drawing.Point(9, 405);
+            this.lblStatsOff2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStatsOff2.Name = "lblStatsOff2";
-            this.lblStatsOff2.Size = new System.Drawing.Size(228, 13);
+            this.lblStatsOff2.Size = new System.Drawing.Size(341, 20);
             this.lblStatsOff2.TabIndex = 79;
             this.lblStatsOff2.Text = "Please spawn soul and humanity items instead.";
             // 
             // lblStatsOff1
             // 
             this.lblStatsOff1.AutoSize = true;
-            this.lblStatsOff1.Location = new System.Drawing.Point(6, 250);
+            this.lblStatsOff1.Location = new System.Drawing.Point(9, 385);
+            this.lblStatsOff1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStatsOff1.Name = "lblStatsOff1";
-            this.lblStatsOff1.Size = new System.Drawing.Size(299, 13);
+            this.lblStatsOff1.Size = new System.Drawing.Size(443, 20);
             this.lblStatsOff1.TabIndex = 78;
             this.lblStatsOff1.Text = "This page has been made read-only due to spooky anti-cheat.";
             // 
@@ -1849,18 +1958,20 @@
             // 
             this.nudHumanity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudHumanity.Enabled = false;
-            this.nudHumanity.Location = new System.Drawing.Point(238, 45);
+            this.nudHumanity.Location = new System.Drawing.Point(357, 69);
+            this.nudHumanity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudHumanity.Name = "nudHumanity";
-            this.nudHumanity.Size = new System.Drawing.Size(120, 20);
+            this.nudHumanity.Size = new System.Drawing.Size(180, 26);
             this.nudHumanity.TabIndex = 77;
             // 
             // lblSouls
             // 
             this.lblSouls.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSouls.AutoSize = true;
-            this.lblSouls.Location = new System.Drawing.Point(199, 73);
+            this.lblSouls.Location = new System.Drawing.Point(298, 112);
+            this.lblSouls.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSouls.Name = "lblSouls";
-            this.lblSouls.Size = new System.Drawing.Size(33, 13);
+            this.lblSouls.Size = new System.Drawing.Size(49, 20);
             this.lblSouls.TabIndex = 76;
             this.lblSouls.Text = "Souls";
             // 
@@ -1868,23 +1979,25 @@
             // 
             this.nudSouls.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudSouls.Enabled = false;
-            this.nudSouls.Location = new System.Drawing.Point(238, 71);
+            this.nudSouls.Location = new System.Drawing.Point(357, 109);
+            this.nudSouls.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudSouls.Maximum = new decimal(new int[] {
             999999999,
             0,
             0,
             0});
             this.nudSouls.Name = "nudSouls";
-            this.nudSouls.Size = new System.Drawing.Size(120, 20);
+            this.nudSouls.Size = new System.Drawing.Size(180, 26);
             this.nudSouls.TabIndex = 75;
             // 
             // lblSoulLevel
             // 
             this.lblSoulLevel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSoulLevel.AutoSize = true;
-            this.lblSoulLevel.Location = new System.Drawing.Point(66, 22);
+            this.lblSoulLevel.Location = new System.Drawing.Point(99, 34);
+            this.lblSoulLevel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSoulLevel.Name = "lblSoulLevel";
-            this.lblSoulLevel.Size = new System.Drawing.Size(57, 13);
+            this.lblSoulLevel.Size = new System.Drawing.Size(82, 20);
             this.lblSoulLevel.TabIndex = 74;
             this.lblSoulLevel.Text = "Soul Level";
             // 
@@ -1892,9 +2005,10 @@
             // 
             this.lblHumanity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblHumanity.AutoSize = true;
-            this.lblHumanity.Location = new System.Drawing.Point(181, 47);
+            this.lblHumanity.Location = new System.Drawing.Point(272, 72);
+            this.lblHumanity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHumanity.Name = "lblHumanity";
-            this.lblHumanity.Size = new System.Drawing.Size(51, 13);
+            this.lblHumanity.Size = new System.Drawing.Size(76, 20);
             this.lblHumanity.TabIndex = 73;
             this.lblHumanity.Text = "Humanity";
             // 
@@ -1902,9 +2016,10 @@
             // 
             this.lblClass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblClass.AutoSize = true;
-            this.lblClass.Location = new System.Drawing.Point(200, 22);
+            this.lblClass.Location = new System.Drawing.Point(300, 34);
+            this.lblClass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblClass.Name = "lblClass";
-            this.lblClass.Size = new System.Drawing.Size(32, 13);
+            this.lblClass.Size = new System.Drawing.Size(48, 20);
             this.lblClass.TabIndex = 72;
             this.lblClass.Text = "Class";
             // 
@@ -1914,32 +2029,36 @@
             this.cmbClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbClass.Enabled = false;
             this.cmbClass.FormattingEnabled = true;
-            this.cmbClass.Location = new System.Drawing.Point(238, 19);
+            this.cmbClass.Location = new System.Drawing.Point(357, 29);
+            this.cmbClass.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbClass.Name = "cmbClass";
-            this.cmbClass.Size = new System.Drawing.Size(120, 21);
+            this.cmbClass.Size = new System.Drawing.Size(178, 28);
             this.cmbClass.TabIndex = 71;
             // 
             // txtSoulLevel
             // 
             this.txtSoulLevel.Enabled = false;
-            this.txtSoulLevel.Location = new System.Drawing.Point(6, 19);
+            this.txtSoulLevel.Location = new System.Drawing.Point(9, 29);
+            this.txtSoulLevel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSoulLevel.Name = "txtSoulLevel";
-            this.txtSoulLevel.Size = new System.Drawing.Size(54, 20);
+            this.txtSoulLevel.Size = new System.Drawing.Size(79, 26);
             this.txtSoulLevel.TabIndex = 70;
             // 
             // lblFaith
             // 
             this.lblFaith.AutoSize = true;
-            this.lblFaith.Location = new System.Drawing.Point(66, 229);
+            this.lblFaith.Location = new System.Drawing.Point(99, 352);
+            this.lblFaith.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFaith.Name = "lblFaith";
-            this.lblFaith.Size = new System.Drawing.Size(30, 13);
+            this.lblFaith.Size = new System.Drawing.Size(45, 20);
             this.lblFaith.TabIndex = 69;
             this.lblFaith.Text = "Faith";
             // 
             // nudFaith
             // 
             this.nudFaith.Enabled = false;
-            this.nudFaith.Location = new System.Drawing.Point(6, 227);
+            this.nudFaith.Location = new System.Drawing.Point(9, 349);
+            this.nudFaith.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudFaith.Maximum = new decimal(new int[] {
             99,
             0,
@@ -1951,7 +2070,7 @@
             0,
             0});
             this.nudFaith.Name = "nudFaith";
-            this.nudFaith.Size = new System.Drawing.Size(54, 20);
+            this.nudFaith.Size = new System.Drawing.Size(81, 26);
             this.nudFaith.TabIndex = 68;
             this.nudFaith.Value = new decimal(new int[] {
             1,
@@ -1962,16 +2081,18 @@
             // lblIntelligence
             // 
             this.lblIntelligence.AutoSize = true;
-            this.lblIntelligence.Location = new System.Drawing.Point(66, 203);
+            this.lblIntelligence.Location = new System.Drawing.Point(99, 312);
+            this.lblIntelligence.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIntelligence.Name = "lblIntelligence";
-            this.lblIntelligence.Size = new System.Drawing.Size(61, 13);
+            this.lblIntelligence.Size = new System.Drawing.Size(90, 20);
             this.lblIntelligence.TabIndex = 67;
             this.lblIntelligence.Text = "Intelligence";
             // 
             // nudIntelligence
             // 
             this.nudIntelligence.Enabled = false;
-            this.nudIntelligence.Location = new System.Drawing.Point(6, 201);
+            this.nudIntelligence.Location = new System.Drawing.Point(9, 309);
+            this.nudIntelligence.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudIntelligence.Maximum = new decimal(new int[] {
             99,
             0,
@@ -1983,7 +2104,7 @@
             0,
             0});
             this.nudIntelligence.Name = "nudIntelligence";
-            this.nudIntelligence.Size = new System.Drawing.Size(54, 20);
+            this.nudIntelligence.Size = new System.Drawing.Size(81, 26);
             this.nudIntelligence.TabIndex = 66;
             this.nudIntelligence.Value = new decimal(new int[] {
             1,
@@ -1994,16 +2115,18 @@
             // lblResistance
             // 
             this.lblResistance.AutoSize = true;
-            this.lblResistance.Location = new System.Drawing.Point(66, 177);
+            this.lblResistance.Location = new System.Drawing.Point(99, 272);
+            this.lblResistance.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblResistance.Name = "lblResistance";
-            this.lblResistance.Size = new System.Drawing.Size(60, 13);
+            this.lblResistance.Size = new System.Drawing.Size(89, 20);
             this.lblResistance.TabIndex = 65;
             this.lblResistance.Text = "Resistance";
             // 
             // nudResistance
             // 
             this.nudResistance.Enabled = false;
-            this.nudResistance.Location = new System.Drawing.Point(6, 175);
+            this.nudResistance.Location = new System.Drawing.Point(9, 269);
+            this.nudResistance.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudResistance.Maximum = new decimal(new int[] {
             99,
             0,
@@ -2015,7 +2138,7 @@
             0,
             0});
             this.nudResistance.Name = "nudResistance";
-            this.nudResistance.Size = new System.Drawing.Size(54, 20);
+            this.nudResistance.Size = new System.Drawing.Size(81, 26);
             this.nudResistance.TabIndex = 64;
             this.nudResistance.Value = new decimal(new int[] {
             1,
@@ -2026,16 +2149,18 @@
             // lblDexterity
             // 
             this.lblDexterity.AutoSize = true;
-            this.lblDexterity.Location = new System.Drawing.Point(66, 151);
+            this.lblDexterity.Location = new System.Drawing.Point(99, 232);
+            this.lblDexterity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDexterity.Name = "lblDexterity";
-            this.lblDexterity.Size = new System.Drawing.Size(48, 13);
+            this.lblDexterity.Size = new System.Drawing.Size(71, 20);
             this.lblDexterity.TabIndex = 63;
             this.lblDexterity.Text = "Dexterity";
             // 
             // nudDexterity
             // 
             this.nudDexterity.Enabled = false;
-            this.nudDexterity.Location = new System.Drawing.Point(6, 149);
+            this.nudDexterity.Location = new System.Drawing.Point(9, 229);
+            this.nudDexterity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudDexterity.Maximum = new decimal(new int[] {
             99,
             0,
@@ -2047,7 +2172,7 @@
             0,
             0});
             this.nudDexterity.Name = "nudDexterity";
-            this.nudDexterity.Size = new System.Drawing.Size(54, 20);
+            this.nudDexterity.Size = new System.Drawing.Size(81, 26);
             this.nudDexterity.TabIndex = 62;
             this.nudDexterity.Value = new decimal(new int[] {
             1,
@@ -2058,16 +2183,18 @@
             // lblStrength
             // 
             this.lblStrength.AutoSize = true;
-            this.lblStrength.Location = new System.Drawing.Point(66, 125);
+            this.lblStrength.Location = new System.Drawing.Point(99, 192);
+            this.lblStrength.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStrength.Name = "lblStrength";
-            this.lblStrength.Size = new System.Drawing.Size(47, 13);
+            this.lblStrength.Size = new System.Drawing.Size(71, 20);
             this.lblStrength.TabIndex = 61;
             this.lblStrength.Text = "Strength";
             // 
             // nudStrength
             // 
             this.nudStrength.Enabled = false;
-            this.nudStrength.Location = new System.Drawing.Point(6, 123);
+            this.nudStrength.Location = new System.Drawing.Point(9, 189);
+            this.nudStrength.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudStrength.Maximum = new decimal(new int[] {
             99,
             0,
@@ -2079,7 +2206,7 @@
             0,
             0});
             this.nudStrength.Name = "nudStrength";
-            this.nudStrength.Size = new System.Drawing.Size(54, 20);
+            this.nudStrength.Size = new System.Drawing.Size(81, 26);
             this.nudStrength.TabIndex = 60;
             this.nudStrength.Value = new decimal(new int[] {
             1,
@@ -2090,16 +2217,18 @@
             // lblEndurance
             // 
             this.lblEndurance.AutoSize = true;
-            this.lblEndurance.Location = new System.Drawing.Point(66, 99);
+            this.lblEndurance.Location = new System.Drawing.Point(99, 152);
+            this.lblEndurance.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEndurance.Name = "lblEndurance";
-            this.lblEndurance.Size = new System.Drawing.Size(59, 13);
+            this.lblEndurance.Size = new System.Drawing.Size(87, 20);
             this.lblEndurance.TabIndex = 59;
             this.lblEndurance.Text = "Endurance";
             // 
             // nudEndurance
             // 
             this.nudEndurance.Enabled = false;
-            this.nudEndurance.Location = new System.Drawing.Point(6, 97);
+            this.nudEndurance.Location = new System.Drawing.Point(9, 149);
+            this.nudEndurance.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudEndurance.Maximum = new decimal(new int[] {
             99,
             0,
@@ -2111,7 +2240,7 @@
             0,
             0});
             this.nudEndurance.Name = "nudEndurance";
-            this.nudEndurance.Size = new System.Drawing.Size(54, 20);
+            this.nudEndurance.Size = new System.Drawing.Size(81, 26);
             this.nudEndurance.TabIndex = 58;
             this.nudEndurance.Value = new decimal(new int[] {
             1,
@@ -2122,16 +2251,18 @@
             // lblAttunement
             // 
             this.lblAttunement.AutoSize = true;
-            this.lblAttunement.Location = new System.Drawing.Point(66, 73);
+            this.lblAttunement.Location = new System.Drawing.Point(99, 112);
+            this.lblAttunement.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAttunement.Name = "lblAttunement";
-            this.lblAttunement.Size = new System.Drawing.Size(61, 13);
+            this.lblAttunement.Size = new System.Drawing.Size(93, 20);
             this.lblAttunement.TabIndex = 57;
             this.lblAttunement.Text = "Attunement";
             // 
             // nudAttunement
             // 
             this.nudAttunement.Enabled = false;
-            this.nudAttunement.Location = new System.Drawing.Point(6, 71);
+            this.nudAttunement.Location = new System.Drawing.Point(9, 109);
+            this.nudAttunement.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudAttunement.Maximum = new decimal(new int[] {
             99,
             0,
@@ -2143,7 +2274,7 @@
             0,
             0});
             this.nudAttunement.Name = "nudAttunement";
-            this.nudAttunement.Size = new System.Drawing.Size(54, 20);
+            this.nudAttunement.Size = new System.Drawing.Size(81, 26);
             this.nudAttunement.TabIndex = 56;
             this.nudAttunement.Value = new decimal(new int[] {
             1,
@@ -2154,16 +2285,18 @@
             // lblVitality
             // 
             this.lblVitality.AutoSize = true;
-            this.lblVitality.Location = new System.Drawing.Point(66, 47);
+            this.lblVitality.Location = new System.Drawing.Point(99, 72);
+            this.lblVitality.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblVitality.Name = "lblVitality";
-            this.lblVitality.Size = new System.Drawing.Size(37, 13);
+            this.lblVitality.Size = new System.Drawing.Size(55, 20);
             this.lblVitality.TabIndex = 55;
             this.lblVitality.Text = "Vitality";
             // 
             // nudVitality
             // 
             this.nudVitality.Enabled = false;
-            this.nudVitality.Location = new System.Drawing.Point(6, 45);
+            this.nudVitality.Location = new System.Drawing.Point(9, 69);
+            this.nudVitality.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudVitality.Maximum = new decimal(new int[] {
             99,
             0,
@@ -2175,7 +2308,7 @@
             0,
             0});
             this.nudVitality.Name = "nudVitality";
-            this.nudVitality.Size = new System.Drawing.Size(54, 20);
+            this.nudVitality.Size = new System.Drawing.Size(81, 26);
             this.nudVitality.TabIndex = 54;
             this.nudVitality.Value = new decimal(new int[] {
             1,
@@ -2206,10 +2339,11 @@
             this.tpgStatsFashion.Controls.Add(this.nudHairRed);
             this.tpgStatsFashion.Controls.Add(this.nudHair);
             this.tpgStatsFashion.Controls.Add(this.lblHair);
-            this.tpgStatsFashion.Location = new System.Drawing.Point(4, 22);
+            this.tpgStatsFashion.Location = new System.Drawing.Point(4, 29);
+            this.tpgStatsFashion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tpgStatsFashion.Name = "tpgStatsFashion";
-            this.tpgStatsFashion.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgStatsFashion.Size = new System.Drawing.Size(376, 541);
+            this.tpgStatsFashion.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tpgStatsFashion.Size = new System.Drawing.Size(568, 839);
             this.tpgStatsFashion.TabIndex = 1;
             this.tpgStatsFashion.Text = "Fashion";
             this.tpgStatsFashion.UseVisualStyleBackColor = true;
@@ -2217,18 +2351,20 @@
             // lblPhysique
             // 
             this.lblPhysique.AutoSize = true;
-            this.lblPhysique.Location = new System.Drawing.Point(106, 270);
+            this.lblPhysique.Location = new System.Drawing.Point(159, 415);
+            this.lblPhysique.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPhysique.Name = "lblPhysique";
-            this.lblPhysique.Size = new System.Drawing.Size(193, 13);
+            this.lblPhysique.Size = new System.Drawing.Size(288, 20);
             this.lblPhysique.TabIndex = 20;
             this.lblPhysique.Text = "Physique (Quit and reload to see effect)";
             // 
             // lblGender
             // 
             this.lblGender.AutoSize = true;
-            this.lblGender.Location = new System.Drawing.Point(106, 243);
+            this.lblGender.Location = new System.Drawing.Point(159, 374);
+            this.lblGender.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(42, 13);
+            this.lblGender.Size = new System.Drawing.Size(63, 20);
             this.lblGender.TabIndex = 19;
             this.lblGender.Text = "Gender";
             // 
@@ -2236,26 +2372,29 @@
             // 
             this.cmbPhysique.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPhysique.FormattingEnabled = true;
-            this.cmbPhysique.Location = new System.Drawing.Point(6, 267);
+            this.cmbPhysique.Location = new System.Drawing.Point(9, 411);
+            this.cmbPhysique.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbPhysique.Name = "cmbPhysique";
-            this.cmbPhysique.Size = new System.Drawing.Size(94, 21);
+            this.cmbPhysique.Size = new System.Drawing.Size(139, 28);
             this.cmbPhysique.TabIndex = 18;
             // 
             // cmbGender
             // 
             this.cmbGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGender.FormattingEnabled = true;
-            this.cmbGender.Location = new System.Drawing.Point(6, 240);
+            this.cmbGender.Location = new System.Drawing.Point(9, 369);
+            this.cmbGender.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbGender.Name = "cmbGender";
-            this.cmbGender.Size = new System.Drawing.Size(94, 21);
+            this.cmbGender.Size = new System.Drawing.Size(139, 28);
             this.cmbGender.TabIndex = 17;
             // 
             // cbxFashionHex
             // 
             this.cbxFashionHex.AutoSize = true;
-            this.cbxFashionHex.Location = new System.Drawing.Point(325, 6);
+            this.cbxFashionHex.Location = new System.Drawing.Point(488, 9);
+            this.cbxFashionHex.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxFashionHex.Name = "cbxFashionHex";
-            this.cbxFashionHex.Size = new System.Drawing.Size(45, 17);
+            this.cbxFashionHex.Size = new System.Drawing.Size(63, 24);
             this.cbxFashionHex.TabIndex = 16;
             this.cbxFashionHex.Text = "Hex";
             this.cbxFashionHex.UseVisualStyleBackColor = true;
@@ -2264,125 +2403,140 @@
             // lblEyeBlue
             // 
             this.lblEyeBlue.AutoSize = true;
-            this.lblEyeBlue.Location = new System.Drawing.Point(106, 216);
+            this.lblEyeBlue.Location = new System.Drawing.Point(159, 332);
+            this.lblEyeBlue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEyeBlue.Name = "lblEyeBlue";
-            this.lblEyeBlue.Size = new System.Drawing.Size(49, 13);
+            this.lblEyeBlue.Size = new System.Drawing.Size(72, 20);
             this.lblEyeBlue.TabIndex = 15;
             this.lblEyeBlue.Text = "Eye Blue";
             // 
             // nudEyeBlue
             // 
-            this.nudEyeBlue.Location = new System.Drawing.Point(6, 214);
+            this.nudEyeBlue.Location = new System.Drawing.Point(9, 329);
+            this.nudEyeBlue.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudEyeBlue.Name = "nudEyeBlue";
-            this.nudEyeBlue.Size = new System.Drawing.Size(94, 20);
+            this.nudEyeBlue.Size = new System.Drawing.Size(141, 26);
             this.nudEyeBlue.TabIndex = 14;
             this.nudEyeBlue.ValueChanged += new System.EventHandler(this.nudEyeBlue_ValueChanged);
             // 
             // lblEyeGreen
             // 
             this.lblEyeGreen.AutoSize = true;
-            this.lblEyeGreen.Location = new System.Drawing.Point(106, 190);
+            this.lblEyeGreen.Location = new System.Drawing.Point(159, 292);
+            this.lblEyeGreen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEyeGreen.Name = "lblEyeGreen";
-            this.lblEyeGreen.Size = new System.Drawing.Size(57, 13);
+            this.lblEyeGreen.Size = new System.Drawing.Size(85, 20);
             this.lblEyeGreen.TabIndex = 13;
             this.lblEyeGreen.Text = "Eye Green";
             // 
             // nudEyeGreen
             // 
-            this.nudEyeGreen.Location = new System.Drawing.Point(6, 188);
+            this.nudEyeGreen.Location = new System.Drawing.Point(9, 289);
+            this.nudEyeGreen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudEyeGreen.Name = "nudEyeGreen";
-            this.nudEyeGreen.Size = new System.Drawing.Size(94, 20);
+            this.nudEyeGreen.Size = new System.Drawing.Size(141, 26);
             this.nudEyeGreen.TabIndex = 12;
             this.nudEyeGreen.ValueChanged += new System.EventHandler(this.nudEyeGreen_ValueChanged);
             // 
             // lbEyeRed
             // 
             this.lbEyeRed.AutoSize = true;
-            this.lbEyeRed.Location = new System.Drawing.Point(106, 164);
+            this.lbEyeRed.Location = new System.Drawing.Point(159, 252);
+            this.lbEyeRed.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbEyeRed.Name = "lbEyeRed";
-            this.lbEyeRed.Size = new System.Drawing.Size(48, 13);
+            this.lbEyeRed.Size = new System.Drawing.Size(70, 20);
             this.lbEyeRed.TabIndex = 11;
             this.lbEyeRed.Text = "Eye Red";
             // 
             // nudEyeRed
             // 
-            this.nudEyeRed.Location = new System.Drawing.Point(6, 162);
+            this.nudEyeRed.Location = new System.Drawing.Point(9, 249);
+            this.nudEyeRed.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudEyeRed.Name = "nudEyeRed";
-            this.nudEyeRed.Size = new System.Drawing.Size(94, 20);
+            this.nudEyeRed.Size = new System.Drawing.Size(141, 26);
             this.nudEyeRed.TabIndex = 10;
             this.nudEyeRed.ValueChanged += new System.EventHandler(this.nudEyeRed_ValueChanged);
             // 
             // lblHairAlpha
             // 
             this.lblHairAlpha.AutoSize = true;
-            this.lblHairAlpha.Location = new System.Drawing.Point(106, 112);
+            this.lblHairAlpha.Location = new System.Drawing.Point(159, 172);
+            this.lblHairAlpha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHairAlpha.Name = "lblHairAlpha";
-            this.lblHairAlpha.Size = new System.Drawing.Size(56, 13);
+            this.lblHairAlpha.Size = new System.Drawing.Size(83, 20);
             this.lblHairAlpha.TabIndex = 9;
             this.lblHairAlpha.Text = "Hair Alpha";
             // 
             // nudHairAlpha
             // 
-            this.nudHairAlpha.Location = new System.Drawing.Point(6, 110);
+            this.nudHairAlpha.Location = new System.Drawing.Point(9, 169);
+            this.nudHairAlpha.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudHairAlpha.Name = "nudHairAlpha";
-            this.nudHairAlpha.Size = new System.Drawing.Size(94, 20);
+            this.nudHairAlpha.Size = new System.Drawing.Size(141, 26);
             this.nudHairAlpha.TabIndex = 8;
             this.nudHairAlpha.ValueChanged += new System.EventHandler(this.nudHairAlpha_ValueChanged);
             // 
             // lblHairBlue
             // 
             this.lblHairBlue.AutoSize = true;
-            this.lblHairBlue.Location = new System.Drawing.Point(106, 86);
+            this.lblHairBlue.Location = new System.Drawing.Point(159, 132);
+            this.lblHairBlue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHairBlue.Name = "lblHairBlue";
-            this.lblHairBlue.Size = new System.Drawing.Size(50, 13);
+            this.lblHairBlue.Size = new System.Drawing.Size(74, 20);
             this.lblHairBlue.TabIndex = 7;
             this.lblHairBlue.Text = "Hair Blue";
             // 
             // nudHairBlue
             // 
-            this.nudHairBlue.Location = new System.Drawing.Point(6, 84);
+            this.nudHairBlue.Location = new System.Drawing.Point(9, 129);
+            this.nudHairBlue.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudHairBlue.Name = "nudHairBlue";
-            this.nudHairBlue.Size = new System.Drawing.Size(94, 20);
+            this.nudHairBlue.Size = new System.Drawing.Size(141, 26);
             this.nudHairBlue.TabIndex = 6;
             this.nudHairBlue.ValueChanged += new System.EventHandler(this.nudHairBlue_ValueChanged);
             // 
             // lblHairGreen
             // 
             this.lblHairGreen.AutoSize = true;
-            this.lblHairGreen.Location = new System.Drawing.Point(106, 60);
+            this.lblHairGreen.Location = new System.Drawing.Point(159, 92);
+            this.lblHairGreen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHairGreen.Name = "lblHairGreen";
-            this.lblHairGreen.Size = new System.Drawing.Size(58, 13);
+            this.lblHairGreen.Size = new System.Drawing.Size(87, 20);
             this.lblHairGreen.TabIndex = 5;
             this.lblHairGreen.Text = "Hair Green";
             // 
             // nudHairGreen
             // 
-            this.nudHairGreen.Location = new System.Drawing.Point(6, 58);
+            this.nudHairGreen.Location = new System.Drawing.Point(9, 89);
+            this.nudHairGreen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudHairGreen.Name = "nudHairGreen";
-            this.nudHairGreen.Size = new System.Drawing.Size(94, 20);
+            this.nudHairGreen.Size = new System.Drawing.Size(141, 26);
             this.nudHairGreen.TabIndex = 4;
             this.nudHairGreen.ValueChanged += new System.EventHandler(this.nudHairGreen_ValueChanged);
             // 
             // lblHairRed
             // 
             this.lblHairRed.AutoSize = true;
-            this.lblHairRed.Location = new System.Drawing.Point(106, 34);
+            this.lblHairRed.Location = new System.Drawing.Point(159, 52);
+            this.lblHairRed.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHairRed.Name = "lblHairRed";
-            this.lblHairRed.Size = new System.Drawing.Size(49, 13);
+            this.lblHairRed.Size = new System.Drawing.Size(72, 20);
             this.lblHairRed.TabIndex = 3;
             this.lblHairRed.Text = "Hair Red";
             // 
             // nudHairRed
             // 
-            this.nudHairRed.Location = new System.Drawing.Point(6, 32);
+            this.nudHairRed.Location = new System.Drawing.Point(9, 49);
+            this.nudHairRed.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudHairRed.Name = "nudHairRed";
-            this.nudHairRed.Size = new System.Drawing.Size(94, 20);
+            this.nudHairRed.Size = new System.Drawing.Size(141, 26);
             this.nudHairRed.TabIndex = 2;
             this.nudHairRed.ValueChanged += new System.EventHandler(this.nudHairRed_ValueChanged);
             // 
             // nudHair
             // 
-            this.nudHair.Location = new System.Drawing.Point(6, 6);
+            this.nudHair.Location = new System.Drawing.Point(9, 9);
+            this.nudHair.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudHair.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -2394,16 +2548,17 @@
             0,
             -2147483648});
             this.nudHair.Name = "nudHair";
-            this.nudHair.Size = new System.Drawing.Size(94, 20);
+            this.nudHair.Size = new System.Drawing.Size(141, 26);
             this.nudHair.TabIndex = 1;
             this.nudHair.ValueChanged += new System.EventHandler(this.nudHair_ValueChanged);
             // 
             // lblHair
             // 
             this.lblHair.AutoSize = true;
-            this.lblHair.Location = new System.Drawing.Point(106, 8);
+            this.lblHair.Location = new System.Drawing.Point(159, 12);
+            this.lblHair.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHair.Name = "lblHair";
-            this.lblHair.Size = new System.Drawing.Size(26, 13);
+            this.lblHair.Size = new System.Drawing.Size(38, 20);
             this.lblHair.TabIndex = 0;
             this.lblHair.Text = "Hair";
             // 
@@ -2411,10 +2566,11 @@
             // 
             this.tpgStatsGestures.Controls.Add(this.gbxGesturesUnlocked);
             this.tpgStatsGestures.Controls.Add(this.gbxGesturesEquipped);
-            this.tpgStatsGestures.Location = new System.Drawing.Point(4, 22);
+            this.tpgStatsGestures.Location = new System.Drawing.Point(4, 29);
+            this.tpgStatsGestures.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tpgStatsGestures.Name = "tpgStatsGestures";
-            this.tpgStatsGestures.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgStatsGestures.Size = new System.Drawing.Size(376, 541);
+            this.tpgStatsGestures.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tpgStatsGestures.Size = new System.Drawing.Size(568, 839);
             this.tpgStatsGestures.TabIndex = 2;
             this.tpgStatsGestures.Text = "Gestures";
             this.tpgStatsGestures.UseVisualStyleBackColor = true;
@@ -2437,9 +2593,11 @@
             this.gbxGesturesUnlocked.Controls.Add(this.cbxGesturePointDown);
             this.gbxGesturesUnlocked.Controls.Add(this.cbxGesturePointUp);
             this.gbxGesturesUnlocked.Controls.Add(this.cbxGesturePointForward);
-            this.gbxGesturesUnlocked.Location = new System.Drawing.Point(6, 292);
+            this.gbxGesturesUnlocked.Location = new System.Drawing.Point(9, 449);
+            this.gbxGesturesUnlocked.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbxGesturesUnlocked.Name = "gbxGesturesUnlocked";
-            this.gbxGesturesUnlocked.Size = new System.Drawing.Size(364, 243);
+            this.gbxGesturesUnlocked.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gbxGesturesUnlocked.Size = new System.Drawing.Size(546, 374);
             this.gbxGesturesUnlocked.TabIndex = 1;
             this.gbxGesturesUnlocked.TabStop = false;
             this.gbxGesturesUnlocked.Text = "Unlocked";
@@ -2448,9 +2606,10 @@
             // 
             this.cbxGesturePraiseTheSun.AutoSize = true;
             this.cbxGesturePraiseTheSun.Enabled = false;
-            this.cbxGesturePraiseTheSun.Location = new System.Drawing.Point(100, 157);
+            this.cbxGesturePraiseTheSun.Location = new System.Drawing.Point(150, 242);
+            this.cbxGesturePraiseTheSun.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxGesturePraiseTheSun.Name = "cbxGesturePraiseTheSun";
-            this.cbxGesturePraiseTheSun.Size = new System.Drawing.Size(95, 17);
+            this.cbxGesturePraiseTheSun.Size = new System.Drawing.Size(139, 24);
             this.cbxGesturePraiseTheSun.TabIndex = 15;
             this.cbxGesturePraiseTheSun.Text = "Praise the Sun";
             this.cbxGesturePraiseTheSun.UseVisualStyleBackColor = true;
@@ -2460,9 +2619,10 @@
             // 
             this.cbxGesturePrayer.AutoSize = true;
             this.cbxGesturePrayer.Enabled = false;
-            this.cbxGesturePrayer.Location = new System.Drawing.Point(100, 134);
+            this.cbxGesturePrayer.Location = new System.Drawing.Point(150, 206);
+            this.cbxGesturePrayer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxGesturePrayer.Name = "cbxGesturePrayer";
-            this.cbxGesturePrayer.Size = new System.Drawing.Size(56, 17);
+            this.cbxGesturePrayer.Size = new System.Drawing.Size(80, 24);
             this.cbxGesturePrayer.TabIndex = 14;
             this.cbxGesturePrayer.Text = "Prayer";
             this.cbxGesturePrayer.UseVisualStyleBackColor = true;
@@ -2472,9 +2632,10 @@
             // 
             this.cbxGestureProstration.AutoSize = true;
             this.cbxGestureProstration.Enabled = false;
-            this.cbxGestureProstration.Location = new System.Drawing.Point(100, 111);
+            this.cbxGestureProstration.Location = new System.Drawing.Point(150, 171);
+            this.cbxGestureProstration.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxGestureProstration.Name = "cbxGestureProstration";
-            this.cbxGestureProstration.Size = new System.Drawing.Size(76, 17);
+            this.cbxGestureProstration.Size = new System.Drawing.Size(112, 24);
             this.cbxGestureProstration.TabIndex = 13;
             this.cbxGestureProstration.Text = "Prostration";
             this.cbxGestureProstration.UseVisualStyleBackColor = true;
@@ -2484,9 +2645,10 @@
             // 
             this.cbxGestureWellWhatIsIt.AutoSize = true;
             this.cbxGestureWellWhatIsIt.Enabled = false;
-            this.cbxGestureWellWhatIsIt.Location = new System.Drawing.Point(100, 88);
+            this.cbxGestureWellWhatIsIt.Location = new System.Drawing.Point(150, 135);
+            this.cbxGestureWellWhatIsIt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxGestureWellWhatIsIt.Name = "cbxGestureWellWhatIsIt";
-            this.cbxGestureWellWhatIsIt.Size = new System.Drawing.Size(100, 17);
+            this.cbxGestureWellWhatIsIt.Size = new System.Drawing.Size(142, 24);
             this.cbxGestureWellWhatIsIt.TabIndex = 12;
             this.cbxGestureWellWhatIsIt.Text = "Well! What is it!";
             this.cbxGestureWellWhatIsIt.UseVisualStyleBackColor = true;
@@ -2496,9 +2658,10 @@
             // 
             this.cbxGestureLookSkyward.AutoSize = true;
             this.cbxGestureLookSkyward.Enabled = false;
-            this.cbxGestureLookSkyward.Location = new System.Drawing.Point(100, 65);
+            this.cbxGestureLookSkyward.Location = new System.Drawing.Point(150, 100);
+            this.cbxGestureLookSkyward.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxGestureLookSkyward.Name = "cbxGestureLookSkyward";
-            this.cbxGestureLookSkyward.Size = new System.Drawing.Size(92, 17);
+            this.cbxGestureLookSkyward.Size = new System.Drawing.Size(131, 24);
             this.cbxGestureLookSkyward.TabIndex = 11;
             this.cbxGestureLookSkyward.Text = "Look skyward";
             this.cbxGestureLookSkyward.UseVisualStyleBackColor = true;
@@ -2508,9 +2671,10 @@
             // 
             this.cbxGestureShrug.AutoSize = true;
             this.cbxGestureShrug.Enabled = false;
-            this.cbxGestureShrug.Location = new System.Drawing.Point(100, 42);
+            this.cbxGestureShrug.Location = new System.Drawing.Point(150, 65);
+            this.cbxGestureShrug.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxGestureShrug.Name = "cbxGestureShrug";
-            this.cbxGestureShrug.Size = new System.Drawing.Size(54, 17);
+            this.cbxGestureShrug.Size = new System.Drawing.Size(78, 24);
             this.cbxGestureShrug.TabIndex = 10;
             this.cbxGestureShrug.Text = "Shrug";
             this.cbxGestureShrug.UseVisualStyleBackColor = true;
@@ -2520,9 +2684,10 @@
             // 
             this.cbxGestureJoy.AutoSize = true;
             this.cbxGestureJoy.Enabled = false;
-            this.cbxGestureJoy.Location = new System.Drawing.Point(100, 19);
+            this.cbxGestureJoy.Location = new System.Drawing.Point(150, 29);
+            this.cbxGestureJoy.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxGestureJoy.Name = "cbxGestureJoy";
-            this.cbxGestureJoy.Size = new System.Drawing.Size(42, 17);
+            this.cbxGestureJoy.Size = new System.Drawing.Size(59, 24);
             this.cbxGestureJoy.TabIndex = 9;
             this.cbxGestureJoy.Text = "Joy";
             this.cbxGestureJoy.UseVisualStyleBackColor = true;
@@ -2532,9 +2697,10 @@
             // 
             this.cbxGestureHurrah.AutoSize = true;
             this.cbxGestureHurrah.Enabled = false;
-            this.cbxGestureHurrah.Location = new System.Drawing.Point(6, 180);
+            this.cbxGestureHurrah.Location = new System.Drawing.Point(9, 277);
+            this.cbxGestureHurrah.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxGestureHurrah.Name = "cbxGestureHurrah";
-            this.cbxGestureHurrah.Size = new System.Drawing.Size(61, 17);
+            this.cbxGestureHurrah.Size = new System.Drawing.Size(88, 24);
             this.cbxGestureHurrah.TabIndex = 8;
             this.cbxGestureHurrah.Text = "Hurrah!";
             this.cbxGestureHurrah.UseVisualStyleBackColor = true;
@@ -2542,9 +2708,10 @@
             // 
             // btnGesturesUnlockAll
             // 
-            this.btnGesturesUnlockAll.Location = new System.Drawing.Point(6, 214);
+            this.btnGesturesUnlockAll.Location = new System.Drawing.Point(9, 329);
+            this.btnGesturesUnlockAll.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnGesturesUnlockAll.Name = "btnGesturesUnlockAll";
-            this.btnGesturesUnlockAll.Size = new System.Drawing.Size(121, 23);
+            this.btnGesturesUnlockAll.Size = new System.Drawing.Size(182, 35);
             this.btnGesturesUnlockAll.TabIndex = 7;
             this.btnGesturesUnlockAll.Text = "Unlock All";
             this.btnGesturesUnlockAll.UseVisualStyleBackColor = true;
@@ -2554,9 +2721,10 @@
             // 
             this.cbxGestureProperBow.AutoSize = true;
             this.cbxGestureProperBow.Enabled = false;
-            this.cbxGestureProperBow.Location = new System.Drawing.Point(6, 157);
+            this.cbxGestureProperBow.Location = new System.Drawing.Point(9, 242);
+            this.cbxGestureProperBow.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxGestureProperBow.Name = "cbxGestureProperBow";
-            this.cbxGestureProperBow.Size = new System.Drawing.Size(80, 17);
+            this.cbxGestureProperBow.Size = new System.Drawing.Size(115, 24);
             this.cbxGestureProperBow.TabIndex = 6;
             this.cbxGestureProperBow.Text = "Proper bow";
             this.cbxGestureProperBow.UseVisualStyleBackColor = true;
@@ -2566,9 +2734,10 @@
             // 
             this.cbxGestureBow.AutoSize = true;
             this.cbxGestureBow.Enabled = false;
-            this.cbxGestureBow.Location = new System.Drawing.Point(6, 134);
+            this.cbxGestureBow.Location = new System.Drawing.Point(9, 206);
+            this.cbxGestureBow.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxGestureBow.Name = "cbxGestureBow";
-            this.cbxGestureBow.Size = new System.Drawing.Size(47, 17);
+            this.cbxGestureBow.Size = new System.Drawing.Size(66, 24);
             this.cbxGestureBow.TabIndex = 5;
             this.cbxGestureBow.Text = "Bow";
             this.cbxGestureBow.UseVisualStyleBackColor = true;
@@ -2578,9 +2747,10 @@
             // 
             this.cbxGestureWave.AutoSize = true;
             this.cbxGestureWave.Enabled = false;
-            this.cbxGestureWave.Location = new System.Drawing.Point(6, 111);
+            this.cbxGestureWave.Location = new System.Drawing.Point(9, 171);
+            this.cbxGestureWave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxGestureWave.Name = "cbxGestureWave";
-            this.cbxGestureWave.Size = new System.Drawing.Size(55, 17);
+            this.cbxGestureWave.Size = new System.Drawing.Size(75, 24);
             this.cbxGestureWave.TabIndex = 4;
             this.cbxGestureWave.Text = "Wave";
             this.cbxGestureWave.UseVisualStyleBackColor = true;
@@ -2590,9 +2760,10 @@
             // 
             this.cbxGestureBeckon.AutoSize = true;
             this.cbxGestureBeckon.Enabled = false;
-            this.cbxGestureBeckon.Location = new System.Drawing.Point(6, 88);
+            this.cbxGestureBeckon.Location = new System.Drawing.Point(9, 135);
+            this.cbxGestureBeckon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxGestureBeckon.Name = "cbxGestureBeckon";
-            this.cbxGestureBeckon.Size = new System.Drawing.Size(63, 17);
+            this.cbxGestureBeckon.Size = new System.Drawing.Size(89, 24);
             this.cbxGestureBeckon.TabIndex = 3;
             this.cbxGestureBeckon.Text = "Beckon";
             this.cbxGestureBeckon.UseVisualStyleBackColor = true;
@@ -2602,9 +2773,10 @@
             // 
             this.cbxGesturePointDown.AutoSize = true;
             this.cbxGesturePointDown.Enabled = false;
-            this.cbxGesturePointDown.Location = new System.Drawing.Point(6, 65);
+            this.cbxGesturePointDown.Location = new System.Drawing.Point(9, 100);
+            this.cbxGesturePointDown.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxGesturePointDown.Name = "cbxGesturePointDown";
-            this.cbxGesturePointDown.Size = new System.Drawing.Size(79, 17);
+            this.cbxGesturePointDown.Size = new System.Drawing.Size(113, 24);
             this.cbxGesturePointDown.TabIndex = 2;
             this.cbxGesturePointDown.Text = "Point down";
             this.cbxGesturePointDown.UseVisualStyleBackColor = true;
@@ -2614,9 +2786,10 @@
             // 
             this.cbxGesturePointUp.AutoSize = true;
             this.cbxGesturePointUp.Enabled = false;
-            this.cbxGesturePointUp.Location = new System.Drawing.Point(6, 42);
+            this.cbxGesturePointUp.Location = new System.Drawing.Point(9, 65);
+            this.cbxGesturePointUp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxGesturePointUp.Name = "cbxGesturePointUp";
-            this.cbxGesturePointUp.Size = new System.Drawing.Size(65, 17);
+            this.cbxGesturePointUp.Size = new System.Drawing.Size(93, 24);
             this.cbxGesturePointUp.TabIndex = 1;
             this.cbxGesturePointUp.Text = "Point up";
             this.cbxGesturePointUp.UseVisualStyleBackColor = true;
@@ -2626,9 +2799,10 @@
             // 
             this.cbxGesturePointForward.AutoSize = true;
             this.cbxGesturePointForward.Enabled = false;
-            this.cbxGesturePointForward.Location = new System.Drawing.Point(6, 19);
+            this.cbxGesturePointForward.Location = new System.Drawing.Point(9, 29);
+            this.cbxGesturePointForward.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxGesturePointForward.Name = "cbxGesturePointForward";
-            this.cbxGesturePointForward.Size = new System.Drawing.Size(88, 17);
+            this.cbxGesturePointForward.Size = new System.Drawing.Size(128, 24);
             this.cbxGesturePointForward.TabIndex = 0;
             this.cbxGesturePointForward.Text = "Point forward";
             this.cbxGesturePointForward.UseVisualStyleBackColor = true;
@@ -2643,9 +2817,11 @@
             this.gbxGesturesEquipped.Controls.Add(this.cmbGestureSlot3);
             this.gbxGesturesEquipped.Controls.Add(this.cmbGestureSlot2);
             this.gbxGesturesEquipped.Controls.Add(this.cmbGestureSlot1);
-            this.gbxGesturesEquipped.Location = new System.Drawing.Point(6, 6);
+            this.gbxGesturesEquipped.Location = new System.Drawing.Point(9, 9);
+            this.gbxGesturesEquipped.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbxGesturesEquipped.Name = "gbxGesturesEquipped";
-            this.gbxGesturesEquipped.Size = new System.Drawing.Size(364, 280);
+            this.gbxGesturesEquipped.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gbxGesturesEquipped.Size = new System.Drawing.Size(546, 431);
             this.gbxGesturesEquipped.TabIndex = 0;
             this.gbxGesturesEquipped.TabStop = false;
             this.gbxGesturesEquipped.Text = "Equipped";
@@ -2655,9 +2831,10 @@
             this.cmbGestureSlot7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGestureSlot7.Enabled = false;
             this.cmbGestureSlot7.FormattingEnabled = true;
-            this.cmbGestureSlot7.Location = new System.Drawing.Point(6, 181);
+            this.cmbGestureSlot7.Location = new System.Drawing.Point(9, 278);
+            this.cmbGestureSlot7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbGestureSlot7.Name = "cmbGestureSlot7";
-            this.cmbGestureSlot7.Size = new System.Drawing.Size(121, 21);
+            this.cmbGestureSlot7.Size = new System.Drawing.Size(180, 28);
             this.cmbGestureSlot7.TabIndex = 6;
             // 
             // cmbGestureSlot6
@@ -2665,9 +2842,10 @@
             this.cmbGestureSlot6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGestureSlot6.Enabled = false;
             this.cmbGestureSlot6.FormattingEnabled = true;
-            this.cmbGestureSlot6.Location = new System.Drawing.Point(6, 154);
+            this.cmbGestureSlot6.Location = new System.Drawing.Point(9, 237);
+            this.cmbGestureSlot6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbGestureSlot6.Name = "cmbGestureSlot6";
-            this.cmbGestureSlot6.Size = new System.Drawing.Size(121, 21);
+            this.cmbGestureSlot6.Size = new System.Drawing.Size(180, 28);
             this.cmbGestureSlot6.TabIndex = 5;
             // 
             // cmbGestureSlot5
@@ -2675,9 +2853,10 @@
             this.cmbGestureSlot5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGestureSlot5.Enabled = false;
             this.cmbGestureSlot5.FormattingEnabled = true;
-            this.cmbGestureSlot5.Location = new System.Drawing.Point(6, 127);
+            this.cmbGestureSlot5.Location = new System.Drawing.Point(9, 195);
+            this.cmbGestureSlot5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbGestureSlot5.Name = "cmbGestureSlot5";
-            this.cmbGestureSlot5.Size = new System.Drawing.Size(121, 21);
+            this.cmbGestureSlot5.Size = new System.Drawing.Size(180, 28);
             this.cmbGestureSlot5.TabIndex = 4;
             // 
             // cmbGestureSlot4
@@ -2685,9 +2864,10 @@
             this.cmbGestureSlot4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGestureSlot4.Enabled = false;
             this.cmbGestureSlot4.FormattingEnabled = true;
-            this.cmbGestureSlot4.Location = new System.Drawing.Point(6, 100);
+            this.cmbGestureSlot4.Location = new System.Drawing.Point(9, 154);
+            this.cmbGestureSlot4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbGestureSlot4.Name = "cmbGestureSlot4";
-            this.cmbGestureSlot4.Size = new System.Drawing.Size(121, 21);
+            this.cmbGestureSlot4.Size = new System.Drawing.Size(180, 28);
             this.cmbGestureSlot4.TabIndex = 3;
             // 
             // cmbGestureSlot3
@@ -2695,9 +2875,10 @@
             this.cmbGestureSlot3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGestureSlot3.Enabled = false;
             this.cmbGestureSlot3.FormattingEnabled = true;
-            this.cmbGestureSlot3.Location = new System.Drawing.Point(6, 73);
+            this.cmbGestureSlot3.Location = new System.Drawing.Point(9, 112);
+            this.cmbGestureSlot3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbGestureSlot3.Name = "cmbGestureSlot3";
-            this.cmbGestureSlot3.Size = new System.Drawing.Size(121, 21);
+            this.cmbGestureSlot3.Size = new System.Drawing.Size(180, 28);
             this.cmbGestureSlot3.TabIndex = 2;
             // 
             // cmbGestureSlot2
@@ -2705,9 +2886,10 @@
             this.cmbGestureSlot2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGestureSlot2.Enabled = false;
             this.cmbGestureSlot2.FormattingEnabled = true;
-            this.cmbGestureSlot2.Location = new System.Drawing.Point(6, 46);
+            this.cmbGestureSlot2.Location = new System.Drawing.Point(9, 71);
+            this.cmbGestureSlot2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbGestureSlot2.Name = "cmbGestureSlot2";
-            this.cmbGestureSlot2.Size = new System.Drawing.Size(121, 21);
+            this.cmbGestureSlot2.Size = new System.Drawing.Size(180, 28);
             this.cmbGestureSlot2.TabIndex = 1;
             // 
             // cmbGestureSlot1
@@ -2715,13 +2897,18 @@
             this.cmbGestureSlot1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGestureSlot1.Enabled = false;
             this.cmbGestureSlot1.FormattingEnabled = true;
-            this.cmbGestureSlot1.Location = new System.Drawing.Point(6, 19);
+            this.cmbGestureSlot1.Location = new System.Drawing.Point(9, 29);
+            this.cmbGestureSlot1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbGestureSlot1.Name = "cmbGestureSlot1";
-            this.cmbGestureSlot1.Size = new System.Drawing.Size(121, 21);
+            this.cmbGestureSlot1.Size = new System.Drawing.Size(180, 28);
             this.cmbGestureSlot1.TabIndex = 0;
             // 
             // tpgItems
             // 
+            this.tpgItems.Controls.Add(this.maxUpgrade);
+            this.tpgItems.Controls.Add(this.SearchAllCheckbox);
+            this.tpgItems.Controls.Add(this.lblSearch);
+            this.tpgItems.Controls.Add(this.searchBox);
             this.tpgItems.Controls.Add(this.lblQuantity);
             this.tpgItems.Controls.Add(this.nudQuantity);
             this.tpgItems.Controls.Add(this.lblUpgrade);
@@ -2733,26 +2920,73 @@
             this.tpgItems.Controls.Add(this.nudUpgrade);
             this.tpgItems.Controls.Add(this.cmbCategory);
             this.tpgItems.Controls.Add(this.lblCategory);
-            this.tpgItems.Location = new System.Drawing.Point(4, 22);
+            this.tpgItems.Location = new System.Drawing.Point(4, 29);
+            this.tpgItems.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tpgItems.Name = "tpgItems";
-            this.tpgItems.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgItems.Size = new System.Drawing.Size(396, 579);
+            this.tpgItems.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tpgItems.Size = new System.Drawing.Size(598, 898);
             this.tpgItems.TabIndex = 2;
             this.tpgItems.Text = "Items";
             this.tpgItems.UseVisualStyleBackColor = true;
             // 
+            // maxUpgrade
+            // 
+            this.maxUpgrade.AutoSize = true;
+            this.maxUpgrade.Checked = true;
+            this.maxUpgrade.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.maxUpgrade.Location = new System.Drawing.Point(348, 61);
+            this.maxUpgrade.Name = "maxUpgrade";
+            this.maxUpgrade.Size = new System.Drawing.Size(64, 24);
+            this.maxUpgrade.TabIndex = 16;
+            this.maxUpgrade.Text = "Max";
+            this.maxUpgrade.UseVisualStyleBackColor = true;
+            this.maxUpgrade.CheckedChanged += new System.EventHandler(this.maxUpgrade_CheckedChanged);
+            // 
+            // SearchAllCheckbox
+            // 
+            this.SearchAllCheckbox.AutoSize = true;
+            this.SearchAllCheckbox.Location = new System.Drawing.Point(348, 95);
+            this.SearchAllCheckbox.Name = "SearchAllCheckbox";
+            this.SearchAllCheckbox.Size = new System.Drawing.Size(107, 24);
+            this.SearchAllCheckbox.TabIndex = 15;
+            this.SearchAllCheckbox.Text = "Search All";
+            this.SearchAllCheckbox.UseVisualStyleBackColor = true;
+            // 
+            // lblSearch
+            // 
+            this.lblSearch.AutoSize = true;
+            this.lblSearch.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.lblSearch.Location = new System.Drawing.Point(11, 138);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(72, 20);
+            this.lblSearch.TabIndex = 14;
+            this.lblSearch.Text = "Search...";
+            // 
+            // searchBox
+            // 
+            this.searchBox.Location = new System.Drawing.Point(9, 134);
+            this.searchBox.Name = "searchBox";
+            this.searchBox.Size = new System.Drawing.Size(574, 26);
+            this.searchBox.TabIndex = 13;
+            this.searchBox.Click += new System.EventHandler(this.searchBox_Click);
+            this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
+            this.searchBox.Enter += new System.EventHandler(this.searchBox_Click);
+            this.searchBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyPressed);
+            // 
             // lblQuantity
             // 
             this.lblQuantity.AutoSize = true;
-            this.lblQuantity.Location = new System.Drawing.Point(234, 3);
+            this.lblQuantity.Location = new System.Drawing.Point(269, 6);
+            this.lblQuantity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(46, 13);
+            this.lblQuantity.Size = new System.Drawing.Size(68, 20);
             this.lblQuantity.TabIndex = 12;
             this.lblQuantity.Text = "Quantity";
             // 
             // nudQuantity
             // 
-            this.nudQuantity.Location = new System.Drawing.Point(234, 19);
+            this.nudQuantity.Location = new System.Drawing.Point(258, 30);
+            this.nudQuantity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudQuantity.Maximum = new decimal(new int[] {
             999,
             0,
@@ -2764,7 +2998,7 @@
             0,
             0});
             this.nudQuantity.Name = "nudQuantity";
-            this.nudQuantity.Size = new System.Drawing.Size(75, 20);
+            this.nudQuantity.Size = new System.Drawing.Size(82, 26);
             this.nudQuantity.TabIndex = 11;
             this.nudQuantity.Value = new decimal(new int[] {
             1,
@@ -2775,27 +3009,31 @@
             // lblUpgrade
             // 
             this.lblUpgrade.AutoSize = true;
-            this.lblUpgrade.Location = new System.Drawing.Point(234, 42);
+            this.lblUpgrade.Location = new System.Drawing.Point(269, 66);
+            this.lblUpgrade.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUpgrade.Name = "lblUpgrade";
-            this.lblUpgrade.Size = new System.Drawing.Size(48, 13);
+            this.lblUpgrade.Size = new System.Drawing.Size(71, 20);
             this.lblUpgrade.TabIndex = 10;
             this.lblUpgrade.Text = "Upgrade";
             // 
             // lbxItems
             // 
             this.lbxItems.FormattingEnabled = true;
-            this.lbxItems.Location = new System.Drawing.Point(6, 86);
+            this.lbxItems.ItemHeight = 20;
+            this.lbxItems.Location = new System.Drawing.Point(9, 172);
+            this.lbxItems.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbxItems.Name = "lbxItems";
-            this.lbxItems.Size = new System.Drawing.Size(384, 485);
+            this.lbxItems.Size = new System.Drawing.Size(574, 704);
             this.lbxItems.TabIndex = 9;
             this.lbxItems.SelectedIndexChanged += new System.EventHandler(this.lbxItems_SelectedIndexChanged);
             this.lbxItems.DoubleClick += new System.EventHandler(this.lbxItems_DoubleClick);
             // 
             // btnCreate
             // 
-            this.btnCreate.Location = new System.Drawing.Point(315, 59);
+            this.btnCreate.Location = new System.Drawing.Point(474, 86);
+            this.btnCreate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(75, 23);
+            this.btnCreate.Size = new System.Drawing.Size(110, 35);
             this.btnCreate.TabIndex = 8;
             this.btnCreate.Text = "Create";
             this.btnCreate.UseVisualStyleBackColor = true;
@@ -2805,18 +3043,20 @@
             // 
             this.cmbInfusion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbInfusion.FormattingEnabled = true;
-            this.cmbInfusion.Location = new System.Drawing.Point(6, 59);
+            this.cmbInfusion.Location = new System.Drawing.Point(9, 91);
+            this.cmbInfusion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbInfusion.Name = "cmbInfusion";
-            this.cmbInfusion.Size = new System.Drawing.Size(222, 21);
+            this.cmbInfusion.Size = new System.Drawing.Size(241, 28);
             this.cmbInfusion.TabIndex = 6;
             this.cmbInfusion.SelectedIndexChanged += new System.EventHandler(this.cmbInfusion_SelectedIndexChanged);
             // 
             // lblInfusion
             // 
             this.lblInfusion.AutoSize = true;
-            this.lblInfusion.Location = new System.Drawing.Point(6, 43);
+            this.lblInfusion.Location = new System.Drawing.Point(9, 66);
+            this.lblInfusion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblInfusion.Name = "lblInfusion";
-            this.lblInfusion.Size = new System.Drawing.Size(44, 13);
+            this.lblInfusion.Size = new System.Drawing.Size(66, 20);
             this.lblInfusion.TabIndex = 5;
             this.lblInfusion.Text = "Infusion";
             // 
@@ -2825,9 +3065,10 @@
             this.cbxRestrict.AutoSize = true;
             this.cbxRestrict.Checked = true;
             this.cbxRestrict.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxRestrict.Location = new System.Drawing.Point(315, 21);
+            this.cbxRestrict.Location = new System.Drawing.Point(348, 31);
+            this.cbxRestrict.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxRestrict.Name = "cbxRestrict";
-            this.cbxRestrict.Size = new System.Drawing.Size(62, 17);
+            this.cbxRestrict.Size = new System.Drawing.Size(90, 24);
             this.cbxRestrict.TabIndex = 4;
             this.cbxRestrict.Text = "Restrict";
             this.cbxRestrict.UseVisualStyleBackColor = true;
@@ -2835,27 +3076,30 @@
             // 
             // nudUpgrade
             // 
-            this.nudUpgrade.Location = new System.Drawing.Point(234, 59);
+            this.nudUpgrade.Location = new System.Drawing.Point(258, 92);
+            this.nudUpgrade.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudUpgrade.Name = "nudUpgrade";
-            this.nudUpgrade.Size = new System.Drawing.Size(75, 20);
+            this.nudUpgrade.Size = new System.Drawing.Size(82, 26);
             this.nudUpgrade.TabIndex = 3;
             // 
             // cmbCategory
             // 
             this.cmbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategory.FormattingEnabled = true;
-            this.cmbCategory.Location = new System.Drawing.Point(6, 19);
+            this.cmbCategory.Location = new System.Drawing.Point(9, 29);
+            this.cmbCategory.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbCategory.Name = "cmbCategory";
-            this.cmbCategory.Size = new System.Drawing.Size(222, 21);
+            this.cmbCategory.Size = new System.Drawing.Size(241, 28);
             this.cmbCategory.TabIndex = 1;
             this.cmbCategory.SelectedIndexChanged += new System.EventHandler(this.cmbCategory_SelectedIndexChanged);
             // 
             // lblCategory
             // 
             this.lblCategory.AutoSize = true;
-            this.lblCategory.Location = new System.Drawing.Point(6, 3);
+            this.lblCategory.Location = new System.Drawing.Point(9, 5);
+            this.lblCategory.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCategory.Name = "lblCategory";
-            this.lblCategory.Size = new System.Drawing.Size(49, 13);
+            this.lblCategory.Size = new System.Drawing.Size(73, 20);
             this.lblCategory.TabIndex = 0;
             this.lblCategory.Text = "Category";
             // 
@@ -2865,10 +3109,11 @@
             this.tpgCheats.Controls.Add(this.gbxCheatEnemy);
             this.tpgCheats.Controls.Add(this.cbxCheatAll);
             this.tpgCheats.Controls.Add(this.gbxCheatPlayer);
-            this.tpgCheats.Location = new System.Drawing.Point(4, 22);
+            this.tpgCheats.Location = new System.Drawing.Point(4, 29);
+            this.tpgCheats.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tpgCheats.Name = "tpgCheats";
-            this.tpgCheats.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgCheats.Size = new System.Drawing.Size(396, 579);
+            this.tpgCheats.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tpgCheats.Size = new System.Drawing.Size(598, 898);
             this.tpgCheats.TabIndex = 4;
             this.tpgCheats.Text = "Cheats";
             this.tpgCheats.UseVisualStyleBackColor = true;
@@ -2877,9 +3122,11 @@
             // 
             this.gbxCheatOther.Controls.Add(this.cbxInfDurabilitySpecial);
             this.gbxCheatOther.Controls.Add(this.cbxInfDurability);
-            this.gbxCheatOther.Location = new System.Drawing.Point(6, 350);
+            this.gbxCheatOther.Location = new System.Drawing.Point(9, 538);
+            this.gbxCheatOther.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbxCheatOther.Name = "gbxCheatOther";
-            this.gbxCheatOther.Size = new System.Drawing.Size(384, 100);
+            this.gbxCheatOther.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gbxCheatOther.Size = new System.Drawing.Size(576, 154);
             this.gbxCheatOther.TabIndex = 3;
             this.gbxCheatOther.TabStop = false;
             this.gbxCheatOther.Text = "Other";
@@ -2887,9 +3134,10 @@
             // cbxInfDurabilitySpecial
             // 
             this.cbxInfDurabilitySpecial.AutoSize = true;
-            this.cbxInfDurabilitySpecial.Location = new System.Drawing.Point(6, 42);
+            this.cbxInfDurabilitySpecial.Location = new System.Drawing.Point(9, 65);
+            this.cbxInfDurabilitySpecial.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxInfDurabilitySpecial.Name = "cbxInfDurabilitySpecial";
-            this.cbxInfDurabilitySpecial.Size = new System.Drawing.Size(122, 17);
+            this.cbxInfDurabilitySpecial.Size = new System.Drawing.Size(180, 24);
             this.cbxInfDurabilitySpecial.TabIndex = 1;
             this.cbxInfDurabilitySpecial.Text = "Infinite Durability Sp.";
             this.cbxInfDurabilitySpecial.UseVisualStyleBackColor = true;
@@ -2898,9 +3146,10 @@
             // cbxInfDurability
             // 
             this.cbxInfDurability.AutoSize = true;
-            this.cbxInfDurability.Location = new System.Drawing.Point(6, 19);
+            this.cbxInfDurability.Location = new System.Drawing.Point(9, 29);
+            this.cbxInfDurability.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxInfDurability.Name = "cbxInfDurability";
-            this.cbxInfDurability.Size = new System.Drawing.Size(103, 17);
+            this.cbxInfDurability.Size = new System.Drawing.Size(152, 24);
             this.cbxInfDurability.TabIndex = 0;
             this.cbxInfDurability.Text = "Infinite Durability";
             this.cbxInfDurability.UseVisualStyleBackColor = true;
@@ -2912,9 +3161,11 @@
             this.gbxCheatEnemy.Controls.Add(this.cbxAllNoUpdateAI);
             this.gbxCheatEnemy.Controls.Add(this.cbxAllNoMove);
             this.gbxCheatEnemy.Controls.Add(this.cbxAllNoAttack);
-            this.gbxCheatEnemy.Location = new System.Drawing.Point(6, 266);
+            this.gbxCheatEnemy.Location = new System.Drawing.Point(9, 409);
+            this.gbxCheatEnemy.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbxCheatEnemy.Name = "gbxCheatEnemy";
-            this.gbxCheatEnemy.Size = new System.Drawing.Size(384, 78);
+            this.gbxCheatEnemy.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gbxCheatEnemy.Size = new System.Drawing.Size(576, 140);
             this.gbxCheatEnemy.TabIndex = 2;
             this.gbxCheatEnemy.TabStop = false;
             this.gbxCheatEnemy.Text = "Enemies";
@@ -2922,9 +3173,10 @@
             // cbxAllNoUpdateAI
             // 
             this.cbxAllNoUpdateAI.AutoSize = true;
-            this.cbxAllNoUpdateAI.Location = new System.Drawing.Point(6, 42);
+            this.cbxAllNoUpdateAI.Location = new System.Drawing.Point(9, 65);
+            this.cbxAllNoUpdateAI.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxAllNoUpdateAI.Name = "cbxAllNoUpdateAI";
-            this.cbxAllNoUpdateAI.Size = new System.Drawing.Size(74, 17);
+            this.cbxAllNoUpdateAI.Size = new System.Drawing.Size(108, 24);
             this.cbxAllNoUpdateAI.TabIndex = 2;
             this.cbxAllNoUpdateAI.Text = "Disable AI";
             this.cbxAllNoUpdateAI.UseVisualStyleBackColor = true;
@@ -2933,9 +3185,10 @@
             // cbxAllNoMove
             // 
             this.cbxAllNoMove.AutoSize = true;
-            this.cbxAllNoMove.Location = new System.Drawing.Point(113, 19);
+            this.cbxAllNoMove.Location = new System.Drawing.Point(170, 29);
+            this.cbxAllNoMove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxAllNoMove.Name = "cbxAllNoMove";
-            this.cbxAllNoMove.Size = new System.Drawing.Size(93, 17);
+            this.cbxAllNoMove.Size = new System.Drawing.Size(133, 24);
             this.cbxAllNoMove.TabIndex = 1;
             this.cbxAllNoMove.Text = "No Movement";
             this.cbxAllNoMove.UseVisualStyleBackColor = true;
@@ -2944,9 +3197,10 @@
             // cbxAllNoAttack
             // 
             this.cbxAllNoAttack.AutoSize = true;
-            this.cbxAllNoAttack.Location = new System.Drawing.Point(6, 19);
+            this.cbxAllNoAttack.Location = new System.Drawing.Point(9, 29);
+            this.cbxAllNoAttack.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxAllNoAttack.Name = "cbxAllNoAttack";
-            this.cbxAllNoAttack.Size = new System.Drawing.Size(88, 17);
+            this.cbxAllNoAttack.Size = new System.Drawing.Size(126, 24);
             this.cbxAllNoAttack.TabIndex = 0;
             this.cbxAllNoAttack.Text = "No Attacking";
             this.cbxAllNoAttack.UseVisualStyleBackColor = true;
@@ -2959,9 +3213,11 @@
             this.cbxCheatAll.Controls.Add(this.cbxAllNoHit);
             this.cbxCheatAll.Controls.Add(this.cbxAllNoDamage);
             this.cbxCheatAll.Controls.Add(this.cbxAllNoDead);
-            this.cbxCheatAll.Location = new System.Drawing.Point(6, 182);
+            this.cbxCheatAll.Location = new System.Drawing.Point(9, 280);
+            this.cbxCheatAll.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxCheatAll.Name = "cbxCheatAll";
-            this.cbxCheatAll.Size = new System.Drawing.Size(384, 78);
+            this.cbxCheatAll.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbxCheatAll.Size = new System.Drawing.Size(576, 140);
             this.cbxCheatAll.TabIndex = 1;
             this.cbxCheatAll.TabStop = false;
             this.cbxCheatAll.Text = "Player + Enemies";
@@ -2969,9 +3225,10 @@
             // cbxAllNoStamina
             // 
             this.cbxAllNoStamina.AutoSize = true;
-            this.cbxAllNoStamina.Location = new System.Drawing.Point(113, 42);
+            this.cbxAllNoStamina.Location = new System.Drawing.Point(170, 65);
+            this.cbxAllNoStamina.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxAllNoStamina.Name = "cbxAllNoStamina";
-            this.cbxAllNoStamina.Size = new System.Drawing.Size(98, 17);
+            this.cbxAllNoStamina.Size = new System.Drawing.Size(146, 24);
             this.cbxAllNoStamina.TabIndex = 3;
             this.cbxAllNoStamina.Text = "Infinite Stamina";
             this.cbxAllNoStamina.UseVisualStyleBackColor = true;
@@ -2980,9 +3237,10 @@
             // cbxAllNoHit
             // 
             this.cbxAllNoHit.AutoSize = true;
-            this.cbxAllNoHit.Location = new System.Drawing.Point(6, 42);
+            this.cbxAllNoHit.Location = new System.Drawing.Point(9, 65);
+            this.cbxAllNoHit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxAllNoHit.Name = "cbxAllNoHit";
-            this.cbxAllNoHit.Size = new System.Drawing.Size(56, 17);
+            this.cbxAllNoHit.Size = new System.Drawing.Size(79, 24);
             this.cbxAllNoHit.TabIndex = 2;
             this.cbxAllNoHit.Text = "No Hit";
             this.cbxAllNoHit.UseVisualStyleBackColor = true;
@@ -2991,9 +3249,10 @@
             // cbxAllNoDamage
             // 
             this.cbxAllNoDamage.AutoSize = true;
-            this.cbxAllNoDamage.Location = new System.Drawing.Point(113, 19);
+            this.cbxAllNoDamage.Location = new System.Drawing.Point(170, 29);
+            this.cbxAllNoDamage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxAllNoDamage.Name = "cbxAllNoDamage";
-            this.cbxAllNoDamage.Size = new System.Drawing.Size(83, 17);
+            this.cbxAllNoDamage.Size = new System.Drawing.Size(120, 24);
             this.cbxAllNoDamage.TabIndex = 1;
             this.cbxAllNoDamage.Text = "No Damage";
             this.cbxAllNoDamage.UseVisualStyleBackColor = true;
@@ -3002,9 +3261,10 @@
             // cbxAllNoDead
             // 
             this.cbxAllNoDead.AutoSize = true;
-            this.cbxAllNoDead.Location = new System.Drawing.Point(6, 19);
+            this.cbxAllNoDead.Location = new System.Drawing.Point(9, 29);
+            this.cbxAllNoDead.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxAllNoDead.Name = "cbxAllNoDead";
-            this.cbxAllNoDead.Size = new System.Drawing.Size(72, 17);
+            this.cbxAllNoDead.Size = new System.Drawing.Size(103, 24);
             this.cbxAllNoDead.TabIndex = 0;
             this.cbxAllNoDead.Text = "No Death";
             this.cbxAllNoDead.UseVisualStyleBackColor = true;
@@ -3025,9 +3285,11 @@
             this.gbxCheatPlayer.Controls.Add(this.cbxPlayerDisableDamage);
             this.gbxCheatPlayer.Controls.Add(this.cbxPlayerNoDead);
             this.gbxCheatPlayer.Controls.Add(this.cbxPlayerDeadMode);
-            this.gbxCheatPlayer.Location = new System.Drawing.Point(6, 6);
+            this.gbxCheatPlayer.Location = new System.Drawing.Point(9, 9);
+            this.gbxCheatPlayer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbxCheatPlayer.Name = "gbxCheatPlayer";
-            this.gbxCheatPlayer.Size = new System.Drawing.Size(384, 170);
+            this.gbxCheatPlayer.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gbxCheatPlayer.Size = new System.Drawing.Size(576, 282);
             this.gbxCheatPlayer.TabIndex = 0;
             this.gbxCheatPlayer.TabStop = false;
             this.gbxCheatPlayer.Text = "Player";
@@ -3035,9 +3297,10 @@
             // cbxPlayerNoGoods
             // 
             this.cbxPlayerNoGoods.AutoSize = true;
-            this.cbxPlayerNoGoods.Location = new System.Drawing.Point(113, 111);
+            this.cbxPlayerNoGoods.Location = new System.Drawing.Point(170, 171);
+            this.cbxPlayerNoGoods.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxPlayerNoGoods.Name = "cbxPlayerNoGoods";
-            this.cbxPlayerNoGoods.Size = new System.Drawing.Size(103, 17);
+            this.cbxPlayerNoGoods.Size = new System.Drawing.Size(153, 24);
             this.cbxPlayerNoGoods.TabIndex = 11;
             this.cbxPlayerNoGoods.Text = "Unlimited Goods";
             this.cbxPlayerNoGoods.UseVisualStyleBackColor = true;
@@ -3046,9 +3309,10 @@
             // cbxPlayerSilence
             // 
             this.cbxPlayerSilence.AutoSize = true;
-            this.cbxPlayerSilence.Location = new System.Drawing.Point(113, 88);
+            this.cbxPlayerSilence.Location = new System.Drawing.Point(170, 135);
+            this.cbxPlayerSilence.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxPlayerSilence.Name = "cbxPlayerSilence";
-            this.cbxPlayerSilence.Size = new System.Drawing.Size(52, 17);
+            this.cbxPlayerSilence.Size = new System.Drawing.Size(75, 24);
             this.cbxPlayerSilence.TabIndex = 10;
             this.cbxPlayerSilence.Text = "Silent";
             this.cbxPlayerSilence.UseVisualStyleBackColor = true;
@@ -3057,9 +3321,10 @@
             // cbxAllNoArrow
             // 
             this.cbxAllNoArrow.AutoSize = true;
-            this.cbxAllNoArrow.Location = new System.Drawing.Point(6, 134);
+            this.cbxAllNoArrow.Location = new System.Drawing.Point(9, 206);
+            this.cbxAllNoArrow.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxAllNoArrow.Name = "cbxAllNoArrow";
-            this.cbxAllNoArrow.Size = new System.Drawing.Size(101, 17);
+            this.cbxAllNoArrow.Size = new System.Drawing.Size(151, 24);
             this.cbxAllNoArrow.TabIndex = 9;
             this.cbxAllNoArrow.Text = "Unlimited Ammo";
             this.cbxAllNoArrow.UseVisualStyleBackColor = true;
@@ -3068,9 +3333,10 @@
             // cbxPlayerExterminate
             // 
             this.cbxPlayerExterminate.AutoSize = true;
-            this.cbxPlayerExterminate.Location = new System.Drawing.Point(6, 111);
+            this.cbxPlayerExterminate.Location = new System.Drawing.Point(9, 171);
+            this.cbxPlayerExterminate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxPlayerExterminate.Name = "cbxPlayerExterminate";
-            this.cbxPlayerExterminate.Size = new System.Drawing.Size(81, 17);
+            this.cbxPlayerExterminate.Size = new System.Drawing.Size(120, 24);
             this.cbxPlayerExterminate.TabIndex = 8;
             this.cbxPlayerExterminate.Text = "Exterminate";
             this.cbxPlayerExterminate.UseVisualStyleBackColor = true;
@@ -3079,9 +3345,10 @@
             // cbxAllNoMagicQty
             // 
             this.cbxAllNoMagicQty.AutoSize = true;
-            this.cbxAllNoMagicQty.Location = new System.Drawing.Point(113, 134);
+            this.cbxAllNoMagicQty.Location = new System.Drawing.Point(170, 206);
+            this.cbxAllNoMagicQty.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxAllNoMagicQty.Name = "cbxAllNoMagicQty";
-            this.cbxAllNoMagicQty.Size = new System.Drawing.Size(100, 17);
+            this.cbxAllNoMagicQty.Size = new System.Drawing.Size(148, 24);
             this.cbxAllNoMagicQty.TabIndex = 7;
             this.cbxAllNoMagicQty.Text = "Unlimited Spells";
             this.cbxAllNoMagicQty.UseVisualStyleBackColor = true;
@@ -3090,9 +3357,10 @@
             // cbxPlayerHide
             // 
             this.cbxPlayerHide.AutoSize = true;
-            this.cbxPlayerHide.Location = new System.Drawing.Point(6, 88);
+            this.cbxPlayerHide.Location = new System.Drawing.Point(9, 135);
+            this.cbxPlayerHide.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxPlayerHide.Name = "cbxPlayerHide";
-            this.cbxPlayerHide.Size = new System.Drawing.Size(64, 17);
+            this.cbxPlayerHide.Size = new System.Drawing.Size(91, 24);
             this.cbxPlayerHide.TabIndex = 6;
             this.cbxPlayerHide.Text = "Invisible";
             this.cbxPlayerHide.UseVisualStyleBackColor = true;
@@ -3101,9 +3369,10 @@
             // cbxPlayerSuperArmor
             // 
             this.cbxPlayerSuperArmor.AutoSize = true;
-            this.cbxPlayerSuperArmor.Location = new System.Drawing.Point(113, 65);
+            this.cbxPlayerSuperArmor.Location = new System.Drawing.Point(170, 100);
+            this.cbxPlayerSuperArmor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxPlayerSuperArmor.Name = "cbxPlayerSuperArmor";
-            this.cbxPlayerSuperArmor.Size = new System.Drawing.Size(86, 17);
+            this.cbxPlayerSuperArmor.Size = new System.Drawing.Size(126, 24);
             this.cbxPlayerSuperArmor.TabIndex = 5;
             this.cbxPlayerSuperArmor.Text = "Infinite Poise";
             this.cbxPlayerSuperArmor.UseVisualStyleBackColor = true;
@@ -3112,9 +3381,10 @@
             // cbxPlayerNoStamina
             // 
             this.cbxPlayerNoStamina.AutoSize = true;
-            this.cbxPlayerNoStamina.Location = new System.Drawing.Point(6, 65);
+            this.cbxPlayerNoStamina.Location = new System.Drawing.Point(9, 100);
+            this.cbxPlayerNoStamina.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxPlayerNoStamina.Name = "cbxPlayerNoStamina";
-            this.cbxPlayerNoStamina.Size = new System.Drawing.Size(98, 17);
+            this.cbxPlayerNoStamina.Size = new System.Drawing.Size(146, 24);
             this.cbxPlayerNoStamina.TabIndex = 4;
             this.cbxPlayerNoStamina.Text = "Infinite Stamina";
             this.cbxPlayerNoStamina.UseVisualStyleBackColor = true;
@@ -3123,9 +3393,10 @@
             // cbxPlayerNoHit
             // 
             this.cbxPlayerNoHit.AutoSize = true;
-            this.cbxPlayerNoHit.Location = new System.Drawing.Point(113, 42);
+            this.cbxPlayerNoHit.Location = new System.Drawing.Point(170, 65);
+            this.cbxPlayerNoHit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxPlayerNoHit.Name = "cbxPlayerNoHit";
-            this.cbxPlayerNoHit.Size = new System.Drawing.Size(56, 17);
+            this.cbxPlayerNoHit.Size = new System.Drawing.Size(79, 24);
             this.cbxPlayerNoHit.TabIndex = 3;
             this.cbxPlayerNoHit.Text = "No Hit";
             this.cbxPlayerNoHit.UseVisualStyleBackColor = true;
@@ -3134,9 +3405,10 @@
             // cbxPlayerDisableDamage
             // 
             this.cbxPlayerDisableDamage.AutoSize = true;
-            this.cbxPlayerDisableDamage.Location = new System.Drawing.Point(6, 42);
+            this.cbxPlayerDisableDamage.Location = new System.Drawing.Point(9, 65);
+            this.cbxPlayerDisableDamage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxPlayerDisableDamage.Name = "cbxPlayerDisableDamage";
-            this.cbxPlayerDisableDamage.Size = new System.Drawing.Size(83, 17);
+            this.cbxPlayerDisableDamage.Size = new System.Drawing.Size(120, 24);
             this.cbxPlayerDisableDamage.TabIndex = 2;
             this.cbxPlayerDisableDamage.Text = "No Damage";
             this.cbxPlayerDisableDamage.UseVisualStyleBackColor = true;
@@ -3145,9 +3417,10 @@
             // cbxPlayerNoDead
             // 
             this.cbxPlayerNoDead.AutoSize = true;
-            this.cbxPlayerNoDead.Location = new System.Drawing.Point(113, 19);
+            this.cbxPlayerNoDead.Location = new System.Drawing.Point(170, 29);
+            this.cbxPlayerNoDead.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxPlayerNoDead.Name = "cbxPlayerNoDead";
-            this.cbxPlayerNoDead.Size = new System.Drawing.Size(136, 17);
+            this.cbxPlayerNoDead.Size = new System.Drawing.Size(196, 24);
             this.cbxPlayerNoDead.TabIndex = 1;
             this.cbxPlayerNoDead.Text = "No Death, No Killboxes";
             this.cbxPlayerNoDead.UseVisualStyleBackColor = true;
@@ -3156,9 +3429,10 @@
             // cbxPlayerDeadMode
             // 
             this.cbxPlayerDeadMode.AutoSize = true;
-            this.cbxPlayerDeadMode.Location = new System.Drawing.Point(6, 19);
+            this.cbxPlayerDeadMode.Location = new System.Drawing.Point(9, 29);
+            this.cbxPlayerDeadMode.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxPlayerDeadMode.Name = "cbxPlayerDeadMode";
-            this.cbxPlayerDeadMode.Size = new System.Drawing.Size(72, 17);
+            this.cbxPlayerDeadMode.Size = new System.Drawing.Size(103, 24);
             this.cbxPlayerDeadMode.TabIndex = 0;
             this.cbxPlayerDeadMode.Text = "No Death";
             this.cbxPlayerDeadMode.UseVisualStyleBackColor = true;
@@ -3172,10 +3446,11 @@
             this.tpgGraphics.Controls.Add(this.cbxDrawCharacters);
             this.tpgGraphics.Controls.Add(this.cbxDrawObjects);
             this.tpgGraphics.Controls.Add(this.cbxDrawMap);
-            this.tpgGraphics.Location = new System.Drawing.Point(4, 22);
+            this.tpgGraphics.Location = new System.Drawing.Point(4, 29);
+            this.tpgGraphics.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tpgGraphics.Name = "tpgGraphics";
-            this.tpgGraphics.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgGraphics.Size = new System.Drawing.Size(396, 579);
+            this.tpgGraphics.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tpgGraphics.Size = new System.Drawing.Size(598, 898);
             this.tpgGraphics.TabIndex = 5;
             this.tpgGraphics.Text = "Graphics";
             this.tpgGraphics.UseVisualStyleBackColor = true;
@@ -3200,9 +3475,11 @@
             this.gbxFilter.Controls.Add(this.nudBrightnessG);
             this.gbxFilter.Controls.Add(this.nudBrightnessR);
             this.gbxFilter.Controls.Add(this.cbxFilter);
-            this.gbxFilter.Location = new System.Drawing.Point(6, 371);
+            this.gbxFilter.Location = new System.Drawing.Point(9, 571);
+            this.gbxFilter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbxFilter.Name = "gbxFilter";
-            this.gbxFilter.Size = new System.Drawing.Size(384, 202);
+            this.gbxFilter.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gbxFilter.Size = new System.Drawing.Size(576, 329);
             this.gbxFilter.TabIndex = 9;
             this.gbxFilter.TabStop = false;
             this.gbxFilter.Text = "Filter";
@@ -3210,9 +3487,10 @@
             // lblHue
             // 
             this.lblHue.AutoSize = true;
-            this.lblHue.Location = new System.Drawing.Point(216, 141);
+            this.lblHue.Location = new System.Drawing.Point(324, 217);
+            this.lblHue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHue.Name = "lblHue";
-            this.lblHue.Size = new System.Drawing.Size(27, 13);
+            this.lblHue.Size = new System.Drawing.Size(39, 20);
             this.lblHue.TabIndex = 15;
             this.lblHue.Text = "Hue";
             // 
@@ -3223,14 +3501,15 @@
             0,
             0,
             0});
-            this.nudHue.Location = new System.Drawing.Point(216, 163);
+            this.nudHue.Location = new System.Drawing.Point(324, 251);
+            this.nudHue.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudHue.Maximum = new decimal(new int[] {
             360,
             0,
             0,
             0});
             this.nudHue.Name = "nudHue";
-            this.nudHue.Size = new System.Drawing.Size(99, 20);
+            this.nudHue.Size = new System.Drawing.Size(148, 26);
             this.nudHue.TabIndex = 14;
             this.nudHue.ValueChanged += new System.EventHandler(this.nudFilter_ValueChanged);
             // 
@@ -3242,14 +3521,15 @@
             0,
             0,
             65536});
-            this.nudSaturation.Location = new System.Drawing.Point(6, 163);
+            this.nudSaturation.Location = new System.Drawing.Point(9, 251);
+            this.nudSaturation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudSaturation.Minimum = new decimal(new int[] {
             100,
             0,
             0,
             -2147483648});
             this.nudSaturation.Name = "nudSaturation";
-            this.nudSaturation.Size = new System.Drawing.Size(99, 20);
+            this.nudSaturation.Size = new System.Drawing.Size(148, 26);
             this.nudSaturation.TabIndex = 12;
             this.nudSaturation.Value = new decimal(new int[] {
             1,
@@ -3261,9 +3541,10 @@
             // lblSaturation
             // 
             this.lblSaturation.AutoSize = true;
-            this.lblSaturation.Location = new System.Drawing.Point(6, 141);
+            this.lblSaturation.Location = new System.Drawing.Point(9, 217);
+            this.lblSaturation.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSaturation.Name = "lblSaturation";
-            this.lblSaturation.Size = new System.Drawing.Size(55, 13);
+            this.lblSaturation.Size = new System.Drawing.Size(83, 20);
             this.lblSaturation.TabIndex = 11;
             this.lblSaturation.Text = "Saturation";
             // 
@@ -3272,9 +3553,10 @@
             this.cbxContrastSync.AutoSize = true;
             this.cbxContrastSync.Checked = true;
             this.cbxContrastSync.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxContrastSync.Location = new System.Drawing.Point(111, 91);
+            this.cbxContrastSync.Location = new System.Drawing.Point(166, 140);
+            this.cbxContrastSync.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxContrastSync.Name = "cbxContrastSync";
-            this.cbxContrastSync.Size = new System.Drawing.Size(84, 17);
+            this.cbxContrastSync.Size = new System.Drawing.Size(122, 24);
             this.cbxContrastSync.TabIndex = 10;
             this.cbxContrastSync.Text = "Synchronize";
             this.cbxContrastSync.UseVisualStyleBackColor = true;
@@ -3289,9 +3571,10 @@
             0,
             0,
             65536});
-            this.nudContrastB.Location = new System.Drawing.Point(216, 114);
+            this.nudContrastB.Location = new System.Drawing.Point(324, 175);
+            this.nudContrastB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudContrastB.Name = "nudContrastB";
-            this.nudContrastB.Size = new System.Drawing.Size(99, 20);
+            this.nudContrastB.Size = new System.Drawing.Size(148, 26);
             this.nudContrastB.TabIndex = 9;
             this.nudContrastB.Value = new decimal(new int[] {
             1,
@@ -3303,9 +3586,10 @@
             // lblContrast
             // 
             this.lblContrast.AutoSize = true;
-            this.lblContrast.Location = new System.Drawing.Point(6, 92);
+            this.lblContrast.Location = new System.Drawing.Point(9, 142);
+            this.lblContrast.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblContrast.Name = "lblContrast";
-            this.lblContrast.Size = new System.Drawing.Size(78, 13);
+            this.lblContrast.Size = new System.Drawing.Size(120, 20);
             this.lblContrast.TabIndex = 8;
             this.lblContrast.Text = "Contrast (RGB)";
             // 
@@ -3318,9 +3602,10 @@
             0,
             0,
             65536});
-            this.nudContrastG.Location = new System.Drawing.Point(111, 114);
+            this.nudContrastG.Location = new System.Drawing.Point(166, 175);
+            this.nudContrastG.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudContrastG.Name = "nudContrastG";
-            this.nudContrastG.Size = new System.Drawing.Size(99, 20);
+            this.nudContrastG.Size = new System.Drawing.Size(148, 26);
             this.nudContrastG.TabIndex = 7;
             this.nudContrastG.Value = new decimal(new int[] {
             1,
@@ -3337,9 +3622,10 @@
             0,
             0,
             65536});
-            this.nudContrastR.Location = new System.Drawing.Point(6, 114);
+            this.nudContrastR.Location = new System.Drawing.Point(9, 175);
+            this.nudContrastR.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudContrastR.Name = "nudContrastR";
-            this.nudContrastR.Size = new System.Drawing.Size(99, 20);
+            this.nudContrastR.Size = new System.Drawing.Size(148, 26);
             this.nudContrastR.TabIndex = 6;
             this.nudContrastR.Value = new decimal(new int[] {
             1,
@@ -3353,9 +3639,10 @@
             this.cbxBrightnessSync.AutoSize = true;
             this.cbxBrightnessSync.Checked = true;
             this.cbxBrightnessSync.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxBrightnessSync.Location = new System.Drawing.Point(111, 42);
+            this.cbxBrightnessSync.Location = new System.Drawing.Point(166, 65);
+            this.cbxBrightnessSync.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxBrightnessSync.Name = "cbxBrightnessSync";
-            this.cbxBrightnessSync.Size = new System.Drawing.Size(84, 17);
+            this.cbxBrightnessSync.Size = new System.Drawing.Size(122, 24);
             this.cbxBrightnessSync.TabIndex = 5;
             this.cbxBrightnessSync.Text = "Synchronize";
             this.cbxBrightnessSync.UseVisualStyleBackColor = true;
@@ -3370,9 +3657,10 @@
             0,
             0,
             65536});
-            this.nudBrightnessB.Location = new System.Drawing.Point(216, 65);
+            this.nudBrightnessB.Location = new System.Drawing.Point(324, 100);
+            this.nudBrightnessB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudBrightnessB.Name = "nudBrightnessB";
-            this.nudBrightnessB.Size = new System.Drawing.Size(99, 20);
+            this.nudBrightnessB.Size = new System.Drawing.Size(148, 26);
             this.nudBrightnessB.TabIndex = 4;
             this.nudBrightnessB.Value = new decimal(new int[] {
             1,
@@ -3384,9 +3672,10 @@
             // lblBrightness
             // 
             this.lblBrightness.AutoSize = true;
-            this.lblBrightness.Location = new System.Drawing.Point(6, 43);
+            this.lblBrightness.Location = new System.Drawing.Point(9, 66);
+            this.lblBrightness.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBrightness.Name = "lblBrightness";
-            this.lblBrightness.Size = new System.Drawing.Size(88, 13);
+            this.lblBrightness.Size = new System.Drawing.Size(135, 20);
             this.lblBrightness.TabIndex = 3;
             this.lblBrightness.Text = "Brightness (RGB)";
             // 
@@ -3399,9 +3688,10 @@
             0,
             0,
             65536});
-            this.nudBrightnessG.Location = new System.Drawing.Point(111, 65);
+            this.nudBrightnessG.Location = new System.Drawing.Point(166, 100);
+            this.nudBrightnessG.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudBrightnessG.Name = "nudBrightnessG";
-            this.nudBrightnessG.Size = new System.Drawing.Size(99, 20);
+            this.nudBrightnessG.Size = new System.Drawing.Size(148, 26);
             this.nudBrightnessG.TabIndex = 2;
             this.nudBrightnessG.Value = new decimal(new int[] {
             1,
@@ -3418,9 +3708,10 @@
             0,
             0,
             65536});
-            this.nudBrightnessR.Location = new System.Drawing.Point(6, 65);
+            this.nudBrightnessR.Location = new System.Drawing.Point(9, 100);
+            this.nudBrightnessR.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudBrightnessR.Name = "nudBrightnessR";
-            this.nudBrightnessR.Size = new System.Drawing.Size(99, 20);
+            this.nudBrightnessR.Size = new System.Drawing.Size(148, 26);
             this.nudBrightnessR.TabIndex = 1;
             this.nudBrightnessR.Value = new decimal(new int[] {
             1,
@@ -3432,9 +3723,10 @@
             // cbxFilter
             // 
             this.cbxFilter.AutoSize = true;
-            this.cbxFilter.Location = new System.Drawing.Point(6, 19);
+            this.cbxFilter.Location = new System.Drawing.Point(9, 29);
+            this.cbxFilter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxFilter.Name = "cbxFilter";
-            this.cbxFilter.Size = new System.Drawing.Size(91, 17);
+            this.cbxFilter.Size = new System.Drawing.Size(133, 24);
             this.cbxFilter.TabIndex = 0;
             this.cbxFilter.Text = "Override Filter";
             this.cbxFilter.UseVisualStyleBackColor = true;
@@ -3445,9 +3737,10 @@
             this.cbxDrawCutscenes.AutoSize = true;
             this.cbxDrawCutscenes.Checked = true;
             this.cbxDrawCutscenes.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxDrawCutscenes.Location = new System.Drawing.Point(6, 98);
+            this.cbxDrawCutscenes.Location = new System.Drawing.Point(9, 151);
+            this.cbxDrawCutscenes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxDrawCutscenes.Name = "cbxDrawCutscenes";
-            this.cbxDrawCutscenes.Size = new System.Drawing.Size(104, 17);
+            this.cbxDrawCutscenes.Size = new System.Drawing.Size(152, 24);
             this.cbxDrawCutscenes.TabIndex = 4;
             this.cbxDrawCutscenes.Text = "Draw Cutscenes";
             this.cbxDrawCutscenes.UseVisualStyleBackColor = true;
@@ -3458,9 +3751,10 @@
             this.cbxDrawSFX.AutoSize = true;
             this.cbxDrawSFX.Checked = true;
             this.cbxDrawSFX.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxDrawSFX.Location = new System.Drawing.Point(6, 75);
+            this.cbxDrawSFX.Location = new System.Drawing.Point(9, 115);
+            this.cbxDrawSFX.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxDrawSFX.Name = "cbxDrawSFX";
-            this.cbxDrawSFX.Size = new System.Drawing.Size(74, 17);
+            this.cbxDrawSFX.Size = new System.Drawing.Size(108, 24);
             this.cbxDrawSFX.TabIndex = 3;
             this.cbxDrawSFX.Text = "Draw SFX";
             this.cbxDrawSFX.UseVisualStyleBackColor = true;
@@ -3471,9 +3765,10 @@
             this.cbxDrawCharacters.AutoSize = true;
             this.cbxDrawCharacters.Checked = true;
             this.cbxDrawCharacters.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxDrawCharacters.Location = new System.Drawing.Point(6, 52);
+            this.cbxDrawCharacters.Location = new System.Drawing.Point(9, 80);
+            this.cbxDrawCharacters.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxDrawCharacters.Name = "cbxDrawCharacters";
-            this.cbxDrawCharacters.Size = new System.Drawing.Size(105, 17);
+            this.cbxDrawCharacters.Size = new System.Drawing.Size(154, 24);
             this.cbxDrawCharacters.TabIndex = 2;
             this.cbxDrawCharacters.Text = "Draw Characters";
             this.cbxDrawCharacters.UseVisualStyleBackColor = true;
@@ -3484,9 +3779,10 @@
             this.cbxDrawObjects.AutoSize = true;
             this.cbxDrawObjects.Checked = true;
             this.cbxDrawObjects.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxDrawObjects.Location = new System.Drawing.Point(6, 29);
+            this.cbxDrawObjects.Location = new System.Drawing.Point(9, 45);
+            this.cbxDrawObjects.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxDrawObjects.Name = "cbxDrawObjects";
-            this.cbxDrawObjects.Size = new System.Drawing.Size(90, 17);
+            this.cbxDrawObjects.Size = new System.Drawing.Size(130, 24);
             this.cbxDrawObjects.TabIndex = 1;
             this.cbxDrawObjects.Text = "Draw Objects";
             this.cbxDrawObjects.UseVisualStyleBackColor = true;
@@ -3497,9 +3793,10 @@
             this.cbxDrawMap.AutoSize = true;
             this.cbxDrawMap.Checked = true;
             this.cbxDrawMap.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxDrawMap.Location = new System.Drawing.Point(6, 6);
+            this.cbxDrawMap.Location = new System.Drawing.Point(9, 9);
+            this.cbxDrawMap.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxDrawMap.Name = "cbxDrawMap";
-            this.cbxDrawMap.Size = new System.Drawing.Size(75, 17);
+            this.cbxDrawMap.Size = new System.Drawing.Size(107, 24);
             this.cbxDrawMap.TabIndex = 0;
             this.cbxDrawMap.Text = "Draw Map";
             this.cbxDrawMap.UseVisualStyleBackColor = true;
@@ -3509,10 +3806,11 @@
             // 
             this.tpgMisc.Controls.Add(this.gbxEntity);
             this.tpgMisc.Controls.Add(this.gbxEventFlags);
-            this.tpgMisc.Location = new System.Drawing.Point(4, 22);
+            this.tpgMisc.Location = new System.Drawing.Point(4, 29);
+            this.tpgMisc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tpgMisc.Name = "tpgMisc";
-            this.tpgMisc.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgMisc.Size = new System.Drawing.Size(396, 579);
+            this.tpgMisc.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tpgMisc.Size = new System.Drawing.Size(598, 898);
             this.tpgMisc.TabIndex = 7;
             this.tpgMisc.Text = "Misc";
             this.tpgMisc.UseVisualStyleBackColor = true;
@@ -3523,9 +3821,11 @@
             this.gbxEntity.Controls.Add(this.btnLastHitEntity);
             this.gbxEntity.Controls.Add(this.cbxLastTargetEntity);
             this.gbxEntity.Controls.Add(this.btnLastTargetEntity);
-            this.gbxEntity.Location = new System.Drawing.Point(6, 112);
+            this.gbxEntity.Location = new System.Drawing.Point(9, 172);
+            this.gbxEntity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbxEntity.Name = "gbxEntity";
-            this.gbxEntity.Size = new System.Drawing.Size(384, 140);
+            this.gbxEntity.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gbxEntity.Size = new System.Drawing.Size(576, 215);
             this.gbxEntity.TabIndex = 1;
             this.gbxEntity.TabStop = false;
             this.gbxEntity.Text = "Entity";
@@ -3533,9 +3833,10 @@
             // cbxLastHitEntity
             // 
             this.cbxLastHitEntity.AutoSize = true;
-            this.cbxLastHitEntity.Location = new System.Drawing.Point(87, 52);
+            this.cbxLastHitEntity.Location = new System.Drawing.Point(130, 80);
+            this.cbxLastHitEntity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxLastHitEntity.Name = "cbxLastHitEntity";
-            this.cbxLastHitEntity.Size = new System.Drawing.Size(91, 17);
+            this.cbxLastHitEntity.Size = new System.Drawing.Size(134, 24);
             this.cbxLastHitEntity.TabIndex = 3;
             this.cbxLastHitEntity.Text = "Last Hit Entity";
             this.cbxLastHitEntity.UseVisualStyleBackColor = true;
@@ -3544,9 +3845,10 @@
             // btnLastHitEntity
             // 
             this.btnLastHitEntity.Enabled = false;
-            this.btnLastHitEntity.Location = new System.Drawing.Point(6, 48);
+            this.btnLastHitEntity.Location = new System.Drawing.Point(9, 74);
+            this.btnLastHitEntity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLastHitEntity.Name = "btnLastHitEntity";
-            this.btnLastHitEntity.Size = new System.Drawing.Size(75, 23);
+            this.btnLastHitEntity.Size = new System.Drawing.Size(112, 35);
             this.btnLastHitEntity.TabIndex = 2;
             this.btnLastHitEntity.Text = "Details";
             this.btnLastHitEntity.UseVisualStyleBackColor = true;
@@ -3555,9 +3857,10 @@
             // cbxLastTargetEntity
             // 
             this.cbxLastTargetEntity.AutoSize = true;
-            this.cbxLastTargetEntity.Location = new System.Drawing.Point(87, 23);
+            this.cbxLastTargetEntity.Location = new System.Drawing.Point(130, 35);
+            this.cbxLastTargetEntity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxLastTargetEntity.Name = "cbxLastTargetEntity";
-            this.cbxLastTargetEntity.Size = new System.Drawing.Size(121, 17);
+            this.cbxLastTargetEntity.Size = new System.Drawing.Size(178, 24);
             this.cbxLastTargetEntity.TabIndex = 1;
             this.cbxLastTargetEntity.Text = "Last Targeted Entity";
             this.cbxLastTargetEntity.UseVisualStyleBackColor = true;
@@ -3566,9 +3869,10 @@
             // btnLastTargetEntity
             // 
             this.btnLastTargetEntity.Enabled = false;
-            this.btnLastTargetEntity.Location = new System.Drawing.Point(6, 19);
+            this.btnLastTargetEntity.Location = new System.Drawing.Point(9, 29);
+            this.btnLastTargetEntity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLastTargetEntity.Name = "btnLastTargetEntity";
-            this.btnLastTargetEntity.Size = new System.Drawing.Size(75, 23);
+            this.btnLastTargetEntity.Size = new System.Drawing.Size(112, 35);
             this.btnLastTargetEntity.TabIndex = 0;
             this.btnLastTargetEntity.Text = "Details";
             this.btnLastTargetEntity.UseVisualStyleBackColor = true;
@@ -3582,9 +3886,11 @@
             this.gbxEventFlags.Controls.Add(this.btnEventWrite);
             this.gbxEventFlags.Controls.Add(this.txtEventFlag);
             this.gbxEventFlags.Controls.Add(this.lblEventID);
-            this.gbxEventFlags.Location = new System.Drawing.Point(6, 6);
+            this.gbxEventFlags.Location = new System.Drawing.Point(9, 9);
+            this.gbxEventFlags.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbxEventFlags.Name = "gbxEventFlags";
-            this.gbxEventFlags.Size = new System.Drawing.Size(384, 100);
+            this.gbxEventFlags.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gbxEventFlags.Size = new System.Drawing.Size(623, 163);
             this.gbxEventFlags.TabIndex = 0;
             this.gbxEventFlags.TabStop = false;
             this.gbxEventFlags.Text = "Event Flags";
@@ -3592,9 +3898,10 @@
             // btnEventRead
             // 
             this.btnEventRead.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEventRead.Location = new System.Drawing.Point(222, 58);
+            this.btnEventRead.Location = new System.Drawing.Point(380, 89);
+            this.btnEventRead.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEventRead.Name = "btnEventRead";
-            this.btnEventRead.Size = new System.Drawing.Size(75, 23);
+            this.btnEventRead.Size = new System.Drawing.Size(112, 35);
             this.btnEventRead.TabIndex = 4;
             this.btnEventRead.Text = "Read";
             this.btnEventRead.UseVisualStyleBackColor = true;
@@ -3604,9 +3911,10 @@
             // 
             this.cbxEventFlag.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbxEventFlag.AutoSize = true;
-            this.cbxEventFlag.Location = new System.Drawing.Point(303, 34);
+            this.cbxEventFlag.Location = new System.Drawing.Point(505, 52);
+            this.cbxEventFlag.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxEventFlag.Name = "cbxEventFlag";
-            this.cbxEventFlag.Size = new System.Drawing.Size(65, 17);
+            this.cbxEventFlag.Size = new System.Drawing.Size(94, 24);
             this.cbxEventFlag.TabIndex = 3;
             this.cbxEventFlag.Text = "Enabled";
             this.cbxEventFlag.UseVisualStyleBackColor = true;
@@ -3614,9 +3922,10 @@
             // btnEventWrite
             // 
             this.btnEventWrite.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEventWrite.Location = new System.Drawing.Point(303, 58);
+            this.btnEventWrite.Location = new System.Drawing.Point(501, 89);
+            this.btnEventWrite.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEventWrite.Name = "btnEventWrite";
-            this.btnEventWrite.Size = new System.Drawing.Size(75, 23);
+            this.btnEventWrite.Size = new System.Drawing.Size(112, 35);
             this.btnEventWrite.TabIndex = 2;
             this.btnEventWrite.Text = "Write";
             this.btnEventWrite.UseVisualStyleBackColor = true;
@@ -3626,27 +3935,30 @@
             // 
             this.txtEventFlag.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtEventFlag.Location = new System.Drawing.Point(6, 32);
+            this.txtEventFlag.Location = new System.Drawing.Point(9, 49);
+            this.txtEventFlag.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtEventFlag.Name = "txtEventFlag";
-            this.txtEventFlag.Size = new System.Drawing.Size(291, 20);
+            this.txtEventFlag.Size = new System.Drawing.Size(481, 26);
             this.txtEventFlag.TabIndex = 1;
             // 
             // lblEventID
             // 
             this.lblEventID.AutoSize = true;
-            this.lblEventID.Location = new System.Drawing.Point(6, 16);
+            this.lblEventID.Location = new System.Drawing.Point(9, 25);
+            this.lblEventID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEventID.Name = "lblEventID";
-            this.lblEventID.Size = new System.Drawing.Size(18, 13);
+            this.lblEventID.Size = new System.Drawing.Size(26, 20);
             this.lblEventID.TabIndex = 0;
             this.lblEventID.Text = "ID";
             // 
             // tpgNet
             // 
             this.tpgNet.Controls.Add(this.tclNet);
-            this.tpgNet.Location = new System.Drawing.Point(4, 22);
+            this.tpgNet.Location = new System.Drawing.Point(4, 29);
+            this.tpgNet.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tpgNet.Name = "tpgNet";
-            this.tpgNet.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgNet.Size = new System.Drawing.Size(396, 579);
+            this.tpgNet.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tpgNet.Size = new System.Drawing.Size(598, 898);
             this.tpgNet.TabIndex = 8;
             this.tpgNet.Text = "Net";
             this.tpgNet.UseVisualStyleBackColor = true;
@@ -3656,10 +3968,11 @@
             this.tclNet.Controls.Add(this.tpgNetRecentPlayers);
             this.tclNet.Controls.Add(this.tpgNetCurrentPlayers);
             this.tclNet.Controls.Add(this.tpgNetSummonSigns);
-            this.tclNet.Location = new System.Drawing.Point(6, 6);
+            this.tclNet.Location = new System.Drawing.Point(9, 9);
+            this.tclNet.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tclNet.Name = "tclNet";
             this.tclNet.SelectedIndex = 0;
-            this.tclNet.Size = new System.Drawing.Size(384, 567);
+            this.tclNet.Size = new System.Drawing.Size(576, 872);
             this.tclNet.TabIndex = 0;
             // 
             // tpgNetRecentPlayers
@@ -3730,19 +4043,21 @@
             this.tpgNetRecentPlayers.Controls.Add(this.lblRecentPlayerVitality);
             this.tpgNetRecentPlayers.Controls.Add(this.lblRecentPlayerSoulLevel);
             this.tpgNetRecentPlayers.Controls.Add(this.lbxNetRecentPlayers);
-            this.tpgNetRecentPlayers.Location = new System.Drawing.Point(4, 22);
+            this.tpgNetRecentPlayers.Location = new System.Drawing.Point(4, 29);
+            this.tpgNetRecentPlayers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tpgNetRecentPlayers.Name = "tpgNetRecentPlayers";
-            this.tpgNetRecentPlayers.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgNetRecentPlayers.Size = new System.Drawing.Size(376, 541);
+            this.tpgNetRecentPlayers.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tpgNetRecentPlayers.Size = new System.Drawing.Size(568, 839);
             this.tpgNetRecentPlayers.TabIndex = 0;
             this.tpgNetRecentPlayers.Text = "Recent Players";
             this.tpgNetRecentPlayers.UseVisualStyleBackColor = true;
             // 
             // btnRecentPlayerFamilyShare
             // 
-            this.btnRecentPlayerFamilyShare.Location = new System.Drawing.Point(6, 407);
+            this.btnRecentPlayerFamilyShare.Location = new System.Drawing.Point(9, 626);
+            this.btnRecentPlayerFamilyShare.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnRecentPlayerFamilyShare.Name = "btnRecentPlayerFamilyShare";
-            this.btnRecentPlayerFamilyShare.Size = new System.Drawing.Size(76, 23);
+            this.btnRecentPlayerFamilyShare.Size = new System.Drawing.Size(114, 35);
             this.btnRecentPlayerFamilyShare.TabIndex = 95;
             this.btnRecentPlayerFamilyShare.Text = "Family Share";
             this.btnRecentPlayerFamilyShare.UseVisualStyleBackColor = true;
@@ -3750,167 +4065,188 @@
             // 
             // txtRecentPlayerQuickbar5
             // 
-            this.txtRecentPlayerQuickbar5.Location = new System.Drawing.Point(170, 500);
+            this.txtRecentPlayerQuickbar5.Location = new System.Drawing.Point(255, 769);
+            this.txtRecentPlayerQuickbar5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtRecentPlayerQuickbar5.Name = "txtRecentPlayerQuickbar5";
             this.txtRecentPlayerQuickbar5.ReadOnly = true;
-            this.txtRecentPlayerQuickbar5.Size = new System.Drawing.Size(135, 20);
+            this.txtRecentPlayerQuickbar5.Size = new System.Drawing.Size(200, 26);
             this.txtRecentPlayerQuickbar5.TabIndex = 94;
             // 
             // txtRecentPlayerQuickbar4
             // 
-            this.txtRecentPlayerQuickbar4.Location = new System.Drawing.Point(170, 474);
+            this.txtRecentPlayerQuickbar4.Location = new System.Drawing.Point(255, 729);
+            this.txtRecentPlayerQuickbar4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtRecentPlayerQuickbar4.Name = "txtRecentPlayerQuickbar4";
             this.txtRecentPlayerQuickbar4.ReadOnly = true;
-            this.txtRecentPlayerQuickbar4.Size = new System.Drawing.Size(135, 20);
+            this.txtRecentPlayerQuickbar4.Size = new System.Drawing.Size(200, 26);
             this.txtRecentPlayerQuickbar4.TabIndex = 93;
             // 
             // txtRecentPlayerQuickbar1
             // 
-            this.txtRecentPlayerQuickbar1.Location = new System.Drawing.Point(170, 396);
+            this.txtRecentPlayerQuickbar1.Location = new System.Drawing.Point(255, 609);
+            this.txtRecentPlayerQuickbar1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtRecentPlayerQuickbar1.Name = "txtRecentPlayerQuickbar1";
             this.txtRecentPlayerQuickbar1.ReadOnly = true;
-            this.txtRecentPlayerQuickbar1.Size = new System.Drawing.Size(135, 20);
+            this.txtRecentPlayerQuickbar1.Size = new System.Drawing.Size(200, 26);
             this.txtRecentPlayerQuickbar1.TabIndex = 92;
             // 
             // txtRecentPlayerQuickbar2
             // 
-            this.txtRecentPlayerQuickbar2.Location = new System.Drawing.Point(170, 422);
+            this.txtRecentPlayerQuickbar2.Location = new System.Drawing.Point(255, 649);
+            this.txtRecentPlayerQuickbar2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtRecentPlayerQuickbar2.Name = "txtRecentPlayerQuickbar2";
             this.txtRecentPlayerQuickbar2.ReadOnly = true;
-            this.txtRecentPlayerQuickbar2.Size = new System.Drawing.Size(135, 20);
+            this.txtRecentPlayerQuickbar2.Size = new System.Drawing.Size(200, 26);
             this.txtRecentPlayerQuickbar2.TabIndex = 91;
             // 
             // txtRecentPlayerQuickbar3
             // 
-            this.txtRecentPlayerQuickbar3.Location = new System.Drawing.Point(170, 448);
+            this.txtRecentPlayerQuickbar3.Location = new System.Drawing.Point(255, 689);
+            this.txtRecentPlayerQuickbar3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtRecentPlayerQuickbar3.Name = "txtRecentPlayerQuickbar3";
             this.txtRecentPlayerQuickbar3.ReadOnly = true;
-            this.txtRecentPlayerQuickbar3.Size = new System.Drawing.Size(135, 20);
+            this.txtRecentPlayerQuickbar3.Size = new System.Drawing.Size(200, 26);
             this.txtRecentPlayerQuickbar3.TabIndex = 90;
             // 
             // txtRecentPlayerRing2
             // 
-            this.txtRecentPlayerRing2.Location = new System.Drawing.Point(170, 370);
+            this.txtRecentPlayerRing2.Location = new System.Drawing.Point(255, 569);
+            this.txtRecentPlayerRing2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtRecentPlayerRing2.Name = "txtRecentPlayerRing2";
             this.txtRecentPlayerRing2.ReadOnly = true;
-            this.txtRecentPlayerRing2.Size = new System.Drawing.Size(135, 20);
+            this.txtRecentPlayerRing2.Size = new System.Drawing.Size(200, 26);
             this.txtRecentPlayerRing2.TabIndex = 89;
             // 
             // txtRecentPlayerRing1
             // 
-            this.txtRecentPlayerRing1.Location = new System.Drawing.Point(170, 344);
+            this.txtRecentPlayerRing1.Location = new System.Drawing.Point(255, 529);
+            this.txtRecentPlayerRing1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtRecentPlayerRing1.Name = "txtRecentPlayerRing1";
             this.txtRecentPlayerRing1.ReadOnly = true;
-            this.txtRecentPlayerRing1.Size = new System.Drawing.Size(135, 20);
+            this.txtRecentPlayerRing1.Size = new System.Drawing.Size(200, 26);
             this.txtRecentPlayerRing1.TabIndex = 88;
             // 
             // txtRecentPlayerRightWep2
             // 
-            this.txtRecentPlayerRightWep2.Location = new System.Drawing.Point(170, 266);
+            this.txtRecentPlayerRightWep2.Location = new System.Drawing.Point(255, 409);
+            this.txtRecentPlayerRightWep2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtRecentPlayerRightWep2.Name = "txtRecentPlayerRightWep2";
             this.txtRecentPlayerRightWep2.ReadOnly = true;
-            this.txtRecentPlayerRightWep2.Size = new System.Drawing.Size(135, 20);
+            this.txtRecentPlayerRightWep2.Size = new System.Drawing.Size(200, 26);
             this.txtRecentPlayerRightWep2.TabIndex = 87;
             // 
             // txtRecentPlayerLeftWep1
             // 
-            this.txtRecentPlayerLeftWep1.Location = new System.Drawing.Point(170, 292);
+            this.txtRecentPlayerLeftWep1.Location = new System.Drawing.Point(255, 449);
+            this.txtRecentPlayerLeftWep1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtRecentPlayerLeftWep1.Name = "txtRecentPlayerLeftWep1";
             this.txtRecentPlayerLeftWep1.ReadOnly = true;
-            this.txtRecentPlayerLeftWep1.Size = new System.Drawing.Size(135, 20);
+            this.txtRecentPlayerLeftWep1.Size = new System.Drawing.Size(200, 26);
             this.txtRecentPlayerLeftWep1.TabIndex = 86;
             // 
             // txtRecentPlayerLeftWep2
             // 
-            this.txtRecentPlayerLeftWep2.Location = new System.Drawing.Point(170, 318);
+            this.txtRecentPlayerLeftWep2.Location = new System.Drawing.Point(255, 489);
+            this.txtRecentPlayerLeftWep2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtRecentPlayerLeftWep2.Name = "txtRecentPlayerLeftWep2";
             this.txtRecentPlayerLeftWep2.ReadOnly = true;
-            this.txtRecentPlayerLeftWep2.Size = new System.Drawing.Size(135, 20);
+            this.txtRecentPlayerLeftWep2.Size = new System.Drawing.Size(200, 26);
             this.txtRecentPlayerLeftWep2.TabIndex = 85;
             // 
             // txtRecentPlayerRightWep1
             // 
-            this.txtRecentPlayerRightWep1.Location = new System.Drawing.Point(170, 240);
+            this.txtRecentPlayerRightWep1.Location = new System.Drawing.Point(255, 369);
+            this.txtRecentPlayerRightWep1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtRecentPlayerRightWep1.Name = "txtRecentPlayerRightWep1";
             this.txtRecentPlayerRightWep1.ReadOnly = true;
-            this.txtRecentPlayerRightWep1.Size = new System.Drawing.Size(135, 20);
+            this.txtRecentPlayerRightWep1.Size = new System.Drawing.Size(200, 26);
             this.txtRecentPlayerRightWep1.TabIndex = 84;
             // 
             // txtRecentPlayerBolt2
             // 
-            this.txtRecentPlayerBolt2.Location = new System.Drawing.Point(170, 214);
+            this.txtRecentPlayerBolt2.Location = new System.Drawing.Point(255, 329);
+            this.txtRecentPlayerBolt2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtRecentPlayerBolt2.Name = "txtRecentPlayerBolt2";
             this.txtRecentPlayerBolt2.ReadOnly = true;
-            this.txtRecentPlayerBolt2.Size = new System.Drawing.Size(135, 20);
+            this.txtRecentPlayerBolt2.Size = new System.Drawing.Size(200, 26);
             this.txtRecentPlayerBolt2.TabIndex = 83;
             // 
             // txtRecentPlayerArrow1
             // 
-            this.txtRecentPlayerArrow1.Location = new System.Drawing.Point(170, 136);
+            this.txtRecentPlayerArrow1.Location = new System.Drawing.Point(255, 209);
+            this.txtRecentPlayerArrow1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtRecentPlayerArrow1.Name = "txtRecentPlayerArrow1";
             this.txtRecentPlayerArrow1.ReadOnly = true;
-            this.txtRecentPlayerArrow1.Size = new System.Drawing.Size(135, 20);
+            this.txtRecentPlayerArrow1.Size = new System.Drawing.Size(200, 26);
             this.txtRecentPlayerArrow1.TabIndex = 82;
             // 
             // txtRecentPlayerArrow2
             // 
-            this.txtRecentPlayerArrow2.Location = new System.Drawing.Point(170, 162);
+            this.txtRecentPlayerArrow2.Location = new System.Drawing.Point(255, 249);
+            this.txtRecentPlayerArrow2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtRecentPlayerArrow2.Name = "txtRecentPlayerArrow2";
             this.txtRecentPlayerArrow2.ReadOnly = true;
-            this.txtRecentPlayerArrow2.Size = new System.Drawing.Size(135, 20);
+            this.txtRecentPlayerArrow2.Size = new System.Drawing.Size(200, 26);
             this.txtRecentPlayerArrow2.TabIndex = 81;
             // 
             // txtRecentPlayerBolt1
             // 
-            this.txtRecentPlayerBolt1.Location = new System.Drawing.Point(170, 188);
+            this.txtRecentPlayerBolt1.Location = new System.Drawing.Point(255, 289);
+            this.txtRecentPlayerBolt1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtRecentPlayerBolt1.Name = "txtRecentPlayerBolt1";
             this.txtRecentPlayerBolt1.ReadOnly = true;
-            this.txtRecentPlayerBolt1.Size = new System.Drawing.Size(135, 20);
+            this.txtRecentPlayerBolt1.Size = new System.Drawing.Size(200, 26);
             this.txtRecentPlayerBolt1.TabIndex = 80;
             // 
             // txtRecentPlayerLegs
             // 
-            this.txtRecentPlayerLegs.Location = new System.Drawing.Point(170, 110);
+            this.txtRecentPlayerLegs.Location = new System.Drawing.Point(255, 169);
+            this.txtRecentPlayerLegs.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtRecentPlayerLegs.Name = "txtRecentPlayerLegs";
             this.txtRecentPlayerLegs.ReadOnly = true;
-            this.txtRecentPlayerLegs.Size = new System.Drawing.Size(135, 20);
+            this.txtRecentPlayerLegs.Size = new System.Drawing.Size(200, 26);
             this.txtRecentPlayerLegs.TabIndex = 79;
             // 
             // txtRecentPlayerHands
             // 
-            this.txtRecentPlayerHands.Location = new System.Drawing.Point(170, 84);
+            this.txtRecentPlayerHands.Location = new System.Drawing.Point(255, 129);
+            this.txtRecentPlayerHands.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtRecentPlayerHands.Name = "txtRecentPlayerHands";
             this.txtRecentPlayerHands.ReadOnly = true;
-            this.txtRecentPlayerHands.Size = new System.Drawing.Size(135, 20);
+            this.txtRecentPlayerHands.Size = new System.Drawing.Size(200, 26);
             this.txtRecentPlayerHands.TabIndex = 78;
             // 
             // txtRecentPlayerHair
             // 
-            this.txtRecentPlayerHair.Location = new System.Drawing.Point(170, 6);
+            this.txtRecentPlayerHair.Location = new System.Drawing.Point(255, 9);
+            this.txtRecentPlayerHair.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtRecentPlayerHair.Name = "txtRecentPlayerHair";
             this.txtRecentPlayerHair.ReadOnly = true;
-            this.txtRecentPlayerHair.Size = new System.Drawing.Size(135, 20);
+            this.txtRecentPlayerHair.Size = new System.Drawing.Size(200, 26);
             this.txtRecentPlayerHair.TabIndex = 77;
             // 
             // txtRecentPlayerHead
             // 
-            this.txtRecentPlayerHead.Location = new System.Drawing.Point(170, 32);
+            this.txtRecentPlayerHead.Location = new System.Drawing.Point(255, 49);
+            this.txtRecentPlayerHead.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtRecentPlayerHead.Name = "txtRecentPlayerHead";
             this.txtRecentPlayerHead.ReadOnly = true;
-            this.txtRecentPlayerHead.Size = new System.Drawing.Size(135, 20);
+            this.txtRecentPlayerHead.Size = new System.Drawing.Size(200, 26);
             this.txtRecentPlayerHead.TabIndex = 76;
             // 
             // txtRecentPlayerChest
             // 
-            this.txtRecentPlayerChest.Location = new System.Drawing.Point(170, 58);
+            this.txtRecentPlayerChest.Location = new System.Drawing.Point(255, 89);
+            this.txtRecentPlayerChest.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtRecentPlayerChest.Name = "txtRecentPlayerChest";
             this.txtRecentPlayerChest.ReadOnly = true;
-            this.txtRecentPlayerChest.Size = new System.Drawing.Size(135, 20);
+            this.txtRecentPlayerChest.Size = new System.Drawing.Size(200, 26);
             this.txtRecentPlayerChest.TabIndex = 75;
             // 
             // nupRecentPlayerWeaponMemory
             // 
-            this.nupRecentPlayerWeaponMemory.Location = new System.Drawing.Point(6, 342);
+            this.nupRecentPlayerWeaponMemory.Location = new System.Drawing.Point(9, 526);
+            this.nupRecentPlayerWeaponMemory.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nupRecentPlayerWeaponMemory.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -3923,7 +4259,7 @@
             -2147483648});
             this.nupRecentPlayerWeaponMemory.Name = "nupRecentPlayerWeaponMemory";
             this.nupRecentPlayerWeaponMemory.ReadOnly = true;
-            this.nupRecentPlayerWeaponMemory.Size = new System.Drawing.Size(82, 20);
+            this.nupRecentPlayerWeaponMemory.Size = new System.Drawing.Size(123, 26);
             this.nupRecentPlayerWeaponMemory.TabIndex = 74;
             this.nupRecentPlayerWeaponMemory.Value = new decimal(new int[] {
             1,
@@ -3934,212 +4270,236 @@
             // lblRecentPlayerWeaponMemory
             // 
             this.lblRecentPlayerWeaponMemory.AutoSize = true;
-            this.lblRecentPlayerWeaponMemory.Location = new System.Drawing.Point(94, 344);
+            this.lblRecentPlayerWeaponMemory.Location = new System.Drawing.Point(141, 529);
+            this.lblRecentPlayerWeaponMemory.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRecentPlayerWeaponMemory.Name = "lblRecentPlayerWeaponMemory";
-            this.lblRecentPlayerWeaponMemory.Size = new System.Drawing.Size(64, 13);
+            this.lblRecentPlayerWeaponMemory.Size = new System.Drawing.Size(90, 20);
             this.lblRecentPlayerWeaponMemory.TabIndex = 73;
             this.lblRecentPlayerWeaponMemory.Text = "Weapon lvl.";
             // 
             // txtRecentPlayerName
             // 
-            this.txtRecentPlayerName.Location = new System.Drawing.Point(6, 381);
+            this.txtRecentPlayerName.Location = new System.Drawing.Point(9, 586);
+            this.txtRecentPlayerName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtRecentPlayerName.Name = "txtRecentPlayerName";
             this.txtRecentPlayerName.ReadOnly = true;
-            this.txtRecentPlayerName.Size = new System.Drawing.Size(135, 20);
+            this.txtRecentPlayerName.Size = new System.Drawing.Size(200, 26);
             this.txtRecentPlayerName.TabIndex = 72;
             // 
             // lblRecentPlayerName
             // 
             this.lblRecentPlayerName.AutoSize = true;
-            this.lblRecentPlayerName.Location = new System.Drawing.Point(6, 365);
+            this.lblRecentPlayerName.Location = new System.Drawing.Point(9, 562);
+            this.lblRecentPlayerName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRecentPlayerName.Name = "lblRecentPlayerName";
-            this.lblRecentPlayerName.Size = new System.Drawing.Size(35, 13);
+            this.lblRecentPlayerName.Size = new System.Drawing.Size(51, 20);
             this.lblRecentPlayerName.TabIndex = 71;
             this.lblRecentPlayerName.Text = "Name";
             // 
             // lblRecentPlayerQuickbar5
             // 
             this.lblRecentPlayerQuickbar5.AutoSize = true;
-            this.lblRecentPlayerQuickbar5.Location = new System.Drawing.Point(311, 503);
+            this.lblRecentPlayerQuickbar5.Location = new System.Drawing.Point(466, 774);
+            this.lblRecentPlayerQuickbar5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRecentPlayerQuickbar5.Name = "lblRecentPlayerQuickbar5";
-            this.lblRecentPlayerQuickbar5.Size = new System.Drawing.Size(59, 13);
+            this.lblRecentPlayerQuickbar5.Size = new System.Drawing.Size(85, 20);
             this.lblRecentPlayerQuickbar5.TabIndex = 70;
             this.lblRecentPlayerQuickbar5.Text = "Quickbar 5";
             // 
             // lblRecentPlayerQuickbar4
             // 
             this.lblRecentPlayerQuickbar4.AutoSize = true;
-            this.lblRecentPlayerQuickbar4.Location = new System.Drawing.Point(311, 477);
+            this.lblRecentPlayerQuickbar4.Location = new System.Drawing.Point(466, 734);
+            this.lblRecentPlayerQuickbar4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRecentPlayerQuickbar4.Name = "lblRecentPlayerQuickbar4";
-            this.lblRecentPlayerQuickbar4.Size = new System.Drawing.Size(59, 13);
+            this.lblRecentPlayerQuickbar4.Size = new System.Drawing.Size(85, 20);
             this.lblRecentPlayerQuickbar4.TabIndex = 69;
             this.lblRecentPlayerQuickbar4.Text = "Quickbar 4";
             // 
             // lblRecentPlayerQuickbar3
             // 
             this.lblRecentPlayerQuickbar3.AutoSize = true;
-            this.lblRecentPlayerQuickbar3.Location = new System.Drawing.Point(311, 451);
+            this.lblRecentPlayerQuickbar3.Location = new System.Drawing.Point(466, 694);
+            this.lblRecentPlayerQuickbar3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRecentPlayerQuickbar3.Name = "lblRecentPlayerQuickbar3";
-            this.lblRecentPlayerQuickbar3.Size = new System.Drawing.Size(59, 13);
+            this.lblRecentPlayerQuickbar3.Size = new System.Drawing.Size(85, 20);
             this.lblRecentPlayerQuickbar3.TabIndex = 68;
             this.lblRecentPlayerQuickbar3.Text = "Quickbar 3";
             // 
             // lblRecentPlayerQuickbar2
             // 
             this.lblRecentPlayerQuickbar2.AutoSize = true;
-            this.lblRecentPlayerQuickbar2.Location = new System.Drawing.Point(311, 425);
+            this.lblRecentPlayerQuickbar2.Location = new System.Drawing.Point(466, 654);
+            this.lblRecentPlayerQuickbar2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRecentPlayerQuickbar2.Name = "lblRecentPlayerQuickbar2";
-            this.lblRecentPlayerQuickbar2.Size = new System.Drawing.Size(59, 13);
+            this.lblRecentPlayerQuickbar2.Size = new System.Drawing.Size(85, 20);
             this.lblRecentPlayerQuickbar2.TabIndex = 67;
             this.lblRecentPlayerQuickbar2.Text = "Quickbar 2";
             // 
             // lblRecentPlayerQuickbar1
             // 
             this.lblRecentPlayerQuickbar1.AutoSize = true;
-            this.lblRecentPlayerQuickbar1.Location = new System.Drawing.Point(311, 399);
+            this.lblRecentPlayerQuickbar1.Location = new System.Drawing.Point(466, 614);
+            this.lblRecentPlayerQuickbar1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRecentPlayerQuickbar1.Name = "lblRecentPlayerQuickbar1";
-            this.lblRecentPlayerQuickbar1.Size = new System.Drawing.Size(59, 13);
+            this.lblRecentPlayerQuickbar1.Size = new System.Drawing.Size(85, 20);
             this.lblRecentPlayerQuickbar1.TabIndex = 66;
             this.lblRecentPlayerQuickbar1.Text = "Quickbar 1";
             // 
             // lblRecentPlayerRing2
             // 
             this.lblRecentPlayerRing2.AutoSize = true;
-            this.lblRecentPlayerRing2.Location = new System.Drawing.Point(311, 373);
+            this.lblRecentPlayerRing2.Location = new System.Drawing.Point(466, 574);
+            this.lblRecentPlayerRing2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRecentPlayerRing2.Name = "lblRecentPlayerRing2";
-            this.lblRecentPlayerRing2.Size = new System.Drawing.Size(38, 13);
+            this.lblRecentPlayerRing2.Size = new System.Drawing.Size(55, 20);
             this.lblRecentPlayerRing2.TabIndex = 65;
             this.lblRecentPlayerRing2.Text = "Ring 2";
             // 
             // lblRecentPlayerRing1
             // 
             this.lblRecentPlayerRing1.AutoSize = true;
-            this.lblRecentPlayerRing1.Location = new System.Drawing.Point(311, 347);
+            this.lblRecentPlayerRing1.Location = new System.Drawing.Point(466, 534);
+            this.lblRecentPlayerRing1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRecentPlayerRing1.Name = "lblRecentPlayerRing1";
-            this.lblRecentPlayerRing1.Size = new System.Drawing.Size(38, 13);
+            this.lblRecentPlayerRing1.Size = new System.Drawing.Size(55, 20);
             this.lblRecentPlayerRing1.TabIndex = 64;
             this.lblRecentPlayerRing1.Text = "Ring 1";
             // 
             // lblRecentPlayerBolt2
             // 
             this.lblRecentPlayerBolt2.AutoSize = true;
-            this.lblRecentPlayerBolt2.Location = new System.Drawing.Point(311, 217);
+            this.lblRecentPlayerBolt2.Location = new System.Drawing.Point(466, 334);
+            this.lblRecentPlayerBolt2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRecentPlayerBolt2.Name = "lblRecentPlayerBolt2";
-            this.lblRecentPlayerBolt2.Size = new System.Drawing.Size(34, 13);
+            this.lblRecentPlayerBolt2.Size = new System.Drawing.Size(50, 20);
             this.lblRecentPlayerBolt2.TabIndex = 63;
             this.lblRecentPlayerBolt2.Text = "Bolt 2";
             // 
             // lblRecentPlayerBolt1
             // 
             this.lblRecentPlayerBolt1.AutoSize = true;
-            this.lblRecentPlayerBolt1.Location = new System.Drawing.Point(311, 191);
+            this.lblRecentPlayerBolt1.Location = new System.Drawing.Point(466, 294);
+            this.lblRecentPlayerBolt1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRecentPlayerBolt1.Name = "lblRecentPlayerBolt1";
-            this.lblRecentPlayerBolt1.Size = new System.Drawing.Size(34, 13);
+            this.lblRecentPlayerBolt1.Size = new System.Drawing.Size(50, 20);
             this.lblRecentPlayerBolt1.TabIndex = 62;
             this.lblRecentPlayerBolt1.Text = "Bolt 1";
             // 
             // lblRecentPlayerArrow2
             // 
             this.lblRecentPlayerArrow2.AutoSize = true;
-            this.lblRecentPlayerArrow2.Location = new System.Drawing.Point(311, 165);
+            this.lblRecentPlayerArrow2.Location = new System.Drawing.Point(466, 254);
+            this.lblRecentPlayerArrow2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRecentPlayerArrow2.Name = "lblRecentPlayerArrow2";
-            this.lblRecentPlayerArrow2.Size = new System.Drawing.Size(43, 13);
+            this.lblRecentPlayerArrow2.Size = new System.Drawing.Size(63, 20);
             this.lblRecentPlayerArrow2.TabIndex = 61;
             this.lblRecentPlayerArrow2.Text = "Arrow 2";
             // 
             // lblRecentPlayerArrow1
             // 
             this.lblRecentPlayerArrow1.AutoSize = true;
-            this.lblRecentPlayerArrow1.Location = new System.Drawing.Point(311, 139);
+            this.lblRecentPlayerArrow1.Location = new System.Drawing.Point(466, 214);
+            this.lblRecentPlayerArrow1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRecentPlayerArrow1.Name = "lblRecentPlayerArrow1";
-            this.lblRecentPlayerArrow1.Size = new System.Drawing.Size(43, 13);
+            this.lblRecentPlayerArrow1.Size = new System.Drawing.Size(63, 20);
             this.lblRecentPlayerArrow1.TabIndex = 60;
             this.lblRecentPlayerArrow1.Text = "Arrow 1";
             // 
             // lblRecentPlayerLegs
             // 
             this.lblRecentPlayerLegs.AutoSize = true;
-            this.lblRecentPlayerLegs.Location = new System.Drawing.Point(311, 113);
+            this.lblRecentPlayerLegs.Location = new System.Drawing.Point(466, 174);
+            this.lblRecentPlayerLegs.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRecentPlayerLegs.Name = "lblRecentPlayerLegs";
-            this.lblRecentPlayerLegs.Size = new System.Drawing.Size(30, 13);
+            this.lblRecentPlayerLegs.Size = new System.Drawing.Size(44, 20);
             this.lblRecentPlayerLegs.TabIndex = 49;
             this.lblRecentPlayerLegs.Text = "Legs";
             // 
             // lblRecentPlayerLeftWep2
             // 
             this.lblRecentPlayerLeftWep2.AutoSize = true;
-            this.lblRecentPlayerLeftWep2.Location = new System.Drawing.Point(311, 321);
+            this.lblRecentPlayerLeftWep2.Location = new System.Drawing.Point(466, 494);
+            this.lblRecentPlayerLeftWep2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRecentPlayerLeftWep2.Name = "lblRecentPlayerLeftWep2";
-            this.lblRecentPlayerLeftWep2.Size = new System.Drawing.Size(54, 13);
+            this.lblRecentPlayerLeftWep2.Size = new System.Drawing.Size(78, 20);
             this.lblRecentPlayerLeftWep2.TabIndex = 48;
             this.lblRecentPlayerLeftWep2.Text = "L. Hand 2";
             // 
             // lblRecentPlayerLeftWep1
             // 
             this.lblRecentPlayerLeftWep1.AutoSize = true;
-            this.lblRecentPlayerLeftWep1.Location = new System.Drawing.Point(311, 295);
+            this.lblRecentPlayerLeftWep1.Location = new System.Drawing.Point(466, 454);
+            this.lblRecentPlayerLeftWep1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRecentPlayerLeftWep1.Name = "lblRecentPlayerLeftWep1";
-            this.lblRecentPlayerLeftWep1.Size = new System.Drawing.Size(54, 13);
+            this.lblRecentPlayerLeftWep1.Size = new System.Drawing.Size(78, 20);
             this.lblRecentPlayerLeftWep1.TabIndex = 47;
             this.lblRecentPlayerLeftWep1.Text = "L. Hand 1";
             // 
             // lblRecentPlayerRightWep2
             // 
             this.lblRecentPlayerRightWep2.AutoSize = true;
-            this.lblRecentPlayerRightWep2.Location = new System.Drawing.Point(311, 269);
+            this.lblRecentPlayerRightWep2.Location = new System.Drawing.Point(466, 414);
+            this.lblRecentPlayerRightWep2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRecentPlayerRightWep2.Name = "lblRecentPlayerRightWep2";
-            this.lblRecentPlayerRightWep2.Size = new System.Drawing.Size(56, 13);
+            this.lblRecentPlayerRightWep2.Size = new System.Drawing.Size(81, 20);
             this.lblRecentPlayerRightWep2.TabIndex = 46;
             this.lblRecentPlayerRightWep2.Text = "R. Hand 2";
             // 
             // lblRecentPlayerRightWep1
             // 
             this.lblRecentPlayerRightWep1.AutoSize = true;
-            this.lblRecentPlayerRightWep1.Location = new System.Drawing.Point(311, 243);
+            this.lblRecentPlayerRightWep1.Location = new System.Drawing.Point(466, 374);
+            this.lblRecentPlayerRightWep1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRecentPlayerRightWep1.Name = "lblRecentPlayerRightWep1";
-            this.lblRecentPlayerRightWep1.Size = new System.Drawing.Size(56, 13);
+            this.lblRecentPlayerRightWep1.Size = new System.Drawing.Size(81, 20);
             this.lblRecentPlayerRightWep1.TabIndex = 45;
             this.lblRecentPlayerRightWep1.Text = "R. Hand 1";
             // 
             // lblRecentPlayerHands
             // 
             this.lblRecentPlayerHands.AutoSize = true;
-            this.lblRecentPlayerHands.Location = new System.Drawing.Point(311, 87);
+            this.lblRecentPlayerHands.Location = new System.Drawing.Point(466, 134);
+            this.lblRecentPlayerHands.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRecentPlayerHands.Name = "lblRecentPlayerHands";
-            this.lblRecentPlayerHands.Size = new System.Drawing.Size(38, 13);
+            this.lblRecentPlayerHands.Size = new System.Drawing.Size(56, 20);
             this.lblRecentPlayerHands.TabIndex = 39;
             this.lblRecentPlayerHands.Text = "Hands";
             // 
             // lblRecentPlayerChest
             // 
             this.lblRecentPlayerChest.AutoSize = true;
-            this.lblRecentPlayerChest.Location = new System.Drawing.Point(311, 61);
+            this.lblRecentPlayerChest.Location = new System.Drawing.Point(466, 94);
+            this.lblRecentPlayerChest.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRecentPlayerChest.Name = "lblRecentPlayerChest";
-            this.lblRecentPlayerChest.Size = new System.Drawing.Size(34, 13);
+            this.lblRecentPlayerChest.Size = new System.Drawing.Size(51, 20);
             this.lblRecentPlayerChest.TabIndex = 38;
             this.lblRecentPlayerChest.Text = "Chest";
             // 
             // lblRecentPlayerHead
             // 
             this.lblRecentPlayerHead.AutoSize = true;
-            this.lblRecentPlayerHead.Location = new System.Drawing.Point(311, 35);
+            this.lblRecentPlayerHead.Location = new System.Drawing.Point(466, 54);
+            this.lblRecentPlayerHead.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRecentPlayerHead.Name = "lblRecentPlayerHead";
-            this.lblRecentPlayerHead.Size = new System.Drawing.Size(33, 13);
+            this.lblRecentPlayerHead.Size = new System.Drawing.Size(48, 20);
             this.lblRecentPlayerHead.TabIndex = 37;
             this.lblRecentPlayerHead.Text = "Head";
             // 
             // lblRecentPlayerHair
             // 
             this.lblRecentPlayerHair.AutoSize = true;
-            this.lblRecentPlayerHair.Location = new System.Drawing.Point(311, 9);
+            this.lblRecentPlayerHair.Location = new System.Drawing.Point(466, 14);
+            this.lblRecentPlayerHair.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRecentPlayerHair.Name = "lblRecentPlayerHair";
-            this.lblRecentPlayerHair.Size = new System.Drawing.Size(26, 13);
+            this.lblRecentPlayerHair.Size = new System.Drawing.Size(38, 20);
             this.lblRecentPlayerHair.TabIndex = 36;
             this.lblRecentPlayerHair.Text = "Hair";
             // 
             // nupRecentPlayerFaith
             // 
-            this.nupRecentPlayerFaith.Location = new System.Drawing.Point(6, 290);
+            this.nupRecentPlayerFaith.Location = new System.Drawing.Point(9, 446);
+            this.nupRecentPlayerFaith.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nupRecentPlayerFaith.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -4152,7 +4512,7 @@
             -2147483648});
             this.nupRecentPlayerFaith.Name = "nupRecentPlayerFaith";
             this.nupRecentPlayerFaith.ReadOnly = true;
-            this.nupRecentPlayerFaith.Size = new System.Drawing.Size(82, 20);
+            this.nupRecentPlayerFaith.Size = new System.Drawing.Size(123, 26);
             this.nupRecentPlayerFaith.TabIndex = 30;
             this.nupRecentPlayerFaith.Value = new decimal(new int[] {
             1,
@@ -4162,7 +4522,8 @@
             // 
             // nupRecentPlayerHumanity
             // 
-            this.nupRecentPlayerHumanity.Location = new System.Drawing.Point(6, 316);
+            this.nupRecentPlayerHumanity.Location = new System.Drawing.Point(9, 486);
+            this.nupRecentPlayerHumanity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nupRecentPlayerHumanity.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -4175,7 +4536,7 @@
             -2147483648});
             this.nupRecentPlayerHumanity.Name = "nupRecentPlayerHumanity";
             this.nupRecentPlayerHumanity.ReadOnly = true;
-            this.nupRecentPlayerHumanity.Size = new System.Drawing.Size(82, 20);
+            this.nupRecentPlayerHumanity.Size = new System.Drawing.Size(123, 26);
             this.nupRecentPlayerHumanity.TabIndex = 29;
             this.nupRecentPlayerHumanity.Value = new decimal(new int[] {
             1,
@@ -4185,7 +4546,8 @@
             // 
             // nupRecentPlayerResistance
             // 
-            this.nupRecentPlayerResistance.Location = new System.Drawing.Point(6, 238);
+            this.nupRecentPlayerResistance.Location = new System.Drawing.Point(9, 366);
+            this.nupRecentPlayerResistance.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nupRecentPlayerResistance.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -4198,7 +4560,7 @@
             -2147483648});
             this.nupRecentPlayerResistance.Name = "nupRecentPlayerResistance";
             this.nupRecentPlayerResistance.ReadOnly = true;
-            this.nupRecentPlayerResistance.Size = new System.Drawing.Size(82, 20);
+            this.nupRecentPlayerResistance.Size = new System.Drawing.Size(123, 26);
             this.nupRecentPlayerResistance.TabIndex = 28;
             this.nupRecentPlayerResistance.Value = new decimal(new int[] {
             1,
@@ -4208,7 +4570,8 @@
             // 
             // nupRecentPlayerIntelligence
             // 
-            this.nupRecentPlayerIntelligence.Location = new System.Drawing.Point(6, 264);
+            this.nupRecentPlayerIntelligence.Location = new System.Drawing.Point(9, 406);
+            this.nupRecentPlayerIntelligence.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nupRecentPlayerIntelligence.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -4221,7 +4584,7 @@
             -2147483648});
             this.nupRecentPlayerIntelligence.Name = "nupRecentPlayerIntelligence";
             this.nupRecentPlayerIntelligence.ReadOnly = true;
-            this.nupRecentPlayerIntelligence.Size = new System.Drawing.Size(82, 20);
+            this.nupRecentPlayerIntelligence.Size = new System.Drawing.Size(123, 26);
             this.nupRecentPlayerIntelligence.TabIndex = 27;
             this.nupRecentPlayerIntelligence.Value = new decimal(new int[] {
             1,
@@ -4231,7 +4594,8 @@
             // 
             // nupRecentPlayerStrength
             // 
-            this.nupRecentPlayerStrength.Location = new System.Drawing.Point(6, 186);
+            this.nupRecentPlayerStrength.Location = new System.Drawing.Point(9, 286);
+            this.nupRecentPlayerStrength.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nupRecentPlayerStrength.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -4244,7 +4608,7 @@
             -2147483648});
             this.nupRecentPlayerStrength.Name = "nupRecentPlayerStrength";
             this.nupRecentPlayerStrength.ReadOnly = true;
-            this.nupRecentPlayerStrength.Size = new System.Drawing.Size(82, 20);
+            this.nupRecentPlayerStrength.Size = new System.Drawing.Size(123, 26);
             this.nupRecentPlayerStrength.TabIndex = 26;
             this.nupRecentPlayerStrength.Value = new decimal(new int[] {
             1,
@@ -4254,7 +4618,8 @@
             // 
             // nupRecentPlayerDexterity
             // 
-            this.nupRecentPlayerDexterity.Location = new System.Drawing.Point(6, 212);
+            this.nupRecentPlayerDexterity.Location = new System.Drawing.Point(9, 326);
+            this.nupRecentPlayerDexterity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nupRecentPlayerDexterity.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -4267,7 +4632,7 @@
             -2147483648});
             this.nupRecentPlayerDexterity.Name = "nupRecentPlayerDexterity";
             this.nupRecentPlayerDexterity.ReadOnly = true;
-            this.nupRecentPlayerDexterity.Size = new System.Drawing.Size(82, 20);
+            this.nupRecentPlayerDexterity.Size = new System.Drawing.Size(123, 26);
             this.nupRecentPlayerDexterity.TabIndex = 25;
             this.nupRecentPlayerDexterity.Value = new decimal(new int[] {
             1,
@@ -4277,7 +4642,8 @@
             // 
             // nupRecentPlayerVitality
             // 
-            this.nupRecentPlayerVitality.Location = new System.Drawing.Point(6, 108);
+            this.nupRecentPlayerVitality.Location = new System.Drawing.Point(9, 166);
+            this.nupRecentPlayerVitality.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nupRecentPlayerVitality.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -4290,7 +4656,7 @@
             -2147483648});
             this.nupRecentPlayerVitality.Name = "nupRecentPlayerVitality";
             this.nupRecentPlayerVitality.ReadOnly = true;
-            this.nupRecentPlayerVitality.Size = new System.Drawing.Size(82, 20);
+            this.nupRecentPlayerVitality.Size = new System.Drawing.Size(123, 26);
             this.nupRecentPlayerVitality.TabIndex = 24;
             this.nupRecentPlayerVitality.Value = new decimal(new int[] {
             1,
@@ -4300,7 +4666,8 @@
             // 
             // nupRecentPlayerAttunement
             // 
-            this.nupRecentPlayerAttunement.Location = new System.Drawing.Point(6, 134);
+            this.nupRecentPlayerAttunement.Location = new System.Drawing.Point(9, 206);
+            this.nupRecentPlayerAttunement.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nupRecentPlayerAttunement.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -4313,7 +4680,7 @@
             -2147483648});
             this.nupRecentPlayerAttunement.Name = "nupRecentPlayerAttunement";
             this.nupRecentPlayerAttunement.ReadOnly = true;
-            this.nupRecentPlayerAttunement.Size = new System.Drawing.Size(82, 20);
+            this.nupRecentPlayerAttunement.Size = new System.Drawing.Size(123, 26);
             this.nupRecentPlayerAttunement.TabIndex = 23;
             this.nupRecentPlayerAttunement.Value = new decimal(new int[] {
             1,
@@ -4323,7 +4690,8 @@
             // 
             // nupRecentPlayerEndurance
             // 
-            this.nupRecentPlayerEndurance.Location = new System.Drawing.Point(6, 160);
+            this.nupRecentPlayerEndurance.Location = new System.Drawing.Point(9, 246);
+            this.nupRecentPlayerEndurance.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nupRecentPlayerEndurance.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -4336,7 +4704,7 @@
             -2147483648});
             this.nupRecentPlayerEndurance.Name = "nupRecentPlayerEndurance";
             this.nupRecentPlayerEndurance.ReadOnly = true;
-            this.nupRecentPlayerEndurance.Size = new System.Drawing.Size(82, 20);
+            this.nupRecentPlayerEndurance.Size = new System.Drawing.Size(123, 26);
             this.nupRecentPlayerEndurance.TabIndex = 22;
             this.nupRecentPlayerEndurance.Value = new decimal(new int[] {
             1,
@@ -4346,7 +4714,8 @@
             // 
             // nupRecentPlayerSoulLevel
             // 
-            this.nupRecentPlayerSoulLevel.Location = new System.Drawing.Point(6, 82);
+            this.nupRecentPlayerSoulLevel.Location = new System.Drawing.Point(9, 126);
+            this.nupRecentPlayerSoulLevel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nupRecentPlayerSoulLevel.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -4359,7 +4728,7 @@
             -2147483648});
             this.nupRecentPlayerSoulLevel.Name = "nupRecentPlayerSoulLevel";
             this.nupRecentPlayerSoulLevel.ReadOnly = true;
-            this.nupRecentPlayerSoulLevel.Size = new System.Drawing.Size(82, 20);
+            this.nupRecentPlayerSoulLevel.Size = new System.Drawing.Size(123, 26);
             this.nupRecentPlayerSoulLevel.TabIndex = 21;
             this.nupRecentPlayerSoulLevel.Value = new decimal(new int[] {
             1,
@@ -4370,99 +4739,111 @@
             // lblRecentPlayerHumanity
             // 
             this.lblRecentPlayerHumanity.AutoSize = true;
-            this.lblRecentPlayerHumanity.Location = new System.Drawing.Point(94, 318);
+            this.lblRecentPlayerHumanity.Location = new System.Drawing.Point(141, 489);
+            this.lblRecentPlayerHumanity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRecentPlayerHumanity.Name = "lblRecentPlayerHumanity";
-            this.lblRecentPlayerHumanity.Size = new System.Drawing.Size(51, 13);
+            this.lblRecentPlayerHumanity.Size = new System.Drawing.Size(76, 20);
             this.lblRecentPlayerHumanity.TabIndex = 20;
             this.lblRecentPlayerHumanity.Text = "Humanity";
             // 
             // lblRecentPlayerFaith
             // 
             this.lblRecentPlayerFaith.AutoSize = true;
-            this.lblRecentPlayerFaith.Location = new System.Drawing.Point(94, 292);
+            this.lblRecentPlayerFaith.Location = new System.Drawing.Point(141, 449);
+            this.lblRecentPlayerFaith.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRecentPlayerFaith.Name = "lblRecentPlayerFaith";
-            this.lblRecentPlayerFaith.Size = new System.Drawing.Size(30, 13);
+            this.lblRecentPlayerFaith.Size = new System.Drawing.Size(45, 20);
             this.lblRecentPlayerFaith.TabIndex = 18;
             this.lblRecentPlayerFaith.Text = "Faith";
             // 
             // lblRecentPlayerIntelligence
             // 
             this.lblRecentPlayerIntelligence.AutoSize = true;
-            this.lblRecentPlayerIntelligence.Location = new System.Drawing.Point(94, 266);
+            this.lblRecentPlayerIntelligence.Location = new System.Drawing.Point(141, 409);
+            this.lblRecentPlayerIntelligence.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRecentPlayerIntelligence.Name = "lblRecentPlayerIntelligence";
-            this.lblRecentPlayerIntelligence.Size = new System.Drawing.Size(61, 13);
+            this.lblRecentPlayerIntelligence.Size = new System.Drawing.Size(90, 20);
             this.lblRecentPlayerIntelligence.TabIndex = 16;
             this.lblRecentPlayerIntelligence.Text = "Intelligence";
             // 
             // lblRecentPlayerResistance
             // 
             this.lblRecentPlayerResistance.AutoSize = true;
-            this.lblRecentPlayerResistance.Location = new System.Drawing.Point(94, 240);
+            this.lblRecentPlayerResistance.Location = new System.Drawing.Point(141, 369);
+            this.lblRecentPlayerResistance.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRecentPlayerResistance.Name = "lblRecentPlayerResistance";
-            this.lblRecentPlayerResistance.Size = new System.Drawing.Size(60, 13);
+            this.lblRecentPlayerResistance.Size = new System.Drawing.Size(89, 20);
             this.lblRecentPlayerResistance.TabIndex = 14;
             this.lblRecentPlayerResistance.Text = "Resistance";
             // 
             // lblRecentPlayerDexterity
             // 
             this.lblRecentPlayerDexterity.AutoSize = true;
-            this.lblRecentPlayerDexterity.Location = new System.Drawing.Point(94, 214);
+            this.lblRecentPlayerDexterity.Location = new System.Drawing.Point(141, 329);
+            this.lblRecentPlayerDexterity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRecentPlayerDexterity.Name = "lblRecentPlayerDexterity";
-            this.lblRecentPlayerDexterity.Size = new System.Drawing.Size(48, 13);
+            this.lblRecentPlayerDexterity.Size = new System.Drawing.Size(71, 20);
             this.lblRecentPlayerDexterity.TabIndex = 12;
             this.lblRecentPlayerDexterity.Text = "Dexterity";
             // 
             // lblRecentPlayerStrength
             // 
             this.lblRecentPlayerStrength.AutoSize = true;
-            this.lblRecentPlayerStrength.Location = new System.Drawing.Point(94, 188);
+            this.lblRecentPlayerStrength.Location = new System.Drawing.Point(141, 289);
+            this.lblRecentPlayerStrength.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRecentPlayerStrength.Name = "lblRecentPlayerStrength";
-            this.lblRecentPlayerStrength.Size = new System.Drawing.Size(47, 13);
+            this.lblRecentPlayerStrength.Size = new System.Drawing.Size(71, 20);
             this.lblRecentPlayerStrength.TabIndex = 10;
             this.lblRecentPlayerStrength.Text = "Strength";
             // 
             // lblRecentPlayerEndurance
             // 
             this.lblRecentPlayerEndurance.AutoSize = true;
-            this.lblRecentPlayerEndurance.Location = new System.Drawing.Point(94, 162);
+            this.lblRecentPlayerEndurance.Location = new System.Drawing.Point(141, 249);
+            this.lblRecentPlayerEndurance.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRecentPlayerEndurance.Name = "lblRecentPlayerEndurance";
-            this.lblRecentPlayerEndurance.Size = new System.Drawing.Size(59, 13);
+            this.lblRecentPlayerEndurance.Size = new System.Drawing.Size(87, 20);
             this.lblRecentPlayerEndurance.TabIndex = 8;
             this.lblRecentPlayerEndurance.Text = "Endurance";
             // 
             // lblRecentPlayerAttunement
             // 
             this.lblRecentPlayerAttunement.AutoSize = true;
-            this.lblRecentPlayerAttunement.Location = new System.Drawing.Point(94, 136);
+            this.lblRecentPlayerAttunement.Location = new System.Drawing.Point(141, 209);
+            this.lblRecentPlayerAttunement.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRecentPlayerAttunement.Name = "lblRecentPlayerAttunement";
-            this.lblRecentPlayerAttunement.Size = new System.Drawing.Size(61, 13);
+            this.lblRecentPlayerAttunement.Size = new System.Drawing.Size(93, 20);
             this.lblRecentPlayerAttunement.TabIndex = 6;
             this.lblRecentPlayerAttunement.Text = "Attunement";
             // 
             // lblRecentPlayerVitality
             // 
             this.lblRecentPlayerVitality.AutoSize = true;
-            this.lblRecentPlayerVitality.Location = new System.Drawing.Point(94, 110);
+            this.lblRecentPlayerVitality.Location = new System.Drawing.Point(141, 169);
+            this.lblRecentPlayerVitality.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRecentPlayerVitality.Name = "lblRecentPlayerVitality";
-            this.lblRecentPlayerVitality.Size = new System.Drawing.Size(37, 13);
+            this.lblRecentPlayerVitality.Size = new System.Drawing.Size(55, 20);
             this.lblRecentPlayerVitality.TabIndex = 4;
             this.lblRecentPlayerVitality.Text = "Vitality";
             // 
             // lblRecentPlayerSoulLevel
             // 
             this.lblRecentPlayerSoulLevel.AutoSize = true;
-            this.lblRecentPlayerSoulLevel.Location = new System.Drawing.Point(94, 84);
+            this.lblRecentPlayerSoulLevel.Location = new System.Drawing.Point(141, 129);
+            this.lblRecentPlayerSoulLevel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRecentPlayerSoulLevel.Name = "lblRecentPlayerSoulLevel";
-            this.lblRecentPlayerSoulLevel.Size = new System.Drawing.Size(57, 13);
+            this.lblRecentPlayerSoulLevel.Size = new System.Drawing.Size(82, 20);
             this.lblRecentPlayerSoulLevel.TabIndex = 2;
             this.lblRecentPlayerSoulLevel.Text = "Soul Level";
             // 
             // lbxNetRecentPlayers
             // 
             this.lbxNetRecentPlayers.FormattingEnabled = true;
-            this.lbxNetRecentPlayers.Location = new System.Drawing.Point(6, 6);
+            this.lbxNetRecentPlayers.ItemHeight = 20;
+            this.lbxNetRecentPlayers.Location = new System.Drawing.Point(9, 9);
+            this.lbxNetRecentPlayers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbxNetRecentPlayers.Name = "lbxNetRecentPlayers";
-            this.lbxNetRecentPlayers.Size = new System.Drawing.Size(158, 69);
+            this.lbxNetRecentPlayers.Size = new System.Drawing.Size(235, 104);
             this.lbxNetRecentPlayers.TabIndex = 0;
             // 
             // tpgNetCurrentPlayers
@@ -4539,357 +4920,399 @@
             this.tpgNetCurrentPlayers.Controls.Add(this.lblCurrentPlayerVitality);
             this.tpgNetCurrentPlayers.Controls.Add(this.lblCurrentPlayerSoulLevel);
             this.tpgNetCurrentPlayers.Controls.Add(this.lbxNetCurrentPlayers);
-            this.tpgNetCurrentPlayers.Location = new System.Drawing.Point(4, 22);
+            this.tpgNetCurrentPlayers.Location = new System.Drawing.Point(4, 29);
+            this.tpgNetCurrentPlayers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tpgNetCurrentPlayers.Name = "tpgNetCurrentPlayers";
-            this.tpgNetCurrentPlayers.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgNetCurrentPlayers.Size = new System.Drawing.Size(376, 541);
+            this.tpgNetCurrentPlayers.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tpgNetCurrentPlayers.Size = new System.Drawing.Size(568, 839);
             this.tpgNetCurrentPlayers.TabIndex = 1;
             this.tpgNetCurrentPlayers.Text = "Current Players";
             this.tpgNetCurrentPlayers.UseVisualStyleBackColor = true;
             // 
             // txtCurrentPlayerQuickbar5
             // 
-            this.txtCurrentPlayerQuickbar5.Location = new System.Drawing.Point(170, 500);
+            this.txtCurrentPlayerQuickbar5.Location = new System.Drawing.Point(255, 769);
+            this.txtCurrentPlayerQuickbar5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCurrentPlayerQuickbar5.Name = "txtCurrentPlayerQuickbar5";
             this.txtCurrentPlayerQuickbar5.ReadOnly = true;
-            this.txtCurrentPlayerQuickbar5.Size = new System.Drawing.Size(135, 20);
+            this.txtCurrentPlayerQuickbar5.Size = new System.Drawing.Size(200, 26);
             this.txtCurrentPlayerQuickbar5.TabIndex = 134;
             // 
             // txtCurrentPlayerQuickbar4
             // 
-            this.txtCurrentPlayerQuickbar4.Location = new System.Drawing.Point(170, 474);
+            this.txtCurrentPlayerQuickbar4.Location = new System.Drawing.Point(255, 729);
+            this.txtCurrentPlayerQuickbar4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCurrentPlayerQuickbar4.Name = "txtCurrentPlayerQuickbar4";
             this.txtCurrentPlayerQuickbar4.ReadOnly = true;
-            this.txtCurrentPlayerQuickbar4.Size = new System.Drawing.Size(135, 20);
+            this.txtCurrentPlayerQuickbar4.Size = new System.Drawing.Size(200, 26);
             this.txtCurrentPlayerQuickbar4.TabIndex = 133;
             // 
             // txtCurrentPlayerQuickbar1
             // 
-            this.txtCurrentPlayerQuickbar1.Location = new System.Drawing.Point(170, 396);
+            this.txtCurrentPlayerQuickbar1.Location = new System.Drawing.Point(255, 609);
+            this.txtCurrentPlayerQuickbar1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCurrentPlayerQuickbar1.Name = "txtCurrentPlayerQuickbar1";
             this.txtCurrentPlayerQuickbar1.ReadOnly = true;
-            this.txtCurrentPlayerQuickbar1.Size = new System.Drawing.Size(135, 20);
+            this.txtCurrentPlayerQuickbar1.Size = new System.Drawing.Size(200, 26);
             this.txtCurrentPlayerQuickbar1.TabIndex = 132;
             // 
             // txtCurrentPlayerQuickbar2
             // 
-            this.txtCurrentPlayerQuickbar2.Location = new System.Drawing.Point(170, 422);
+            this.txtCurrentPlayerQuickbar2.Location = new System.Drawing.Point(255, 649);
+            this.txtCurrentPlayerQuickbar2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCurrentPlayerQuickbar2.Name = "txtCurrentPlayerQuickbar2";
             this.txtCurrentPlayerQuickbar2.ReadOnly = true;
-            this.txtCurrentPlayerQuickbar2.Size = new System.Drawing.Size(135, 20);
+            this.txtCurrentPlayerQuickbar2.Size = new System.Drawing.Size(200, 26);
             this.txtCurrentPlayerQuickbar2.TabIndex = 131;
             // 
             // txtCurrentPlayerQuickbar3
             // 
-            this.txtCurrentPlayerQuickbar3.Location = new System.Drawing.Point(170, 448);
+            this.txtCurrentPlayerQuickbar3.Location = new System.Drawing.Point(255, 689);
+            this.txtCurrentPlayerQuickbar3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCurrentPlayerQuickbar3.Name = "txtCurrentPlayerQuickbar3";
             this.txtCurrentPlayerQuickbar3.ReadOnly = true;
-            this.txtCurrentPlayerQuickbar3.Size = new System.Drawing.Size(135, 20);
+            this.txtCurrentPlayerQuickbar3.Size = new System.Drawing.Size(200, 26);
             this.txtCurrentPlayerQuickbar3.TabIndex = 130;
             // 
             // txtCurrentPlayerRing2
             // 
-            this.txtCurrentPlayerRing2.Location = new System.Drawing.Point(170, 370);
+            this.txtCurrentPlayerRing2.Location = new System.Drawing.Point(255, 569);
+            this.txtCurrentPlayerRing2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCurrentPlayerRing2.Name = "txtCurrentPlayerRing2";
             this.txtCurrentPlayerRing2.ReadOnly = true;
-            this.txtCurrentPlayerRing2.Size = new System.Drawing.Size(135, 20);
+            this.txtCurrentPlayerRing2.Size = new System.Drawing.Size(200, 26);
             this.txtCurrentPlayerRing2.TabIndex = 129;
             // 
             // txtCurrentPlayerRing1
             // 
-            this.txtCurrentPlayerRing1.Location = new System.Drawing.Point(170, 344);
+            this.txtCurrentPlayerRing1.Location = new System.Drawing.Point(255, 529);
+            this.txtCurrentPlayerRing1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCurrentPlayerRing1.Name = "txtCurrentPlayerRing1";
             this.txtCurrentPlayerRing1.ReadOnly = true;
-            this.txtCurrentPlayerRing1.Size = new System.Drawing.Size(135, 20);
+            this.txtCurrentPlayerRing1.Size = new System.Drawing.Size(200, 26);
             this.txtCurrentPlayerRing1.TabIndex = 128;
             // 
             // txtCurrentPlayerRightWep2
             // 
-            this.txtCurrentPlayerRightWep2.Location = new System.Drawing.Point(170, 266);
+            this.txtCurrentPlayerRightWep2.Location = new System.Drawing.Point(255, 409);
+            this.txtCurrentPlayerRightWep2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCurrentPlayerRightWep2.Name = "txtCurrentPlayerRightWep2";
             this.txtCurrentPlayerRightWep2.ReadOnly = true;
-            this.txtCurrentPlayerRightWep2.Size = new System.Drawing.Size(135, 20);
+            this.txtCurrentPlayerRightWep2.Size = new System.Drawing.Size(200, 26);
             this.txtCurrentPlayerRightWep2.TabIndex = 127;
             // 
             // txtCurrentPlayerLeftWep1
             // 
-            this.txtCurrentPlayerLeftWep1.Location = new System.Drawing.Point(170, 292);
+            this.txtCurrentPlayerLeftWep1.Location = new System.Drawing.Point(255, 449);
+            this.txtCurrentPlayerLeftWep1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCurrentPlayerLeftWep1.Name = "txtCurrentPlayerLeftWep1";
             this.txtCurrentPlayerLeftWep1.ReadOnly = true;
-            this.txtCurrentPlayerLeftWep1.Size = new System.Drawing.Size(135, 20);
+            this.txtCurrentPlayerLeftWep1.Size = new System.Drawing.Size(200, 26);
             this.txtCurrentPlayerLeftWep1.TabIndex = 126;
             // 
             // txtCurrentPlayerLeftWep2
             // 
-            this.txtCurrentPlayerLeftWep2.Location = new System.Drawing.Point(170, 318);
+            this.txtCurrentPlayerLeftWep2.Location = new System.Drawing.Point(255, 489);
+            this.txtCurrentPlayerLeftWep2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCurrentPlayerLeftWep2.Name = "txtCurrentPlayerLeftWep2";
             this.txtCurrentPlayerLeftWep2.ReadOnly = true;
-            this.txtCurrentPlayerLeftWep2.Size = new System.Drawing.Size(135, 20);
+            this.txtCurrentPlayerLeftWep2.Size = new System.Drawing.Size(200, 26);
             this.txtCurrentPlayerLeftWep2.TabIndex = 125;
             // 
             // txtCurrentPlayerRightWep1
             // 
-            this.txtCurrentPlayerRightWep1.Location = new System.Drawing.Point(170, 240);
+            this.txtCurrentPlayerRightWep1.Location = new System.Drawing.Point(255, 369);
+            this.txtCurrentPlayerRightWep1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCurrentPlayerRightWep1.Name = "txtCurrentPlayerRightWep1";
             this.txtCurrentPlayerRightWep1.ReadOnly = true;
-            this.txtCurrentPlayerRightWep1.Size = new System.Drawing.Size(135, 20);
+            this.txtCurrentPlayerRightWep1.Size = new System.Drawing.Size(200, 26);
             this.txtCurrentPlayerRightWep1.TabIndex = 124;
             // 
             // txtCurrentPlayerBolt2
             // 
-            this.txtCurrentPlayerBolt2.Location = new System.Drawing.Point(170, 214);
+            this.txtCurrentPlayerBolt2.Location = new System.Drawing.Point(255, 329);
+            this.txtCurrentPlayerBolt2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCurrentPlayerBolt2.Name = "txtCurrentPlayerBolt2";
             this.txtCurrentPlayerBolt2.ReadOnly = true;
-            this.txtCurrentPlayerBolt2.Size = new System.Drawing.Size(135, 20);
+            this.txtCurrentPlayerBolt2.Size = new System.Drawing.Size(200, 26);
             this.txtCurrentPlayerBolt2.TabIndex = 123;
             // 
             // txtCurrentPlayerArrow1
             // 
-            this.txtCurrentPlayerArrow1.Location = new System.Drawing.Point(170, 136);
+            this.txtCurrentPlayerArrow1.Location = new System.Drawing.Point(255, 209);
+            this.txtCurrentPlayerArrow1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCurrentPlayerArrow1.Name = "txtCurrentPlayerArrow1";
             this.txtCurrentPlayerArrow1.ReadOnly = true;
-            this.txtCurrentPlayerArrow1.Size = new System.Drawing.Size(135, 20);
+            this.txtCurrentPlayerArrow1.Size = new System.Drawing.Size(200, 26);
             this.txtCurrentPlayerArrow1.TabIndex = 122;
             // 
             // txtCurrentPlayerArrow2
             // 
-            this.txtCurrentPlayerArrow2.Location = new System.Drawing.Point(170, 162);
+            this.txtCurrentPlayerArrow2.Location = new System.Drawing.Point(255, 249);
+            this.txtCurrentPlayerArrow2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCurrentPlayerArrow2.Name = "txtCurrentPlayerArrow2";
             this.txtCurrentPlayerArrow2.ReadOnly = true;
-            this.txtCurrentPlayerArrow2.Size = new System.Drawing.Size(135, 20);
+            this.txtCurrentPlayerArrow2.Size = new System.Drawing.Size(200, 26);
             this.txtCurrentPlayerArrow2.TabIndex = 121;
             // 
             // txtCurrentPlayerBolt1
             // 
-            this.txtCurrentPlayerBolt1.Location = new System.Drawing.Point(170, 188);
+            this.txtCurrentPlayerBolt1.Location = new System.Drawing.Point(255, 289);
+            this.txtCurrentPlayerBolt1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCurrentPlayerBolt1.Name = "txtCurrentPlayerBolt1";
             this.txtCurrentPlayerBolt1.ReadOnly = true;
-            this.txtCurrentPlayerBolt1.Size = new System.Drawing.Size(135, 20);
+            this.txtCurrentPlayerBolt1.Size = new System.Drawing.Size(200, 26);
             this.txtCurrentPlayerBolt1.TabIndex = 120;
             // 
             // txtCurrentPlayerLegs
             // 
-            this.txtCurrentPlayerLegs.Location = new System.Drawing.Point(170, 110);
+            this.txtCurrentPlayerLegs.Location = new System.Drawing.Point(255, 169);
+            this.txtCurrentPlayerLegs.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCurrentPlayerLegs.Name = "txtCurrentPlayerLegs";
             this.txtCurrentPlayerLegs.ReadOnly = true;
-            this.txtCurrentPlayerLegs.Size = new System.Drawing.Size(135, 20);
+            this.txtCurrentPlayerLegs.Size = new System.Drawing.Size(200, 26);
             this.txtCurrentPlayerLegs.TabIndex = 119;
             // 
             // txtCurrentPlayerHands
             // 
-            this.txtCurrentPlayerHands.Location = new System.Drawing.Point(170, 84);
+            this.txtCurrentPlayerHands.Location = new System.Drawing.Point(255, 129);
+            this.txtCurrentPlayerHands.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCurrentPlayerHands.Name = "txtCurrentPlayerHands";
             this.txtCurrentPlayerHands.ReadOnly = true;
-            this.txtCurrentPlayerHands.Size = new System.Drawing.Size(135, 20);
+            this.txtCurrentPlayerHands.Size = new System.Drawing.Size(200, 26);
             this.txtCurrentPlayerHands.TabIndex = 118;
             // 
             // txtCurrentPlayerHair
             // 
-            this.txtCurrentPlayerHair.Location = new System.Drawing.Point(170, 6);
+            this.txtCurrentPlayerHair.Location = new System.Drawing.Point(255, 9);
+            this.txtCurrentPlayerHair.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCurrentPlayerHair.Name = "txtCurrentPlayerHair";
             this.txtCurrentPlayerHair.ReadOnly = true;
-            this.txtCurrentPlayerHair.Size = new System.Drawing.Size(135, 20);
+            this.txtCurrentPlayerHair.Size = new System.Drawing.Size(200, 26);
             this.txtCurrentPlayerHair.TabIndex = 117;
             // 
             // txtCurrentPlayerHead
             // 
-            this.txtCurrentPlayerHead.Location = new System.Drawing.Point(170, 32);
+            this.txtCurrentPlayerHead.Location = new System.Drawing.Point(255, 49);
+            this.txtCurrentPlayerHead.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCurrentPlayerHead.Name = "txtCurrentPlayerHead";
             this.txtCurrentPlayerHead.ReadOnly = true;
-            this.txtCurrentPlayerHead.Size = new System.Drawing.Size(135, 20);
+            this.txtCurrentPlayerHead.Size = new System.Drawing.Size(200, 26);
             this.txtCurrentPlayerHead.TabIndex = 116;
             // 
             // txtCurrentPlayerChest
             // 
-            this.txtCurrentPlayerChest.Location = new System.Drawing.Point(170, 58);
+            this.txtCurrentPlayerChest.Location = new System.Drawing.Point(255, 89);
+            this.txtCurrentPlayerChest.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCurrentPlayerChest.Name = "txtCurrentPlayerChest";
             this.txtCurrentPlayerChest.ReadOnly = true;
-            this.txtCurrentPlayerChest.Size = new System.Drawing.Size(135, 20);
+            this.txtCurrentPlayerChest.Size = new System.Drawing.Size(200, 26);
             this.txtCurrentPlayerChest.TabIndex = 115;
             // 
             // lblCurrentPlayerQuickbar5
             // 
             this.lblCurrentPlayerQuickbar5.AutoSize = true;
-            this.lblCurrentPlayerQuickbar5.Location = new System.Drawing.Point(311, 503);
+            this.lblCurrentPlayerQuickbar5.Location = new System.Drawing.Point(466, 774);
+            this.lblCurrentPlayerQuickbar5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentPlayerQuickbar5.Name = "lblCurrentPlayerQuickbar5";
-            this.lblCurrentPlayerQuickbar5.Size = new System.Drawing.Size(59, 13);
+            this.lblCurrentPlayerQuickbar5.Size = new System.Drawing.Size(85, 20);
             this.lblCurrentPlayerQuickbar5.TabIndex = 114;
             this.lblCurrentPlayerQuickbar5.Text = "Quickbar 5";
             // 
             // lblCurrentPlayerQuickbar4
             // 
             this.lblCurrentPlayerQuickbar4.AutoSize = true;
-            this.lblCurrentPlayerQuickbar4.Location = new System.Drawing.Point(311, 477);
+            this.lblCurrentPlayerQuickbar4.Location = new System.Drawing.Point(466, 734);
+            this.lblCurrentPlayerQuickbar4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentPlayerQuickbar4.Name = "lblCurrentPlayerQuickbar4";
-            this.lblCurrentPlayerQuickbar4.Size = new System.Drawing.Size(59, 13);
+            this.lblCurrentPlayerQuickbar4.Size = new System.Drawing.Size(85, 20);
             this.lblCurrentPlayerQuickbar4.TabIndex = 113;
             this.lblCurrentPlayerQuickbar4.Text = "Quickbar 4";
             // 
             // lblCurrentPlayerQuickbar3
             // 
             this.lblCurrentPlayerQuickbar3.AutoSize = true;
-            this.lblCurrentPlayerQuickbar3.Location = new System.Drawing.Point(311, 451);
+            this.lblCurrentPlayerQuickbar3.Location = new System.Drawing.Point(466, 694);
+            this.lblCurrentPlayerQuickbar3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentPlayerQuickbar3.Name = "lblCurrentPlayerQuickbar3";
-            this.lblCurrentPlayerQuickbar3.Size = new System.Drawing.Size(59, 13);
+            this.lblCurrentPlayerQuickbar3.Size = new System.Drawing.Size(85, 20);
             this.lblCurrentPlayerQuickbar3.TabIndex = 112;
             this.lblCurrentPlayerQuickbar3.Text = "Quickbar 3";
             // 
             // lblCurrentPlayerQuickbar2
             // 
             this.lblCurrentPlayerQuickbar2.AutoSize = true;
-            this.lblCurrentPlayerQuickbar2.Location = new System.Drawing.Point(311, 425);
+            this.lblCurrentPlayerQuickbar2.Location = new System.Drawing.Point(466, 654);
+            this.lblCurrentPlayerQuickbar2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentPlayerQuickbar2.Name = "lblCurrentPlayerQuickbar2";
-            this.lblCurrentPlayerQuickbar2.Size = new System.Drawing.Size(59, 13);
+            this.lblCurrentPlayerQuickbar2.Size = new System.Drawing.Size(85, 20);
             this.lblCurrentPlayerQuickbar2.TabIndex = 111;
             this.lblCurrentPlayerQuickbar2.Text = "Quickbar 2";
             // 
             // lblCurrentPlayerQuickbar1
             // 
             this.lblCurrentPlayerQuickbar1.AutoSize = true;
-            this.lblCurrentPlayerQuickbar1.Location = new System.Drawing.Point(311, 399);
+            this.lblCurrentPlayerQuickbar1.Location = new System.Drawing.Point(466, 614);
+            this.lblCurrentPlayerQuickbar1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentPlayerQuickbar1.Name = "lblCurrentPlayerQuickbar1";
-            this.lblCurrentPlayerQuickbar1.Size = new System.Drawing.Size(59, 13);
+            this.lblCurrentPlayerQuickbar1.Size = new System.Drawing.Size(85, 20);
             this.lblCurrentPlayerQuickbar1.TabIndex = 110;
             this.lblCurrentPlayerQuickbar1.Text = "Quickbar 1";
             // 
             // lblCurrentPlayer2
             // 
             this.lblCurrentPlayer2.AutoSize = true;
-            this.lblCurrentPlayer2.Location = new System.Drawing.Point(311, 373);
+            this.lblCurrentPlayer2.Location = new System.Drawing.Point(466, 574);
+            this.lblCurrentPlayer2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentPlayer2.Name = "lblCurrentPlayer2";
-            this.lblCurrentPlayer2.Size = new System.Drawing.Size(38, 13);
+            this.lblCurrentPlayer2.Size = new System.Drawing.Size(55, 20);
             this.lblCurrentPlayer2.TabIndex = 109;
             this.lblCurrentPlayer2.Text = "Ring 2";
             // 
             // lblCurrentPlayerRing1
             // 
             this.lblCurrentPlayerRing1.AutoSize = true;
-            this.lblCurrentPlayerRing1.Location = new System.Drawing.Point(311, 347);
+            this.lblCurrentPlayerRing1.Location = new System.Drawing.Point(466, 534);
+            this.lblCurrentPlayerRing1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentPlayerRing1.Name = "lblCurrentPlayerRing1";
-            this.lblCurrentPlayerRing1.Size = new System.Drawing.Size(38, 13);
+            this.lblCurrentPlayerRing1.Size = new System.Drawing.Size(55, 20);
             this.lblCurrentPlayerRing1.TabIndex = 108;
             this.lblCurrentPlayerRing1.Text = "Ring 1";
             // 
             // lblCurrentPlayerBolt2
             // 
             this.lblCurrentPlayerBolt2.AutoSize = true;
-            this.lblCurrentPlayerBolt2.Location = new System.Drawing.Point(311, 217);
+            this.lblCurrentPlayerBolt2.Location = new System.Drawing.Point(466, 334);
+            this.lblCurrentPlayerBolt2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentPlayerBolt2.Name = "lblCurrentPlayerBolt2";
-            this.lblCurrentPlayerBolt2.Size = new System.Drawing.Size(34, 13);
+            this.lblCurrentPlayerBolt2.Size = new System.Drawing.Size(50, 20);
             this.lblCurrentPlayerBolt2.TabIndex = 107;
             this.lblCurrentPlayerBolt2.Text = "Bolt 2";
             // 
             // lblCurrentPlayerBolt1
             // 
             this.lblCurrentPlayerBolt1.AutoSize = true;
-            this.lblCurrentPlayerBolt1.Location = new System.Drawing.Point(311, 191);
+            this.lblCurrentPlayerBolt1.Location = new System.Drawing.Point(466, 294);
+            this.lblCurrentPlayerBolt1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentPlayerBolt1.Name = "lblCurrentPlayerBolt1";
-            this.lblCurrentPlayerBolt1.Size = new System.Drawing.Size(34, 13);
+            this.lblCurrentPlayerBolt1.Size = new System.Drawing.Size(50, 20);
             this.lblCurrentPlayerBolt1.TabIndex = 106;
             this.lblCurrentPlayerBolt1.Text = "Bolt 1";
             // 
             // lblCurrentPlayerArrow2
             // 
             this.lblCurrentPlayerArrow2.AutoSize = true;
-            this.lblCurrentPlayerArrow2.Location = new System.Drawing.Point(311, 165);
+            this.lblCurrentPlayerArrow2.Location = new System.Drawing.Point(466, 254);
+            this.lblCurrentPlayerArrow2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentPlayerArrow2.Name = "lblCurrentPlayerArrow2";
-            this.lblCurrentPlayerArrow2.Size = new System.Drawing.Size(43, 13);
+            this.lblCurrentPlayerArrow2.Size = new System.Drawing.Size(63, 20);
             this.lblCurrentPlayerArrow2.TabIndex = 105;
             this.lblCurrentPlayerArrow2.Text = "Arrow 2";
             // 
             // lblCurrentPlayerArrow1
             // 
             this.lblCurrentPlayerArrow1.AutoSize = true;
-            this.lblCurrentPlayerArrow1.Location = new System.Drawing.Point(311, 139);
+            this.lblCurrentPlayerArrow1.Location = new System.Drawing.Point(466, 214);
+            this.lblCurrentPlayerArrow1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentPlayerArrow1.Name = "lblCurrentPlayerArrow1";
-            this.lblCurrentPlayerArrow1.Size = new System.Drawing.Size(43, 13);
+            this.lblCurrentPlayerArrow1.Size = new System.Drawing.Size(63, 20);
             this.lblCurrentPlayerArrow1.TabIndex = 104;
             this.lblCurrentPlayerArrow1.Text = "Arrow 1";
             // 
             // lblCurrentPlayerLegs
             // 
             this.lblCurrentPlayerLegs.AutoSize = true;
-            this.lblCurrentPlayerLegs.Location = new System.Drawing.Point(311, 113);
+            this.lblCurrentPlayerLegs.Location = new System.Drawing.Point(466, 174);
+            this.lblCurrentPlayerLegs.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentPlayerLegs.Name = "lblCurrentPlayerLegs";
-            this.lblCurrentPlayerLegs.Size = new System.Drawing.Size(30, 13);
+            this.lblCurrentPlayerLegs.Size = new System.Drawing.Size(44, 20);
             this.lblCurrentPlayerLegs.TabIndex = 103;
             this.lblCurrentPlayerLegs.Text = "Legs";
             // 
             // lblCurrentPlayerLeftWep2
             // 
             this.lblCurrentPlayerLeftWep2.AutoSize = true;
-            this.lblCurrentPlayerLeftWep2.Location = new System.Drawing.Point(311, 321);
+            this.lblCurrentPlayerLeftWep2.Location = new System.Drawing.Point(466, 494);
+            this.lblCurrentPlayerLeftWep2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentPlayerLeftWep2.Name = "lblCurrentPlayerLeftWep2";
-            this.lblCurrentPlayerLeftWep2.Size = new System.Drawing.Size(54, 13);
+            this.lblCurrentPlayerLeftWep2.Size = new System.Drawing.Size(78, 20);
             this.lblCurrentPlayerLeftWep2.TabIndex = 102;
             this.lblCurrentPlayerLeftWep2.Text = "L. Hand 2";
             // 
             // lblCurrentPlayerLeftWep1
             // 
             this.lblCurrentPlayerLeftWep1.AutoSize = true;
-            this.lblCurrentPlayerLeftWep1.Location = new System.Drawing.Point(311, 295);
+            this.lblCurrentPlayerLeftWep1.Location = new System.Drawing.Point(466, 454);
+            this.lblCurrentPlayerLeftWep1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentPlayerLeftWep1.Name = "lblCurrentPlayerLeftWep1";
-            this.lblCurrentPlayerLeftWep1.Size = new System.Drawing.Size(54, 13);
+            this.lblCurrentPlayerLeftWep1.Size = new System.Drawing.Size(78, 20);
             this.lblCurrentPlayerLeftWep1.TabIndex = 101;
             this.lblCurrentPlayerLeftWep1.Text = "L. Hand 1";
             // 
             // lblCurrentPlayerRightWep2
             // 
             this.lblCurrentPlayerRightWep2.AutoSize = true;
-            this.lblCurrentPlayerRightWep2.Location = new System.Drawing.Point(311, 269);
+            this.lblCurrentPlayerRightWep2.Location = new System.Drawing.Point(466, 414);
+            this.lblCurrentPlayerRightWep2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentPlayerRightWep2.Name = "lblCurrentPlayerRightWep2";
-            this.lblCurrentPlayerRightWep2.Size = new System.Drawing.Size(56, 13);
+            this.lblCurrentPlayerRightWep2.Size = new System.Drawing.Size(81, 20);
             this.lblCurrentPlayerRightWep2.TabIndex = 100;
             this.lblCurrentPlayerRightWep2.Text = "R. Hand 2";
             // 
             // lblCurrentPlayerRightWep1
             // 
             this.lblCurrentPlayerRightWep1.AutoSize = true;
-            this.lblCurrentPlayerRightWep1.Location = new System.Drawing.Point(311, 243);
+            this.lblCurrentPlayerRightWep1.Location = new System.Drawing.Point(466, 374);
+            this.lblCurrentPlayerRightWep1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentPlayerRightWep1.Name = "lblCurrentPlayerRightWep1";
-            this.lblCurrentPlayerRightWep1.Size = new System.Drawing.Size(56, 13);
+            this.lblCurrentPlayerRightWep1.Size = new System.Drawing.Size(81, 20);
             this.lblCurrentPlayerRightWep1.TabIndex = 99;
             this.lblCurrentPlayerRightWep1.Text = "R. Hand 1";
             // 
             // lblCurrentPlayerHands
             // 
             this.lblCurrentPlayerHands.AutoSize = true;
-            this.lblCurrentPlayerHands.Location = new System.Drawing.Point(311, 87);
+            this.lblCurrentPlayerHands.Location = new System.Drawing.Point(466, 134);
+            this.lblCurrentPlayerHands.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentPlayerHands.Name = "lblCurrentPlayerHands";
-            this.lblCurrentPlayerHands.Size = new System.Drawing.Size(38, 13);
+            this.lblCurrentPlayerHands.Size = new System.Drawing.Size(56, 20);
             this.lblCurrentPlayerHands.TabIndex = 98;
             this.lblCurrentPlayerHands.Text = "Hands";
             // 
             // lblCurrentPlayerChest
             // 
             this.lblCurrentPlayerChest.AutoSize = true;
-            this.lblCurrentPlayerChest.Location = new System.Drawing.Point(311, 61);
+            this.lblCurrentPlayerChest.Location = new System.Drawing.Point(466, 94);
+            this.lblCurrentPlayerChest.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentPlayerChest.Name = "lblCurrentPlayerChest";
-            this.lblCurrentPlayerChest.Size = new System.Drawing.Size(34, 13);
+            this.lblCurrentPlayerChest.Size = new System.Drawing.Size(51, 20);
             this.lblCurrentPlayerChest.TabIndex = 97;
             this.lblCurrentPlayerChest.Text = "Chest";
             // 
             // lblCurrentPlayerHead
             // 
             this.lblCurrentPlayerHead.AutoSize = true;
-            this.lblCurrentPlayerHead.Location = new System.Drawing.Point(311, 35);
+            this.lblCurrentPlayerHead.Location = new System.Drawing.Point(466, 54);
+            this.lblCurrentPlayerHead.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentPlayerHead.Name = "lblCurrentPlayerHead";
-            this.lblCurrentPlayerHead.Size = new System.Drawing.Size(33, 13);
+            this.lblCurrentPlayerHead.Size = new System.Drawing.Size(48, 20);
             this.lblCurrentPlayerHead.TabIndex = 96;
             this.lblCurrentPlayerHead.Text = "Head";
             // 
             // lblCurrentPlayerHair
             // 
             this.lblCurrentPlayerHair.AutoSize = true;
-            this.lblCurrentPlayerHair.Location = new System.Drawing.Point(311, 9);
+            this.lblCurrentPlayerHair.Location = new System.Drawing.Point(466, 14);
+            this.lblCurrentPlayerHair.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentPlayerHair.Name = "lblCurrentPlayerHair";
-            this.lblCurrentPlayerHair.Size = new System.Drawing.Size(26, 13);
+            this.lblCurrentPlayerHair.Size = new System.Drawing.Size(38, 20);
             this.lblCurrentPlayerHair.TabIndex = 95;
             this.lblCurrentPlayerHair.Text = "Hair";
             // 
             // nupCurrentPlayerWeaponMemory
             // 
-            this.nupCurrentPlayerWeaponMemory.Location = new System.Drawing.Point(6, 342);
+            this.nupCurrentPlayerWeaponMemory.Location = new System.Drawing.Point(9, 526);
+            this.nupCurrentPlayerWeaponMemory.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nupCurrentPlayerWeaponMemory.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -4902,7 +5325,7 @@
             -2147483648});
             this.nupCurrentPlayerWeaponMemory.Name = "nupCurrentPlayerWeaponMemory";
             this.nupCurrentPlayerWeaponMemory.ReadOnly = true;
-            this.nupCurrentPlayerWeaponMemory.Size = new System.Drawing.Size(82, 20);
+            this.nupCurrentPlayerWeaponMemory.Size = new System.Drawing.Size(123, 26);
             this.nupCurrentPlayerWeaponMemory.TabIndex = 62;
             this.nupCurrentPlayerWeaponMemory.Value = new decimal(new int[] {
             1,
@@ -4913,17 +5336,19 @@
             // lblCurrentPlayerWeaponMemory
             // 
             this.lblCurrentPlayerWeaponMemory.AutoSize = true;
-            this.lblCurrentPlayerWeaponMemory.Location = new System.Drawing.Point(94, 344);
+            this.lblCurrentPlayerWeaponMemory.Location = new System.Drawing.Point(141, 529);
+            this.lblCurrentPlayerWeaponMemory.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentPlayerWeaponMemory.Name = "lblCurrentPlayerWeaponMemory";
-            this.lblCurrentPlayerWeaponMemory.Size = new System.Drawing.Size(64, 13);
+            this.lblCurrentPlayerWeaponMemory.Size = new System.Drawing.Size(90, 20);
             this.lblCurrentPlayerWeaponMemory.TabIndex = 61;
             this.lblCurrentPlayerWeaponMemory.Text = "Weapon lvl.";
             // 
             // btnCurrentPlayerTeleport
             // 
-            this.btnCurrentPlayerTeleport.Location = new System.Drawing.Point(88, 512);
+            this.btnCurrentPlayerTeleport.Location = new System.Drawing.Point(132, 788);
+            this.btnCurrentPlayerTeleport.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCurrentPlayerTeleport.Name = "btnCurrentPlayerTeleport";
-            this.btnCurrentPlayerTeleport.Size = new System.Drawing.Size(76, 23);
+            this.btnCurrentPlayerTeleport.Size = new System.Drawing.Size(114, 35);
             this.btnCurrentPlayerTeleport.TabIndex = 60;
             this.btnCurrentPlayerTeleport.Text = "Teleport to";
             this.btnCurrentPlayerTeleport.UseVisualStyleBackColor = true;
@@ -4932,9 +5357,10 @@
             // cbxCurrentPlayerCamera
             // 
             this.cbxCurrentPlayerCamera.AutoSize = true;
-            this.cbxCurrentPlayerCamera.Location = new System.Drawing.Point(6, 446);
+            this.cbxCurrentPlayerCamera.Location = new System.Drawing.Point(9, 686);
+            this.cbxCurrentPlayerCamera.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxCurrentPlayerCamera.Name = "cbxCurrentPlayerCamera";
-            this.cbxCurrentPlayerCamera.Size = new System.Drawing.Size(106, 17);
+            this.cbxCurrentPlayerCamera.Size = new System.Drawing.Size(156, 24);
             this.cbxCurrentPlayerCamera.TabIndex = 59;
             this.cbxCurrentPlayerCamera.Text = "Camera to Player";
             this.cbxCurrentPlayerCamera.UseVisualStyleBackColor = true;
@@ -4943,9 +5369,10 @@
             // btnCurrentPlayerFamilyShare
             // 
             this.btnCurrentPlayerFamilyShare.Enabled = false;
-            this.btnCurrentPlayerFamilyShare.Location = new System.Drawing.Point(88, 483);
+            this.btnCurrentPlayerFamilyShare.Location = new System.Drawing.Point(132, 743);
+            this.btnCurrentPlayerFamilyShare.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCurrentPlayerFamilyShare.Name = "btnCurrentPlayerFamilyShare";
-            this.btnCurrentPlayerFamilyShare.Size = new System.Drawing.Size(76, 23);
+            this.btnCurrentPlayerFamilyShare.Size = new System.Drawing.Size(114, 35);
             this.btnCurrentPlayerFamilyShare.TabIndex = 58;
             this.btnCurrentPlayerFamilyShare.Text = "Family Share";
             this.btnCurrentPlayerFamilyShare.UseVisualStyleBackColor = true;
@@ -4953,52 +5380,58 @@
             // 
             // btnCurrentPlayerMore
             // 
-            this.btnCurrentPlayerMore.Location = new System.Drawing.Point(6, 483);
+            this.btnCurrentPlayerMore.Location = new System.Drawing.Point(9, 743);
+            this.btnCurrentPlayerMore.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCurrentPlayerMore.Name = "btnCurrentPlayerMore";
-            this.btnCurrentPlayerMore.Size = new System.Drawing.Size(76, 23);
+            this.btnCurrentPlayerMore.Size = new System.Drawing.Size(114, 35);
             this.btnCurrentPlayerMore.TabIndex = 57;
             this.btnCurrentPlayerMore.Text = "More Info";
             this.btnCurrentPlayerMore.UseVisualStyleBackColor = true;
             // 
             // txtCurrentPlayerSteamName
             // 
-            this.txtCurrentPlayerSteamName.Location = new System.Drawing.Point(6, 420);
+            this.txtCurrentPlayerSteamName.Location = new System.Drawing.Point(9, 646);
+            this.txtCurrentPlayerSteamName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCurrentPlayerSteamName.Name = "txtCurrentPlayerSteamName";
             this.txtCurrentPlayerSteamName.ReadOnly = true;
-            this.txtCurrentPlayerSteamName.Size = new System.Drawing.Size(135, 20);
+            this.txtCurrentPlayerSteamName.Size = new System.Drawing.Size(200, 26);
             this.txtCurrentPlayerSteamName.TabIndex = 56;
             // 
             // txtCurrentPlayerName
             // 
-            this.txtCurrentPlayerName.Location = new System.Drawing.Point(6, 381);
+            this.txtCurrentPlayerName.Location = new System.Drawing.Point(9, 586);
+            this.txtCurrentPlayerName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCurrentPlayerName.Name = "txtCurrentPlayerName";
             this.txtCurrentPlayerName.ReadOnly = true;
-            this.txtCurrentPlayerName.Size = new System.Drawing.Size(135, 20);
+            this.txtCurrentPlayerName.Size = new System.Drawing.Size(200, 26);
             this.txtCurrentPlayerName.TabIndex = 55;
             // 
             // lblCurrentPlayerSteamName
             // 
             this.lblCurrentPlayerSteamName.AutoSize = true;
-            this.lblCurrentPlayerSteamName.Location = new System.Drawing.Point(6, 404);
+            this.lblCurrentPlayerSteamName.Location = new System.Drawing.Point(9, 622);
+            this.lblCurrentPlayerSteamName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentPlayerSteamName.Name = "lblCurrentPlayerSteamName";
-            this.lblCurrentPlayerSteamName.Size = new System.Drawing.Size(68, 13);
+            this.lblCurrentPlayerSteamName.Size = new System.Drawing.Size(102, 20);
             this.lblCurrentPlayerSteamName.TabIndex = 54;
             this.lblCurrentPlayerSteamName.Text = "Steam Name";
             // 
             // lblCurrentPlayerName
             // 
             this.lblCurrentPlayerName.AutoSize = true;
-            this.lblCurrentPlayerName.Location = new System.Drawing.Point(6, 365);
+            this.lblCurrentPlayerName.Location = new System.Drawing.Point(9, 562);
+            this.lblCurrentPlayerName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentPlayerName.Name = "lblCurrentPlayerName";
-            this.lblCurrentPlayerName.Size = new System.Drawing.Size(35, 13);
+            this.lblCurrentPlayerName.Size = new System.Drawing.Size(51, 20);
             this.lblCurrentPlayerName.TabIndex = 53;
             this.lblCurrentPlayerName.Text = "Name";
             // 
             // btnCurrentPlayerKick
             // 
-            this.btnCurrentPlayerKick.Location = new System.Drawing.Point(6, 512);
+            this.btnCurrentPlayerKick.Location = new System.Drawing.Point(9, 788);
+            this.btnCurrentPlayerKick.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCurrentPlayerKick.Name = "btnCurrentPlayerKick";
-            this.btnCurrentPlayerKick.Size = new System.Drawing.Size(76, 23);
+            this.btnCurrentPlayerKick.Size = new System.Drawing.Size(114, 35);
             this.btnCurrentPlayerKick.TabIndex = 52;
             this.btnCurrentPlayerKick.Text = "Kick";
             this.btnCurrentPlayerKick.UseVisualStyleBackColor = true;
@@ -5006,7 +5439,8 @@
             // 
             // nupCurrentPlayerFaith
             // 
-            this.nupCurrentPlayerFaith.Location = new System.Drawing.Point(6, 290);
+            this.nupCurrentPlayerFaith.Location = new System.Drawing.Point(9, 446);
+            this.nupCurrentPlayerFaith.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nupCurrentPlayerFaith.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -5019,7 +5453,7 @@
             -2147483648});
             this.nupCurrentPlayerFaith.Name = "nupCurrentPlayerFaith";
             this.nupCurrentPlayerFaith.ReadOnly = true;
-            this.nupCurrentPlayerFaith.Size = new System.Drawing.Size(82, 20);
+            this.nupCurrentPlayerFaith.Size = new System.Drawing.Size(123, 26);
             this.nupCurrentPlayerFaith.TabIndex = 51;
             this.nupCurrentPlayerFaith.Value = new decimal(new int[] {
             1,
@@ -5029,7 +5463,8 @@
             // 
             // nupCurrentPlayerHumanity
             // 
-            this.nupCurrentPlayerHumanity.Location = new System.Drawing.Point(6, 316);
+            this.nupCurrentPlayerHumanity.Location = new System.Drawing.Point(9, 486);
+            this.nupCurrentPlayerHumanity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nupCurrentPlayerHumanity.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -5042,7 +5477,7 @@
             -2147483648});
             this.nupCurrentPlayerHumanity.Name = "nupCurrentPlayerHumanity";
             this.nupCurrentPlayerHumanity.ReadOnly = true;
-            this.nupCurrentPlayerHumanity.Size = new System.Drawing.Size(82, 20);
+            this.nupCurrentPlayerHumanity.Size = new System.Drawing.Size(123, 26);
             this.nupCurrentPlayerHumanity.TabIndex = 50;
             this.nupCurrentPlayerHumanity.Value = new decimal(new int[] {
             1,
@@ -5052,7 +5487,8 @@
             // 
             // nupCurrentPlayerResistance
             // 
-            this.nupCurrentPlayerResistance.Location = new System.Drawing.Point(6, 238);
+            this.nupCurrentPlayerResistance.Location = new System.Drawing.Point(9, 366);
+            this.nupCurrentPlayerResistance.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nupCurrentPlayerResistance.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -5065,7 +5501,7 @@
             -2147483648});
             this.nupCurrentPlayerResistance.Name = "nupCurrentPlayerResistance";
             this.nupCurrentPlayerResistance.ReadOnly = true;
-            this.nupCurrentPlayerResistance.Size = new System.Drawing.Size(82, 20);
+            this.nupCurrentPlayerResistance.Size = new System.Drawing.Size(123, 26);
             this.nupCurrentPlayerResistance.TabIndex = 49;
             this.nupCurrentPlayerResistance.Value = new decimal(new int[] {
             1,
@@ -5075,7 +5511,8 @@
             // 
             // nupCurrentPlayerIntelligence
             // 
-            this.nupCurrentPlayerIntelligence.Location = new System.Drawing.Point(6, 264);
+            this.nupCurrentPlayerIntelligence.Location = new System.Drawing.Point(9, 406);
+            this.nupCurrentPlayerIntelligence.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nupCurrentPlayerIntelligence.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -5088,7 +5525,7 @@
             -2147483648});
             this.nupCurrentPlayerIntelligence.Name = "nupCurrentPlayerIntelligence";
             this.nupCurrentPlayerIntelligence.ReadOnly = true;
-            this.nupCurrentPlayerIntelligence.Size = new System.Drawing.Size(82, 20);
+            this.nupCurrentPlayerIntelligence.Size = new System.Drawing.Size(123, 26);
             this.nupCurrentPlayerIntelligence.TabIndex = 48;
             this.nupCurrentPlayerIntelligence.Value = new decimal(new int[] {
             1,
@@ -5098,7 +5535,8 @@
             // 
             // nupCurrentPlayerStrength
             // 
-            this.nupCurrentPlayerStrength.Location = new System.Drawing.Point(6, 186);
+            this.nupCurrentPlayerStrength.Location = new System.Drawing.Point(9, 286);
+            this.nupCurrentPlayerStrength.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nupCurrentPlayerStrength.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -5111,7 +5549,7 @@
             -2147483648});
             this.nupCurrentPlayerStrength.Name = "nupCurrentPlayerStrength";
             this.nupCurrentPlayerStrength.ReadOnly = true;
-            this.nupCurrentPlayerStrength.Size = new System.Drawing.Size(82, 20);
+            this.nupCurrentPlayerStrength.Size = new System.Drawing.Size(123, 26);
             this.nupCurrentPlayerStrength.TabIndex = 47;
             this.nupCurrentPlayerStrength.Value = new decimal(new int[] {
             1,
@@ -5121,7 +5559,8 @@
             // 
             // nupCurrentPlayerDexterity
             // 
-            this.nupCurrentPlayerDexterity.Location = new System.Drawing.Point(6, 212);
+            this.nupCurrentPlayerDexterity.Location = new System.Drawing.Point(9, 326);
+            this.nupCurrentPlayerDexterity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nupCurrentPlayerDexterity.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -5134,7 +5573,7 @@
             -2147483648});
             this.nupCurrentPlayerDexterity.Name = "nupCurrentPlayerDexterity";
             this.nupCurrentPlayerDexterity.ReadOnly = true;
-            this.nupCurrentPlayerDexterity.Size = new System.Drawing.Size(82, 20);
+            this.nupCurrentPlayerDexterity.Size = new System.Drawing.Size(123, 26);
             this.nupCurrentPlayerDexterity.TabIndex = 46;
             this.nupCurrentPlayerDexterity.Value = new decimal(new int[] {
             1,
@@ -5144,7 +5583,8 @@
             // 
             // nupCurrentPlayerVitality
             // 
-            this.nupCurrentPlayerVitality.Location = new System.Drawing.Point(6, 108);
+            this.nupCurrentPlayerVitality.Location = new System.Drawing.Point(9, 166);
+            this.nupCurrentPlayerVitality.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nupCurrentPlayerVitality.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -5157,7 +5597,7 @@
             -2147483648});
             this.nupCurrentPlayerVitality.Name = "nupCurrentPlayerVitality";
             this.nupCurrentPlayerVitality.ReadOnly = true;
-            this.nupCurrentPlayerVitality.Size = new System.Drawing.Size(82, 20);
+            this.nupCurrentPlayerVitality.Size = new System.Drawing.Size(123, 26);
             this.nupCurrentPlayerVitality.TabIndex = 45;
             this.nupCurrentPlayerVitality.Value = new decimal(new int[] {
             1,
@@ -5167,7 +5607,8 @@
             // 
             // nupCurrentPlayerAttunement
             // 
-            this.nupCurrentPlayerAttunement.Location = new System.Drawing.Point(6, 134);
+            this.nupCurrentPlayerAttunement.Location = new System.Drawing.Point(9, 206);
+            this.nupCurrentPlayerAttunement.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nupCurrentPlayerAttunement.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -5180,7 +5621,7 @@
             -2147483648});
             this.nupCurrentPlayerAttunement.Name = "nupCurrentPlayerAttunement";
             this.nupCurrentPlayerAttunement.ReadOnly = true;
-            this.nupCurrentPlayerAttunement.Size = new System.Drawing.Size(82, 20);
+            this.nupCurrentPlayerAttunement.Size = new System.Drawing.Size(123, 26);
             this.nupCurrentPlayerAttunement.TabIndex = 44;
             this.nupCurrentPlayerAttunement.Value = new decimal(new int[] {
             1,
@@ -5190,7 +5631,8 @@
             // 
             // nupCurrentPlayerEndurance
             // 
-            this.nupCurrentPlayerEndurance.Location = new System.Drawing.Point(6, 160);
+            this.nupCurrentPlayerEndurance.Location = new System.Drawing.Point(9, 246);
+            this.nupCurrentPlayerEndurance.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nupCurrentPlayerEndurance.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -5203,7 +5645,7 @@
             -2147483648});
             this.nupCurrentPlayerEndurance.Name = "nupCurrentPlayerEndurance";
             this.nupCurrentPlayerEndurance.ReadOnly = true;
-            this.nupCurrentPlayerEndurance.Size = new System.Drawing.Size(82, 20);
+            this.nupCurrentPlayerEndurance.Size = new System.Drawing.Size(123, 26);
             this.nupCurrentPlayerEndurance.TabIndex = 43;
             this.nupCurrentPlayerEndurance.Value = new decimal(new int[] {
             1,
@@ -5213,7 +5655,8 @@
             // 
             // nupCurrentPlayerSoulLevel
             // 
-            this.nupCurrentPlayerSoulLevel.Location = new System.Drawing.Point(6, 82);
+            this.nupCurrentPlayerSoulLevel.Location = new System.Drawing.Point(9, 126);
+            this.nupCurrentPlayerSoulLevel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nupCurrentPlayerSoulLevel.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -5226,7 +5669,7 @@
             -2147483648});
             this.nupCurrentPlayerSoulLevel.Name = "nupCurrentPlayerSoulLevel";
             this.nupCurrentPlayerSoulLevel.ReadOnly = true;
-            this.nupCurrentPlayerSoulLevel.Size = new System.Drawing.Size(82, 20);
+            this.nupCurrentPlayerSoulLevel.Size = new System.Drawing.Size(123, 26);
             this.nupCurrentPlayerSoulLevel.TabIndex = 42;
             this.nupCurrentPlayerSoulLevel.Value = new decimal(new int[] {
             1,
@@ -5237,99 +5680,111 @@
             // lblCurrentPlayerHumanity
             // 
             this.lblCurrentPlayerHumanity.AutoSize = true;
-            this.lblCurrentPlayerHumanity.Location = new System.Drawing.Point(94, 318);
+            this.lblCurrentPlayerHumanity.Location = new System.Drawing.Point(141, 489);
+            this.lblCurrentPlayerHumanity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentPlayerHumanity.Name = "lblCurrentPlayerHumanity";
-            this.lblCurrentPlayerHumanity.Size = new System.Drawing.Size(51, 13);
+            this.lblCurrentPlayerHumanity.Size = new System.Drawing.Size(76, 20);
             this.lblCurrentPlayerHumanity.TabIndex = 41;
             this.lblCurrentPlayerHumanity.Text = "Humanity";
             // 
             // lblCurrentPlayerFaith
             // 
             this.lblCurrentPlayerFaith.AutoSize = true;
-            this.lblCurrentPlayerFaith.Location = new System.Drawing.Point(94, 292);
+            this.lblCurrentPlayerFaith.Location = new System.Drawing.Point(141, 449);
+            this.lblCurrentPlayerFaith.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentPlayerFaith.Name = "lblCurrentPlayerFaith";
-            this.lblCurrentPlayerFaith.Size = new System.Drawing.Size(30, 13);
+            this.lblCurrentPlayerFaith.Size = new System.Drawing.Size(45, 20);
             this.lblCurrentPlayerFaith.TabIndex = 40;
             this.lblCurrentPlayerFaith.Text = "Faith";
             // 
             // lblCurrentPlayerIntelligence
             // 
             this.lblCurrentPlayerIntelligence.AutoSize = true;
-            this.lblCurrentPlayerIntelligence.Location = new System.Drawing.Point(94, 266);
+            this.lblCurrentPlayerIntelligence.Location = new System.Drawing.Point(141, 409);
+            this.lblCurrentPlayerIntelligence.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentPlayerIntelligence.Name = "lblCurrentPlayerIntelligence";
-            this.lblCurrentPlayerIntelligence.Size = new System.Drawing.Size(61, 13);
+            this.lblCurrentPlayerIntelligence.Size = new System.Drawing.Size(90, 20);
             this.lblCurrentPlayerIntelligence.TabIndex = 39;
             this.lblCurrentPlayerIntelligence.Text = "Intelligence";
             // 
             // lblCurrentPlayerResistance
             // 
             this.lblCurrentPlayerResistance.AutoSize = true;
-            this.lblCurrentPlayerResistance.Location = new System.Drawing.Point(94, 240);
+            this.lblCurrentPlayerResistance.Location = new System.Drawing.Point(141, 369);
+            this.lblCurrentPlayerResistance.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentPlayerResistance.Name = "lblCurrentPlayerResistance";
-            this.lblCurrentPlayerResistance.Size = new System.Drawing.Size(60, 13);
+            this.lblCurrentPlayerResistance.Size = new System.Drawing.Size(89, 20);
             this.lblCurrentPlayerResistance.TabIndex = 38;
             this.lblCurrentPlayerResistance.Text = "Resistance";
             // 
             // lblCurrentPlayerDexterity
             // 
             this.lblCurrentPlayerDexterity.AutoSize = true;
-            this.lblCurrentPlayerDexterity.Location = new System.Drawing.Point(94, 214);
+            this.lblCurrentPlayerDexterity.Location = new System.Drawing.Point(141, 329);
+            this.lblCurrentPlayerDexterity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentPlayerDexterity.Name = "lblCurrentPlayerDexterity";
-            this.lblCurrentPlayerDexterity.Size = new System.Drawing.Size(48, 13);
+            this.lblCurrentPlayerDexterity.Size = new System.Drawing.Size(71, 20);
             this.lblCurrentPlayerDexterity.TabIndex = 37;
             this.lblCurrentPlayerDexterity.Text = "Dexterity";
             // 
             // lblCurrentPlayerStrength
             // 
             this.lblCurrentPlayerStrength.AutoSize = true;
-            this.lblCurrentPlayerStrength.Location = new System.Drawing.Point(94, 188);
+            this.lblCurrentPlayerStrength.Location = new System.Drawing.Point(141, 289);
+            this.lblCurrentPlayerStrength.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentPlayerStrength.Name = "lblCurrentPlayerStrength";
-            this.lblCurrentPlayerStrength.Size = new System.Drawing.Size(47, 13);
+            this.lblCurrentPlayerStrength.Size = new System.Drawing.Size(71, 20);
             this.lblCurrentPlayerStrength.TabIndex = 36;
             this.lblCurrentPlayerStrength.Text = "Strength";
             // 
             // lblCurrentPlayerEndurance
             // 
             this.lblCurrentPlayerEndurance.AutoSize = true;
-            this.lblCurrentPlayerEndurance.Location = new System.Drawing.Point(94, 162);
+            this.lblCurrentPlayerEndurance.Location = new System.Drawing.Point(141, 249);
+            this.lblCurrentPlayerEndurance.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentPlayerEndurance.Name = "lblCurrentPlayerEndurance";
-            this.lblCurrentPlayerEndurance.Size = new System.Drawing.Size(59, 13);
+            this.lblCurrentPlayerEndurance.Size = new System.Drawing.Size(87, 20);
             this.lblCurrentPlayerEndurance.TabIndex = 35;
             this.lblCurrentPlayerEndurance.Text = "Endurance";
             // 
             // lblCurrentPlayerAttunement
             // 
             this.lblCurrentPlayerAttunement.AutoSize = true;
-            this.lblCurrentPlayerAttunement.Location = new System.Drawing.Point(94, 136);
+            this.lblCurrentPlayerAttunement.Location = new System.Drawing.Point(141, 209);
+            this.lblCurrentPlayerAttunement.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentPlayerAttunement.Name = "lblCurrentPlayerAttunement";
-            this.lblCurrentPlayerAttunement.Size = new System.Drawing.Size(61, 13);
+            this.lblCurrentPlayerAttunement.Size = new System.Drawing.Size(93, 20);
             this.lblCurrentPlayerAttunement.TabIndex = 34;
             this.lblCurrentPlayerAttunement.Text = "Attunement";
             // 
             // lblCurrentPlayerVitality
             // 
             this.lblCurrentPlayerVitality.AutoSize = true;
-            this.lblCurrentPlayerVitality.Location = new System.Drawing.Point(94, 110);
+            this.lblCurrentPlayerVitality.Location = new System.Drawing.Point(141, 169);
+            this.lblCurrentPlayerVitality.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentPlayerVitality.Name = "lblCurrentPlayerVitality";
-            this.lblCurrentPlayerVitality.Size = new System.Drawing.Size(37, 13);
+            this.lblCurrentPlayerVitality.Size = new System.Drawing.Size(55, 20);
             this.lblCurrentPlayerVitality.TabIndex = 33;
             this.lblCurrentPlayerVitality.Text = "Vitality";
             // 
             // lblCurrentPlayerSoulLevel
             // 
             this.lblCurrentPlayerSoulLevel.AutoSize = true;
-            this.lblCurrentPlayerSoulLevel.Location = new System.Drawing.Point(94, 84);
+            this.lblCurrentPlayerSoulLevel.Location = new System.Drawing.Point(141, 129);
+            this.lblCurrentPlayerSoulLevel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentPlayerSoulLevel.Name = "lblCurrentPlayerSoulLevel";
-            this.lblCurrentPlayerSoulLevel.Size = new System.Drawing.Size(57, 13);
+            this.lblCurrentPlayerSoulLevel.Size = new System.Drawing.Size(82, 20);
             this.lblCurrentPlayerSoulLevel.TabIndex = 32;
             this.lblCurrentPlayerSoulLevel.Text = "Soul Level";
             // 
             // lbxNetCurrentPlayers
             // 
             this.lbxNetCurrentPlayers.FormattingEnabled = true;
-            this.lbxNetCurrentPlayers.Location = new System.Drawing.Point(6, 6);
+            this.lbxNetCurrentPlayers.ItemHeight = 20;
+            this.lbxNetCurrentPlayers.Location = new System.Drawing.Point(9, 9);
+            this.lbxNetCurrentPlayers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbxNetCurrentPlayers.Name = "lbxNetCurrentPlayers";
-            this.lbxNetCurrentPlayers.Size = new System.Drawing.Size(158, 69);
+            this.lbxNetCurrentPlayers.Size = new System.Drawing.Size(235, 104);
             this.lbxNetCurrentPlayers.TabIndex = 31;
             // 
             // tpgNetSummonSigns
@@ -5377,257 +5832,287 @@
             this.tpgNetSummonSigns.Controls.Add(this.nudSosSoulLevel);
             this.tpgNetSummonSigns.Controls.Add(this.lblSosSoulLevel);
             this.tpgNetSummonSigns.Controls.Add(this.lbxNetSosList);
-            this.tpgNetSummonSigns.Location = new System.Drawing.Point(4, 22);
+            this.tpgNetSummonSigns.Location = new System.Drawing.Point(4, 29);
+            this.tpgNetSummonSigns.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tpgNetSummonSigns.Name = "tpgNetSummonSigns";
-            this.tpgNetSummonSigns.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgNetSummonSigns.Size = new System.Drawing.Size(376, 541);
+            this.tpgNetSummonSigns.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tpgNetSummonSigns.Size = new System.Drawing.Size(568, 839);
             this.tpgNetSummonSigns.TabIndex = 2;
             this.tpgNetSummonSigns.Text = "Summon Signs";
             this.tpgNetSummonSigns.UseVisualStyleBackColor = true;
             // 
             // txtSosRightWep2
             // 
-            this.txtSosRightWep2.Location = new System.Drawing.Point(170, 266);
+            this.txtSosRightWep2.Location = new System.Drawing.Point(255, 409);
+            this.txtSosRightWep2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSosRightWep2.Name = "txtSosRightWep2";
             this.txtSosRightWep2.ReadOnly = true;
-            this.txtSosRightWep2.Size = new System.Drawing.Size(135, 20);
+            this.txtSosRightWep2.Size = new System.Drawing.Size(200, 26);
             this.txtSosRightWep2.TabIndex = 113;
             // 
             // txtSosLeftWep1
             // 
-            this.txtSosLeftWep1.Location = new System.Drawing.Point(170, 292);
+            this.txtSosLeftWep1.Location = new System.Drawing.Point(255, 449);
+            this.txtSosLeftWep1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSosLeftWep1.Name = "txtSosLeftWep1";
             this.txtSosLeftWep1.ReadOnly = true;
-            this.txtSosLeftWep1.Size = new System.Drawing.Size(135, 20);
+            this.txtSosLeftWep1.Size = new System.Drawing.Size(200, 26);
             this.txtSosLeftWep1.TabIndex = 112;
             // 
             // txtSosLeftWep2
             // 
-            this.txtSosLeftWep2.Location = new System.Drawing.Point(170, 318);
+            this.txtSosLeftWep2.Location = new System.Drawing.Point(255, 489);
+            this.txtSosLeftWep2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSosLeftWep2.Name = "txtSosLeftWep2";
             this.txtSosLeftWep2.ReadOnly = true;
-            this.txtSosLeftWep2.Size = new System.Drawing.Size(135, 20);
+            this.txtSosLeftWep2.Size = new System.Drawing.Size(200, 26);
             this.txtSosLeftWep2.TabIndex = 111;
             // 
             // txtSosRightWep1
             // 
-            this.txtSosRightWep1.Location = new System.Drawing.Point(170, 240);
+            this.txtSosRightWep1.Location = new System.Drawing.Point(255, 369);
+            this.txtSosRightWep1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSosRightWep1.Name = "txtSosRightWep1";
             this.txtSosRightWep1.ReadOnly = true;
-            this.txtSosRightWep1.Size = new System.Drawing.Size(135, 20);
+            this.txtSosRightWep1.Size = new System.Drawing.Size(200, 26);
             this.txtSosRightWep1.TabIndex = 110;
             // 
             // txtSosBolt2
             // 
-            this.txtSosBolt2.Location = new System.Drawing.Point(170, 214);
+            this.txtSosBolt2.Location = new System.Drawing.Point(255, 329);
+            this.txtSosBolt2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSosBolt2.Name = "txtSosBolt2";
             this.txtSosBolt2.ReadOnly = true;
-            this.txtSosBolt2.Size = new System.Drawing.Size(135, 20);
+            this.txtSosBolt2.Size = new System.Drawing.Size(200, 26);
             this.txtSosBolt2.TabIndex = 109;
             // 
             // txtSosArrow1
             // 
-            this.txtSosArrow1.Location = new System.Drawing.Point(170, 136);
+            this.txtSosArrow1.Location = new System.Drawing.Point(255, 209);
+            this.txtSosArrow1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSosArrow1.Name = "txtSosArrow1";
             this.txtSosArrow1.ReadOnly = true;
-            this.txtSosArrow1.Size = new System.Drawing.Size(135, 20);
+            this.txtSosArrow1.Size = new System.Drawing.Size(200, 26);
             this.txtSosArrow1.TabIndex = 108;
             // 
             // txtSosArrow2
             // 
-            this.txtSosArrow2.Location = new System.Drawing.Point(170, 162);
+            this.txtSosArrow2.Location = new System.Drawing.Point(255, 249);
+            this.txtSosArrow2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSosArrow2.Name = "txtSosArrow2";
             this.txtSosArrow2.ReadOnly = true;
-            this.txtSosArrow2.Size = new System.Drawing.Size(135, 20);
+            this.txtSosArrow2.Size = new System.Drawing.Size(200, 26);
             this.txtSosArrow2.TabIndex = 107;
             // 
             // txtSosBolt1
             // 
-            this.txtSosBolt1.Location = new System.Drawing.Point(170, 188);
+            this.txtSosBolt1.Location = new System.Drawing.Point(255, 289);
+            this.txtSosBolt1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSosBolt1.Name = "txtSosBolt1";
             this.txtSosBolt1.ReadOnly = true;
-            this.txtSosBolt1.Size = new System.Drawing.Size(135, 20);
+            this.txtSosBolt1.Size = new System.Drawing.Size(200, 26);
             this.txtSosBolt1.TabIndex = 106;
             // 
             // txtSosLegs
             // 
-            this.txtSosLegs.Location = new System.Drawing.Point(170, 110);
+            this.txtSosLegs.Location = new System.Drawing.Point(255, 169);
+            this.txtSosLegs.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSosLegs.Name = "txtSosLegs";
             this.txtSosLegs.ReadOnly = true;
-            this.txtSosLegs.Size = new System.Drawing.Size(135, 20);
+            this.txtSosLegs.Size = new System.Drawing.Size(200, 26);
             this.txtSosLegs.TabIndex = 105;
             // 
             // txtSosHands
             // 
-            this.txtSosHands.Location = new System.Drawing.Point(170, 84);
+            this.txtSosHands.Location = new System.Drawing.Point(255, 129);
+            this.txtSosHands.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSosHands.Name = "txtSosHands";
             this.txtSosHands.ReadOnly = true;
-            this.txtSosHands.Size = new System.Drawing.Size(135, 20);
+            this.txtSosHands.Size = new System.Drawing.Size(200, 26);
             this.txtSosHands.TabIndex = 104;
             // 
             // txtSosHair
             // 
-            this.txtSosHair.Location = new System.Drawing.Point(170, 6);
+            this.txtSosHair.Location = new System.Drawing.Point(255, 9);
+            this.txtSosHair.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSosHair.Name = "txtSosHair";
             this.txtSosHair.ReadOnly = true;
-            this.txtSosHair.Size = new System.Drawing.Size(135, 20);
+            this.txtSosHair.Size = new System.Drawing.Size(200, 26);
             this.txtSosHair.TabIndex = 103;
             // 
             // txtSosHead
             // 
-            this.txtSosHead.Location = new System.Drawing.Point(170, 32);
+            this.txtSosHead.Location = new System.Drawing.Point(255, 49);
+            this.txtSosHead.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSosHead.Name = "txtSosHead";
             this.txtSosHead.ReadOnly = true;
-            this.txtSosHead.Size = new System.Drawing.Size(135, 20);
+            this.txtSosHead.Size = new System.Drawing.Size(200, 26);
             this.txtSosHead.TabIndex = 102;
             // 
             // txtSosChest
             // 
-            this.txtSosChest.Location = new System.Drawing.Point(170, 58);
+            this.txtSosChest.Location = new System.Drawing.Point(255, 89);
+            this.txtSosChest.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSosChest.Name = "txtSosChest";
             this.txtSosChest.ReadOnly = true;
-            this.txtSosChest.Size = new System.Drawing.Size(135, 20);
+            this.txtSosChest.Size = new System.Drawing.Size(200, 26);
             this.txtSosChest.TabIndex = 101;
             // 
             // lblSosBolt2
             // 
             this.lblSosBolt2.AutoSize = true;
-            this.lblSosBolt2.Location = new System.Drawing.Point(311, 217);
+            this.lblSosBolt2.Location = new System.Drawing.Point(466, 334);
+            this.lblSosBolt2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSosBolt2.Name = "lblSosBolt2";
-            this.lblSosBolt2.Size = new System.Drawing.Size(34, 13);
+            this.lblSosBolt2.Size = new System.Drawing.Size(50, 20);
             this.lblSosBolt2.TabIndex = 100;
             this.lblSosBolt2.Text = "Bolt 2";
             // 
             // lblSosBolt1
             // 
             this.lblSosBolt1.AutoSize = true;
-            this.lblSosBolt1.Location = new System.Drawing.Point(311, 191);
+            this.lblSosBolt1.Location = new System.Drawing.Point(466, 294);
+            this.lblSosBolt1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSosBolt1.Name = "lblSosBolt1";
-            this.lblSosBolt1.Size = new System.Drawing.Size(34, 13);
+            this.lblSosBolt1.Size = new System.Drawing.Size(50, 20);
             this.lblSosBolt1.TabIndex = 99;
             this.lblSosBolt1.Text = "Bolt 1";
             // 
             // lblSosArrow2
             // 
             this.lblSosArrow2.AutoSize = true;
-            this.lblSosArrow2.Location = new System.Drawing.Point(311, 165);
+            this.lblSosArrow2.Location = new System.Drawing.Point(466, 254);
+            this.lblSosArrow2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSosArrow2.Name = "lblSosArrow2";
-            this.lblSosArrow2.Size = new System.Drawing.Size(43, 13);
+            this.lblSosArrow2.Size = new System.Drawing.Size(63, 20);
             this.lblSosArrow2.TabIndex = 98;
             this.lblSosArrow2.Text = "Arrow 2";
             // 
             // lblSosArrow1
             // 
             this.lblSosArrow1.AutoSize = true;
-            this.lblSosArrow1.Location = new System.Drawing.Point(311, 139);
+            this.lblSosArrow1.Location = new System.Drawing.Point(466, 214);
+            this.lblSosArrow1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSosArrow1.Name = "lblSosArrow1";
-            this.lblSosArrow1.Size = new System.Drawing.Size(43, 13);
+            this.lblSosArrow1.Size = new System.Drawing.Size(63, 20);
             this.lblSosArrow1.TabIndex = 97;
             this.lblSosArrow1.Text = "Arrow 1";
             // 
             // lblSosLegs
             // 
             this.lblSosLegs.AutoSize = true;
-            this.lblSosLegs.Location = new System.Drawing.Point(311, 113);
+            this.lblSosLegs.Location = new System.Drawing.Point(466, 174);
+            this.lblSosLegs.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSosLegs.Name = "lblSosLegs";
-            this.lblSosLegs.Size = new System.Drawing.Size(30, 13);
+            this.lblSosLegs.Size = new System.Drawing.Size(44, 20);
             this.lblSosLegs.TabIndex = 96;
             this.lblSosLegs.Text = "Legs";
             // 
             // lblSosLeftWep2
             // 
             this.lblSosLeftWep2.AutoSize = true;
-            this.lblSosLeftWep2.Location = new System.Drawing.Point(311, 321);
+            this.lblSosLeftWep2.Location = new System.Drawing.Point(466, 494);
+            this.lblSosLeftWep2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSosLeftWep2.Name = "lblSosLeftWep2";
-            this.lblSosLeftWep2.Size = new System.Drawing.Size(54, 13);
+            this.lblSosLeftWep2.Size = new System.Drawing.Size(78, 20);
             this.lblSosLeftWep2.TabIndex = 95;
             this.lblSosLeftWep2.Text = "L. Hand 2";
             // 
             // lblSosLeftWep1
             // 
             this.lblSosLeftWep1.AutoSize = true;
-            this.lblSosLeftWep1.Location = new System.Drawing.Point(311, 295);
+            this.lblSosLeftWep1.Location = new System.Drawing.Point(466, 454);
+            this.lblSosLeftWep1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSosLeftWep1.Name = "lblSosLeftWep1";
-            this.lblSosLeftWep1.Size = new System.Drawing.Size(54, 13);
+            this.lblSosLeftWep1.Size = new System.Drawing.Size(78, 20);
             this.lblSosLeftWep1.TabIndex = 94;
             this.lblSosLeftWep1.Text = "L. Hand 1";
             // 
             // lblSosRightWep2
             // 
             this.lblSosRightWep2.AutoSize = true;
-            this.lblSosRightWep2.Location = new System.Drawing.Point(311, 269);
+            this.lblSosRightWep2.Location = new System.Drawing.Point(466, 414);
+            this.lblSosRightWep2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSosRightWep2.Name = "lblSosRightWep2";
-            this.lblSosRightWep2.Size = new System.Drawing.Size(56, 13);
+            this.lblSosRightWep2.Size = new System.Drawing.Size(81, 20);
             this.lblSosRightWep2.TabIndex = 93;
             this.lblSosRightWep2.Text = "R. Hand 2";
             // 
             // lblSosRightWep1
             // 
             this.lblSosRightWep1.AutoSize = true;
-            this.lblSosRightWep1.Location = new System.Drawing.Point(311, 243);
+            this.lblSosRightWep1.Location = new System.Drawing.Point(466, 374);
+            this.lblSosRightWep1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSosRightWep1.Name = "lblSosRightWep1";
-            this.lblSosRightWep1.Size = new System.Drawing.Size(56, 13);
+            this.lblSosRightWep1.Size = new System.Drawing.Size(81, 20);
             this.lblSosRightWep1.TabIndex = 92;
             this.lblSosRightWep1.Text = "R. Hand 1";
             // 
             // lblSosHands
             // 
             this.lblSosHands.AutoSize = true;
-            this.lblSosHands.Location = new System.Drawing.Point(311, 87);
+            this.lblSosHands.Location = new System.Drawing.Point(466, 134);
+            this.lblSosHands.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSosHands.Name = "lblSosHands";
-            this.lblSosHands.Size = new System.Drawing.Size(38, 13);
+            this.lblSosHands.Size = new System.Drawing.Size(56, 20);
             this.lblSosHands.TabIndex = 91;
             this.lblSosHands.Text = "Hands";
             // 
             // lblSosChest
             // 
             this.lblSosChest.AutoSize = true;
-            this.lblSosChest.Location = new System.Drawing.Point(311, 61);
+            this.lblSosChest.Location = new System.Drawing.Point(466, 94);
+            this.lblSosChest.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSosChest.Name = "lblSosChest";
-            this.lblSosChest.Size = new System.Drawing.Size(34, 13);
+            this.lblSosChest.Size = new System.Drawing.Size(51, 20);
             this.lblSosChest.TabIndex = 90;
             this.lblSosChest.Text = "Chest";
             // 
             // lblSosHead
             // 
             this.lblSosHead.AutoSize = true;
-            this.lblSosHead.Location = new System.Drawing.Point(311, 35);
+            this.lblSosHead.Location = new System.Drawing.Point(466, 54);
+            this.lblSosHead.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSosHead.Name = "lblSosHead";
-            this.lblSosHead.Size = new System.Drawing.Size(33, 13);
+            this.lblSosHead.Size = new System.Drawing.Size(48, 20);
             this.lblSosHead.TabIndex = 89;
             this.lblSosHead.Text = "Head";
             // 
             // lblSosHair
             // 
             this.lblSosHair.AutoSize = true;
-            this.lblSosHair.Location = new System.Drawing.Point(311, 9);
+            this.lblSosHair.Location = new System.Drawing.Point(466, 14);
+            this.lblSosHair.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSosHair.Name = "lblSosHair";
-            this.lblSosHair.Size = new System.Drawing.Size(26, 13);
+            this.lblSosHair.Size = new System.Drawing.Size(38, 20);
             this.lblSosHair.TabIndex = 88;
             this.lblSosHair.Text = "Hair";
             // 
             // lblSosSpawnPosition
             // 
             this.lblSosSpawnPosition.AutoSize = true;
-            this.lblSosSpawnPosition.Location = new System.Drawing.Point(6, 209);
+            this.lblSosSpawnPosition.Location = new System.Drawing.Point(9, 322);
+            this.lblSosSpawnPosition.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSosSpawnPosition.Name = "lblSosSpawnPosition";
-            this.lblSosSpawnPosition.Size = new System.Drawing.Size(79, 13);
+            this.lblSosSpawnPosition.Size = new System.Drawing.Size(117, 20);
             this.lblSosSpawnPosition.TabIndex = 69;
             this.lblSosSpawnPosition.Text = "Spawn position";
             // 
             // lblSosPosAngle
             // 
             this.lblSosPosAngle.AutoSize = true;
-            this.lblSosPosAngle.Location = new System.Drawing.Point(26, 305);
+            this.lblSosPosAngle.Location = new System.Drawing.Point(39, 469);
+            this.lblSosPosAngle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSosPosAngle.Name = "lblSosPosAngle";
-            this.lblSosPosAngle.Size = new System.Drawing.Size(34, 13);
+            this.lblSosPosAngle.Size = new System.Drawing.Size(50, 20);
             this.lblSosPosAngle.TabIndex = 68;
             this.lblSosPosAngle.Text = "Angle";
             // 
             // nudSosPosZ
             // 
             this.nudSosPosZ.DecimalPlaces = 3;
-            this.nudSosPosZ.Location = new System.Drawing.Point(66, 277);
+            this.nudSosPosZ.Location = new System.Drawing.Point(99, 426);
+            this.nudSosPosZ.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudSosPosZ.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -5639,16 +6124,17 @@
             0,
             -2147483648});
             this.nudSosPosZ.Name = "nudSosPosZ";
-            this.nudSosPosZ.Size = new System.Drawing.Size(75, 20);
+            this.nudSosPosZ.Size = new System.Drawing.Size(112, 26);
             this.nudSosPosZ.TabIndex = 62;
             this.nudSosPosZ.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudSosPosZ.ValueChanged += new System.EventHandler(this.nudSosPosZ_ValueChanged);
             // 
             // btnSosRestorePos
             // 
-            this.btnSosRestorePos.Location = new System.Drawing.Point(6, 329);
+            this.btnSosRestorePos.Location = new System.Drawing.Point(9, 506);
+            this.btnSosRestorePos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSosRestorePos.Name = "btnSosRestorePos";
-            this.btnSosRestorePos.Size = new System.Drawing.Size(135, 23);
+            this.btnSosRestorePos.Size = new System.Drawing.Size(202, 35);
             this.btnSosRestorePos.TabIndex = 63;
             this.btnSosRestorePos.Text = "Use stored position";
             this.btnSosRestorePos.UseVisualStyleBackColor = true;
@@ -5657,7 +6143,8 @@
             // nudSosPosY
             // 
             this.nudSosPosY.DecimalPlaces = 3;
-            this.nudSosPosY.Location = new System.Drawing.Point(66, 251);
+            this.nudSosPosY.Location = new System.Drawing.Point(99, 386);
+            this.nudSosPosY.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudSosPosY.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -5669,7 +6156,7 @@
             0,
             -2147483648});
             this.nudSosPosY.Name = "nudSosPosY";
-            this.nudSosPosY.Size = new System.Drawing.Size(75, 20);
+            this.nudSosPosY.Size = new System.Drawing.Size(112, 26);
             this.nudSosPosY.TabIndex = 61;
             this.nudSosPosY.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudSosPosY.ValueChanged += new System.EventHandler(this.nudSosPosY_ValueChanged);
@@ -5677,7 +6164,8 @@
             // nudSosPosX
             // 
             this.nudSosPosX.DecimalPlaces = 3;
-            this.nudSosPosX.Location = new System.Drawing.Point(66, 225);
+            this.nudSosPosX.Location = new System.Drawing.Point(99, 346);
+            this.nudSosPosX.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudSosPosX.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -5689,14 +6177,15 @@
             0,
             -2147483648});
             this.nudSosPosX.Name = "nudSosPosX";
-            this.nudSosPosX.Size = new System.Drawing.Size(75, 20);
+            this.nudSosPosX.Size = new System.Drawing.Size(112, 26);
             this.nudSosPosX.TabIndex = 60;
             this.nudSosPosX.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudSosPosX.ValueChanged += new System.EventHandler(this.nudSosPosX_ValueChanged);
             // 
             // nudSosPosAngle
             // 
-            this.nudSosPosAngle.Location = new System.Drawing.Point(66, 303);
+            this.nudSosPosAngle.Location = new System.Drawing.Point(99, 466);
+            this.nudSosPosAngle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudSosPosAngle.Maximum = new decimal(new int[] {
             365,
             0,
@@ -5708,7 +6197,7 @@
             0,
             -2147483648});
             this.nudSosPosAngle.Name = "nudSosPosAngle";
-            this.nudSosPosAngle.Size = new System.Drawing.Size(75, 20);
+            this.nudSosPosAngle.Size = new System.Drawing.Size(112, 26);
             this.nudSosPosAngle.TabIndex = 67;
             this.nudSosPosAngle.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudSosPosAngle.ValueChanged += new System.EventHandler(this.nudSosPosAngle_ValueChanged);
@@ -5716,36 +6205,40 @@
             // lblSosPosZ
             // 
             this.lblSosPosZ.AutoSize = true;
-            this.lblSosPosZ.Location = new System.Drawing.Point(46, 279);
+            this.lblSosPosZ.Location = new System.Drawing.Point(69, 429);
+            this.lblSosPosZ.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSosPosZ.Name = "lblSosPosZ";
-            this.lblSosPosZ.Size = new System.Drawing.Size(14, 13);
+            this.lblSosPosZ.Size = new System.Drawing.Size(19, 20);
             this.lblSosPosZ.TabIndex = 66;
             this.lblSosPosZ.Text = "Z";
             // 
             // lblSosPosY
             // 
             this.lblSosPosY.AutoSize = true;
-            this.lblSosPosY.Location = new System.Drawing.Point(46, 253);
+            this.lblSosPosY.Location = new System.Drawing.Point(69, 389);
+            this.lblSosPosY.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSosPosY.Name = "lblSosPosY";
-            this.lblSosPosY.Size = new System.Drawing.Size(14, 13);
+            this.lblSosPosY.Size = new System.Drawing.Size(20, 20);
             this.lblSosPosY.TabIndex = 65;
             this.lblSosPosY.Text = "Y";
             // 
             // lblSosPosX
             // 
             this.lblSosPosX.AutoSize = true;
-            this.lblSosPosX.Location = new System.Drawing.Point(46, 227);
+            this.lblSosPosX.Location = new System.Drawing.Point(69, 349);
+            this.lblSosPosX.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSosPosX.Name = "lblSosPosX";
-            this.lblSosPosX.Size = new System.Drawing.Size(14, 13);
+            this.lblSosPosX.Size = new System.Drawing.Size(20, 20);
             this.lblSosPosX.TabIndex = 64;
             this.lblSosPosX.Text = "X";
             // 
             // lblSosSummonType
             // 
             this.lblSosSummonType.AutoSize = true;
-            this.lblSosSummonType.Location = new System.Drawing.Point(6, 169);
+            this.lblSosSummonType.Location = new System.Drawing.Point(9, 260);
+            this.lblSosSummonType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSosSummonType.Name = "lblSosSummonType";
-            this.lblSosSummonType.Size = new System.Drawing.Size(75, 13);
+            this.lblSosSummonType.Size = new System.Drawing.Size(111, 20);
             this.lblSosSummonType.TabIndex = 59;
             this.lblSosSummonType.Text = "Summon Type";
             // 
@@ -5753,32 +6246,36 @@
             // 
             this.cmbSosSummonType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSosSummonType.FormattingEnabled = true;
-            this.cmbSosSummonType.Location = new System.Drawing.Point(6, 185);
+            this.cmbSosSummonType.Location = new System.Drawing.Point(9, 285);
+            this.cmbSosSummonType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbSosSummonType.Name = "cmbSosSummonType";
-            this.cmbSosSummonType.Size = new System.Drawing.Size(135, 21);
+            this.cmbSosSummonType.Size = new System.Drawing.Size(200, 28);
             this.cmbSosSummonType.TabIndex = 58;
             // 
             // txtSosName
             // 
             this.txtSosName.Enabled = false;
-            this.txtSosName.Location = new System.Drawing.Point(6, 146);
+            this.txtSosName.Location = new System.Drawing.Point(9, 225);
+            this.txtSosName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSosName.Name = "txtSosName";
-            this.txtSosName.Size = new System.Drawing.Size(135, 20);
+            this.txtSosName.Size = new System.Drawing.Size(200, 26);
             this.txtSosName.TabIndex = 57;
             // 
             // lblSosName
             // 
             this.lblSosName.AutoSize = true;
-            this.lblSosName.Location = new System.Drawing.Point(6, 130);
+            this.lblSosName.Location = new System.Drawing.Point(9, 200);
+            this.lblSosName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSosName.Name = "lblSosName";
-            this.lblSosName.Size = new System.Drawing.Size(35, 13);
+            this.lblSosName.Size = new System.Drawing.Size(51, 20);
             this.lblSosName.TabIndex = 56;
             this.lblSosName.Text = "Name";
             // 
             // nudSosSoulLevel
             // 
             this.nudSosSoulLevel.Enabled = false;
-            this.nudSosSoulLevel.Location = new System.Drawing.Point(7, 107);
+            this.nudSosSoulLevel.Location = new System.Drawing.Point(10, 165);
+            this.nudSosSoulLevel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudSosSoulLevel.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -5790,7 +6287,7 @@
             0,
             -2147483648});
             this.nudSosSoulLevel.Name = "nudSosSoulLevel";
-            this.nudSosSoulLevel.Size = new System.Drawing.Size(82, 20);
+            this.nudSosSoulLevel.Size = new System.Drawing.Size(123, 26);
             this.nudSosSoulLevel.TabIndex = 44;
             this.nudSosSoulLevel.Value = new decimal(new int[] {
             1,
@@ -5801,27 +6298,31 @@
             // lblSosSoulLevel
             // 
             this.lblSosSoulLevel.AutoSize = true;
-            this.lblSosSoulLevel.Location = new System.Drawing.Point(94, 109);
+            this.lblSosSoulLevel.Location = new System.Drawing.Point(141, 168);
+            this.lblSosSoulLevel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSosSoulLevel.Name = "lblSosSoulLevel";
-            this.lblSosSoulLevel.Size = new System.Drawing.Size(57, 13);
+            this.lblSosSoulLevel.Size = new System.Drawing.Size(82, 20);
             this.lblSosSoulLevel.TabIndex = 43;
             this.lblSosSoulLevel.Text = "Soul Level";
             // 
             // lbxNetSosList
             // 
             this.lbxNetSosList.FormattingEnabled = true;
-            this.lbxNetSosList.Location = new System.Drawing.Point(6, 6);
+            this.lbxNetSosList.ItemHeight = 20;
+            this.lbxNetSosList.Location = new System.Drawing.Point(9, 9);
+            this.lbxNetSosList.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbxNetSosList.Name = "lbxNetSosList";
-            this.lbxNetSosList.Size = new System.Drawing.Size(158, 95);
+            this.lbxNetSosList.Size = new System.Drawing.Size(235, 144);
             this.lbxNetSosList.TabIndex = 1;
             // 
             // tpgHotkeys
             // 
             this.tpgHotkeys.Controls.Add(this.tclSettings);
-            this.tpgHotkeys.Location = new System.Drawing.Point(4, 22);
+            this.tpgHotkeys.Location = new System.Drawing.Point(4, 29);
+            this.tpgHotkeys.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tpgHotkeys.Name = "tpgHotkeys";
-            this.tpgHotkeys.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgHotkeys.Size = new System.Drawing.Size(396, 579);
+            this.tpgHotkeys.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tpgHotkeys.Size = new System.Drawing.Size(598, 898);
             this.tpgHotkeys.TabIndex = 3;
             this.tpgHotkeys.Text = "Settings";
             this.tpgHotkeys.UseVisualStyleBackColor = true;
@@ -5830,39 +6331,43 @@
             // 
             this.tclSettings.Controls.Add(this.tpgSetingsSettings);
             this.tclSettings.Controls.Add(this.tpgSettingsHotkeys);
-            this.tclSettings.Location = new System.Drawing.Point(6, 6);
+            this.tclSettings.Location = new System.Drawing.Point(9, 9);
+            this.tclSettings.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tclSettings.Name = "tclSettings";
             this.tclSettings.SelectedIndex = 0;
-            this.tclSettings.Size = new System.Drawing.Size(384, 567);
+            this.tclSettings.Size = new System.Drawing.Size(576, 872);
             this.tclSettings.TabIndex = 0;
             // 
             // tpgSetingsSettings
             // 
             this.tpgSetingsSettings.Controls.Add(this.txtSettingsSteamAPIKey);
             this.tpgSetingsSettings.Controls.Add(this.lblSettingsSteamAPIKey);
-            this.tpgSetingsSettings.Location = new System.Drawing.Point(4, 22);
+            this.tpgSetingsSettings.Location = new System.Drawing.Point(4, 29);
+            this.tpgSetingsSettings.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tpgSetingsSettings.Name = "tpgSetingsSettings";
-            this.tpgSetingsSettings.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgSetingsSettings.Size = new System.Drawing.Size(376, 541);
+            this.tpgSetingsSettings.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tpgSetingsSettings.Size = new System.Drawing.Size(568, 839);
             this.tpgSetingsSettings.TabIndex = 1;
             this.tpgSetingsSettings.Text = "Settings";
             this.tpgSetingsSettings.UseVisualStyleBackColor = true;
             // 
             // txtSettingsSteamAPIKey
             // 
-            this.txtSettingsSteamAPIKey.Location = new System.Drawing.Point(6, 19);
+            this.txtSettingsSteamAPIKey.Location = new System.Drawing.Point(9, 29);
+            this.txtSettingsSteamAPIKey.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSettingsSteamAPIKey.Name = "txtSettingsSteamAPIKey";
             this.txtSettingsSteamAPIKey.PasswordChar = '*';
-            this.txtSettingsSteamAPIKey.Size = new System.Drawing.Size(364, 20);
+            this.txtSettingsSteamAPIKey.Size = new System.Drawing.Size(544, 26);
             this.txtSettingsSteamAPIKey.TabIndex = 1;
             this.txtSettingsSteamAPIKey.TextChanged += new System.EventHandler(this.txtSettingsSteamAPIKey_TextChanged);
             // 
             // lblSettingsSteamAPIKey
             // 
             this.lblSettingsSteamAPIKey.AutoSize = true;
-            this.lblSettingsSteamAPIKey.Location = new System.Drawing.Point(6, 3);
+            this.lblSettingsSteamAPIKey.Location = new System.Drawing.Point(9, 5);
+            this.lblSettingsSteamAPIKey.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSettingsSteamAPIKey.Name = "lblSettingsSteamAPIKey";
-            this.lblSettingsSteamAPIKey.Size = new System.Drawing.Size(78, 13);
+            this.lblSettingsSteamAPIKey.Size = new System.Drawing.Size(116, 20);
             this.lblSettingsSteamAPIKey.TabIndex = 0;
             this.lblSettingsSteamAPIKey.Text = "Steam API Key";
             // 
@@ -5871,10 +6376,11 @@
             this.tpgSettingsHotkeys.Controls.Add(this.flpHotkeyControls);
             this.tpgSettingsHotkeys.Controls.Add(this.cbxHotkeysHandle);
             this.tpgSettingsHotkeys.Controls.Add(this.cbxHotkeysEnable);
-            this.tpgSettingsHotkeys.Location = new System.Drawing.Point(4, 22);
+            this.tpgSettingsHotkeys.Location = new System.Drawing.Point(4, 29);
+            this.tpgSettingsHotkeys.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tpgSettingsHotkeys.Name = "tpgSettingsHotkeys";
-            this.tpgSettingsHotkeys.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgSettingsHotkeys.Size = new System.Drawing.Size(376, 541);
+            this.tpgSettingsHotkeys.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tpgSettingsHotkeys.Size = new System.Drawing.Size(568, 839);
             this.tpgSettingsHotkeys.TabIndex = 0;
             this.tpgSettingsHotkeys.Text = "Hotkeys";
             this.tpgSettingsHotkeys.UseVisualStyleBackColor = true;
@@ -5884,9 +6390,10 @@
             this.flpHotkeyControls.AutoScroll = true;
             this.flpHotkeyControls.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flpHotkeyControls.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flpHotkeyControls.Location = new System.Drawing.Point(6, 55);
+            this.flpHotkeyControls.Location = new System.Drawing.Point(9, 85);
+            this.flpHotkeyControls.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.flpHotkeyControls.Name = "flpHotkeyControls";
-            this.flpHotkeyControls.Size = new System.Drawing.Size(364, 480);
+            this.flpHotkeyControls.Size = new System.Drawing.Size(545, 737);
             this.flpHotkeyControls.TabIndex = 5;
             this.flpHotkeyControls.WrapContents = false;
             // 
@@ -5895,9 +6402,10 @@
             this.cbxHotkeysHandle.AutoSize = true;
             this.cbxHotkeysHandle.Checked = true;
             this.cbxHotkeysHandle.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxHotkeysHandle.Location = new System.Drawing.Point(6, 29);
+            this.cbxHotkeysHandle.Location = new System.Drawing.Point(9, 45);
+            this.cbxHotkeysHandle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxHotkeysHandle.Name = "cbxHotkeysHandle";
-            this.cbxHotkeysHandle.Size = new System.Drawing.Size(115, 17);
+            this.cbxHotkeysHandle.Size = new System.Drawing.Size(170, 24);
             this.cbxHotkeysHandle.TabIndex = 4;
             this.cbxHotkeysHandle.Text = "Consume keypress";
             this.cbxHotkeysHandle.UseVisualStyleBackColor = true;
@@ -5907,9 +6415,10 @@
             this.cbxHotkeysEnable.AutoSize = true;
             this.cbxHotkeysEnable.Checked = true;
             this.cbxHotkeysEnable.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxHotkeysEnable.Location = new System.Drawing.Point(6, 6);
+            this.cbxHotkeysEnable.Location = new System.Drawing.Point(9, 9);
+            this.cbxHotkeysEnable.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxHotkeysEnable.Name = "cbxHotkeysEnable";
-            this.cbxHotkeysEnable.Size = new System.Drawing.Size(99, 17);
+            this.cbxHotkeysEnable.Size = new System.Drawing.Size(144, 24);
             this.cbxHotkeysEnable.TabIndex = 3;
             this.cbxHotkeysEnable.Text = "Enable hotkeys";
             this.cbxHotkeysEnable.UseVisualStyleBackColor = true;
@@ -5917,36 +6426,40 @@
             // lblVersion
             // 
             this.lblVersion.AutoSize = true;
-            this.lblVersion.Location = new System.Drawing.Point(12, 9);
+            this.lblVersion.Location = new System.Drawing.Point(18, 14);
+            this.lblVersion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblVersion.Name = "lblVersion";
-            this.lblVersion.Size = new System.Drawing.Size(75, 13);
+            this.lblVersion.Size = new System.Drawing.Size(111, 20);
             this.lblVersion.TabIndex = 1;
             this.lblVersion.Text = "Game version:";
             // 
             // lblVersionValue
             // 
             this.lblVersionValue.AutoSize = true;
-            this.lblVersionValue.Location = new System.Drawing.Point(93, 9);
+            this.lblVersionValue.Location = new System.Drawing.Point(140, 14);
+            this.lblVersionValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblVersionValue.Name = "lblVersionValue";
-            this.lblVersionValue.Size = new System.Drawing.Size(33, 13);
+            this.lblVersionValue.Size = new System.Drawing.Size(47, 20);
             this.lblVersionValue.TabIndex = 2;
             this.lblVersionValue.Text = "None";
             // 
             // lblLoaded
             // 
             this.lblLoaded.AutoSize = true;
-            this.lblLoaded.Location = new System.Drawing.Point(12, 22);
+            this.lblLoaded.Location = new System.Drawing.Point(18, 34);
+            this.lblLoaded.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLoaded.Name = "lblLoaded";
-            this.lblLoaded.Size = new System.Drawing.Size(73, 13);
+            this.lblLoaded.Size = new System.Drawing.Size(109, 20);
             this.lblLoaded.TabIndex = 3;
             this.lblLoaded.Text = "Game loaded:";
             // 
             // lblLoadedValue
             // 
             this.lblLoadedValue.AutoSize = true;
-            this.lblLoadedValue.Location = new System.Drawing.Point(93, 22);
+            this.lblLoadedValue.Location = new System.Drawing.Point(140, 34);
+            this.lblLoadedValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLoadedValue.Name = "lblLoadedValue";
-            this.lblLoadedValue.Size = new System.Drawing.Size(21, 13);
+            this.lblLoadedValue.Size = new System.Drawing.Size(29, 20);
             this.lblLoadedValue.TabIndex = 4;
             this.lblLoadedValue.Text = "No";
             // 
@@ -5958,18 +6471,20 @@
             // 
             // lblUpdate
             // 
-            this.lblUpdate.Location = new System.Drawing.Point(241, 9);
+            this.lblUpdate.Location = new System.Drawing.Point(362, 14);
+            this.lblUpdate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUpdate.Name = "lblUpdate";
-            this.lblUpdate.Size = new System.Drawing.Size(171, 13);
+            this.lblUpdate.Size = new System.Drawing.Size(256, 20);
             this.lblUpdate.TabIndex = 5;
             this.lblUpdate.Text = "Checking for updates...";
             this.lblUpdate.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // llbUpdate
             // 
-            this.llbUpdate.Location = new System.Drawing.Point(241, 22);
+            this.llbUpdate.Location = new System.Drawing.Point(362, 34);
+            this.llbUpdate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.llbUpdate.Name = "llbUpdate";
-            this.llbUpdate.Size = new System.Drawing.Size(175, 13);
+            this.llbUpdate.Size = new System.Drawing.Size(262, 20);
             this.llbUpdate.TabIndex = 6;
             this.llbUpdate.TabStop = true;
             this.llbUpdate.Text = "Click to download";
@@ -5978,9 +6493,9 @@
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(425, 661);
+            this.ClientSize = new System.Drawing.Size(638, 1017);
             this.Controls.Add(this.llbUpdate);
             this.Controls.Add(this.lblUpdate);
             this.Controls.Add(this.lblLoadedValue);
@@ -5990,6 +6505,7 @@
             this.Controls.Add(this.tclMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormMain";
             this.Text = "DSR Gadget <version>";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
@@ -6591,6 +7107,10 @@
         private System.Windows.Forms.Button btnLastTargetEntity;
         private System.Windows.Forms.CheckBox cbxLastHitEntity;
         private System.Windows.Forms.Button btnLastHitEntity;
+        private System.Windows.Forms.Label lblSearch;
+        private System.Windows.Forms.TextBox searchBox;
+        private System.Windows.Forms.CheckBox SearchAllCheckbox;
+        private System.Windows.Forms.CheckBox maxUpgrade;
     }
 }
 

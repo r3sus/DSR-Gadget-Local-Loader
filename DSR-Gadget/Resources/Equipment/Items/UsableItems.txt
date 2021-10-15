@@ -1,3 +1,4 @@
+//Format: Item ID; Stack Limit; Reinforce Type; Name [arbitrary]
     100   1 0 White Sign Soapstone
     101   1 0 Red Sign Soapstone
     102   1 0 Red Eye Orb

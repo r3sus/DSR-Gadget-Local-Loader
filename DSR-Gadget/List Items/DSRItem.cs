@@ -24,9 +24,11 @@ namespace DSR_Gadget
         public int ID;
         public int StackLimit;
         public Upgrade UpgradeType;
+        public int CategoryID;
 
-        public DSRItem(string config, bool showID)
+        public DSRItem(string config, bool showID, int categoryID)
         {
+            CategoryID = categoryID;
             Match itemEntry = itemEntryRx.Match(config);
             ID = Convert.ToInt32(itemEntry.Groups["id"].Value);
             StackLimit = Convert.ToInt32(itemEntry.Groups["limit"].Value);
