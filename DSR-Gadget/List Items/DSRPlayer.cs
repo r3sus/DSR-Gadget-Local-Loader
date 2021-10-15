@@ -38,7 +38,7 @@ namespace DSR_Gadget
 
         public string SteamName
         {
-            get => SteamPlayerDataPtr.ReadString((int)DSROffsets.SteamPlayerData.Name, System.Text.Encoding.Unicode, 32);
+            get => SteamPlayerDataPtr.ReadString((int)DSROffsets.SteamPlayerData.Name, System.Text.Encoding.Unicode, 64);
         }
 
         public string SteamID64Hex
