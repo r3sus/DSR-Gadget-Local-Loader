@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DSR_Gadget
@@ -26,7 +29,6 @@ namespace DSR_Gadget
             foreach (DSRBonfire bonfire in DSRBonfire.All)
                 cmbBonfire.Items.Add(bonfire);
             cmbBonfire.SelectedIndex = 0;
-            cmbBonfire.SelectedIndexChanged += cmbBonfire_SelectedIndexChanged;
 
             foreach (DSRTeam team in DSRTeam.All)
                 cmbChrSelect.Items.Add(team);
@@ -51,6 +53,9 @@ namespace DSR_Gadget
             Player = Hook.GetPlayer();
 
             nudSpeed.Value = settings.AnimSpeed;
+
+            lastSetBonfire = new DSRBonfire(-1, "Last Set: None"); //last set bonfire (default values)
+            cmbBonfire.Items.Add(lastSetBonfire); //add to end of filter
         }
 
         private void savePlayer()
@@ -78,6 +83,8 @@ namespace DSR_Gadget
                 Hook.NoGravity = true;
             if (!cbxCollision.Checked)
                 Hook.NoCollision = true;
+
+            cmbBonfire.SelectedIndex = cmbBonfire.Items.Count - 1;
         }
 
         private void updatePlayer()
@@ -133,7 +140,6 @@ namespace DSR_Gadget
             if (cbxSpeed.Checked)
                 Player.AnimSpeed = (float)nudSpeed.Value;
    
-            updateDropdown<DSRBonfire>(cmbBonfire, Hook.LastBonfire);
             updateDropdown<DSRInvasion>(cmbInvasionSelect, Player.InvadeType);
 
             updateTeam(cmbChrSelect, Player.ChrType, Player.TeamType);
@@ -143,6 +149,31 @@ namespace DSR_Gadget
             updateAreaID(cmbMPAreaID, cbxFreezeMPAreaID, Player.MPAreaID, value => Player.MPAreaID = value);
             updateAreaID(cmbAreaID, cbxFreezeAreaID, Player.AreaID, value => Player.AreaID = value);
 
+            //manage unknown warps and current warps that are not in filter
+            int bonfireID = Hook.LastBonfire;
+
+            if (lastSetBonfire.ID != bonfireID) // lastSetBonfire does not match game LastBonfire
+            {
+                //target warp is not in filter
+                DSRBonfire result = DSRBonfire.All.FirstOrDefault(b => b.ID == bonfireID); //check if warp is in bonfire resource
+                if (result == null)
+                {
+                    //bonfire not in filter. Add to filter as unknown
+                    result = new DSRBonfire(bonfireID, $"Unknown {bonfireID}");
+                    DSRBonfire.All.Add(result);
+                    FilterBonfires();
+                }
+
+                //manage lastSetBonfire
+                cmbBonfire.Items.Remove(lastSetBonfire); //remove from filter (if there)
+
+                lastSetBonfire.ID = result.ID;
+                lastSetBonfire.Name = "Last Set: " + result.Name;
+
+                cmbBonfire.Items.Add(lastSetBonfire); //add to end of filter
+                cmbBonfire.SelectedItem = lastSetBonfire;
+                //AddLastSetBonfire();
+            }
         }
 
         private void nudHealth_ValueChanged(object sender, EventArgs e)
@@ -327,19 +358,16 @@ namespace DSR_Gadget
                 Hook.DeathCam = cbxDeathCam.Checked;
         }
 
-        private void cmbBonfire_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (loaded && !reading)
-            {
-                DSRBonfire bonfire = cmbBonfire.SelectedItem as DSRBonfire;
-                Hook.LastBonfire = bonfire.ID;
-            }
-        }
-
         private void btnWarp_Click(object sender, EventArgs e)
         {
             if (loaded)
+            {
+                DSRBonfire bonfire = cmbBonfire.SelectedItem as DSRBonfire;
+                //hook warp entityID
+                Hook.LastBonfire = bonfire.ID;
+                _ = ChangeColorWarp(Color.DarkGray);
                 Hook.BonfireWarp();
+            }
         }
 
         private void cbxSpeed_CheckedChanged(object sender, EventArgs e)
@@ -414,5 +442,101 @@ namespace DSR_Gadget
                 }
             }
         }
+
+        private void txtBonfireSearch_TextChanged(object sender, EventArgs e)
+        {
+            FilterBonfires();
+        }
+
+        private void txtBonfireSearch_Click(object sender, EventArgs e)
+        {
+            txtBonfireSearch.SelectAll();
+            txtBonfireSearch.Focus();
+        }
+
+        private void KeyDownListbox(KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Down)
+            {
+                e.Handled = true;
+
+                if (cmbBonfire.SelectedIndex < cmbBonfire.Items.Count - 1)
+                {
+                    cmbBonfire.SelectedIndex += 1;
+                    return;
+                }
+            }
+
+            if (e.KeyCode == Keys.Up)
+            {
+                e.Handled = true;
+
+                if (cmbBonfire.SelectedIndex != 0)
+                {
+                    cmbBonfire.SelectedIndex -= 1;
+                    return;
+                }
+            }
+
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+                btnWarp_Click(null, null);
+                return;
+            }
+        }
+
+        private async Task ChangeColorWarp(Color new_color)
+        {
+            btnWarp.BackColor = new_color;
+
+            await Task.Delay(TimeSpan.FromSeconds(.25));
+
+            btnWarp.BackColor = default(Color);
+        }
+
+        private void KeyPressedBonfire(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+                txtBonfireSearch.Clear();
+
+            KeyDownListbox(e);
+        }
+
+        private DSRBonfire lastSetBonfire;
+
+        private void FilterBonfires()
+        {
+            //warp filter management
+
+            cmbBonfire.Items.Clear();
+            cmbBonfire.SelectedItem = null;
+
+            //go through bonfire resource and add to filter
+            foreach (DSRBonfire bonfire in DSRBonfire.All)
+            {
+                if (bonfire.ToString().ToLower().Contains(txtBonfireSearch.Text.ToLower()))
+                {
+                    cmbBonfire.Items.Add(bonfire);
+                }
+            }
+
+            cmbBonfire.Items.Add(lastSetBonfire); //add lastSetBonfire to end of filter
+
+            cmbBonfire.SelectedIndex = 0;
+
+            if (txtBonfireSearch.Text == "")
+                lblBonfireSearch.Visible = true;
+            else
+                lblBonfireSearch.Visible = false;
+        }
+
+        //Only when item selected from combobox (Or arrow keys while it's in focus.)
+        private void cmbBonfire_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (Hook.Loaded && cbxQuickSelectBonfire.Checked)
+                Hook.LastBonfire = ((DSRBonfire)cmbBonfire.SelectedItem).ID;
+        }
+
     }
 }

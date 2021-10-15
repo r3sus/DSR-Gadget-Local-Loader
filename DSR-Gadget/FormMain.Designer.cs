@@ -33,6 +33,9 @@
             this.tclMain = new System.Windows.Forms.TabControl();
             this.tpgPlayer = new System.Windows.Forms.TabPage();
             this.gbxOther = new System.Windows.Forms.GroupBox();
+            this.lblBonfireSearch = new System.Windows.Forms.Label();
+            this.cbxQuickSelectBonfire = new System.Windows.Forms.CheckBox();
+            this.txtBonfireSearch = new System.Windows.Forms.TextBox();
             this.btnWarp = new System.Windows.Forms.Button();
             this.cbxSpeed = new System.Windows.Forms.CheckBox();
             this.nudSpeed = new System.Windows.Forms.NumericUpDown();
@@ -639,6 +642,9 @@
             // gbxOther
             // 
             this.gbxOther.AutoSize = true;
+            this.gbxOther.Controls.Add(this.lblBonfireSearch);
+            this.gbxOther.Controls.Add(this.cbxQuickSelectBonfire);
+            this.gbxOther.Controls.Add(this.txtBonfireSearch);
             this.gbxOther.Controls.Add(this.btnWarp);
             this.gbxOther.Controls.Add(this.cbxSpeed);
             this.gbxOther.Controls.Add(this.nudSpeed);
@@ -656,9 +662,40 @@
             this.gbxOther.TabStop = false;
             this.gbxOther.Text = "Other";
             // 
+            // lblBonfireSearch
+            // 
+            this.lblBonfireSearch.AutoSize = true;
+            this.lblBonfireSearch.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.lblBonfireSearch.Location = new System.Drawing.Point(12, 103);
+            this.lblBonfireSearch.Name = "lblBonfireSearch";
+            this.lblBonfireSearch.Size = new System.Drawing.Size(72, 20);
+            this.lblBonfireSearch.TabIndex = 14;
+            this.lblBonfireSearch.Text = "Search...";
+            // 
+            // cbxQuickSelectBonfire
+            // 
+            this.cbxQuickSelectBonfire.AutoSize = true;
+            this.cbxQuickSelectBonfire.Location = new System.Drawing.Point(86, 69);
+            this.cbxQuickSelectBonfire.Name = "cbxQuickSelectBonfire";
+            this.cbxQuickSelectBonfire.Size = new System.Drawing.Size(179, 24);
+            this.cbxQuickSelectBonfire.TabIndex = 13;
+            this.cbxQuickSelectBonfire.Text = "Quick Select Bonfire";
+            this.cbxQuickSelectBonfire.UseVisualStyleBackColor = true;
+            // 
+            // txtBonfireSearch
+            // 
+            this.txtBonfireSearch.Location = new System.Drawing.Point(8, 98);
+            this.txtBonfireSearch.Name = "txtBonfireSearch";
+            this.txtBonfireSearch.Size = new System.Drawing.Size(433, 26);
+            this.txtBonfireSearch.TabIndex = 12;
+            this.txtBonfireSearch.Click += new System.EventHandler(this.txtBonfireSearch_Click);
+            this.txtBonfireSearch.TextChanged += new System.EventHandler(this.txtBonfireSearch_TextChanged);
+            this.txtBonfireSearch.Enter += new System.EventHandler(this.txtBonfireSearch_Click);
+            this.txtBonfireSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyPressedBonfire);
+            // 
             // btnWarp
             // 
-            this.btnWarp.Location = new System.Drawing.Point(454, 82);
+            this.btnWarp.Location = new System.Drawing.Point(452, 127);
             this.btnWarp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnWarp.Name = "btnWarp";
             this.btnWarp.Size = new System.Drawing.Size(112, 35);
@@ -670,7 +707,7 @@
             // cbxSpeed
             // 
             this.cbxSpeed.AutoSize = true;
-            this.cbxSpeed.Location = new System.Drawing.Point(9, 128);
+            this.cbxSpeed.Location = new System.Drawing.Point(434, 29);
             this.cbxSpeed.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxSpeed.Name = "cbxSpeed";
             this.cbxSpeed.Size = new System.Drawing.Size(132, 24);
@@ -687,7 +724,7 @@
             0,
             0,
             131072});
-            this.nudSpeed.Location = new System.Drawing.Point(154, 126);
+            this.nudSpeed.Location = new System.Drawing.Point(428, 60);
             this.nudSpeed.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudSpeed.Name = "nudSpeed";
             this.nudSpeed.Size = new System.Drawing.Size(136, 26);
@@ -704,16 +741,17 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbBonfire.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBonfire.FormattingEnabled = true;
-            this.cmbBonfire.Location = new System.Drawing.Point(9, 85);
+            this.cmbBonfire.Location = new System.Drawing.Point(9, 130);
             this.cmbBonfire.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbBonfire.Name = "cmbBonfire";
-            this.cmbBonfire.Size = new System.Drawing.Size(434, 28);
+            this.cmbBonfire.Size = new System.Drawing.Size(432, 28);
             this.cmbBonfire.TabIndex = 8;
+            this.cmbBonfire.SelectionChangeCommitted += new System.EventHandler(this.cmbBonfire_SelectionChangeCommitted);
             // 
             // lblBonfire
             // 
             this.lblBonfire.AutoSize = true;
-            this.lblBonfire.Location = new System.Drawing.Point(9, 60);
+            this.lblBonfire.Location = new System.Drawing.Point(10, 70);
             this.lblBonfire.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBonfire.Name = "lblBonfire";
             this.lblBonfire.Size = new System.Drawing.Size(60, 20);
@@ -7111,6 +7149,9 @@
         private System.Windows.Forms.TextBox searchBox;
         private System.Windows.Forms.CheckBox SearchAllCheckbox;
         private System.Windows.Forms.CheckBox maxUpgrade;
+        private System.Windows.Forms.Label lblBonfireSearch;
+        private System.Windows.Forms.CheckBox cbxQuickSelectBonfire;
+        private System.Windows.Forms.TextBox txtBonfireSearch;
     }
 }
 

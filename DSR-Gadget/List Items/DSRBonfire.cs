@@ -37,6 +37,12 @@ namespace DSR_Gadget
             ID = -1;
         }
 
+        public DSRBonfire(int id, string name)
+        {
+            Name = name;
+            ID = id;
+        }
+
         static DSRBonfire()
         {
             foreach (string line in Regex.Split(GetTxtResourceClass.GetTxtResource("Resources/Systems/Bonfires.txt"), "[\r\n]+"))
