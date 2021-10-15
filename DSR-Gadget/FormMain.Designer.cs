@@ -1905,7 +1905,7 @@
             // 
             // nudChaosServant
             // 
-            this.nudChaosServant.Location = new System.Drawing.Point(6, 202);
+            this.nudChaosServant.Location = new System.Drawing.Point(4, 314);
             this.nudChaosServant.Maximum = new decimal(new int[] {
             255,
             0,
@@ -1918,7 +1918,7 @@
             // 
             // nudDarkmoonBlade
             // 
-            this.nudDarkmoonBlade.Location = new System.Drawing.Point(6, 176);
+            this.nudDarkmoonBlade.Location = new System.Drawing.Point(4, 274);
             this.nudDarkmoonBlade.Maximum = new decimal(new int[] {
             255,
             0,
@@ -1931,7 +1931,7 @@
             // 
             // nudForestHunter
             // 
-            this.nudForestHunter.Location = new System.Drawing.Point(6, 150);
+            this.nudForestHunter.Location = new System.Drawing.Point(4, 234);
             this.nudForestHunter.Maximum = new decimal(new int[] {
             255,
             0,
@@ -1944,7 +1944,7 @@
             // 
             // nudGravelordServant
             // 
-            this.nudGravelordServant.Location = new System.Drawing.Point(6, 124);
+            this.nudGravelordServant.Location = new System.Drawing.Point(4, 194);
             this.nudGravelordServant.Maximum = new decimal(new int[] {
             255,
             0,
@@ -1957,7 +1957,7 @@
             // 
             // nudPathOfTheDragon
             // 
-            this.nudPathOfTheDragon.Location = new System.Drawing.Point(6, 98);
+            this.nudPathOfTheDragon.Location = new System.Drawing.Point(4, 154);
             this.nudPathOfTheDragon.Maximum = new decimal(new int[] {
             255,
             0,
@@ -1970,7 +1970,7 @@
             // 
             // nudDarkwraith
             // 
-            this.nudDarkwraith.Location = new System.Drawing.Point(6, 72);
+            this.nudDarkwraith.Location = new System.Drawing.Point(4, 114);
             this.nudDarkwraith.Maximum = new decimal(new int[] {
             255,
             0,
@@ -1983,7 +1983,7 @@
             // 
             // nudWarriorOfSunlight
             // 
-            this.nudWarriorOfSunlight.Location = new System.Drawing.Point(6, 46);
+            this.nudWarriorOfSunlight.Location = new System.Drawing.Point(4, 74);
             this.nudWarriorOfSunlight.Maximum = new decimal(new int[] {
             255,
             0,
@@ -5984,7 +5984,7 @@
             this.txtSosSteamID.Location = new System.Drawing.Point(6, 185);
             this.txtSosSteamID.Name = "txtSosSteamID";
             this.txtSosSteamID.ReadOnly = true;
-            this.txtSosSteamID.Size = new System.Drawing.Size(135, 20);
+            this.txtSosSteamID.Size = new System.Drawing.Size(135, 26);
             this.txtSosSteamID.TabIndex = 115;
             // 
             // lblSosSteamID
@@ -5992,7 +5992,7 @@
             this.lblSosSteamID.AutoSize = true;
             this.lblSosSteamID.Location = new System.Drawing.Point(6, 169);
             this.lblSosSteamID.Name = "lblSosSteamID";
-            this.lblSosSteamID.Size = new System.Drawing.Size(51, 13);
+            this.lblSosSteamID.Size = new System.Drawing.Size(77, 20);
             this.lblSosSteamID.TabIndex = 114;
             this.lblSosSteamID.Text = "Steam ID";
             // 
@@ -6400,7 +6400,7 @@
             this.txtSosName.Location = new System.Drawing.Point(6, 146);
             this.txtSosName.Name = "txtSosName";
             this.txtSosName.ReadOnly = true;
-            this.txtSosName.Size = new System.Drawing.Size(135, 20);
+            this.txtSosName.Size = new System.Drawing.Size(135, 26);
             this.txtSosName.TabIndex = 57;
             // 
             // lblSosName
@@ -6428,7 +6428,7 @@
             -2147483648});
             this.nudSosSoulLevel.Name = "nudSosSoulLevel";
             this.nudSosSoulLevel.ReadOnly = true;
-            this.nudSosSoulLevel.Size = new System.Drawing.Size(82, 20);
+            this.nudSosSoulLevel.Size = new System.Drawing.Size(82, 26);
             this.nudSosSoulLevel.TabIndex = 44;
             this.nudSosSoulLevel.Value = new decimal(new int[] {
             1,
@@ -6500,10 +6500,10 @@
             this.tpgNetSosAll.Controls.Add(this.txtSosAllName);
             this.tpgNetSosAll.Controls.Add(this.label23);
             this.tpgNetSosAll.Controls.Add(this.lbxNetSosAll);
-            this.tpgNetSosAll.Location = new System.Drawing.Point(4, 22);
+            this.tpgNetSosAll.Location = new System.Drawing.Point(4, 29);
             this.tpgNetSosAll.Name = "tpgNetSosAll";
             this.tpgNetSosAll.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgNetSosAll.Size = new System.Drawing.Size(376, 541);
+            this.tpgNetSosAll.Size = new System.Drawing.Size(568, 839);
             this.tpgNetSosAll.TabIndex = 3;
             this.tpgNetSosAll.Text = "All Signs";
             this.tpgNetSosAll.UseVisualStyleBackColor = true;
@@ -6523,7 +6523,7 @@
             this.txtSosAllRightWep2.Location = new System.Drawing.Point(170, 266);
             this.txtSosAllRightWep2.Name = "txtSosAllRightWep2";
             this.txtSosAllRightWep2.ReadOnly = true;
-            this.txtSosAllRightWep2.Size = new System.Drawing.Size(135, 20);
+            this.txtSosAllRightWep2.Size = new System.Drawing.Size(135, 26);
             this.txtSosAllRightWep2.TabIndex = 156;
             // 
             // txtSosAllLeftWep1
@@ -6531,7 +6531,7 @@
             this.txtSosAllLeftWep1.Location = new System.Drawing.Point(170, 292);
             this.txtSosAllLeftWep1.Name = "txtSosAllLeftWep1";
             this.txtSosAllLeftWep1.ReadOnly = true;
-            this.txtSosAllLeftWep1.Size = new System.Drawing.Size(135, 20);
+            this.txtSosAllLeftWep1.Size = new System.Drawing.Size(135, 26);
             this.txtSosAllLeftWep1.TabIndex = 155;
             // 
             // txtSosAllLeftWep2
@@ -6539,7 +6539,7 @@
             this.txtSosAllLeftWep2.Location = new System.Drawing.Point(170, 318);
             this.txtSosAllLeftWep2.Name = "txtSosAllLeftWep2";
             this.txtSosAllLeftWep2.ReadOnly = true;
-            this.txtSosAllLeftWep2.Size = new System.Drawing.Size(135, 20);
+            this.txtSosAllLeftWep2.Size = new System.Drawing.Size(135, 26);
             this.txtSosAllLeftWep2.TabIndex = 154;
             // 
             // txtSosAllRightWep1
@@ -6547,7 +6547,7 @@
             this.txtSosAllRightWep1.Location = new System.Drawing.Point(170, 240);
             this.txtSosAllRightWep1.Name = "txtSosAllRightWep1";
             this.txtSosAllRightWep1.ReadOnly = true;
-            this.txtSosAllRightWep1.Size = new System.Drawing.Size(135, 20);
+            this.txtSosAllRightWep1.Size = new System.Drawing.Size(135, 26);
             this.txtSosAllRightWep1.TabIndex = 153;
             // 
             // txtSosAllBolt2
@@ -6555,7 +6555,7 @@
             this.txtSosAllBolt2.Location = new System.Drawing.Point(170, 214);
             this.txtSosAllBolt2.Name = "txtSosAllBolt2";
             this.txtSosAllBolt2.ReadOnly = true;
-            this.txtSosAllBolt2.Size = new System.Drawing.Size(135, 20);
+            this.txtSosAllBolt2.Size = new System.Drawing.Size(135, 26);
             this.txtSosAllBolt2.TabIndex = 152;
             // 
             // txtSosAllArrow1
@@ -6563,7 +6563,7 @@
             this.txtSosAllArrow1.Location = new System.Drawing.Point(170, 136);
             this.txtSosAllArrow1.Name = "txtSosAllArrow1";
             this.txtSosAllArrow1.ReadOnly = true;
-            this.txtSosAllArrow1.Size = new System.Drawing.Size(135, 20);
+            this.txtSosAllArrow1.Size = new System.Drawing.Size(135, 26);
             this.txtSosAllArrow1.TabIndex = 151;
             // 
             // txtSosAllArrow2
@@ -6571,7 +6571,7 @@
             this.txtSosAllArrow2.Location = new System.Drawing.Point(170, 162);
             this.txtSosAllArrow2.Name = "txtSosAllArrow2";
             this.txtSosAllArrow2.ReadOnly = true;
-            this.txtSosAllArrow2.Size = new System.Drawing.Size(135, 20);
+            this.txtSosAllArrow2.Size = new System.Drawing.Size(135, 26);
             this.txtSosAllArrow2.TabIndex = 150;
             // 
             // txtSosAllBolt1
@@ -6579,7 +6579,7 @@
             this.txtSosAllBolt1.Location = new System.Drawing.Point(170, 188);
             this.txtSosAllBolt1.Name = "txtSosAllBolt1";
             this.txtSosAllBolt1.ReadOnly = true;
-            this.txtSosAllBolt1.Size = new System.Drawing.Size(135, 20);
+            this.txtSosAllBolt1.Size = new System.Drawing.Size(135, 26);
             this.txtSosAllBolt1.TabIndex = 149;
             // 
             // txtSosAllLegs
@@ -6587,7 +6587,7 @@
             this.txtSosAllLegs.Location = new System.Drawing.Point(170, 110);
             this.txtSosAllLegs.Name = "txtSosAllLegs";
             this.txtSosAllLegs.ReadOnly = true;
-            this.txtSosAllLegs.Size = new System.Drawing.Size(135, 20);
+            this.txtSosAllLegs.Size = new System.Drawing.Size(135, 26);
             this.txtSosAllLegs.TabIndex = 148;
             // 
             // txtSosAllHands
@@ -6595,7 +6595,7 @@
             this.txtSosAllHands.Location = new System.Drawing.Point(170, 84);
             this.txtSosAllHands.Name = "txtSosAllHands";
             this.txtSosAllHands.ReadOnly = true;
-            this.txtSosAllHands.Size = new System.Drawing.Size(135, 20);
+            this.txtSosAllHands.Size = new System.Drawing.Size(135, 26);
             this.txtSosAllHands.TabIndex = 147;
             // 
             // txtSosAllHair
@@ -6603,7 +6603,7 @@
             this.txtSosAllHair.Location = new System.Drawing.Point(170, 6);
             this.txtSosAllHair.Name = "txtSosAllHair";
             this.txtSosAllHair.ReadOnly = true;
-            this.txtSosAllHair.Size = new System.Drawing.Size(135, 20);
+            this.txtSosAllHair.Size = new System.Drawing.Size(135, 26);
             this.txtSosAllHair.TabIndex = 146;
             // 
             // txtSosAllHead
@@ -6611,7 +6611,7 @@
             this.txtSosAllHead.Location = new System.Drawing.Point(170, 32);
             this.txtSosAllHead.Name = "txtSosAllHead";
             this.txtSosAllHead.ReadOnly = true;
-            this.txtSosAllHead.Size = new System.Drawing.Size(135, 20);
+            this.txtSosAllHead.Size = new System.Drawing.Size(135, 26);
             this.txtSosAllHead.TabIndex = 145;
             // 
             // txtSosAllChest
@@ -6619,7 +6619,7 @@
             this.txtSosAllChest.Location = new System.Drawing.Point(170, 58);
             this.txtSosAllChest.Name = "txtSosAllChest";
             this.txtSosAllChest.ReadOnly = true;
-            this.txtSosAllChest.Size = new System.Drawing.Size(135, 20);
+            this.txtSosAllChest.Size = new System.Drawing.Size(135, 26);
             this.txtSosAllChest.TabIndex = 144;
             // 
             // lblSosAllBolt2
@@ -6627,7 +6627,7 @@
             this.lblSosAllBolt2.AutoSize = true;
             this.lblSosAllBolt2.Location = new System.Drawing.Point(311, 217);
             this.lblSosAllBolt2.Name = "lblSosAllBolt2";
-            this.lblSosAllBolt2.Size = new System.Drawing.Size(34, 13);
+            this.lblSosAllBolt2.Size = new System.Drawing.Size(50, 20);
             this.lblSosAllBolt2.TabIndex = 143;
             this.lblSosAllBolt2.Text = "Bolt 2";
             // 
@@ -6636,7 +6636,7 @@
             this.lblSosAllBolt1.AutoSize = true;
             this.lblSosAllBolt1.Location = new System.Drawing.Point(311, 191);
             this.lblSosAllBolt1.Name = "lblSosAllBolt1";
-            this.lblSosAllBolt1.Size = new System.Drawing.Size(34, 13);
+            this.lblSosAllBolt1.Size = new System.Drawing.Size(50, 20);
             this.lblSosAllBolt1.TabIndex = 142;
             this.lblSosAllBolt1.Text = "Bolt 1";
             // 
@@ -6645,7 +6645,7 @@
             this.lblSosAllArrow2.AutoSize = true;
             this.lblSosAllArrow2.Location = new System.Drawing.Point(311, 165);
             this.lblSosAllArrow2.Name = "lblSosAllArrow2";
-            this.lblSosAllArrow2.Size = new System.Drawing.Size(43, 13);
+            this.lblSosAllArrow2.Size = new System.Drawing.Size(63, 20);
             this.lblSosAllArrow2.TabIndex = 141;
             this.lblSosAllArrow2.Text = "Arrow 2";
             // 
@@ -6654,7 +6654,7 @@
             this.lblSosAllArrow1.AutoSize = true;
             this.lblSosAllArrow1.Location = new System.Drawing.Point(311, 139);
             this.lblSosAllArrow1.Name = "lblSosAllArrow1";
-            this.lblSosAllArrow1.Size = new System.Drawing.Size(43, 13);
+            this.lblSosAllArrow1.Size = new System.Drawing.Size(63, 20);
             this.lblSosAllArrow1.TabIndex = 140;
             this.lblSosAllArrow1.Text = "Arrow 1";
             // 
@@ -6663,7 +6663,7 @@
             this.lblSosAllLegs.AutoSize = true;
             this.lblSosAllLegs.Location = new System.Drawing.Point(311, 113);
             this.lblSosAllLegs.Name = "lblSosAllLegs";
-            this.lblSosAllLegs.Size = new System.Drawing.Size(30, 13);
+            this.lblSosAllLegs.Size = new System.Drawing.Size(44, 20);
             this.lblSosAllLegs.TabIndex = 139;
             this.lblSosAllLegs.Text = "Legs";
             // 
@@ -6672,7 +6672,7 @@
             this.lblSosAllLeftWep2.AutoSize = true;
             this.lblSosAllLeftWep2.Location = new System.Drawing.Point(311, 321);
             this.lblSosAllLeftWep2.Name = "lblSosAllLeftWep2";
-            this.lblSosAllLeftWep2.Size = new System.Drawing.Size(54, 13);
+            this.lblSosAllLeftWep2.Size = new System.Drawing.Size(78, 20);
             this.lblSosAllLeftWep2.TabIndex = 138;
             this.lblSosAllLeftWep2.Text = "L. Hand 2";
             // 
@@ -6681,7 +6681,7 @@
             this.lblSosAllLeftWep1.AutoSize = true;
             this.lblSosAllLeftWep1.Location = new System.Drawing.Point(311, 295);
             this.lblSosAllLeftWep1.Name = "lblSosAllLeftWep1";
-            this.lblSosAllLeftWep1.Size = new System.Drawing.Size(54, 13);
+            this.lblSosAllLeftWep1.Size = new System.Drawing.Size(78, 20);
             this.lblSosAllLeftWep1.TabIndex = 137;
             this.lblSosAllLeftWep1.Text = "L. Hand 1";
             // 
@@ -6690,7 +6690,7 @@
             this.lblSosAllRightWep2.AutoSize = true;
             this.lblSosAllRightWep2.Location = new System.Drawing.Point(311, 269);
             this.lblSosAllRightWep2.Name = "lblSosAllRightWep2";
-            this.lblSosAllRightWep2.Size = new System.Drawing.Size(56, 13);
+            this.lblSosAllRightWep2.Size = new System.Drawing.Size(81, 20);
             this.lblSosAllRightWep2.TabIndex = 136;
             this.lblSosAllRightWep2.Text = "R. Hand 2";
             // 
@@ -6699,7 +6699,7 @@
             this.lblSosAllRightWep1.AutoSize = true;
             this.lblSosAllRightWep1.Location = new System.Drawing.Point(311, 243);
             this.lblSosAllRightWep1.Name = "lblSosAllRightWep1";
-            this.lblSosAllRightWep1.Size = new System.Drawing.Size(56, 13);
+            this.lblSosAllRightWep1.Size = new System.Drawing.Size(81, 20);
             this.lblSosAllRightWep1.TabIndex = 135;
             this.lblSosAllRightWep1.Text = "R. Hand 1";
             // 
@@ -6708,7 +6708,7 @@
             this.lblSosAllHands.AutoSize = true;
             this.lblSosAllHands.Location = new System.Drawing.Point(311, 87);
             this.lblSosAllHands.Name = "lblSosAllHands";
-            this.lblSosAllHands.Size = new System.Drawing.Size(38, 13);
+            this.lblSosAllHands.Size = new System.Drawing.Size(56, 20);
             this.lblSosAllHands.TabIndex = 134;
             this.lblSosAllHands.Text = "Hands";
             // 
@@ -6717,7 +6717,7 @@
             this.lblSosAllChest.AutoSize = true;
             this.lblSosAllChest.Location = new System.Drawing.Point(311, 61);
             this.lblSosAllChest.Name = "lblSosAllChest";
-            this.lblSosAllChest.Size = new System.Drawing.Size(34, 13);
+            this.lblSosAllChest.Size = new System.Drawing.Size(51, 20);
             this.lblSosAllChest.TabIndex = 133;
             this.lblSosAllChest.Text = "Chest";
             // 
@@ -6726,7 +6726,7 @@
             this.lblSosAllHead.AutoSize = true;
             this.lblSosAllHead.Location = new System.Drawing.Point(311, 35);
             this.lblSosAllHead.Name = "lblSosAllHead";
-            this.lblSosAllHead.Size = new System.Drawing.Size(33, 13);
+            this.lblSosAllHead.Size = new System.Drawing.Size(48, 20);
             this.lblSosAllHead.TabIndex = 132;
             this.lblSosAllHead.Text = "Head";
             // 
@@ -6735,7 +6735,7 @@
             this.lblSosAllHair.AutoSize = true;
             this.lblSosAllHair.Location = new System.Drawing.Point(311, 9);
             this.lblSosAllHair.Name = "lblSosAllHair";
-            this.lblSosAllHair.Size = new System.Drawing.Size(26, 13);
+            this.lblSosAllHair.Size = new System.Drawing.Size(38, 20);
             this.lblSosAllHair.TabIndex = 131;
             this.lblSosAllHair.Text = "Hair";
             // 
@@ -6744,7 +6744,7 @@
             this.lblSosAllPos.AutoSize = true;
             this.lblSosAllPos.Location = new System.Drawing.Point(6, 183);
             this.lblSosAllPos.Name = "lblSosAllPos";
-            this.lblSosAllPos.Size = new System.Drawing.Size(61, 13);
+            this.lblSosAllPos.Size = new System.Drawing.Size(91, 20);
             this.lblSosAllPos.TabIndex = 130;
             this.lblSosAllPos.Text = "Sfx position";
             // 
@@ -6753,7 +6753,7 @@
             this.label18.AutoSize = true;
             this.label18.Location = new System.Drawing.Point(26, 279);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(34, 13);
+            this.label18.Size = new System.Drawing.Size(50, 20);
             this.label18.TabIndex = 129;
             this.label18.Text = "Angle";
             // 
@@ -6772,7 +6772,7 @@
             0,
             -2147483648});
             this.nudSosAllPosZ.Name = "nudSosAllPosZ";
-            this.nudSosAllPosZ.Size = new System.Drawing.Size(75, 20);
+            this.nudSosAllPosZ.Size = new System.Drawing.Size(75, 26);
             this.nudSosAllPosZ.TabIndex = 123;
             this.nudSosAllPosZ.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudSosAllPosZ.Click += new System.EventHandler(this.nudSosAllPosZ_ValueChanged);
@@ -6802,7 +6802,7 @@
             0,
             -2147483648});
             this.nudSosAllPosY.Name = "nudSosAllPosY";
-            this.nudSosAllPosY.Size = new System.Drawing.Size(75, 20);
+            this.nudSosAllPosY.Size = new System.Drawing.Size(75, 26);
             this.nudSosAllPosY.TabIndex = 122;
             this.nudSosAllPosY.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudSosAllPosY.Click += new System.EventHandler(this.nudSosAllPosY_ValueChanged);
@@ -6822,7 +6822,7 @@
             0,
             -2147483648});
             this.nudSosAllPosX.Name = "nudSosAllPosX";
-            this.nudSosAllPosX.Size = new System.Drawing.Size(75, 20);
+            this.nudSosAllPosX.Size = new System.Drawing.Size(75, 26);
             this.nudSosAllPosX.TabIndex = 121;
             this.nudSosAllPosX.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudSosAllPosX.Click += new System.EventHandler(this.nudSosAllPosX_ValueChanged);
@@ -6841,7 +6841,7 @@
             0,
             -2147483648});
             this.nudSosAllPosAngle.Name = "nudSosAllPosAngle";
-            this.nudSosAllPosAngle.Size = new System.Drawing.Size(75, 20);
+            this.nudSosAllPosAngle.Size = new System.Drawing.Size(75, 26);
             this.nudSosAllPosAngle.TabIndex = 128;
             this.nudSosAllPosAngle.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudSosAllPosAngle.Click += new System.EventHandler(this.nudSosAllPosAngle_ValueChanged);
@@ -6851,7 +6851,7 @@
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(46, 253);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(14, 13);
+            this.label19.Size = new System.Drawing.Size(19, 20);
             this.label19.TabIndex = 127;
             this.label19.Text = "Z";
             // 
@@ -6860,7 +6860,7 @@
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(46, 227);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(14, 13);
+            this.label20.Size = new System.Drawing.Size(20, 20);
             this.label20.TabIndex = 126;
             this.label20.Text = "Y";
             // 
@@ -6869,7 +6869,7 @@
             this.label21.AutoSize = true;
             this.label21.Location = new System.Drawing.Point(46, 201);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(14, 13);
+            this.label21.Size = new System.Drawing.Size(20, 20);
             this.label21.TabIndex = 125;
             this.label21.Text = "X";
             // 
@@ -6878,7 +6878,7 @@
             this.label22.AutoSize = true;
             this.label22.Location = new System.Drawing.Point(6, 143);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(75, 13);
+            this.label22.Size = new System.Drawing.Size(111, 20);
             this.label22.TabIndex = 120;
             this.label22.Text = "Summon Type";
             // 
@@ -6889,7 +6889,7 @@
             this.cmbSosAllSummonType.FormattingEnabled = true;
             this.cmbSosAllSummonType.Location = new System.Drawing.Point(6, 159);
             this.cmbSosAllSummonType.Name = "cmbSosAllSummonType";
-            this.cmbSosAllSummonType.Size = new System.Drawing.Size(135, 21);
+            this.cmbSosAllSummonType.Size = new System.Drawing.Size(135, 28);
             this.cmbSosAllSummonType.TabIndex = 119;
             // 
             // txtSosAllName
@@ -6897,7 +6897,7 @@
             this.txtSosAllName.Location = new System.Drawing.Point(6, 120);
             this.txtSosAllName.Name = "txtSosAllName";
             this.txtSosAllName.ReadOnly = true;
-            this.txtSosAllName.Size = new System.Drawing.Size(135, 20);
+            this.txtSosAllName.Size = new System.Drawing.Size(135, 26);
             this.txtSosAllName.TabIndex = 118;
             // 
             // label23
@@ -6905,16 +6905,17 @@
             this.label23.AutoSize = true;
             this.label23.Location = new System.Drawing.Point(6, 104);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(35, 13);
+            this.label23.Size = new System.Drawing.Size(51, 20);
             this.label23.TabIndex = 117;
             this.label23.Text = "Name";
             // 
             // lbxNetSosAll
             // 
             this.lbxNetSosAll.FormattingEnabled = true;
+            this.lbxNetSosAll.ItemHeight = 20;
             this.lbxNetSosAll.Location = new System.Drawing.Point(6, 6);
             this.lbxNetSosAll.Name = "lbxNetSosAll";
-            this.lbxNetSosAll.Size = new System.Drawing.Size(158, 95);
+            this.lbxNetSosAll.Size = new System.Drawing.Size(158, 84);
             this.lbxNetSosAll.TabIndex = 114;
             // 
             // tpgHotkeys
