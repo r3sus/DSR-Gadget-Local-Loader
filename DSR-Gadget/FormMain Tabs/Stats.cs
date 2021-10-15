@@ -67,6 +67,14 @@ namespace DSR_Gadget
 #if DEBUG
             criticalControls.Add(nudIndictments);
             criticalControls.AddRange(cbxGestures);
+            criticalControls.Add(nudVitality);
+            criticalControls.Add(nudAttunement);
+            criticalControls.Add(nudEndurance);
+            criticalControls.Add(nudStrength);
+            criticalControls.Add(nudDexterity);
+            criticalControls.Add(nudResistance);
+            criticalControls.Add(nudIntelligence);
+            criticalControls.Add(nudFaith);
 #endif
         }
 
@@ -199,8 +207,8 @@ namespace DSR_Gadget
 
         private void nudStats_ValueChanged(object sender, EventArgs e)
         {
-            //if (!reading)
-            //recalculateStats();
+            if (!reading)
+                recalculateStats();
         }
 
         #region Covenant
@@ -319,7 +327,11 @@ namespace DSR_Gadget
             sl += intel - charClass.Intelligence;
             sl += fth - charClass.Faith;
 
-            //dsrProcess.LevelUp(vit, att, end, str, dex, res, intel, fth, sl);
+            if (sl < charClass.SoulLevel || vit < charClass.Vitality || att < charClass.Attunement || end < charClass.Endurance || str < charClass.Strength ||
+                dex < charClass.Dexterity || res < charClass.Resistance || intel < charClass.Intelligence || fth < charClass.Faith)
+                return;
+            
+            Hook.LevelUp(sl, vit, att, end, str, dex, res, intel, fth, Player.Humanity, Player.Souls);
         }
 
         #region Fashion

@@ -12,23 +12,24 @@ namespace DSR_Gadget
         public enum FrpgNetManImp
         {
             FrpgNetSosDb = 0xB48,
+            FrpgNetNitoInvitationDb = 0xB98,
         }
         
-        public enum FrpgNetSosDb
+        public enum FrpgNetDb
         {
-            SosDbList = 0x28,
+            NetDbList = 0x28,
         }
 
-        public enum SosDbList
+        public enum NetDbList
         {
-            SosDbListItem = 0x0,
+            NetDbListItem = 0x0,
         }
 
-        public enum SosDbListItem
+        public enum NetDbListItem
         {
-            SosDbItemNext = 0x0,
-            SosDbItemPrevious = 0x8,
-            FrpgNetSosDbItem = 0x10,
+            NetDbListItemNext = 0x0,
+            NetDbListItemPrevious = 0x8,
+            FrpgNetDbItem = 0x10,
         }
 
         public enum FrpgNetSosDbItem
@@ -77,8 +78,6 @@ namespace DSR_Gadget
             DeathCam = 0x70,
         }
 
-        public int PlayerInsBoost1 = 0x0;
-        public int PlayerInsBoost2 = 0x0;
         public enum PlayerIns
         {
             CurrentPlayers = 0x18, // List of PlayerIns of current players
@@ -86,14 +85,16 @@ namespace DSR_Gadget
             PlayerCtrl = 0x68,
             ChrType = 0xD4,
             TeamType = 0xD8,
-            ChrFlags1 = 0x284,
+            ChrFlags1 = 0x2A4,
+            Opactiy = 0x328,
             MPAreaID = 0x354,
             AreaID = 0x358,
             Health = 0x3E8,
             MaxHealth = 0x3EC,
             Stamina = 0x3F8,
             MaxStamina = 0x3FC,
-            ChrFlags2 = 0x514,
+            ThrowData = 0x448,
+            ChrFlags2 = 0x524,
 
             PlayerGameData = 0x578,
             SteamPlayerData = 0x590,
@@ -237,20 +238,22 @@ namespace DSR_Gadget
             FilterHue = 0x36C,
         }
 
+        // NS_FRPG::GameMan
         public const string ChrClassWarpAOB = "48 8B 05 ? ? ? ? 66 0F 7F 80 ? ? ? ? 0F 28 02 66 0F 7F 80 ? ? ? ? C6 80";
         public const int ChrClassWarpOffset1 = 0;
-        public int ChrClassWarpBoost = 0x0;
         public enum ChrClassWarp
         {
-            LastBonfire = 0xB24,
-            StableX = 0xB90,
-            StableY = 0xB94,
-            StableZ = 0xB98,
-            StableAngle = 0xBA4,
-            InitialX = 0xA70,
-            InitialY = 0xA74,
-            InitialZ = 0xA78,
-            InitialAngle = 0x84,
+            LastBonfire = 0xB34,
+            StableX = 0xBA0,
+            StableY = 0xBA4,
+            StableZ = 0xBA8,
+            StableAngle = 0xBB4,
+            InitialX = 0xA80,
+            InitialY = 0xA84,
+            InitialZ = 0xA88,
+            InitialAngle = 0xA94,
+            SaveSlot = 0xAA0,
+            AutoSave = 0xB70,
         }
 
 
@@ -285,7 +288,27 @@ namespace DSR_Gadget
             BottomlessBox = 0x98,
             Warp = 0xC0,
             MenuKick = 0x24C,
+            PerformGesture = 0x2B8,
             Covenants = 0x300,
+        }
+
+        public enum Gesture
+        {
+            PointForward = 1,
+            PointUp = 2,
+            PointDown = 3,
+            Beckon = 4,
+            Wave = 5,
+            Bow = 6,
+            ProperBow = 7,
+            Hurrah = 8,
+            Joy = 9,
+            Shrug = 10,
+            LookSkyward = 11,
+            WellWhatIsIt = 12,
+            Prostration = 13,
+            Prayer = 14,
+            PraiseTheSun = 15,
         }
 
         // BaseB in public ce table
@@ -318,6 +341,7 @@ namespace DSR_Gadget
             Dexterity = 0x60,
             Intelligence = 0x68,
             Faith = 0x70,
+            HumanityLvlMenu = 0x80,
             Humanity = 0x84,
             Resistance = 0x88,
             SoulLevel = 0x90,
@@ -334,7 +358,7 @@ namespace DSR_Gadget
             MultiplayerCount = 0xD4,
             CoopSuccessCount = 0xD8,
 
-
+            ChaosServantContribution = 0xE8,
             WarriorOfSunlight = 0xED,
             Darkwraith = 0xEE,
             PathOfTheDragon = 0xEF,
@@ -605,12 +629,79 @@ namespace DSR_Gadget
             TeamType = 0xD8,
             MsbResCap = 0xB0,
             ChrTaeAnimEven = 0xC0,
+            ChrFlags1 = 0x2A4,
+            Opactiy = 0x328,
             Health = 0x3E8,
             MaxHealth = 0x3EC,
             Stamina = 0x3F8,
             MaxStamina = 0x3FC,
+            ChrFlags2 = 0x524,
 
         }
+
+        public const string BaseCARAOB = "48 8B 0D ? ? ? ? E8 ? ? ? ? 48 8B 4E 68 48 8B 05 ? ? ? ? 48 89 48 60 E8";
+        public const int SosSignManOffset0 = 0xD48;
+        public const int SosSignManOffset1 = 0x20;
+
+        public enum SosSignMan
+        {
+            SosListEntry = 0x18,
+        }
+
+        public enum SosListEntry
+        {
+            Item1 = 0x0,
+            Item2 = 0x8,
+            Item3 = 0x10,
+            SosSignManSign = 0x28,
+        }
+
+        public enum SosSignManSign
+        {
+            PosX = 0x8,
+            PosY = 0xC,
+            PosZ = 0x10,
+            PosAngle = 0x14,
+            AreaID = 0x18,
+            SummonType = 0x22,
+            Name = 0x24,
+
+            LeftWep1 = 0x68,
+            RightWep1 = 0x6C,
+            LeftWep2 = 0x70,
+            RightWep2 = 0x74,
+            Arrow1 = 0x78,
+            Bolt1 = 0x7C,
+            Arrow2 = 0x80,
+            Bolt2 = 0x84,
+            ArmorHead = 0x88,
+            ArmorChest = 0x8C,
+            ArmorHands = 0x90,
+            ArmorLegs = 0x94,
+            Hair = 0x98,
+
+            HairRed = 0x9C,
+            HairGreen = 0x9D,
+            HairBlue = 0x9E,
+            HairAlpha = 0x9F,
+
+            /*
+            SummonType = 0x8,
+            SteamID = 0xC,
+            AreaID1 = 0x30,
+            PosX = 0x34,
+            PosY = 0x38,
+            PosZ = 0x3C,
+            PosAngle = 0x40,
+            AreaID2 = 0x44,
+            SoulLevel = 0x48,
+            Covenant = 0x4C,
+            MultiplayerCount = 0x50,
+            */
+        }
+
+
+
 
         public static DSROffsets GetOffsets(int moduleSize)
         {
@@ -619,13 +710,10 @@ namespace DSR_Gadget
 
             if (version > 1)
             {
-                result.ChrClassWarpBoost = 0x10;
             }
 
             if (version > 2)
             {
-                result.PlayerInsBoost1 = 0x20;
-                result.PlayerInsBoost2 = 0x10;
             }
 
             return result;

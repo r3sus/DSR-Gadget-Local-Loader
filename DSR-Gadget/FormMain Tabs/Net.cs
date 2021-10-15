@@ -1,6 +1,7 @@
 ﻿using DSR_Gadget.SubForms;
 using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,8 +13,10 @@ namespace DSR_Gadget
         private DSRPlayer[] CurrentPlayers = new DSRPlayer[5];
         private DSRPlayer[] RecentPlayers = new DSRPlayer[5];
         private List<DSRSummonSign> SummonSignList;
+        private List<DSRSummonSignSfx> AllSignList;
         private DSRPlayer EmptyPlayer;
         private DSRSummonSign EmptySummonSign;
+        private DSRSummonSignSfx EmptySummonSignSfx;
 
         private void initInfo()
         {
@@ -28,6 +31,7 @@ namespace DSR_Gadget
 
             EmptyPlayer = Hook.GetEmptyPlayer();
             EmptySummonSign = Hook.GetEmptySummonSign();
+            EmptySummonSignSfx = Hook.GetEmptySummonSignSfx();
             btnCurrentPlayerMore.Enabled = false;
 
             nudSosSoulLevel.Maximum = int.MaxValue;
@@ -40,43 +44,11 @@ namespace DSR_Gadget
             cmbSosSummonType.SelectedIndex = 0;
             cmbSosSummonType.SelectedIndexChanged += cmbSummonType_SelectedIndexChanged;
 
+            foreach (DSRSummon summon in DSRSummon.All)
+                cmbSosAllSummonType.Items.Add(summon);
+            cmbSosAllSummonType.SelectedIndex = 0;
+
             btnCurrentPlayerFamilyShare.Enabled = true;
-
-            /*
-            Dictionary<int, DSRItem> weapons = new Dictionary<int, DSRItem>();
-
-            foreach (DSRItemCategory category in DSRItemCategory.All)
-            {
-                if (category.ID == 0x00000000)
-                {
-                    foreach(DSRItem item in category.Items)
-                    {
-                        weapons[item.ID] = item;
-                        switch (item.UpgradeType)
-                        {
-                            case DSRItem.Upgrade.None:
-                                break;
-                            case DSRItem.Upgrade.Unique:
-                                for (int i = 1; i <= 5; i++)
-                                {
-                                    DSRItem infusedItem = new DSRItem()
-                                }
-                                break;
-                            case DSRItem.Upgrade.Armor:
-                                break;
-                            case DSRItem.Upgrade.Infusable:
-                                break;
-                            case DSRItem.Upgrade.InfusableRestricted:
-                                break;
-                            case DSRItem.Upgrade.PyroFlame:
-                                break;
-                            case DSRItem.Upgrade.PyroFlameAscended:
-                                break;
-                        }
-                    }
-                }
-            }
-            */
 
             /*
             foreach (DSRClass charClass in DSRClass.All)
@@ -178,30 +150,53 @@ namespace DSR_Gadget
             else
                 updateRecentPlayerUI(EmptyPlayer);
 
-            
-            SummonSignList = Hook.GetSummonSigns();
-            if (lbxNetSosList.Items.Count > SummonSignList.Count)
-            {
-                for (int i = SummonSignList.Count > 0 ? SummonSignList.Count - 1 : 0; i < lbxNetSosList.Items.Count; i++)
-                    lbxNetSosList.Items.RemoveAt(i);
-            }
-            if (lbxNetSosList.Items.Count < SummonSignList.Count)
-            {
-                for (int i = lbxNetSosList.Items.Count > 0 ? lbxNetSosList.Items.Count - 1 : 0; i < SummonSignList.Count; i++)
-                    lbxNetSosList.Items.Add(SummonSignList[i]);
-            }
 
-            for (int i = 0; i < lbxNetSosList.Items.Count; i++)
-            {
-                lbxNetSosList.Items[i] = lbxNetSosList.Items[i];
-            }
+
+            SummonSignList = Hook.GetSummonSigns();
+
+            updateListBox(lbxNetSosList, SummonSignList);
 
             DSRSummonSign selectedSummonSign = lbxNetSosList.SelectedItem as DSRSummonSign;
             if (selectedSummonSign != null)
                 updateSummonSignUI(selectedSummonSign);
             else
                 updateSummonSignUI(EmptySummonSign);
-            
+
+
+            AllSignList = Hook.GetSummonSignsSfx();
+
+            updateListBox(lbxNetSosAll, AllSignList);
+
+            DSRSummonSignSfx selectedSummonSignSfx = lbxNetSosAll.SelectedItem as DSRSummonSignSfx;
+            if (selectedSummonSignSfx != null)
+                updateSignAllUI(selectedSummonSignSfx);
+            else
+                updateSignAllUI(EmptySummonSignSfx);
+
+        }
+
+        private void updateListBox<T>(ListBox lbx, List<T> items)
+        {
+            for (int i = 0; i < items.Count; i++)
+            {
+                if (i >= lbx.Items.Count)
+                {
+                    lbx.Items.Add(items[i]);
+                    if (lbx.Items.Count == 1)
+                        lbx.SelectedIndex = 0;
+                }
+                else
+                    lbx.Items[i] = items[i];
+            }
+            if (lbx.Items.Count > items.Count)
+            {
+                for (int i = items.Count; i < lbx.Items.Count; i++)
+                {
+                    if (lbx.SelectedIndex == i)
+                        lbx.SelectedIndex -= 1;
+                    lbx.Items.RemoveAt(i);
+                }
+            }
         }
 
         private void updateRecentPlayerUI(DSRPlayer player)
@@ -296,12 +291,13 @@ namespace DSR_Gadget
         {
             nudSosSoulLevel.Value = sign.SoulLevel;
             txtSosName.Text = sign.Name;
+            txtSosSteamID.Text = sign.SteamID64.ToString();
 
             DSRPlayer.Position pos = sign.GetPosition();
             nudSosPosX.Value = (decimal)pos.X;
             nudSosPosY.Value = (decimal)pos.Y;
             nudSosPosZ.Value = (decimal)pos.Z;
-            nudSosPosAngle.Value = (decimal)pos.Angle;
+            nudSosPosAngle.Value = angleToDegree(pos.Angle);
             updateDropdown<DSRSummon>(cmbSosSummonType, sign.SummonType);
 
             txtSosHair.Text = Util.Util.DictGetOrDefault(DSRProtector.Dict, sign.Hair, sign.Hair.ToString());
@@ -319,6 +315,37 @@ namespace DSR_Gadget
             txtSosRightWep2.Text = Util.Util.DictGetOrDefault(DSRWeapon.Dict, sign.RightWep2, sign.RightWep2.ToString());
             txtSosLeftWep1.Text = Util.Util.DictGetOrDefault(DSRWeapon.Dict, sign.LeftWep1, sign.LeftWep1.ToString());
             txtSosLeftWep2.Text = Util.Util.DictGetOrDefault(DSRWeapon.Dict, sign.LeftWep2, sign.LeftWep2.ToString());
+        }
+
+        private void updateSignAllUI(DSRSummonSignSfx sign)
+        {
+            txtSosAllName.Text = sign.Name;
+
+            DSRPlayer.Position pos = sign.GetPosition();
+            nudSosAllPosX.Value = (decimal)pos.X;
+            nudSosAllPosY.Value = (decimal)pos.Y;
+            nudSosAllPosZ.Value = (decimal)pos.Z;
+            nudSosAllPosAngle.Value = angleToDegree(pos.Angle);
+            updateDropdown<DSRSummon>(cmbSosAllSummonType, sign.SummonType);
+
+            if (sign.SummonType == 7)
+                sign = EmptySummonSignSfx;
+
+            txtSosAllHair.Text = Util.Util.DictGetOrDefault(DSRProtector.Dict, sign.Hair, sign.Hair.ToString());
+            txtSosAllHead.Text = Util.Util.DictGetOrDefault(DSRProtector.Dict, sign.ArmorHead, sign.ArmorHead.ToString());
+            txtSosAllChest.Text = Util.Util.DictGetOrDefault(DSRProtector.Dict, sign.ArmorChest, sign.ArmorChest.ToString());
+            txtSosAllHands.Text = Util.Util.DictGetOrDefault(DSRProtector.Dict, sign.ArmorHands, sign.ArmorHands.ToString());
+            txtSosAllLegs.Text = Util.Util.DictGetOrDefault(DSRProtector.Dict, sign.ArmorLegs, sign.ArmorLegs.ToString());
+
+            txtSosAllArrow1.Text = Util.Util.DictGetOrDefault(DSRWeapon.Dict, sign.Arrow1, sign.Arrow1.ToString());
+            txtSosAllArrow2.Text = Util.Util.DictGetOrDefault(DSRWeapon.Dict, sign.Arrow2, sign.Arrow2.ToString());
+            txtSosAllBolt1.Text = Util.Util.DictGetOrDefault(DSRWeapon.Dict, sign.Bolt1, sign.Bolt1.ToString());
+            txtSosAllBolt2.Text = Util.Util.DictGetOrDefault(DSRWeapon.Dict, sign.Bolt2, sign.Bolt2.ToString());
+
+            txtSosAllRightWep1.Text = Util.Util.DictGetOrDefault(DSRWeapon.Dict, sign.RightWep1, sign.RightWep1.ToString());
+            txtSosAllRightWep2.Text = Util.Util.DictGetOrDefault(DSRWeapon.Dict, sign.RightWep2, sign.RightWep2.ToString());
+            txtSosAllLeftWep1.Text = Util.Util.DictGetOrDefault(DSRWeapon.Dict, sign.LeftWep1, sign.LeftWep1.ToString());
+            txtSosAllLeftWep2.Text = Util.Util.DictGetOrDefault(DSRWeapon.Dict, sign.LeftWep2, sign.LeftWep2.ToString());
         }
 
         private void btnCurrentPlayerKick_Click(object sender, EventArgs e)
@@ -398,6 +425,14 @@ namespace DSR_Gadget
                 sign.SummonType = (cmbSosSummonType.SelectedItem as DSRSummon).ID;
         }
 
+        private void btnSosSteamProfile_Click(object sender, EventArgs e)
+        {
+            Regex regex = new Regex(@"^.*(?<ID>[0-9]{17}).*$");
+            string steamID = txtSosSteamID.Text;
+            if (regex.IsMatch(steamID))
+                Util.Util.OpenUrl("https://www.steamcommunity.com/profiles/" + steamID);
+        }
+
         private void btnSosRestorePos_Click(object sender, EventArgs e)
         {
             DSRSummonSign sign = lbxNetSosList.SelectedItem as DSRSummonSign;
@@ -406,7 +441,26 @@ namespace DSR_Gadget
                 sign.PosX = (float)nudStoredX.Value;
                 sign.PosY = (float)nudStoredY.Value;
                 sign.PosZ = (float)nudStoredZ.Value;
-                sign.PosAngle = (float)nudStoredAngle.Value;
+                sign.PosAngle = degreeToAngle(nudStoredAngle.Value);
+            }
+        }
+
+        private void btnSosAllTrigger_Click(object sender, EventArgs e)
+        {
+            DSRSummonSignSfx sign = lbxNetSosAll.SelectedItem as DSRSummonSignSfx;
+            if (sign != null)
+                Hook.TriggerSign(sign);
+        }
+
+        private void btnSosAllRestorePos_Click(object sender, EventArgs e)
+        {
+            DSRSummonSignSfx sign = lbxNetSosAll.SelectedItem as DSRSummonSignSfx;
+            if (loaded && !reading && sign != null)
+            {
+                sign.PosX = (float)nudStoredX.Value;
+                sign.PosY = (float)nudStoredY.Value;
+                sign.PosZ = (float)nudStoredZ.Value;
+                sign.PosAngle = degreeToAngle(nudStoredAngle.Value);
             }
         }
 
@@ -436,6 +490,34 @@ namespace DSR_Gadget
             DSRSummonSign sign = lbxNetSosList.SelectedItem as DSRSummonSign;
             if (loaded && !reading && sign != null)
                 sign.PosAngle = (float)nudSosPosAngle.Value;
+        }
+
+        private void nudSosAllPosX_ValueChanged(object sender, EventArgs e)
+        {
+            DSRSummonSignSfx sign = lbxNetSosAll.SelectedItem as DSRSummonSignSfx;
+            if (loaded && !reading && sign != null)
+                sign.PosX = (float)nudSosAllPosX.Value;
+        }
+
+        private void nudSosAllPosY_ValueChanged(object sender, EventArgs e)
+        {
+            DSRSummonSignSfx sign = lbxNetSosAll.SelectedItem as DSRSummonSignSfx;
+            if (loaded && !reading && sign != null)
+                sign.PosY = (float)nudSosAllPosY.Value;
+        }
+
+        private void nudSosAllPosZ_ValueChanged(object sender, EventArgs e)
+        {
+            DSRSummonSignSfx sign = lbxNetSosAll.SelectedItem as DSRSummonSignSfx;
+            if (loaded && !reading && sign != null)
+                sign.PosZ = (float)nudSosAllPosZ.Value;
+        }
+
+        private void nudSosAllPosAngle_ValueChanged(object sender, EventArgs e)
+        {
+            DSRSummonSignSfx sign = lbxNetSosAll.SelectedItem as DSRSummonSignSfx;
+            if (loaded && !reading && sign != null)
+                sign.PosAngle = (float)nudSosAllPosAngle.Value;
         }
     }
 }

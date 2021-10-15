@@ -1,4 +1,5 @@
-﻿using PropertyHook;
+﻿using DSR_Gadget.List_Items;
+using PropertyHook;
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
@@ -39,6 +40,7 @@ namespace DSR_Gadget
 
         private PHPointer FrpgNetManImpBase;
         private PHPointer SosDbListAddr;
+        private PHPointer NitoDbListAddr;
 
         private PHPointer WorldChrManDbgImpAddr;
 
@@ -47,6 +49,9 @@ namespace DSR_Gadget
 
         private PHPointer LastHitEntityAOB;
         private PHPointer LastHitEntityPtr;
+
+        private PHPointer BaseCARAOB;
+        private PHPointer SosSignMan;
 
         public DSRHook(int refreshInterval, int minLifetime) :
             base(refreshInterval, minLifetime, p => p.MainWindowTitle == "DARK SOULS™: REMASTERED")
@@ -90,7 +95,8 @@ namespace DSR_Gadget
 
             FrpgNetManImpBase = RegisterRelativeAOB(DSROffsets.FrpgNetManImpAOB, 3, 7, DSROffsets.FrpgNetManImpOffset1);
 
-            SosDbListAddr = CreateChildPointer(FrpgNetManImpBase, (int)DSROffsets.FrpgNetManImp.FrpgNetSosDb, (int)DSROffsets.FrpgNetSosDb.SosDbList);
+            SosDbListAddr = CreateChildPointer(FrpgNetManImpBase, (int)DSROffsets.FrpgNetManImp.FrpgNetSosDb, (int)DSROffsets.FrpgNetDb.NetDbList);
+            NitoDbListAddr = CreateChildPointer(FrpgNetManImpBase, (int)DSROffsets.FrpgNetManImp.FrpgNetNitoInvitationDb, (int)DSROffsets.FrpgNetDb.NetDbList);
 
             WorldChrManDbgImpAddr = RegisterRelativeAOB(DSROffsets.WorldChrManDbgImpAOB, 3, 7, DSROffsets.WorldChrManDbgImpOffset1);
 
@@ -100,6 +106,10 @@ namespace DSR_Gadget
             LastHitEntityAOB = RegisterAbsoluteAOB(DSROffsets.LastHitEntityAOB);
             LastHitEntityPtr = CreateBasePointer(IntPtr.Zero);
 
+            BaseCARAOB = RegisterRelativeAOB(DSROffsets.BaseCARAOB, 3, 7, DSROffsets.SosSignManOffset0);
+
+            SosSignMan = CreateChildPointer(BaseCARAOB, DSROffsets.SosSignManOffset1);
+                
             OnHooked += DSRHook_OnHooked;
         }
 
@@ -199,20 +209,20 @@ namespace DSR_Gadget
         public DSRPlayer.Position GetStablePosition()
         {
             DSRPlayer.Position pos;
-            pos.X = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.StableX + Offsets.ChrClassWarpBoost);
-            pos.Y = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.StableY + Offsets.ChrClassWarpBoost);
-            pos.Z = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.StableZ + Offsets.ChrClassWarpBoost);
-            pos.Angle = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.StableAngle + Offsets.ChrClassWarpBoost);
+            pos.X = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.StableX);
+            pos.Y = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.StableY);
+            pos.Z = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.StableZ);
+            pos.Angle = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.StableAngle);
             return pos;
         }
 
         public DSRPlayer.Position GetInitialPosition()
         {
             DSRPlayer.Position pos;
-            pos.X = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.InitialX + Offsets.ChrClassWarpBoost);
-            pos.Y = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.InitialY + Offsets.ChrClassWarpBoost);
-            pos.Z = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.InitialZ + Offsets.ChrClassWarpBoost);
-            pos.Angle = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.InitialAngle + Offsets.ChrClassWarpBoost);
+            pos.X = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.InitialX);
+            pos.Y = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.InitialY);
+            pos.Z = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.InitialZ);
+            pos.Angle = ChrClassWarp.ReadSingle((int)DSROffsets.ChrClassWarp.InitialAngle);
             return pos;
         }
 
@@ -228,7 +238,7 @@ namespace DSR_Gadget
 
         public bool NoGravity
         {
-            set => ChrData1.WriteFlag32((int)DSROffsets.PlayerIns.ChrFlags1 + Offsets.PlayerInsBoost1, (uint)DSROffsets.ChrFlags1.NoGravity, value);
+            set => ChrData1.WriteFlag32((int)DSROffsets.PlayerIns.ChrFlags1, (uint)DSROffsets.ChrFlags1.NoGravity, value);
         }
 
         public bool NoCollision
@@ -244,8 +254,8 @@ namespace DSR_Gadget
 
         public int LastBonfire
         {
-            get => ChrClassWarp.ReadInt32((int)DSROffsets.ChrClassWarp.LastBonfire + Offsets.ChrClassWarpBoost);
-            set => ChrClassWarp.WriteInt32((int)DSROffsets.ChrClassWarp.LastBonfire + Offsets.ChrClassWarpBoost, value);
+            get => ChrClassWarp.ReadInt32((int)DSROffsets.ChrClassWarp.LastBonfire);
+            set => ChrClassWarp.WriteInt32((int)DSROffsets.ChrClassWarp.LastBonfire, value);
         }
 
         public void BonfireWarp()
@@ -277,6 +287,34 @@ namespace DSR_Gadget
             set => GameDataManPtr.WriteByte((int)DSROffsets.GameDataMan.ClearCount, value);
         }
 
+        public void LevelUp(int level, int vit, int att, int end, int str, int dex, int res, int intel, int fth, int humanity, int souls)
+        {
+            IntPtr stats = Allocate(0x300);
+
+            Kernel32.WriteBytes(Handle, stats + 0x270 + 0x0, BitConverter.GetBytes(vit));
+            Kernel32.WriteBytes(Handle, stats + 0x270 + 0x4, BitConverter.GetBytes(att));
+            Kernel32.WriteBytes(Handle, stats + 0x270 + 0x8, BitConverter.GetBytes(end));
+            Kernel32.WriteBytes(Handle, stats + 0x270 + 0xC, BitConverter.GetBytes(str));
+            Kernel32.WriteBytes(Handle, stats + 0x270 + 0x10, BitConverter.GetBytes(dex));
+            Kernel32.WriteBytes(Handle, stats + 0x270 + 0x14, BitConverter.GetBytes(res));
+            Kernel32.WriteBytes(Handle, stats + 0x270 + 0x18, BitConverter.GetBytes(intel));
+            Kernel32.WriteBytes(Handle, stats + 0x270 + 0x1C, BitConverter.GetBytes(fth));
+            Kernel32.WriteBytes(Handle, stats + 0x270 + 0x20, BitConverter.GetBytes(humanity));
+            Kernel32.WriteBytes(Handle, stats + 0x270 + 0x24, BitConverter.GetBytes(level));
+            Kernel32.WriteBytes(Handle, stats + 0x270 + 0x28, BitConverter.GetBytes(level)); // should be level as well?
+            Kernel32.WriteBytes(Handle, stats + 0x270 + 0x2C, BitConverter.GetBytes(0));
+            Kernel32.WriteBytes(Handle, stats + 0x270 + 0x30, BitConverter.GetBytes(souls));
+
+            byte[] asm = (byte[])DSRAssembly.LevelUp.Clone();
+            byte[] bytes = BitConverter.GetBytes(stats.ToInt64() + 0x270);
+            Array.Copy(bytes, 0, asm, 0x2, 8);
+            bytes = BitConverter.GetBytes(stats.ToInt64());
+            Array.Copy(bytes, 0, asm, 0xC, 8);
+
+            Execute(asm);
+            Free(stats);
+        }
+
         #endregion
 
         #region Items
@@ -302,8 +340,8 @@ namespace DSR_Gadget
         #region Cheats
         public bool PlayerDeadMode
         {
-            get => ChrData1.ReadFlag32((int)DSROffsets.PlayerIns.ChrFlags1 + Offsets.PlayerInsBoost1, (uint)DSROffsets.ChrFlags1.SetDeadMode);
-            set => ChrData1.WriteFlag32((int)DSROffsets.PlayerIns.ChrFlags1 + Offsets.PlayerInsBoost1, (uint)DSROffsets.ChrFlags1.SetDeadMode, value);
+            get => ChrData1.ReadFlag32((int)DSROffsets.PlayerIns.ChrFlags1, (uint)DSROffsets.ChrFlags1.SetDeadMode);
+            set => ChrData1.WriteFlag32((int)DSROffsets.PlayerIns.ChrFlags1, (uint)DSROffsets.ChrFlags1.SetDeadMode, value);
         }
 
         public bool PlayerNoDead
@@ -313,22 +351,22 @@ namespace DSR_Gadget
 
         public bool PlayerDisableDamage
         {
-            set => ChrData1.WriteFlag32((int)DSROffsets.PlayerIns.ChrFlags1 + Offsets.PlayerInsBoost1, (uint)DSROffsets.ChrFlags1.DisableDamage, value);
+            set => ChrData1.WriteFlag32((int)DSROffsets.PlayerIns.ChrFlags1, (uint)DSROffsets.ChrFlags1.DisableDamage, value);
         }
 
         public bool PlayerNoHit
         {
-            set => ChrData1.WriteFlag32((int)DSROffsets.PlayerIns.ChrFlags2 + Offsets.PlayerInsBoost2, (uint)DSROffsets.ChrFlags2.NoHit, value);
+            set => ChrData1.WriteFlag32((int)DSROffsets.PlayerIns.ChrFlags2, (uint)DSROffsets.ChrFlags2.NoHit, value);
         }
 
         public bool PlayerNoStamina
         {
-            set => ChrData1.WriteFlag32((int)DSROffsets.PlayerIns.ChrFlags2 + Offsets.PlayerInsBoost2, (uint)DSROffsets.ChrFlags2.NoStaminaConsumption, value);
+            set => ChrData1.WriteFlag32((int)DSROffsets.PlayerIns.ChrFlags2, (uint)DSROffsets.ChrFlags2.NoStaminaConsumption, value);
         }
 
         public bool PlayerSuperArmor
         {
-            set => ChrData1.WriteFlag32((int)DSROffsets.PlayerIns.ChrFlags1 + Offsets.PlayerInsBoost1, (uint)DSROffsets.ChrFlags1.SetSuperArmor, value);
+            set => ChrData1.WriteFlag32((int)DSROffsets.PlayerIns.ChrFlags1, (uint)DSROffsets.ChrFlags1.SetSuperArmor, value);
         }
 
         public bool PlayerHide
@@ -348,7 +386,7 @@ namespace DSR_Gadget
 
         public bool PlayerNoGoods
         {
-            set => ChrData1.WriteFlag32((int)DSROffsets.PlayerIns.ChrFlags2 + Offsets.PlayerInsBoost2, (uint)DSROffsets.ChrFlags2.NoGoodsConsume, value);
+            set => ChrData1.WriteFlag32((int)DSROffsets.PlayerIns.ChrFlags2, (uint)DSROffsets.ChrFlags2.NoGoodsConsume, value);
         }
 
         public bool AllNoArrow
@@ -398,7 +436,6 @@ namespace DSR_Gadget
 
         private byte[] DurabilityOnBytes = { 0x41, 0x8D, 0x01, 0x90, 0x90, 0x90, 0x90};
         private byte[] DurabilityOffBytes = { 0x41, 0x8D, 0x41, 0xFF, 0x45, 0x8B, 0xC3 };
-
         public bool Durability
         {
             set
@@ -644,6 +681,11 @@ namespace DSR_Gadget
             }
         }
 
+        public void PerformGesture(int gesture)
+        {
+            MenuMan.WriteInt32((int)DSROffsets.MenuMan.PerformGesture, gesture);
+        }
+
         #endregion
 
         #region Hotkeys
@@ -703,27 +745,160 @@ namespace DSR_Gadget
             return currentPlayers;
         }
 
-        public List<DSRSummonSign> GetSummonSigns()
+        public Dictionary<int, DSRSign> GetSigns()
         {
-            //List<DSRSummonSign> summonSignList = new List<DSRSummonSign>();
-            List<DSRSummonSign> summonSignList = new List<DSRSummonSign>();
+            Dictionary<int, DSRSign> signs = new Dictionary<int, DSRSign>();
 
-            PHPointer frpgSosDbListItem = CreateChildPointer(SosDbListAddr, (int)DSROffsets.SosDbList.SosDbListItem);
+            foreach (IDSRSosSignManItem item in GetSosSignManItems())
+            {
+                signs.Add(item.ID, new DSRSign() { DSRSosSignManItem = item });
+            }
+
+            DSRSign sign;
+            foreach (IDSRNetDbItem item in GetDSRNetDbItems())
+            {
+                if (signs.TryGetValue(item.ID, out sign))
+                    sign.DSRNetDbItem = item;
+            }
+
+            return signs;
+        }
+
+        public List<IDSRSosSignManItem> GetSosSignManItems()
+        {
+            List<IDSRSosSignManItem> dsrSosSignManItems = new List<IDSRSosSignManItem>();
+
+            PHPointer SosSignManList = CreateChildPointer(SosSignMan, (int)DSROffsets.SosSignMan.SosListEntry);
+            Dictionary<IntPtr, PHPointer> sosPtrs = new Dictionary<IntPtr, PHPointer>();
+
+            sosPtrs = GetSignSfx(SosSignManList, SosSignManList, sosPtrs);
+
+            foreach (KeyValuePair<IntPtr, PHPointer> keyValuePair in sosPtrs)
+                dsrSosSignManItems.Add(new DSRSosSignManItem(keyValuePair.Value, this));
+
+            return dsrSosSignManItems;
+        }
+
+        public List<IDSRNetDbItem> GetDSRNetDbItems()
+        {
+            List<IDSRNetDbItem> items = new List<IDSRNetDbItem>();
+            items.AddRange(GetDSRSosDbItems());
+            items.AddRange(GetDSRNitoDbItems());
+
+            return items;
+        }
+
+        public List<DSRSosDbItem> GetDSRSosDbItems()
+        {
+            List<DSRSosDbItem> dsrSosDbItems = new List<DSRSosDbItem>();
+
+            PHPointer frpgSosDbListItem = CreateChildPointer(SosDbListAddr, (int)DSROffsets.NetDbList.NetDbListItem);
 
             bool loop = true;
             while (loop)
             {
-                PHPointer frpgSosDbItem = CreateChildPointer(frpgSosDbListItem, (int)DSROffsets.SosDbListItem.FrpgNetSosDbItem);
-                if (frpgSosDbItem.Resolve() != IntPtr.Zero)
+                PHPointer frpgSosDbItem = CreateChildPointer(frpgSosDbListItem, (int)DSROffsets.NetDbListItem.FrpgNetDbItem);
+
+                if (frpgSosDbListItem.Resolve() != SosDbListAddr.Resolve())
                 {
-                    summonSignList.Add(new DSRSummonSign(frpgSosDbItem, this));
-                    frpgSosDbListItem = CreateChildPointer(frpgSosDbListItem, (int)DSROffsets.SosDbListItem.SosDbItemNext);
+                    dsrSosDbItems.Add(new DSRSosDbItem(frpgSosDbItem, this));
+                    frpgSosDbListItem = CreateChildPointer(frpgSosDbListItem, (int)DSROffsets.NetDbListItem.NetDbListItemNext);
                 }
                 else
                     loop = false;
             }
-            
+
+            return dsrSosDbItems;
+        }
+
+        public List<DSRNitoDbItem> GetDSRNitoDbItems()
+        {
+            List<DSRNitoDbItem> dsrNitoDbItems = new List<DSRNitoDbItem>();
+
+            PHPointer frpgNitoDbListItem = CreateChildPointer(NitoDbListAddr, (int)DSROffsets.NetDbList.NetDbListItem);
+
+            bool loop = true;
+            while (loop)
+            {
+                PHPointer frpgNitoDbItem = CreateChildPointer(frpgNitoDbListItem, (int)DSROffsets.NetDbListItem.FrpgNetDbItem);
+
+                if (frpgNitoDbListItem.Resolve() != SosDbListAddr.Resolve())
+                {
+                    dsrNitoDbItems.Add(new DSRNitoDbItem(frpgNitoDbItem, this));
+                    frpgNitoDbListItem = CreateChildPointer(frpgNitoDbListItem, (int)DSROffsets.NetDbListItem.NetDbListItemNext);
+                }
+                else
+                    loop = false;
+            }
+
+            return dsrNitoDbItems;
+        }
+
+        public List<DSRSummonSign> GetSummonSigns()
+        {
+            List<DSRSummonSign> summonSignList = new List<DSRSummonSign>();
+
+            PHPointer frpgSosDbListItem = CreateChildPointer(SosDbListAddr, (int)DSROffsets.NetDbList.NetDbListItem);
+
+            bool loop = true;
+            while (loop)
+            {
+                PHPointer frpgSosDbItem = CreateChildPointer(frpgSosDbListItem, (int)DSROffsets.NetDbListItem.FrpgNetDbItem);
+
+                if (frpgSosDbListItem.Resolve() != SosDbListAddr.Resolve())
+                {
+                    summonSignList.Add(new DSRSummonSign(frpgSosDbItem, this));
+                    frpgSosDbListItem = CreateChildPointer(frpgSosDbListItem, (int)DSROffsets.NetDbListItem.NetDbListItemNext);
+                }
+                else
+                    loop = false;
+            }
+
             return summonSignList;
+        }
+
+        // seems to be stored in some kind of strange tree or graph structure
+        public List<DSRSummonSignSfx> GetSummonSignsSfx()
+        {
+            List<DSRSummonSignSfx> summonSignList = new List<DSRSummonSignSfx>();
+
+            PHPointer SosSignManList = CreateChildPointer(SosSignMan, (int)DSROffsets.SosSignMan.SosListEntry);
+            Dictionary<IntPtr, PHPointer> sosPtrs = new Dictionary<IntPtr, PHPointer>();
+
+            sosPtrs = GetSignSfx(SosSignManList, SosSignManList, sosPtrs);
+
+            foreach (KeyValuePair<IntPtr, PHPointer> keyValuePair in sosPtrs)
+                summonSignList.Add(new DSRSummonSignSfx(keyValuePair.Value, this));
+
+            return summonSignList;
+        }
+
+        private Dictionary<IntPtr, PHPointer> GetSignSfx(PHPointer sosListStartEntry, PHPointer sosListEntry, Dictionary<IntPtr, PHPointer> dict)
+        {
+
+
+            PHPointer sos = CreateChildPointer(sosListEntry, (int)DSROffsets.SosListEntry.SosSignManSign);
+            IntPtr sosPtr = sos.Resolve();
+
+            if (dict.ContainsKey(sosPtr))
+                return dict;
+            else if (sosPtr != IntPtr.Zero && sosListStartEntry.Resolve() != sosListEntry.Resolve())
+                dict.Add(sosPtr, sos);
+
+            PHPointer item1 = CreateChildPointer(sosListEntry, (int)DSROffsets.SosListEntry.Item1);
+            PHPointer item2 = CreateChildPointer(sosListEntry, (int)DSROffsets.SosListEntry.Item2);
+            PHPointer item3 = CreateChildPointer(sosListEntry, (int)DSROffsets.SosListEntry.Item3);
+
+            if (item1.Resolve() != sosListStartEntry.Resolve())
+                dict = GetSignSfx(sosListStartEntry, item1, dict);
+            if (item2.Resolve() != sosListStartEntry.Resolve())
+                dict = GetSignSfx(sosListStartEntry, item2, dict);
+            if (item3.Resolve() != sosListStartEntry.Resolve())
+                dict = GetSignSfx(sosListStartEntry, item3, dict);
+
+
+
+            return dict;
         }
 
         public DSRPlayer GetCurrentPlayer(int index)
@@ -741,6 +916,11 @@ namespace DSR_Gadget
             return new DSRSummonSign(CreateBasePointer(IntPtr.Zero), this);
         }
 
+        public DSRSummonSignSfx GetEmptySummonSignSfx()
+        {
+            return new DSRSummonSignSfx(CreateBasePointer(IntPtr.Zero), this);
+        }
+
         public void LeaveSession()
         {
             byte[] asm = (byte[])DSRAssembly.LeaveSession.Clone();
@@ -756,9 +936,22 @@ namespace DSR_Gadget
             Execute(asm);
         }
 
+        public void TriggerSign(DSRSummonSignSfx sign)
+        {
+            if (SosSignMan.Resolve() == IntPtr.Zero || sign.SummonSignPtr.Resolve() == IntPtr.Zero)
+                return;
+
+            byte[] asm = (byte[])DSRAssembly.TriggerSign.Clone();
+            byte[] sosSignManAddr = BitConverter.GetBytes(SosSignMan.Resolve().ToInt64());
+            byte[] signAddr = BitConverter.GetBytes(sign.SummonSignPtr.Resolve().ToInt64());
+            Array.Copy(signAddr, 0, asm, 0x2, 8);
+            Array.Copy(sosSignManAddr, 0, asm, 0xC, 8);
+            Execute(asm);
+        }
+
         public void SetCamera(IntPtr ptr)
         {
-            WorldChrManDbgImpAddr.WriteUInt32((int)DSROffsets.WorldChrManDbgImp.Camera, (uint)ptr);
+            WorldChrManDbgImpAddr.WriteUInt64((int)DSROffsets.WorldChrManDbgImp.Camera, (ulong)ptr);
         }
 
         #endregion

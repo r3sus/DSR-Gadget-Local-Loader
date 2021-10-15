@@ -425,6 +425,9 @@
             this.lblCurrentPlayerSoulLevel = new System.Windows.Forms.Label();
             this.lbxNetCurrentPlayers = new System.Windows.Forms.ListBox();
             this.tpgNetSummonSigns = new System.Windows.Forms.TabPage();
+            this.btnSosSteamProfile = new System.Windows.Forms.Button();
+            this.txtSosSteamID = new System.Windows.Forms.TextBox();
+            this.lblSosSteamID = new System.Windows.Forms.Label();
             this.txtSosRightWep2 = new System.Windows.Forms.TextBox();
             this.txtSosLeftWep1 = new System.Windows.Forms.TextBox();
             this.txtSosLeftWep2 = new System.Windows.Forms.TextBox();
@@ -468,6 +471,49 @@
             this.nudSosSoulLevel = new System.Windows.Forms.NumericUpDown();
             this.lblSosSoulLevel = new System.Windows.Forms.Label();
             this.lbxNetSosList = new System.Windows.Forms.ListBox();
+            this.tpgNetSosAll = new System.Windows.Forms.TabPage();
+            this.btnSosAllTrigger = new System.Windows.Forms.Button();
+            this.txtSosAllRightWep2 = new System.Windows.Forms.TextBox();
+            this.txtSosAllLeftWep1 = new System.Windows.Forms.TextBox();
+            this.txtSosAllLeftWep2 = new System.Windows.Forms.TextBox();
+            this.txtSosAllRightWep1 = new System.Windows.Forms.TextBox();
+            this.txtSosAllBolt2 = new System.Windows.Forms.TextBox();
+            this.txtSosAllArrow1 = new System.Windows.Forms.TextBox();
+            this.txtSosAllArrow2 = new System.Windows.Forms.TextBox();
+            this.txtSosAllBolt1 = new System.Windows.Forms.TextBox();
+            this.txtSosAllLegs = new System.Windows.Forms.TextBox();
+            this.txtSosAllHands = new System.Windows.Forms.TextBox();
+            this.txtSosAllHair = new System.Windows.Forms.TextBox();
+            this.txtSosAllHead = new System.Windows.Forms.TextBox();
+            this.txtSosAllChest = new System.Windows.Forms.TextBox();
+            this.lblSosAllBolt2 = new System.Windows.Forms.Label();
+            this.lblSosAllBolt1 = new System.Windows.Forms.Label();
+            this.lblSosAllArrow2 = new System.Windows.Forms.Label();
+            this.lblSosAllArrow1 = new System.Windows.Forms.Label();
+            this.lblSosAllLegs = new System.Windows.Forms.Label();
+            this.lblSosAllLeftWep2 = new System.Windows.Forms.Label();
+            this.lblSosAllLeftWep1 = new System.Windows.Forms.Label();
+            this.lblSosAllRightWep2 = new System.Windows.Forms.Label();
+            this.lblSosAllRightWep1 = new System.Windows.Forms.Label();
+            this.lblSosAllHands = new System.Windows.Forms.Label();
+            this.lblSosAllChest = new System.Windows.Forms.Label();
+            this.lblSosAllHead = new System.Windows.Forms.Label();
+            this.lblSosAllHair = new System.Windows.Forms.Label();
+            this.lblSosAllPos = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.nudSosAllPosZ = new System.Windows.Forms.NumericUpDown();
+            this.btnSosAllRestorePos = new System.Windows.Forms.Button();
+            this.nudSosAllPosY = new System.Windows.Forms.NumericUpDown();
+            this.nudSosAllPosX = new System.Windows.Forms.NumericUpDown();
+            this.nudSosAllPosAngle = new System.Windows.Forms.NumericUpDown();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.cmbSosAllSummonType = new System.Windows.Forms.ComboBox();
+            this.txtSosAllName = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.lbxNetSosAll = new System.Windows.Forms.ListBox();
             this.tpgHotkeys = new System.Windows.Forms.TabPage();
             this.tclSettings = new System.Windows.Forms.TabControl();
             this.tpgSetingsSettings = new System.Windows.Forms.TabPage();
@@ -599,6 +645,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudSosPosX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSosPosAngle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSosSoulLevel)).BeginInit();
+            this.tpgNetSosAll.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSosAllPosZ)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSosAllPosY)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSosAllPosX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSosAllPosAngle)).BeginInit();
             this.tpgHotkeys.SuspendLayout();
             this.tclSettings.SuspendLayout();
             this.tpgSetingsSettings.SuspendLayout();
@@ -1854,8 +1905,12 @@
             // 
             // nudChaosServant
             // 
-            this.nudChaosServant.Location = new System.Drawing.Point(9, 311);
-            this.nudChaosServant.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.nudChaosServant.Location = new System.Drawing.Point(6, 202);
+            this.nudChaosServant.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
             this.nudChaosServant.Name = "nudChaosServant";
             this.nudChaosServant.Size = new System.Drawing.Size(81, 26);
             this.nudChaosServant.TabIndex = 7;
@@ -1863,8 +1918,12 @@
             // 
             // nudDarkmoonBlade
             // 
-            this.nudDarkmoonBlade.Location = new System.Drawing.Point(9, 271);
-            this.nudDarkmoonBlade.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.nudDarkmoonBlade.Location = new System.Drawing.Point(6, 176);
+            this.nudDarkmoonBlade.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
             this.nudDarkmoonBlade.Name = "nudDarkmoonBlade";
             this.nudDarkmoonBlade.Size = new System.Drawing.Size(81, 26);
             this.nudDarkmoonBlade.TabIndex = 6;
@@ -1872,8 +1931,12 @@
             // 
             // nudForestHunter
             // 
-            this.nudForestHunter.Location = new System.Drawing.Point(9, 231);
-            this.nudForestHunter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.nudForestHunter.Location = new System.Drawing.Point(6, 150);
+            this.nudForestHunter.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
             this.nudForestHunter.Name = "nudForestHunter";
             this.nudForestHunter.Size = new System.Drawing.Size(81, 26);
             this.nudForestHunter.TabIndex = 5;
@@ -1881,8 +1944,12 @@
             // 
             // nudGravelordServant
             // 
-            this.nudGravelordServant.Location = new System.Drawing.Point(9, 191);
-            this.nudGravelordServant.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.nudGravelordServant.Location = new System.Drawing.Point(6, 124);
+            this.nudGravelordServant.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
             this.nudGravelordServant.Name = "nudGravelordServant";
             this.nudGravelordServant.Size = new System.Drawing.Size(81, 26);
             this.nudGravelordServant.TabIndex = 4;
@@ -1890,8 +1957,12 @@
             // 
             // nudPathOfTheDragon
             // 
-            this.nudPathOfTheDragon.Location = new System.Drawing.Point(9, 151);
-            this.nudPathOfTheDragon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.nudPathOfTheDragon.Location = new System.Drawing.Point(6, 98);
+            this.nudPathOfTheDragon.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
             this.nudPathOfTheDragon.Name = "nudPathOfTheDragon";
             this.nudPathOfTheDragon.Size = new System.Drawing.Size(81, 26);
             this.nudPathOfTheDragon.TabIndex = 3;
@@ -1899,8 +1970,12 @@
             // 
             // nudDarkwraith
             // 
-            this.nudDarkwraith.Location = new System.Drawing.Point(9, 111);
-            this.nudDarkwraith.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.nudDarkwraith.Location = new System.Drawing.Point(6, 72);
+            this.nudDarkwraith.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
             this.nudDarkwraith.Name = "nudDarkwraith";
             this.nudDarkwraith.Size = new System.Drawing.Size(81, 26);
             this.nudDarkwraith.TabIndex = 2;
@@ -1908,8 +1983,12 @@
             // 
             // nudWarriorOfSunlight
             // 
-            this.nudWarriorOfSunlight.Location = new System.Drawing.Point(9, 71);
-            this.nudWarriorOfSunlight.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.nudWarriorOfSunlight.Location = new System.Drawing.Point(6, 46);
+            this.nudWarriorOfSunlight.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
             this.nudWarriorOfSunlight.Name = "nudWarriorOfSunlight";
             this.nudWarriorOfSunlight.Size = new System.Drawing.Size(81, 26);
             this.nudWarriorOfSunlight.TabIndex = 1;
@@ -2115,6 +2194,7 @@
             0,
             0,
             0});
+            this.nudFaith.ValueChanged += new System.EventHandler(this.nudStats_ValueChanged);
             // 
             // lblIntelligence
             // 
@@ -2149,6 +2229,7 @@
             0,
             0,
             0});
+            this.nudIntelligence.ValueChanged += new System.EventHandler(this.nudStats_ValueChanged);
             // 
             // lblResistance
             // 
@@ -2183,6 +2264,7 @@
             0,
             0,
             0});
+            this.nudResistance.ValueChanged += new System.EventHandler(this.nudStats_ValueChanged);
             // 
             // lblDexterity
             // 
@@ -2217,6 +2299,7 @@
             0,
             0,
             0});
+            this.nudDexterity.ValueChanged += new System.EventHandler(this.nudStats_ValueChanged);
             // 
             // lblStrength
             // 
@@ -2251,6 +2334,7 @@
             0,
             0,
             0});
+            this.nudStrength.ValueChanged += new System.EventHandler(this.nudStats_ValueChanged);
             // 
             // lblEndurance
             // 
@@ -2285,6 +2369,7 @@
             0,
             0,
             0});
+            this.nudEndurance.ValueChanged += new System.EventHandler(this.nudStats_ValueChanged);
             // 
             // lblAttunement
             // 
@@ -2319,6 +2404,7 @@
             0,
             0,
             0});
+            this.nudAttunement.ValueChanged += new System.EventHandler(this.nudStats_ValueChanged);
             // 
             // lblVitality
             // 
@@ -2353,6 +2439,7 @@
             0,
             0,
             0});
+            this.nudVitality.ValueChanged += new System.EventHandler(this.nudStats_ValueChanged);
             // 
             // tpgStatsFashion
             // 
@@ -4006,8 +4093,8 @@
             this.tclNet.Controls.Add(this.tpgNetRecentPlayers);
             this.tclNet.Controls.Add(this.tpgNetCurrentPlayers);
             this.tclNet.Controls.Add(this.tpgNetSummonSigns);
-            this.tclNet.Location = new System.Drawing.Point(9, 9);
-            this.tclNet.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tclNet.Controls.Add(this.tpgNetSosAll);
+            this.tclNet.Location = new System.Drawing.Point(6, 6);
             this.tclNet.Name = "tclNet";
             this.tclNet.SelectedIndex = 0;
             this.tclNet.Size = new System.Drawing.Size(576, 872);
@@ -5827,6 +5914,9 @@
             // 
             // tpgNetSummonSigns
             // 
+            this.tpgNetSummonSigns.Controls.Add(this.btnSosSteamProfile);
+            this.tpgNetSummonSigns.Controls.Add(this.txtSosSteamID);
+            this.tpgNetSummonSigns.Controls.Add(this.lblSosSteamID);
             this.tpgNetSummonSigns.Controls.Add(this.txtSosRightWep2);
             this.tpgNetSummonSigns.Controls.Add(this.txtSosLeftWep1);
             this.tpgNetSummonSigns.Controls.Add(this.txtSosLeftWep2);
@@ -5878,6 +5968,33 @@
             this.tpgNetSummonSigns.TabIndex = 2;
             this.tpgNetSummonSigns.Text = "Summon Signs";
             this.tpgNetSummonSigns.UseVisualStyleBackColor = true;
+            // 
+            // btnSosSteamProfile
+            // 
+            this.btnSosSteamProfile.Location = new System.Drawing.Point(6, 211);
+            this.btnSosSteamProfile.Name = "btnSosSteamProfile";
+            this.btnSosSteamProfile.Size = new System.Drawing.Size(135, 23);
+            this.btnSosSteamProfile.TabIndex = 116;
+            this.btnSosSteamProfile.Text = "Visit profile";
+            this.btnSosSteamProfile.UseVisualStyleBackColor = true;
+            this.btnSosSteamProfile.Click += new System.EventHandler(this.btnSosSteamProfile_Click);
+            // 
+            // txtSosSteamID
+            // 
+            this.txtSosSteamID.Location = new System.Drawing.Point(6, 185);
+            this.txtSosSteamID.Name = "txtSosSteamID";
+            this.txtSosSteamID.ReadOnly = true;
+            this.txtSosSteamID.Size = new System.Drawing.Size(135, 20);
+            this.txtSosSteamID.TabIndex = 115;
+            // 
+            // lblSosSteamID
+            // 
+            this.lblSosSteamID.AutoSize = true;
+            this.lblSosSteamID.Location = new System.Drawing.Point(6, 169);
+            this.lblSosSteamID.Name = "lblSosSteamID";
+            this.lblSosSteamID.Size = new System.Drawing.Size(51, 13);
+            this.lblSosSteamID.TabIndex = 114;
+            this.lblSosSteamID.Text = "Steam ID";
             // 
             // txtSosRightWep2
             // 
@@ -6129,8 +6246,7 @@
             // lblSosSpawnPosition
             // 
             this.lblSosSpawnPosition.AutoSize = true;
-            this.lblSosSpawnPosition.Location = new System.Drawing.Point(9, 322);
-            this.lblSosSpawnPosition.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSosSpawnPosition.Location = new System.Drawing.Point(6, 277);
             this.lblSosSpawnPosition.Name = "lblSosSpawnPosition";
             this.lblSosSpawnPosition.Size = new System.Drawing.Size(117, 20);
             this.lblSosSpawnPosition.TabIndex = 69;
@@ -6139,8 +6255,7 @@
             // lblSosPosAngle
             // 
             this.lblSosPosAngle.AutoSize = true;
-            this.lblSosPosAngle.Location = new System.Drawing.Point(39, 469);
-            this.lblSosPosAngle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSosPosAngle.Location = new System.Drawing.Point(26, 373);
             this.lblSosPosAngle.Name = "lblSosPosAngle";
             this.lblSosPosAngle.Size = new System.Drawing.Size(50, 20);
             this.lblSosPosAngle.TabIndex = 68;
@@ -6149,8 +6264,7 @@
             // nudSosPosZ
             // 
             this.nudSosPosZ.DecimalPlaces = 3;
-            this.nudSosPosZ.Location = new System.Drawing.Point(99, 426);
-            this.nudSosPosZ.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.nudSosPosZ.Location = new System.Drawing.Point(66, 345);
             this.nudSosPosZ.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -6169,8 +6283,7 @@
             // 
             // btnSosRestorePos
             // 
-            this.btnSosRestorePos.Location = new System.Drawing.Point(9, 506);
-            this.btnSosRestorePos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSosRestorePos.Location = new System.Drawing.Point(6, 397);
             this.btnSosRestorePos.Name = "btnSosRestorePos";
             this.btnSosRestorePos.Size = new System.Drawing.Size(202, 35);
             this.btnSosRestorePos.TabIndex = 63;
@@ -6181,8 +6294,7 @@
             // nudSosPosY
             // 
             this.nudSosPosY.DecimalPlaces = 3;
-            this.nudSosPosY.Location = new System.Drawing.Point(99, 386);
-            this.nudSosPosY.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.nudSosPosY.Location = new System.Drawing.Point(66, 319);
             this.nudSosPosY.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -6202,8 +6314,7 @@
             // nudSosPosX
             // 
             this.nudSosPosX.DecimalPlaces = 3;
-            this.nudSosPosX.Location = new System.Drawing.Point(99, 346);
-            this.nudSosPosX.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.nudSosPosX.Location = new System.Drawing.Point(66, 293);
             this.nudSosPosX.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -6222,8 +6333,7 @@
             // 
             // nudSosPosAngle
             // 
-            this.nudSosPosAngle.Location = new System.Drawing.Point(99, 466);
-            this.nudSosPosAngle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.nudSosPosAngle.Location = new System.Drawing.Point(66, 371);
             this.nudSosPosAngle.Maximum = new decimal(new int[] {
             365,
             0,
@@ -6243,8 +6353,7 @@
             // lblSosPosZ
             // 
             this.lblSosPosZ.AutoSize = true;
-            this.lblSosPosZ.Location = new System.Drawing.Point(69, 429);
-            this.lblSosPosZ.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSosPosZ.Location = new System.Drawing.Point(46, 347);
             this.lblSosPosZ.Name = "lblSosPosZ";
             this.lblSosPosZ.Size = new System.Drawing.Size(19, 20);
             this.lblSosPosZ.TabIndex = 66;
@@ -6253,8 +6362,7 @@
             // lblSosPosY
             // 
             this.lblSosPosY.AutoSize = true;
-            this.lblSosPosY.Location = new System.Drawing.Point(69, 389);
-            this.lblSosPosY.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSosPosY.Location = new System.Drawing.Point(46, 321);
             this.lblSosPosY.Name = "lblSosPosY";
             this.lblSosPosY.Size = new System.Drawing.Size(20, 20);
             this.lblSosPosY.TabIndex = 65;
@@ -6263,8 +6371,7 @@
             // lblSosPosX
             // 
             this.lblSosPosX.AutoSize = true;
-            this.lblSosPosX.Location = new System.Drawing.Point(69, 349);
-            this.lblSosPosX.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSosPosX.Location = new System.Drawing.Point(46, 295);
             this.lblSosPosX.Name = "lblSosPosX";
             this.lblSosPosX.Size = new System.Drawing.Size(20, 20);
             this.lblSosPosX.TabIndex = 64;
@@ -6273,8 +6380,7 @@
             // lblSosSummonType
             // 
             this.lblSosSummonType.AutoSize = true;
-            this.lblSosSummonType.Location = new System.Drawing.Point(9, 260);
-            this.lblSosSummonType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSosSummonType.Location = new System.Drawing.Point(6, 237);
             this.lblSosSummonType.Name = "lblSosSummonType";
             this.lblSosSummonType.Size = new System.Drawing.Size(111, 20);
             this.lblSosSummonType.TabIndex = 59;
@@ -6284,19 +6390,17 @@
             // 
             this.cmbSosSummonType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSosSummonType.FormattingEnabled = true;
-            this.cmbSosSummonType.Location = new System.Drawing.Point(9, 285);
-            this.cmbSosSummonType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmbSosSummonType.Location = new System.Drawing.Point(6, 253);
             this.cmbSosSummonType.Name = "cmbSosSummonType";
             this.cmbSosSummonType.Size = new System.Drawing.Size(200, 28);
             this.cmbSosSummonType.TabIndex = 58;
             // 
             // txtSosName
             // 
-            this.txtSosName.Enabled = false;
-            this.txtSosName.Location = new System.Drawing.Point(9, 225);
-            this.txtSosName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtSosName.Location = new System.Drawing.Point(6, 146);
             this.txtSosName.Name = "txtSosName";
-            this.txtSosName.Size = new System.Drawing.Size(200, 26);
+            this.txtSosName.ReadOnly = true;
+            this.txtSosName.Size = new System.Drawing.Size(135, 20);
             this.txtSosName.TabIndex = 57;
             // 
             // lblSosName
@@ -6311,9 +6415,7 @@
             // 
             // nudSosSoulLevel
             // 
-            this.nudSosSoulLevel.Enabled = false;
-            this.nudSosSoulLevel.Location = new System.Drawing.Point(10, 165);
-            this.nudSosSoulLevel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.nudSosSoulLevel.Location = new System.Drawing.Point(7, 107);
             this.nudSosSoulLevel.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -6325,7 +6427,8 @@
             0,
             -2147483648});
             this.nudSosSoulLevel.Name = "nudSosSoulLevel";
-            this.nudSosSoulLevel.Size = new System.Drawing.Size(123, 26);
+            this.nudSosSoulLevel.ReadOnly = true;
+            this.nudSosSoulLevel.Size = new System.Drawing.Size(82, 20);
             this.nudSosSoulLevel.TabIndex = 44;
             this.nudSosSoulLevel.Value = new decimal(new int[] {
             1,
@@ -6352,6 +6455,467 @@
             this.lbxNetSosList.Name = "lbxNetSosList";
             this.lbxNetSosList.Size = new System.Drawing.Size(235, 144);
             this.lbxNetSosList.TabIndex = 1;
+            // 
+            // tpgNetSosAll
+            // 
+            this.tpgNetSosAll.Controls.Add(this.btnSosAllTrigger);
+            this.tpgNetSosAll.Controls.Add(this.txtSosAllRightWep2);
+            this.tpgNetSosAll.Controls.Add(this.txtSosAllLeftWep1);
+            this.tpgNetSosAll.Controls.Add(this.txtSosAllLeftWep2);
+            this.tpgNetSosAll.Controls.Add(this.txtSosAllRightWep1);
+            this.tpgNetSosAll.Controls.Add(this.txtSosAllBolt2);
+            this.tpgNetSosAll.Controls.Add(this.txtSosAllArrow1);
+            this.tpgNetSosAll.Controls.Add(this.txtSosAllArrow2);
+            this.tpgNetSosAll.Controls.Add(this.txtSosAllBolt1);
+            this.tpgNetSosAll.Controls.Add(this.txtSosAllLegs);
+            this.tpgNetSosAll.Controls.Add(this.txtSosAllHands);
+            this.tpgNetSosAll.Controls.Add(this.txtSosAllHair);
+            this.tpgNetSosAll.Controls.Add(this.txtSosAllHead);
+            this.tpgNetSosAll.Controls.Add(this.txtSosAllChest);
+            this.tpgNetSosAll.Controls.Add(this.lblSosAllBolt2);
+            this.tpgNetSosAll.Controls.Add(this.lblSosAllBolt1);
+            this.tpgNetSosAll.Controls.Add(this.lblSosAllArrow2);
+            this.tpgNetSosAll.Controls.Add(this.lblSosAllArrow1);
+            this.tpgNetSosAll.Controls.Add(this.lblSosAllLegs);
+            this.tpgNetSosAll.Controls.Add(this.lblSosAllLeftWep2);
+            this.tpgNetSosAll.Controls.Add(this.lblSosAllLeftWep1);
+            this.tpgNetSosAll.Controls.Add(this.lblSosAllRightWep2);
+            this.tpgNetSosAll.Controls.Add(this.lblSosAllRightWep1);
+            this.tpgNetSosAll.Controls.Add(this.lblSosAllHands);
+            this.tpgNetSosAll.Controls.Add(this.lblSosAllChest);
+            this.tpgNetSosAll.Controls.Add(this.lblSosAllHead);
+            this.tpgNetSosAll.Controls.Add(this.lblSosAllHair);
+            this.tpgNetSosAll.Controls.Add(this.lblSosAllPos);
+            this.tpgNetSosAll.Controls.Add(this.label18);
+            this.tpgNetSosAll.Controls.Add(this.nudSosAllPosZ);
+            this.tpgNetSosAll.Controls.Add(this.btnSosAllRestorePos);
+            this.tpgNetSosAll.Controls.Add(this.nudSosAllPosY);
+            this.tpgNetSosAll.Controls.Add(this.nudSosAllPosX);
+            this.tpgNetSosAll.Controls.Add(this.nudSosAllPosAngle);
+            this.tpgNetSosAll.Controls.Add(this.label19);
+            this.tpgNetSosAll.Controls.Add(this.label20);
+            this.tpgNetSosAll.Controls.Add(this.label21);
+            this.tpgNetSosAll.Controls.Add(this.label22);
+            this.tpgNetSosAll.Controls.Add(this.cmbSosAllSummonType);
+            this.tpgNetSosAll.Controls.Add(this.txtSosAllName);
+            this.tpgNetSosAll.Controls.Add(this.label23);
+            this.tpgNetSosAll.Controls.Add(this.lbxNetSosAll);
+            this.tpgNetSosAll.Location = new System.Drawing.Point(4, 22);
+            this.tpgNetSosAll.Name = "tpgNetSosAll";
+            this.tpgNetSosAll.Padding = new System.Windows.Forms.Padding(3);
+            this.tpgNetSosAll.Size = new System.Drawing.Size(376, 541);
+            this.tpgNetSosAll.TabIndex = 3;
+            this.tpgNetSosAll.Text = "All Signs";
+            this.tpgNetSosAll.UseVisualStyleBackColor = true;
+            // 
+            // btnSosAllTrigger
+            // 
+            this.btnSosAllTrigger.Location = new System.Drawing.Point(6, 332);
+            this.btnSosAllTrigger.Name = "btnSosAllTrigger";
+            this.btnSosAllTrigger.Size = new System.Drawing.Size(135, 23);
+            this.btnSosAllTrigger.TabIndex = 157;
+            this.btnSosAllTrigger.Text = "Trigger Sign";
+            this.btnSosAllTrigger.UseVisualStyleBackColor = true;
+            this.btnSosAllTrigger.Click += new System.EventHandler(this.btnSosAllTrigger_Click);
+            // 
+            // txtSosAllRightWep2
+            // 
+            this.txtSosAllRightWep2.Location = new System.Drawing.Point(170, 266);
+            this.txtSosAllRightWep2.Name = "txtSosAllRightWep2";
+            this.txtSosAllRightWep2.ReadOnly = true;
+            this.txtSosAllRightWep2.Size = new System.Drawing.Size(135, 20);
+            this.txtSosAllRightWep2.TabIndex = 156;
+            // 
+            // txtSosAllLeftWep1
+            // 
+            this.txtSosAllLeftWep1.Location = new System.Drawing.Point(170, 292);
+            this.txtSosAllLeftWep1.Name = "txtSosAllLeftWep1";
+            this.txtSosAllLeftWep1.ReadOnly = true;
+            this.txtSosAllLeftWep1.Size = new System.Drawing.Size(135, 20);
+            this.txtSosAllLeftWep1.TabIndex = 155;
+            // 
+            // txtSosAllLeftWep2
+            // 
+            this.txtSosAllLeftWep2.Location = new System.Drawing.Point(170, 318);
+            this.txtSosAllLeftWep2.Name = "txtSosAllLeftWep2";
+            this.txtSosAllLeftWep2.ReadOnly = true;
+            this.txtSosAllLeftWep2.Size = new System.Drawing.Size(135, 20);
+            this.txtSosAllLeftWep2.TabIndex = 154;
+            // 
+            // txtSosAllRightWep1
+            // 
+            this.txtSosAllRightWep1.Location = new System.Drawing.Point(170, 240);
+            this.txtSosAllRightWep1.Name = "txtSosAllRightWep1";
+            this.txtSosAllRightWep1.ReadOnly = true;
+            this.txtSosAllRightWep1.Size = new System.Drawing.Size(135, 20);
+            this.txtSosAllRightWep1.TabIndex = 153;
+            // 
+            // txtSosAllBolt2
+            // 
+            this.txtSosAllBolt2.Location = new System.Drawing.Point(170, 214);
+            this.txtSosAllBolt2.Name = "txtSosAllBolt2";
+            this.txtSosAllBolt2.ReadOnly = true;
+            this.txtSosAllBolt2.Size = new System.Drawing.Size(135, 20);
+            this.txtSosAllBolt2.TabIndex = 152;
+            // 
+            // txtSosAllArrow1
+            // 
+            this.txtSosAllArrow1.Location = new System.Drawing.Point(170, 136);
+            this.txtSosAllArrow1.Name = "txtSosAllArrow1";
+            this.txtSosAllArrow1.ReadOnly = true;
+            this.txtSosAllArrow1.Size = new System.Drawing.Size(135, 20);
+            this.txtSosAllArrow1.TabIndex = 151;
+            // 
+            // txtSosAllArrow2
+            // 
+            this.txtSosAllArrow2.Location = new System.Drawing.Point(170, 162);
+            this.txtSosAllArrow2.Name = "txtSosAllArrow2";
+            this.txtSosAllArrow2.ReadOnly = true;
+            this.txtSosAllArrow2.Size = new System.Drawing.Size(135, 20);
+            this.txtSosAllArrow2.TabIndex = 150;
+            // 
+            // txtSosAllBolt1
+            // 
+            this.txtSosAllBolt1.Location = new System.Drawing.Point(170, 188);
+            this.txtSosAllBolt1.Name = "txtSosAllBolt1";
+            this.txtSosAllBolt1.ReadOnly = true;
+            this.txtSosAllBolt1.Size = new System.Drawing.Size(135, 20);
+            this.txtSosAllBolt1.TabIndex = 149;
+            // 
+            // txtSosAllLegs
+            // 
+            this.txtSosAllLegs.Location = new System.Drawing.Point(170, 110);
+            this.txtSosAllLegs.Name = "txtSosAllLegs";
+            this.txtSosAllLegs.ReadOnly = true;
+            this.txtSosAllLegs.Size = new System.Drawing.Size(135, 20);
+            this.txtSosAllLegs.TabIndex = 148;
+            // 
+            // txtSosAllHands
+            // 
+            this.txtSosAllHands.Location = new System.Drawing.Point(170, 84);
+            this.txtSosAllHands.Name = "txtSosAllHands";
+            this.txtSosAllHands.ReadOnly = true;
+            this.txtSosAllHands.Size = new System.Drawing.Size(135, 20);
+            this.txtSosAllHands.TabIndex = 147;
+            // 
+            // txtSosAllHair
+            // 
+            this.txtSosAllHair.Location = new System.Drawing.Point(170, 6);
+            this.txtSosAllHair.Name = "txtSosAllHair";
+            this.txtSosAllHair.ReadOnly = true;
+            this.txtSosAllHair.Size = new System.Drawing.Size(135, 20);
+            this.txtSosAllHair.TabIndex = 146;
+            // 
+            // txtSosAllHead
+            // 
+            this.txtSosAllHead.Location = new System.Drawing.Point(170, 32);
+            this.txtSosAllHead.Name = "txtSosAllHead";
+            this.txtSosAllHead.ReadOnly = true;
+            this.txtSosAllHead.Size = new System.Drawing.Size(135, 20);
+            this.txtSosAllHead.TabIndex = 145;
+            // 
+            // txtSosAllChest
+            // 
+            this.txtSosAllChest.Location = new System.Drawing.Point(170, 58);
+            this.txtSosAllChest.Name = "txtSosAllChest";
+            this.txtSosAllChest.ReadOnly = true;
+            this.txtSosAllChest.Size = new System.Drawing.Size(135, 20);
+            this.txtSosAllChest.TabIndex = 144;
+            // 
+            // lblSosAllBolt2
+            // 
+            this.lblSosAllBolt2.AutoSize = true;
+            this.lblSosAllBolt2.Location = new System.Drawing.Point(311, 217);
+            this.lblSosAllBolt2.Name = "lblSosAllBolt2";
+            this.lblSosAllBolt2.Size = new System.Drawing.Size(34, 13);
+            this.lblSosAllBolt2.TabIndex = 143;
+            this.lblSosAllBolt2.Text = "Bolt 2";
+            // 
+            // lblSosAllBolt1
+            // 
+            this.lblSosAllBolt1.AutoSize = true;
+            this.lblSosAllBolt1.Location = new System.Drawing.Point(311, 191);
+            this.lblSosAllBolt1.Name = "lblSosAllBolt1";
+            this.lblSosAllBolt1.Size = new System.Drawing.Size(34, 13);
+            this.lblSosAllBolt1.TabIndex = 142;
+            this.lblSosAllBolt1.Text = "Bolt 1";
+            // 
+            // lblSosAllArrow2
+            // 
+            this.lblSosAllArrow2.AutoSize = true;
+            this.lblSosAllArrow2.Location = new System.Drawing.Point(311, 165);
+            this.lblSosAllArrow2.Name = "lblSosAllArrow2";
+            this.lblSosAllArrow2.Size = new System.Drawing.Size(43, 13);
+            this.lblSosAllArrow2.TabIndex = 141;
+            this.lblSosAllArrow2.Text = "Arrow 2";
+            // 
+            // lblSosAllArrow1
+            // 
+            this.lblSosAllArrow1.AutoSize = true;
+            this.lblSosAllArrow1.Location = new System.Drawing.Point(311, 139);
+            this.lblSosAllArrow1.Name = "lblSosAllArrow1";
+            this.lblSosAllArrow1.Size = new System.Drawing.Size(43, 13);
+            this.lblSosAllArrow1.TabIndex = 140;
+            this.lblSosAllArrow1.Text = "Arrow 1";
+            // 
+            // lblSosAllLegs
+            // 
+            this.lblSosAllLegs.AutoSize = true;
+            this.lblSosAllLegs.Location = new System.Drawing.Point(311, 113);
+            this.lblSosAllLegs.Name = "lblSosAllLegs";
+            this.lblSosAllLegs.Size = new System.Drawing.Size(30, 13);
+            this.lblSosAllLegs.TabIndex = 139;
+            this.lblSosAllLegs.Text = "Legs";
+            // 
+            // lblSosAllLeftWep2
+            // 
+            this.lblSosAllLeftWep2.AutoSize = true;
+            this.lblSosAllLeftWep2.Location = new System.Drawing.Point(311, 321);
+            this.lblSosAllLeftWep2.Name = "lblSosAllLeftWep2";
+            this.lblSosAllLeftWep2.Size = new System.Drawing.Size(54, 13);
+            this.lblSosAllLeftWep2.TabIndex = 138;
+            this.lblSosAllLeftWep2.Text = "L. Hand 2";
+            // 
+            // lblSosAllLeftWep1
+            // 
+            this.lblSosAllLeftWep1.AutoSize = true;
+            this.lblSosAllLeftWep1.Location = new System.Drawing.Point(311, 295);
+            this.lblSosAllLeftWep1.Name = "lblSosAllLeftWep1";
+            this.lblSosAllLeftWep1.Size = new System.Drawing.Size(54, 13);
+            this.lblSosAllLeftWep1.TabIndex = 137;
+            this.lblSosAllLeftWep1.Text = "L. Hand 1";
+            // 
+            // lblSosAllRightWep2
+            // 
+            this.lblSosAllRightWep2.AutoSize = true;
+            this.lblSosAllRightWep2.Location = new System.Drawing.Point(311, 269);
+            this.lblSosAllRightWep2.Name = "lblSosAllRightWep2";
+            this.lblSosAllRightWep2.Size = new System.Drawing.Size(56, 13);
+            this.lblSosAllRightWep2.TabIndex = 136;
+            this.lblSosAllRightWep2.Text = "R. Hand 2";
+            // 
+            // lblSosAllRightWep1
+            // 
+            this.lblSosAllRightWep1.AutoSize = true;
+            this.lblSosAllRightWep1.Location = new System.Drawing.Point(311, 243);
+            this.lblSosAllRightWep1.Name = "lblSosAllRightWep1";
+            this.lblSosAllRightWep1.Size = new System.Drawing.Size(56, 13);
+            this.lblSosAllRightWep1.TabIndex = 135;
+            this.lblSosAllRightWep1.Text = "R. Hand 1";
+            // 
+            // lblSosAllHands
+            // 
+            this.lblSosAllHands.AutoSize = true;
+            this.lblSosAllHands.Location = new System.Drawing.Point(311, 87);
+            this.lblSosAllHands.Name = "lblSosAllHands";
+            this.lblSosAllHands.Size = new System.Drawing.Size(38, 13);
+            this.lblSosAllHands.TabIndex = 134;
+            this.lblSosAllHands.Text = "Hands";
+            // 
+            // lblSosAllChest
+            // 
+            this.lblSosAllChest.AutoSize = true;
+            this.lblSosAllChest.Location = new System.Drawing.Point(311, 61);
+            this.lblSosAllChest.Name = "lblSosAllChest";
+            this.lblSosAllChest.Size = new System.Drawing.Size(34, 13);
+            this.lblSosAllChest.TabIndex = 133;
+            this.lblSosAllChest.Text = "Chest";
+            // 
+            // lblSosAllHead
+            // 
+            this.lblSosAllHead.AutoSize = true;
+            this.lblSosAllHead.Location = new System.Drawing.Point(311, 35);
+            this.lblSosAllHead.Name = "lblSosAllHead";
+            this.lblSosAllHead.Size = new System.Drawing.Size(33, 13);
+            this.lblSosAllHead.TabIndex = 132;
+            this.lblSosAllHead.Text = "Head";
+            // 
+            // lblSosAllHair
+            // 
+            this.lblSosAllHair.AutoSize = true;
+            this.lblSosAllHair.Location = new System.Drawing.Point(311, 9);
+            this.lblSosAllHair.Name = "lblSosAllHair";
+            this.lblSosAllHair.Size = new System.Drawing.Size(26, 13);
+            this.lblSosAllHair.TabIndex = 131;
+            this.lblSosAllHair.Text = "Hair";
+            // 
+            // lblSosAllPos
+            // 
+            this.lblSosAllPos.AutoSize = true;
+            this.lblSosAllPos.Location = new System.Drawing.Point(6, 183);
+            this.lblSosAllPos.Name = "lblSosAllPos";
+            this.lblSosAllPos.Size = new System.Drawing.Size(61, 13);
+            this.lblSosAllPos.TabIndex = 130;
+            this.lblSosAllPos.Text = "Sfx position";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(26, 279);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(34, 13);
+            this.label18.TabIndex = 129;
+            this.label18.Text = "Angle";
+            // 
+            // nudSosAllPosZ
+            // 
+            this.nudSosAllPosZ.DecimalPlaces = 3;
+            this.nudSosAllPosZ.Location = new System.Drawing.Point(66, 251);
+            this.nudSosAllPosZ.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nudSosAllPosZ.Minimum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            -2147483648});
+            this.nudSosAllPosZ.Name = "nudSosAllPosZ";
+            this.nudSosAllPosZ.Size = new System.Drawing.Size(75, 20);
+            this.nudSosAllPosZ.TabIndex = 123;
+            this.nudSosAllPosZ.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nudSosAllPosZ.Click += new System.EventHandler(this.nudSosAllPosZ_ValueChanged);
+            // 
+            // btnSosAllRestorePos
+            // 
+            this.btnSosAllRestorePos.Location = new System.Drawing.Point(6, 303);
+            this.btnSosAllRestorePos.Name = "btnSosAllRestorePos";
+            this.btnSosAllRestorePos.Size = new System.Drawing.Size(135, 23);
+            this.btnSosAllRestorePos.TabIndex = 124;
+            this.btnSosAllRestorePos.Text = "Use stored position";
+            this.btnSosAllRestorePos.UseVisualStyleBackColor = true;
+            this.btnSosAllRestorePos.Click += new System.EventHandler(this.btnSosAllRestorePos_Click);
+            // 
+            // nudSosAllPosY
+            // 
+            this.nudSosAllPosY.DecimalPlaces = 3;
+            this.nudSosAllPosY.Location = new System.Drawing.Point(66, 225);
+            this.nudSosAllPosY.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nudSosAllPosY.Minimum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            -2147483648});
+            this.nudSosAllPosY.Name = "nudSosAllPosY";
+            this.nudSosAllPosY.Size = new System.Drawing.Size(75, 20);
+            this.nudSosAllPosY.TabIndex = 122;
+            this.nudSosAllPosY.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nudSosAllPosY.Click += new System.EventHandler(this.nudSosAllPosY_ValueChanged);
+            // 
+            // nudSosAllPosX
+            // 
+            this.nudSosAllPosX.DecimalPlaces = 3;
+            this.nudSosAllPosX.Location = new System.Drawing.Point(66, 199);
+            this.nudSosAllPosX.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nudSosAllPosX.Minimum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            -2147483648});
+            this.nudSosAllPosX.Name = "nudSosAllPosX";
+            this.nudSosAllPosX.Size = new System.Drawing.Size(75, 20);
+            this.nudSosAllPosX.TabIndex = 121;
+            this.nudSosAllPosX.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nudSosAllPosX.Click += new System.EventHandler(this.nudSosAllPosX_ValueChanged);
+            // 
+            // nudSosAllPosAngle
+            // 
+            this.nudSosAllPosAngle.Location = new System.Drawing.Point(66, 277);
+            this.nudSosAllPosAngle.Maximum = new decimal(new int[] {
+            365,
+            0,
+            0,
+            0});
+            this.nudSosAllPosAngle.Minimum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            -2147483648});
+            this.nudSosAllPosAngle.Name = "nudSosAllPosAngle";
+            this.nudSosAllPosAngle.Size = new System.Drawing.Size(75, 20);
+            this.nudSosAllPosAngle.TabIndex = 128;
+            this.nudSosAllPosAngle.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nudSosAllPosAngle.Click += new System.EventHandler(this.nudSosAllPosAngle_ValueChanged);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(46, 253);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(14, 13);
+            this.label19.TabIndex = 127;
+            this.label19.Text = "Z";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(46, 227);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(14, 13);
+            this.label20.TabIndex = 126;
+            this.label20.Text = "Y";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(46, 201);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(14, 13);
+            this.label21.TabIndex = 125;
+            this.label21.Text = "X";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(6, 143);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(75, 13);
+            this.label22.TabIndex = 120;
+            this.label22.Text = "Summon Type";
+            // 
+            // cmbSosAllSummonType
+            // 
+            this.cmbSosAllSummonType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSosAllSummonType.Enabled = false;
+            this.cmbSosAllSummonType.FormattingEnabled = true;
+            this.cmbSosAllSummonType.Location = new System.Drawing.Point(6, 159);
+            this.cmbSosAllSummonType.Name = "cmbSosAllSummonType";
+            this.cmbSosAllSummonType.Size = new System.Drawing.Size(135, 21);
+            this.cmbSosAllSummonType.TabIndex = 119;
+            // 
+            // txtSosAllName
+            // 
+            this.txtSosAllName.Location = new System.Drawing.Point(6, 120);
+            this.txtSosAllName.Name = "txtSosAllName";
+            this.txtSosAllName.ReadOnly = true;
+            this.txtSosAllName.Size = new System.Drawing.Size(135, 20);
+            this.txtSosAllName.TabIndex = 118;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(6, 104);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(35, 13);
+            this.label23.TabIndex = 117;
+            this.label23.Text = "Name";
+            // 
+            // lbxNetSosAll
+            // 
+            this.lbxNetSosAll.FormattingEnabled = true;
+            this.lbxNetSosAll.Location = new System.Drawing.Point(6, 6);
+            this.lbxNetSosAll.Name = "lbxNetSosAll";
+            this.lbxNetSosAll.Size = new System.Drawing.Size(158, 95);
+            this.lbxNetSosAll.TabIndex = 114;
             // 
             // tpgHotkeys
             // 
@@ -6685,6 +7249,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudSosPosX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSosPosAngle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSosSoulLevel)).EndInit();
+            this.tpgNetSosAll.ResumeLayout(false);
+            this.tpgNetSosAll.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSosAllPosZ)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSosAllPosY)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSosAllPosX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSosAllPosAngle)).EndInit();
             this.tpgHotkeys.ResumeLayout(false);
             this.tclSettings.ResumeLayout(false);
             this.tpgSetingsSettings.ResumeLayout(false);
@@ -7152,6 +7722,52 @@
         private System.Windows.Forms.Label lblBonfireSearch;
         private System.Windows.Forms.CheckBox cbxQuickSelectBonfire;
         private System.Windows.Forms.TextBox txtBonfireSearch;
+        private System.Windows.Forms.TabPage tpgNetSosAll;
+        private System.Windows.Forms.TextBox txtSosAllRightWep2;
+        private System.Windows.Forms.TextBox txtSosAllLeftWep1;
+        private System.Windows.Forms.TextBox txtSosAllLeftWep2;
+        private System.Windows.Forms.TextBox txtSosAllRightWep1;
+        private System.Windows.Forms.TextBox txtSosAllBolt2;
+        private System.Windows.Forms.TextBox txtSosAllArrow1;
+        private System.Windows.Forms.TextBox txtSosAllArrow2;
+        private System.Windows.Forms.TextBox txtSosAllBolt1;
+        private System.Windows.Forms.TextBox txtSosAllLegs;
+        private System.Windows.Forms.TextBox txtSosAllHands;
+        private System.Windows.Forms.TextBox txtSosAllHair;
+        private System.Windows.Forms.TextBox txtSosAllHead;
+        private System.Windows.Forms.TextBox txtSosAllChest;
+        private System.Windows.Forms.Label lblSosAllBolt2;
+        private System.Windows.Forms.Label lblSosAllBolt1;
+        private System.Windows.Forms.Label lblSosAllArrow2;
+        private System.Windows.Forms.Label lblSosAllArrow1;
+        private System.Windows.Forms.Label lblSosAllLegs;
+        private System.Windows.Forms.Label lblSosAllLeftWep2;
+        private System.Windows.Forms.Label lblSosAllLeftWep1;
+        private System.Windows.Forms.Label lblSosAllRightWep2;
+        private System.Windows.Forms.Label lblSosAllRightWep1;
+        private System.Windows.Forms.Label lblSosAllHands;
+        private System.Windows.Forms.Label lblSosAllChest;
+        private System.Windows.Forms.Label lblSosAllHead;
+        private System.Windows.Forms.Label lblSosAllHair;
+        private System.Windows.Forms.Label lblSosAllPos;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.NumericUpDown nudSosAllPosZ;
+        private System.Windows.Forms.Button btnSosAllRestorePos;
+        private System.Windows.Forms.NumericUpDown nudSosAllPosY;
+        private System.Windows.Forms.NumericUpDown nudSosAllPosX;
+        private System.Windows.Forms.NumericUpDown nudSosAllPosAngle;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.ComboBox cmbSosAllSummonType;
+        private System.Windows.Forms.TextBox txtSosAllName;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.ListBox lbxNetSosAll;
+        private System.Windows.Forms.Button btnSosAllTrigger;
+        private System.Windows.Forms.TextBox txtSosSteamID;
+        private System.Windows.Forms.Label lblSosSteamID;
+        private System.Windows.Forms.Button btnSosSteamProfile;
     }
 }
 

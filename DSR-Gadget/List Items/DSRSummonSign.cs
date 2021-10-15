@@ -6,7 +6,7 @@ namespace DSR_Gadget
 {
     class DSRSummonSign
     {
-        private PHPointer SummonSignPtr;
+        public PHPointer SummonSignPtr { get; }
 
 
         public int SummonType
