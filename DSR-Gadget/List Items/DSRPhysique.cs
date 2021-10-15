@@ -45,8 +45,17 @@ namespace DSR_Gadget
 
         static DSRPhysique()
         {
-            foreach (string line in Regex.Split(Properties.Resources.Physiques, "[\r\n]+"))
-                All.Add(new DSRPhysique(line));
+            foreach (string line in Regex.Split(GetTxtResourceClass.GetTxtResource("Resources/Systems/Other/Physiques.txt"), "[\r\n]+"))
+            {
+                if (GetTxtResourceClass.IsValidTxtResource(line)) //determine if line is a valid resource or not
+                {
+                    Match match = physiqueEntryRx.Match(line);
+                    byte id = byte.Parse(match.Groups["ID"].Value);
+                    string name = match.Groups["Name"].Value;
+                    All.Add(new DSRPhysique(name, id));
+                };
+            }
+            All.Sort();
         }
     }
 }

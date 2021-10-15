@@ -45,8 +45,17 @@ namespace DSR_Gadget
 
         static DSRGender()
         {
-            foreach (string line in Regex.Split(Properties.Resources.Genders, "[\r\n]+"))
-                All.Add(new DSRGender(line));
+            foreach (string line in Regex.Split(GetTxtResourceClass.GetTxtResource("Resources/Systems/Other/Genders.txt"), "[\r\n]+"))
+            {
+                if (GetTxtResourceClass.IsValidTxtResource(line)) //determine if line is a valid resource or not
+                {
+                    Match match = genderEntryRx.Match(line);
+                    byte id = byte.Parse(match.Groups["ID"].Value);
+                    string name = match.Groups["Name"].Value;
+                    All.Add(new DSRGender(name, id));
+                }
+            }
+            All.Sort();
         }
     }
 }

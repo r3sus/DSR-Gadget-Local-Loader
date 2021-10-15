@@ -45,8 +45,11 @@ namespace DSR_Gadget
 
         static DSRClass()
         {
-            foreach (string line in Regex.Split(Properties.Resources.Classes, "[\r\n]+"))
-                All.Add(new DSRClass(line));
+            foreach (string line in Regex.Split(GetTxtResourceClass.GetTxtResource("Resources/Systems/Classes.txt"), "[\r\n]+"))
+            {
+                if (GetTxtResourceClass.IsValidTxtResource(line)) //determine if line is a valid resource or not
+                    All.Add(new DSRClass(line));
+            }
         }
     }
 }

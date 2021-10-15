@@ -235,7 +235,9 @@
     <Content Include="Resources\Assembly\LevelUp.txt" />
     <Content Include="Resources\Assembly\KickPlayer.txt" />
     <Content Include="Resources\Assembly\TargetedEntity.txt" />
-    <Content Include="Resources\Covenants.txt" />
+    <Content Include="Resources\Systems\Other\Covenants.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Equipment\DSRItemCategories.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -245,8 +247,12 @@
     <Content Include="Resources\Items\FullLists\AllProtectors.txt" />
     <Content Include="Resources\Items\FullLists\AllWeapons.txt" />
     <Content Include="Resources\Summons.txt" />
-    <Content Include="Resources\Physiques.txt" />
-    <Content Include="Resources\Genders.txt" />
+    <Content Include="Resources\Systems\Other\Physiques.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Systems\Other\Genders.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Gestures.txt" />
     <Content Include="Resources\Invasions.txt" />
     <Content Include="Resources\Magic.txt" />
@@ -255,7 +261,9 @@
     <None Include="Resources\Systems\Bonfires.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\Classes.txt" />
+    <None Include="Resources\Systems\Classes.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Resources\Equipment\Items\UsableItems.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

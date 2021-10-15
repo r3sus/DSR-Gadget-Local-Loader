@@ -118,9 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Classes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Classes.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
   <data name="GetItem" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Assembly\GetItem.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -142,9 +139,6 @@
   <data name="Magic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Magic.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="Covenants" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Covenants.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="LeaveSession" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Assembly\LeaveSession.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -153,12 +147,6 @@
   </data>
   <data name="Gestures" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Gestures.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="Genders" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Genders.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="Physiques" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Physiques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="Summons" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Summons.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>

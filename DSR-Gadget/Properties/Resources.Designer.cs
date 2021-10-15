@@ -179,52 +179,6 @@ namespace DSR_Gadget.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 0 4 11 08 12 13 13 11 09 09 Warrior
-        ///1 5 14 10 10 11 11 10 09 11 Knight
-        ///2 3 10 11 10 10 14 12 11 08 Wanderer
-        ///3 5 09 11 09 09 15 10 12 11 Thief
-        ///4 4 12 08 14 14 09 11 08 10 Bandit
-        ///5 4 11 09 11 12 14 11 09 09 Hunter
-        ///6 3 08 15 08 09 11 08 15 08 Sorcerer
-        ///7 1 10 12 11 12 09 12 10 08 Pyromancer
-        ///8 2 11 11 09 12 08 11 08 14 Cleric
-        ///9 6 11 11 11 11 11 11 11 11 Deprived.
-        /// </summary>
-        internal static string Classes {
-            get {
-                return ResourceManager.GetString("Classes", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 0 None
-        ///1 Way of White
-        ///2 Princess&apos;s Guard
-        ///3 Warrior of Sunlight
-        ///4 Darkwraith
-        ///5 Path of the Dragon
-        ///6 Gravelord Servant
-        ///7 Forest Hunter
-        ///8 Darkmoon Blade
-        ///9 Chaos Servant.
-        /// </summary>
-        internal static string Covenants {
-            get {
-                return ResourceManager.GetString("Covenants", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 0 Female
-        ///1 Male.
-        /// </summary>
-        internal static string Genders {
-            get {
-                return ResourceManager.GetString("Genders", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to 0 None
         ///2 Point Forward
         ///4 Point Up
@@ -374,23 +328,6 @@ namespace DSR_Gadget.Properties {
         internal static string Magic {
             get {
                 return ResourceManager.GetString("Magic", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 0 Average
-        ///1 Slim
-        ///2 Very Slim
-        ///3 Large
-        ///4 Very Large
-        ///5 Large Upper Body
-        ///6 Large Lower Body
-        ///7 Top-heavy
-        ///8 Tiny Head.
-        /// </summary>
-        internal static string Physiques {
-            get {
-                return ResourceManager.GetString("Physiques", resourceCulture);
             }
         }
         
