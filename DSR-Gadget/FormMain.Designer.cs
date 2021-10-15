@@ -1905,7 +1905,7 @@
             // 
             // nudChaosServant
             // 
-            this.nudChaosServant.Location = new System.Drawing.Point(4, 314);
+            this.nudChaosServant.Location = new System.Drawing.Point(12, 314);
             this.nudChaosServant.Maximum = new decimal(new int[] {
             255,
             0,
@@ -1918,7 +1918,7 @@
             // 
             // nudDarkmoonBlade
             // 
-            this.nudDarkmoonBlade.Location = new System.Drawing.Point(4, 274);
+            this.nudDarkmoonBlade.Location = new System.Drawing.Point(12, 274);
             this.nudDarkmoonBlade.Maximum = new decimal(new int[] {
             255,
             0,
@@ -1931,7 +1931,7 @@
             // 
             // nudForestHunter
             // 
-            this.nudForestHunter.Location = new System.Drawing.Point(4, 234);
+            this.nudForestHunter.Location = new System.Drawing.Point(12, 234);
             this.nudForestHunter.Maximum = new decimal(new int[] {
             255,
             0,
@@ -1944,7 +1944,7 @@
             // 
             // nudGravelordServant
             // 
-            this.nudGravelordServant.Location = new System.Drawing.Point(4, 194);
+            this.nudGravelordServant.Location = new System.Drawing.Point(12, 194);
             this.nudGravelordServant.Maximum = new decimal(new int[] {
             255,
             0,
@@ -1957,7 +1957,7 @@
             // 
             // nudPathOfTheDragon
             // 
-            this.nudPathOfTheDragon.Location = new System.Drawing.Point(4, 154);
+            this.nudPathOfTheDragon.Location = new System.Drawing.Point(12, 154);
             this.nudPathOfTheDragon.Maximum = new decimal(new int[] {
             255,
             0,
@@ -1970,7 +1970,7 @@
             // 
             // nudDarkwraith
             // 
-            this.nudDarkwraith.Location = new System.Drawing.Point(4, 114);
+            this.nudDarkwraith.Location = new System.Drawing.Point(12, 114);
             this.nudDarkwraith.Maximum = new decimal(new int[] {
             255,
             0,
@@ -1983,7 +1983,7 @@
             // 
             // nudWarriorOfSunlight
             // 
-            this.nudWarriorOfSunlight.Location = new System.Drawing.Point(4, 74);
+            this.nudWarriorOfSunlight.Location = new System.Drawing.Point(12, 74);
             this.nudWarriorOfSunlight.Maximum = new decimal(new int[] {
             255,
             0,
