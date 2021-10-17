@@ -333,5 +333,12 @@ namespace DSR_Gadget
             searchBox.Focus();
         }
 
+        private void SearchAllCheckbox_CheckedChanged(object sender, EventArgs e)
+        {
+            //checkbox changed, refresh search filter (if searchBox is not empty)
+            if (searchBox.Text != "")
+                FilterItems();
+        }
+
     }
 }
