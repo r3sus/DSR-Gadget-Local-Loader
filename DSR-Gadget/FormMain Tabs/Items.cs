@@ -36,6 +36,8 @@ namespace DSR_Gadget
         {
             DSRInfusion infusion = cmbInfusion.SelectedItem as DSRInfusion;
             nudUpgrade.Maximum = infusion.MaxUpgrade;
+
+            HandleMaxItemCheckbox();
         }
 
         private void lbxItems_SelectedIndexChanged(object sender, EventArgs e)
@@ -99,6 +101,8 @@ namespace DSR_Gadget
                     nudUpgrade.Enabled = true;
                     break;
             }
+
+            HandleMaxItemCheckbox();
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
@@ -115,19 +119,23 @@ namespace DSR_Gadget
 
         private void createItem()
         {
-            DSRItemCategory category = cmbCategory.SelectedItem as DSRItemCategory;
-            DSRItem item = lbxItems.SelectedItem as DSRItem;
-            int id = item.ID;
-            if (item.UpgradeType == DSRItem.Upgrade.PyroFlame || item.UpgradeType == DSRItem.Upgrade.PyroFlameAscended)
-                id += (int)nudUpgrade.Value * 100;
-            else
-                id += (int)nudUpgrade.Value;
-            if (item.UpgradeType == DSRItem.Upgrade.Infusable || item.UpgradeType == DSRItem.Upgrade.InfusableRestricted)
+            //Check if the button is enabled and the selected item isn't null
+            if (btnCreate.Enabled && lbxItems.SelectedItem != null)
             {
-                DSRInfusion infusion = cmbInfusion.SelectedItem as DSRInfusion;
-                id += infusion.Value;
+                _ = ChangeColor(Color.DarkGray);
+                DSRItem item = lbxItems.SelectedItem as DSRItem;
+                int id = item.ID;
+                if (item.UpgradeType == DSRItem.Upgrade.PyroFlame || item.UpgradeType == DSRItem.Upgrade.PyroFlameAscended)
+                    id += (int)nudUpgrade.Value * 100;
+                else
+                    id += (int)nudUpgrade.Value;
+                if (item.UpgradeType == DSRItem.Upgrade.Infusable || item.UpgradeType == DSRItem.Upgrade.InfusableRestricted)
+                {
+                    DSRInfusion infusion = cmbInfusion.SelectedItem as DSRInfusion;
+                    id += infusion.Value;
+                }
+                Hook.GetItem(item.CategoryID, id, (int)nudQuantity.Value);
             }
-            Hook.GetItem(category.ID, id, (int)nudQuantity.Value);
         }
 
         private void cbxRestrict_CheckedChanged(object sender, EventArgs e)
@@ -206,7 +214,7 @@ namespace DSR_Gadget
             if (e.KeyCode == Keys.Enter)
             {
                 e.Handled = true; //Do not pass keypress along
-                CreateItem();
+                createItem();
                 return;
             }
 
@@ -224,28 +232,6 @@ namespace DSR_Gadget
             }
 
             ScrollListbox(e);
-        }
-
-        //Create Item to currently loaded character
-        public void CreateItem()
-        {
-            //Check if the button is enabled and the selected item isn't null
-            if (btnCreate.Enabled && lbxItems.SelectedItem != null)
-            {
-                _ = ChangeColor(Color.DarkGray);
-                DSRItem item = lbxItems.SelectedItem as DSRItem;
-                int id = item.ID;
-                if (item.UpgradeType == DSRItem.Upgrade.PyroFlame || item.UpgradeType == DSRItem.Upgrade.PyroFlameAscended)
-                    id += (int)nudUpgrade.Value * 100;
-                else
-                    id += (int)nudUpgrade.Value;
-                if (item.UpgradeType == DSRItem.Upgrade.Infusable || item.UpgradeType == DSRItem.Upgrade.InfusableRestricted)
-                {
-                    DSRInfusion infusion = cmbInfusion.SelectedItem as DSRInfusion;
-                    id += infusion.Value;
-                }
-                Hook.GetItem(item.CategoryID, id, (int)nudQuantity.Value);
-            }
         }
 
         //Changes the color of the Apply button
@@ -313,7 +299,7 @@ namespace DSR_Gadget
 
         private void maxUpgrade_CheckedChanged(object sender, EventArgs e)
         {
-            //HandleMaxItemCheckbox()
+            //HandleMaxItemCheckbox
             if (maxUpgrade.Checked)
             {
                 nudUpgrade.Value = nudUpgrade.Maximum;
@@ -323,6 +309,16 @@ namespace DSR_Gadget
             {
                 nudUpgrade.Value = nudUpgrade.Minimum;
                 nudQuantity.Value = nudQuantity.Minimum;
+            }
+        }
+
+        private void HandleMaxItemCheckbox()
+        {
+            //Set upgrade nud to max if max checkbox is ticked
+            if (maxUpgrade.Checked)
+            {
+                nudUpgrade.Value = nudUpgrade.Maximum;
+                nudQuantity.Value = nudQuantity.Maximum;
             }
         }
 
