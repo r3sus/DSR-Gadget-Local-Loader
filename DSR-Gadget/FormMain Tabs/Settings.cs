@@ -214,5 +214,12 @@ namespace DSR_Gadget
         {
             Properties.Settings.Default.SteamAPIKey = txtSettingsSteamAPIKey.Text;
         }
+        
+        private void cbxUnlockStats_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Hook.Loaded)
+                foreach (Control ctrl in statControls)
+                    ctrl.Enabled = cbxUnlockStats.Checked;
+        }
     }
 }

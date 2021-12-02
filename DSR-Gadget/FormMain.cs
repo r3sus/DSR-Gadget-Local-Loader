@@ -17,6 +17,7 @@ namespace DSR_Gadget
         private bool loaded = false;
         private bool reading = false;
         private List<Control> criticalControls;
+        private List<Control> statControls;
 
         public FormMain()
         {
@@ -31,11 +32,8 @@ namespace DSR_Gadget
                 btnCreate, btnEventRead, btnEventWrite, nudChrType, nudTeamType, nudInvadeType, cbxFreezeChrType,
                 cbxFreezeTeamType, cbxFreezeInvadeType, cmbChrSelect, cmbInvasionSelect, cmbAreaID, cmbMPAreaID,
                 cbxFreezeMPAreaID, cbxFreezeAreaID, btnTeleportBloodstain, btnTeleportInitialPosition,
-                btnResetMagicQuantity, btnLeaveSession, cmbCovenant, nudWarriorOfSunlight, nudDarkwraith,
-                nudPathOfTheDragon, nudGravelordServant, nudForestHunter, nudDarkmoonBlade, nudChaosServant,
-                btnCurrentPlayerKick, txtName, nudWeaponMemory, nudHair, nudHairRed, nudHairGreen, nudHairBlue,
-                nudHairAlpha, nudEyeRed, nudEyeBlue, nudEyeGreen, cmbGender, cmbPhysique, btnGesturesUnlockAll,
-                cmbSosSummonType, nudSosPosX, nudSosPosY, nudSosPosZ, nudSosPosAngle, btnSosRestorePos, cbxCurrentPlayerCamera,
+                btnResetMagicQuantity, btnLeaveSession, btnCurrentPlayerKick, cmbSosSummonType, nudSosPosX,
+                nudSosPosY, nudSosPosZ, nudSosPosAngle, btnSosRestorePos, cbxCurrentPlayerCamera,
                 btnCurrentPlayerTeleport, btnCurrentPlayerFamilyShare, nudClearCount, //nudIndictments,
             };
 
@@ -45,13 +43,30 @@ namespace DSR_Gadget
                 cbxGestureBeckon, cbxGestureWave, cbxGestureBow, cbxGestureProperBow, cbxGestureHurrah,
                 cbxGestureJoy, cbxGestureShrug, cbxGestureLookSkyward, cbxGestureWellWhatIsIt, cbxGestureProstration,
                 cbxGesturePrayer, cbxGesturePraiseTheSun};
-            criticalControls.AddRange(cmbGestures);
+            
+            statControls = new List<Control>()
+            {
+                cmbCovenant, nudWarriorOfSunlight, nudDarkwraith, nudPathOfTheDragon, nudGravelordServant, nudForestHunter, nudDarkmoonBlade, nudChaosServant,
+                txtName, nudWeaponMemory, nudHair, nudHairRed, nudHairGreen, nudHairBlue, nudHairAlpha, nudEyeRed, nudEyeBlue, nudEyeGreen, cmbGender, 
+                cmbPhysique, btnGesturesUnlockAll, nudClearCount, nudIndictments, nudVitality, nudAttunement, nudEndurance, nudStrength, nudDexterity,
+                nudResistance, nudIntelligence, nudFaith, nudHumanity, nudSouls, cmbClass
+            };
+            statControls.AddRange(cbxGestures);
+            statControls.AddRange(cmbGestures);
         }
 
         private void enableCriticalControls(bool enable)
         {
             foreach (Control ctrl in criticalControls)
                 ctrl.Enabled = enable;
+            
+            if (Hook.Loaded)
+                foreach (Control ctrl in statControls)
+                    ctrl.Enabled = cbxUnlockStats.Checked;
+                else
+            foreach (Control ctrl in statControls)
+                ctrl.Enabled = false;
+
         }
 
         private async void FormMain_Load(object sender, EventArgs e)
