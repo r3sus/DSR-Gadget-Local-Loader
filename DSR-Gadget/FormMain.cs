@@ -72,15 +72,15 @@ namespace DSR_Gadget
         private async void FormMain_Load(object sender, EventArgs e)
         {
             Location = settings.WindowLocation;
-            Text = "DSR Gadget " + System.Windows.Forms.Application.ProductVersion;
+            Text = "DSR Gadget Local Loader " + System.Windows.Forms.Application.ProductVersion;
             enableCriticalControls(false);
             initializeAll();
 
             llbUpdate.Visible = false;
-            GitHubClient gitHubClient = new GitHubClient(new ProductHeaderValue("DSR-Gadget"));
+            GitHubClient gitHubClient = new GitHubClient(new ProductHeaderValue("DSR-Gadget-Local-Loader"));
             try
             {
-                Release release = await gitHubClient.Repository.Release.GetLatest("Nordgaren", "DSR-Gadget");
+                Release release = await gitHubClient.Repository.Release.GetLatest("Nordgaren", "DSR-Gadget-Local-Loader");
                 if (SemVersion.Parse(release.TagName) > System.Windows.Forms.Application.ProductVersion)
                 {
                     lblUpdate.Text = "New version available!";

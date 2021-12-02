@@ -5958,7 +5958,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
             this.Name = "FormMain";
-            this.Text = "DSR Gadget <version>";
+            this.Text = "DSR Gadget Local Loader <version>";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.tclMain.ResumeLayout(false);
