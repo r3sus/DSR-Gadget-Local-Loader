@@ -5800,15 +5800,16 @@
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(3, 42);
+            this.label4.Location = new System.Drawing.Point(3, 45);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(351, 46);
+            this.label4.Size = new System.Drawing.Size(351, 53);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Some features in this version of DS Gadget are not tested online. \r\nUnlock them w" + "ith the checkbox below. \r\nUse at your own risk.";
+            this.label4.Text = resources.GetString("label4.Text");
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // cbxUnlockStats
             // 
-            this.cbxUnlockStats.Location = new System.Drawing.Point(6, 91);
+            this.cbxUnlockStats.Location = new System.Drawing.Point(6, 101);
             this.cbxUnlockStats.Name = "cbxUnlockStats";
             this.cbxUnlockStats.Size = new System.Drawing.Size(137, 24);
             this.cbxUnlockStats.TabIndex = 2;

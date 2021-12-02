@@ -11,6 +11,6 @@ Spells, 0x40000000, Resources/Equipment/Items/Spells.txt, false
 Spell Tools, 0x00000000, Resources/Equipment/Weapons/SpellTools.txt, false
 Upgrade Materials, 0x40000000, Resources/Equipment/Items/UpgradeMaterials.txt, false
 Usable Items, 0x40000000, Resources/Equipment/Items/UsableItems.txt, false
-Mystery Weapons, 0x00000000, Resources/Equipment//Weapons/MysteryWeapons.txt, true
-Mystery Armor, 0x10000000, Resources/Equipment/Armor/MysteryArmor.txt, true
-Mystery Goods, 0x40000000, Resources/Equipment/Items/MysteryGoods.txt, true
+//Mystery Weapons, 0x00000000, Resources/Equipment//Weapons/MysteryWeapons.txt, true
+//Mystery Armor, 0x10000000, Resources/Equipment/Armor/MysteryArmor.txt, true
+//Mystery Goods, 0x40000000, Resources/Equipment/Items/MysteryGoods.txt, true

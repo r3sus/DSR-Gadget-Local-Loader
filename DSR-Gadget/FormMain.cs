@@ -34,7 +34,8 @@ namespace DSR_Gadget
                 cbxFreezeMPAreaID, cbxFreezeAreaID, btnTeleportBloodstain, btnTeleportInitialPosition,
                 btnResetMagicQuantity, btnLeaveSession, btnCurrentPlayerKick, cmbSosSummonType, nudSosPosX,
                 nudSosPosY, nudSosPosZ, nudSosPosAngle, btnSosRestorePos, cbxCurrentPlayerCamera,
-                btnCurrentPlayerTeleport, btnCurrentPlayerFamilyShare, nudClearCount, //nudIndictments,
+                btnCurrentPlayerTeleport, btnCurrentPlayerFamilyShare, nudHair, nudHairRed, nudHairGreen, 
+                nudHairBlue, nudHairAlpha, nudEyeRed, nudEyeBlue, nudEyeGreen, nudStoredX, nudStoredY, nudStoredZ, nudStoredAngle//nudIndictments,
             };
 
             cmbGestures = new ComboBox[] { cmbGestureSlot1, cmbGestureSlot2, cmbGestureSlot3, cmbGestureSlot4,
@@ -44,15 +45,15 @@ namespace DSR_Gadget
                 cbxGestureJoy, cbxGestureShrug, cbxGestureLookSkyward, cbxGestureWellWhatIsIt, cbxGestureProstration,
                 cbxGesturePrayer, cbxGesturePraiseTheSun};
             
+            criticalControls.AddRange(cbxGestures);
+            criticalControls.AddRange(cmbGestures);
+            
             statControls = new List<Control>()
             {
                 cmbCovenant, nudWarriorOfSunlight, nudDarkwraith, nudPathOfTheDragon, nudGravelordServant, nudForestHunter, nudDarkmoonBlade, nudChaosServant,
-                txtName, nudWeaponMemory, nudHair, nudHairRed, nudHairGreen, nudHairBlue, nudHairAlpha, nudEyeRed, nudEyeBlue, nudEyeGreen, cmbGender, 
-                cmbPhysique, btnGesturesUnlockAll, nudClearCount, nudIndictments, nudVitality, nudAttunement, nudEndurance, nudStrength, nudDexterity,
-                nudResistance, nudIntelligence, nudFaith, nudHumanity, nudSouls, cmbClass
+                txtName, nudWeaponMemory,  cmbGender, cmbPhysique, btnGesturesUnlockAll, nudClearCount, nudIndictments, nudVitality, nudAttunement, nudEndurance,
+                nudStrength, nudDexterity, nudResistance, nudIntelligence, nudFaith, nudHumanity, nudSouls, cmbClass
             };
-            statControls.AddRange(cbxGestures);
-            statControls.AddRange(cmbGestures);
         }
 
         private void enableCriticalControls(bool enable)
@@ -63,9 +64,9 @@ namespace DSR_Gadget
             if (Hook.Loaded)
                 foreach (Control ctrl in statControls)
                     ctrl.Enabled = cbxUnlockStats.Checked;
-                else
-            foreach (Control ctrl in statControls)
-                ctrl.Enabled = false;
+            else
+                foreach (Control ctrl in statControls)
+                    ctrl.Enabled = false;
 
         }
 

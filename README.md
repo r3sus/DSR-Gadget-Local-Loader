@@ -1,3 +1,69 @@
+# DSR Gadget Local Loader by Nordgaren and Meikk99
+
+ Fork of TKGP's DSR Gadget that loads locally accessible .txt files to populate various lists (bonfire, items, etc) Resource .txt files are found in DS-Gadget\Resources.
+Many features implimented by [Meikk99](https://github.com/Meikk99/DSR-Gadget), including multiplayer features and most of the functionality in this fork
+
+## Requirements
+* [.NET 4.7.2](https://www.microsoft.com/net/download/thank-you/net472)
+
+## Installing
+
+* Extract contents of zip archive to it's own folder. You may have to run as admin if DS Gadget crashes
+
+## Updating
+
+* If you have a previous version of DSR Gadget Local Loader with a Resource folder, there is no need to copy the resource folder over, unless noted in the patch notes. This prevents you from overwriting the changes you made and the saved positions you stored.
+
+## Troubleshooting
+If you are having problems getting it to launch and you tried installing the package above, right click the exe, go to properties, hit the compatability tab and hit "Run compatability troubleshooter". If it works, apply the settings windows found.
+
+You can also try adding DS Gadget as an exception to your antivirus
+
+#### Based on [DSR-Gadget](https://github.com/JKAnderson/DSR-Gadget) by JKAnderson.
+#### Fork of [DSR-Gadget](https://github.com/Meikk99/DSR-Gadget) by Meikk99.
+
+## Thank You
+**[TKGP](https://github.com/JKAnderson/)** Author of DS Gadget and answering my dumb questions  
+**[Meikk99](https://github.com/Meikk99/)** For his improvements on DSR Gadget  
+**[King Borehaha](https://github.com/kingborehaha/)** For helping with DS Gadget Local Loader and helping test various features  
+
+# Change Log
+### Release 1
+
+* Game info is now loaded through local text files in Resource folder  
+* Search bar for Bonfire and Items no available to use  
+* Reworked how selecting bonfire would change your currently rested bonfire, and gave a checkbox for the old functionality  
+* Max checkbox for items (works for upgrade and quantity)  
+* Checkbox to enable untested or features that are known to ban.  
+
+Changes from Meik99s gadget:  
+* Add options for changing and freezing Character, Team and Invasion Type.  
+* Add options for changing and freezing Area and Multiplayer Area ID.  
+* Add options for teleporting to bloodstain and initial positions.  
+* Add Infinite durability cheats.  
+* Add reset magic quantity button.  
+* Add saving of magic quantity to save state feature.  
+* Add various hotkey options.  
+* Add stat info on recent players  
+* View recent and current players  
+* Kick player  
+* Leave session (button and shortcut)  
+* Change name  
+* Change covenant  
+* Change covenant level  
+* Change weapon level  
+* View indictments  
+* Change hair slot  
+* Change hair colour  
+* Change Eye colour  
+* Add steam family share check (set api key in settings)  
+* Add equipment info to current/recent players and summon sign info  
+* Ability to level up stats directly  
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------
+Original readme:
 
 # DSR Gadget 1.6 - By Pav & TKGP
 A multi-purpose testing tool for Dark Souls: Remastered.  
