@@ -59,6 +59,7 @@ Changes from Meik99s gadget:
 * Add steam family share check (set api key in settings)  
 * Add equipment info to current/recent players and summon sign info  
 * Ability to level up stats directly  
+* Added NG + Cycle  
 
 
 

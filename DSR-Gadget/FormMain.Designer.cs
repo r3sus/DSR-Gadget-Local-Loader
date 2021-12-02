@@ -516,7 +516,7 @@
             this.tclSettings = new System.Windows.Forms.TabControl();
             this.tpgSetingsSettings = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
-            this.cbxUnlockStats = new System.Windows.Forms.CheckBox();
+            this.cbxUnlockFeatures = new System.Windows.Forms.CheckBox();
             this.txtSettingsSteamAPIKey = new System.Windows.Forms.TextBox();
             this.lblSettingsSteamAPIKey = new System.Windows.Forms.Label();
             this.tpgSettingsHotkeys = new System.Windows.Forms.TabPage();
@@ -5787,7 +5787,7 @@
             // tpgSetingsSettings
             // 
             this.tpgSetingsSettings.Controls.Add(this.label4);
-            this.tpgSetingsSettings.Controls.Add(this.cbxUnlockStats);
+            this.tpgSetingsSettings.Controls.Add(this.cbxUnlockFeatures);
             this.tpgSetingsSettings.Controls.Add(this.txtSettingsSteamAPIKey);
             this.tpgSetingsSettings.Controls.Add(this.lblSettingsSteamAPIKey);
             this.tpgSetingsSettings.Location = new System.Drawing.Point(4, 22);
@@ -5805,16 +5805,15 @@
             this.label4.Size = new System.Drawing.Size(351, 53);
             this.label4.TabIndex = 3;
             this.label4.Text = resources.GetString("label4.Text");
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // cbxUnlockStats
+            // cbxUnlockFeatures
             // 
-            this.cbxUnlockStats.Location = new System.Drawing.Point(6, 101);
-            this.cbxUnlockStats.Name = "cbxUnlockStats";
-            this.cbxUnlockStats.Size = new System.Drawing.Size(137, 24);
-            this.cbxUnlockStats.TabIndex = 2;
-            this.cbxUnlockStats.Text = "Enable All Features";
-            this.cbxUnlockStats.UseVisualStyleBackColor = true;
+            this.cbxUnlockFeatures.Location = new System.Drawing.Point(6, 101);
+            this.cbxUnlockFeatures.Name = "cbxUnlockFeatures";
+            this.cbxUnlockFeatures.Size = new System.Drawing.Size(137, 24);
+            this.cbxUnlockFeatures.TabIndex = 2;
+            this.cbxUnlockFeatures.Text = "Enable All Features";
+            this.cbxUnlockFeatures.UseVisualStyleBackColor = true;
             // 
             // txtSettingsSteamAPIKey
             // 
@@ -6117,7 +6116,7 @@
 
         private System.Windows.Forms.Label label4;
 
-        private System.Windows.Forms.CheckBox cbxUnlockStats;
+        private System.Windows.Forms.CheckBox cbxUnlockFeatures;
 
         #endregion
 

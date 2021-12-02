@@ -63,7 +63,7 @@ namespace DSR_Gadget
             
             if (Hook.Loaded)
                 foreach (Control ctrl in statControls)
-                    ctrl.Enabled = cbxUnlockStats.Checked;
+                    ctrl.Enabled = cbxUnlockFeatures.Checked;
             else
                 foreach (Control ctrl in statControls)
                     ctrl.Enabled = false;
@@ -255,5 +255,7 @@ namespace DSR_Gadget
                 }
             }
         }
+
+        
     }
 }

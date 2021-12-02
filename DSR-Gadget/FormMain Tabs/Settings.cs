@@ -12,6 +12,7 @@ namespace DSR_Gadget
 
         private void initHotkeys()
         {
+            cbxUnlockFeatures.Checked = settings.UnlockAllFeatures;
             cbxHotkeysEnable.Checked = settings.HotkeysEnable;
             cbxHotkeysHandle.Checked = settings.HotkeysHandle;
 
@@ -215,11 +216,13 @@ namespace DSR_Gadget
             Properties.Settings.Default.SteamAPIKey = txtSettingsSteamAPIKey.Text;
         }
         
-        private void cbxUnlockStats_CheckedChanged(object sender, EventArgs e)
+        private void cbxUnlockFeatures_CheckedChanged(object sender, EventArgs e)
         {
             if (Hook.Loaded)
                 foreach (Control ctrl in statControls)
-                    ctrl.Enabled = cbxUnlockStats.Checked;
+                    ctrl.Enabled = cbxUnlockFeatures.Checked;
+
+            settings.UnlockAllFeatures = cbxUnlockFeatures.Checked;
         }
     }
 }
