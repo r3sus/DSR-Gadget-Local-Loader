@@ -53,6 +53,8 @@ namespace DSR_Gadget
         private PHPointer BaseCARAOB;
         private PHPointer SosSignMan;
 
+        private PHPointer FuncLevelUp;
+
         public DSRHook(int refreshInterval, int minLifetime) :
             base(refreshInterval, minLifetime, p => p.MainWindowTitle == "DARK SOULS™: REMASTERED")
         {
@@ -109,9 +111,12 @@ namespace DSR_Gadget
             BaseCARAOB = RegisterRelativeAOB(DSROffsets.BaseCARAOB, 3, 7, DSROffsets.SosSignManOffset0);
 
             SosSignMan = CreateChildPointer(BaseCARAOB, DSROffsets.SosSignManOffset1);
+            
+            FuncLevelUp = RegisterAbsoluteAOB(DSROffsets.FuncLevelUpAOB);
                 
             OnHooked += DSRHook_OnHooked;
         }
+
 
         private void DSRHook_OnHooked(object sender, PHEventArgs e)
         {
@@ -290,7 +295,7 @@ namespace DSR_Gadget
         public void LevelUp(int level, int vit, int att, int end, int str, int dex, int res, int intel, int fth, int humanity, int souls)
         {
             IntPtr stats = Allocate(0x300);
-
+            
             Kernel32.WriteBytes(Handle, stats + 0x270 + 0x0, BitConverter.GetBytes(vit));
             Kernel32.WriteBytes(Handle, stats + 0x270 + 0x4, BitConverter.GetBytes(att));
             Kernel32.WriteBytes(Handle, stats + 0x270 + 0x8, BitConverter.GetBytes(end));
@@ -310,6 +315,8 @@ namespace DSR_Gadget
             Array.Copy(bytes, 0, asm, 0x2, 8);
             bytes = BitConverter.GetBytes(stats.ToInt64());
             Array.Copy(bytes, 0, asm, 0xC, 8);
+            bytes = BitConverter.GetBytes(FuncLevelUp.Resolve().ToInt64());
+            Array.Copy(bytes, 0, asm, 0x1A, 8);
 
             Execute(asm);
             Free(stats);

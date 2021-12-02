@@ -699,10 +699,7 @@ namespace DSR_Gadget
             MultiplayerCount = 0x50,
             */
         }
-
-
-
-
+        
         public static DSROffsets GetOffsets(int moduleSize)
         {
             DSROffsets result = new DSROffsets();
@@ -726,5 +723,7 @@ namespace DSR_Gadget
             [0x37CB400] = 2, // 1.01.2
             [0x3817800] = 3, // 1.03
         };
+
+        public const string FuncLevelUpAOB = "48 89 74 24 20 57 48 83 EC 20 48 8B 05 4F 20 69 01 4C 8B";
     }
 }

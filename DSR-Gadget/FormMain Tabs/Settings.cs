@@ -157,9 +157,7 @@ namespace DSR_Gadget
                 if (loaded && !reading)
                     Hook.LeaveSession();
             }));
-
-#if DEBUG
-
+            
             hotkeys.Add(new GadgetHotkey("HotkeyCancelAnimation", "Cancel Animation", flpHotkeyControls, () =>
             {
                 if (loaded && !reading)
@@ -168,7 +166,7 @@ namespace DSR_Gadget
                 }
             }));
 
-
+#if DEBUG
             hotkeys.Add(new GadgetHotkey("HotkeyTest1", "Test 1", flpHotkeyControls, () =>
             {
                 Hook.HotkeyTest1();
