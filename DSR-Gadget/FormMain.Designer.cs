@@ -515,6 +515,7 @@
             this.tpgHotkeys = new System.Windows.Forms.TabPage();
             this.tclSettings = new System.Windows.Forms.TabControl();
             this.tpgSetingsSettings = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
             this.cbxUnlockStats = new System.Windows.Forms.CheckBox();
             this.txtSettingsSteamAPIKey = new System.Windows.Forms.TextBox();
             this.lblSettingsSteamAPIKey = new System.Windows.Forms.Label();
@@ -529,7 +530,6 @@
             this.tmrUpdate = new System.Windows.Forms.Timer(this.components);
             this.lblUpdate = new System.Windows.Forms.Label();
             this.llbUpdate = new System.Windows.Forms.LinkLabel();
-            this.label4 = new System.Windows.Forms.Label();
             this.tclMain.SuspendLayout();
             this.tpgPlayer.SuspendLayout();
             this.gbxOther.SuspendLayout();
@@ -2655,6 +2655,7 @@
             this.lbxItems.TabIndex = 9;
             this.lbxItems.SelectedIndexChanged += new System.EventHandler(this.lbxItems_SelectedIndexChanged);
             this.lbxItems.DoubleClick += new System.EventHandler(this.lbxItems_DoubleClick);
+            this.lbxItems.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyPressed);
             // 
             // btnCreate
             // 
@@ -5797,6 +5798,14 @@
             this.tpgSetingsSettings.Text = "Settings";
             this.tpgSetingsSettings.UseVisualStyleBackColor = true;
             // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(3, 42);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(351, 46);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Some features in this version of DS Gadget are not tested online. \r\nUnlock them w" + "ith the checkbox below. \r\nUse at your own risk.";
+            // 
             // cbxUnlockStats
             // 
             this.cbxUnlockStats.Location = new System.Drawing.Point(6, 91);
@@ -5933,15 +5942,6 @@
             this.llbUpdate.Text = "Click to download";
             this.llbUpdate.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.llbUpdate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbUpdate_LinkClicked);
-            // 
-            // label4
-            // 
-            this.label4.Location = new System.Drawing.Point(3, 42);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(351, 46);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Some features in this version of DS Gadget are not tested online. \r\nUnlock them w" + "ith the checkbox below. \r\nUse at your own risk.";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // FormMain
             // 
