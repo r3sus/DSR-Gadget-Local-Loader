@@ -310,7 +310,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PropertyHook\PropertyHook\PropertyHook.csproj">
+    <ProjectReference Include="..\..\PropertyHook\PropertyHook\PropertyHook.csproj">
       <Project>{18eff8d2-c4d5-4e18-9a31-38e106ba1cf7}</Project>
       <Name>PropertyHook</Name>
     </ProjectReference>
