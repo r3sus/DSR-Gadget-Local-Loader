@@ -128,6 +128,7 @@ namespace DSR_Gadget
         public int Humanity
         {
             get => PlayerGameDataPtr.ReadInt32((int)DSROffsets.PlayerGameData.Humanity);
+            set => PlayerGameDataPtr.WriteInt32((int) DSROffsets.PlayerGameData.Humanity, value);
         }
 
         #endregion stats

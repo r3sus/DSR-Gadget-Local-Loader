@@ -195,14 +195,14 @@ namespace DSR_Gadget
 
         private void nudHumanity_ValueChanged(object sender, EventArgs e)
         {
-            //if (!reading)
-            //dsrProcess?.SetHumanity((int)nudHumanity.Value);
+            if (!reading)
+                Player.Humanity = (int)nudHumanity.Value;
         }
 
         private void nudSouls_ValueChanged(object sender, EventArgs e)
         {
-            //if (!reading)
-            //dsrProcess?.SetSouls((int)nudSouls.Value);
+            if (!reading)
+                Player.Souls = (int)nudSouls.Value;
         }
 
         private void nudStats_ValueChanged(object sender, EventArgs e)

@@ -2067,6 +2067,7 @@
             this.nudHumanity.Name = "nudHumanity";
             this.nudHumanity.Size = new System.Drawing.Size(180, 26);
             this.nudHumanity.TabIndex = 77;
+            this.nudHumanity.ValueChanged += new System.EventHandler(this.nudHumanity_ValueChanged);
             // 
             // lblSouls
             // 
@@ -2093,6 +2094,7 @@
             this.nudSouls.Name = "nudSouls";
             this.nudSouls.Size = new System.Drawing.Size(180, 26);
             this.nudSouls.TabIndex = 75;
+            this.nudSouls.ValueChanged += new System.EventHandler(this.nudSouls_ValueChanged);
             // 
             // lblSoulLevel
             // 

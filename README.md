@@ -30,6 +30,10 @@ You can also try adding DS Gadget as an exception to your antivirus
 # Change Log
 
 ## **Best bet is to use this offline for now.**
+### Release 1.2
+
+* Fixed Humanity and Souls boxes in Stats tab  
+
 ### Release 1.1
 
 * Fixed the "Unlock Features" checkbox  
