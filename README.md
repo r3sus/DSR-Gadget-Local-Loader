@@ -30,6 +30,10 @@ You can also try adding DS Gadget as an exception to your antivirus
 # Change Log
 
 ## **Best bet is to use this offline for now.**
+### Release 1.1
+
+* Fixed the "Unlock Features" checkbox  
+
 ### Release 1
 
 * Game info is now loaded through local text files in Resource folder  
