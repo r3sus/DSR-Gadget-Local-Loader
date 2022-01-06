@@ -9,22 +9,17 @@ namespace DSR_Gadget
 {
     public partial class FormMain : Form
     {
-        private struct PlayerState
-        {
-            public bool Set;
-            public decimal Health, Stamina;
-            public bool DeathCam;
-            public byte[] FollowCam;
-            public int[][] EquipMagicData;
-        }
-
         private List<int> unknownBonfires = new List<int>();
-        private PlayerState playerState;
+        private List<SavedPos> Positions = new List<SavedPos>();
+        private State.PlayerState playerState;
         private DSRPlayer Player;
 
         private void initPlayer()
         {
             cbxRestoreState.Checked = settings.RestoreState;
+
+            Positions = SavedPos.GetSavedPositions();
+            UpdatePositions();
 
             foreach (DSRBonfire bonfire in DSRBonfire.All)
                 cmbBonfire.Items.Add(bonfire);
@@ -283,17 +278,24 @@ namespace DSR_Gadget
 
         private void storePosition()
         {
-            nudStoredX.Value = nudPosX.Value;
-            nudStoredY.Value = nudPosY.Value;
-            nudStoredZ.Value = nudPosZ.Value;
-            nudStoredAngle.Value = nudPosAngle.Value;
-
-            playerState.Health = nudHealth.Value;
-            playerState.Stamina = nudStamina.Value;
-            playerState.FollowCam = Hook.DumpFollowCam();
-            playerState.DeathCam = cbxDeathCam.Checked;
-            playerState.EquipMagicData = Hook.EquipMagicData;
-            playerState.Set = true;
+            if (btnPosStore.Enabled)
+            {
+                var pos = new SavedPos();
+                pos.Name = storedPositions.Text;
+                pos.X = nudStoredX.Value = nudPosX.Value;
+                pos.Y = nudStoredY.Value = nudPosY.Value;
+                pos.Z = nudStoredZ.Value = nudPosZ.Value;
+                pos.Angle = nudStoredAngle.Value = nudPosAngle.Value;
+                playerState.HP = (int)nudHealth.Value;
+                playerState.Stamina = (int)nudStamina.Value;
+                playerState.FollowCam = Hook.DumpFollowCam();
+                playerState.DeathCam = Hook.DeathCam;
+                playerState.Set = true;
+                pos.PlayerState = playerState;
+                ProcessSavedPos(pos);
+                UpdatePositions();
+                SavedPos.Save(Positions);
+            }
         }
 
         private void btnPosRestore_Click(object sender, EventArgs e)
@@ -319,7 +321,7 @@ namespace DSR_Gadget
 
                 if (cbxRestoreState.Checked)
                 {
-                    nudHealth.Value = playerState.Health;
+                    nudHealth.Value = playerState.HP;
                     nudStamina.Value = playerState.Stamina;
                     cbxDeathCam.Checked = playerState.DeathCam;
                     Hook.EquipMagicData = playerState.EquipMagicData;
@@ -551,5 +553,96 @@ namespace DSR_Gadget
                 Hook.LastBonfire = ((DSRBonfire)cmbBonfire.SelectedItem).ID;
         }
 
+        private void storedPositions_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var savedPos = storedPositions.SelectedItem as SavedPos;
+            nudStoredX.Value = savedPos.X;
+            nudStoredY.Value = savedPos.Y;
+            nudStoredZ.Value = savedPos.Z;
+            nudStoredAngle.Value = savedPos.Angle;
+            playerState = savedPos.PlayerState;
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            RemoveSavedPos();
+        }
+
+        private void storedPositions_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                StorePosition();
+            }
+
+            if (e.KeyCode == Keys.Delete && e.Shift == true)
+            {
+                deleteButton_Click(sender, e);
+            }
+        }
+        public void RemoveSavedPos()
+        {
+            if (Positions.Any(n => n.Name == storedPositions.Text))
+            {
+                if (MessageBox.Show("Are you sure you want to delete this positon?", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                {
+                    var old = Positions.Single(n => n.Name == storedPositions.Text);
+                    Positions.Remove(old);
+                    storedPositions.SelectedIndex = 0;
+                    UpdatePositions();
+                    SavedPos.Save(Positions);
+                }
+            }
+        }
+        public void StorePosition()
+        {
+            if (btnPosStore.Enabled)
+            {
+
+                var pos = new SavedPos();
+                pos.Name = storedPositions.Text;
+                pos.X = nudStoredX.Value = nudPosX.Value;
+                pos.Y = nudStoredY.Value = nudPosY.Value;
+                pos.Z = nudStoredZ.Value = nudPosZ.Value;
+                pos.Angle = nudStoredAngle.Value = nudPosAngle.Value;
+                playerState.HP = (int)nudHealth.Value;
+                playerState.Stamina = (int)nudStamina.Value;
+                playerState.FollowCam = Hook.DumpFollowCam();
+                playerState.DeathCam = Hook.DeathCam;
+                playerState.EquipMagicData = Hook.EquipMagicData;
+                playerState.Set = true;
+                pos.PlayerState = playerState;
+                ProcessSavedPos(pos);
+                UpdatePositions();
+                SavedPos.Save(Positions);
+            }
+        }
+        public void ProcessSavedPos(SavedPos pos)
+        {
+            if (!string.IsNullOrWhiteSpace(storedPositions.Text))
+            {
+                if (Positions.Any(n => n.Name == storedPositions.Text))
+                {
+                    var old = Positions.Single(n => n.Name == storedPositions.Text);
+                    Positions.Remove(old);
+                    Positions.Add(pos);
+                    return;
+                }
+
+                Positions.Add(pos);
+            }
+        }
+        private void UpdatePositions()
+        {
+            if (storedPositions.SelectedItem != new SavedPos())
+            {
+                storedPositions.Items.Clear();
+                storedPositions.Items.Add(new SavedPos());
+                foreach (var item in Positions)
+                {
+                    storedPositions.Items.Add(item);
+                }
+            }
+        }
     }
 }

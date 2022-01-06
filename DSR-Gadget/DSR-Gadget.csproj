@@ -92,6 +92,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Util\PlayerState.cs" />
+    <Compile Include="Util\SavedPos.cs" />
     <Compile Include="Util\DSRAssembly.cs" />
     <Compile Include="Util\DSRHook.cs" />
     <Compile Include="Util\DSROffsets.cs" />

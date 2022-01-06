@@ -255,7 +255,5 @@ namespace DSR_Gadget
                 }
             }
         }
-
-        
     }
 }
