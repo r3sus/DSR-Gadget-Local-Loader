@@ -653,7 +653,7 @@
             // lblSlot
             // 
             lblSlot.AutoSize = true;
-            lblSlot.Location = new System.Drawing.Point(339, 330);
+            lblSlot.Location = new System.Drawing.Point(348, 330);
             lblSlot.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblSlot.Name = "lblSlot";
             lblSlot.Size = new System.Drawing.Size(37, 20);
@@ -3813,7 +3813,7 @@
             // lblID
             // 
             this.lblID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblID.Location = new System.Drawing.Point(457, 325);
+            this.lblID.Location = new System.Drawing.Point(466, 325);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(100, 25);
             this.lblID.TabIndex = 52;
@@ -3823,7 +3823,7 @@
             // 
             this.cmbSlot.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSlot.FormattingEnabled = true;
-            this.cmbSlot.Location = new System.Drawing.Point(378, 325);
+            this.cmbSlot.Location = new System.Drawing.Point(387, 325);
             this.cmbSlot.Name = "cmbSlot";
             this.cmbSlot.Size = new System.Drawing.Size(71, 28);
             this.cmbSlot.TabIndex = 50;
@@ -3850,7 +3850,7 @@
             // pnlHairColor
             // 
             this.pnlHairColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlHairColor.Location = new System.Drawing.Point(9, 850);
+            this.pnlHairColor.Location = new System.Drawing.Point(11, 850);
             this.pnlHairColor.Name = "pnlHairColor";
             this.pnlHairColor.Size = new System.Drawing.Size(74, 31);
             this.pnlHairColor.TabIndex = 47;
@@ -3868,7 +3868,7 @@
             // SearchAllCheckboxFashion
             // 
             this.SearchAllCheckboxFashion.AutoSize = true;
-            this.SearchAllCheckboxFashion.Location = new System.Drawing.Point(457, 398);
+            this.SearchAllCheckboxFashion.Location = new System.Drawing.Point(466, 398);
             this.SearchAllCheckboxFashion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.SearchAllCheckboxFashion.Name = "SearchAllCheckboxFashion";
             this.SearchAllCheckboxFashion.Size = new System.Drawing.Size(107, 24);
@@ -3881,7 +3881,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label6.Location = new System.Drawing.Point(12, 403);
+            this.label6.Location = new System.Drawing.Point(21, 403);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(72, 20);
@@ -3890,7 +3890,7 @@
             // 
             // searchBoxFashion
             // 
-            this.searchBoxFashion.Location = new System.Drawing.Point(4, 399);
+            this.searchBoxFashion.Location = new System.Drawing.Point(13, 399);
             this.searchBoxFashion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.searchBoxFashion.Name = "searchBoxFashion";
             this.searchBoxFashion.Size = new System.Drawing.Size(445, 26);
@@ -3903,16 +3903,16 @@
             // 
             this.lbxItemsFashion.FormattingEnabled = true;
             this.lbxItemsFashion.ItemHeight = 20;
-            this.lbxItemsFashion.Location = new System.Drawing.Point(4, 430);
+            this.lbxItemsFashion.Location = new System.Drawing.Point(11, 435);
             this.lbxItemsFashion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbxItemsFashion.Name = "lbxItemsFashion";
-            this.lbxItemsFashion.Size = new System.Drawing.Size(577, 384);
+            this.lbxItemsFashion.Size = new System.Drawing.Size(570, 384);
             this.lbxItemsFashion.TabIndex = 19;
             this.lbxItemsFashion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyPressedFashion);
             // 
             // btnApplyHair
             // 
-            this.btnApplyHair.Location = new System.Drawing.Point(457, 361);
+            this.btnApplyHair.Location = new System.Drawing.Point(466, 361);
             this.btnApplyHair.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnApplyHair.Name = "btnApplyHair";
             this.btnApplyHair.Size = new System.Drawing.Size(112, 33);
@@ -3926,7 +3926,7 @@
             // 
             this.cmbCategoryFashion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategoryFashion.FormattingEnabled = true;
-            this.cmbCategoryFashion.Location = new System.Drawing.Point(4, 361);
+            this.cmbCategoryFashion.Location = new System.Drawing.Point(13, 361);
             this.cmbCategoryFashion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbCategoryFashion.Name = "cmbCategoryFashion";
             this.cmbCategoryFashion.Size = new System.Drawing.Size(445, 28);
@@ -3936,7 +3936,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(4, 337);
+            this.label7.Location = new System.Drawing.Point(13, 337);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(73, 20);
