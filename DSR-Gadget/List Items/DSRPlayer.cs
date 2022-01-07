@@ -4,7 +4,7 @@ using PropertyHook;
 
 namespace DSR_Gadget
 {
-    class DSRPlayer
+    public class DSRPlayer
     {
         public PHPointer PlayerPtr { get; set; }
         public PHPointer PlayerInsPtr { get; set; }

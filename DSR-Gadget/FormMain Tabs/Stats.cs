@@ -17,23 +17,23 @@ namespace DSR_Gadget
             nudHumanity.Maximum = int.MaxValue;
             nudHumanity.Minimum = int.MinValue;
 
-            nudHairRed.Maximum = decimal.MaxValue;
-            nudHairGreen.Maximum = decimal.MaxValue;
-            nudHairBlue.Maximum = decimal.MaxValue;
-            nudHairAlpha.Maximum = decimal.MaxValue;
+            //nudHairRed.Maximum = decimal.MaxValue;
+            //nudHairGreen.Maximum = decimal.MaxValue;
+            //nudHairBlue.Maximum = decimal.MaxValue;
+            //nudHairAlpha.Maximum = decimal.MaxValue;
 
-            nudEyeRed.Maximum = decimal.MaxValue;
-            nudEyeGreen.Maximum = decimal.MaxValue;
-            nudEyeBlue.Maximum = decimal.MaxValue;
+            //nudEyeRed.Maximum = decimal.MaxValue;
+            //nudEyeGreen.Maximum = decimal.MaxValue;
+            //nudEyeBlue.Maximum = decimal.MaxValue;
 
-            nudHairRed.Minimum = decimal.MinValue;
-            nudHairGreen.Minimum = decimal.MinValue;
-            nudHairBlue.Minimum = decimal.MinValue;
-            nudHairAlpha.Minimum = decimal.MinValue;
+            //nudHairRed.Minimum = decimal.MinValue;
+            //nudHairGreen.Minimum = decimal.MinValue;
+            //nudHairBlue.Minimum = decimal.MinValue;
+            //nudHairAlpha.Minimum = decimal.MinValue;
 
-            nudEyeRed.Minimum = decimal.MinValue;
-            nudEyeGreen.Minimum = decimal.MinValue;
-            nudEyeBlue.Minimum = decimal.MinValue;
+            //nudEyeRed.Minimum = decimal.MinValue;
+            //nudEyeGreen.Minimum = decimal.MinValue;
+            //nudEyeBlue.Minimum = decimal.MinValue;
             
             foreach (ComboBox item in cmbGestures)
             {
@@ -109,30 +109,30 @@ namespace DSR_Gadget
             nudIndictments.Value = Player.Indictments;
             nudClearCount.Value = Hook.ClearCount;
 
-            nudHair.Value = Player.Hair;
+            //nudHair.Value = Player.Hair;
 
-            try
-            {
-                nudHairRed.Value = Convert.ToDecimal(Player.HairRed);
-                nudHairGreen.Value = Convert.ToDecimal(Player.HairGreen);
-                nudHairBlue.Value = Convert.ToDecimal(Player.HairBlue);
-                nudHairAlpha.Value = Convert.ToDecimal(Player.HairAlpha);
+            //try
+            //{
+            //    nudHairRed.Value = Convert.ToDecimal(Player.HairRed);
+            //    nudHairGreen.Value = Convert.ToDecimal(Player.HairGreen);
+            //    nudHairBlue.Value = Convert.ToDecimal(Player.HairBlue);
+            //    nudHairAlpha.Value = Convert.ToDecimal(Player.HairAlpha);
 
-                nudEyeRed.Value = Convert.ToDecimal(Player.EyeRed);
-                nudEyeGreen.Value = Convert.ToDecimal(Player.EyeGreen);
-                nudEyeBlue.Value = Convert.ToDecimal(Player.EyeBlue);
-            } catch (OverflowException)
-            {
-                // TODO: handle this better
-                nudHairRed.Enabled = false;
-                nudHairGreen.Enabled = false;
-                nudHairBlue.Enabled = false;
-                nudHairAlpha.Enabled = false;
+            //    nudEyeRed.Value = Convert.ToDecimal(Player.EyeRed);
+            //    nudEyeGreen.Value = Convert.ToDecimal(Player.EyeGreen);
+            //    nudEyeBlue.Value = Convert.ToDecimal(Player.EyeBlue);
+            //} catch (OverflowException)
+            //{
+            //    // TODO: handle this better
+            //    nudHairRed.Enabled = false;
+            //    nudHairGreen.Enabled = false;
+            //    nudHairBlue.Enabled = false;
+            //    nudHairAlpha.Enabled = false;
 
-                nudEyeRed.Enabled = false;
-                nudEyeGreen.Enabled = false;
-                nudEyeBlue.Enabled = false;
-            }
+            //    nudEyeRed.Enabled = false;
+            //    nudEyeGreen.Enabled = false;
+            //    nudEyeBlue.Enabled = false;
+            //}
 
             cbxGesturePointForward.Checked = Player.GesturePointForward;
             cbxGesturePointUp.Checked = Player.GesturePointUp;
@@ -294,15 +294,15 @@ namespace DSR_Gadget
 
         private void cbxFashionHex_CheckedChanged(object sender, EventArgs e)
         {
-            nudHair.Hexadecimal = cbxFashionHex.Checked;
-            nudHairRed.Hexadecimal = cbxFashionHex.Checked;
-            nudHairGreen.Hexadecimal = cbxFashionHex.Checked;
-            nudHairBlue.Hexadecimal = cbxFashionHex.Checked;
-            nudHairAlpha.Hexadecimal = cbxFashionHex.Checked;
+            //nudHair.Hexadecimal = cbxFashionHex.Checked;
+            //nudHairRed.Hexadecimal = cbxFashionHex.Checked;
+            //nudHairGreen.Hexadecimal = cbxFashionHex.Checked;
+            //nudHairBlue.Hexadecimal = cbxFashionHex.Checked;
+            //nudHairAlpha.Hexadecimal = cbxFashionHex.Checked;
 
-            nudEyeRed.Hexadecimal = cbxFashionHex.Checked;
-            nudEyeGreen.Hexadecimal = cbxFashionHex.Checked;
-            nudEyeBlue.Hexadecimal = cbxFashionHex.Checked;
+            //nudEyeRed.Hexadecimal = cbxFashionHex.Checked;
+            //nudEyeGreen.Hexadecimal = cbxFashionHex.Checked;
+            //nudEyeBlue.Hexadecimal = cbxFashionHex.Checked;
         }
 
         private void recalculateStats()
@@ -336,53 +336,53 @@ namespace DSR_Gadget
 
         #region Fashion
 
-        private void nudHair_ValueChanged(object sender, EventArgs e)
-        {
-            if (loaded && !reading)
-                Player.Hair = (int)nudHair.Value;
-        }
+        //private void nudHair_ValueChanged(object sender, EventArgs e)
+        //{
+        //    if (loaded && !reading)
+        //        Player.Hair = (int)nudHair.Value;
+        //}
 
-        private void nudHairRed_ValueChanged(object sender, EventArgs e)
-        {
-            if (loaded && !reading)
-                Player.HairRed = (float)nudHairRed.Value;
-        }
+        //private void nudHairRed_ValueChanged(object sender, EventArgs e)
+        //{
+        //    if (loaded && !reading)
+        //        Player.HairRed = (float)nudHairRed.Value;
+        //}
 
-        private void nudHairGreen_ValueChanged(object sender, EventArgs e)
-        {
-            if (loaded && !reading)
-                Player.HairGreen = (float)nudHairGreen.Value;
-        }
+        //private void nudHairGreen_ValueChanged(object sender, EventArgs e)
+        //{
+        //    if (loaded && !reading)
+        //        Player.HairGreen = (float)nudHairGreen.Value;
+        //}
 
-        private void nudHairBlue_ValueChanged(object sender, EventArgs e)
-        {
-            if (loaded && !reading)
-                Player.HairBlue = (float)nudHairBlue.Value;
-        }
+        //private void nudHairBlue_ValueChanged(object sender, EventArgs e)
+        //{
+        //    if (loaded && !reading)
+        //        Player.HairBlue = (float)nudHairBlue.Value;
+        //}
 
-        private void nudHairAlpha_ValueChanged(object sender, EventArgs e)
-        {
-            if (loaded && !reading)
-                Player.HairAlpha = (float)nudHairAlpha.Value;
-        }
+        //private void nudHairAlpha_ValueChanged(object sender, EventArgs e)
+        //{
+        //    if (loaded && !reading)
+        //        Player.HairAlpha = (float)nudHairAlpha.Value;
+        //}
 
-        private void nudEyeRed_ValueChanged(object sender, EventArgs e)
-        {
-            if (loaded && !reading)
-                Player.EyeRed = (float)nudEyeRed.Value;
-        }
+        //private void nudEyeRed_ValueChanged(object sender, EventArgs e)
+        //{
+        //    if (loaded && !reading)
+        //        Player.EyeRed = (float)nudEyeRed.Value;
+        //}
 
-        private void nudEyeGreen_ValueChanged(object sender, EventArgs e)
-        {
-            if (loaded && !reading)
-                Player.EyeGreen = (float)nudEyeGreen.Value;
-        }
+        //private void nudEyeGreen_ValueChanged(object sender, EventArgs e)
+        //{
+        //    if (loaded && !reading)
+        //        Player.EyeGreen = (float)nudEyeGreen.Value;
+        //}
 
-        private void nudEyeBlue_ValueChanged(object sender, EventArgs e)
-        {
-            if (loaded && !reading)
-                Player.EyeBlue = (float)nudEyeBlue.Value;
-        }
+        //private void nudEyeBlue_ValueChanged(object sender, EventArgs e)
+        //{
+        //    if (loaded && !reading)
+        //        Player.EyeBlue = (float)nudEyeBlue.Value;
+        //}
 
         private void cmbPhysique_SelectedIndexChanged(object sender, EventArgs e)
         {

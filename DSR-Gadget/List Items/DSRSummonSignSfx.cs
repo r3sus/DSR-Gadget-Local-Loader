@@ -4,7 +4,7 @@ using PropertyHook;
 
 namespace DSR_Gadget
 {
-    class DSRSummonSignSfx
+    public class DSRSummonSignSfx
     {
         public PHPointer SummonSignPtr { get; }
 

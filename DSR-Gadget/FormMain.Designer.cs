@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.Label lblSlot;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.tclMain = new System.Windows.Forms.TabControl();
             this.tpgPlayer = new System.Windows.Forms.TabPage();
@@ -165,23 +166,6 @@
             this.lblGender = new System.Windows.Forms.Label();
             this.cmbPhysique = new System.Windows.Forms.ComboBox();
             this.cmbGender = new System.Windows.Forms.ComboBox();
-            this.cbxFashionHex = new System.Windows.Forms.CheckBox();
-            this.lblEyeBlue = new System.Windows.Forms.Label();
-            this.nudEyeBlue = new System.Windows.Forms.NumericUpDown();
-            this.lblEyeGreen = new System.Windows.Forms.Label();
-            this.nudEyeGreen = new System.Windows.Forms.NumericUpDown();
-            this.lbEyeRed = new System.Windows.Forms.Label();
-            this.nudEyeRed = new System.Windows.Forms.NumericUpDown();
-            this.lblHairAlpha = new System.Windows.Forms.Label();
-            this.nudHairAlpha = new System.Windows.Forms.NumericUpDown();
-            this.lblHairBlue = new System.Windows.Forms.Label();
-            this.nudHairBlue = new System.Windows.Forms.NumericUpDown();
-            this.lblHairGreen = new System.Windows.Forms.Label();
-            this.nudHairGreen = new System.Windows.Forms.NumericUpDown();
-            this.lblHairRed = new System.Windows.Forms.Label();
-            this.nudHairRed = new System.Windows.Forms.NumericUpDown();
-            this.nudHair = new System.Windows.Forms.NumericUpDown();
-            this.lblHair = new System.Windows.Forms.Label();
             this.tpgStatsGestures = new System.Windows.Forms.TabPage();
             this.gbxGesturesUnlocked = new System.Windows.Forms.GroupBox();
             this.cbxGesturePraiseTheSun = new System.Windows.Forms.CheckBox();
@@ -273,6 +257,19 @@
             this.cbxDrawObjects = new System.Windows.Forms.CheckBox();
             this.cbxDrawMap = new System.Windows.Forms.CheckBox();
             this.tpgMisc = new System.Windows.Forms.TabPage();
+            this.lblID = new System.Windows.Forms.Label();
+            this.cmbSlot = new System.Windows.Forms.ComboBox();
+            this.pnlEyeColor = new System.Windows.Forms.Panel();
+            this.lblEye = new System.Windows.Forms.Label();
+            this.pnlHairColor = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.SearchAllCheckboxFashion = new System.Windows.Forms.CheckBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.searchBoxFashion = new System.Windows.Forms.TextBox();
+            this.lbxItemsFashion = new System.Windows.Forms.ListBox();
+            this.btnApplyHair = new System.Windows.Forms.Button();
+            this.cmbCategoryFashion = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.gbxEntity = new System.Windows.Forms.GroupBox();
             this.cbxLastHitEntity = new System.Windows.Forms.CheckBox();
             this.btnLastHitEntity = new System.Windows.Forms.Button();
@@ -534,6 +531,7 @@
             this.tmrUpdate = new System.Windows.Forms.Timer(this.components);
             this.lblUpdate = new System.Windows.Forms.Label();
             this.llbUpdate = new System.Windows.Forms.LinkLabel();
+            lblSlot = new System.Windows.Forms.Label();
             this.tclMain.SuspendLayout();
             this.tpgPlayer.SuspendLayout();
             this.gbxOther.SuspendLayout();
@@ -585,14 +583,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudAttunement)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudVitality)).BeginInit();
             this.tpgStatsFashion.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudEyeBlue)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudEyeGreen)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudEyeRed)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudHairAlpha)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudHairBlue)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudHairGreen)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudHairRed)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudHair)).BeginInit();
             this.tpgStatsGestures.SuspendLayout();
             this.gbxGesturesUnlocked.SuspendLayout();
             this.gbxGesturesEquipped.SuspendLayout();
@@ -659,6 +649,16 @@
             this.tpgSetingsSettings.SuspendLayout();
             this.tpgSettingsHotkeys.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // lblSlot
+            // 
+            lblSlot.AutoSize = true;
+            lblSlot.Location = new System.Drawing.Point(339, 330);
+            lblSlot.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblSlot.Name = "lblSlot";
+            lblSlot.Size = new System.Drawing.Size(37, 20);
+            lblSlot.TabIndex = 51;
+            lblSlot.Text = "Slot";
             // 
             // tclMain
             // 
@@ -897,7 +897,7 @@
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(453, 44);
+            this.deleteButton.Location = new System.Drawing.Point(453, 42);
             this.deleteButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(90, 35);
@@ -2488,23 +2488,6 @@
             this.tpgStatsFashion.Controls.Add(this.lblGender);
             this.tpgStatsFashion.Controls.Add(this.cmbPhysique);
             this.tpgStatsFashion.Controls.Add(this.cmbGender);
-            this.tpgStatsFashion.Controls.Add(this.cbxFashionHex);
-            this.tpgStatsFashion.Controls.Add(this.lblEyeBlue);
-            this.tpgStatsFashion.Controls.Add(this.nudEyeBlue);
-            this.tpgStatsFashion.Controls.Add(this.lblEyeGreen);
-            this.tpgStatsFashion.Controls.Add(this.nudEyeGreen);
-            this.tpgStatsFashion.Controls.Add(this.lbEyeRed);
-            this.tpgStatsFashion.Controls.Add(this.nudEyeRed);
-            this.tpgStatsFashion.Controls.Add(this.lblHairAlpha);
-            this.tpgStatsFashion.Controls.Add(this.nudHairAlpha);
-            this.tpgStatsFashion.Controls.Add(this.lblHairBlue);
-            this.tpgStatsFashion.Controls.Add(this.nudHairBlue);
-            this.tpgStatsFashion.Controls.Add(this.lblHairGreen);
-            this.tpgStatsFashion.Controls.Add(this.nudHairGreen);
-            this.tpgStatsFashion.Controls.Add(this.lblHairRed);
-            this.tpgStatsFashion.Controls.Add(this.nudHairRed);
-            this.tpgStatsFashion.Controls.Add(this.nudHair);
-            this.tpgStatsFashion.Controls.Add(this.lblHair);
             this.tpgStatsFashion.Location = new System.Drawing.Point(4, 29);
             this.tpgStatsFashion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tpgStatsFashion.Name = "tpgStatsFashion";
@@ -2517,7 +2500,7 @@
             // lblPhysique
             // 
             this.lblPhysique.AutoSize = true;
-            this.lblPhysique.Location = new System.Drawing.Point(159, 415);
+            this.lblPhysique.Location = new System.Drawing.Point(158, 56);
             this.lblPhysique.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPhysique.Name = "lblPhysique";
             this.lblPhysique.Size = new System.Drawing.Size(288, 20);
@@ -2527,7 +2510,7 @@
             // lblGender
             // 
             this.lblGender.AutoSize = true;
-            this.lblGender.Location = new System.Drawing.Point(159, 374);
+            this.lblGender.Location = new System.Drawing.Point(158, 15);
             this.lblGender.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(63, 20);
@@ -2538,7 +2521,7 @@
             // 
             this.cmbPhysique.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPhysique.FormattingEnabled = true;
-            this.cmbPhysique.Location = new System.Drawing.Point(9, 411);
+            this.cmbPhysique.Location = new System.Drawing.Point(8, 52);
             this.cmbPhysique.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbPhysique.Name = "cmbPhysique";
             this.cmbPhysique.Size = new System.Drawing.Size(139, 28);
@@ -2548,185 +2531,11 @@
             // 
             this.cmbGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGender.FormattingEnabled = true;
-            this.cmbGender.Location = new System.Drawing.Point(9, 369);
+            this.cmbGender.Location = new System.Drawing.Point(8, 10);
             this.cmbGender.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbGender.Name = "cmbGender";
             this.cmbGender.Size = new System.Drawing.Size(139, 28);
             this.cmbGender.TabIndex = 17;
-            // 
-            // cbxFashionHex
-            // 
-            this.cbxFashionHex.AutoSize = true;
-            this.cbxFashionHex.Location = new System.Drawing.Point(488, 9);
-            this.cbxFashionHex.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cbxFashionHex.Name = "cbxFashionHex";
-            this.cbxFashionHex.Size = new System.Drawing.Size(63, 24);
-            this.cbxFashionHex.TabIndex = 16;
-            this.cbxFashionHex.Text = "Hex";
-            this.cbxFashionHex.UseVisualStyleBackColor = true;
-            this.cbxFashionHex.CheckedChanged += new System.EventHandler(this.cbxFashionHex_CheckedChanged);
-            // 
-            // lblEyeBlue
-            // 
-            this.lblEyeBlue.AutoSize = true;
-            this.lblEyeBlue.Location = new System.Drawing.Point(159, 332);
-            this.lblEyeBlue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblEyeBlue.Name = "lblEyeBlue";
-            this.lblEyeBlue.Size = new System.Drawing.Size(72, 20);
-            this.lblEyeBlue.TabIndex = 15;
-            this.lblEyeBlue.Text = "Eye Blue";
-            // 
-            // nudEyeBlue
-            // 
-            this.nudEyeBlue.Location = new System.Drawing.Point(9, 329);
-            this.nudEyeBlue.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.nudEyeBlue.Name = "nudEyeBlue";
-            this.nudEyeBlue.Size = new System.Drawing.Size(141, 26);
-            this.nudEyeBlue.TabIndex = 14;
-            this.nudEyeBlue.ValueChanged += new System.EventHandler(this.nudEyeBlue_ValueChanged);
-            // 
-            // lblEyeGreen
-            // 
-            this.lblEyeGreen.AutoSize = true;
-            this.lblEyeGreen.Location = new System.Drawing.Point(159, 292);
-            this.lblEyeGreen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblEyeGreen.Name = "lblEyeGreen";
-            this.lblEyeGreen.Size = new System.Drawing.Size(85, 20);
-            this.lblEyeGreen.TabIndex = 13;
-            this.lblEyeGreen.Text = "Eye Green";
-            // 
-            // nudEyeGreen
-            // 
-            this.nudEyeGreen.Location = new System.Drawing.Point(9, 289);
-            this.nudEyeGreen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.nudEyeGreen.Name = "nudEyeGreen";
-            this.nudEyeGreen.Size = new System.Drawing.Size(141, 26);
-            this.nudEyeGreen.TabIndex = 12;
-            this.nudEyeGreen.ValueChanged += new System.EventHandler(this.nudEyeGreen_ValueChanged);
-            // 
-            // lbEyeRed
-            // 
-            this.lbEyeRed.AutoSize = true;
-            this.lbEyeRed.Location = new System.Drawing.Point(159, 252);
-            this.lbEyeRed.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbEyeRed.Name = "lbEyeRed";
-            this.lbEyeRed.Size = new System.Drawing.Size(70, 20);
-            this.lbEyeRed.TabIndex = 11;
-            this.lbEyeRed.Text = "Eye Red";
-            // 
-            // nudEyeRed
-            // 
-            this.nudEyeRed.Location = new System.Drawing.Point(9, 249);
-            this.nudEyeRed.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.nudEyeRed.Name = "nudEyeRed";
-            this.nudEyeRed.Size = new System.Drawing.Size(141, 26);
-            this.nudEyeRed.TabIndex = 10;
-            this.nudEyeRed.ValueChanged += new System.EventHandler(this.nudEyeRed_ValueChanged);
-            // 
-            // lblHairAlpha
-            // 
-            this.lblHairAlpha.AutoSize = true;
-            this.lblHairAlpha.Location = new System.Drawing.Point(159, 172);
-            this.lblHairAlpha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblHairAlpha.Name = "lblHairAlpha";
-            this.lblHairAlpha.Size = new System.Drawing.Size(83, 20);
-            this.lblHairAlpha.TabIndex = 9;
-            this.lblHairAlpha.Text = "Hair Alpha";
-            // 
-            // nudHairAlpha
-            // 
-            this.nudHairAlpha.Location = new System.Drawing.Point(9, 169);
-            this.nudHairAlpha.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.nudHairAlpha.Name = "nudHairAlpha";
-            this.nudHairAlpha.Size = new System.Drawing.Size(141, 26);
-            this.nudHairAlpha.TabIndex = 8;
-            this.nudHairAlpha.ValueChanged += new System.EventHandler(this.nudHairAlpha_ValueChanged);
-            // 
-            // lblHairBlue
-            // 
-            this.lblHairBlue.AutoSize = true;
-            this.lblHairBlue.Location = new System.Drawing.Point(159, 132);
-            this.lblHairBlue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblHairBlue.Name = "lblHairBlue";
-            this.lblHairBlue.Size = new System.Drawing.Size(74, 20);
-            this.lblHairBlue.TabIndex = 7;
-            this.lblHairBlue.Text = "Hair Blue";
-            // 
-            // nudHairBlue
-            // 
-            this.nudHairBlue.Location = new System.Drawing.Point(9, 129);
-            this.nudHairBlue.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.nudHairBlue.Name = "nudHairBlue";
-            this.nudHairBlue.Size = new System.Drawing.Size(141, 26);
-            this.nudHairBlue.TabIndex = 6;
-            this.nudHairBlue.ValueChanged += new System.EventHandler(this.nudHairBlue_ValueChanged);
-            // 
-            // lblHairGreen
-            // 
-            this.lblHairGreen.AutoSize = true;
-            this.lblHairGreen.Location = new System.Drawing.Point(159, 92);
-            this.lblHairGreen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblHairGreen.Name = "lblHairGreen";
-            this.lblHairGreen.Size = new System.Drawing.Size(87, 20);
-            this.lblHairGreen.TabIndex = 5;
-            this.lblHairGreen.Text = "Hair Green";
-            // 
-            // nudHairGreen
-            // 
-            this.nudHairGreen.Location = new System.Drawing.Point(9, 89);
-            this.nudHairGreen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.nudHairGreen.Name = "nudHairGreen";
-            this.nudHairGreen.Size = new System.Drawing.Size(141, 26);
-            this.nudHairGreen.TabIndex = 4;
-            this.nudHairGreen.ValueChanged += new System.EventHandler(this.nudHairGreen_ValueChanged);
-            // 
-            // lblHairRed
-            // 
-            this.lblHairRed.AutoSize = true;
-            this.lblHairRed.Location = new System.Drawing.Point(159, 52);
-            this.lblHairRed.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblHairRed.Name = "lblHairRed";
-            this.lblHairRed.Size = new System.Drawing.Size(72, 20);
-            this.lblHairRed.TabIndex = 3;
-            this.lblHairRed.Text = "Hair Red";
-            // 
-            // nudHairRed
-            // 
-            this.nudHairRed.Location = new System.Drawing.Point(9, 49);
-            this.nudHairRed.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.nudHairRed.Name = "nudHairRed";
-            this.nudHairRed.Size = new System.Drawing.Size(141, 26);
-            this.nudHairRed.TabIndex = 2;
-            this.nudHairRed.ValueChanged += new System.EventHandler(this.nudHairRed_ValueChanged);
-            // 
-            // nudHair
-            // 
-            this.nudHair.Location = new System.Drawing.Point(9, 9);
-            this.nudHair.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.nudHair.Maximum = new decimal(new int[] {
-            999999999,
-            0,
-            0,
-            0});
-            this.nudHair.Minimum = new decimal(new int[] {
-            999999999,
-            0,
-            0,
-            -2147483648});
-            this.nudHair.Name = "nudHair";
-            this.nudHair.Size = new System.Drawing.Size(141, 26);
-            this.nudHair.TabIndex = 1;
-            this.nudHair.ValueChanged += new System.EventHandler(this.nudHair_ValueChanged);
-            // 
-            // lblHair
-            // 
-            this.lblHair.AutoSize = true;
-            this.lblHair.Location = new System.Drawing.Point(159, 12);
-            this.lblHair.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblHair.Name = "lblHair";
-            this.lblHair.Size = new System.Drawing.Size(38, 20);
-            this.lblHair.TabIndex = 0;
-            this.lblHair.Text = "Hair";
             // 
             // tpgStatsGestures
             // 
@@ -3976,6 +3785,20 @@
             // 
             // tpgMisc
             // 
+            this.tpgMisc.Controls.Add(this.lblID);
+            this.tpgMisc.Controls.Add(lblSlot);
+            this.tpgMisc.Controls.Add(this.cmbSlot);
+            this.tpgMisc.Controls.Add(this.pnlEyeColor);
+            this.tpgMisc.Controls.Add(this.lblEye);
+            this.tpgMisc.Controls.Add(this.pnlHairColor);
+            this.tpgMisc.Controls.Add(this.label8);
+            this.tpgMisc.Controls.Add(this.SearchAllCheckboxFashion);
+            this.tpgMisc.Controls.Add(this.label6);
+            this.tpgMisc.Controls.Add(this.searchBoxFashion);
+            this.tpgMisc.Controls.Add(this.lbxItemsFashion);
+            this.tpgMisc.Controls.Add(this.btnApplyHair);
+            this.tpgMisc.Controls.Add(this.cmbCategoryFashion);
+            this.tpgMisc.Controls.Add(this.label7);
             this.tpgMisc.Controls.Add(this.gbxEntity);
             this.tpgMisc.Controls.Add(this.gbxEventFlags);
             this.tpgMisc.Location = new System.Drawing.Point(4, 29);
@@ -3987,6 +3810,139 @@
             this.tpgMisc.Text = "Misc";
             this.tpgMisc.UseVisualStyleBackColor = true;
             // 
+            // lblID
+            // 
+            this.lblID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblID.Location = new System.Drawing.Point(457, 325);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(100, 25);
+            this.lblID.TabIndex = 52;
+            this.lblID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cmbSlot
+            // 
+            this.cmbSlot.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSlot.FormattingEnabled = true;
+            this.cmbSlot.Location = new System.Drawing.Point(378, 325);
+            this.cmbSlot.Name = "cmbSlot";
+            this.cmbSlot.Size = new System.Drawing.Size(71, 28);
+            this.cmbSlot.TabIndex = 50;
+            this.cmbSlot.SelectedIndexChanged += new System.EventHandler(this.cmbSlot_SelectedIndexChanged);
+            // 
+            // pnlEyeColor
+            // 
+            this.pnlEyeColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlEyeColor.Location = new System.Drawing.Point(507, 850);
+            this.pnlEyeColor.Name = "pnlEyeColor";
+            this.pnlEyeColor.Size = new System.Drawing.Size(74, 31);
+            this.pnlEyeColor.TabIndex = 49;
+            this.pnlEyeColor.Click += new System.EventHandler(this.pnlEyeColor_Click);
+            // 
+            // lblEye
+            // 
+            this.lblEye.AutoSize = true;
+            this.lblEye.Location = new System.Drawing.Point(504, 827);
+            this.lblEye.Name = "lblEye";
+            this.lblEye.Size = new System.Drawing.Size(77, 20);
+            this.lblEye.TabIndex = 48;
+            this.lblEye.Text = "Eye Color";
+            // 
+            // pnlHairColor
+            // 
+            this.pnlHairColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlHairColor.Location = new System.Drawing.Point(9, 850);
+            this.pnlHairColor.Name = "pnlHairColor";
+            this.pnlHairColor.Size = new System.Drawing.Size(74, 31);
+            this.pnlHairColor.TabIndex = 47;
+            this.pnlHairColor.Click += new System.EventHandler(this.pnlHairColor_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(7, 827);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(79, 20);
+            this.label8.TabIndex = 46;
+            this.label8.Text = "Hair Color";
+            // 
+            // SearchAllCheckboxFashion
+            // 
+            this.SearchAllCheckboxFashion.AutoSize = true;
+            this.SearchAllCheckboxFashion.Location = new System.Drawing.Point(457, 398);
+            this.SearchAllCheckboxFashion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.SearchAllCheckboxFashion.Name = "SearchAllCheckboxFashion";
+            this.SearchAllCheckboxFashion.Size = new System.Drawing.Size(107, 24);
+            this.SearchAllCheckboxFashion.TabIndex = 22;
+            this.SearchAllCheckboxFashion.Text = "Search All";
+            this.SearchAllCheckboxFashion.UseVisualStyleBackColor = true;
+            this.SearchAllCheckboxFashion.CheckedChanged += new System.EventHandler(this.SearchAllCheckboxFashion_CheckedChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label6.Location = new System.Drawing.Point(12, 403);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(72, 20);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "Search...";
+            // 
+            // searchBoxFashion
+            // 
+            this.searchBoxFashion.Location = new System.Drawing.Point(4, 399);
+            this.searchBoxFashion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.searchBoxFashion.Name = "searchBoxFashion";
+            this.searchBoxFashion.Size = new System.Drawing.Size(445, 26);
+            this.searchBoxFashion.TabIndex = 20;
+            this.searchBoxFashion.Click += new System.EventHandler(this.searchBoxFashion_Click);
+            this.searchBoxFashion.TextChanged += new System.EventHandler(this.searchBoxFashion_TextChanged);
+            this.searchBoxFashion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyPressedFashion);
+            // 
+            // lbxItemsFashion
+            // 
+            this.lbxItemsFashion.FormattingEnabled = true;
+            this.lbxItemsFashion.ItemHeight = 20;
+            this.lbxItemsFashion.Location = new System.Drawing.Point(4, 430);
+            this.lbxItemsFashion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lbxItemsFashion.Name = "lbxItemsFashion";
+            this.lbxItemsFashion.Size = new System.Drawing.Size(577, 384);
+            this.lbxItemsFashion.TabIndex = 19;
+            this.lbxItemsFashion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyPressedFashion);
+            // 
+            // btnApplyHair
+            // 
+            this.btnApplyHair.Location = new System.Drawing.Point(457, 361);
+            this.btnApplyHair.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnApplyHair.Name = "btnApplyHair";
+            this.btnApplyHair.Size = new System.Drawing.Size(112, 33);
+            this.btnApplyHair.TabIndex = 18;
+            this.btnApplyHair.Text = "Apply";
+            this.btnApplyHair.UseVisualStyleBackColor = true;
+            this.btnApplyHair.Click += new System.EventHandler(this.btnApplyHair_Click);
+            this.btnApplyHair.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyPressedFashion);
+            // 
+            // cmbCategoryFashion
+            // 
+            this.cmbCategoryFashion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCategoryFashion.FormattingEnabled = true;
+            this.cmbCategoryFashion.Location = new System.Drawing.Point(4, 361);
+            this.cmbCategoryFashion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmbCategoryFashion.Name = "cmbCategoryFashion";
+            this.cmbCategoryFashion.Size = new System.Drawing.Size(445, 28);
+            this.cmbCategoryFashion.TabIndex = 17;
+            this.cmbCategoryFashion.SelectedIndexChanged += new System.EventHandler(this.cmbCategoryFashion_SelectedIndexChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(4, 337);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(73, 20);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Category";
+            // 
             // gbxEntity
             // 
             this.gbxEntity.Controls.Add(this.cbxLastHitEntity);
@@ -3997,7 +3953,7 @@
             this.gbxEntity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbxEntity.Name = "gbxEntity";
             this.gbxEntity.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.gbxEntity.Size = new System.Drawing.Size(576, 215);
+            this.gbxEntity.Size = new System.Drawing.Size(576, 126);
             this.gbxEntity.TabIndex = 1;
             this.gbxEntity.TabStop = false;
             this.gbxEntity.Text = "Entity";
@@ -4070,7 +4026,7 @@
             // btnEventRead
             // 
             this.btnEventRead.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEventRead.Location = new System.Drawing.Point(391, 86);
+            this.btnEventRead.Location = new System.Drawing.Point(349, 85);
             this.btnEventRead.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEventRead.Name = "btnEventRead";
             this.btnEventRead.Size = new System.Drawing.Size(112, 35);
@@ -4083,7 +4039,7 @@
             // 
             this.cbxEventFlag.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbxEventFlag.AutoSize = true;
-            this.cbxEventFlag.Location = new System.Drawing.Point(552, 52);
+            this.cbxEventFlag.Location = new System.Drawing.Point(469, 49);
             this.cbxEventFlag.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxEventFlag.Name = "cbxEventFlag";
             this.cbxEventFlag.Size = new System.Drawing.Size(94, 24);
@@ -4094,7 +4050,7 @@
             // btnEventWrite
             // 
             this.btnEventWrite.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEventWrite.Location = new System.Drawing.Point(511, 86);
+            this.btnEventWrite.Location = new System.Drawing.Point(469, 85);
             this.btnEventWrite.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEventWrite.Name = "btnEventWrite";
             this.btnEventWrite.Size = new System.Drawing.Size(112, 35);
@@ -4110,7 +4066,7 @@
             this.txtEventFlag.Location = new System.Drawing.Point(9, 49);
             this.txtEventFlag.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtEventFlag.Name = "txtEventFlag";
-            this.txtEventFlag.Size = new System.Drawing.Size(528, 26);
+            this.txtEventFlag.Size = new System.Drawing.Size(452, 26);
             this.txtEventFlag.TabIndex = 1;
             // 
             // lblEventID
@@ -7301,14 +7257,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudVitality)).EndInit();
             this.tpgStatsFashion.ResumeLayout(false);
             this.tpgStatsFashion.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudEyeBlue)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudEyeGreen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudEyeRed)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudHairAlpha)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudHairBlue)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudHairGreen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudHairRed)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudHair)).EndInit();
             this.tpgStatsGestures.ResumeLayout(false);
             this.gbxGesturesUnlocked.ResumeLayout(false);
             this.gbxGesturesUnlocked.PerformLayout();
@@ -7666,23 +7614,6 @@
         private System.Windows.Forms.NumericUpDown nudIndictments;
         private System.Windows.Forms.Label lblIndictments;
         private System.Windows.Forms.NumericUpDown nudWeaponMemory;
-        private System.Windows.Forms.Label lblHair;
-        private System.Windows.Forms.Label lblHairBlue;
-        private System.Windows.Forms.NumericUpDown nudHairBlue;
-        private System.Windows.Forms.Label lblHairGreen;
-        private System.Windows.Forms.NumericUpDown nudHairGreen;
-        private System.Windows.Forms.Label lblHairRed;
-        private System.Windows.Forms.NumericUpDown nudHairRed;
-        private System.Windows.Forms.Label lblHairAlpha;
-        private System.Windows.Forms.NumericUpDown nudHairAlpha;
-        private System.Windows.Forms.Label lblEyeBlue;
-        private System.Windows.Forms.NumericUpDown nudEyeBlue;
-        private System.Windows.Forms.Label lblEyeGreen;
-        private System.Windows.Forms.NumericUpDown nudEyeGreen;
-        private System.Windows.Forms.Label lbEyeRed;
-        private System.Windows.Forms.NumericUpDown nudEyeRed;
-        private System.Windows.Forms.NumericUpDown nudHair;
-        private System.Windows.Forms.CheckBox cbxFashionHex;
         private System.Windows.Forms.ComboBox cmbPhysique;
         private System.Windows.Forms.ComboBox cmbGender;
         private System.Windows.Forms.Label lblGender;
@@ -7905,6 +7836,19 @@
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox storedPositions;
+        private System.Windows.Forms.Panel pnlEyeColor;
+        private System.Windows.Forms.Label lblEye;
+        private System.Windows.Forms.Panel pnlHairColor;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.CheckBox SearchAllCheckboxFashion;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox searchBoxFashion;
+        private System.Windows.Forms.ListBox lbxItemsFashion;
+        private System.Windows.Forms.Button btnApplyHair;
+        private System.Windows.Forms.ComboBox cmbCategoryFashion;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.ComboBox cmbSlot;
     }
 }
 

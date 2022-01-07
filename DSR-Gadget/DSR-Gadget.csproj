@@ -92,6 +92,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Color Pickers\ColorSelectorEye.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Color Pickers\ColorSelectorEye.Designer.cs">
+      <DependentUpon>ColorSelectorEye.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Color Pickers\ColorSelectorHair.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Color Pickers\ColorSelectorHair.Designer.cs">
+      <DependentUpon>ColorSelectorHair.cs</DependentUpon>
+    </Compile>
+    <Compile Include="List Items\DSRFashionCategory.cs" />
     <Compile Include="Util\PlayerState.cs" />
     <Compile Include="Util\SavedPos.cs" />
     <Compile Include="Util\DSRAssembly.cs" />
@@ -195,6 +208,12 @@
     </Compile>
     <Compile Include="Util\User32.cs" />
     <Compile Include="Util\Util.cs" />
+    <EmbeddedResource Include="Color Pickers\ColorSelectorEye.resx">
+      <DependentUpon>ColorSelectorEye.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Color Pickers\ColorSelectorHair.resx">
+      <DependentUpon>ColorSelectorHair.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -239,6 +258,15 @@
     <Content Include="Resources\Assembly\KickPlayer.txt" />
     <Content Include="Resources\Assembly\TriggerSign.txt" />
     <Content Include="Resources\Assembly\TargetedEntity.txt" />
+    <None Include="Resources\Equipment\DSRFashionCategories.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Equipment\Armor\FemaleHair.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Equipment\Armor\MaleHair.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <Content Include="Resources\Systems\Other\Covenants.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -262,6 +290,7 @@
     <Content Include="Resources\Magic.txt" />
     <Content Include="Resources\Teams.txt" />
     <Content Include="Resources\Areas.txt" />
+    <None Include="rgbSpectrum.png" />
     <None Include="Resources\Systems\Bonfires.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -317,6 +346,7 @@
       <Name>PropertyHook</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="PostBuildMacros">
     <GetAssemblyIdentity AssemblyFiles="$(TargetPath)">

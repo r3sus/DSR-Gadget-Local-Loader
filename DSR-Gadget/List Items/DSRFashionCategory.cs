@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
 
 namespace DSR_Gadget
 {
-    class DSRItemCategory
+    class DSRFashionCategory
     {
         public string Name;
         public int ID;
         public List<DSRItem> Items;
 
-        private DSRItemCategory(string name, int categoryID, string itemList, bool showIDs)
+        private DSRFashionCategory(string name, int categoryID, string itemList, bool showIDs)
         {
             Name = name;
+            ID = categoryID;
             Items = new List<DSRItem>();
             foreach (string line in GetTxtResourceClass.RegexSplit(itemList, "[\r\n]+"))
             {
@@ -29,22 +29,17 @@ namespace DSR_Gadget
 
         public static void GetItemCategories()
         {
-            foreach (string line in GetTxtResourceClass.RegexSplit(GetTxtResourceClass.GetTxtResource("Resources/Equipment/DSRItemCategories.txt"), "[\r\n]+"))
+            foreach (string line in GetTxtResourceClass.RegexSplit(GetTxtResourceClass.GetTxtResource("Resources/Equipment/DSRFashionCategories.txt"), "[\r\n]+"))
             {
                 if (GetTxtResourceClass.IsValidTxtResource(line)) //determine if line is a valid resource or not
                 {
                     var att = GetTxtResourceClass.RegexSplit(line, ",");
                     Array.ForEach<string>(att, x => att[Array.IndexOf<string>(att, x)] = x.Trim());
-                    var name = att[0].Trim();
-                    var categoryID = Convert.ToInt32(att[1].Trim(), 16);
-                    var itemList = GetTxtResourceClass.GetTxtResource(att[2].Trim());
-                    var showIDs = bool.Parse(att[3]);
-                    All.Add(new DSRItemCategory(name, categoryID, itemList, showIDs));
+                    All.Add(new DSRFashionCategory(att[0], Convert.ToInt32(att[1], 16), GetTxtResourceClass.GetTxtResource(att[2]), bool.Parse(att[3])));
                 }
             };
         }
 
-        public static List<DSRItemCategory> All = new List<DSRItemCategory>();
-        
+        public static List<DSRFashionCategory> All = new List<DSRFashionCategory>();
     }
 }

@@ -30,6 +30,16 @@ You can also try adding DS Gadget as an exception to your antivirus
 # Change Log
 
 ## **Best bet is to use this offline for now.**
+### Release 1.3
+
+* Lock position checkbox  
+
+* Saved positions. Give a position a name and it will be stored in an XML file in the Resources folder, and loaded when you reload Gadget.  
+
+* Fashion items in the misc tab. Apply items to your hair bolt or arrow slot for fashion purposes.  
+
+* Hair and eye color pickers (replaces the hair and eye color in the fashion tab in Stats)  
+
 ### Release 1.2
 
 * Fixed Humanity and Souls boxes in Stats tab  

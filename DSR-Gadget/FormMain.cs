@@ -34,8 +34,7 @@ namespace DSR_Gadget
                 cbxFreezeMPAreaID, cbxFreezeAreaID, btnTeleportBloodstain, btnTeleportInitialPosition,
                 btnResetMagicQuantity, btnLeaveSession, btnCurrentPlayerKick, cmbSosSummonType, nudSosPosX,
                 nudSosPosY, nudSosPosZ, nudSosPosAngle, btnSosRestorePos, cbxCurrentPlayerCamera,
-                btnCurrentPlayerTeleport, btnCurrentPlayerFamilyShare, nudHair, nudHairRed, nudHairGreen, 
-                nudHairBlue, nudHairAlpha, nudEyeRed, nudEyeBlue, nudEyeGreen, nudStoredX, nudStoredY, nudStoredZ, nudStoredAngle//nudIndictments,
+                btnCurrentPlayerTeleport, btnCurrentPlayerFamilyShare, nudStoredX, nudStoredY, nudStoredZ, nudStoredAngle//nudIndictments,
             };
 
             cmbGestures = new ComboBox[] { cmbGestureSlot1, cmbGestureSlot2, cmbGestureSlot3, cmbGestureSlot4,
@@ -67,6 +66,8 @@ namespace DSR_Gadget
             else
                 foreach (Control ctrl in statControls)
                     ctrl.Enabled = false;
+
+            EnableMiscStats(enable);
 
         }
 

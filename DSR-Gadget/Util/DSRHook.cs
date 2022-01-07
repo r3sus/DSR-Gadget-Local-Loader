@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 
 namespace DSR_Gadget
 {
-    internal class DSRHook : PHook
+    public class DSRHook : PHook
     {
         private DSROffsets Offsets;
 
@@ -116,13 +116,10 @@ namespace DSR_Gadget
                 
             OnHooked += DSRHook_OnHooked;
         }
-
-
         private void DSRHook_OnHooked(object sender, PHEventArgs e)
         {
             Offsets = DSROffsets.GetOffsets(Process.MainModule.ModuleMemorySize);
             PlayerCtrl = CreateChildPointer(ChrData1, (int)DSROffsets.PlayerIns.PlayerCtrl);
-
         }
 
         private static readonly Dictionary<int, string> VersionStrings = new Dictionary<int, string>
