@@ -33,7 +33,7 @@ namespace DSR_Gadget
                 cbxFreezeTeamType, cbxFreezeInvadeType, cmbChrSelect, cmbInvasionSelect, cmbAreaID, cmbMPAreaID,
                 cbxFreezeMPAreaID, cbxFreezeAreaID, btnTeleportBloodstain, btnTeleportInitialPosition,
                 btnResetMagicQuantity, btnLeaveSession, btnCurrentPlayerKick, cmbSosSummonType, nudSosPosX,
-                nudSosPosY, nudSosPosZ, nudSosPosAngle, btnSosRestorePos, cbxCurrentPlayerCamera,
+                nudSosPosY, nudSosPosZ, nudSosPosAngle, btnSosRestorePos, cbxCurrentPlayerCamera, cbxFreezePos,
                 btnCurrentPlayerTeleport, btnCurrentPlayerFamilyShare, nudStoredX, nudStoredY, nudStoredZ, nudStoredAngle//nudIndictments,
             };
 
@@ -114,6 +114,7 @@ namespace DSR_Gadget
             else
                 settings.WindowLocation = RestoreBounds.Location;
 
+            Player.SetPosLock(false);
             saveAll();
             resetAll();
         }

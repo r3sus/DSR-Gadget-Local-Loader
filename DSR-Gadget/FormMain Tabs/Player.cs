@@ -82,7 +82,6 @@ namespace DSR_Gadget
             cmbBonfire.SelectedIndex = cmbBonfire.Items.Count - 1;
         }
 
-        DSRPlayer.Position LockedPos;
         private void updatePlayer()
         {
             nudHealth.Value = Player.Hp;
@@ -105,38 +104,31 @@ namespace DSR_Gadget
             else
                 nudInvadeType.Value = Player.InvadeType;
 
-            if (cbxLockPos.Checked)
+            try
             {
-                Player.PosWarp(LockedPos);
+                DSRPlayer.Position pos = Player.GetPosition();
+                nudPosX.Value = (decimal)pos.X;
+                nudPosY.Value = (decimal)pos.Y;
+                nudPosZ.Value = (decimal)pos.Z;
+                nudPosAngle.Value = angleToDegree(pos.Angle);
+
+                pos = Hook.GetStablePosition();
+                nudStableX.Value = (decimal)pos.X;
+                nudStableY.Value = (decimal)pos.Y;
+                nudStableZ.Value = (decimal)pos.Z;
+                nudStableAngle.Value = angleToDegree(pos.Angle);
             }
-            else
+            catch (OverflowException)
             {
-                try
-                {
-                    DSRPlayer.Position pos = Player.GetPosition();
-                    nudPosX.Value = (decimal)pos.X;
-                    nudPosY.Value = (decimal)pos.Y;
-                    nudPosZ.Value = (decimal)pos.Z;
-                    nudPosAngle.Value = angleToDegree(pos.Angle);
+                nudPosX.Value = 0;
+                nudPosY.Value = 0;
+                nudPosZ.Value = 0;
+                nudPosAngle.Value = 0;
 
-                    pos = Hook.GetStablePosition();
-                    nudStableX.Value = (decimal)pos.X;
-                    nudStableY.Value = (decimal)pos.Y;
-                    nudStableZ.Value = (decimal)pos.Z;
-                    nudStableAngle.Value = angleToDegree(pos.Angle);
-                }
-                catch (OverflowException)
-                {
-                    nudPosX.Value = 0;
-                    nudPosY.Value = 0;
-                    nudPosZ.Value = 0;
-                    nudPosAngle.Value = 0;
-
-                    nudStableX.Value = 0;
-                    nudStableY.Value = 0;
-                    nudStableZ.Value = 0;
-                    nudStableAngle.Value = 0;
-                }
+                nudStableX.Value = 0;
+                nudStableY.Value = 0;
+                nudStableZ.Value = 0;
+                nudStableAngle.Value = 0;
             }
 
             cbxDeathCam.Checked = Hook.DeathCam;
@@ -179,11 +171,25 @@ namespace DSR_Gadget
             }
         }
 
-        private void cbxLockPos_CheckedChanged(object sender, EventArgs e)
+        private void cbxFreezePos_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbxLockPos.Checked)
-                LockedPos = Player.GetPosition();
+            Player.SetPosLock(cbxFreezePos.Checked);
+            nudPosX.Enabled = cbxFreezePos.Checked;
+            nudPosY.Enabled = cbxFreezePos.Checked;
+            nudPosZ.Enabled = cbxFreezePos.Checked;
         }
+
+        private void nudPos_ValueChanged(object sender, EventArgs e)
+        {
+            if (cbxFreezePos.Checked)
+            {
+                float x = (float)nudPosX.Value;
+                float y = (float)nudPosY.Value;
+                float z = (float)nudPosZ.Value;
+                Player.PosWarpLock(x, y, z);
+            }
+        }
+
         private void nudHealth_ValueChanged(object sender, EventArgs e)
         {
             if (loaded && !reading)

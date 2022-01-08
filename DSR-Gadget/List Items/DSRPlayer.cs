@@ -17,6 +17,7 @@ namespace DSR_Gadget
         private PHPointer GestureEquipDataPtr;
         private PHPointer SteamPlayerDataPtr;
         private PHPointer SteamOnlineIDDataPtr;
+        public PHPointer PosLock;
 
         private PlayerDataType DataType;
 
@@ -195,6 +196,24 @@ namespace DSR_Gadget
             PlayerCtrlPtr.WriteBoolean((int)DSROffsets.PlayerCtrl.Warp, true);
         }
 
+        public void PosWarpLock(float x, float y, float z)
+        {
+            PosX = x;
+            PosY = y;
+            PosZ = z;
+        }
+
+        public void SetPosLock(bool enable)
+        {
+            if (enable)
+            {
+                PosLock.WriteBytes((int)DSROffsets.PosLock.PosLock, new byte[] { 0x90, 0x90, 0x90, 0x90 });
+            }
+            else
+            {
+                PosLock.WriteBytes((int)DSROffsets.PosLock.PosLock, new byte[] { 0x0F, 0x29, 0x5B, 0x10 });
+            }
+        }
         public Position GetPosition()
         {
             return new Position(PosX, PosY, PosZ, PosAngle);
@@ -669,6 +688,10 @@ namespace DSR_Gadget
                 ChrPosDataPtr = dsrHook.CreateChildPointer(PlayerCtrlPtr, (int)DSROffsets.PlayerCtrl.ChrPosData);
                 ActionCtrlPtr = dsrHook.CreateChildPointer(PlayerCtrlPtr, (int)DSROffsets.PlayerCtrl.ActionCtrl);
                 ChrAnimDataPtr = dsrHook.CreateChildPointer(PlayerCtrlPtr, (int)DSROffsets.PlayerCtrl.ChrAnimData);
+
+                PosLock = dsrHook.RegisterAbsoluteAOB(DSROffsets.PosLockAoB);
+
+
 
                 SteamPlayerDataPtr = dsrHook.CreateChildPointer(PlayerInsPtr, (int)DSROffsets.PlayerIns.SteamPlayerData);
                 SteamOnlineIDDataPtr = dsrHook.CreateChildPointer(SteamPlayerDataPtr, (int)DSROffsets.SteamPlayerData.SteamOnlineIDData);

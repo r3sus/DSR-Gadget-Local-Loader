@@ -49,7 +49,7 @@
             this.deleteButton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.storedPositions = new System.Windows.Forms.ComboBox();
-            this.cbxLockPos = new System.Windows.Forms.CheckBox();
+            this.cbxFreezePos = new System.Windows.Forms.CheckBox();
             this.btnTeleportInitialPosition = new System.Windows.Forms.Button();
             this.btnTeleportBloodstain = new System.Windows.Forms.Button();
             this.cbxRestoreState = new System.Windows.Forms.CheckBox();
@@ -861,7 +861,7 @@
             this.gbxPosition.Controls.Add(this.deleteButton);
             this.gbxPosition.Controls.Add(this.label5);
             this.gbxPosition.Controls.Add(this.storedPositions);
-            this.gbxPosition.Controls.Add(this.cbxLockPos);
+            this.gbxPosition.Controls.Add(this.cbxFreezePos);
             this.gbxPosition.Controls.Add(this.btnTeleportInitialPosition);
             this.gbxPosition.Controls.Add(this.btnTeleportBloodstain);
             this.gbxPosition.Controls.Add(this.cbxRestoreState);
@@ -927,17 +927,17 @@
             this.storedPositions.SelectedIndexChanged += new System.EventHandler(this.storedPositions_SelectedIndexChanged);
             this.storedPositions.KeyDown += new System.Windows.Forms.KeyEventHandler(this.storedPositions_KeyDown);
             // 
-            // cbxLockPos
+            // cbxFreezePos
             // 
-            this.cbxLockPos.AutoSize = true;
-            this.cbxLockPos.Location = new System.Drawing.Point(69, 315);
-            this.cbxLockPos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cbxLockPos.Name = "cbxLockPos";
-            this.cbxLockPos.Size = new System.Drawing.Size(69, 24);
-            this.cbxLockPos.TabIndex = 44;
-            this.cbxLockPos.Text = "Lock";
-            this.cbxLockPos.UseVisualStyleBackColor = true;
-            this.cbxLockPos.CheckedChanged += new System.EventHandler(this.cbxLockPos_CheckedChanged);
+            this.cbxFreezePos.AutoSize = true;
+            this.cbxFreezePos.Location = new System.Drawing.Point(69, 315);
+            this.cbxFreezePos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbxFreezePos.Name = "cbxFreezePos";
+            this.cbxFreezePos.Size = new System.Drawing.Size(85, 24);
+            this.cbxFreezePos.TabIndex = 44;
+            this.cbxFreezePos.Text = "Freeze";
+            this.cbxFreezePos.UseVisualStyleBackColor = true;
+            this.cbxFreezePos.CheckedChanged += new System.EventHandler(this.cbxFreezePos_CheckedChanged);
             // 
             // btnTeleportInitialPosition
             // 
@@ -1004,6 +1004,7 @@
             this.nudPosZ.Size = new System.Drawing.Size(112, 26);
             this.nudPosZ.TabIndex = 22;
             this.nudPosZ.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nudPosZ.ValueChanged += new System.EventHandler(this.nudPos_ValueChanged);
             // 
             // lblPosStored
             // 
@@ -1056,6 +1057,7 @@
             this.nudPosY.Size = new System.Drawing.Size(112, 26);
             this.nudPosY.TabIndex = 21;
             this.nudPosY.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nudPosY.ValueChanged += new System.EventHandler(this.nudPos_ValueChanged);
             // 
             // lblPosCurrent
             // 
@@ -1108,6 +1110,7 @@
             this.nudPosX.Size = new System.Drawing.Size(112, 26);
             this.nudPosX.TabIndex = 20;
             this.nudPosX.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nudPosX.ValueChanged += new System.EventHandler(this.nudPos_ValueChanged);
             // 
             // nudStoredAngle
             // 
@@ -7831,7 +7834,7 @@
         private System.Windows.Forms.TextBox txtSosSteamID;
         private System.Windows.Forms.Label lblSosSteamID;
         private System.Windows.Forms.Button btnSosSteamProfile;
-        private System.Windows.Forms.CheckBox cbxLockPos;
+        private System.Windows.Forms.CheckBox cbxFreezePos;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Label label5;

@@ -723,6 +723,11 @@ namespace DSR_Gadget
             [0x37CB400] = 2, // 1.01.2
             [0x3817800] = 3, // 1.03
         };
+        public const string PosLockAoB = "F3 0F 10 44 24 28 F3 0F 10 54 24 24 F3 0F 10 5C 24 20 0F 14 D8 0F 14 D1 0F 14 DA 0F 29 5B 10 0F 57 C0";
+        public enum PosLock
+        {
+            PosLock = 0x1B
+        }
 
         public const string FuncLevelUpAOB = "48 89 74 24 20 57 48 83 EC 20 48 8B 05 4F 20 69 01 4C 8B";
     }
