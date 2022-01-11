@@ -296,6 +296,7 @@ namespace DSR_Gadget
                 playerState.Stamina = (int)nudStamina.Value;
                 playerState.FollowCam = Hook.DumpFollowCam();
                 playerState.DeathCam = Hook.DeathCam;
+                playerState.EquipMagicData = Hook.EquipMagicData;
                 playerState.Set = true;
                 pos.PlayerState = playerState;
                 ProcessSavedPos(pos);
