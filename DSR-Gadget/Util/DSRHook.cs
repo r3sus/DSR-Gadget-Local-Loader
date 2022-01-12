@@ -55,6 +55,9 @@ namespace DSR_Gadget
 
         private PHPointer FuncLevelUp;
 
+        private PHPointer PosLock;
+
+
         public DSRHook(int refreshInterval, int minLifetime) :
             base(refreshInterval, minLifetime, p => p.MainWindowTitle == "DARK SOULS™: REMASTERED")
         {
@@ -71,6 +74,7 @@ namespace DSR_Gadget
             EventFlags = RegisterRelativeAOB(DSROffsets.EventFlagsAOB, 3, 7, DSROffsets.EventFlagsOffset1, DSROffsets.EventFlagsOffset2);
             ItemGetAddr = RegisterAbsoluteAOB(DSROffsets.ItemGetAOB);
             BonfireWarpAddr = RegisterAbsoluteAOB(DSROffsets.BonfireWarpAOB);
+            PosLock = RegisterAbsoluteAOB(DSROffsets.PosLockAoB);
 
             ChrData1 = CreateChildPointer(WorldChrBase, (int)DSROffsets.WorldChrManImp.PlayerIns);
             GameDataManPtr = CreateChildPointer(GameDataManBasePtr, DSROffsets.GameDataManOffset1);
@@ -116,6 +120,11 @@ namespace DSR_Gadget
                 
             OnHooked += DSRHook_OnHooked;
         }
+
+        public PHPointer GetPosLock()
+        {
+            return PosLock;
+        } 
         private void DSRHook_OnHooked(object sender, PHEventArgs e)
         {
             Offsets = DSROffsets.GetOffsets(Process.MainModule.ModuleMemorySize);

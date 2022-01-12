@@ -17,7 +17,7 @@ namespace DSR_Gadget
         private PHPointer GestureEquipDataPtr;
         private PHPointer SteamPlayerDataPtr;
         private PHPointer SteamOnlineIDDataPtr;
-        public PHPointer PosLock;
+        private PHPointer PosLock;
 
         private PlayerDataType DataType;
 
@@ -689,7 +689,7 @@ namespace DSR_Gadget
                 ActionCtrlPtr = dsrHook.CreateChildPointer(PlayerCtrlPtr, (int)DSROffsets.PlayerCtrl.ActionCtrl);
                 ChrAnimDataPtr = dsrHook.CreateChildPointer(PlayerCtrlPtr, (int)DSROffsets.PlayerCtrl.ChrAnimData);
 
-                PosLock = dsrHook.RegisterAbsoluteAOB(DSROffsets.PosLockAoB);
+                PosLock = dsrHook.GetPosLock();
 
 
 
