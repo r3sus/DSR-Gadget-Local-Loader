@@ -28,9 +28,24 @@ namespace DSR_Gadget
                 settings.Warned = true;
             }
 
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMain());
+            try
+            {
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new FormMain());
+
+            }
+            catch (Exception ex)
+            {
+                GadgetLogger.Log($"Exception: ");
+                GadgetLogger.Log(ex.Message);
+                GadgetLogger.Log(ex.StackTrace);
+                GadgetLogger.Log($"Raw: ");
+                GadgetLogger.Log(ex.ToString());
+                GadgetLogger.Flush();
+                MessageBox.Show("Exception. Please see GadgetLog.txt for more information!", "Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw ex;
+            }
 
             settings.Save();
         }

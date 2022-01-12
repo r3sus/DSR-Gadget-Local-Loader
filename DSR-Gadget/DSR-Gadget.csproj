@@ -104,6 +104,7 @@
     <Compile Include="Color Pickers\ColorSelectorHair.Designer.cs">
       <DependentUpon>ColorSelectorHair.cs</DependentUpon>
     </Compile>
+    <Compile Include="Util\GadgetLogger.cs" />
     <Compile Include="List Items\DSRFashionCategory.cs" />
     <Compile Include="Util\PlayerState.cs" />
     <Compile Include="Util\SavedPos.cs" />
