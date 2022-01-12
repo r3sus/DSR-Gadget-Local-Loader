@@ -45,12 +45,17 @@ namespace DSR_Gadget
             cmbMPAreaID.SelectedIndexChanged += cmbMPAreaID_SelectedIndexChanged;
             cmbAreaID.SelectedIndexChanged += cmbAreaID_SelectedIndexChanged;
 
-            Player = Hook.GetPlayer();
+            Hook.OnHooked += Hook_OnHooked;
 
             nudSpeed.Value = settings.AnimSpeed;
 
             lastSetBonfire = new DSRBonfire(-1, "Last Set: None"); //last set bonfire (default values)
             cmbBonfire.Items.Add(lastSetBonfire); //add to end of filter
+        }
+
+        private void Hook_OnHooked(object sender, PropertyHook.PHEventArgs e)
+        {
+            Player = Hook.GetPlayer();
         }
 
         private void savePlayer()
