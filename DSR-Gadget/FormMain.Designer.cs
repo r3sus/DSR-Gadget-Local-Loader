@@ -193,8 +193,8 @@
             this.cmbGestureSlot2 = new System.Windows.Forms.ComboBox();
             this.cmbGestureSlot1 = new System.Windows.Forms.ComboBox();
             this.tpgItems = new System.Windows.Forms.TabPage();
-            this.maxUpgrade = new System.Windows.Forms.CheckBox();
-            this.SearchAllCheckbox = new System.Windows.Forms.CheckBox();
+            this.cbxMax = new System.Windows.Forms.CheckBox();
+            this.cbxSearchAll = new System.Windows.Forms.CheckBox();
             this.lblSearch = new System.Windows.Forms.Label();
             this.searchBox = new System.Windows.Forms.TextBox();
             this.lblQuantity = new System.Windows.Forms.Label();
@@ -222,6 +222,8 @@
             this.cbxAllNoDamage = new System.Windows.Forms.CheckBox();
             this.cbxAllNoDead = new System.Windows.Forms.CheckBox();
             this.gbxCheatPlayer = new System.Windows.Forms.GroupBox();
+            this.nudHealInterval = new System.Windows.Forms.NumericUpDown();
+            this.cbxRefill = new System.Windows.Forms.CheckBox();
             this.cbxPlayerNoGoods = new System.Windows.Forms.CheckBox();
             this.cbxPlayerSilence = new System.Windows.Forms.CheckBox();
             this.cbxAllNoArrow = new System.Windows.Forms.CheckBox();
@@ -594,6 +596,7 @@
             this.gbxCheatEnemy.SuspendLayout();
             this.cbxCheatAll.SuspendLayout();
             this.gbxCheatPlayer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHealInterval)).BeginInit();
             this.tpgGraphics.SuspendLayout();
             this.gbxFilter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudHue)).BeginInit();
@@ -2883,8 +2886,8 @@
             // 
             // tpgItems
             // 
-            this.tpgItems.Controls.Add(this.maxUpgrade);
-            this.tpgItems.Controls.Add(this.SearchAllCheckbox);
+            this.tpgItems.Controls.Add(this.cbxMax);
+            this.tpgItems.Controls.Add(this.cbxSearchAll);
             this.tpgItems.Controls.Add(this.lblSearch);
             this.tpgItems.Controls.Add(this.searchBox);
             this.tpgItems.Controls.Add(this.lblQuantity);
@@ -2907,31 +2910,31 @@
             this.tpgItems.Text = "Items";
             this.tpgItems.UseVisualStyleBackColor = true;
             // 
-            // maxUpgrade
+            // cbxMax
             // 
-            this.maxUpgrade.AutoSize = true;
-            this.maxUpgrade.Checked = true;
-            this.maxUpgrade.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.maxUpgrade.Location = new System.Drawing.Point(472, 62);
-            this.maxUpgrade.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.maxUpgrade.Name = "maxUpgrade";
-            this.maxUpgrade.Size = new System.Drawing.Size(64, 24);
-            this.maxUpgrade.TabIndex = 16;
-            this.maxUpgrade.Text = "Max";
-            this.maxUpgrade.UseVisualStyleBackColor = true;
-            this.maxUpgrade.CheckedChanged += new System.EventHandler(this.maxUpgrade_CheckedChanged);
+            this.cbxMax.AutoSize = true;
+            this.cbxMax.Checked = true;
+            this.cbxMax.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbxMax.Location = new System.Drawing.Point(472, 62);
+            this.cbxMax.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbxMax.Name = "cbxMax";
+            this.cbxMax.Size = new System.Drawing.Size(64, 24);
+            this.cbxMax.TabIndex = 16;
+            this.cbxMax.Text = "Max";
+            this.cbxMax.UseVisualStyleBackColor = true;
+            this.cbxMax.CheckedChanged += new System.EventHandler(this.maxUpgrade_CheckedChanged);
             // 
-            // SearchAllCheckbox
+            // cbxSearchAll
             // 
-            this.SearchAllCheckbox.AutoSize = true;
-            this.SearchAllCheckbox.Location = new System.Drawing.Point(352, 131);
-            this.SearchAllCheckbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.SearchAllCheckbox.Name = "SearchAllCheckbox";
-            this.SearchAllCheckbox.Size = new System.Drawing.Size(107, 24);
-            this.SearchAllCheckbox.TabIndex = 15;
-            this.SearchAllCheckbox.Text = "Search All";
-            this.SearchAllCheckbox.UseVisualStyleBackColor = true;
-            this.SearchAllCheckbox.CheckedChanged += new System.EventHandler(this.SearchAllCheckbox_CheckedChanged);
+            this.cbxSearchAll.AutoSize = true;
+            this.cbxSearchAll.Location = new System.Drawing.Point(352, 131);
+            this.cbxSearchAll.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbxSearchAll.Name = "cbxSearchAll";
+            this.cbxSearchAll.Size = new System.Drawing.Size(107, 24);
+            this.cbxSearchAll.TabIndex = 15;
+            this.cbxSearchAll.Text = "Search All";
+            this.cbxSearchAll.UseVisualStyleBackColor = true;
+            this.cbxSearchAll.CheckedChanged += new System.EventHandler(this.SearchAllCheckbox_CheckedChanged);
             // 
             // lblSearch
             // 
@@ -3106,7 +3109,7 @@
             // 
             this.gbxCheatOther.Controls.Add(this.cbxInfDurabilitySpecial);
             this.gbxCheatOther.Controls.Add(this.cbxInfDurability);
-            this.gbxCheatOther.Location = new System.Drawing.Point(9, 538);
+            this.gbxCheatOther.Location = new System.Drawing.Point(9, 548);
             this.gbxCheatOther.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbxCheatOther.Name = "gbxCheatOther";
             this.gbxCheatOther.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -3145,7 +3148,7 @@
             this.gbxCheatEnemy.Controls.Add(this.cbxAllNoUpdateAI);
             this.gbxCheatEnemy.Controls.Add(this.cbxAllNoMove);
             this.gbxCheatEnemy.Controls.Add(this.cbxAllNoAttack);
-            this.gbxCheatEnemy.Location = new System.Drawing.Point(9, 409);
+            this.gbxCheatEnemy.Location = new System.Drawing.Point(9, 419);
             this.gbxCheatEnemy.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbxCheatEnemy.Name = "gbxCheatEnemy";
             this.gbxCheatEnemy.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -3197,7 +3200,7 @@
             this.cbxCheatAll.Controls.Add(this.cbxAllNoHit);
             this.cbxCheatAll.Controls.Add(this.cbxAllNoDamage);
             this.cbxCheatAll.Controls.Add(this.cbxAllNoDead);
-            this.cbxCheatAll.Location = new System.Drawing.Point(9, 280);
+            this.cbxCheatAll.Location = new System.Drawing.Point(9, 290);
             this.cbxCheatAll.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxCheatAll.Name = "cbxCheatAll";
             this.cbxCheatAll.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -3257,6 +3260,8 @@
             // gbxCheatPlayer
             // 
             this.gbxCheatPlayer.AutoSize = true;
+            this.gbxCheatPlayer.Controls.Add(this.nudHealInterval);
+            this.gbxCheatPlayer.Controls.Add(this.cbxRefill);
             this.gbxCheatPlayer.Controls.Add(this.cbxPlayerNoGoods);
             this.gbxCheatPlayer.Controls.Add(this.cbxPlayerSilence);
             this.gbxCheatPlayer.Controls.Add(this.cbxAllNoArrow);
@@ -3273,10 +3278,35 @@
             this.gbxCheatPlayer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbxCheatPlayer.Name = "gbxCheatPlayer";
             this.gbxCheatPlayer.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.gbxCheatPlayer.Size = new System.Drawing.Size(576, 282);
+            this.gbxCheatPlayer.Size = new System.Drawing.Size(576, 293);
             this.gbxCheatPlayer.TabIndex = 0;
             this.gbxCheatPlayer.TabStop = false;
             this.gbxCheatPlayer.Text = "Player";
+            // 
+            // nudHealInterval
+            // 
+            this.nudHealInterval.DecimalPlaces = 1;
+            this.nudHealInterval.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.nudHealInterval.Location = new System.Drawing.Point(125, 239);
+            this.nudHealInterval.Name = "nudHealInterval";
+            this.nudHealInterval.Size = new System.Drawing.Size(64, 26);
+            this.nudHealInterval.TabIndex = 13;
+            this.nudHealInterval.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // cbxRefill
+            // 
+            this.cbxRefill.AutoSize = true;
+            this.cbxRefill.Location = new System.Drawing.Point(10, 240);
+            this.cbxRefill.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbxRefill.Name = "cbxRefill";
+            this.cbxRefill.Size = new System.Drawing.Size(111, 24);
+            this.cbxRefill.TabIndex = 12;
+            this.cbxRefill.Text = "Heal Timer";
+            this.cbxRefill.UseVisualStyleBackColor = true;
             // 
             // cbxPlayerNoGoods
             // 
@@ -7278,6 +7308,7 @@
             this.cbxCheatAll.PerformLayout();
             this.gbxCheatPlayer.ResumeLayout(false);
             this.gbxCheatPlayer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHealInterval)).EndInit();
             this.tpgGraphics.ResumeLayout(false);
             this.tpgGraphics.PerformLayout();
             this.gbxFilter.ResumeLayout(false);
@@ -7783,8 +7814,8 @@
         private System.Windows.Forms.Button btnLastHitEntity;
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.TextBox searchBox;
-        private System.Windows.Forms.CheckBox SearchAllCheckbox;
-        private System.Windows.Forms.CheckBox maxUpgrade;
+        private System.Windows.Forms.CheckBox cbxSearchAll;
+        private System.Windows.Forms.CheckBox cbxMax;
         private System.Windows.Forms.Label lblBonfireSearch;
         private System.Windows.Forms.CheckBox cbxQuickSelectBonfire;
         private System.Windows.Forms.TextBox txtBonfireSearch;
@@ -7852,6 +7883,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.ComboBox cmbSlot;
+        private System.Windows.Forms.NumericUpDown nudHealInterval;
+        private System.Windows.Forms.CheckBox cbxRefill;
     }
 }
 

@@ -188,6 +188,7 @@ namespace DSR_Gadget
         {
             settings.HotkeysEnable = cbxHotkeysEnable.Checked;
             settings.HotkeysHandle = cbxHotkeysHandle.Checked;
+            settings.UnlockAllFeatures = cbxUnlockFeatures.Checked;
             foreach (GadgetHotkey hotkey in hotkeys)
                 hotkey.Save();
             keyboardHook.Dispose();
@@ -219,10 +220,9 @@ namespace DSR_Gadget
         private void cbxUnlockFeatures_CheckedChanged(object sender, EventArgs e)
         {
             if (Hook.Loaded)
-                foreach (Control ctrl in statControls)
+                foreach (Control ctrl in lockedControls)
                     ctrl.Enabled = cbxUnlockFeatures.Checked;
 
-            settings.UnlockAllFeatures = cbxUnlockFeatures.Checked;
         }
     }
 }

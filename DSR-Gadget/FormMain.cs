@@ -17,7 +17,7 @@ namespace DSR_Gadget
         private bool loaded = false;
         private bool reading = false;
         private List<Control> criticalControls;
-        private List<Control> statControls;
+        private List<Control> lockedControls;
 
         public FormMain()
         {
@@ -34,7 +34,8 @@ namespace DSR_Gadget
                 cbxFreezeMPAreaID, cbxFreezeAreaID, btnTeleportBloodstain, btnTeleportInitialPosition,
                 btnResetMagicQuantity, btnLeaveSession, btnCurrentPlayerKick, cmbSosSummonType, nudSosPosX,
                 nudSosPosY, nudSosPosZ, nudSosPosAngle, btnSosRestorePos, cbxCurrentPlayerCamera, cbxFreezePos,
-                btnCurrentPlayerTeleport, btnCurrentPlayerFamilyShare, nudStoredX, nudStoredY, nudStoredZ, nudStoredAngle//nudIndictments,
+                btnCurrentPlayerTeleport, btnCurrentPlayerFamilyShare, nudStoredX, nudStoredY, nudStoredZ, nudStoredAngle,
+                pnlHairColor, pnlEyeColor//nudIndictments,
             };
 
             cmbGestures = new ComboBox[] { cmbGestureSlot1, cmbGestureSlot2, cmbGestureSlot3, cmbGestureSlot4,
@@ -47,11 +48,11 @@ namespace DSR_Gadget
             criticalControls.AddRange(cbxGestures);
             criticalControls.AddRange(cmbGestures);
             
-            statControls = new List<Control>()
+            lockedControls = new List<Control>()
             {
                 cmbCovenant, nudWarriorOfSunlight, nudDarkwraith, nudPathOfTheDragon, nudGravelordServant, nudForestHunter, nudDarkmoonBlade, nudChaosServant,
                 txtName, nudWeaponMemory,  cmbGender, cmbPhysique, btnGesturesUnlockAll, nudClearCount, nudIndictments, nudVitality, nudAttunement, nudEndurance,
-                nudStrength, nudDexterity, nudResistance, nudIntelligence, nudFaith, nudHumanity, nudSouls, cmbClass
+                nudStrength, nudDexterity, nudResistance, nudIntelligence, nudFaith, nudHumanity, nudSouls, cmbClass, btnApplyHair
             };
         }
 
@@ -61,10 +62,10 @@ namespace DSR_Gadget
                 ctrl.Enabled = enable;
             
             if (Hook.Loaded)
-                foreach (Control ctrl in statControls)
+                foreach (Control ctrl in lockedControls)
                     ctrl.Enabled = cbxUnlockFeatures.Checked;
             else
-                foreach (Control ctrl in statControls)
+                foreach (Control ctrl in lockedControls)
                     ctrl.Enabled = false;
 
             EnableMiscStats(enable);
@@ -257,5 +258,6 @@ namespace DSR_Gadget
                 }
             }
         }
+
     }
 }

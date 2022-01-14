@@ -30,6 +30,14 @@ You can also try adding DS Gadget as an exception to your antivirus
 # Change Log
 
 ## **Best bet is to use this offline for now.**
+### Release 1.4
+
+* Heal Timer  
+
+* Crash fix for loading gadget while game is open and when restoring postion  
+
+* "Quick Select Bonfire" on the player tab and "Max", "Restrict", and "Search All" all have saved states in gadget settings, now (They will remember if they are checked or not when re-opening Gadget)  
+
 ### Release 1.3
 
 * (Player tab) Freeze position checkbox. When position frozen you can move your character with the current position numeric boxes  

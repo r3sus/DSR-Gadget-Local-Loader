@@ -17,6 +17,7 @@ namespace DSR_Gadget
         private void initPlayer()
         {
             cbxRestoreState.Checked = settings.RestoreState;
+            cbxQuickSelectBonfire.Checked = settings.QuickSelectbonfireChecked;
 
             Positions = SavedPos.GetSavedPositions();
             UpdatePositions();
@@ -56,6 +57,7 @@ namespace DSR_Gadget
         {
             settings.RestoreState = cbxRestoreState.Checked;
             settings.AnimSpeed = nudSpeed.Value;
+            settings.QuickSelectbonfireChecked = cbxQuickSelectBonfire.Checked;
         }
 
         private void resetPlayer()

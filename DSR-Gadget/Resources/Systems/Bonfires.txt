@@ -1,3 +1,4 @@
+//Format: ID Name [arbitrary]
 -1 [None]
 1002900 Depths (Entrance)
 1002950 Depths (Gaping Dragon's Room)

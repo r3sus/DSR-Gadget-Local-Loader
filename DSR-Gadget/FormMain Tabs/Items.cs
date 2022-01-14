@@ -9,13 +9,21 @@ namespace DSR_Gadget
     {
         private void initItems()
         {
+            cbxSearchAll.Checked = settings.SearchAllChecked;
+            cbxMax.Checked = settings.MaxChecked;
+            cbxRestrict.Checked = settings.RestrictCheched;
             DSRItemCategory.GetItemCategories();
             foreach (DSRItemCategory category in DSRItemCategory.All)
                 cmbCategory.Items.Add(category);
             cmbCategory.SelectedIndex = 0;
         }
 
-        private void saveItems() { }
+        private void saveItems() 
+        { 
+            settings.SearchAllChecked = cbxSearchAll.Checked;
+            settings.MaxChecked = cbxMax.Checked;
+            settings.RestrictCheched = cbxRestrict.Checked;
+        }
 
         private void resetItems() { }
 
@@ -165,7 +173,7 @@ namespace DSR_Gadget
 
             lbxItems.Items.Clear();
 
-            if (SearchAllCheckbox.Checked && searchBox.Text != "")
+            if (cbxSearchAll.Checked && searchBox.Text != "")
             {
                 //search every item category
                 foreach (DSRItemCategory category in cmbCategory.Items)
@@ -300,7 +308,7 @@ namespace DSR_Gadget
         private void maxUpgrade_CheckedChanged(object sender, EventArgs e)
         {
             //HandleMaxItemCheckbox
-            if (maxUpgrade.Checked)
+            if (cbxMax.Checked)
             {
                 nudUpgrade.Value = nudUpgrade.Maximum;
                 nudQuantity.Value = nudQuantity.Maximum;
@@ -315,7 +323,7 @@ namespace DSR_Gadget
         private void HandleMaxItemCheckbox()
         {
             //Set upgrade nud to max if max checkbox is ticked
-            if (maxUpgrade.Checked)
+            if (cbxMax.Checked)
             {
                 nudUpgrade.Value = nudUpgrade.Maximum;
                 nudQuantity.Value = nudQuantity.Maximum;

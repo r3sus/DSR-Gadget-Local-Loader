@@ -56,12 +56,6 @@ namespace DSR_Gadget
         }
         internal void EnableMiscStats(bool enable)
         {
-            btnApplyHair.Enabled = enable;
-            btnEventRead.Enabled = enable;
-            btnEventWrite.Enabled = enable;
-            pnlHairColor.Enabled = enable;
-            pnlEyeColor.Enabled = enable;
-
             if (enable)
             {
                 SetIdLabel();
@@ -140,7 +134,7 @@ namespace DSR_Gadget
 
             lbxItemsFashion.Items.Clear();
 
-            if (SearchAllCheckbox.Checked && searchBoxFashion.Text != "")
+            if (cbxSearchAll.Checked && searchBoxFashion.Text != "")
             {
                 //search every item category
                 foreach (DSRFashionCategory category in cmbCategoryFashion.Items)

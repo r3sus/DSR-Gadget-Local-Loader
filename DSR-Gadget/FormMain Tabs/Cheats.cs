@@ -1,13 +1,24 @@
 ﻿using System;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Timers;
 using System.Windows.Forms;
 
 namespace DSR_Gadget
 {
     public partial class FormMain : Form
     {
-        private void initCheats() { }
+        private void initCheats() 
+        {
+            Timer.Elapsed += RefillHP; // Timer elapsed method to call when triggered
+            Timer.AutoReset = false; // Do not reset the timer when it is finished
+            nudHealInterval.Value = settings.HealInterval;
+        }
 
-        private void saveCheats() { }
+        private void saveCheats() 
+        {
+            nudHealInterval.Value = settings.HealInterval;
+        }
 
         private void resetCheats()
         {
@@ -105,10 +116,42 @@ namespace DSR_Gadget
                 Hook.DurabilitySpecial = true;
         }
 
+        System.Timers.Timer Timer = new System.Timers.Timer();
         private void updateCheats()
         {
             if (cbxPlayerDeadMode.Checked && !Hook.PlayerDeadMode)
                 Hook.PlayerDeadMode = true;
+
+            // Only start refill timer if enabled, health is lower than max and the timer isn't already going
+            if (cbxRefill.Checked && (Player.Hp < Player.MaxHp) && !Timer.Enabled)
+            {
+                _ = Task.Run(() => RefillTimer());
+            }
+        }
+
+        private void RefillTimer()
+        {
+            double time = (double)nudHealInterval.Value;
+
+            //Set interval in ms, record hp and start the timer
+            Timer.Interval = time * 1000;
+            var hp = Player.Hp;
+            Timer.Start();
+
+            while (Timer.Enabled)
+            {
+                // If the recorded hp variable is over Hook.Health, set the timer interval again (resetting it) and set the recorded hp value
+                if (hp > Player.Hp)
+                {
+                    Timer.Interval = time * 1000;
+                    hp = Player.Hp;
+                }
+            }
+        }
+
+        private void RefillHP(object sender, ElapsedEventArgs e)
+        {
+            Player.Hp = Player.MaxHp;
         }
 
         private void cbxPlayerDeadMode_CheckedChanged(object sender, EventArgs e)
