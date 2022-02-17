@@ -30,6 +30,12 @@ You can also try adding DS Gadget as an exception to your antivirus
 # Change Log
 
 ## **Best bet is to use this offline for now.**
+### Release 1.5
+
+* Hair color script that makes your hair do the RGB thing. 
+
+* Arrow refill cheat that gives all arrows and constantly refills them.  
+
 ### Release 1.4
 
 * Heal Timer  
