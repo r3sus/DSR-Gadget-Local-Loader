@@ -30,6 +30,10 @@ You can also try adding DS Gadget as an exception to your antivirus
 # Change Log
 
 ## **Best bet is to use this offline for now.**
+### Release 1.5.1
+
+* Hair Color script now persists through loading screens  
+
 ### Release 1.5
 
 * Hair color script that makes your hair do the RGB thing. 
