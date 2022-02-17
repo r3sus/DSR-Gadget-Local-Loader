@@ -46,7 +46,14 @@ namespace DSR_Gadget
             Hook.LastHitEntity = false;
         }
 
-        private void reloadMisc() { }
+        private void reloadMisc() 
+        {
+            if (cbxHairRandom.Checked)
+                Task.Run(RandomizeHair);
+
+            if (cbxEyeRandom.Checked)
+                Task.Run(RandomizeEye);
+        }
 
         private void onHookedMisc()
         {
@@ -55,6 +62,7 @@ namespace DSR_Gadget
             if (cbxLastHitEntity.Checked)
                 Hook.LastHitEntity = true;
         }
+
         internal void EnableMiscStats(bool enable)
         {
             if (enable)
