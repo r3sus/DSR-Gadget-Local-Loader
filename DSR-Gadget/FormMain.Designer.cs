@@ -259,6 +259,10 @@
             this.cbxDrawObjects = new System.Windows.Forms.CheckBox();
             this.cbxDrawMap = new System.Windows.Forms.CheckBox();
             this.tpgMisc = new System.Windows.Forms.TabPage();
+            this.nudEyeSpeed = new System.Windows.Forms.NumericUpDown();
+            this.cbxEyeRandom = new System.Windows.Forms.CheckBox();
+            this.nudHairSpeed = new System.Windows.Forms.NumericUpDown();
+            this.cbxHairRandom = new System.Windows.Forms.CheckBox();
             this.lblID = new System.Windows.Forms.Label();
             this.cmbSlot = new System.Windows.Forms.ComboBox();
             this.pnlEyeColor = new System.Windows.Forms.Panel();
@@ -533,6 +537,9 @@
             this.tmrUpdate = new System.Windows.Forms.Timer(this.components);
             this.lblUpdate = new System.Windows.Forms.Label();
             this.llbUpdate = new System.Windows.Forms.LinkLabel();
+            this.cbxArrows = new System.Windows.Forms.CheckBox();
+            this.cbxGreatArrows = new System.Windows.Forms.CheckBox();
+            this.cbxBolts = new System.Windows.Forms.CheckBox();
             lblSlot = new System.Windows.Forms.Label();
             this.tclMain.SuspendLayout();
             this.tpgPlayer.SuspendLayout();
@@ -608,6 +615,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudBrightnessG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBrightnessR)).BeginInit();
             this.tpgMisc.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEyeSpeed)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHairSpeed)).BeginInit();
             this.gbxEntity.SuspendLayout();
             this.gbxEventFlags.SuspendLayout();
             this.tpgNet.SuspendLayout();
@@ -3107,6 +3116,9 @@
             // 
             // gbxCheatOther
             // 
+            this.gbxCheatOther.Controls.Add(this.cbxBolts);
+            this.gbxCheatOther.Controls.Add(this.cbxGreatArrows);
+            this.gbxCheatOther.Controls.Add(this.cbxArrows);
             this.gbxCheatOther.Controls.Add(this.cbxInfDurabilitySpecial);
             this.gbxCheatOther.Controls.Add(this.cbxInfDurability);
             this.gbxCheatOther.Location = new System.Drawing.Point(9, 548);
@@ -3818,6 +3830,10 @@
             // 
             // tpgMisc
             // 
+            this.tpgMisc.Controls.Add(this.nudEyeSpeed);
+            this.tpgMisc.Controls.Add(this.cbxEyeRandom);
+            this.tpgMisc.Controls.Add(this.nudHairSpeed);
+            this.tpgMisc.Controls.Add(this.cbxHairRandom);
             this.tpgMisc.Controls.Add(this.lblID);
             this.tpgMisc.Controls.Add(lblSlot);
             this.tpgMisc.Controls.Add(this.cmbSlot);
@@ -3842,6 +3858,59 @@
             this.tpgMisc.TabIndex = 7;
             this.tpgMisc.Text = "Misc";
             this.tpgMisc.UseVisualStyleBackColor = true;
+            // 
+            // nudEyeSpeed
+            // 
+            this.nudEyeSpeed.DecimalPlaces = 2;
+            this.nudEyeSpeed.Location = new System.Drawing.Point(405, 855);
+            this.nudEyeSpeed.Name = "nudEyeSpeed";
+            this.nudEyeSpeed.Size = new System.Drawing.Size(96, 26);
+            this.nudEyeSpeed.TabIndex = 56;
+            this.nudEyeSpeed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudEyeSpeed.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudEyeSpeed.ValueChanged += new System.EventHandler(this.nudEyeSpeed_ValueChanged);
+            // 
+            // cbxEyeRandom
+            // 
+            this.cbxEyeRandom.AutoSize = true;
+            this.cbxEyeRandom.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cbxEyeRandom.Location = new System.Drawing.Point(401, 832);
+            this.cbxEyeRandom.Name = "cbxEyeRandom";
+            this.cbxEyeRandom.Size = new System.Drawing.Size(96, 24);
+            this.cbxEyeRandom.TabIndex = 55;
+            this.cbxEyeRandom.Text = "Random";
+            this.cbxEyeRandom.UseVisualStyleBackColor = true;
+            this.cbxEyeRandom.CheckedChanged += new System.EventHandler(this.cbxEyeRandom_CheckedChanged);
+            // 
+            // nudHairSpeed
+            // 
+            this.nudHairSpeed.DecimalPlaces = 2;
+            this.nudHairSpeed.Location = new System.Drawing.Point(91, 855);
+            this.nudHairSpeed.Name = "nudHairSpeed";
+            this.nudHairSpeed.Size = new System.Drawing.Size(96, 26);
+            this.nudHairSpeed.TabIndex = 54;
+            this.nudHairSpeed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudHairSpeed.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudHairSpeed.ValueChanged += new System.EventHandler(this.nudHairSpeed_ValueChanged);
+            // 
+            // cbxHairRandom
+            // 
+            this.cbxHairRandom.AutoSize = true;
+            this.cbxHairRandom.Location = new System.Drawing.Point(91, 833);
+            this.cbxHairRandom.Name = "cbxHairRandom";
+            this.cbxHairRandom.Size = new System.Drawing.Size(96, 24);
+            this.cbxHairRandom.TabIndex = 53;
+            this.cbxHairRandom.Text = "Random";
+            this.cbxHairRandom.UseVisualStyleBackColor = true;
+            this.cbxHairRandom.CheckedChanged += new System.EventHandler(this.cbxHairRandom_CheckedChanged);
             // 
             // lblID
             // 
@@ -7213,6 +7282,36 @@
             this.llbUpdate.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.llbUpdate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbUpdate_LinkClicked);
             // 
+            // cbxArrows
+            // 
+            this.cbxArrows.AutoSize = true;
+            this.cbxArrows.Location = new System.Drawing.Point(193, 29);
+            this.cbxArrows.Name = "cbxArrows";
+            this.cbxArrows.Size = new System.Drawing.Size(123, 24);
+            this.cbxArrows.TabIndex = 2;
+            this.cbxArrows.Text = "Refill Arrows";
+            this.cbxArrows.UseVisualStyleBackColor = true;
+            // 
+            // cbxGreatArrows
+            // 
+            this.cbxGreatArrows.AutoSize = true;
+            this.cbxGreatArrows.Location = new System.Drawing.Point(193, 65);
+            this.cbxGreatArrows.Name = "cbxGreatArrows";
+            this.cbxGreatArrows.Size = new System.Drawing.Size(168, 24);
+            this.cbxGreatArrows.TabIndex = 3;
+            this.cbxGreatArrows.Text = "Refill Great Arrows";
+            this.cbxGreatArrows.UseVisualStyleBackColor = true;
+            // 
+            // cbxBolts
+            // 
+            this.cbxBolts.AutoSize = true;
+            this.cbxBolts.Location = new System.Drawing.Point(193, 101);
+            this.cbxBolts.Name = "cbxBolts";
+            this.cbxBolts.Size = new System.Drawing.Size(110, 24);
+            this.cbxBolts.TabIndex = 4;
+            this.cbxBolts.Text = "Refill Bolts";
+            this.cbxBolts.UseVisualStyleBackColor = true;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -7323,6 +7422,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudBrightnessR)).EndInit();
             this.tpgMisc.ResumeLayout(false);
             this.tpgMisc.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEyeSpeed)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHairSpeed)).EndInit();
             this.gbxEntity.ResumeLayout(false);
             this.gbxEntity.PerformLayout();
             this.gbxEventFlags.ResumeLayout(false);
@@ -7885,6 +7986,13 @@
         private System.Windows.Forms.ComboBox cmbSlot;
         private System.Windows.Forms.NumericUpDown nudHealInterval;
         private System.Windows.Forms.CheckBox cbxRefill;
+        private System.Windows.Forms.NumericUpDown nudEyeSpeed;
+        private System.Windows.Forms.CheckBox cbxEyeRandom;
+        private System.Windows.Forms.NumericUpDown nudHairSpeed;
+        private System.Windows.Forms.CheckBox cbxHairRandom;
+        private System.Windows.Forms.CheckBox cbxBolts;
+        private System.Windows.Forms.CheckBox cbxGreatArrows;
+        private System.Windows.Forms.CheckBox cbxArrows;
     }
 }
 

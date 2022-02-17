@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -446,6 +447,205 @@ namespace DSR_Gadget
 
                 pnlEyeColor.BackColor = Color.FromArgb(red, green, blue);
             }
+        }
+        Random Rand = new Random();
+
+        private void cbxHairRandom_CheckedChanged(object sender, EventArgs e)
+        {
+            _ = Task.Run(RandomizeHair);
+        }
+
+
+        double HairSpeedMultiplier = 1;
+
+        private async Task RandomizeHair()
+        {
+            if (!Hook.Loaded)
+                return;
+            var neon = Player.HairRed > 1 || Player.HairGreen > 1 || Player.HairBlue > 1;
+
+            var red = neon ? (byte)(((Player.HairRed / 10) * 255)) : (byte)(Player.HairRed * 255);
+            var green = neon ? (byte)(((Player.HairGreen / 10) * 255)) : (byte)(Player.HairGreen * 255);
+            var blue = neon ? (byte)(((Player.HairBlue / 10) * 255)) : (byte)(Player.HairBlue * 255);
+
+            var color = Color.FromArgb(red, green, blue);
+
+            while (cbxHairRandom.Checked && Hook.Loaded)
+            {
+                var hsl = RgbaToHsl(color);
+                hsl.H += 0.01f;
+                color = HslToRgba(hsl);
+                Player.HairRed = neon ? (float)((color.R / 255f) * 10) : (float)(color.R / 255f);
+                Player.HairGreen = neon ? (float)((color.G / 255f) * 10) : (float)(color.G / 255f);
+                Player.HairBlue = neon ? (float)((color.B / 255f) * 10) : (float)(color.B / 255f);
+                Thread.Sleep((int)(100 / HairSpeedMultiplier));
+
+                //var red = neon ? (byte)(((Player.HairRed / 10) * 255)) : (byte)(Player.HairRed * 255);
+                //var green = neon ? (byte)(((Player.HairGreen / 10) * 255)) : (byte)(Player.HairGreen * 255);
+                //var blue = neon ? (byte)(((Player.HairBlue / 10) * 255)) : (byte)(Player.HairBlue * 255);
+
+                //var color = Color.FromArgb(red, green, blue);
+                //var target = Color.FromArgb(Rand.Next(255), Rand.Next(255), Rand.Next(255));
+
+                //var amount = 0.0;
+                //while (amount < 1f)
+                //{
+                //    if (!cbxHairRandom.Checked && Hook.Loaded)
+                //        break;
+                //    var lColor = Lerp(color, target, (double)amount);
+                //    Player.HairRed = neon ? (double)((lColor.R / 255f) * 10) : (double)(lColor.R / 255f);
+                //    Player.HairGreen = neon ? (double)((lColor.G / 255f) * 10) : (double)(lColor.G / 255f);
+                //    Player.HairBlue = neon ? (double)((lColor.B / 255f) * 10) : (double)(lColor.B / 255f);
+                //    amount += 0.00003 * HairSpeedMultiplier;
+                //}
+            }
+        }
+
+        private void cbxEyeRandom_CheckedChanged(object sender, EventArgs e)
+        {
+            _ = Task.Run(RandomizeEye);
+        }
+
+        double EyeSpeedMultiplier = 1;
+
+        private async Task RandomizeEye()
+        {
+            if (!Hook.Loaded)
+                return;
+            var neon = Player.EyeRed > 1 || Player.EyeGreen > 1 || Player.EyeBlue > 1;
+
+            var red = neon ? (byte)(((Player.EyeRed / 10) * 255)) : (byte)(Player.EyeRed * 255);
+            var green = neon ? (byte)(((Player.EyeGreen / 10) * 255)) : (byte)(Player.EyeGreen * 255);
+            var blue = neon ? (byte)(((Player.EyeBlue / 10) * 255)) : (byte)(Player.EyeBlue * 255);
+
+            var color = Color.FromArgb(red, green, blue);
+
+            while (cbxEyeRandom.Checked && Hook.Loaded)
+            {
+                var hsl = RgbaToHsl(color);
+                hsl.H += 0.01;
+                color = HslToRgba(hsl);
+                Player.EyeRed = neon ? (float)((color.R / 255f) * 10) : (float)(color.R / 255f);
+                Player.EyeGreen = neon ? (float)((color.G / 255f) * 10) : (float)(color.G / 255f);
+                Player.EyeBlue = neon ? (float)((color.B / 255f) * 10) : (float)(color.B / 255f);
+                Thread.Sleep((int)(100 / EyeSpeedMultiplier));
+                //var red = neon ? (byte)(((Player.EyeRed / 10) * 255)) : (byte)(Player.EyeRed * 255);
+                //var green = neon ? (byte)(((Player.EyeGreen / 10) * 255)) : (byte)(Player.EyeGreen * 255);
+                //var blue = neon ? (byte)(((Player.EyeBlue / 10) * 255)) : (byte)(Player.EyeBlue * 255);
+
+                //var color = Color.FromArgb(red, green, blue);
+                //var target = Color.FromArgb(Rand.Next(255), Rand.Next(255), Rand.Next(255));
+
+                //var amount = 0.0;
+                //while (amount < 1f)
+                //{
+                //    if (!cbxEyeRandom.Checked && Hook.Loaded)
+                //        break;
+                //    var lColor = Lerp(color, target, (double)amount);
+                //    Player.EyeRed = neon ? (double)((lColor.R / 255f) * 10) : (double)(lColor.R / 255f);
+                //    Player.EyeGreen = neon ? (double)((lColor.G / 255f) * 10) : (double)(lColor.G / 255f);
+                //    Player.EyeBlue = neon ? (double)((lColor.B / 255f) * 10) : (double)(lColor.B / 255f);
+                //    amount += 0.00003 * EyeSpeedMultiplier;
+                //}
+            }
+        }
+        public static Color Lerp(Color a, Color b, double t)
+        {
+            return Color.FromArgb(
+                (int)(a.R + (b.R - a.R) * t),
+                (int)(a.G + (b.G - a.G) * t),
+                (int)(a.B + (b.B - a.B) * t)
+             );
+
+        }
+
+        public struct HSLAColor
+        {
+            public double H;
+            public double S;
+            public double L;
+            public double A;
+            public HSLAColor(double h, double s, double l, double a)
+            {
+                H = h;
+                S = s;
+                L = l;
+                A = a;
+            }
+        }
+        public static HSLAColor RgbaToHsl(Color rgba)
+        {
+            double r = rgba.R / 255.0f;
+            double g = rgba.G / 255.0f;
+            double b = rgba.B / 255.0f;
+
+            double max = (r > g && r > b) ? r : (g > b) ? g : b;
+            double min = (r < g && r < b) ? r : (g < b) ? g : b;
+
+            double h, s, l;
+            h = s = l = (max + min) / 2.0f;
+
+            if (max == min)
+                h = s = 0.0f;
+
+            else
+            {
+                double d = max - min;
+                s = (l > 0.5f) ? d / (2.0f - max - min) : d / (max + min);
+
+                if (r > g && r > b)
+                    h = (g - b) / d + (g < b ? 6.0f : 0.0f);
+
+                else if (g > b)
+                    h = (b - r) / d + 2.0f;
+
+                else
+                    h = (r - g) / d + 4.0f;
+
+                h /= 6.0f;
+            }
+
+            return new HSLAColor(h, s, l, rgba.A / 255.0f);
+        }
+
+        public static Color HslToRgba(HSLAColor hsl)
+        {
+            double r, g, b;
+
+            if (hsl.S == 0.0f)
+                r = g = b = hsl.L;
+
+            else
+            {
+                var q = hsl.L < 0.5f ? hsl.L * (1.0f + hsl.S) : hsl.L + hsl.S - hsl.L * hsl.S;
+                var p = 2.0f * hsl.L - q;
+                r = HueToRgb(p, q, hsl.H + 1.0f / 3.0f);
+                g = HueToRgb(p, q, hsl.H);
+                b = HueToRgb(p, q, hsl.H - 1.0f / 3.0f);
+            }
+
+            return Color.FromArgb((int)(hsl.A * 255), (int)(r * 255), (int)(g * 255), (int)(b * 255));
+        }
+
+        // Helper for HslToRgba
+        private static double HueToRgb(double p, double q, double t)
+        {
+            if (t < 0.0f) t += 1.0f;
+            if (t > 1.0f) t -= 1.0f;
+            if (t < 1.0f / 6.0f) return p + (q - p) * 6.0f * t;
+            if (t < 1.0f / 2.0f) return q;
+            if (t < 2.0f / 3.0f) return p + (q - p) * (2.0f / 3.0f - t) * 6.0f;
+            return p;
+        }
+
+        private void nudHairSpeed_ValueChanged(object sender, EventArgs e)
+        {
+            HairSpeedMultiplier = (double)nudHairSpeed.Value;
+        }
+
+        private void nudEyeSpeed_ValueChanged(object sender, EventArgs e)
+        {
+            EyeSpeedMultiplier = (double)nudEyeSpeed.Value;
         }
     }
 }

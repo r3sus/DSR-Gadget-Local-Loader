@@ -122,6 +122,15 @@ namespace DSR_Gadget
             if (cbxPlayerDeadMode.Checked && !Hook.PlayerDeadMode)
                 Hook.PlayerDeadMode = true;
 
+            if (cbxBolts.Checked)
+                SpawnBolts();
+
+            if (cbxArrows.Checked)
+                SpawnArrows();
+
+            if (cbxGreatArrows.Checked)
+                SpawnGreatArrows();
+
             // Only start refill timer if enabled, health is lower than max and the timer isn't already going
             if (cbxRefill.Checked && (Player.Hp < Player.MaxHp) && !Timer.Enabled)
             {
@@ -262,6 +271,33 @@ namespace DSR_Gadget
         private void cbxInfDurabilitySpecial_CheckedChanged(object sender, EventArgs e)
         {
             Hook.DurabilitySpecial = cbxInfDurabilitySpecial.Checked;
+        }
+
+        private void SpawnGreatArrows()
+        {
+            Hook.GetItem(0x00000000, 2007000, 99);
+            Hook.GetItem(0x00000000, 2008000, 99);
+        }
+
+        private void SpawnArrows()
+        {
+            Hook.GetItem(0x00000000, 2000000, 99);
+            Hook.GetItem(0x00000000, 2001000, 99);
+            Hook.GetItem(0x00000000, 2002000, 99);
+            Hook.GetItem(0x00000000, 2003000, 99);
+            Hook.GetItem(0x00000000, 2004000, 99);
+            Hook.GetItem(0x00000000, 2005000, 99);
+            Hook.GetItem(0x00000000, 2006000, 99);
+        }
+
+        private void SpawnBolts()
+        {
+            Hook.GetItem(0x00000000, 2008000, 99);
+            Hook.GetItem(0x00000000, 2100000, 99);
+            Hook.GetItem(0x00000000, 2101000, 99);
+            Hook.GetItem(0x00000000, 2102000, 99);
+            Hook.GetItem(0x00000000, 2103000, 99);
+            Hook.GetItem(0x00000000, 2104000, 99);
         }
     }
 }
