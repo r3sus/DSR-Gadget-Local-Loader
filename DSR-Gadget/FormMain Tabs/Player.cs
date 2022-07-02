@@ -133,6 +133,8 @@ namespace DSR_Gadget
             }
 
             cbxDeathCam.Checked = Hook.DeathCam;
+            cbxAutoSave.Checked = Hook.AutoSave;
+
             if (cbxSpeed.Checked)
                 Player.AnimSpeed = (float)nudSpeed.Value;
    
@@ -380,6 +382,13 @@ namespace DSR_Gadget
             if (loaded && !reading)
                 Hook.DeathCam = cbxDeathCam.Checked;
         }
+
+        private void cbxAutoSave_CheckedChanged(object sender, EventArgs e)
+        {
+            if (loaded && !reading)
+                Hook.AutoSave = cbxAutoSave.Checked;
+        }
+
 
         private void btnWarp_Click(object sender, EventArgs e)
         {

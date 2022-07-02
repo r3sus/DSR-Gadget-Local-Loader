@@ -257,6 +257,12 @@ namespace DSR_Gadget
             set => PlayerCtrl.WriteFlag32((int)DSROffsets.PlayerCtrl.ChrMapFlags, (uint)DSROffsets.ChrMapFlags.DisableMapHit, value);
         }
 
+        public bool AutoSave
+        {
+            get => ChrClassWarp.ReadBoolean((int)DSROffsets.ChrClassWarp.AutoSave);
+            set => ChrClassWarp.WriteBoolean((int)DSROffsets.ChrClassWarp.AutoSave, value);
+        }
+
         public bool DeathCam
         {
             get => WorldChrBase.ReadBoolean((int)DSROffsets.WorldChrManImp.DeathCam);
